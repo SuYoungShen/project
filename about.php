@@ -17,8 +17,8 @@
     <link rel="stylesheet" href="css/sl-slide.css">
 	  <link rel="stylesheet" type="text/css" href="css/picloop.css">
 
+    <!--<link rel="stylesheet" href="1.css" type="text/css" charset="utf-8">-->
 
-    <script src="js/vendor/modernizr-2.6.2-respond-1.1.0.min.js"></script>
 
     <!-- Le fav and touch icons -->
     <link rel="shortcut icon" href="images/ico/favicon.ico">
@@ -26,57 +26,16 @@
     <link rel="apple-touch-icon-precomposed" sizes="114x114" href="images/ico/apple-touch-icon-114-precomposed.png">
     <link rel="apple-touch-icon-precomposed" sizes="72x72" href="images/ico/apple-touch-icon-72-precomposed.png">
     <link rel="apple-touch-icon-precomposed" href="images/ico/apple-touch-icon-57-precomposed.png">
+
 </head>
 
 <body>
 
      <!--Header-->
-    <header class="navbar navbar-fixed-top">
-        <div class="navbar-inner">
-            <div class="container">
-                <a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                </a>
-                <!--<a id="logo" class="pull-left" href="index.html"></a>-->
-                <div class="nav-collapse collapse pull-right">
-
-					<form class="navbar-search pull-left">
-						<input type="text" class="search-query" placeholder="要去哪ㄜ...?">
-					</form>
-
-					<ul class="nav">
-                        <li><a href="index.html">首頁</a></li>
-                        <li class="active"><a href="about.html">認識高雄</a></li>
-						<!--
-					   <li><a href="services.html">景點</a></li>-->
-
-					    <li class="dropdown">
-                            <a href="view.html" class="dropdown-toggle" data-toggle="dropdown">景點<i class="icon-angle-down"></i></a>
-							<div class="dropdown-menu">
-								<table class="table table-hover ">
-									<tr >
-                                        <td><a href="view.html">首頁</a></td>
-                                        <td><a href="area.html">地區名</a></td>
-                                    </tr>
-								</table>
-
-                            </div>
-                        </li>
-
-                        <li><a href="forum.html">討論區</a></li>
-                        <!--<li><a href="contact-us.html">Contact</a></li>-->
-                       <li class="login">
-                            <a data-toggle="modal" href="#loginForm"><i class="icon-user"></i></a>
-                        </li>
-                    </ul>
-                </div><!--/.nav-collapse -->
-            </div>
-        </div>
-    </header>
+     <?php
+       require("header.php");
+      ?>
     <!-- /header -->
-
 
     <section class="title">
         <div class="container">
@@ -102,37 +61,34 @@
                 <p>高雄地區介紹</p>
             </div>
 
-			<div class="span6">
+          <div class="span6">
+            <div class="slider_container">
+      				<div>
+      					<img src="images/picloop/400x280.jpg" alt="pure css3 slider" />
+      					<span class="info">景點名</span>
+      				</div>
 
-			<div class="slider_container">
-  				<div>
-  					<img src="images/picloop/400x280.jpg" alt="pure css3 slider" />
-  					<span class="info">景點名</span>
-  				</div>
+      				<div>
+      					<img src="images/picloop/400x280-1.jpg" alt="pure css3 slider" />
+      					<span class="info">景點名</span>
+      				</div>
+              <div>
+                <img src="images/picloop/400x280-2.jpg" alt="pure css3 slider" />
+                <span class="info">景點名</span>
+              </div>
+              <div>
+      					<img src="images/picloop/400x280.jpg" alt="pure css3 slider" />
+      					<span class="info">景點名</span>
+              </div>
 
-  				<div>
-  					<img src="images/picloop/400x280-1.jpg" alt="pure css3 slider" />
-  					<span class="info">景點名</span>
-  				</div>
-          <div>
-            <img src="images/picloop/400x280-2.jpg" alt="pure css3 slider" />
-            <span class="info">景點名</span>
+      				<div>
+      					<img src="images/picloop/400x280-1.jpg" alt="pure css3 slider" />
+      					<span class="info">景點名</span>
+      				</div>
           </div>
-          <div>
-  					<img src="images/picloop/400x280.jpg" alt="pure css3 slider" />
-  					<span class="info">景點名</span>
-  				<div>
-  					<img src="images/picloop/400x280-1.jpg" alt="pure css3 slider" />
-  					<span class="info">景點名</span>
-  				</div>
-
-
-			</div>
-
-			</div>
-
-
         </div>
+      </div>
+
 
         <hr>
 		<div class="container">
@@ -145,15 +101,15 @@
 
         <ul class="gallery col-4">
 
-            <table class="table table-striped table-bordered table-hover">
-                    <tr>
-            <li>
+          <table class="table table-striped table-bordered table-hover">
+            <tr>
+              <li>
 
-              <td>
-                <a data-toggle="modal" href="#modal-1" >
-                  高雄地區名
-                </a>
-              </td>
+                <td>
+                  <a data-toggle="modal" href="#modal-1" >
+                    高雄地區名
+                  </a>
+                </td>
 
                 <div id="modal-1" class="modal hide fade">
                     <a class="close-modal" href="javascript:;" data-dismiss="modal" aria-hidden="true"><i class="icon-remove"></i></a>
@@ -161,47 +117,59 @@
                         <p><img src="images/portfolio/full/500x300.jpg"  width="100%" style="max-height:400px" ></p>
                     <h5>地區名</h5>
                     <p>地區介紹</p>
-                    <!--
-                    <a class="btn btn-social btn-facebook" href="#">
-                      <i class="icon-facebook"></i>
-                    </a>
 
-                    <a class="btn btn-social btn-google-plus" href="#">
-                      <i class="icon-google-plus"></i>
-                    </a>
-
-                    <a class="btn btn-social btn-twitter" href="#">
-                      <i class="icon-twitter"></i>
-                    </a>
-
-                    <a class="btn btn-social btn-linkedin" href="#">
-                      <i class="icon-linkedin"></i>
-                    </a>
-                  -->
                     </div>
                 </div>
             </li>
 
             </tr>
         </table>
-
-
-
         </ul>
     </div>
         <hr>
-		<div class="center">
+		    <div class="center">
             <h3>TOP6</h3>
-
         </div>
-        <marquee class="caption" scrollamount="10" behavior="scroll"  loop>
-                 <img src="IMG_3350.jpg" height="25%" width="35%">
-                 <img src="IMG_3350.jpg" height="25%" width="35%">
-        </marquee>
+        <!--跑馬燈-->
 
-        <p>&nbsp;</p>
-        <p></p>
-        <hr>
+        <?php
+
+        require("marquee.php");
+
+         ?>
+
+<!--
+          <div id="myDiv">
+            <table>
+              <tr>
+                <td id="pice1">
+                  <table>
+                    <tr>
+                      <td><img src="images/marquee/IMG_3350.jpg" alt="" /></td>
+                      <!--
+                      <td><img src="images/marquee/IMG_3350.jpg" alt="" /></td>
+                      <td><img src="images/marquee/IMG_3350.jpg" alt="" /></td>
+                      <td><img src="images/marquee/IMG_3350.jpg" alt="" /></td>
+                      <td><img src="images/marquee/IMG_3350.jpg" alt="" /></td>
+                      <td><img src="images/marquee/IMG_3350.jpg" alt="" /></td>
+
+                    </tr>
+                  </table>
+                </td>
+                <td></td>
+
+                <td></td>
+
+                <td id="pice2"></td>
+
+              </tr>
+            </table>
+          </div>
+  -->
+
+        <!--跑馬燈-->
+
+
 
 
 </section>
@@ -259,39 +227,9 @@
 <!--/bottom-->
 
 <!--Footer-->
-<footer id="footer">
-    <div class="container">
-        <div class="row-fluid">
-
-			<div class="span5 cp">
-                by
-            </div>
-            <!--/Copyright-->
-
-			<!--
-            <div class="span6">
-                <ul class="social pull-right">
-                    <li><a href="#"><i class="icon-facebook"></i></a></li>
-                    <li><a href="#"><i class="icon-twitter"></i></a></li>
-                    <li><a href="#"><i class="icon-pinterest"></i></a></li>
-                    <li><a href="#"><i class="icon-linkedin"></i></a></li>
-                    <li><a href="#"><i class="icon-google-plus"></i></a></li>
-                    <li><a href="#"><i class="icon-youtube"></i></a></li>
-                    <li><a href="#"><i class="icon-tumblr"></i></a></li>
-                    <li><a href="#"><i class="icon-dribbble"></i></a></li>
-                    <li><a href="#"><i class="icon-rss"></i></a></li>
-                    <li><a href="#"><i class="icon-github-alt"></i></a></li>
-                    <li><a href="#"><i class="icon-instagram"></i></a></li>
-                </ul>
-            </div>
-			-->
-            <div class="span6">
-                <a id="gototop" class="gototop pull-right" href="#"><i class="icon-angle-up"></i></a>
-            </div>
-            <!--/Goto Top-->
-        </div>
-    </div>
-</footer>
+<?php
+  require("footer.php");
+ ?>
 <!--/Footer-->
 
 <!--  Login form -->
@@ -321,7 +259,8 @@
 <script src="js/vendor/jquery-1.9.1.min.js"></script>
 <script src="js/vendor/bootstrap.min.js"></script>
 <script src="js/main.js"></script>
-
+<!--<script type="text/javascript" src="1.js"></script>-->
+  <script src="js/vendor/modernizr-2.6.2-respond-1.1.0.min.js"></script>
 <script src="js/jquery.ba-cond.min.js"></script>
 <script src="js/jquery.slitslider.js"></script>
 <!-- SL Slider -->

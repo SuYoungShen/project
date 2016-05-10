@@ -2,7 +2,8 @@
 <!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
 <!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
 <!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
-<!--[if gt IE 8]><!--> <html class="no-js"> <!--<![endif]-->
+<!--[if gt IE 8]><!-->
+<html class="no-js"> <!--<![endif]-->
 <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
@@ -29,57 +30,10 @@
 <body>
 
     <!--Header-->
-    <header class="navbar navbar-fixed-top">
-        <div class="navbar-inner">
-            <div class="container">
-                <a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                </a>
-                <!--
-                <a id="logo" class="pull-left" href="index.html"></a>
-              -->
-                <div class="nav-collapse collapse pull-right">
-
-					<form class="navbar-search pull-left">
-						<input type="text" class="search-query" placeholder="要去哪ㄜ...?">
-					</form>
-
-					<ul class="nav">
-                        <li class="active"><a href="index.html">首頁</a></li>
-                        <li><a href="about.html">認識高雄</a></li>
-						<!--
-					   <li><a href="services.html">景點</a></li>-->
-
-					    <li class="dropdown">
-                <a href="view.html" class="dropdown-toggle" data-toggle="dropdown">景點<i class="icon-angle-down"></i></a>
-							<div class="dropdown-menu">
-								<table class="table table-hover ">
-									<tr >
-                    <td><a href="view.html">首頁</a></td>
-                    <td><a href="area.html">地區名</a></td>
-                  </tr>
-								</table>
-
-                            </div>
-                        </li>
-
-                        <li><a href="forum.html">討論區</a></li>
-                        <!--<li><a href="contact-us.html">Contact</a></li>-->
-                       <li class="login">
-                            <a data-toggle="modal" href="#loginForm"><i class="icon-user"></i></a>
-                        </li>
-                    </ul>
-                </div><!--/.nav-collapse -->
-            </div>
-        </div>
-    </header>
+    <?php
+      require("header.php");
+     ?>
     <!-- /header -->
-
-
-
-
 
     <!--Slider輪播-->
     <section id="slide-show">
@@ -456,39 +410,9 @@
 <!--/bottom-->
 
 <!--Footer-->
-<footer id="footer">
-    <div class="container">
-        <div class="row-fluid">
-
-			<div class="span5 cp">
-                by
-            </div>
-            <!--/Copyright-->
-
-			<!--
-            <div class="span6">
-                <ul class="social pull-right">
-                    <li><a href="#"><i class="icon-facebook"></i></a></li>
-                    <li><a href="#"><i class="icon-twitter"></i></a></li>
-                    <li><a href="#"><i class="icon-pinterest"></i></a></li>
-                    <li><a href="#"><i class="icon-linkedin"></i></a></li>
-                    <li><a href="#"><i class="icon-google-plus"></i></a></li>
-                    <li><a href="#"><i class="icon-youtube"></i></a></li>
-                    <li><a href="#"><i class="icon-tumblr"></i></a></li>
-                    <li><a href="#"><i class="icon-dribbble"></i></a></li>
-                    <li><a href="#"><i class="icon-rss"></i></a></li>
-                    <li><a href="#"><i class="icon-github-alt"></i></a></li>
-                    <li><a href="#"><i class="icon-instagram"></i></a></li>
-                </ul>
-            </div>
-			-->
-            <div class="span6">
-                <a id="gototop" class="gototop pull-right" href="#"><i class="icon-angle-up"></i></a>
-            </div>
-            <!--/Goto Top-->
-        </div>
-    </div>
-</footer>
+<?php
+  require("footer.php");
+ ?>
 <!--/Footer-->
 
 <!--  Login form -->
