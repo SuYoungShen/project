@@ -203,6 +203,10 @@
 				<h3>TOP6</h3>
 			</div>
 
+      <?php
+        include("marquee.php");
+
+       ?>
 			<marquee class="caption" direction="up" scrollamount="10" behavior="scroll"  loop>
 			     <p><img src="IMG_3350.jpg"></p>
 				 <p><img src="IMG_3350.jpg"></p>

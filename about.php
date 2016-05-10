@@ -134,11 +134,11 @@
 
         <?php
 
-        require("marquee.php");
+			require("marquee.php");
 
          ?>
 
-<!--
+	<!--
           <div id="myDiv">
             <table>
               <tr>
@@ -168,8 +168,6 @@
   -->
 
         <!--跑馬燈-->
-
-
 
 
 </section>

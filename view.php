@@ -353,6 +353,12 @@
             <h3>TOP6</h3>
 
         </div>
+		<?php
+
+			require("marquee.php");
+
+         ?>
+		<!--
 			<marquee class="caption" scrollamount="10" behavior="scroll"  loop>
 			     <img src="IMG_3350.jpg" height="25%" width="35%">
                  <img src="IMG_3350.jpg" height="25%" width="35%">
