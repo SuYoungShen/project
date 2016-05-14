@@ -16,16 +16,10 @@
     <link rel="stylesheet" href="css/main.css">
     <link rel="stylesheet" href="css/sl-slide.css">
 	  <link rel="stylesheet" type="text/css" href="css/picloop.css">
-
-    <!--<link rel="stylesheet" href="1.css" type="text/css" charset="utf-8">-->
-
-
     <!-- Le fav and touch icons -->
-    <link rel="shortcut icon" href="images/ico/favicon.ico">
-    <link rel="apple-touch-icon-precomposed" sizes="144x144" href="images/ico/apple-touch-icon-144-precomposed.png">
-    <link rel="apple-touch-icon-precomposed" sizes="114x114" href="images/ico/apple-touch-icon-114-precomposed.png">
-    <link rel="apple-touch-icon-precomposed" sizes="72x72" href="images/ico/apple-touch-icon-72-precomposed.png">
-    <link rel="apple-touch-icon-precomposed" href="images/ico/apple-touch-icon-57-precomposed.png">
+    <?php
+      include("ico.php");
+     ?>
 
 </head>
 
@@ -45,7 +39,10 @@
                 </div>
                 <div class="span6">
                     <ul class="breadcrumb pull-right">
-                        <li><a href="index.html">首頁</a> <span class="divider">/</span></li>
+                        <li>
+                          <a href="index.html">首頁</a>
+                          <span class="divider">/</span>
+                        </li>
                         <li class="active">認識高雄</li>
                     </ul>
                 </div>
@@ -55,88 +52,72 @@
     <!-- / .title -->
 
     <section id="about-us" class="container main">
-        <div class="row-fluid">
-            <div class="span6">
-                <h2>高雄</h2>
-                <p>高雄地區介紹</p>
-            </div>
-
-          <div class="span6">
-            <div class="slider_container">
-      				<div>
-      					<img src="images/picloop/400x280.jpg" alt="pure css3 slider" />
-      					<span class="info">景點名</span>
-      				</div>
-
-      				<div>
-      					<img src="images/picloop/400x280-1.jpg" alt="pure css3 slider" />
-      					<span class="info">景點名</span>
-      				</div>
-              <div>
-                <img src="images/picloop/400x280-2.jpg" alt="pure css3 slider" />
-                <span class="info">景點名</span>
-              </div>
-              <div>
-      					<img src="images/picloop/400x280.jpg" alt="pure css3 slider" />
-      					<span class="info">景點名</span>
-              </div>
-
-      				<div>
-      					<img src="images/picloop/400x280-1.jpg" alt="pure css3 slider" />
-      					<span class="info">景點名</span>
-      				</div>
+      <div class="row-fluid">
+        <div class="span6">
+          <h2>高雄</h2>
+          <p>高雄地區介紹</p>
+        </div>
+        <!--輪放-->
+        <div class="span6">
+          <div class="slider_container">
+            <?php
+              for ($i=1; $i <= 6 ; $i++) {
+                echo "
+                <div>
+                <img src='images/picloop/400x280.jpg' alt='pure css3 slider' />
+                <span class='info'>景點名</span>
+                </div>
+                ";
+              }
+             ?>
           </div>
         </div>
+        <!--輪放-->
       </div>
 
-
-        <hr>
-		<div class="container">
+      <hr>
+      <div class="container">
         <div class="center">
-            <h3>高雄地區</h3>
-            <!--<p class="lead">Look at some of the recent projects we have completed for our valuble clients</p>-->
+          <h3>高雄地區</h3>
+          <!--<p class="lead">Look at some of the recent projects we have completed for our valuble clients</p>-->
         </div>
         <div class="gap"></div>
 
+        <table class="table table-striped table-bordered table-hover ">
+          <tr>
+            <td>
+              <a data-toggle="modal" href="#modal-1" >
+                高雄地區名
+              </a>
+            </td>
 
-        <ul class="gallery col-4">
-
-          <table class="table table-striped table-bordered table-hover">
-            <tr>
-              <li>
-
-                <td>
-                  <a data-toggle="modal" href="#modal-1" >
-                    高雄地區名
-                  </a>
-                </td>
-
-                <div id="modal-1" class="modal hide fade">
-                    <a class="close-modal" href="javascript:;" data-dismiss="modal" aria-hidden="true"><i class="icon-remove"></i></a>
-                    <div class="box">
-                        <p><img src="images/portfolio/full/500x300.jpg"  width="100%" style="max-height:400px" ></p>
-                    <h5>地區名</h5>
-                    <p>地區介紹</p>
-
-                    </div>
-                </div>
-            </li>
-
-            </tr>
+            <div id="modal-1" class="modal hide fade">
+              <a class="close-modal" href="javascript:;" data-dismiss="modal" aria-hidden="true">
+                <i class="icon-remove"></i>
+              </a>
+              <div class="box">
+                <img src="images/portfolio/full/500x300.jpg">
+                <h5>地區名</h5>
+                <p>地區介紹</p>
+              </div>
+            </div>
+          </tr>
         </table>
-        </ul>
-    </div>
-        <hr>
-		    <div class="center">
-            <h3>TOP6</h3>
-        </div>
-        <!--跑馬燈-->
+      </div>
 
-        <?php
-        include("marquee.php");
-        ?>
+      <hr>
 
-</section>
+      <div class="center">
+        <h3>TOP6</h3>
+      </div>
+
+      <!--跑馬燈-->
+      <?php
+      include("marquee.php");
+      ?>
+      <!--跑馬燈-->
+
+    </section>
 
 <!--Footer-->
   <?php
@@ -153,11 +134,9 @@
 <script src="js/vendor/jquery-1.9.1.min.js"></script>
 <script src="js/vendor/bootstrap.min.js"></script>
 <script src="js/main.js"></script>
-<!--<script type="text/javascript" src="1.js"></script>-->
 <script src="js/vendor/modernizr-2.6.2-respond-1.1.0.min.js"></script>
 <script src="js/jquery.ba-cond.min.js"></script>
 <script src="js/jquery.slitslider.js"></script>
-
 
 </body>
 </html>

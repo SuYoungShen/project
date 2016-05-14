@@ -20,11 +20,9 @@
     <script src="js/vendor/modernizr-2.6.2-respond-1.1.0.min.js"></script>
 
     <!-- Le fav and touch icons -->
-    <link rel="shortcut icon" href="images/ico/favicon.ico">
-    <link rel="apple-touch-icon-precomposed" sizes="144x144" href="images/ico/apple-touch-icon-144-precomposed.png">
-    <link rel="apple-touch-icon-precomposed" sizes="114x114" href="images/ico/apple-touch-icon-114-precomposed.png">
-    <link rel="apple-touch-icon-precomposed" sizes="72x72" href="images/ico/apple-touch-icon-72-precomposed.png">
-    <link rel="apple-touch-icon-precomposed" href="images/ico/apple-touch-icon-57-precomposed.png">
+    <?php
+      include("ico.php");
+     ?>
 </head>
 
 <body>
@@ -37,219 +35,102 @@
 
     <!--Slider輪播-->
     <section id="slide-show">
-     <div id="slider" class="sl-slider-wrapper">
-
+      <div id="slider" class="sl-slider-wrapper">
         <!--Slider Items-->
         <div class="sl-slider">
-            <!--Slider Item1-->
-            <div class="sl-slide item1" data-orientation="horizontal" data-slice1-rotation="-25" data-slice2-rotation="-25" data-slice1-scale="2" data-slice2-scale="2">
-                <div class="sl-slide-inner">
-                    <div class="container">
-                        <img class="pull-right" src="images/sample/slider/autox520.jpg" alt="" />
-
-                        <h2>高雄85大樓</h2>
-
-                        <h3 class="gap">Tincidunt condimentum eros</h3>
-                        <a class="btn btn-large btn-transparent" href="#">Learn More</a>
-
-                    </div>
-                </div>
+          <!--Slider Item1-->
+          <div class="sl-slide item1" data-orientation="horizontal" data-slice1-rotation="-25" data-slice2-rotation="-25" data-slice1-scale="2" data-slice2-scale="2">
+            <div class="sl-slide-inner">
+              <div class="container">
+                <img class="pull-right" src="images/sample/slider/autox520.jpg" alt="" />
+                <h2>高雄85大樓</h2>
+                <!-- <h3 class="gap">Tincidunt condimentum eros</h3>
+                <a class="btn btn-large btn-transparent" href="#">Learn More</a> --> -->
+              </div>
             </div>
-            <!--/Slider Item1-->
+          </div>
+          <!--/Slider Item1-->
 
-            <!--Slider Item2-->
-            <div class="sl-slide item2" data-orientation="vertical" data-slice1-rotation="10" data-slice2-rotation="-15" data-slice1-scale="1.5" data-slice2-scale="1.5">
-                <div class="sl-slide-inner">
-                    <div class="container">
-                        <img class="pull-right" src="images/sample/slider/autox520-1.jpg" alt="" />
-
-                        <h2>Planning </h2>
-                        <h3 class="gap">Aenean ultricies mi vitast</h3>
-                        <a class="btn btn-large btn-transparent" href="#">Learn More</a>
-
-                    </div>
-                </div>
+          <!--Slider Item2-->
+          <div class="sl-slide item2" data-orientation="vertical" data-slice1-rotation="10" data-slice2-rotation="-15" data-slice1-scale="1.5" data-slice2-scale="1.5">
+            <div class="sl-slide-inner">
+              <div class="container">
+                <img class="pull-right" src="images/sample/slider/autox520-1.jpg" alt="" />
+                <h2>高雄85大樓</h2>
+                <!-- <h3 class="gap">Aenean ultricies mi vitast</h3>
+                <a class="btn btn-large btn-transparent" href="#">Learn More</a> -->
+              </div>
             </div>
-            <!--Slider Item2-->
+          </div>
+          <!--Slider Item2-->
 
-            <!--Slider Item3-->
-            <div class="sl-slide item3" data-orientation="horizontal" data-slice1-rotation="3" data-slice2-rotation="3" data-slice1-scale="2" data-slice2-scale="1">
-                <div class="sl-slide-inner">
-                   <div class="container">
-                  <img class="pull-right" src="images/sample/slider/autox520-2.jpg" alt="" />
-
-                    <h2>Unique </h2>
-                    <h3 class="gap">Breatures who have been utterly</h3>
-                    <a class="btn btn-large btn-transparent" href="#">Learn More</a>
-
-                </div>
+          <!--Slider Item3-->
+          <div class="sl-slide item3" data-orientation="horizontal" data-slice1-rotation="3" data-slice2-rotation="3" data-slice1-scale="2" data-slice2-scale="1">
+            <div class="sl-slide-inner">
+              <div class="container">
+                <img class="pull-right" src="images/sample/slider/autox520-2.jpg" alt="" />
+                <h2>高雄85大樓</h2>
+                <!-- <h3 class="gap">Breatures who have been utterly</h3>
+                <a class="btn btn-large btn-transparent" href="#">Learn More</a> -->
+              </div>
             </div>
+          </div>
+          <!--Slider Item3-->
         </div>
-        <!--Slider Item3-->
+        <!--/Slider Items-->
 
-    </div>
-    <!--/Slider Items-->
-
-    <!--Slider Next Prev button-->
-    <nav id="nav-arrows" class="nav-arrows">
-        <span class="nav-arrow-prev"><i class="icon-angle-left"></i></span>
-        <span class="nav-arrow-next"><i class="icon-angle-right"></i></span>
-    </nav>
-    <!--/Slider Next Prev button-->
-
-</div>
-<!-- /slider-wrapper -->
-</section>
-<!--/Slider-->
+        <!--Slider Next Prev button-->
+        <nav id="nav-arrows" class="nav-arrows">
+          <span class="nav-arrow-prev"><i class="icon-angle-left"></i></span>
+          <span class="nav-arrow-next"><i class="icon-angle-right"></i></span>
+        </nav>
+        <!--/Slider Next Prev button-->
+      </div>
+      <!-- /slider-wrapper -->
+    </section>
+    <!--/Slider-->
 
 <!--熱門排行-->
 <section id="recent-works">
-    <div class="container">
-        <div class="center">
-            <h3>TOP6</h3>
-			<!--<p class="lead">高雄熱門景點</p>-->
-        </div>
-        <div class="gap"></div>
-        <ul class="gallery col-4">
-            <!--Item 1-->
-            <li>
-                <div class="preview">
-                    <img alt=" " src="images/portfolio/thumb/300x180.jpg" >
-                    <div class="overlay"><!--黑影-->
-                    </div>
-                    <div class="links">
-                        <a data-toggle="modal" href="#modal-1"><i class="icon-eye-open"></i></a><a href="#"><i class="icon-heart
-                        "></i></a>
-                    </div>
-                </div>
-                <div class="desc">
-                    <h5>景點名</h5>
-                </div>
-                <div id="modal-1" class="modal hide fade">
-                    <a class="close-modal" href="javascript:;" data-dismiss="modal" aria-hidden="true"><i class="icon-remove"></i></a>
-                    <div class="modal-body">
-                        <img src="images/portfolio/full/500x300.jpg" alt=" " width="100%" height="100%">
-                    </div>
-                </div>
-            </li>
-            <!--/Item 1-->
+  <div class="container">
+    <div class="center">
+      <h3>TOP6</h3>
+      <!--<p class="lead">高雄熱門景點</p>-->
+    </div>
+    <div class="gap"></div>
+    <ul class="gallery col-4">
+      <!--Item 1-->
+      <?php
+        for ($i=1; $i <= 6 ; $i++) {
+          echo "
+          <li>
+            <div class='preview'>
+              <img alt=' ' src='images/portfolio/thumb/300x180.jpg'>
+              <div class='overlay'>
+              </div>
+              <div class='links'>
+                <a data-toggle='modal' href='#modal-1'><i class='icon-eye-open'></i></a><a href='#'><i class='icon-heart'></i></a>
+              </div>
+            </div>
+            <div class='desc'>
+              <h5>景點名</h5>
+            </div>
+            <div id='modal-1' class='modal hide fade'>
+              <a class='close-modal' href='javascript:;' data-dismiss='modal' aria-hidden='true'><i class='icon-remove'></i></a>
+              <div class='modal-body'>
+                <img src='images/portfolio/full/500x300.jpg' alt=' '>
+              </div>
+            </div>
+          </li>
+          ";
+        }
 
-            <!--Item 2-->
-            <li>
-                <div class="preview">
-                    <img alt=" " src="images/portfolio/thumb/300x180.jpg">
-                    <div class="overlay">
-                    </div>
-                    <div class="links">
-                        <a data-toggle="modal" href="#modal-1"><i class="icon-eye-open"></i></a><a href="#"><i class="icon-heart"></i></a>
-                    </div>
-                </div>
-                <div class="desc">
-                    <h5>景點名</h5>
-                </div>
-                <div id="modal-1" class="modal hide fade">
-                    <a class="close-modal" href="javascript:;" data-dismiss="modal" aria-hidden="true"><i class="icon-remove"></i></a>
-                    <div class="modal-body">
-                        <img src="images/portfolio/full/500x300.jpg" alt=" " width="100%" style="max-height:400px">
-                    </div>
-                </div>
-            </li>
-            <!--/Item 2-->
-
-            <!--Item 3-->
-            <li>
-                <div class="preview">
-                    <img alt=" " src="images/portfolio/thumb/300x180.jpg">
-                    <div class="overlay">
-                    </div>
-                    <div class="links">
-                        <a data-toggle="modal" href="#modal-3"><i class="icon-eye-open"></i></a><a href="#"><i class="icon-heart"></i></a>
-                    </div>
-                </div>
-                <div class="desc">
-                    <h5>景點名</h5>
-                </div>
-                <div id="modal-3" class="modal hide fade">
-                    <a class="close-modal" href="javascript:;" data-dismiss="modal" aria-hidden="true"><i class="icon-remove"></i></a>
-                    <div class="modal-body">
-                        <img src="images/portfolio/full/500x300.jpg" alt=" " width="100%" style="max-height:400px">
-                    </div>
-                </div>
-            </li>
-            <!--/Item 3-->
-
-            <!--Item 4-->
-            <li>
-                <div class="preview">
-                    <img alt=" " src="images/portfolio/thumb/300x180.jpg">
-                    <div class="overlay">
-                    </div>
-                    <div class="links">
-                        <a data-toggle="modal" href="#modal-4"><i class="icon-eye-open"></i></a><a href="#"><i class="icon-heart"></i></a>
-                    </div>
-                </div>
-                <div class="desc">
-                    <h5>景點名</h5>
-                </div>
-                <div id="modal-4" class="modal hide fade">
-                    <a class="close-modal" href="javascript:;" data-dismiss="modal" aria-hidden="true"><i class="icon-remove"></i></a>
-                    <div class="modal-body">
-                        <img src="images/portfolio/full/500x300.jpg" alt=" " width="100%" style="max-height:400px">
-                    </div>
-                </div>
-            </li>
-            <!--/Item 4-->
-
-			 <!--Item 5-->
-            <li>
-                <div class="preview">
-                    <img alt=" " src="images/portfolio/thumb/300x180.jpg">
-                    <div class="overlay">
-                    </div>
-                    <div class="links">
-                        <a data-toggle="modal" href="#modal-4"><i class="icon-eye-open"></i></a><a href="#"><i class="icon-heart"></i></a>
-                    </div>
-                </div>
-                <div class="desc">
-                    <h5>景點名</h5>
-                </div>
-                <div id="modal-4" class="modal hide fade">
-                    <a class="close-modal" href="javascript:;" data-dismiss="modal" aria-hidden="true"><i class="icon-remove"></i></a>
-                    <div class="modal-body">
-                        <img src="images/portfolio/full/500x300.jpg" alt=" " width="100%" style="max-height:400px">
-                    </div>
-                </div>
-            </li>
-            <!--/Item 5-->
-
-
-			 <!--Item 6-->
-            <li>
-                <div class="preview">
-                    <img alt=" " src="images/portfolio/thumb/300x180.jpg">
-                    <div class="overlay">
-                    </div>
-                    <div class="links">
-                        <a data-toggle="modal" href="#modal-4"><i class="icon-eye-open"></i></a><a href="#"><i class="icon-heart"></i></a>
-                    </div>
-                </div>
-                <div class="desc">
-                    <h5>景點名</h5>
-                </div>
-                <div id="modal-4" class="modal hide fade">
-                    <a class="close-modal" href="javascript:;" data-dismiss="modal" aria-hidden="true"><i class="icon-remove"></i></a>
-                    <div class="modal-body">
-                        <img src="images/portfolio/full/500x300.jpg" alt=" " width="100%" style="max-height:400px">
-                    </div>
-                </div>
-            </li>
-            <!--/Item 6-->
-        </ul>
+       ?>
+      </ul>
     </div>
 
 </section>
 <!--熱門排行-->
-
 
 <!--Footer-->
 <?php
@@ -272,39 +153,8 @@ include("login-form.php");
 <!-- /Required javascript files for Slider -->
 
 <!-- SL Slider -->
-<script type="text/javascript">
-$(function() {
-    var Page = (function() {
-
-        var $navArrows = $( '#nav-arrows' ),
-        slitslider = $( '#slider' ).slitslider( {
-            autoplay : true
-        } ),
-
-        init = function() {
-            initEvents();
-        },
-        initEvents = function() {
-            $navArrows.children( ':last' ).on( 'click', function() {
-                slitslider.next();
-                return false;
-            });
-
-            $navArrows.children( ':first' ).on( 'click', function() {
-                slitslider.previous();
-                return false;
-            });
-        };
-
-        return { init : init };
-
-    })();
-
-    Page.init();
-});
-</script>
+<script type="text/javascript" src="js/slider.js"></script>
 <!-- /SL Slider -->
 </body>
-
 
 </html>

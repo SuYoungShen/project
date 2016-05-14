@@ -6,15 +6,15 @@
     </div>
     <!--Modal Body-->
     <div class="modal-body">
-        <form class="form-inline" action="index.html" method="post" id="form-login">
-            <input type="text" class="input-small" placeholder="Email">
-            <input type="password" class="input-small" placeholder="Password">
-            <label class="checkbox">
-                <input type="checkbox">記住我
-            </label>
-            <button type="submit" class="btn btn-primary">登入</button>
-			<p><input type="text" style="width:60px">隨機六碼英數</p>
-        </form>
+      <form class="form-inline" action="index.php" method="post" id="form-login">
+        <input type="text" class="input-small" placeholder="Email">
+        <input type="password" class="input-small" placeholder="Password">
+        <label class="checkbox">
+          <input type="checkbox">記住我
+        </label>
+        <button type="submit" class="btn btn-primary">登入</button>
+        <p><input type="text" style="width:60px">隨機六碼英數</p>
+      </form>
         <a href="registration.php">註冊</a>｜
         <a href="forget.php">忘記密碼?</a>
     </div>
