@@ -133,167 +133,31 @@
         <!--跑馬燈-->
 
         <?php
-
-			require("marquee.php");
-
-         ?>
-
-	<!--
-          <div id="myDiv">
-            <table>
-              <tr>
-                <td id="pice1">
-                  <table>
-                    <tr>
-                      <td><img src="images/marquee/IMG_3350.jpg" alt="" /></td>
-                      <!--
-                      <td><img src="images/marquee/IMG_3350.jpg" alt="" /></td>
-                      <td><img src="images/marquee/IMG_3350.jpg" alt="" /></td>
-                      <td><img src="images/marquee/IMG_3350.jpg" alt="" /></td>
-                      <td><img src="images/marquee/IMG_3350.jpg" alt="" /></td>
-                      <td><img src="images/marquee/IMG_3350.jpg" alt="" /></td>
-
-                    </tr>
-                  </table>
-                </td>
-                <td></td>
-
-                <td></td>
-
-                <td id="pice2"></td>
-
-              </tr>
-            </table>
-          </div>
-  -->
-
-        <!--跑馬燈-->
-
+        include("marquee.php");
+        ?>
 
 </section>
-
-<!--Bottom-->
-<section id="bottom" class="main">
-    <!--Container-->
-    <div class="container">
-
-       <div class="row-fluid">
-
-            <!--Contact Form-->
-            <div class="span5">
-                <h4>相關資訊</h4>
-                <ul class="unstyled address">
-
-                    <li>
-                        <i class="icon-envelope"></i>
-                        <strong>Email: </strong> k90218104@gcloud.csu.edu.tw
-                    </li>
-
-                    <li>
-                        <i class="icon-phone"></i>
-                        <strong>Toll Free:</strong> 000-000
-                    </li>
-                </ul>
-            </div>
-            <!--End Contact Form-->
-
-            <!--Important Links-->
-            <div id="tweets" class="span3">
-                <h4>網站資訊</h4>
-                <div>
-                    <ul class="arrow">
-                        <li><a href="index.html">首頁</a></li>
-                        <li><a href="about.html">認識高雄</a></li>
-                        <li><a href="view.html">景點</a></li>
-                        <li><a href="fourm.html">討論區</a></li>
-
-                    </ul>
-                </div>
-            </div>
-            <!--Important Links-->
-
-        </div>
-
-
-</div>
-<!--/container-->
-
-
-
-
-</section>
-<!--/bottom-->
 
 <!--Footer-->
-<?php
-  require("footer.php");
- ?>
+  <?php
+    require("footer.php");
+   ?>
 <!--/Footer-->
 
 <!--  Login form -->
-<div class="modal hide fade in" id="loginForm" aria-hidden="false">
-    <div class="modal-header">
-        <i class="icon-remove" data-dismiss="modal" aria-hidden="true"></i>
-        <h4>會員登入</h4>
-    </div>
-    <!--Modal Body-->
-    <div class="modal-body">
-        <form class="form-inline" action="index.html" method="post" id="form-login">
-            <input type="text" class="input-small" placeholder="帳號">
-            <input type="password" class="input-small" placeholder="密碼">
-            <label class="checkbox">
-                <input type="checkbox"> 記住我
-            </label>
-            <button type="submit" class="btn btn-primary">登入</button>
-			<p><input type="text" style="width:60px">隨機六碼英數</p>
-        </form>
-        <a href="registration.html">註冊</a>｜
-        <a href="forget.html">忘記密碼?</a>
-    </div>
-    <!--/Modal Body-->
-</div>
+  <?php
+    include("login-form.php");
+   ?>
 <!--  /Login form -->
 
 <script src="js/vendor/jquery-1.9.1.min.js"></script>
 <script src="js/vendor/bootstrap.min.js"></script>
 <script src="js/main.js"></script>
 <!--<script type="text/javascript" src="1.js"></script>-->
-  <script src="js/vendor/modernizr-2.6.2-respond-1.1.0.min.js"></script>
+<script src="js/vendor/modernizr-2.6.2-respond-1.1.0.min.js"></script>
 <script src="js/jquery.ba-cond.min.js"></script>
 <script src="js/jquery.slitslider.js"></script>
-<!-- SL Slider -->
-<script type="text/javascript">
-$(function() {
-    var Page = (function() {
 
-        var $navArrows = $( '#nav-arrows' ),
-        slitslider = $( '#slider' ).slitslider( {
-            autoplay : true
-        } ),
-
-        init = function() {
-            initEvents();
-        },
-        initEvents = function() {
-            $navArrows.children( ':last' ).on( 'click', function() {
-                slitslider.next();
-                return false;
-            });
-
-            $navArrows.children( ':first' ).on( 'click', function() {
-                slitslider.previous();
-                return false;
-            });
-        };
-
-        return { init : init };
-
-    })();
-
-    Page.init();
-});
-</script>
-<!-- /SL Slider -->
 
 </body>
 </html>

@@ -6,7 +6,7 @@
 <head>
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-  <title>忘記密碼</title>
+  <title>會員註冊</title>
   <meta name="description" content="">
   <meta name="viewport" content="width=device-width">
 
@@ -29,50 +29,9 @@
 <body>
 
     <!--Header-->
-    <header class="navbar navbar-fixed-top">
-        <div class="navbar-inner">
-            <div class="container">
-                <a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                </a>
-                <!--<a id="logo" class="pull-left" href="index.html"></a>-->
-                <div class="nav-collapse collapse pull-right">
-                    
-					<form class="navbar-search pull-left">
-						<input type="text" class="search-query" placeholder="要去哪ㄜ...?">
-					</form>
-					
-					<ul class="nav">
-                        <li class="active"><a href="index.html">首頁</a></li>
-                        <li><a href="about.html">認識高雄</a></li>
-						<!--
-					   <li><a href="services.html">景點</a></li>-->
-                       
-					    <li class="dropdown">
-                            <a href="view.html" class="dropdown-toggle" data-toggle="dropdown">景點<i class="icon-angle-down"></i></a>
-							<div class="dropdown-menu">
-								<table class="table table-hover ">
-									<tr >
-                                        <td><a href="view.html">首頁</a></td>
-                                        <td><a href="area.html">地區名</a></td>
-                                    </tr>
-								</table>
-								
-                            </div>
-                        </li>
-					    
-                        <li><a href="forum.html">討論區</a></li> 
-                        <!--<li><a href="contact-us.html">Contact</a></li>-->
-                       <li class="login">
-                            <a data-toggle="modal" href="#loginForm"><i class="icon-user"></i></a>
-                        </li>
-                    </ul>        
-                </div><!--/.nav-collapse -->
-            </div>
-        </div>
-    </header>
+      <?php
+        include("header.php");
+       ?>
     <!-- /header -->
 
 
@@ -80,24 +39,29 @@
     <div class="container">
       <div class="row-fluid">
         <div class="span6">
-          <h1>忘記密碼</h1>
+          <h1>會員註冊</h1>
         </div>
         <div class="span6">
           <ul class="breadcrumb pull-right">
             <li><a href="index.html">首頁</a> <span class="divider">/</span></li>
-            <li class="active">忘記密碼</li>
+            <li class="active">註冊</li>
           </ul>
         </div>
       </div>
     </div>
   </section>
-  <!-- / .title -->       
+  <!-- / .title -->
 
 
   <section id="registration-page" class="container">
     <form class="center" action='' method="POST">
       <fieldset class="registration-form">
-        
+        <div class="control-group">
+          <!-- Username -->
+          <div class="controls">
+            <input type="text" id="username" name="username" placeholder="姓名" class="input-xlarge" required="required">
+          </div>
+        </div>
 
         <div class="control-group">
           <!-- E-mail -->
@@ -106,20 +70,34 @@
           </div>
         </div>
 
-         <div class="control-group">
+        <div class="control-group">
           <!-- Account-->
           <div class="controls">
             <input type="text" id="account" name="account" placeholder="帳號" class="input-xlarge"  required="required">
           </div>
         </div>
-		
-		<div class="control-group">
-          <!-- Button -->
+
+
+        <div class="control-group">
+          <!-- Password-->
           <div class="controls">
-            <button class="btn btn-success btn-large btn-block">送出</button>
+            <input type="password" id="password" name="password" placeholder="密碼" class="input-xlarge"  required="required">
           </div>
         </div>
-        
+
+        <div class="control-group">
+          <!-- Password -->
+          <div class="controls">
+            <input type="password" id="password_confirm" name="password_confirm" placeholder="再輸入一次密碼" class="input-xlarge"  required="required">
+          </div>
+        </div>
+
+        <div class="control-group">
+          <!-- Button -->
+          <div class="controls">
+            <button class="btn btn-success btn-large btn-block">註冊</button>
+          </div>
+        </div>
       </fieldset>
     </form>
   </section>
@@ -131,17 +109,17 @@
     <div class="container">
 
        <div class="row-fluid">
-           
+
             <!--Contact Form-->
             <div class="span5">
                 <h4>相關資訊</h4>
                 <ul class="unstyled address">
-                   
+
                     <li>
                         <i class="icon-envelope"></i>
                         <strong>Email: </strong> k90218104@gcloud.csu.edu.tw
                     </li>
-                    
+
                     <li>
                         <i class="icon-phone"></i>
                         <strong>Toll Free:</strong> 000-000
@@ -159,15 +137,15 @@
                         <li><a href="about.html">認識高雄</a></li>
                         <li><a href="view.html">景點</a></li>
                         <li><a href="fourm.html">討論區</a></li>
-                        
+
                     </ul>
-                </div>  
+                </div>
             </div>
             <!--Important Links-->
 
         </div>
-	   
-	   
+
+
 </div>
 <!--/container-->
 
@@ -181,12 +159,12 @@
 <footer id="footer">
     <div class="container">
         <div class="row-fluid">
-            
+
 			<div class="span5 cp">
                 by
             </div>
             <!--/Copyright-->
-			
+
 			<!--
             <div class="span6">
                 <ul class="social pull-right">
@@ -194,13 +172,13 @@
                     <li><a href="#"><i class="icon-twitter"></i></a></li>
                     <li><a href="#"><i class="icon-pinterest"></i></a></li>
                     <li><a href="#"><i class="icon-linkedin"></i></a></li>
-                    <li><a href="#"><i class="icon-google-plus"></i></a></li>                       
+                    <li><a href="#"><i class="icon-google-plus"></i></a></li>
                     <li><a href="#"><i class="icon-youtube"></i></a></li>
-                    <li><a href="#"><i class="icon-tumblr"></i></a></li>                        
+                    <li><a href="#"><i class="icon-tumblr"></i></a></li>
                     <li><a href="#"><i class="icon-dribbble"></i></a></li>
                     <li><a href="#"><i class="icon-rss"></i></a></li>
                     <li><a href="#"><i class="icon-github-alt"></i></a></li>
-                    <li><a href="#"><i class="icon-instagram"></i></a></li>                   
+                    <li><a href="#"><i class="icon-instagram"></i></a></li>
                 </ul>
             </div>
 			-->
@@ -214,27 +192,9 @@
 <!--/Footer-->
 
 <!--  Login form -->
-<div class="modal hide fade in" id="loginForm" aria-hidden="false">
-    <div class="modal-header">
-        <i class="icon-remove" data-dismiss="modal" aria-hidden="true"></i>
-        <h4>會員登入</h4>
-    </div>
-    <!--Modal Body-->
-    <div class="modal-body">
-        <form class="form-inline" action="index.html" method="post" id="form-login">
-            <input type="text" class="input-small" placeholder="Email">
-            <input type="password" class="input-small" placeholder="Password">
-            <label class="checkbox">
-                <input type="checkbox"> 記住我
-            </label>
-            <button type="submit" class="btn btn-primary">登入</button>
-			<p><input type="text" style="width:60px">隨機六碼英數</p>
-        </form>
-        <a href="registration.html">註冊</a>｜
-        <a href="forget.html">忘記密碼?</a>
-    </div>
-    <!--/Modal Body-->
-</div>
+<?php
+  include("login-form.php");
+ ?>
 <!--  /Login form -->
 
 <script src="js/vendor/jquery-1.9.1.min.js"></script>
