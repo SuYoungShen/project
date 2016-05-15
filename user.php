@@ -6,7 +6,7 @@
 <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-    <title>404 | Nova</title>
+    <title>使用者介面</title>
     <meta name="description" content="">
     <meta name="viewport" content="width=device-width">
 
@@ -106,75 +106,79 @@
 				<table class="table table-bordered" >
 					<tr>
 						<td>
-              <!-- <div class="accordion" id="accordion2">
+              <div class="accordion" id="accordion2">
                 <div class="accordion-group">
                   <div class="accordion-heading">
-                    <a class="accordion-toggle collapsed" data-toggle="collapse" data-parent="#accordion2" href="#collapseOne">
+                    <a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion2" href="#collapseOne">
                       景點名
                     </a>
                   </div>
                   <div id="collapseOne" class="accordion-body collapse">
                     <div class="accordion-inner">
-                      <img src="images/marquee/black.gif">
+                      <img src="http://autismcleveland.net/wp-content/uploads/2015/11/150210073337pm_1012106165.png">
                       景點介紹
                     </div>
-                  </div> -->
-                  <div class="accordion" id="accordion2">
-  <div class="accordion-group">
-    <div class="accordion-heading">
-      <a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion2" href="#collapseOne">
-        Collapsible Group Item #1
-      </a>
-    </div>
-    <div id="collapseOne" class="accordion-body collapse in">
-      <div class="accordion-inner">
-        Anim pariatur cliche...
-      </div>
-    </div>
-  </div>
-  <div class="accordion-group">
-    <div class="accordion-heading">
-      <a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion2" href="#collapseTwo">
-        Collapsible Group Item #2
-      </a>
-    </div>
-    <div id="collapseTwo" class="accordion-body collapse">
-      <div class="accordion-inner">
-        Anim pariatur cliche...
-      </div>
-    </div>
-  </div>
-</div>
-                
-
+                  </div>
+                </div>
+                <div class="accordion-group">
+                  <div class="accordion-heading">
+                    <a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion2" href="#collapseTwo">
+                      景點名
+                    </a>
+                  </div>
+                  <div id="collapseTwo" class="accordion-body collapse">
+                    <div class="accordion-inner">
+                      <img src="http://autismcleveland.net/wp-content/uploads/2015/11/150210073337pm_1012106165.png">
+                      景點介紹
+                    </div>
+                  </div>
+                </div>
+              </div>
             </td>
 					</tr>
 				</table>
-				</div>
+
+        </div>
 				<div class="span6">
 				<legend>我的最愛</legend>
 
 				<table class="table table-bordered">
 					<tr>
 						<td>
-						   <div class="accordion" id="accordion2">
-                    <div class="accordion-group">
-                      <div class="accordion-heading">
-                        <a class="accordion-toggle collapsed" data-toggle="collapse" data-parent="#accordion2" href="#collapseTwo">
-                          景點名
-                      </a>
-                  </div>
-                  <div id="collapseTwo" class="accordion-body collapse">
-                    <div class="accordion-inner">
-                      <img src="http://autismcleveland.net/wp-content/uploads/2015/11/150210073337pm_1012106165.png">
-					                 景點介紹
-                  </div>
-              </div>
+						   <div class="accordion" id="accordion3">
+                 <div class="accordion-group">
+                   <div class="accordion-heading">
+                     <a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion3" href="#collapseThree">
+                       景點名
+                     </a>
+                   </div>
+                   <div id="collapseThree" class="accordion-body collapse">
+                     <div class="accordion-inner">
+                       <img src="http://autismcleveland.net/wp-content/uploads/2015/11/150210073337pm_1012106165.png">
+                       景點介紹
+                     </div>
+                   </div>
+                 </div>
+                 <div class="accordion-group">
+                   <div class="accordion-heading">
+                     <a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion3" href="#collapseFour">
+                       景點名
+                     </a>
+                   </div>
+                   <div id="collapseFour" class="accordion-body collapse">
+                     <div class="accordion-inner">
+                       <img src="http://autismcleveland.net/wp-content/uploads/2015/11/150210073337pm_1012106165.png">
+                       景點介紹
+                     </div>
+                   </div>
+                 </div>
+
 						</td>
 					</tr>
 				</table>
-				</div>
-			</div>
+
+      </div>
+    </div>
 			</fieldset>
 		</form>
 

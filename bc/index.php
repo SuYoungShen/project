@@ -49,168 +49,58 @@
 	</head>
 
 	<body class="no-skin">
-		<div id="navbar" class="navbar navbar-default">
-			<script type="text/javascript">
-				try{ace.settings.check('navbar' , 'fixed')}catch(e){}
-			</script>
-
-			<div class="navbar-container" id="navbar-container">
-				<button type="button" class="navbar-toggle menu-toggler pull-left" id="menu-toggler" data-target="#sidebar">
-					<span class="sr-only">Toggle sidebar</span>
-
-					<span class="icon-bar"></span>
-
-					<span class="icon-bar"></span>
-
-					<span class="icon-bar"></span>
-				</button>
-
-				<div class="navbar-header pull-left">
-					<a href="index.html" class="navbar-brand">
-						<small>
-							<i class="fa fa-leaf"></i>
-							旅遊網站後台
-						</small>
-					</a>
-				</div>
-
-				<div class="navbar-buttons navbar-header pull-right" role="navigation">
-					<ul class="nav ace-nav">
-
-						<li class="purple">
-							<a data-toggle="dropdown" class="dropdown-toggle" href="#">
-								<i class="ace-icon fa fa-bell icon-animated-bell"></i>
-								<span class="badge badge-important">(幾則新留言)</span>
-							</a>
-
-							<ul class="dropdown-menu-right dropdown-navbar navbar-pink dropdown-menu dropdown-caret dropdown-close">
-								<li class="dropdown-header">
-									<i class="ace-icon fa fa-exclamation-triangle"></i>
-									(幾則新留言)
-								</li>
-
-								<li class="dropdown-content">
-									<ul class="dropdown-menu dropdown-navbar navbar-pink">
-										<li>
-											<a href="#">
-												<div class="clearfix">
-													<span class="pull-left">
-														<i class="btn btn-xs no-hover btn-pink fa fa-comment"></i>
-														討論區
-													</span>
-													<span class="pull-right badge badge-info">(幾則留言)</span>
-												</div>
-											</a>
-										</li>
-
-										<li>
-											<a href="#">
-												<div class="clearfix">
-													<span class="pull-left">
-														<i class="btn btn-xs no-hover btn-pink fa fa-comment"></i>
-														景點留言
-													</span>
-													<span class="pull-right badge badge-info">(幾則留言)</span>
-												</div>
-											</a>
-										</li>
-
-									</ul>
-								</li>
-
-							</ul>
-						</li>
-
-						<li class="light-blue">
-							<a data-toggle="dropdown" href="#" class="dropdown-toggle">
-
-								<span class="user-info">
-									<small>Welcome,</small>
-									(管理員)
-								</span>
-
-								<i class="ace-icon fa fa-caret-down"></i>
-							</a>
-
-							<ul class="user-menu dropdown-menu-right dropdown-menu dropdown-yellow dropdown-caret dropdown-close">
-								<li>
-									<a href="#">
-										<i class="ace-icon fa fa-power-off"></i>
-										登出
-									</a>
-								</li>
-							</ul>
-						</li>
-					</ul>
-				</div>
-
-			</div><!-- /.navbar-container -->
-		</div>
-
+		<?php
+			include("header.php");
+		?>
 		<div class="main-container" id="main-container">
 			<script type="text/javascript">
 				try{ace.settings.check('main-container' , 'fixed')}catch(e){}
 			</script>
 
-			<div id="sidebar" class="sidebar                  responsive">
+			<div id="sidebar" class="sidebar responsive">
 				<script type="text/javascript">
 					try{ace.settings.check('sidebar' , 'fixed')}catch(e){}
 				</script>
 
 				<div class="sidebar-shortcuts" id="sidebar-shortcuts">
-
-
 					<div class="sidebar-shortcuts-mini" id="sidebar-shortcuts-mini">
 						<span class="btn btn-success"></span>
-
 						<span class="btn btn-info"></span>
-
 						<span class="btn btn-warning"></span>
-
 						<span class="btn btn-danger"></span>
 					</div>
 				</div><!-- /.sidebar-shortcuts -->
 
 				<ul class="nav nav-list">
 					<li class="active">
-						<a href="index.html">
+						<a href="index.php">
 							<i class="menu-icon fa fa-home"></i>
 							<span class="menu-text">首頁 </span>
 						</a>
-
 						<b class="arrow"></b>
 					</li>
 
 					<li class="">
-						<a href="about.html" >
+						<a href="about.php" >
 							<i class="menu-icon fa fa-book"></i>
 							<span class="menu-text">認識高雄</span>
-
-
 						</a>
-
 						<b class="arrow"></b>
-
 					</li>
 
 
 					<li class="">
-						<a href="view.html">
+						<a href="view.php">
 							<i class="menu-icon fa fa-tree"></i>
 							<span class="menu-text"> 景點介紹</span>
-
-
 						</a>
-
 						<b class="arrow"></b>
-
 					</li>
 
 					<li class="">
 						<a href="#" class="dropdown-toggle">
 							<i class="menu-icon fa fa-bell icon-animated-bell"></i>
 							<span class="menu-text"> 留言 </span>
-
 							<b class="arrow fa fa-angle-down"></b>
 						</a>
 
@@ -218,20 +108,18 @@
 
 						<ul class="submenu">
 							<li class="">
-								<a href="forum.html">
+								<a href="forum.php">
 									<i class="menu-icon fa fa-caret-right"></i>
 									討論區
 								</a>
-
 								<b class="arrow"></b>
 							</li>
 
 							<li class="">
-								<a href="area-forum.html">
+								<a href="area-forum.php">
 									<i class="menu-icon fa fa-caret-right"></i>
 									景點留言
 								</a>
-
 								<b class="arrow"></b>
 							</li>
 						</ul>
@@ -239,11 +127,9 @@
 
 					<!--會員-->
 					<li class="">
-						<a href="member.html">
+						<a href="member.php">
 							<i class="menu-icon fa fa-user"></i>
 							<span class="menu-text"> 會員管理 </span>
-
-
 						</a>
 
 						<b class="arrow"></b>
@@ -272,7 +158,7 @@
 						<ul class="breadcrumb">
 							<li>
 								<i class="ace-icon fa fa-home home-icon"></i>
-								<a href="index.html">首頁</a>
+								<a href="index.php">首頁</a>
 							</li>
 						</ul><!-- /.breadcrumb -->
 
@@ -295,28 +181,28 @@
 						<div class="row">
 							<div class="col-xs-12">
 								<!-- PAGE CONTENT BEGINS -->
-								<form class="form-horizontal" role="form">
+								<!-- <form class="form-horizontal" role="form"> -->
+								<!--輪播照片-->
+								<div class="row">
+									<div class="col-sm-4">
+										<div class="widget-box">
+											<div class="widget-header">
+												<h4 class="widget-title">上傳輪播照片</h4>
 
-<!--輪播照片-->
-									<div class="row">
-										<div class="col-sm-4">
-											<div class="widget-box">
-												<div class="widget-header">
-													<h4 class="widget-title">上傳輪播照片</h4>
+												<div class="widget-toolbar">
+													<a href="#" data-action="collapse">
+														<i class="ace-icon fa fa-chevron-up"></i>
+													</a>
 
-													<div class="widget-toolbar">
-														<a href="#" data-action="collapse">
-															<i class="ace-icon fa fa-chevron-up"></i>
-														</a>
-
-														<a href="#" data-action="close">
-															<i class="ace-icon fa fa-times"></i>
-														</a>
-													</div>
+													<a href="#" data-action="close">
+														<i class="ace-icon fa fa-times"></i>
+													</a>
 												</div>
+											</div>
 
-												<div class="widget-body">
-													<div class="widget-main">
+											<div class="widget-body">
+												<div class="widget-main">
+													<form class="form-horizontal" role="form" action="" method="post">
 														<div class="form-group">
 															<div class="col-xs-12">
 																<input multiple="" type="file" id="id-input-file-3" />
@@ -331,79 +217,55 @@
 																<i class="ace-icon fa fa-check bigger-110"></i>
 																送出
 															</button>
-
 															&nbsp; &nbsp; &nbsp;
-
 														</label>
-													</div>
-												</div>
-
-
-											</div>
-										</div>
-
-
-										<div class="col-sm-8">
-											<div class="widget-box">
-												<div class="widget-header">
-													<h4 class="widget-title">輪播</h4>
-												</div>
-
-												<div class="widget-body">
-													<div class="widget-main">
-														<div id="myCarousel" class="carousel slide">
-														  <ol class="carousel-indicators">
-															<li data-target="#myCarousel" data-slide-to="0" class="active"></li>
-															<li data-target="#myCarousel" data-slide-to="1"></li>
-															<li data-target="#myCarousel" data-slide-to="2"></li>
-														  </ol>
-														  <!-- Carousel items -->
-														  <div class="carousel-inner">
-															<div class="active item"><img src="../images/sample/slider/autox520.jpg"></div>
-															<div class="item"><img src="../images/sample/slider/autox520.jpg"></div>
-															<div class="item"><img src="../images/sample/slider/autox520.jpg"></div>
-														  </div>
-														  <!-- Carousel nav -->
-														  <a class="carousel-control left"  href="#myCarousel" data-slide="prev">&lsaquo;</a>
-														  <a class="carousel-control right" href="#myCarousel" data-slide="next">&rsaquo;</a>
-														</div>
-
-													</div>
+													</form>
 												</div>
 											</div>
 										</div>
-
-
 									</div>
-<!--輪播照片-->
-
-									<div class="hr hr-18 dotted hr-double"></div>
-									<div class="page-header">
-										<h1>Top6</h1>
-									</div><!-- /.page-header -->
 
 
+									<div class="col-sm-8">
+										<div class="widget-box">
+											<div class="widget-header">
+												<h4 class="widget-title">輪播</h4>
+											</div>
 
+											<div class="widget-body">
+												<?php
+													include("slider.php");
+												 ?>
+											</div>
+										</div>
+									</div>
+								</div>
+								<!--輪播照片-->
+								<div class="hr hr-18 dotted hr-double"></div>
+								<div class="page-header">
+									<h1>Top6</h1>
+								</div><!-- /.page-header -->
 
-									<div class="row">
-										<div class="col-sm-4">
-											<div class="widget-box">
-												<div class="widget-header">
-													<h4 class="widget-title">上傳輪播照片</h4>
+								<div class="row">
+									<div class="col-sm-4">
+										<div class="widget-box">
+											<div class="widget-header">
+												<h4 class="widget-title">上傳輪播照片</h4>
 
-													<div class="widget-toolbar">
-														<a href="#" data-action="collapse">
-															<i class="ace-icon fa fa-chevron-up"></i>
-														</a>
+												<div class="widget-toolbar">
+													<a href="#" data-action="collapse">
+														<i class="ace-icon fa fa-chevron-up"></i>
+													</a>
 
-														<a href="#" data-action="close">
-															<i class="ace-icon fa fa-times"></i>
-														</a>
-													</div>
+													<a href="#" data-action="close">
+														<i class="ace-icon fa fa-times"></i>
+													</a>
 												</div>
+											</div>
 
-												<div class="widget-body">
-													<div class="widget-main">
+											<div class="widget-body">
+												<div class="widget-main">
+													<form class="form-horizontal" role="form" method="post" action="">
 														<div class="form-group">
 															<div class="col-xs-12">
 																<input multiple="" type="file" id="id-input-file-2" multiple="multiple" />
@@ -411,241 +273,60 @@
 														</div>
 
 														<label>
-
 															<br/>
 															<button class="btn btn-info" type="button">
 																<i class="ace-icon fa fa-check bigger-110"></i>
 																送出
 															</button>
-
 															&nbsp; &nbsp; &nbsp;
-
 														</label>
-													</div>
+													</form>
 												</div>
-
-
 											</div>
 										</div>
-											<div class="col-sm-8">
-												<div class="widget-box">
-													<div class="widget-header">
-														<h4 class="widget-title">Top6</h4>
+									</div>
+									<div class="col-sm-8">
+										<div class="widget-box">
+											<div class="widget-header">
+												<h4 class="widget-title">Top6</h4>
 
-														<span class="widget-toolbar">
-															<a href="#" data-action="settings">
-																<i class="ace-icon fa fa-cog"></i>
-															</a>
+												<span class="widget-toolbar">
+													<a href="#" data-action="settings">
+														<i class="ace-icon fa fa-cog"></i>
+													</a>
 
-															<a href="#" data-action="reload">
-																<i class="ace-icon fa fa-refresh"></i>
-															</a>
+													<a href="#" data-action="reload">
+														<i class="ace-icon fa fa-refresh"></i>
+													</a>
 
-															<a href="#" data-action="collapse">
-																<i class="ace-icon fa fa-chevron-up"></i>
-															</a>
+													<a href="#" data-action="collapse">
+														<i class="ace-icon fa fa-chevron-up"></i>
+													</a>
 
-															<a href="#" data-action="close">
-																<i class="ace-icon fa fa-times"></i>
-															</a>
-														</span>
-													</div>
-
-
-
-													<div class="widget-body">
-														<div class="widget-main">
-															<ul class="ace-thumbnails clearfix">
-																<li>
-																	<a href="assets/images/gallery/image-1.jpg" title="景點名" data-rel="colorbox">
-																		<img width="150" height="150" alt="150x150" src="assets/images/gallery/thumb-1.jpg" />
-																		<div class="text">
-																			<div class="inner">景點名</div>
-																		</div>
-																	</a>
-
-
-
-																	<div class="tools tools-top">
-																		<a href="#">
-																			<i class="ace-icon fa fa-link"></i>
-																		</a>
-
-																		<a href="#">
-																			<i class="ace-icon fa fa-paperclip"></i>
-																		</a>
-
-																		<a href="#">
-																			<i class="ace-icon fa fa-pencil"></i>
-																		</a>
-
-																		<a href="#">
-																			<i class="ace-icon fa fa-times red"></i>
-																		</a>
-																	</div>
-																</li>
-
-																<li>
-																	<a href="assets/images/gallery/image-2.jpg" title="景點名" data-rel="colorbox">
-																		<img width="150" height="150" alt="150x150" src="assets/images/gallery/thumb-2.jpg" />
-																		<div class="text">
-																			<div class="inner">景點名</div>
-																		</div>
-																		<div class="tools tools-top">
-																		<a href="#">
-																			<i class="ace-icon fa fa-link"></i>
-																		</a>
-
-																		<a href="#">
-																			<i class="ace-icon fa fa-paperclip"></i>
-																		</a>
-
-																		<a href="#">
-																			<i class="ace-icon fa fa-pencil"></i>
-																		</a>
-
-																		<a href="#">
-																			<i class="ace-icon fa fa-times red"></i>
-																		</a>
-																	</div>
-																	</a>
-																</li>
-
-																<li>
-																	<a href="assets/images/gallery/image-3.jpg" title="景點名" data-rel="colorbox">
-																		<img width="150" height="150" alt="150x150" src="assets/images/gallery/thumb-3.jpg" />
-																		<div class="text">
-																			<div class="inner">景點名</div>
-																		</div>
-																	</a>
-
-																	<div class="tools tools-top">
-																		<a href="#">
-																			<i class="ace-icon fa fa-link"></i>
-																		</a>
-
-																		<a href="#">
-																			<i class="ace-icon fa fa-paperclip"></i>
-																		</a>
-
-																		<a href="#">
-																			<i class="ace-icon fa fa-pencil"></i>
-																		</a>
-
-																		<a href="#">
-																			<i class="ace-icon fa fa-times red"></i>
-																		</a>
-																	</div>
-																</li>
-
-																<li>
-																	<a href="assets/images/gallery/image-4.jpg" title="景點名" data-rel="colorbox">
-																		<img width="150" height="150" alt="150x150" src="assets/images/gallery/thumb-4.jpg" />
-																		<div class="text">
-																			<div class="inner">景點名</div>
-																		</div>
-																	</a>
-
-																	<div class="tools tools-top">
-																		<a href="#">
-																			<i class="ace-icon fa fa-link"></i>
-																		</a>
-
-																		<a href="#">
-																			<i class="ace-icon fa fa-paperclip"></i>
-																		</a>
-
-																		<a href="#">
-																			<i class="ace-icon fa fa-pencil"></i>
-																		</a>
-
-																		<a href="#">
-																			<i class="ace-icon fa fa-times red"></i>
-																		</a>
-																	</div>
-																</li>
-
-																<li>
-																	<a href="assets/images/gallery/image-5.jpg" title="景點名" data-rel="colorbox">
-																		<img width="150" height="150" alt="150x150" src="assets/images/gallery/thumb-5.jpg" />
-																		<div class="text">
-																			<div class="inner">景點名</div>
-																		</div>
-																	</a>
-
-																	<div class="tools tools-top">
-																		<a href="#">
-																			<i class="ace-icon fa fa-link"></i>
-																		</a>
-
-																		<a href="#">
-																			<i class="ace-icon fa fa-paperclip"></i>
-																		</a>
-
-																		<a href="#">
-																			<i class="ace-icon fa fa-pencil"></i>
-																		</a>
-
-																		<a href="#">
-																			<i class="ace-icon fa fa-times red"></i>
-																		</a>
-																	</div>
-																</li>
-
-																<li>
-																	<a href="assets/images/gallery/image-6.jpg" title="景點名" data-rel="colorbox">
-																		<img width="150" height="150" alt="150x150" src="assets/images/gallery/thumb-6.jpg" />
-																		<div class="text">
-																			<div class="inner">景點名</div>
-																		</div>
-																	</a>
-
-																	<div class="tools tools-top">
-																		<a href="#">
-																			<i class="ace-icon fa fa-link"></i>
-																		</a>
-
-																		<a href="#">
-																			<i class="ace-icon fa fa-paperclip"></i>
-																		</a>
-
-																		<a href="#">
-																			<i class="ace-icon fa fa-pencil"></i>
-																		</a>
-
-																		<a href="#">
-																			<i class="ace-icon fa fa-times red"></i>
-																		</a>
-																	</div>
-																</li>
-
-
-															</ul>
-
-														</div><!-- PAGE CONTENT ENDS -->
-													</div>
-												</div>
-
-
+													<a href="#" data-action="close">
+														<i class="ace-icon fa fa-times"></i>
+													</a>
+												</span>
 											</div>
 
-
+											<div class="widget-body">
+												<div class="widget-main">
+													<?php
+													include("top6.php");
+													?>
+												</div><!-- PAGE CONTENT ENDS -->
+											</div>
 										</div>
 									</div>
-
-
-									</div>
-								</form>
-
-								<div class="hr hr-18 dotted hr-double"></div>
-
-
-
-							</div><!-- /.col -->
-						</div><!-- /.row -->
-					</div><!-- /.page-content -->
-				</div>
-			</div><!-- /.main-content -->
+								</div>
+							</div>
+						</div>
+						<div class="hr hr-18 dotted hr-double"></div>
+					</div><!-- /.col -->
+				</div><!-- /.row -->
+			</div><!-- /.page-content -->
+		</div>
+	</div><!-- /.main-content -->
 
 			<div class="footer">
 				<div class="footer-inner">
@@ -1120,38 +801,38 @@
 		<!--顯示照片-->
 		<script type="text/javascript">
 			jQuery(function($) {
-	var $overflow = '';
-	var colorbox_params = {
-		rel: 'colorbox',
-		reposition:true,
-		scalePhotos:true,
-		scrolling:false,
-		previous:'<i class="ace-icon fa fa-arrow-left"></i>',
-		next:'<i class="ace-icon fa fa-arrow-right"></i>',
-		close:'&times;',
-		current:'{current} of {total}',
-		maxWidth:'100%',
-		maxHeight:'100%',
-		onOpen:function(){
-			$overflow = document.body.style.overflow;
-			document.body.style.overflow = 'hidden';
-		},
-		onClosed:function(){
-			document.body.style.overflow = $overflow;
-		},
-		onComplete:function(){
-			$.colorbox.resize();
-		}
-	};
+			var $overflow = '';
+			var colorbox_params = {
+			rel: 'colorbox',
+			reposition:true,
+			scalePhotos:true,
+			scrolling:false,
+			previous:'<i class="ace-icon fa fa-arrow-left"></i>',
+			next:'<i class="ace-icon fa fa-arrow-right"></i>',
+			close:'&times;',
+			current:'{current} of {total}',
+			maxWidth:'100%',
+			maxHeight:'100%',
+			onOpen:function(){
+				$overflow = document.body.style.overflow;
+				document.body.style.overflow = 'hidden';
+			},
+			onClosed:function(){
+				document.body.style.overflow = $overflow;
+			},
+			onComplete:function(){
+				$.colorbox.resize();
+			}
+		};
 
-	$('.ace-thumbnails [data-rel="colorbox"]').colorbox(colorbox_params);
-	$("#cboxLoadingGraphic").html("<i class='ace-icon fa fa-spinner orange fa-spin'></i>");//let's add a custom loading icon
+		$('.ace-thumbnails [data-rel="colorbox"]').colorbox(colorbox_params);
+		$("#cboxLoadingGraphic").html("<i class='ace-icon fa fa-spinner orange fa-spin'></i>");//let's add a custom loading icon
 
 
-	$(document).one('ajaxloadstart.page', function(e) {
-		$('#colorbox, #cboxOverlay').remove();
-   });
-})
+		$(document).one('ajaxloadstart.page', function(e) {
+			$('#colorbox, #cboxOverlay').remove();
+	   });
+	})
 		</script>
 	</body>
 </html>

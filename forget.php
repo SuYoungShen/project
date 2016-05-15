@@ -70,6 +70,13 @@
         </div>
 
         <div class="control-group">
+         <!-- Account-->
+         <div class="controls">
+           <input type="text" id="account" name="name" placeholder="姓名" class="input-xlarge"  required="required">
+         </div>
+       </div>
+
+        <div class="control-group">
           <!-- submit -->
           <div class="controls">
             <button class="btn btn-success btn-large btn-block">送出</button>
@@ -79,6 +86,10 @@
       </fieldset>
     </form>
   </section>
+  <br/>
+  <br/>
+
+
   <!-- /#registration-page -->
   <!--footer-->
   <?php
