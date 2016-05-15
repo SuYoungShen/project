@@ -9,7 +9,7 @@
     </style>
 
     <marquee scrollAmount="20" BEHAVIOR="scroll"  loop="0">
-      <img src="images/marquee/IMG_3350.jpg"  />
-      <img src="images/marquee/white.gif" />
-      <img src="images/marquee/black.gif" />
+      <img src="../images/marquee/IMG_3350.jpg"  />
+      <img src="../images/marquee/white.gif" />
+      <img src="../images/marquee/black.gif" />
     </marquee>
