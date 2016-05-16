@@ -42,104 +42,9 @@
 	</head>
 
 	<body class="no-skin">
-		<div id="navbar" class="navbar navbar-default">
-			<script type="text/javascript">
-				try{ace.settings.check('navbar' , 'fixed')}catch(e){}
-			</script>
-
-			<div class="navbar-container" id="navbar-container">
-				<button type="button" class="navbar-toggle menu-toggler pull-left" id="menu-toggler" data-target="#sidebar">
-					<span class="sr-only">Toggle sidebar</span>
-
-					<span class="icon-bar"></span>
-
-					<span class="icon-bar"></span>
-
-					<span class="icon-bar"></span>
-				</button>
-
-				<div class="navbar-header pull-left">
-					<a href="index.html" class="navbar-brand">
-						<small>
-							<i class="fa fa-leaf"></i>
-							會員管理
-						</small>
-					</a>
-				</div>
-
-				<div class="navbar-buttons navbar-header pull-right" role="navigation">
-					<ul class="nav ace-nav">
-
-						<li class="purple">
-							<a data-toggle="dropdown" class="dropdown-toggle" href="#">
-								<i class="ace-icon fa fa-bell icon-animated-bell"></i>
-								<span class="badge badge-important">(幾則新留言)</span>
-							</a>
-
-							<ul class="dropdown-menu-right dropdown-navbar navbar-pink dropdown-menu dropdown-caret dropdown-close">
-								<li class="dropdown-header">
-									<i class="ace-icon fa fa-exclamation-triangle"></i>
-									(幾則新留言)
-								</li>
-
-								<li class="dropdown-content">
-									<ul class="dropdown-menu dropdown-navbar navbar-pink">
-										<li>
-											<a href="#">
-												<div class="clearfix">
-													<span class="pull-left">
-														<i class="btn btn-xs no-hover btn-pink fa fa-comment"></i>
-														討論區
-													</span>
-													<span class="pull-right badge badge-info">(幾則留言)</span>
-												</div>
-											</a>
-										</li>
-
-										<li>
-											<a href="#">
-												<div class="clearfix">
-													<span class="pull-left">
-														<i class="btn btn-xs no-hover btn-pink fa fa-comment"></i>
-														景點留言
-													</span>
-													<span class="pull-right badge badge-info">(幾則留言)</span>
-												</div>
-											</a>
-										</li>
-
-									</ul>
-								</li>
-
-							</ul>
-						</li>
-
-						<li class="light-blue">
-							<a data-toggle="dropdown" href="#" class="dropdown-toggle">
-
-								<span class="user-info">
-									<small>Welcome,</small>
-									(管理員)
-								</span>
-
-								<i class="ace-icon fa fa-caret-down"></i>
-							</a>
-
-							<ul class="user-menu dropdown-menu-right dropdown-menu dropdown-yellow dropdown-caret dropdown-close">
-								<li>
-									<a href="#">
-										<i class="ace-icon fa fa-power-off"></i>
-										Logout
-									</a>
-								</li>
-							</ul>
-						</li>
-					</ul>
-				</div>
-
-			</div><!-- /.navbar-container -->
-		</div>
-
+		<?php
+			include("header.php");
+		 ?>
 		<div class="main-container" id="main-container">
 			<script type="text/javascript">
 				try{ace.settings.check('main-container' , 'fixed')}catch(e){}
@@ -166,7 +71,7 @@
 
 				<ul class="nav nav-list">
 					<li class="">
-						<a href="index.html">
+						<a href="index.php">
 							<i class="menu-icon fa fa-home"></i>
 							<span class="menu-text">首頁 </span>
 						</a>
@@ -175,28 +80,23 @@
 					</li>
 
 					<li class="">
-						<a href="about.html">
+						<a href="about.php">
 							<i class="menu-icon fa fa-book"></i>
 							<span class="menu-text">
 								認識高雄
 							</span>
-
-
 						</a>
 						<b class="arrow"></b>
 					</li>
 
 
 					<li class="">
-						<a href="view.html">
+						<a href="view.php">
 							<i class="menu-icon fa fa-tree"></i>
 							<span class="menu-text"> 景點介紹</span>
-
-
 						</a>
 
 						<b class="arrow"></b>
-
 
 					</li>
 
@@ -204,7 +104,6 @@
 						<a href="#" class="dropdown-toggle">
 							<i class="menu-icon fa fa-bell icon-animated-bell"></i>
 							<span class="menu-text"> 留言 </span>
-
 							<b class="arrow fa fa-angle-down"></b>
 						</a>
 
@@ -212,20 +111,18 @@
 
 						<ul class="submenu">
 							<li class="">
-								<a href="forum.html">
+								<a href="forum.php">
 									<i class="menu-icon fa fa-caret-right"></i>
 									討論區
 								</a>
-
 								<b class="arrow"></b>
 							</li>
 
 							<li class="">
-								<a href="area-forum.html">
+								<a href="area-forum.php">
 									<i class="menu-icon fa fa-caret-right"></i>
 									景點留言
 								</a>
-
 								<b class="arrow"></b>
 							</li>
 						</ul>
@@ -233,16 +130,11 @@
 
 					<!--會員-->
 					<li class="active">
-						<a href="member.html">
+						<a href="member.php">
 							<i class="menu-icon fa fa-user"></i>
 							<span class="menu-text"> 會員管理 </span>
-
-
 						</a>
-
 						<b class="arrow"></b>
-
-
 					</li>
 					<!--會員-->
 				</ul><!-- /.nav-list -->
@@ -269,7 +161,7 @@
 						<ul class="breadcrumb">
 							<li>
 								<i class="ace-icon fa fa-home home-icon"></i>
-								<a href="index.html">首頁</a>
+								<a href="index.php">首頁</a>
 							</li>
 
 							<li>
