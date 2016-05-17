@@ -56,8 +56,6 @@
 				</script>
 
 				<div class="sidebar-shortcuts" id="sidebar-shortcuts">
-
-
 					<div class="sidebar-shortcuts-mini" id="sidebar-shortcuts-mini">
 						<span class="btn btn-success"></span>
 
@@ -89,15 +87,12 @@
 						<b class="arrow"></b>
 					</li>
 
-
 					<li class="">
 						<a href="view.php">
 							<i class="menu-icon fa fa-tree"></i>
 							<span class="menu-text"> 景點介紹</span>
 						</a>
-
 						<b class="arrow"></b>
-
 					</li>
 
 					<li class="">
@@ -139,9 +134,6 @@
 					<!--會員-->
 				</ul><!-- /.nav-list -->
 
-
-
-
 				<div class="sidebar-toggle sidebar-collapse" id="sidebar-collapse">
 					<i class="ace-icon fa fa-angle-double-left" data-icon1="ace-icon fa fa-angle-double-left" data-icon2="ace-icon fa fa-angle-double-right"></i>
 				</div>
@@ -167,7 +159,6 @@
 							<li>
 								會員管理
 							</li>
-
 						</ul><!-- /.breadcrumb -->
 
 						<div class="nav-search" id="nav-search">
@@ -178,7 +169,7 @@
 								</span>
 							</form>
 						</div><!-- /.nav-search -->
-					</div>
+					</div><!--breadcrumbs-->
 
 					<div class="page-content">
 						<div class="page-header">
@@ -308,19 +299,14 @@
 										</form>
 									</div><!-- /.col -->
 								</div><!-- /.row -->
-
 							</div><!-- /.modal-content -->
 						</div><!-- /.modal-dialog -->
 					</div><!-- PAGE CONTENT ENDS -->
 					<!--member-->
-
-
-
 				</div><!-- /.main-content-inner -->
-				<!--member-->
 			</div><!-- /.main-content -->
-		</div><!-- /.page-content -->
-				
+		</div><!-- /.main-content -->
+
 			<div class="footer">
 				<div class="footer-inner">
 					<div class="footer-content">

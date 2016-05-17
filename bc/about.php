@@ -228,6 +228,21 @@
 							</div><!-- /.col -->
 						</div>
 
+						<ul class="nav nav-tabs" id="myTab" data-toggle="tab" data-toggle="pill"	>
+						  <li class="active"><a href="#home">Home</a></li>
+						  <li><a href="#profile">Profile</a></li>
+						  <li><a href="#messages">Messages</a></li>
+						  <li><a href="#settings">Settings</a></li>
+						</ul>
+
+						<div class="tab-content">
+						  <div class="tab-pane active" id="home">sss</div>
+						  <div class="tab-pane" id="profile">ccc</div>
+						  <div class="tab-pane" id="messages">scsc</div>
+						  <div class="tab-pane" id="settings">sssss</div>
+						</div>
+
+						
 						<div class="hr hr-18 dotted hr-double"></div>
 						<!--輪放-->
 						<div class="page-header">
@@ -333,7 +348,7 @@
 							<!-- div.table-responsive -->
 
 							<!-- 地區 -->
-							<div>
+							<div >
 								<table id="dynamic-table" class="table table-striped table-bordered table-hover">
 									<thead>
 										<tr>
