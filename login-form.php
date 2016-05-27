@@ -215,9 +215,9 @@
               </div><!-- /.position-relative -->
             </div>
           </div><!-- /.col -->
-        <!-- </div><!-- /.row --> -->
-      <!-- </div><!-- /.main-content --> -->
-    <!-- </div><!-- /.main-container --> -->
+        <!-- </div><!-- /.row --> 
+      <!-- </div><!-- /.main-content --> 
+    <!-- </div><!-- /.main-container --> 
 
   </div>
     <!-- basic scripts -->
