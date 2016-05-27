@@ -15,7 +15,7 @@
   <link rel="stylesheet" href="css/bootstrap-responsive.min.css">
   <link rel="stylesheet" href="css/font-awesome.min.css">
   <link rel="stylesheet" href="css/main.css">
-  <link rel="stylesheet" href="css/sl-slide.css">
+
   <script src="js/vendor/modernizr-2.6.2-respond-1.1.0.min.js"></script>
 
   <!-- Le fav and touch icons -->
@@ -51,43 +51,6 @@
     </div>
   </section>
   <!-- / .title -->
-
-  <section id="registration-page" class="container">
-    <form class="center" action='' method="POST">
-      <fieldset class="registration-form">
-        <div class="control-group">
-          <!-- E-mail -->
-          <div class="controls">
-            <input type="text" id="email" name="email" placeholder="E-mail" class="input-xlarge"  required="required">
-          </div>
-        </div>
-
-         <div class="control-group">
-          <!-- Account-->
-          <div class="controls">
-            <input type="text" id="account" name="account" placeholder="帳號" class="input-xlarge"  required="required">
-          </div>
-        </div>
-
-        <div class="control-group">
-         <!-- Account-->
-         <div class="controls">
-           <input type="text" id="account" name="name" placeholder="姓名" class="input-xlarge"  required="required">
-         </div>
-       </div>
-
-        <div class="control-group">
-          <!-- submit -->
-          <div class="controls">
-            <button class="btn btn-success btn-large btn-block">送出</button>
-          </div>
-        </div>
-
-      </fieldset>
-    </form>
-  </section>
-  <br/>
-  <br/>
 
 
   <!-- /#registration-page -->
