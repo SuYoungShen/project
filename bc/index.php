@@ -182,6 +182,7 @@
 							<div class="col-xs-12">
 								<!-- PAGE CONTENT BEGINS -->
 								<!-- <form class="form-horizontal" role="form"> -->
+
 								<!--輪播照片-->
 								<div class="row">
 									<div class="col-sm-4">
@@ -202,10 +203,12 @@
 
 											<div class="widget-body">
 												<div class="widget-main">
-													<form class="form-horizontal" role="form" action="" method="post">
+													<form class="form-horizontal" role="form"
+                             method="post" enctype="multipart/form-data">
+
 														<div class="form-group">
 															<div class="col-xs-12">
-																<input multiple="" type="file" id="id-input-file-3" />
+																<input multiple="" name="file" type="file" id="id-input-file-3" />
 															</div>
 														</div>
 
@@ -213,7 +216,7 @@
 															<input type="checkbox" name="file-format" id="id-file-format" class="ace" />
 															<span class="lbl"> 顯示照片</span>
 															<br/>
-															<button class="btn btn-info" type="button">
+															<button class="btn btn-info" type="submit" name="send">
 																<i class="ace-icon fa fa-check bigger-110"></i>
 																送出
 															</button>
@@ -231,15 +234,45 @@
 											<div class="widget-header">
 												<h4 class="widget-title">輪播</h4>
 											</div>
+											<!-- <img src="../images/sample/slider/autox520-2.jpg"> -->
 
 											<div class="widget-body">
-												<?php
-													include("slider.php");
-												 ?>
+												<div class="widget-main">
+													<div id="myCarousel" class="carousel slide" data-ride="carousel" >
+														<ol class="carousel-indicators">
+															<li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+															<li data-target="#myCarousel" data-slide-to="1"></li>
+															<li data-target="#myCarousel" data-slide-to="2"></li>
+														</ol>
+
+														<div class="carousel-inner">
+															<div class="active item">
+																<img src="../images/sample/slider/autox520.jpg">
+															</div>
+
+															<div class="item">
+																<img src="../images/sample/slider/autox520-1.jpg">
+															</div>
+
+															<div class="item">
+																<img src="../images/sample/slider/autox520-2.jpg">
+															</div>
+															<?php
+															// include("index/slider/slider.php");
+															?>
+														</div>
+
+
+														<a class="carousel-control left"  href="#myCarousel" data-slide="prev">&lsaquo;</a>
+														<a class="carousel-control right" href="#myCarousel" data-slide="next">&rsaquo;</a>
+													</div>
+												</div>
 											</div>
 										</div>
 									</div>
 								</div>
+
+
 								<!--輪播照片-->
 								<div class="hr hr-18 dotted hr-double"></div>
 								<div class="page-header">
@@ -265,16 +298,18 @@
 
 											<div class="widget-body">
 												<div class="widget-main">
-													<form class="form-horizontal" role="form" method="post" action="">
+													<form class="form-horizontal" role="form" method="post"
+																	enctype="multipart/form-data">
 														<div class="form-group">
 															<div class="col-xs-12">
-																<input multiple="" type="file" id="id-input-file-2" multiple="multiple" />
+																<input  name="top6[]" type="file"
+																	id="id-input-file-4" multiple="multiple" />
 															</div>
 														</div>
 
 														<label>
 															<br/>
-															<button class="btn btn-info" type="button">
+															<button class="btn btn-info" type="submit">
 																<i class="ace-icon fa fa-check bigger-110"></i>
 																送出
 															</button>
@@ -312,7 +347,7 @@
 											<div class="widget-body">
 												<div class="widget-main">
 													<?php
-													include("top6.php");
+													include("index/top6/top6.php");
 													?>
 												</div><!-- PAGE CONTENT ENDS -->
 											</div>
@@ -583,6 +618,36 @@
 					//console.log($(this).data('ace_input_method'));
 				});
 
+				$('#id-input-file-4').ace_file_input({
+					style:'well',
+					btn_choose:'Drop files here or click to choose',
+					btn_change:null,
+					no_icon:'ace-icon fa fa-cloud-upload',
+					droppable:true,
+					thumbnail:'small'//large | fit
+					//,icon_remove:null//set null, to hide remove/reset button
+					/**,before_change:function(files, dropped) {
+						//Check an example below
+						//or examples/file-upload.html
+						return true;
+					}*/
+					/**,before_remove : function() {
+						return true;
+					}*/
+					,
+					preview_error : function(filename, error_code) {
+						//name of the file that failed
+						//error_code values
+						//1 = 'FILE_LOAD_FAILED',
+						//2 = 'IMAGE_LOAD_FAILED',
+						//3 = 'THUMBNAIL_FAILED'
+						//alert(error_code);
+					}
+
+				}).on('change', function(){
+					//console.log($(this).data('ace_input_files'));
+					//console.log($(this).data('ace_input_method'));
+				});
 
 				//$('#id-input-file-3')
 				//.ace_file_input('show_file_list', [
@@ -612,6 +677,7 @@
 						whitelist_ext = null;//all extensions are acceptable
 						whitelist_mime = null;//all mimes are acceptable
 					}
+
 					var file_input = $('#id-input-file-3');
 					file_input
 					.ace_file_input('update_settings',

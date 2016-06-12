@@ -21,7 +21,7 @@
         <div class="row"> -->
           <div class="col-sm-10 col-sm-offset-1">
             <div class="login-container">
-              <i class="icon-remove" data-dismiss="modal" aria-hidden="true"></i>
+              <!-- <i class="icon-remove" data-dismiss="modal" aria-hidden="true"></i> -->
               <!-- <div class="center modal-header">
                 <h1>
                   <i class="ace-icon fa fa-leaf green"></i>
@@ -194,7 +194,7 @@
                               <span class="bigger-110">重填</span>
                             </button>
 
-                            <button type="button" class="width-65 pull-right btn btn-sm btn-success">
+                            <button type="button" class="width-60 pull-right btn btn-sm btn-success">
                               <span class="bigger-110">註冊</span>
 
                               <i class="ace-icon fa fa-arrow-right icon-on-right"></i>
@@ -215,9 +215,9 @@
               </div><!-- /.position-relative -->
             </div>
           </div><!-- /.col -->
-        <!-- </div><!-- /.row --> 
-      <!-- </div><!-- /.main-content --> 
-    <!-- </div><!-- /.main-container --> 
+        <!-- </div><!-- /.row -->
+      <!-- </div><!-- /.main-content -->
+    <!-- </div><!-- /.main-container -->
 
   </div>
     <!-- basic scripts -->

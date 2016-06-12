@@ -36,9 +36,9 @@
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>
           </a>
-          <!--
-          <a id="logo" class="pull-left" href="index.html"></a>
-        -->
+
+          <a id="logo" class="pull-left" href="index.php"></a>
+
         <div class="nav-collapse collapse pull-right">
           <form class="navbar-search pull-left" action="" method="">
             <input type="text" class="search-query" placeholder="要去哪ㄜ...?">
@@ -90,7 +90,7 @@
                 <img class="pull-right" src="images/sample/slider/autox520.jpg" alt="" />
                 <h2>高雄85大樓</h2>
                 <!-- <h3 class="gap">Tincidunt condimentum eros</h3>
-                <a class="btn btn-large btn-transparent" href="#">Learn More</a> --> -->
+                <a class="btn btn-large btn-transparent" href="#">Learn More</a> -->
               </div>
             </div>
           </div>
