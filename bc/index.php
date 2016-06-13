@@ -852,8 +852,6 @@
 				})
 				*/
 
-
-
 				$(document).one('ajaxloadstart.page', function(e) {
 					$('textarea[class*=autosize]').trigger('autosize.destroy');
 					$('.limiterBox,.autosizejs').remove();
