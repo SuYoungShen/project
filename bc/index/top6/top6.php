@@ -22,26 +22,22 @@ if(isset($_FILES["top6"])){
     $top6tmp = $_FILES["top6"]["tmp_name"][$key];//抓取檔案
 
     if(file_exists($top6dir.$top6name)){//檢查是否有相同檔案
+
       $date = date("Y-m-d H:i:s");//時間
-      echo "<script>top6();</script>";
-      $in = "Update test Set
+      echo "<script> top6(); </script>";
+
+      $in = "Update top Set
                         name = '".$top6name."',
                         path = '".$top6dir."',
-                        datatime = '".$date."'
+                        datetime = '".$date."'
                       Where
                         id = '".$key."'
                       ";
-                      // if (is_file($top6dir.$top6name)) {
-                      //   // echo $top6name;
-                      //   unlink($top6dir.$top6name);
-                      // }
-
     }else {
 
       move_uploaded_file($top6tmp,$top6dir.$top6name);//把檔案移到指定dir
-
-
-      $in = "Update test Set
+      $date = date("Y-m-d H:i:s");//時間
+      $in = "Update top Set
                             name = '".$top6name."',
                             path = '".$top6dir."',
                             datetime = '".$date."'
@@ -63,7 +59,7 @@ while (  $row = mysqli_fetch_array($test)) {
      <a href='index/top6/images/$top6' title='景點名' data-rel='colorbox'>
        <img width='150' height='150' alt='150x150' src='index/top6/images/$top6'/>
          <div class='text'>
-           <div class='inner'>景點名</div>
+           <div class='inner'>$top6</div>
          </div>
      </a>
 
@@ -79,7 +75,8 @@ while (  $row = mysqli_fetch_array($test)) {
    </li>
   ";
 }
- // $row = mysqli_fetch_array($test);
+
+ mysqli_close($db);
 ?>
 
 </ul>
