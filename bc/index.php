@@ -261,8 +261,6 @@
 															// include("index/slider/slider.php");
 															?>
 														</div>
-
-
 														<a class="carousel-control left"  href="#myCarousel" data-slide="prev">&lsaquo;</a>
 														<a class="carousel-control right" href="#myCarousel" data-slide="next">&rsaquo;</a>
 													</div>
@@ -298,12 +296,16 @@
 
 											<div class="widget-body">
 												<div class="widget-main">
-													<form class="form-horizontal" role="form" method="post"
+													<form class="form-horizontal"  role="form" method="post"
 																	enctype="multipart/form-data">
 														<div class="form-group">
 															<div class="col-xs-12">
 																<input  name="top6[]" type="file"
 																	id="id-input-file-4" multiple="multiple" />
+																	<!-- <input type="text" name="randd" value="Y"> -->
+
+
+
 															</div>
 														</div>
 
@@ -315,6 +317,16 @@
 															</button>
 															&nbsp; &nbsp; &nbsp;
 														</label>
+
+														<label>
+															<br/>
+															<button class="btn btn-info" type="submit" name = "clear">
+																<i class="ace-icon fa fa-check bigger-110"></i>
+																清除name
+															</button>
+															&nbsp; &nbsp; &nbsp;
+														</label>
+
 													</form>
 												</div>
 											</div>
@@ -346,9 +358,11 @@
 
 											<div class="widget-body">
 												<div class="widget-main">
-													<?php
-													include("index/top6/top6.php");
-													?>
+													<ul class="ace-thumbnails clearfix">
+														<?php
+															include ("index/top6/top6.php");
+														?>
+													</ul>
 												</div><!-- PAGE CONTENT ENDS -->
 											</div>
 										</div>

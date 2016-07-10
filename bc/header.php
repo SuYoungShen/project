@@ -1,3 +1,6 @@
+<?php
+  session_start();
+ ?>
 <div id="navbar" class="navbar navbar-default">
   <script type="text/javascript">
     try{ace.settings.check('navbar' , 'fixed')}catch(e){}
