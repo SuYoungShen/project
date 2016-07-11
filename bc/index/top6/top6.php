@@ -74,7 +74,11 @@
   // echo $se;
   // session_unset($_SESSION["id"]);
 
-echo date("Y-m-d H:i:s",strtotime("+10 Second"))."<br>";
+if (!isset($_SESSION["id"]) && !isset($_SESSION["idd"])) {
+  $_SESSION["id"] = 0;
+  $_SESSION["idd"] = 1;
+}
+
 $toptime = $db->query(topse());
 $rows = $toptime->fetchAll();
 
@@ -105,18 +109,20 @@ $rows = $toptime->fetchAll();
          $toptimes[$keys] = $value[3];//取時間
 
         }
+
+
+
         if (isset($_SESSION["id"]) && isset($_SESSION["idd"])) {
 
           $se = $_SESSION["id"];
           $see = $_SESSION["idd"];
 
-          if ($se > 4) {
+          if ($se > 5) {
 
             $_SESSION["id"] = 0;
             $se = $_SESSION["id"];
 
           }
-
 
 
           if ($see > 5) {
@@ -127,19 +133,22 @@ $rows = $toptime->fetchAll();
 
 
 
-          if($toptimes["$se"] < $toptimes["$see"]){
-            echo "string";
+          $toptime = strtotime($toptimes["$se"]) < strtotime($toptimes["$see"]);
+          $$toptime = strtotime($toptimes["$se"]) == strtotime($toptimes["$see"]);
+
+          if($toptime || $$toptime){
+
             $topup = topup($top6name, $top6dir, $date, $topid["$se"]);//更新檔名
             $db->query($topup);//執行更新指令
-            $_SESSION["id"]++;
 
           }else {
-            echo "$see";
+
             $topup = topup($top6name, $top6dir, $date, $topid["$see"]);//更新檔名
             $db->query($topup);//執行更新指令
-            $_SESSION["idd"]++;
 
           }
+          $_SESSION["id"]++;
+          $_SESSION["idd"]++;
 
 
         }
@@ -151,6 +160,8 @@ $rows = $toptime->fetchAll();
   }
 
 
+  echo "See=".$_SESSION["idd"]."<br>";
+  echo "SESSION=".$_SESSION["id"]."<br>";
 $topse = $db->query(topse());//查詢top資料表
 
   while ($row = $topse->fetch()) {
@@ -178,8 +189,7 @@ $topse = $db->query(topse());//查詢top資料表
   }
 
 
-  echo "See=".$_SESSION["idd"]."<br>";
-  echo "SESSION=".$_SESSION["id"]."<br>";
+
 
     foreach ($rows as $key => $value) {
       echo $key.$value[3]."<br>";
@@ -189,13 +199,15 @@ $topse = $db->query(topse());//查詢top資料表
       $clear = $_POST["clear"];
       for ($i=0; $i < 6; $i++) {
         $clear = $db->query("UPDATE top SET
-                          name = ' '
+                          name = ' ',
+                          datetime = ' '
                         WHERE
                           '".$i."'
                         ");
       }
-      $_SESSION["id"]=0;
-      $_SESSION["idd"]=1;
+      
+      $_SESSION["id"] = 0;
+      $_SESSION["idd"] = 1;
     }
 
 ?>
