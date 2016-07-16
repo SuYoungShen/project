@@ -40,12 +40,15 @@
 		<!-- ace settings handler -->
 		<script src="assets/js/ace-extra.min.js"></script>
 
+
+
 		<!-- HTML5shiv and Respond.js for IE8 to support HTML5 elements and media queries -->
 
 		<!--[if lte IE 8]>
 		<script src="assets/js/html5shiv.min.js"></script>
 		<script src="assets/js/respond.min.js"></script>
 		<![endif]-->
+
 	</head>
 
 	<body class="no-skin">
@@ -300,18 +303,15 @@
 																	enctype="multipart/form-data">
 														<div class="form-group">
 															<div class="col-xs-12">
-																<input  name="top6[]" type="file"
+																<input name="top6[]" type="file"
 																	id="id-input-file-4" multiple="multiple" />
-																	<!-- <input type="text" name="randd" value="Y"> -->
-
-
-
+																	<input type="hidden" name="randd" value="<?php echo sha1("top6");?>">
 															</div>
 														</div>
 
 														<label>
 															<br/>
-															<button class="btn btn-info" type="submit">
+															<button class="btn btn-info" type="submit" >
 																<i class="ace-icon fa fa-check bigger-110"></i>
 																送出
 															</button>
@@ -444,12 +444,19 @@
 		<script src="assets/js/jquery.inputlimiter.1.3.1.min.js"></script>
 		<script src="assets/js/jquery.maskedinput.min.js"></script>
 		<script src="assets/js/bootstrap-tag.min.js"></script>
+		<!-- <script scr ="assets/js/checktmp.js"></script> -->
+
+
+
 
 		<!-- ace scripts -->
 		<script src="assets/js/ace-elements.min.js"></script>
 		<script src="assets/js/ace.min.js"></script>
 		<script src="assets/js/jquery.colorbox.min.js"></script>
 		<!-- inline scripts related to this page -->
+
+
+
 		<script type="text/javascript">
 			jQuery(function($) {
 				$('#id-disable-check').on('click', function() {
