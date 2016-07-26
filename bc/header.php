@@ -1,4 +1,5 @@
 <?php
+
   session_start();
  ?>
 <div id="navbar" class="navbar navbar-default">

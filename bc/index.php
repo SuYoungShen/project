@@ -39,8 +39,7 @@
 
 		<!-- ace settings handler -->
 		<script src="assets/js/ace-extra.min.js"></script>
-
-
+		<script src="assets/js/jquery-1.11.0.min.js"></script>
 
 		<!-- HTML5shiv and Respond.js for IE8 to support HTML5 elements and media queries -->
 
@@ -206,75 +205,53 @@
 
 											<div class="widget-body">
 												<div class="widget-main">
-													<form class="form-horizontal" role="form"
-                             method="post" enctype="multipart/form-data">
-
+													<form class="form-horizontal"  role="form" method="post"
+																	enctype="multipart/form-data">
 														<div class="form-group">
 															<div class="col-xs-12">
-																<input multiple="" name="file" type="file" id="id-input-file-3" />
+																<input name="slider[]" type="file"
+																	id="id-input-file-3" multiple="multiple" />
 															</div>
 														</div>
 
 														<label>
-															<input type="checkbox" name="file-format" id="id-file-format" class="ace" />
-															<span class="lbl"> 顯示照片</span>
 															<br/>
-															<button class="btn btn-info" type="submit" name="send">
+															<button class="btn btn-info" type="submit" >
 																<i class="ace-icon fa fa-check bigger-110"></i>
 																送出
 															</button>
 															&nbsp; &nbsp; &nbsp;
 														</label>
+
 													</form>
 												</div>
 											</div>
-										</div>
-									</div>
-
-
-									<div class="col-sm-8">
-										<div class="widget-box">
-											<div class="widget-header">
-												<h4 class="widget-title">輪播</h4>
-											</div>
-											<!-- <img src="../images/sample/slider/autox520-2.jpg"> -->
-
-											<div class="widget-body">
-												<div class="widget-main">
-													<div id="myCarousel" class="carousel slide" data-ride="carousel" >
-														<ol class="carousel-indicators">
-															<li data-target="#myCarousel" data-slide-to="0" class="active"></li>
-															<li data-target="#myCarousel" data-slide-to="1"></li>
-															<li data-target="#myCarousel" data-slide-to="2"></li>
-														</ol>
-
-														<div class="carousel-inner">
-															<div class="active item">
-																<img src="../images/sample/slider/autox520.jpg">
-															</div>
-
-															<div class="item">
-																<img src="../images/sample/slider/autox520-1.jpg">
-															</div>
-
-															<div class="item">
-																<img src="../images/sample/slider/autox520-2.jpg">
-															</div>
-															<?php
-															// include("index/slider/slider.php");
-															?>
-														</div>
-														<a class="carousel-control left"  href="#myCarousel" data-slide="prev">&lsaquo;</a>
-														<a class="carousel-control right" href="#myCarousel" data-slide="next">&rsaquo;</a>
-													</div>
-												</div>
-											</div>
-										</div>
 									</div>
 								</div>
 
+								<div class="col-sm-8" >
+									<div class="widget-box">
+										<div class="widget-header">
+											<h4 class="widget-title">輪播</h4>
+										</div>
 
-								<!--輪播照片-->
+										<div class="widget-body">
+											<div class="widget-main">
+												<div id="myCarousel" class="carousel slide" data-ride="carousel" >
+													<?php
+													include("index/slider/slider.php");
+													?>
+												</div>
+												<a class="carousel-control left"  href="#myCarousel" data-slide="prev">&lsaquo;</a>
+												<a class="carousel-control right" href="#myCarousel" data-slide="next">&rsaquo;</a>
+											</div>
+											
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+							<!--輪播照片-->
 								<div class="hr hr-18 dotted hr-double"></div>
 								<div class="page-header">
 									<h1>Top6</h1>
@@ -305,7 +282,6 @@
 															<div class="col-xs-12">
 																<input name="top6[]" type="file"
 																	id="id-input-file-4" multiple="multiple" />
-																	<input type="hidden" name="randd" value="<?php echo sha1("top6");?>">
 															</div>
 														</div>
 
@@ -326,7 +302,6 @@
 															</button>
 															&nbsp; &nbsp; &nbsp;
 														</label>
-
 													</form>
 												</div>
 											</div>
@@ -445,8 +420,7 @@
 		<script src="assets/js/jquery.maskedinput.min.js"></script>
 		<script src="assets/js/bootstrap-tag.min.js"></script>
 		<!-- <script scr ="assets/js/checktmp.js"></script> -->
-
-
+		<script src="../js/checkFile.js"></script><!--檢查檔案-->
 
 
 		<!-- ace scripts -->

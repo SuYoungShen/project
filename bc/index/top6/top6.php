@@ -14,99 +14,6 @@ if (!isset($_SESSION["topnum"]) && !isset($_SESSION["topnums"])) {
   $toptime = $db->query(topse());
   $rows = $toptime->fetchAll();
 
-  // if(isset($_FILES["top6"])){//檢查有沒有檔案
-  //
-  //   foreach($_FILES["top6"]["tmp_name"] as $key => $top6_tmp_name){//檔案以陣列方式接收
-  //     // echo "key:".$key;
-  //     $top6_name = $_FILES["top6"]["name"][$key];//抓取檔案名稱
-  //     $top6_tmp = $_FILES["top6"]["tmp_name"][$key];//抓取檔案
-  //     $top6_tmps = strrchr($top6_name,".");//取得檔案的副檔名
-  //
-  //     $toptmp = array('.jpg', '.png', '.bmp', '.gif', '.tif', '.pcx', '.psd');//設定副檔名
-  //
-  //     if (!in_array($top6_tmps,$toptmp)) {//檢查副檔名
-  //       $toptmp = "不好意思,只接受".implode($toptmp)."的副檔名";
-  //     echo "
-  //       <script>
-  //         var value = '$toptmp';
-  //         top6(value);
-  //       </script>";
-  //       break;
-  //     }
-  //
-  //     date_default_timezone_set('Asia/Taipei');//設定時間為台北
-  //     $date = date("Y-m-d H:i:s");//時間
-  //
-  //     if(file_exists($top6dir.$top6_name)){//檢查是否有相同檔案
-  //
-  //       $topname = basename($top6_name,"$top6_tmps");//去除副檔名,留檔名
-  //       echo "
-  //       <script>
-  //         var value = '資料夾裡已有名稱'+$topname+'的檔案';
-  //         top6(value);
-  //       </script>
-  //       ";
-  //
-  //     }else {
-  //
-  //       move_uploaded_file($top6_tmp,$top6dir.$top6_name);//把檔案移到指定dir
-  //
-  //       foreach ($rows as $keys => $value) {
-  //         // echo "keys:".$keys;
-  //         $topid[$keys] = $value[0];//取id
-  //         $toptimes[$keys] = $value[3];//取時間
-  //       }
-  //        $rowsc = count($rows);//計算總共有幾筆資料
-  //       //時間比對
-  //       if (isset($_SESSION["topnum"]) && isset($_SESSION["topnums"])) {
-  //
-  //         $topnum = $_SESSION["topnum"];
-  //         $topnums = $_SESSION["topnums"];
-  //
-  //         if ($topnum > ($rowsc-1)) {
-  //
-  //           $_SESSION["topnum"] = 0;
-  //           $topnum = $_SESSION["topnum"];
-  //
-  //         }
-  //
-  //         if ($topnums > ($rowsc-1)) {
-  //           $_SESSION["topnums"] = 0;
-  //           $topnums = $_SESSION["topnums"];
-  //
-  //         }
-  //         //時間比對
-  //         $toptime = strtotime($toptimes["$topnum"]) < strtotime($toptimes["$topnums"]);
-  //         $toptimess = strtotime($toptimes["$topnum"]) == strtotime($toptimes["$topnums"]);
-  //
-  //         if($toptime || $toptimess){
-  //
-  //           $topup = topup($top6_name, $top6dir, $date, $topid["$topnum"]);//更新檔名
-  //           $db->query($topup);//執行更新指令
-  //
-  //         }else {
-  //
-  //           $topup = topup($top6_name, $top6dir, $date, $topid["$topnums"]);//更新檔名
-  //           $db->query($topup);//執行更新指令
-  //
-  //         }
-  //         $_SESSION["topnum"]++;
-  //         $_SESSION["topnums"]++;
-  //       }//if(session["topnum"])
-  //     }//else
-  //   }//foreach
-  // }//FILE["top6"]
-
-
-    // echo "s
-    //   <script>
-    //    //  var value = '不小心按到送出了!對吧XDDD';
-    //    //  top6(value);
-    //   </script>
-    //   ";
-
-
-
   if (isset($_FILES["top6"])) {
 
     foreach($_FILES["top6"]["tmp_name"] as $key => $top6_tmp_name){//檔案以陣列方式接收
@@ -125,13 +32,15 @@ if (!isset($_SESSION["topnum"]) && !isset($_SESSION["topnums"])) {
 
         $top6_name = $_FILES["top6"]["name"][$key];//抓取檔案名稱
         $top6_tmp = $_FILES["top6"]["tmp_name"][$key];//抓取檔案
+        $top6_size = $_FILES["top6"]["size"][$key];//抓取檔案大小
         $top6_tmps = strrchr($top6_name,".");//取得檔案的副檔名
+
         $toptmp = array('.jpg', '.JPG', '.png', '.PNG'
-                        , '.bmp', '.gif', '.tif', '.pcx', '.psd');//設定副檔名
+                        , '.bmp', '.gif');//設定副檔名
 
         if (!in_array($top6_tmps,$toptmp)) {//檢查副檔名
 
-          $toptmp = "不好意思,只接受".implode($toptmp)."的副檔名";
+          $toptmp = "不好意思,只接受".implode(" ",$toptmp)."的副檔名";
           echo "
           <script>
           var value = '$toptmp';
@@ -139,6 +48,15 @@ if (!isset($_SESSION["topnum"]) && !isset($_SESSION["topnums"])) {
           </script>";
           break;
 
+        }else if($top6_size > 2097152){//檢查檔案大小
+
+          $topsize = $top6_name."檔案已超過2MB";
+          echo "
+          <script>
+          var value = '$topsize';
+          top6(value);
+          </script>";
+          break;
         }
 
         date_default_timezone_set('Asia/Taipei');//設定時間為台北
