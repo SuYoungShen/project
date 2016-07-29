@@ -24,6 +24,12 @@
 		<!-- text fonts -->
 		<link rel="stylesheet" href="assets/fonts/fonts.googleapis.com.css" />
 
+<!-- slide -->
+		<link rel="stylesheet" href="../css/font-awesome.min.css">
+		<link rel="stylesheet" href="../css/sl-slide.css">
+		<script src="../js/vendor/modernizr-2.6.2-respond-1.1.0.min.js"></script>
+		<!-- slide -->
+
 		<!-- ace styles -->
 		<link rel="stylesheet" href="assets/css/ace.min.css" class="ace-main-stylesheet" id="main-ace-style" />
 
@@ -237,15 +243,30 @@
 
 										<div class="widget-body">
 											<div class="widget-main">
-												<div id="myCarousel" class="carousel slide" data-ride="carousel" >
-													<?php
-													include("index/slider/slider.php");
-													?>
-												</div>
-												<a class="carousel-control left"  href="#myCarousel" data-slide="prev">&lsaquo;</a>
-												<a class="carousel-control right" href="#myCarousel" data-slide="next">&rsaquo;</a>
+
+												<section id="slide-show">
+													<div id="slider" class="sl-slider-wrapper">
+														<!--Slider Items-->
+														<div class="sl-slider">
+														<?php
+															include ("index/slider/slider.php");
+														 ?>
+														</div>
+														<!--/Slider Items-->
+
+														<!--Slider Next Prev button-->
+														<nav id="nav-arrows" class="nav-arrows">
+
+															<span class="nav-arrow-prev"><i class="icon-angle-left"></i></span>
+															<span class="nav-arrow-next"><i class="icon-angle-right"></i></span>
+														</nav>
+														<!--/Slider Next Prev button-->
+													</div>
+													<!-- /slider-wrapper -->
+												</section>
+
+												<!--/Slider-->
 											</div>
-											
 										</div>
 									</div>
 								</div>
@@ -422,6 +443,11 @@
 		<!-- <script scr ="assets/js/checktmp.js"></script> -->
 		<script src="../js/checkFile.js"></script><!--檢查檔案-->
 
+		<!--slider-->
+		<script src="../js/jquery.ba-cond.min.js"></script>
+		<script src="../js/jquery.slitslider.js"></script>
+		<script type="text/javascript" src="../js/slider.js"></script>
+		<!--slider-->
 
 		<!-- ace scripts -->
 		<script src="assets/js/ace-elements.min.js"></script>

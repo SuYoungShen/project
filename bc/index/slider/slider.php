@@ -9,26 +9,12 @@ $sliderse = $db->query(sliderse());//查詢slider資料表
 $row = $sliderse->fetchAll();
 $sliderdir='index/slider/images/';//slider放毒片路徑
 
-echo "
-<ol class='carousel-indicators'>
-  <li data-target='#myCarousel' data-slide-to='0' class='active'></li>
-";
-for($i = 1; $i < count($row); $i++)
-{
-  echo "<li data-target='#myCarousel' data-slide-to='$i'></li>";
-}
-echo "</ol>";
-
-echo "<div class='carousel-inner'>";
-
-
 if (!isset($_SESSION["slidernum"]) && !isset($_SESSION["slidernums"])) {
   $_SESSION["slidernum"] = 0;
   $_SESSION["slidernums"] = 1;
 }
 
-  $slidertime = $db->query(sliderse());
-  $rows = $slidertime->fetchAll();
+  $slidertime =  $row;
 
   if (isset($_FILES["slider"])) {
 
@@ -92,26 +78,26 @@ if (!isset($_SESSION["slidernum"]) && !isset($_SESSION["slidernums"])) {
 
           move_uploaded_file($slider6_tmp,$sliderdir.$slider6_name);//把檔案移到指定dir
 
-          foreach ($rows as $keys => $value) {
+          foreach ($slidertime as $keys => $value) {
             // echo "keys:".$keys;
             $sliderid[$keys] = $value[0];//取id
             $slidertimes[$keys] = $value[3];//取時間
           }
-          $rowsc = count($rows);//計算總共有幾筆資料
+          $slidertimec = count($slidertime);//計算總共有幾筆資料
           //時間比對
           if (isset($_SESSION["slidernum"]) && isset($_SESSION["slidernums"])) {
 
             $slidernum = $_SESSION["slidernum"];
             $slidernums = $_SESSION["slidernums"];
 
-            if ($slidernum > ($rowsc-1)) {
+            if ($slidernum > ($slidertimec-1)) {
 
               $_SESSION["slidernum"] = 0;
               $slidernum = $_SESSION["slidernum"];
 
             }
 
-            if ($slidernums > ($rowsc-1)) {
+            if ($slidernums > ($slidertimec-1)) {
               $_SESSION["slidernums"] = 0;
               $slidernums = $_SESSION["slidernums"];
 
@@ -129,7 +115,7 @@ if (!isset($_SESSION["slidernum"]) && !isset($_SESSION["slidernums"])) {
 
               $sliderup = sliderup($slider6_name, $sliderdir, $date, $sliderid["$slidernums"]);//更新檔名
               $db->query($sliderup);//執行更新指令
-              
+
             }
             $_SESSION["slidernum"]++;
             $_SESSION["slidernums"]++;
@@ -152,26 +138,23 @@ if (!isset($_SESSION["slidernum"]) && !isset($_SESSION["slidernums"])) {
 // }
 
 foreach ($row as $key => $value) {
-  //  echo $key."<br>";
-  $test[$key]=$value[1];
-  // echo $test;
-}
-$test0 = $test[0];
-echo "
-<div class='active item'>
-  <img src='index/slider/images/$test0'>
-</div>
-";
-for ($i=1; $i < 6; $i++) {
-  $test1 = $test[$i];
+   $va = $value[1];
   echo "
-  <div class='item'>
-    <img src='index/slider/images/$test1'>
+  <div class='sl-slide item$key' data-orientation='horizontal' data-slice1-rotation='-25' data-slice2-rotation='-25' data-slice1-scale='2' data-slice2-scale='2'>
+    <div class='sl-slide-inner'>
+      <div class='container'>
+        <img class='pull-right' src='index/slider/images/$va' alt='' height='520' width='950'/>
+        <h2>高雄85大樓</h2>
+        <!-- <h3 class='gap'>Tincidunt condimentum eros</h3>
+        <a class='btn btn-large btn-transparent' href='#'>Learn More</a> -->
+      </div>
+    </div>
   </div>
   ";
 }
 
-    //
+
+
     // foreach ($rows as $key => $value) { //取得資料庫
     //   echo $key.$value[3]."<br>";//顯示id && 時間
     // }

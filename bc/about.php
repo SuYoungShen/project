@@ -242,7 +242,7 @@
 						  <div class="tab-pane" id="settings">sssss</div>
 						</div>
 
-						
+
 						<div class="hr hr-18 dotted hr-double"></div>
 						<!--輪放-->
 						<div class="page-header">
