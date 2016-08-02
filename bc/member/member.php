@@ -1,7 +1,39 @@
-<?php
-  include("../");
- ?>
 
+<?php
+  include("mysql/connect.php");
+  include ("common.php");
+  $memberse = $db->query(memberse());
+  if (isset($_POST["account"])) {
+    if (is_null($_POST["account"])) {
+    echo "string";
+  }else {
+    echo "s";
+  }
+  }
+  // $member = is_null($_POST["account"]) &&
+  //           is_null($_POST["password"]) &&
+  //           is_null($_POST["email"]) &&
+  //           is_null($_POST["name"]);
+  //
+  // if ($member) {
+  //
+  //   $account = $_POST["account"];//抓取帳號
+  //   $password = $_POST["password"];//抓取密碼
+  //   $email = $_POST["email"];//抓取email
+  //   $name = $_POST["name"];//抓取會員名字
+  //
+  //   if ($account) {
+  //     # code...
+  //   }
+  //
+  //   $memberin = memberin($account ,$password ,$email ,$name);
+  //   $db->query($memberin);
+  //
+  //
+  // }
+
+
+ ?>
 
 <tr>
   <td class="center">

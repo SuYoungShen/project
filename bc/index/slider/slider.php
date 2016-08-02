@@ -1,5 +1,3 @@
-<script type="text/javascript" src="index/slider/js/alert.js"></script>
-
 <?php
 
   include ("mysql/connect.php");//連接資料庫
@@ -27,7 +25,7 @@ if (!isset($_SESSION["slidernum"]) && !isset($_SESSION["slidernums"])) {
         echo "
         <script>
           var value = '不小心按到送出了齁~~~';
-          top6(value);
+          alerts(value);
         </script>";
 
       }else if($slider6_error == 0){
@@ -46,7 +44,7 @@ if (!isset($_SESSION["slidernum"]) && !isset($_SESSION["slidernums"])) {
           echo "
           <script>
           var value = '$slidertmp';
-          top6(value);
+          alerts(value);
           </script>";
           break;
 
@@ -56,7 +54,7 @@ if (!isset($_SESSION["slidernum"]) && !isset($_SESSION["slidernums"])) {
           echo "
           <script>
             var value = '$slidersize';
-            top6(value);
+            alerts(value);
           </script>";
           break;
         }
@@ -70,7 +68,7 @@ if (!isset($_SESSION["slidernum"]) && !isset($_SESSION["slidernums"])) {
           echo "
           <script>
             var value = '資料夾裡已有名稱'+$slidername+'的檔案';
-            top6(value);
+            alerts(value);
           </script>
           ";
 

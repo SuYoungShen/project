@@ -52,10 +52,11 @@
 
 			<div id="sidebar" class="sidebar responsive">
 				<script type="text/javascript">
-				try{ace.settings.check('sidebar' , 'fixed')}catch(e){}
+					try{ace.settings.check('sidebar' , 'fixed')}catch(e){}
 				</script>
 
 				<div class="sidebar-shortcuts" id="sidebar-shortcuts">
+
 					<div class="sidebar-shortcuts-mini" id="sidebar-shortcuts-mini">
 						<span class="btn btn-success"></span>
 
@@ -73,7 +74,6 @@
 							<i class="menu-icon fa fa-home"></i>
 							<span class="menu-text">首頁 </span>
 						</a>
-
 						<b class="arrow"></b>
 					</li>
 
@@ -92,7 +92,27 @@
 							<i class="menu-icon fa fa-tree"></i>
 							<span class="menu-text"> 景點介紹</span>
 						</a>
+
 						<b class="arrow"></b>
+
+						<ul class="submenu">
+							<li class="">
+								<a href="view.php">
+									<i class="menu-icon fa fa-caret-right"></i>
+									首頁
+								</a>
+
+								<b class="arrow"></b>
+							</li>
+
+							<li class="">
+								<a href="area.php">
+									<i class="menu-icon fa fa-caret-right"></i>
+									地區名
+								</a>
+								<b class="arrow"></b>
+							</li>
+						</ul>
 					</li>
 
 					<li class="active open">
@@ -127,8 +147,9 @@
 					<li class="">
 						<a href="member.php">
 							<i class="menu-icon fa fa-user"></i>
-							<span class="menu-text"> 討論區 </span>
+							<span class="menu-text"> 會員管理 </span>
 						</a>
+
 						<b class="arrow"></b>
 					</li>
 					<!--會員-->
@@ -141,13 +162,13 @@
 				<script type="text/javascript">
 					try{ace.settings.check('sidebar' , 'collapsed')}catch(e){}
 				</script>
-			</div><!--sidebar-->
+			</div>
 
 			<div class="main-content">
 				<div class="main-content-inner">
 					<div class="breadcrumbs" id="breadcrumbs">
 						<script type="text/javascript">
-						try{ace.settings.check('breadcrumbs' , 'fixed')}catch(e){}
+							try{ace.settings.check('breadcrumbs' , 'fixed')}catch(e){}
 						</script>
 
 						<ul class="breadcrumb">
@@ -170,28 +191,27 @@
 								</span>
 							</form>
 						</div><!-- /.nav-search -->
-					</div><!--breadcrumbs-->
+					</div>
 
 					<div class="page-content">
 						<div class="page-header">
-							<h1>
-								會員
-							</h1>
+							<h1>討論區</h1>
 						</div><!-- /.page-header -->
 
 						<!--會員-->
 						<div class="row">
 							<div class="col-xs-12">
 								<div class="table-header">
-									會員資料
-									<a href="#member" class="btn btn-app btn-green btn-xs" role="button" class="green" data-toggle="modal">
-										<i class="ace-icon glyphicon-plus bigger-150"></i>
+									<a href="#forum" class="btn btn-app btn-green btn-xs" role="button" class="green" data-toggle="modal">
+										回復
 									</a>
 									<a href="#" class="btn btn-app btn-danger btn-xs" role="button" class="green" data-toggle="modal">
 										<i class="ace-icon fa fa-trash-o bigger-150"></i>
 									</a>
-								</div><!-- div.table-responsive -->
+								</div>
+								<!-- table-header -->
 
+								<!-- div.dataTables_borderWrap -->
 								<div>
 									<table id="dynamic-table" class="table table-striped table-bordered table-hover">
 										<thead>
@@ -203,16 +223,14 @@
 													</label>
 												</th>
 												<th>主題</th>
-												<th>回覆(紀錄總共有幾則)</th>
-												<th class="hidden-480">發表人(訪客、抓取會員名)</th>
+												<th>回覆(記綠總共有幾則)</th>
+												<th >發表人(訪客、抓取會員名)</th>
+												<th>回覆</th>
+												<th >觀看(點擊次數)</th>
 
-												<th class="hidden-480">回覆</th>
-												<th>
-														觀看(點及次數)
-												</th>
 												<th>
 													<i class="ace-icon fa fa-clock-o bigger-110 hidden-480"></i>
-													最後登入時間
+													最新回應時間
 												</th>
 
 												<th></th>
@@ -221,19 +239,19 @@
 
 										<tbody>
 											<?php
-											include("message/forum/forum.php");
+											include("forum/forum.php");
 											?>
 										</tbody>
 									</table>
 								</div>
-							</div>
-						</div>
+							</div><!--col-->
+						</div><!--row-->
 						<!--會員-->
 						<hr>
 					</div><!--page-content-->
 
 					<!--member-->
-					<div id="member" class="modal fade" tabindex="-1">
+					<div id="forum" class="modal fade" tabindex="-1">
 						<div class="modal-dialog">
 							<div class="modal-content">
 								<div class="modal-header no-padding">
@@ -241,48 +259,47 @@
 										<button type="button" class="close" data-dismiss="modal" aria-hidden="true">
 											<span class="white">&times;</span>
 										</button>
-										新增會員
+										&nbsp;
 									</div>
-								</div>
+								</div><!--modal-header-->
+
 								<div class="row">
 									<div class="col-xs-12">
 										<!-- PAGE CONTENT BEGINS -->
-										<form class="form-horizontal" role="form" action="member/member.php">
+										<form class="form-horizontal" role="form" action="forum/member.php">
 											<div class="form-group">
-												<label class="col-sm-3 control-label no-padding-right" for="form-field-1"> 帳號	 </label>
+												<label class="col-sm-3 control-label no-padding-right" for="form-field-1"> 主題	 </label>
 
 												<div class="col-sm-9">
-													<input type="text" id="form-field-1" placeholder="帳號" class="col-xs-10 col-sm-5" />
+													<input type="text" id="form-field-1" placeholder="顯示發表者主題	" class="col-xs-10 col-sm-5" />
 												</div>
 											</div>
 
 											<div class="form-group">
-												<label class="col-sm-3 control-label no-padding-right" for="form-field-1-1"> 密碼 </label>
+												<label class="col-sm-3 control-label no-padding-right" for="form-field-1"> 發表人	 </label>
 
 												<div class="col-sm-9">
-													<input type="text" id="form-field-1-1" placeholder="密碼" class="col-xs-10 col-sm-5" />
+													<input type="text" id="form-field-1" placeholder="(訪客、抓取會員名)" class="col-xs-10 col-sm-5" />
 												</div>
 											</div>
 
 											<div class="form-group">
-												<label class="col-sm-3 control-label no-padding-right" for="form-field-1-1"> E-mail </label>
+												<label class="col-sm-3 control-label no-padding-right" for="form-field-1-1"> 回覆 </label>
 
 												<div class="col-sm-9">
-													<input type="text" id="form-field-1-1" placeholder="E-mail" class="col-xs-10 col-sm-5" />
+													<textarea  id="form-field-1-1" placeholder="管理員回覆內容" class="col-xs-10 col-sm-5" /></textarea>
 												</div>
 											</div>
 
 											<div class="form-group">
-												<label class="col-sm-3 control-label no-padding-right" for="form-field-1-1"> 姓名 </label>
+												<label class="col-sm-3 control-label no-padding-right" for="form-field-1-1"> 顯示時間 </label>
 
 												<div class="col-sm-9">
-													<input type="text" id="form-field-1-1" placeholder="姓名" class="col-xs-10 col-sm-5" />
+													<input type="text" id="form-field-1-1" placeholder="抓取系統時間" class="col-xs-10 col-sm-5" />
 												</div>
 											</div>
-
 
 											<div class="space-4"></div>
-
 
 											<div class="clearfix form-actions">
 												<div class="col-md-offset-3 col-md-9">
@@ -302,27 +319,22 @@
 										</form>
 									</div><!-- /.col -->
 								</div><!-- /.row -->
+
 							</div><!-- /.modal-content -->
 						</div><!-- /.modal-dialog -->
-					</div><!-- PAGE CONTENT ENDS -->
+					</div><!-- forum CONTENT ENDS -->
 					<!--member-->
+
 				</div><!-- /.main-content-inner -->
 			</div><!-- /.main-content -->
-		</div><!-- /.main-content -->
 
+			<!--footer-->
 			<div class="footer">
-				<div class="footer-inner">
-					<div class="footer-content">
-						<span class="bigger-120">
-							<span class="blue bolder">By:</span>
-
-						</span>
-
-						&nbsp; &nbsp;
-
-					</div>
-				</div>
+				<?php
+					include("footer.php");
+				 ?>
 			</div>
+			<!--footer-->
 
 			<a href="#" id="btn-scroll-up" class="btn-scroll-up btn btn-sm btn-inverse">
 				<i class="ace-icon fa fa-angle-double-up icon-only bigger-110"></i>
@@ -587,8 +599,6 @@
 
 			})
 		</script>
-
-
 
 	</body>
 </html>

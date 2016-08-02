@@ -1,4 +1,3 @@
-<script type="text/javascript" src="index/top6/js/alert.js"></script>
 <?php
 
   include ("mysql/connect.php");//連接資料庫
@@ -25,7 +24,7 @@ if (!isset($_SESSION["topnum"]) && !isset($_SESSION["topnums"])) {
         echo "
         <script>
         var value = '不小心按到送出了齁~~~';
-        top6(value);
+        alerts(value);
         </script>";
 
       }else if($top6_error == 0){
@@ -44,7 +43,7 @@ if (!isset($_SESSION["topnum"]) && !isset($_SESSION["topnums"])) {
           echo "
           <script>
           var value = '$toptmp';
-          top6(value);
+          alerts(value);
           </script>";
           break;
 
@@ -54,7 +53,7 @@ if (!isset($_SESSION["topnum"]) && !isset($_SESSION["topnums"])) {
           echo "
           <script>
           var value = '$topsize';
-          top6(value);
+          alerts(value);
           </script>";
           break;
         }
@@ -68,7 +67,7 @@ if (!isset($_SESSION["topnum"]) && !isset($_SESSION["topnums"])) {
           echo "
           <script>
           var value = '資料夾裡已有名稱'+$topname+'的檔案';
-          top6(value);
+          alerts(value);
           </script>
           ";
 

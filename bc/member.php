@@ -33,6 +33,9 @@
 		<!-- ace settings handler -->
 		<script src="assets/js/ace-extra.min.js"></script>
 
+		<!-- alert -->
+		<script type="text/javascript" src=""></script>
+		<!-- alert -->
 		<!-- HTML5shiv and Respond.js for IE8 to support HTML5 elements and media queries -->
 
 		<!--[if lte IE 8]>
@@ -229,6 +232,7 @@
 						<hr>
 					</div><!--page-content-->
 
+
 					<!--member-->
 					<div id="member" class="modal fade" tabindex="-1">
 						<div class="modal-dialog">
@@ -244,12 +248,13 @@
 								<div class="row">
 									<div class="col-xs-12">
 										<!-- PAGE CONTENT BEGINS -->
-										<form class="form-horizontal" role="form" action="member/member.php">
+										<form class="form-horizontal" role="form" method="post">
+
 											<div class="form-group">
 												<label class="col-sm-3 control-label no-padding-right" for="form-field-1"> 帳號	 </label>
 
 												<div class="col-sm-9">
-													<input type="text" id="form-field-1" placeholder="帳號" class="col-xs-10 col-sm-5" />
+													<input type="text" name="account" id="form-field-1" placeholder="帳號" class="col-xs-10 col-sm-5" />
 												</div>
 											</div>
 
@@ -257,7 +262,7 @@
 												<label class="col-sm-3 control-label no-padding-right" for="form-field-1-1"> 密碼 </label>
 
 												<div class="col-sm-9">
-													<input type="text" id="form-field-1-1" placeholder="密碼" class="col-xs-10 col-sm-5" />
+													<input type="text" name="password" id="form-field-1-1" placeholder="密碼" class="col-xs-10 col-sm-5" />
 												</div>
 											</div>
 
@@ -265,7 +270,7 @@
 												<label class="col-sm-3 control-label no-padding-right" for="form-field-1-1"> E-mail </label>
 
 												<div class="col-sm-9">
-													<input type="text" id="form-field-1-1" placeholder="E-mail" class="col-xs-10 col-sm-5" />
+													<input type="text" name="email" id="form-field-1-1" placeholder="E-mail" class="col-xs-10 col-sm-5" />
 												</div>
 											</div>
 
@@ -273,7 +278,7 @@
 												<label class="col-sm-3 control-label no-padding-right" for="form-field-1-1"> 姓名 </label>
 
 												<div class="col-sm-9">
-													<input type="text" id="form-field-1-1" placeholder="姓名" class="col-xs-10 col-sm-5" />
+													<input type="text" name="name" id="form-field-1-1" placeholder="姓名" class="col-xs-10 col-sm-5" />
 												</div>
 											</div>
 
@@ -584,6 +589,8 @@
 
 			})
 		</script>
+
+
 
 	</body>
 </html>

@@ -201,7 +201,7 @@
 													 </th>
 													 <th>地區</th>
 													 <th>景點名</th>
-													 <th>發表人(訪客、抓取會員名)</th>
+													 <th>發表人</th>
 													 <th>發表內容</th>
 													 <th >回覆</th>
 													 <th>E-mail</th>
@@ -217,7 +217,7 @@
 
 											 <tbody>
 												 <?php
-												 include("area-forum/area-forum.php");
+												 include("message/area/area.php");
 												 ?>
 											 </tbody>
 										 </table>

@@ -30,6 +30,10 @@
 		<script src="../js/vendor/modernizr-2.6.2-respond-1.1.0.min.js"></script>
 		<!-- slide -->
 
+		<!-- alert -->
+		<script type="text/javascript" src="assets/js/alert.js"></script>
+		<!-- alert -->
+
 		<!-- ace styles -->
 		<link rel="stylesheet" href="assets/css/ace.min.css" class="ace-main-stylesheet" id="main-ace-style" />
 
