@@ -34,7 +34,7 @@
 		<script src="assets/js/ace-extra.min.js"></script>
 
 		<!-- alert -->
-		<script type="text/javascript" src=""></script>
+		<script type="text/javascript" src="assets/js/alert.js"></script>
 		<!-- alert -->
 		<!-- HTML5shiv and Respond.js for IE8 to support HTML5 elements and media queries -->
 
@@ -42,6 +42,44 @@
 		<script src="assets/js/html5shiv.min.js"></script>
 		<script src="assets/js/respond.min.js"></script>
 		<![endif]-->
+		<script src="assets/js/jquery.2.1.1.min.js"></script>
+		<!-- <script src="http://static.runoob.com/assets/jquery-validation-1.14.0/lib/jquery.js"></script> -->
+		<script src="http://static.runoob.com/assets/jquery-validation-1.14.0/dist/jquery.validate.min.js"></script>
+		<script src="http://static.runoob.com/assets/jquery-validation-1.14.0/dist/localization/messages_zh.js"></script>
+		<script>
+		$.validator.setDefaults({
+		    submitHandler: function() {
+		      alert("提交事件!");
+		    }
+		});
+
+		$().ready(function() {
+			// 提交时验证表单
+			var validator = $("#test").validate({
+				messages: {
+					account: {
+						required: " (必需字段)",
+						minlength: " (不能少于 3 个字母)"
+					},
+					password: {
+						required: " (必需字段)",
+						minlength: " (字母不能少于 5 个且不能大于 12 个)",
+						maxlength: " (字母不能少于 5 个且不能大于 12 个)"
+					},
+					email:"請輸入"
+				}
+			});
+
+			$(".cancel").click(function() {
+				validator.resetForm();
+			});
+		});
+		</script>
+		<style>
+		.error{
+			color:red;
+		}
+		</style>
 	</head>
 
 	<body class="no-skin">
@@ -231,8 +269,12 @@
 						<!--會員-->
 						<hr>
 					</div><!--page-content-->
+<!-- <form id="test" action="index.html" method="post">
 
+		<label for="account">用户名</label>
+		<input id="account" name="account" required minlength="3">
 
+</form> -->
 					<!--member-->
 					<div id="member" class="modal fade" tabindex="-1">
 						<div class="modal-dialog">
@@ -248,29 +290,29 @@
 								<div class="row">
 									<div class="col-xs-12">
 										<!-- PAGE CONTENT BEGINS -->
-										<form class="form-horizontal" role="form" method="post">
+										<form class="form-horizontal" role="form" method="post" id="test">
 
 											<div class="form-group">
-												<label class="col-sm-3 control-label no-padding-right" for="form-field-1"> 帳號	 </label>
+												<label class="col-sm-3 control-label no-padding-right" for="account" >  帳號	 </label>
 
-												<div class="col-sm-9">
-													<input type="text" name="account" id="form-field-1" placeholder="帳號" class="col-xs-10 col-sm-5" />
+												<div class="col-sm-9 ">
+													<input type="text" name="account" id="account" placeholder="帳號" class="col-xs-10 col-sm-5" required minlength="3"/>
 												</div>
 											</div>
 
 											<div class="form-group">
-												<label class="col-sm-3 control-label no-padding-right" for="form-field-1-1"> 密碼 </label>
+												<label class="col-sm-3 control-label no-padding-right" for="password"> 密碼 </label>
 
 												<div class="col-sm-9">
-													<input type="text" name="password" id="form-field-1-1" placeholder="密碼" class="col-xs-10 col-sm-5" />
+													<input type="text" name="password" id="password" placeholder="密碼" class="col-xs-10 col-sm-5" required minlength="3"/>
 												</div>
 											</div>
 
 											<div class="form-group">
-												<label class="col-sm-3 control-label no-padding-right" for="form-field-1-1"> E-mail </label>
+												<label class="col-sm-3 control-label no-padding-right" for="email"> E-mail </label>
 
 												<div class="col-sm-9">
-													<input type="text" name="email" id="form-field-1-1" placeholder="E-mail" class="col-xs-10 col-sm-5" />
+													<input type="email" name="email" id="email" placeholder="E-mail" class="col-xs-10 col-sm-5" required />
 												</div>
 											</div>
 
@@ -282,9 +324,7 @@
 												</div>
 											</div>
 
-
 											<div class="space-4"></div>
-
 
 											<div class="clearfix form-actions">
 												<div class="col-md-offset-3 col-md-9">
@@ -294,7 +334,7 @@
 													</button>
 
 													&nbsp; &nbsp; &nbsp;
-													<button class="btn" type="reset">
+													<button class="btn cancel" type="reset">
 														<i class="ace-icon fa fa-undo bigger-110"></i>
 														重填
 													</button>
@@ -333,10 +373,7 @@
 
 		<!-- basic scripts -->
 
-		<!--[if !IE]> -->
-		<script src="assets/js/jquery.2.1.1.min.js"></script>
 
-		<!-- <![endif]-->
 
 		<!--[if IE]>
 <script src="assets/js/jquery.1.11.1.min.js"></script>
