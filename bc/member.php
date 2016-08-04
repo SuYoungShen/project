@@ -61,6 +61,17 @@
 					account:{
 						required: true,
 						minlength: 4
+					},
+					password: {
+							required: true,
+							minlength: 5
+					},
+					email: {
+						required: true,
+
+					},
+					name: {
+						required: true
 					}
 				},
 				messages: {
@@ -73,20 +84,25 @@
 						minlength: " (密碼不得少於5個)",
 						// maxlength: " (字母不能少于 5 个且不能大于 12 个)"
 					},
-					email:"請輸入正確格式"
+					email: {
+						required: "(必填)",
+						email: "請輸入正確的email格式"
+					},
+
+					name:"不能為空值"
 				}
 			});
-			$(".error").css('color','red');
 			$(".cancel").click(function() {
 				validator.resetForm();
 			});
 		});
+
 		</script>
-		<style>
-		.error{
-			color:red;
-		}
-		</style>
+<style media="screen">
+	.error{
+		color:red;
+	}
+</style>
 	</head>
 
 	<body class="no-skin">
@@ -311,12 +327,12 @@
 												<label class="col-sm-3 control-label no-padding-right" for="password"> 密碼 </label>
 
 												<div class="col-sm-9">
-													<input type="text" name="password" id="password" placeholder="密碼" class="col-xs-10 col-sm-5" required minlength="3"/>
+													<input type="text" name="password" id="password" placeholder="密碼" class="col-xs-10 col-sm-5" required/>
 												</div>
 											</div>
 
 											<div class="form-group">
-												<label class="col-sm-3 control-label no-padding-right" for="email"> E-mail </label>
+												<label class="col-sm-3 control-label no-padding-right" for="email" > E-mail </label>
 
 												<div class="col-sm-9">
 													<input type="email" name="email" id="email" placeholder="E-mail" class="col-xs-10 col-sm-5" required />
