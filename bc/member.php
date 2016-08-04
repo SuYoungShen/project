@@ -56,20 +56,27 @@
 		$().ready(function() {
 			// 提交时验证表单
 			var validator = $("#test").validate({
+
+				rules:{
+					account:{
+						required: true,
+						minlength: 4
+					}
+				},
 				messages: {
 					account: {
-						required: " (必需字段)",
-						minlength: " (不能少于 3 个字母)"
+						required: " (必填)",
+						minlength: " (帳號不得少於4個)"
 					},
 					password: {
-						required: " (必需字段)",
-						minlength: " (字母不能少于 5 个且不能大于 12 个)",
-						maxlength: " (字母不能少于 5 个且不能大于 12 个)"
+						required: " (必填)",
+						minlength: " (密碼不得少於5個)",
+						// maxlength: " (字母不能少于 5 个且不能大于 12 个)"
 					},
-					email:"請輸入"
+					email:"請輸入正確格式"
 				}
 			});
-
+			$(".error").css('color','red');
 			$(".cancel").click(function() {
 				validator.resetForm();
 			});
@@ -296,7 +303,7 @@
 												<label class="col-sm-3 control-label no-padding-right" for="account" >  帳號	 </label>
 
 												<div class="col-sm-9 ">
-													<input type="text" name="account" id="account" placeholder="帳號" class="col-xs-10 col-sm-5" required minlength="3"/>
+													<input type="text" name="account" id="account" placeholder="帳號" class="col-xs-10 col-sm-5" required />
 												</div>
 											</div>
 
