@@ -43,10 +43,16 @@
 		<script src="assets/js/respond.min.js"></script>
 		<![endif]-->
 		<script src="assets/js/jquery.2.1.1.min.js"></script>
-		<!-- <script src="http://static.runoob.com/assets/jquery-validation-1.14.0/lib/jquery.js"></script> -->
+
+		<script src="http://static.runoob.com/assets/jquery-validation-1.14.0/lib/jquery.js"></script>
 		<script src="http://static.runoob.com/assets/jquery-validation-1.14.0/dist/jquery.validate.min.js"></script>
 		<script src="http://static.runoob.com/assets/jquery-validation-1.14.0/dist/localization/messages_zh.js"></script>
-		<script>
+		<script type="text/javascript" src="assets/js/validate.js"></script>
+		<script type="text/javascript">
+			validate();
+		</script>
+
+		<!-- <script>
 		$.validator.setDefaults({
 		    submitHandler: function() {
 		      alert("提交事件!");
@@ -97,8 +103,8 @@
 			});
 		});
 
-		</script>
-<style media="screen">
+		</script> -->
+<style>
 	.error{
 		color:red;
 	}
@@ -327,7 +333,7 @@
 												<label class="col-sm-3 control-label no-padding-right" for="password"> 密碼 </label>
 
 												<div class="col-sm-9">
-													<input type="text" name="password" id="password" placeholder="密碼" class="col-xs-10 col-sm-5" required/>
+													<input type="password" name="password" id="password" placeholder="密碼" class="col-xs-10 col-sm-5" required/>
 												</div>
 											</div>
 
