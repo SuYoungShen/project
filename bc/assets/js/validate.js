@@ -1,9 +1,9 @@
 function validate(){
-  $.validator.setDefaults({
-      submitHandler: function() {
-        alert("提交事件!");
-      }
-  });
+  // $.validator.setDefaults({
+  //     submitHandler: function() {
+  //       alert("提交事件!");
+  //     }
+  // });
 
   $().ready(function() {
     // 提交时验证表单

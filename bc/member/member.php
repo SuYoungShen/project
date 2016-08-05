@@ -25,19 +25,10 @@
 
     $test = array($account,$password,$email,$name);
 
-    foreach ($test as $key => $value) {
-
-      // if (empty($value)) {
-      //
-      //
-      // }
 
 
-    }
-
-
-    // $memberin = memberin($account ,$password ,$email ,$name);//上傳會員資料
-    // $db->query($memberin);
+    $memberin = memberin($account ,$password ,$email ,$name);//上傳會員資料
+    $db->query($memberin);
 
 
   }
