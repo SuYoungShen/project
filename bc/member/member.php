@@ -25,11 +25,16 @@
 
     $test = array($account,$password,$email,$name);
 
-
-
-    $memberin = memberin($account ,$password ,$email ,$name);//上傳會員資料
-    $db->query($memberin);
-
+    // $memberin = memberin($account ,$password ,$email ,$name);//上傳會員資料
+    // $db->query($memberin);
+    // $basename = basename($_SERVER["PHP_SELF"]);
+    // echo "
+    //       <script>
+    //         var value='送出成功';
+    //         var basename='$basename';
+    //         alerts(value, basename)
+    //       </script>
+    // ";
 
   }
 

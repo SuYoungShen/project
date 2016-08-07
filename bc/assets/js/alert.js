@@ -1,4 +1,4 @@
-  function alerts(value) {
+  function alerts(value, basename) {
     alert(value);
-    document.location.href="index.php";
+    document.location.href=basename;
   }

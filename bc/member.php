@@ -48,16 +48,12 @@
 		<script src="http://static.runoob.com/assets/jquery-validation-1.14.0/dist/jquery.validate.min.js"></script>
 		<script src="http://static.runoob.com/assets/jquery-validation-1.14.0/dist/localization/messages_zh.js"></script>
 		<script type="text/javascript" src="assets/js/validate.js"></script>
-		<script type="text/javascript">
-			validate();
-		</script>
-
 		<style>
 			.error{
 				color:red;
 			}
 		</style>
-		
+
 	</head>
 
 	<body class="no-skin">
@@ -268,13 +264,13 @@
 								<div class="row">
 									<div class="col-xs-12">
 										<!-- PAGE CONTENT BEGINS -->
-										<form class="form-horizontal" role="form" method="post" id="test">
+										<form class="form-horizontal" role="form" method="post" id="input">
 
 											<div class="form-group">
 												<label class="col-sm-3 control-label no-padding-right" for="account" >  帳號	 </label>
 
 												<div class="col-sm-9 ">
-													<input type="text" name="account" id="account" placeholder="帳號" class="col-xs-10 col-sm-5" required />
+													<input type="text" name="account" id="account" placeholder="帳號" class="col-xs-10 col-sm-5" required /><span class="account"></span>
 												</div>
 											</div>
 
@@ -282,7 +278,7 @@
 												<label class="col-sm-3 control-label no-padding-right" for="password"> 密碼 </label>
 
 												<div class="col-sm-9">
-													<input type="password" name="password" id="password" placeholder="密碼" class="col-xs-10 col-sm-5" required/>
+													<input type="password" name="password" id="password" placeholder="密碼" class="col-xs-10 col-sm-5" required/><span class="password"></span>
 												</div>
 											</div>
 
@@ -290,15 +286,15 @@
 												<label class="col-sm-3 control-label no-padding-right" for="email" > E-mail </label>
 
 												<div class="col-sm-9">
-													<input type="email" name="email" id="email" placeholder="E-mail" class="col-xs-10 col-sm-5" required />
+													<input type="email" name="email" id="email" placeholder="E-mail" class="col-xs-10 col-sm-5" required /><span class="email"></span>
 												</div>
 											</div>
 
 											<div class="form-group">
-												<label class="col-sm-3 control-label no-padding-right" for="form-field-1-1"> 姓名 </label>
+												<label class="col-sm-3 control-label no-padding-right" for="name"> 姓名 </label>
 
 												<div class="col-sm-9">
-													<input type="text" name="name" id="form-field-1-1" placeholder="姓名" class="col-xs-10 col-sm-5" />
+													<input type="text" name="name" id="name" placeholder="姓名" class="col-xs-10 col-sm-5" /><span class="name"></span>
 												</div>
 											</div>
 
@@ -312,7 +308,7 @@
 													</button>
 
 													&nbsp; &nbsp; &nbsp;
-													<button class="btn cancel" type="reset">
+													<button class="btn" type="reset">
 														<i class="ace-icon fa fa-undo bigger-110"></i>
 														重填
 													</button>

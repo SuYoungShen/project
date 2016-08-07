@@ -4,7 +4,7 @@
   include ("common.php");//常用語法
 
   $top6dir='index/top6/images/';
-
+  $topbasename = basename($_SERVER["PHP_SELF"]);
 if (!isset($_SESSION["topnum"]) && !isset($_SESSION["topnums"])) {
   $_SESSION["topnum"] = 0;
   $_SESSION["topnums"] = 1;
@@ -24,7 +24,8 @@ if (!isset($_SESSION["topnum"]) && !isset($_SESSION["topnums"])) {
         echo "
         <script>
         var value = '不小心按到送出了齁~~~';
-        alerts(value);
+        var basename= '$topbasename';
+        alerts(value, basename);
         </script>";
 
       }else if($top6_error == 0){
@@ -43,7 +44,8 @@ if (!isset($_SESSION["topnum"]) && !isset($_SESSION["topnums"])) {
           echo "
           <script>
           var value = '$toptmp';
-          alerts(value);
+          var basename= '$topbasename';
+          alerts(value, basename);
           </script>";
           break;
 
@@ -53,7 +55,8 @@ if (!isset($_SESSION["topnum"]) && !isset($_SESSION["topnums"])) {
           echo "
           <script>
           var value = '$topsize';
-          alerts(value);
+          var basename= '$topbasename';
+          alerts(value, basename);
           </script>";
           break;
         }
@@ -67,7 +70,9 @@ if (!isset($_SESSION["topnum"]) && !isset($_SESSION["topnums"])) {
           echo "
           <script>
           var value = '資料夾裡已有名稱'+$topname+'的檔案';
-          alerts(value);
+          var basename= '$topbasename';
+
+          alerts(value, basename);
           </script>
           ";
 
