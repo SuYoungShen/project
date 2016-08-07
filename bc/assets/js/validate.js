@@ -35,7 +35,7 @@ $(document).ready(function(){
           $('.email').css("color","red");
       }
   });
-  var account=/^[\w]{4,10}$/;
+  var account=/^[a-zA-z0-9]{4,10}$/;
    $("#account").blur(function(){
       if(account.test($(this).val())){
           $('.account').text('');
