@@ -23,35 +23,70 @@ $(document).ready(function(){
     //   }
     // }
 
+    var account=/^[a-zA-z0-9]{4,10}$/;
+     $("#account").blur(function(){
+       var accountVal = $(this).val();
+       var accountLength= accountVal.length;
+        if(account.test(accountVal)){
+            $('.account').text('');
+            $(this).css("border-color","green");
+
+        }else if(accountVal ==""){
+            $('.account').text('(必填)').css({"color":"red"});
+            $(this).css("border-color","red");
+
+        }else if(accountLength < 4){
+          $('.account').text("(帳號不得小於4碼)").css({"color":"red"});
+          $(this).css("border-color","red");
+
+        }else if(accountLength > 10){
+          $('.account').text("(帳號不得超於10碼)").css({"color":"red"});
+          $(this).css("border-color","red");
+        }
+
+    });//account
+
+    var password=/^[a-zA-z0-9]{5,36}$/;
+     $("#password").blur(function(){
+       var accountVal = $(this).val();
+       var accountLength= accountVal.length;
+        if(password.test(accountVal)){
+            $('.password').text('');
+            $(this).css("border-color","green");
+
+        }else if(accountVal ==""){
+            $('.password').text('(必填)').css({"color":"red"});
+            $(this).css("border-color","red");
+
+        }else if(accountLength < 5 ){
+          $('.password').text("(帳號不得小於5碼)").css({"color":"red"});
+          $(this).css("border-color","red");
+
+        }else if(accountLength > 36){
+          $('.password').text("(帳號不得超於10碼)").css({"color":"red"});
+          $(this).css("border-color","red");
+        }
+
+    });//account
+
+    // var email=/^[\w]+\@[a-zA-Z0-9]+\.[a-zA-z0-9]{2,4}$/;
+    // $("#email").blur(function(){
+    //   if(email.test($(this).val())){
+    //     $('.email').text('');
+    //     $(this).css("border-color","green");
+    //   }else if($(this).val()==""){
+    //     $('.email').text('(必填)');
+    //     $('.email').css("color","red");
+    //     $(this).css("border-color","red");
+    //   }
+    // });//email
 
 
-  var email=/^[\w]+\@[a-zA-Z0-9\.\-]+\.[a-zA-z0-9]{2,4}$/;
-   $("#email").blur(function(){
-      if(email.test($(this).val())){
-          $('.email').text('');
-          $(this).css("border-color","green");
-      }else if($(this).val()==""){
-          $('.email').text('(必填)');
-          $('.email').css("color","red");
-      }
+  $(":reset").click(function() {
+    $(".reset").text("");
+    $("input").css("border-color","");
+
   });
-  var account=/^[a-zA-z0-9]{4,10}$/;
-   $("#account").blur(function(){
-      if(account.test($(this).val())){
-          $('.account').text('');
-          $(this).css("border-color","green");
-      }else if($(this).val()==""){
-          $('.account').text('(必填)');
-          $('.account').css("color","red");
-      }
-  });
-
-
-$(":reset").click(function() {
-  $(".email").text("");
-  $("#email").css("border-color","")
-
-});
 
 
 

@@ -270,7 +270,7 @@
 												<label class="col-sm-3 control-label no-padding-right" for="account" >  帳號	 </label>
 
 												<div class="col-sm-9 ">
-													<input type="text" name="account" id="account" placeholder="帳號" class="col-xs-10 col-sm-5" required /><span class="account"></span>
+													<input type="text" name="account" id="account" placeholder="帳號" class="col-xs-10 col-sm-5" required /><span class="account reset"></span>
 												</div>
 											</div>
 
@@ -286,7 +286,7 @@
 												<label class="col-sm-3 control-label no-padding-right" for="email" > E-mail </label>
 
 												<div class="col-sm-9">
-													<input type="email" name="email" id="email" placeholder="E-mail" class="col-xs-10 col-sm-5" required /><span class="email"></span>
+													<input type="email" name="email" id="email" placeholder="E-mail" class="col-xs-10 col-sm-5" required /><span class="email reset"></span>
 												</div>
 											</div>
 
