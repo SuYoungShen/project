@@ -21,7 +21,7 @@
     return $memberse;
   }
 
-  function memberin($account ,$password ,$email ,$name)
+  function memberin($account ,$password ,$email ,$name ,$datetime)
   {
 
     $memberin ="INSERT INTO `member`
@@ -38,7 +38,7 @@
                               '$password',
                               '$email',
                               '$name',
-                              1
+                              '$datetime'
                             )";
 
     return $memberin;

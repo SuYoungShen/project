@@ -43,43 +43,60 @@ $(document).ready(function(){
           $('.account').text("(帳號不得超於10碼)").css({"color":"red"});
           $(this).css("border-color","red");
         }
-
     });//account
 
     var password=/^[a-zA-z0-9]{5,36}$/;
      $("#password").blur(function(){
-       var accountVal = $(this).val();
-       var accountLength= accountVal.length;
-        if(password.test(accountVal)){
+       var passwordVal = $(this).val();
+       var passwordLength= passwordVal.length;
+        if(password.test(passwordVal)){
             $('.password').text('');
             $(this).css("border-color","green");
 
-        }else if(accountVal ==""){
+        }else if(passwordVal ==""){
             $('.password').text('(必填)').css({"color":"red"});
             $(this).css("border-color","red");
 
-        }else if(accountLength < 5 ){
+        }else if(passwordLength < 5 ){
           $('.password').text("(帳號不得小於5碼)").css({"color":"red"});
           $(this).css("border-color","red");
 
-        }else if(accountLength > 36){
+        }else if(passwordLength > 36){
           $('.password').text("(帳號不得超於10碼)").css({"color":"red"});
           $(this).css("border-color","red");
         }
+    });//password
 
-    });//account
+    var email=/^[\w]+\@[a-zA-Z0-9]+\.[a-zA-z0-9]{2,4}$/;
+    $("#email").blur(function(){
+      var emailVal = $(this).val();
 
-    // var email=/^[\w]+\@[a-zA-Z0-9]+\.[a-zA-z0-9]{2,4}$/;
-    // $("#email").blur(function(){
-    //   if(email.test($(this).val())){
-    //     $('.email').text('');
-    //     $(this).css("border-color","green");
-    //   }else if($(this).val()==""){
-    //     $('.email').text('(必填)');
-    //     $('.email').css("color","red");
-    //     $(this).css("border-color","red");
-    //   }
-    // });//email
+       if(email.test(emailVal)){
+           $('.email').text('');
+           $(this).css("border-color","green");
+
+       }else if(emailVal ==""){
+           $('.email').text('(必填)').css({"color":"red"});
+           $(this).css("border-color","red");
+       }else {
+         $('.email').text('(請填入正確格式)').css({"color":"red"});
+         $(this).css("border-color","red");
+       }
+   });//email
+
+
+   $("#name").blur(function(){
+     var nameVal = $(this).val();
+
+      if(nameVal){
+          $('.name').text('');
+          $(this).css("border-color","green");
+
+      }else if(nameVal == ""){
+          $('.name').text('(必填)').css({"color":"red"});
+          $(this).css("border-color","red");
+      }
+   });//name
 
 
   $(":reset").click(function() {
@@ -87,10 +104,6 @@ $(document).ready(function(){
     $("input").css("border-color","");
 
   });
-
-
-
-
 });
 // var validator = $("#input").validate({
 //

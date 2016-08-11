@@ -278,7 +278,7 @@
 												<label class="col-sm-3 control-label no-padding-right" for="password"> 密碼 </label>
 
 												<div class="col-sm-9">
-													<input type="password" name="password" id="password" placeholder="密碼" class="col-xs-10 col-sm-5" required/><span class="password"></span>
+													<input type="password" name="password" id="password" placeholder="密碼" class="col-xs-10 col-sm-5" required/><span class="password reset"></span>
 												</div>
 											</div>
 
@@ -294,7 +294,7 @@
 												<label class="col-sm-3 control-label no-padding-right" for="name"> 姓名 </label>
 
 												<div class="col-sm-9">
-													<input type="text" name="name" id="name" placeholder="姓名" class="col-xs-10 col-sm-5" /><span class="name"></span>
+													<input type="text" name="name" id="name" placeholder="姓名" class="col-xs-10 col-sm-5" /><span class="name reset"></span>
 												</div>
 											</div>
 

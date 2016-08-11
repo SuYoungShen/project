@@ -207,5 +207,5 @@ $row = $topse->fetchAll();
       $_SESSION["topnums"] = 1;
 
     }
-
+$db = null;
 ?>
