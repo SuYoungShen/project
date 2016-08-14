@@ -24,7 +24,7 @@ $(document).ready(function(){
     // }
 
     var account=/^[a-zA-z0-9]{4,10}$/;
-     $("#account").blur(function(){
+     $("input[name='account']").blur(function(){
        var accountVal = $(this).val();
        var accountLength= accountVal.length;
         if(account.test(accountVal)){
@@ -46,7 +46,7 @@ $(document).ready(function(){
     });//account
 
     var password=/^[a-zA-z0-9]{5,36}$/;
-     $("#password").blur(function(){
+     $("input[name='password']").blur(function(){
        var passwordVal = $(this).val();
        var passwordLength= passwordVal.length;
         if(password.test(passwordVal)){
@@ -68,7 +68,7 @@ $(document).ready(function(){
     });//password
 
     var email=/^[\w]+\@[a-zA-Z0-9]+\.[a-zA-z0-9]{2,4}$/;
-    $("#email").blur(function(){
+    $("input[name='email']").blur(function(){
       var emailVal = $(this).val();
 
        if(email.test(emailVal)){
@@ -85,13 +85,11 @@ $(document).ready(function(){
    });//email
 
 
-   $("#name").blur(function(){
+   $("input[name='name']").blur(function(){
      var nameVal = $(this).val();
-
       if(nameVal){
           $('.name').text('');
           $(this).css("border-color","green");
-
       }else if(nameVal == ""){
           $('.name').text('(必填)').css({"color":"red"});
           $(this).css("border-color","red");

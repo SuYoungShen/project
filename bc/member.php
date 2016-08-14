@@ -212,7 +212,7 @@
 											<tr>
 												<th class="center">
 													<label class="pos-rel">
-														<input type="checkbox" class="ace" />
+														<input type="checkbox" class="ace"/>
 														<span class="lbl"></span>
 													</label>
 												</th>
@@ -232,9 +232,11 @@
 										</thead>
 
 										<tbody>
+
 											<?php
 											include("member/member.php");
 											?>
+
 										</tbody>
 									</table>
 								</div>
@@ -243,12 +245,9 @@
 						<!--會員-->
 						<hr>
 					</div><!--page-content-->
-<!-- <form id="test" action="index.html" method="post">
 
-		<label for="account">用户名</label>
-		<input id="account" name="account" required minlength="3">
 
-</form> -->
+
 					<!--member-->
 					<div id="member" class="modal fade" tabindex="-1">
 						<div class="modal-dialog">
@@ -264,13 +263,13 @@
 								<div class="row">
 									<div class="col-xs-12">
 										<!-- PAGE CONTENT BEGINS -->
-										<form class="form-horizontal" role="form" method="post" id="input">
+										<form class="form-horizontal" role="form" method="post" >
 
 											<div class="form-group">
 												<label class="col-sm-3 control-label no-padding-right" for="account" >  帳號	 </label>
 
 												<div class="col-sm-9 ">
-													<input type="text" name="account" id="account" placeholder="帳號" class="col-xs-10 col-sm-5" required /><span class="account reset"></span>
+													<input type="text" name="account"  placeholder="帳號" class="col-xs-10 col-sm-5" required /><span class="account reset"></span>
 												</div>
 											</div>
 
@@ -278,7 +277,7 @@
 												<label class="col-sm-3 control-label no-padding-right" for="password"> 密碼 </label>
 
 												<div class="col-sm-9">
-													<input type="password" name="password" id="password" placeholder="密碼" class="col-xs-10 col-sm-5" required/><span class="password reset"></span>
+													<input type="password" name="password"  placeholder="密碼" class="col-xs-10 col-sm-5" required/><span class="password reset"></span>
 												</div>
 											</div>
 
@@ -286,7 +285,7 @@
 												<label class="col-sm-3 control-label no-padding-right" for="email" > E-mail </label>
 
 												<div class="col-sm-9">
-													<input type="email" name="email" id="email" placeholder="E-mail" class="col-xs-10 col-sm-5" required /><span class="email reset"></span>
+													<input type="email" name="email"  placeholder="E-mail" class="col-xs-10 col-sm-5" required /><span class="email reset"></span>
 												</div>
 											</div>
 
@@ -294,7 +293,7 @@
 												<label class="col-sm-3 control-label no-padding-right" for="name"> 姓名 </label>
 
 												<div class="col-sm-9">
-													<input type="text" name="name" id="name" placeholder="姓名" class="col-xs-10 col-sm-5" /><span class="name reset"></span>
+													<input type="text" name="name"  placeholder="姓名" class="col-xs-10 col-sm-5" /><span class="name reset"></span>
 												</div>
 											</div>
 
@@ -322,6 +321,82 @@
 						</div><!-- /.modal-dialog -->
 					</div><!-- PAGE CONTENT ENDS -->
 					<!--member-->
+
+					<!--member-->
+					<div id="edit" class="modal fade" tabindex="-1">
+						<div class="modal-dialog">
+							<div class="modal-content">
+								<div class="modal-header no-padding">
+									<div class="table-header">
+										<button type="button" class="close" data-dismiss="modal" aria-hidden="true">
+											<span class="white">&times;</span>
+										</button>
+										更新會員資料
+									</div>
+								</div>
+								<div class="row">
+									<div class="col-xs-12">
+										<!-- PAGE CONTENT BEGINS -->
+										<form class="form-horizontal" role="form" method="post" >
+
+											<div class="form-group">
+												<label class="col-sm-3 control-label no-padding-right" for="account" >  帳號	 </label>
+
+												<div class="col-sm-9 ">
+													<input type="text" name="account"   class="col-xs-10 col-sm-5" value="<?php echo $accounts;?>" readonly="readonly" required /><span class="account reset"></span>
+												</div>
+											</div>
+
+											<div class="form-group">
+												<label class="col-sm-3 control-label no-padding-right" for="password"> 密碼 </label>
+
+												<div class="col-sm-9">
+													<input type="password" name="password"  placeholder="密碼" class="col-xs-10 col-sm-5" value="<?php echo $passwords;?>" required/><span class="password reset"></span>
+												</div>
+											</div>
+
+											<div class="form-group">
+												<label class="col-sm-3 control-label no-padding-right" for="email" > E-mail </label>
+
+												<div class="col-sm-9">
+													<input type="email" name="email"  placeholder="E-mail" class="col-xs-10 col-sm-5" required /><span class="email reset"></span>
+												</div>
+											</div>
+
+											<div class="form-group">
+												<label class="col-sm-3 control-label no-padding-right" for="name"> 姓名 </label>
+
+												<div class="col-sm-9">
+													<input type="text" name="name" placeholder="姓名" class="col-xs-10 col-sm-5" /><span class="name reset"></span>
+												</div>
+											</div>
+
+											<div class="space-4"></div>
+
+											<div class="clearfix form-actions">
+												<div class="col-md-offset-3 col-md-9">
+													<button class="btn btn-info" type="submit" name="up">
+														<i class="ace-icon fa fa-check bigger-110"></i>
+														更新
+													</button>
+
+													&nbsp; &nbsp; &nbsp;
+													<button class="btn" type="reset">
+														<i class="ace-icon fa fa-undo bigger-110"></i>
+														重填
+													</button>
+
+												</div>
+											</div>
+										</form>
+									</div><!-- /.col -->
+								</div><!-- /.row -->
+							</div><!-- /.modal-content -->
+						</div><!-- /.modal-dialog -->
+					</div><!-- PAGE CONTENT ENDS -->
+					<!--member-->
+
+
 				</div><!-- /.main-content-inner -->
 			</div><!-- /.main-content -->
 		</div><!-- /.main-content -->
@@ -331,7 +406,6 @@
 					<div class="footer-content">
 						<span class="bigger-120">
 							<span class="blue bolder">By:</span>
-
 						</span>
 
 						&nbsp; &nbsp;
@@ -357,7 +431,6 @@
 		<script type="text/javascript">
 			window.jQuery || document.write("<script src='assets/js/jquery.min.js'>"+"<"+"/script>");
 		</script>
-
 		<!-- <![endif]-->
 
 		<!--[if IE]>
@@ -600,8 +673,5 @@
 
 			})
 		</script>
-
-
-
 	</body>
 </html>

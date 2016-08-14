@@ -26,7 +26,11 @@
     $name = $_POST["name"];//抓取會員名字
     date_default_timezone_set('Asia/Taipei');//設定時間為台北
     $datetime = date("Y-m-d H:i:s");//時間
+    
+    if(isset($_POST["up"])){
+      $memberup = memberin($account ,$password ,$email ,$name ,$datetime);//上傳會員資料
 
+    }
     // $test = array($account,$password,$email,$name);
 
     $memberin = memberin($account ,$password ,$email ,$name ,$datetime);//上傳會員資料
@@ -47,7 +51,8 @@ foreach ($memberse as $key => $value) {
   $names = $value[3];
   $datetimes = $value[4];
 
-  echo "<tr>
+  echo "
+  <tr>
     <td class='center'>
       <label class='pos-rel'>
         <input type='checkbox' class='ace' />
@@ -71,7 +76,7 @@ foreach ($memberse as $key => $value) {
           <i class='ace-icon fa fa-search-plus bigger-130'></i>
         </a>
 
-        <a class='green' href='#'>
+        <a class='green'  href='#edit' data-toggle='modal'>
           <i class='ace-icon fa fa-pencil bigger-130'></i>
         </a>
 
@@ -106,7 +111,7 @@ foreach ($memberse as $key => $value) {
             <li>
               <a href='#' class='tooltip-error' data-rel='tooltip' title='Delete'>
                 <span class='red'>
-                  <i class='ace-icon fa fa-trash-o bigger-120'></i>
+                  <i class='ace-icon fa fa-trash-o bigger-120' ></i>
                 </span>
               </a>
             </li>
@@ -119,75 +124,6 @@ foreach ($memberse as $key => $value) {
 }
 
  ?>
-
-<tr>
-  <td class="center">
-    <label class="pos-rel">
-      <input type="checkbox" class="ace" />
-      <span class="lbl"></span>
-    </label>
-  </td>
-
-  <td>
-    <a href="#">app.com</a>
-  </td>
-  <td>$45</td>
-  <td class="hidden-480">3,330</td>
-  <td>Feb 12</td>
-  <td class="hidden-480">
-    <span class="label label-sm label-warning">Expiring</span>
-  </td>
-
-  <td>
-    <div class="hidden-sm hidden-xs action-buttons">
-      <a class="blue" href="#">
-        <i class="ace-icon fa fa-search-plus bigger-130"></i>
-      </a>
-
-      <a class="green" href="#">
-        <i class="ace-icon fa fa-pencil bigger-130"></i>
-      </a>
-
-      <a class="red" href="#">
-        <i class="ace-icon fa fa-trash-o bigger-130"></i>
-      </a>
-    </div>
-
-    <div class="hidden-md hidden-lg">
-      <div class="inline pos-rel">
-        <button class="btn btn-minier btn-yellow dropdown-toggle" data-toggle="dropdown" data-position="auto">
-          <i class="ace-icon fa fa-caret-down icon-only bigger-120"></i>
-        </button>
-
-        <ul class="dropdown-menu dropdown-only-icon dropdown-yellow dropdown-menu-right dropdown-caret dropdown-close">
-          <li>
-            <a href="#" class="tooltip-info" data-rel="tooltip" title="View">
-              <span class="blue">
-                <i class="ace-icon fa fa-search-plus bigger-120"></i>
-              </span>
-            </a>
-          </li>
-
-          <li>
-            <a href="#" class="tooltip-success" data-rel="tooltip" title="Edit">
-              <span class="green">
-                <i class="ace-icon fa fa-pencil-square-o bigger-120"></i>
-              </span>
-            </a>
-          </li>
-
-          <li>
-            <a href="#" class="tooltip-error" data-rel="tooltip" title="Delete">
-              <span class="red">
-                <i class="ace-icon fa fa-trash-o bigger-120"></i>
-              </span>
-            </a>
-          </li>
-        </ul>
-      </div>
-    </div>
-  </td>
-</tr>
 
 
 <tr>
@@ -215,7 +151,7 @@ foreach ($memberse as $key => $value) {
         <i class="ace-icon fa fa-search-plus bigger-130"></i>
       </a>
 
-      <a class="green" href="#">
+      <a class="green" href="#edit" data-toggle="modal">
         <i class="ace-icon fa fa-pencil bigger-130"></i>
       </a>
 
