@@ -1,14 +1,16 @@
 <?php
 
-  function memberup(&$member6name, &$member6dir, &$date, &$key)
+  function memberup(&$account, &$passowrd, &$email, &$name, &$datetime)
   {
 
     $memberup = "UPDATE member SET
-                      name = '".$member6name."',
-                      path = '".$member6dir."',
-                      datetime = '".$date."'
+                      account = '".$account."',
+                      password = '".$passowrd."',
+                      email = '".$email."',
+                      name = '".$name."',
+                      datetime = '".$datetime."'
                     WHERE
-                      id = '".$key."'
+                      account = '".$account."'
                     ";
 
     return $memberup;
@@ -28,7 +30,7 @@
                             (
                               `account`,
                               `password`,
-                              `emai`,
+                              `email`,
                               `name`,
                               `datetime`
                             )

@@ -322,7 +322,7 @@
 					</div><!-- PAGE CONTENT ENDS -->
 					<!--member-->
 
-					<!--member-->
+					<!-- edit-->
 					<div id="edit" class="modal fade" tabindex="-1">
 						<div class="modal-dialog">
 							<div class="modal-content">
@@ -343,7 +343,8 @@
 												<label class="col-sm-3 control-label no-padding-right" for="account" >  帳號	 </label>
 
 												<div class="col-sm-9 ">
-													<input type="text" name="account"   class="col-xs-10 col-sm-5" value="<?php echo $accounts;?>" readonly="readonly" required /><span class="account reset"></span>
+													<input type="text" name="account" class="col-xs-10 col-sm-5" id="test" value=""  readonly="readonly" required /><span class="account reset"></span>
+
 												</div>
 											</div>
 
@@ -351,7 +352,7 @@
 												<label class="col-sm-3 control-label no-padding-right" for="password"> 密碼 </label>
 
 												<div class="col-sm-9">
-													<input type="password" name="password"  placeholder="密碼" class="col-xs-10 col-sm-5" value="<?php echo $passwords;?>" required/><span class="password reset"></span>
+													<input type="password" name="password"  placeholder="密碼" class="col-xs-10 col-sm-5" value="" required/><span class="password reset"></span>
 												</div>
 											</div>
 
@@ -359,7 +360,7 @@
 												<label class="col-sm-3 control-label no-padding-right" for="email" > E-mail </label>
 
 												<div class="col-sm-9">
-													<input type="email" name="email"  placeholder="E-mail" class="col-xs-10 col-sm-5" required /><span class="email reset"></span>
+													<input type="email" name="email"  placeholder="E-mail" class="col-xs-10 col-sm-5" value="" required /><span class="email reset"></span>
 												</div>
 											</div>
 
@@ -389,12 +390,12 @@
 												</div>
 											</div>
 										</form>
-									</div><!-- /.col -->
-								</div><!-- /.row -->
-							</div><!-- /.modal-content -->
-						</div><!-- /.modal-dialog -->
-					</div><!-- PAGE CONTENT ENDS -->
-					<!--member-->
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+					<!--edit -->
 
 
 				</div><!-- /.main-content-inner -->

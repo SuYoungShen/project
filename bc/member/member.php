@@ -26,15 +26,15 @@
     $name = $_POST["name"];//抓取會員名字
     date_default_timezone_set('Asia/Taipei');//設定時間為台北
     $datetime = date("Y-m-d H:i:s");//時間
-    
-    if(isset($_POST["up"])){
-      $memberup = memberin($account ,$password ,$email ,$name ,$datetime);//上傳會員資料
 
+    if(isset($_POST["up"])){
+      $memberup = memberup($account ,$password ,$email ,$name ,$datetime);//上傳會員資料
+      $db->query($memberup);
     }
     // $test = array($account,$password,$email,$name);
 
-    $memberin = memberin($account ,$password ,$email ,$name ,$datetime);//上傳會員資料
-    $db->query($memberin);
+    // $memberin = memberin($account ,$password ,$email ,$name ,$datetime);//上傳會員資料
+    // $db->query($memberin);
     $basename = basename($_SERVER["PHP_SELF"]);
     echo "
           <script>
@@ -44,8 +44,12 @@
           </script>
     ";
   }
+
+
+
 foreach ($memberse as $key => $value) {
-  $accounts = $value[0];
+
+  $ac=$accounts[$key] = $value[0];
   $passwords = $value[1];
   $emails = $value[2];
   $names = $value[3];
@@ -61,11 +65,11 @@ foreach ($memberse as $key => $value) {
     </td>
 
     <td>
-      <a href='#'>$accounts</a>
+      <a href='#'>$ac</a>
     </td>
     <td>$passwords</td>
     <td class='hidden-480'>$emails</td>
-    <td>$emails</td>
+    <td>$names</td>
     <td class='hidden-480'>
       <span class='label label-sm label-warning'>$datetimes</span>
     </td>
@@ -76,8 +80,10 @@ foreach ($memberse as $key => $value) {
           <i class='ace-icon fa fa-search-plus bigger-130'></i>
         </a>
 
-        <a class='green'  href='#edit' data-toggle='modal'>
+        <a class='green' href='#edit' onclick='tests(\"$accounts[$key]\")' data-toggle='modal'>
+
           <i class='ace-icon fa fa-pencil bigger-130'></i>
+
         </a>
 
         <a class='red' href='#'>
@@ -121,9 +127,11 @@ foreach ($memberse as $key => $value) {
     </td>
   </tr>
 ";
+
 }
 
  ?>
+
 
 
 <tr>
