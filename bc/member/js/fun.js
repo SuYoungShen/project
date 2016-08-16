@@ -4,3 +4,8 @@ function edit(account, password, email, name) {
   document.getElementById("email").value = email;
   document.getElementById("name").value = name;
 }
+
+function Delete(s) {
+
+  document.write(s);
+}

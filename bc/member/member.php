@@ -83,7 +83,7 @@ foreach ($memberse as $key => $value) {
 
         </a>
 
-        <a class='red' href='#'>
+        <a class='red' href='#' onclick=''>
           <i class='ace-icon fa fa-trash-o bigger-130'></i>
         </a>
       </div>
@@ -128,7 +128,13 @@ foreach ($memberse as $key => $value) {
 }
 
  ?>
+<?php
+  $aaa="s";
+ ?>
+<a onclick="Delete('<?php echo $aaa?>')">
+x
 
+</a>
 
 
 <tr>
