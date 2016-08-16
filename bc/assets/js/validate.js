@@ -102,14 +102,9 @@ $(document).ready(function(){
     $("input").css("border-color","");
 
   });
-
-
 });
 
-function tests(test) {
 
-document.getElementById("test").value=test;
-}
 
 
 // var validator = $("#input").validate({

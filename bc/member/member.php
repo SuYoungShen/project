@@ -2,16 +2,7 @@
 <?php
   include("mysql/connect.php");
   include ("common.php");
-  $memberse = $db->query(memberse());
-  // if (isset($_POST["account"])) {
-  //   if (is_null($_POST["account"])) {
-  //   echo "string";
-  // }else {
-  //   echo "s";
-  // }
-  // }
-
-
+  $memberse = $db->query(memberSelect());
 
   $member = isset($_POST["account"]) &&
             isset($_POST["password"]) &&
@@ -27,14 +18,20 @@
     date_default_timezone_set('Asia/Taipei');//設定時間為台北
     $datetime = date("Y-m-d H:i:s");//時間
 
-    if(isset($_POST["up"])){
-      $memberup = memberup($account ,$password ,$email ,$name ,$datetime);//上傳會員資料
+    if(isset($_POST["update"])){
+      $memberup = memberUpdate($account ,$password ,$email ,$name ,$datetime);//上傳會員資料
       $db->query($memberup);
     }
-    // $test = array($account,$password,$email,$name);
 
-    // $memberin = memberin($account ,$password ,$email ,$name ,$datetime);//上傳會員資料
-    // $db->query($memberin);
+    if(isset($_POST["insert"])){
+      $memberin = memberInsert($account ,$password ,$email ,$name ,$datetime);//上傳會員資料
+      $db->query($memberin);
+    }
+
+    if(isset($_POST["delete"])){
+
+    }
+
     $basename = basename($_SERVER["PHP_SELF"]);
     echo "
           <script>
@@ -49,11 +46,11 @@
 
 foreach ($memberse as $key => $value) {
 
-  $ac=$accounts[$key] = $value[0];
-  $passwords = $value[1];
-  $emails = $value[2];
-  $names = $value[3];
-  $datetimes = $value[4];
+  $acc=$accounts[$key] = $value[0];
+  $pas=$passwords[$key] = $value[1];
+  $ema=$emails[$key] = $value[2];
+  $nam=$names[$key] = $value[3];
+  $dat=$datetimes[$key] = $value[4];
 
   echo "
   <tr>
@@ -65,13 +62,13 @@ foreach ($memberse as $key => $value) {
     </td>
 
     <td>
-      <a href='#'>$ac</a>
+      <a href='#'>$acc</a>
     </td>
-    <td>$passwords</td>
-    <td class='hidden-480'>$emails</td>
-    <td>$names</td>
+    <td>$pas</td>
+    <td class='hidden-480'>$ema</td>
+    <td>$nam</td>
     <td class='hidden-480'>
-      <span class='label label-sm label-warning'>$datetimes</span>
+      <span class='label label-sm label-warning'>$dat</span>
     </td>
 
     <td>
@@ -80,7 +77,7 @@ foreach ($memberse as $key => $value) {
           <i class='ace-icon fa fa-search-plus bigger-130'></i>
         </a>
 
-        <a class='green' href='#edit' onclick='tests(\"$accounts[$key]\")' data-toggle='modal'>
+        <a class='green' href='#edit' onclick='edit(\"$accounts[$key]\",\"$passwords[$key]\",\"$emails[$key]\",\"$names[$key]\")' data-toggle='modal'>
 
           <i class='ace-icon fa fa-pencil bigger-130'></i>
 

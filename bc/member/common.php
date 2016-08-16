@@ -16,14 +16,14 @@
     return $memberup;
   }
 
-  function memberse()
+  function memberSelect()
   {
     $memberse = "SELECT * From member";
 
     return $memberse;
   }
 
-  function memberin($account ,$password ,$email ,$name ,$datetime)
+  function memberInsert($account ,$password ,$email ,$name ,$datetime)
   {
 
     $memberin ="INSERT INTO `member`
@@ -45,25 +45,14 @@
 
     return $memberin;
   }
-  // function memberin()
-  // {
-  //
-  //   $memberin ="INSERT INTO `member`
-  //                           (
-  //                             `account`,
-  //                             `password`,
-  //                             `emai`,
-  //                             `name`,
-  //                             `datetime`
-  //                           )
-  //                           VALUES
-  //                           (
-  //                             '$b',
-  //                             1,
-  //                             1,
-  //                             1,
-  //                             1
-  //                           )";
-  //   return $memberin;
-  // }
+
+  function memberDelete($account){
+
+    $memberDelete = "DELETE * FROM member
+                                    WHERE
+                                      `acount`='$account'";
+    return $memberDelete;
+
+  }
+
  ?>

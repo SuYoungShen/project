@@ -47,6 +47,7 @@
 		<script src="http://static.runoob.com/assets/jquery-validation-1.14.0/lib/jquery.js"></script>
 		<script src="http://static.runoob.com/assets/jquery-validation-1.14.0/dist/jquery.validate.min.js"></script>
 		<script src="http://static.runoob.com/assets/jquery-validation-1.14.0/dist/localization/messages_zh.js"></script>
+		<script type="text/javascript" src="member/js/fun.js"></script>
 		<script type="text/javascript" src="assets/js/validate.js"></script>
 		<style>
 			.error{
@@ -301,7 +302,7 @@
 
 											<div class="clearfix form-actions">
 												<div class="col-md-offset-3 col-md-9">
-													<button class="btn btn-info" type="submit">
+													<button class="btn btn-info" type="submit" name="insert">
 														<i class="ace-icon fa fa-check bigger-110"></i>
 														送出
 													</button>
@@ -343,7 +344,7 @@
 												<label class="col-sm-3 control-label no-padding-right" for="account" >  帳號	 </label>
 
 												<div class="col-sm-9 ">
-													<input type="text" name="account" class="col-xs-10 col-sm-5" id="test" value=""  readonly="readonly" required /><span class="account reset"></span>
+													<input type="text" name="account" class="col-xs-10 col-sm-5" id="account" value=""  readonly="readonly" required /><span class="account reset"></span>
 
 												</div>
 											</div>
@@ -352,7 +353,7 @@
 												<label class="col-sm-3 control-label no-padding-right" for="password"> 密碼 </label>
 
 												<div class="col-sm-9">
-													<input type="password" name="password"  placeholder="密碼" class="col-xs-10 col-sm-5" value="" required/><span class="password reset"></span>
+													<input type="password" name="password"  placeholder="密碼" class="col-xs-10 col-sm-5" id="password" value="" required/><span class="password reset"></span>
 												</div>
 											</div>
 
@@ -360,7 +361,7 @@
 												<label class="col-sm-3 control-label no-padding-right" for="email" > E-mail </label>
 
 												<div class="col-sm-9">
-													<input type="email" name="email"  placeholder="E-mail" class="col-xs-10 col-sm-5" value="" required /><span class="email reset"></span>
+													<input type="email" name="email"  placeholder="E-mail" class="col-xs-10 col-sm-5" id="email" value="" required /><span class="email reset"></span>
 												</div>
 											</div>
 
@@ -368,7 +369,7 @@
 												<label class="col-sm-3 control-label no-padding-right" for="name"> 姓名 </label>
 
 												<div class="col-sm-9">
-													<input type="text" name="name" placeholder="姓名" class="col-xs-10 col-sm-5" /><span class="name reset"></span>
+													<input type="text" name="name" placeholder="姓名" class="col-xs-10 col-sm-5" id="name" value="" /><span class="name reset"></span>
 												</div>
 											</div>
 
@@ -376,7 +377,7 @@
 
 											<div class="clearfix form-actions">
 												<div class="col-md-offset-3 col-md-9">
-													<button class="btn btn-info" type="submit" name="up">
+													<button class="btn btn-info" type="submit" name="update">
 														<i class="ace-icon fa fa-check bigger-110"></i>
 														更新
 													</button>
