@@ -42,11 +42,14 @@
 		<script src="assets/js/html5shiv.min.js"></script>
 		<script src="assets/js/respond.min.js"></script>
 		<![endif]-->
+		<script src="assets/js/bootbox.min.js"></script>
+
 		<script src="assets/js/jquery.2.1.1.min.js"></script>
 
 		<script src="http://static.runoob.com/assets/jquery-validation-1.14.0/lib/jquery.js"></script>
 		<script src="http://static.runoob.com/assets/jquery-validation-1.14.0/dist/jquery.validate.min.js"></script>
 		<script src="http://static.runoob.com/assets/jquery-validation-1.14.0/dist/localization/messages_zh.js"></script>
+
 		<script type="text/javascript" src="member/js/fun.js"></script>
 		<script type="text/javascript" src="assets/js/validate.js"></script>
 		<style>
@@ -247,9 +250,28 @@
 						<hr>
 					</div><!--page-content-->
 
+					<div class="row">
+						<div class="col-sm-6">
+							<div>
+								<h3 class="header smaller lighter purple">
+									Bootstrap Modals
+									<small>(Bootbox.js)</small>
+								</h3>
+
+								<p>
+									<button class="btn" id="bootbox-regular">Regular Dialog</button>
+									<!-- <button class="btn btn-info" id="bootbox-confirm">Confirm</button> -->
+									<button class="btn btn-success" id="bootbox-options">More Options</button>
+								</p>
+							</div><!-- /.row -->
+						</div><!-- /.row -->
 
 
-					<!--member-->
+
+
+
+
+				<!--member-->
 					<div id="member" class="modal fade" tabindex="-1">
 						<div class="modal-dialog">
 							<div class="modal-content">
@@ -451,6 +473,7 @@
 		<script src="assets/js/dataTables.tableTools.min.js"></script>
 		<script src="assets/js/dataTables.colVis.min.js"></script>
 
+		<script src="assets/js/bootbox.min.js"></script>
 		<!-- ace scripts -->
 		<script src="assets/js/ace-elements.min.js"></script>
 		<script src="assets/js/ace.min.js"></script>

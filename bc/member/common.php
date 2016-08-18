@@ -46,14 +46,14 @@
     return $memberin;
   }
 
-  function memberDelete(){
+  function memberDelete($account){
 
-    $memberDelete = "DELETE * FROM `member`
-                                    WHERE
-                                      `acount`='sdsdsd'
-                                      ";
-    $db->query($memberDelete);
+    $memberDelete = "DELETE FROM `member`
+                            WHERE
+                            `account`= '$account'
+                            ";
 
+    return $memberDelete;
   }
 
  ?>

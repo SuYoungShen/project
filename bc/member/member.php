@@ -19,17 +19,13 @@
     $datetime = date("Y-m-d H:i:s");//時間
 
     if(isset($_POST["update"])){
-      $memberup = memberUpdate($account ,$password ,$email ,$name ,$datetime);//上傳會員資料
+      $memberup = memberUpdate($account ,$password ,$email ,$name ,$datetime);//更新會員資料
       $db->query($memberup);
     }
 
     if(isset($_POST["insert"])){
-      $memberin = memberInsert($account ,$password ,$email ,$name ,$datetime);//上傳會員資料
+      $memberin = memberInsert($account ,$password ,$email ,$name ,$datetime);//新增會員資料
       $db->query($memberin);
-    }
-
-    if(isset($_POST["delete"])){
-
     }
 
     $basename = basename($_SERVER["PHP_SELF"]);
@@ -37,11 +33,20 @@
           <script>
             var value='送出成功';
             var basename='$basename';
-            alerts(value, basename)
+            alerts(value, basename);
           </script>
     ";
   }
 
+if (isset($_SESSION["de"])) {
+  echo "
+      <script>
+        value='刪除成功';
+        alert(value);
+      </script>
+  ";
+  unset($_SESSION["de"]);
+}
 
 
 foreach ($memberse as $key => $value) {
@@ -77,13 +82,11 @@ foreach ($memberse as $key => $value) {
           <i class='ace-icon fa fa-search-plus bigger-130'></i>
         </a>
 
-        <a class='green' href='#edit' onclick='edit(\"$accounts[$key]\",\"$passwords[$key]\",\"$emails[$key]\",\"$names[$key]\")' data-toggle='modal'>
-
+        <a class='green' href='#edit' onclick='Edit(\"$accounts[$key]\",\"$passwords[$key]\",\"$emails[$key]\",\"$names[$key]\")' data-toggle='modal'>
           <i class='ace-icon fa fa-pencil bigger-130'></i>
-
         </a>
 
-        <a class='red' href='#' onclick=''>
+        <a class='red'  href='member/delete.php?value=$accounts[$key]' >
           <i class='ace-icon fa fa-trash-o bigger-130'></i>
         </a>
       </div>
@@ -127,15 +130,8 @@ foreach ($memberse as $key => $value) {
 
 }
 
- ?>
-<?php
-  $aaa="s";
- ?>
-<a onclick="Delete('<?php echo $aaa?>')">
-x
 
-</a>
-
+ ?>
 
 <tr>
   <td class="center">
@@ -162,11 +158,11 @@ x
         <i class="ace-icon fa fa-search-plus bigger-130"></i>
       </a>
 
-      <a class="green" href="#edit" data-toggle="modal">
+      <a class="green" href="#"  >
         <i class="ace-icon fa fa-pencil bigger-130"></i>
       </a>
 
-      <a class="red" href="#">
+      <a class="red"  id='bootbox-confirm' >
         <i class="ace-icon fa fa-trash-o bigger-130"></i>
       </a>
     </div>

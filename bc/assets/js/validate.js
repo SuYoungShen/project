@@ -87,6 +87,7 @@ $(document).ready(function(){
 
    $("input[name='name']").blur(function(){
      var nameVal = $(this).val();
+
       if(nameVal){
           $('.name').text('');
           $(this).css("border-color","green");
@@ -100,8 +101,165 @@ $(document).ready(function(){
   $(":reset").click(function() {
     $(".reset").text("");
     $("input").css("border-color","");
-
   });
+
+
+
+
+  $("#bootbox-regular").on(ace.click_event, function() {
+    bootbox.prompt("What is your name?", function(result) {
+      if (result === null) {
+
+      } else {
+
+      }
+    });
+  });
+
+  $("#bootbox-confirm").on(ace.click_event, function() {
+    bootbox.confirm("Are you sure?", function(result) {
+      document.write("s");
+    });
+  });
+
+  // $("#bootbox-confirm").on(ace.click_event, function() {
+  //   bootbox.confirm("Are you sure?", function(result) {
+  //     if(result) {
+  //       //
+  //     }
+  //   });
+  // });
+
+//
+//   $("#bootbox-confirm").on(ace.click_event, function() {
+//   bootbox.confirm({
+//   message: "Are you sure?",
+//   buttons: {
+//   confirm: {
+//   label: "OK",
+//   className: "btn-primary btn-sm",
+// },
+// cancel: {
+// label: "Cancel",
+// className: "btn-sm",
+// }
+// },
+// callback: function(result) {
+// if(result) alert(1)
+// }
+// }
+// );
+// });
+
+
+$("#bootbox-options").on(ace.click_event, function() {
+  bootbox.dialog({
+    message: "<span class='bigger-110'>I am a custom dialog with smaller buttons</span>",
+    buttons:
+    {
+      "success" :
+      {
+        "label" : "<i class='ace-icon fa fa-check'></i> Success!",
+        "className" : "btn-sm btn-success",
+        "callback": function() {
+          //Example.show("great success");
+        }
+      },
+      "danger" :
+      {
+        "label" : "Danger!",
+        "className" : "btn-sm btn-danger",
+        "callback": function() {
+          //Example.show("uh oh, look out!");
+        }
+      },
+      "click" :
+      {
+        "label" : "Click ME!",
+        "className" : "btn-sm btn-primary",
+        "callback": function() {
+          //Example.show("Primary button");
+        }
+      },
+      "button" :
+      {
+        "label" : "Just a button...",
+        "className" : "btn-sm"
+      }
+    }
+  });
+});
+
+
+
+$('#spinner-opts small').css({display:'inline-block', width:'60px'})
+
+var slide_styles = ['', 'green','red','purple','orange', 'dark'];
+var ii = 0;
+$("#spinner-opts input[type=text]").each(function() {
+  var $this = $(this);
+  $this.hide().after('<span />');
+  $this.next().addClass('ui-slider-small').
+  addClass("inline ui-slider-"+slide_styles[ii++ % slide_styles.length]).
+  css('width','125px').slider({
+    value:parseInt($this.val()),
+    range: "min",
+    animate:true,
+    min: parseInt($this.attr('data-min')),
+    max: parseInt($this.attr('data-max')),
+    step: parseFloat($this.attr('data-step')) || 1,
+    slide: function( event, ui ) {
+      $this.val(ui.value);
+      spinner_update();
+    }
+  });
+});
+
+
+
+//CSS3 spinner
+$.fn.spin = function(opts) {
+  this.each(function() {
+    var $this = $(this),
+    data = $this.data();
+
+    if (data.spinner) {
+      data.spinner.stop();
+      delete data.spinner;
+    }
+    if (opts !== false) {
+      data.spinner = new Spinner($.extend({color: $this.css('color')}, opts)).spin(this);
+    }
+  });
+  return this;
+};
+
+function spinner_update() {
+  var opts = {};
+  $('#spinner-opts input[type=text]').each(function() {
+    opts[this.name] = parseFloat(this.value);
+  });
+  opts['left'] = 'auto';
+  $('#spinner-preview').spin(opts);
+}
+
+
+
+$('#id-pills-stacked').removeAttr('checked').on('click', function(){
+  $('.nav-pills').toggleClass('nav-stacked');
+});
+
+
+
+
+
+
+///////////
+$(document).one('ajaxloadstart.page', function(e) {
+  $.gritter.removeAll();
+  $('.modal').modal('hide');
+});
+
 });
 
 
