@@ -1,7 +1,7 @@
 <?php
   session_start();
-include("../mysql/connect.php");
-include ("common.php");
+  include("../mysql/connect.php");
+  include ("common.php");
 
 // if (isset($_GET["value"])) {
 //
@@ -15,8 +15,12 @@ include ("common.php");
 //   }
 // }
 if (isset($_POST["name"])) {
-  if ($_POST["name"]=="") {
-    echo "空";
+
+  $de = $_POST["name"];
+  $true = $db->query(memberDelete($de));
+
+  if ($true == true) {
+    echo "刪除成功";
   }
 
 }

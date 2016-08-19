@@ -31,7 +31,7 @@
     $basename = basename($_SERVER["PHP_SELF"]);
     echo "
           <script>
-            var value='送出成功';
+            var value='新增成功';
             var basename='$basename';
             alerts(value, basename);
           </script>
@@ -47,7 +47,6 @@ if (isset($_SESSION["de"])) {
   ";
   unset($_SESSION["de"]);
 }
-
 
 foreach ($memberse as $key => $value) {
 
@@ -78,16 +77,14 @@ foreach ($memberse as $key => $value) {
 
     <td>
       <div class='hidden-sm hidden-xs action-buttons'>
-        <a class='blue' href='#'>
-          <i class='ace-icon fa fa-search-plus bigger-130'></i>
-        </a>
 
         <a class='green' href='#edit' onclick='Edit(\"$accounts[$key]\",\"$passwords[$key]\",\"$emails[$key]\",\"$names[$key]\")' data-toggle='modal'>
           <i class='ace-icon fa fa-pencil bigger-130'></i>
         </a>
 
-        <a class='red'  href='member/delete.php?value=$accounts[$key]' >
+        <a class='red'  id='bootbox-confirm'>
           <i class='ace-icon fa fa-trash-o bigger-130'></i>
+          <input type='hidden' name='accounts' value='$accounts[$key]'>
         </a>
       </div>
 
@@ -132,7 +129,7 @@ foreach ($memberse as $key => $value) {
 
 
  ?>
-
+<!--
 <tr>
   <td class="center">
     <label class="pos-rel">
@@ -162,9 +159,9 @@ foreach ($memberse as $key => $value) {
         <i class="ace-icon fa fa-pencil bigger-130"></i>
       </a>
 
-      <a class="red"  id='bootbox-confirm' >
+      <a class="red"  >
         <i class="ace-icon fa fa-trash-o bigger-130"></i>
-        <input type="hidden" name="name" value="">
+
       </a>
     </div>
 
@@ -1672,7 +1669,7 @@ foreach ($memberse as $key => $value) {
       </div>
     </div>
   </td>
-</tr>
+</tr> -->
 <?php
   $db = null;
  ?>
