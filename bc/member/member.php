@@ -164,6 +164,7 @@ foreach ($memberse as $key => $value) {
 
       <a class="red"  id='bootbox-confirm' >
         <i class="ace-icon fa fa-trash-o bigger-130"></i>
+        <input type="hidden" name="name" value="">
       </a>
     </div>
 

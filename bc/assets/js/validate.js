@@ -117,9 +117,30 @@ $(document).ready(function(){
   });
 
   $("#bootbox-confirm").on(ace.click_event, function() {
+    var t =$("input[name='name']").val();
+
     bootbox.confirm("Are you sure?", function(result) {
-      document.write("s");
+        if (result) {
+          alert("User confirmed dialog");
+        } else {
+            alert("User declined dialog");
+        }
     });
+    // bootbox.confirm("Are you sure?", function() {
+    //   $.post(
+    //      "member/delete.php",
+    //      { name: "" },
+    //      function(data) {
+    //        document.location.href="member.php";
+    //        if(data == ""){
+    //          alert(data);
+    //        }else{
+    //         alert(data);
+    //         }
+    //      }
+    //   );
+    // });
+
   });
 
   // $("#bootbox-confirm").on(ace.click_event, function() {
