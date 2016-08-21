@@ -14,15 +14,16 @@
 //     header("Location:../member.php");
 //   }
 // }
-if (isset($_POST["name"])) {
+if (isset($_POST["DeAccounts"])) {
 
-  $de = $_POST["name"];
+  $de = $_POST["DeAccounts"];
   $true = $db->query(memberDelete($de));
 
   if ($true == true) {
     echo "刪除成功";
+  }else {
+    echo "刪除失敗";
   }
-
 }
 
 

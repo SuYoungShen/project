@@ -38,16 +38,6 @@
     ";
   }
 
-if (isset($_SESSION["de"])) {
-  echo "
-      <script>
-        value='刪除成功';
-        alert(value);
-      </script>
-  ";
-  unset($_SESSION["de"]);
-}
-
 foreach ($memberse as $key => $value) {
 
   $acc=$accounts[$key] = $value[0];
@@ -61,7 +51,8 @@ foreach ($memberse as $key => $value) {
     <td class='center'>
       <label class='pos-rel'>
         <input type='checkbox' class='ace' />
-        <span class='lbl'></span>
+        <span class='lbl '></span>
+
       </label>
     </td>
 
@@ -82,9 +73,9 @@ foreach ($memberse as $key => $value) {
           <i class='ace-icon fa fa-pencil bigger-130'></i>
         </a>
 
-        <a class='red'  id='bootbox-confirm'>
+        <a class='red'  name='Delete'>
           <i class='ace-icon fa fa-trash-o bigger-130'></i>
-          <input type='hidden' name='accounts' value='$accounts[$key]'>
+          <input type='hidden' name='DeAccounts' value='$accounts[$key]'>
         </a>
       </div>
 
@@ -95,13 +86,6 @@ foreach ($memberse as $key => $value) {
           </button>
 
           <ul class='dropdown-menu dropdown-only-icon dropdown-yellow dropdown-menu-right dropdown-caret dropdown-close'>
-            <li>
-              <a href='#' class='tooltip-info' data-rel='tooltip' title='View'>
-                <span class='blue'>
-                  <i class='ace-icon fa fa-search-plus bigger-120'></i>
-                </span>
-              </a>
-            </li>
 
             <li>
               <a href='#' class='tooltip-success' data-rel='tooltip' title='Edit'>

@@ -213,7 +213,7 @@
 									<a href="#member" class="btn btn-app btn-green btn-xs" role="button" class="green" data-toggle="modal">
 										<i class="ace-icon glyphicon-plus bigger-150"></i>
 									</a>
-									<a href="#" class="btn btn-app btn-danger btn-xs" role="button" class="green" data-toggle="modal">
+									<a href="#" name="Delete"  class="btn btn-app btn-danger btn-xs" role="button" class="green" data-toggle="modal">
 										<i class="ace-icon fa fa-trash-o bigger-150"></i>
 									</a>
 								</div><!-- div.table-responsive -->
@@ -621,19 +621,35 @@
 				//select/deselect all rows according to table header checkbox
 				$('#dynamic-table > thead > tr > th input[type=checkbox]').eq(0).on('click', function(){
 					var th_checked = this.checked;//checkbox inside "TH" table header
-
+					var DeAccounts = new Array();
+					$("input[name='DeAccounts']").each(function(i) {
+						DeAccounts[i] = $(this).val();
+					});
 					$(this).closest('table').find('tbody > tr').each(function(){
+
 						var row = this;
-						if(th_checked) tableTools_obj.fnSelect(row);
-						else tableTools_obj.fnDeselect(row);
+						if(th_checked){
+
+							tableTools_obj.fnSelect(row);
+
+						}else {
+							tableTools_obj.fnDeselect(row);
+						}
 					});
 				});
 
 				//select/deselect a row when the checkbox is checked/unchecked
 				$('#dynamic-table').on('click', 'td input[type=checkbox]' , function(){
+
+					// var DeAccounts = $("input[name='DeAccounts']").val();
+
 					var row = $(this).closest('tr').get(0);
-					if(!this.checked) tableTools_obj.fnSelect(row);
-					else tableTools_obj.fnDeselect($(this).closest('tr').get(0));
+					if(!this.checked){
+						TableHeaderDelete();
+						tableTools_obj.fnSelect(row);
+					}else {
+						tableTools_obj.fnDeselect($(this).closest('tr').get(0));
+					}
 				});
 
 

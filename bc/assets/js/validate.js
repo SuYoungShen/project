@@ -104,51 +104,7 @@ $(document).ready(function(){
     $("input").css("border-color","");
   });
 
-    // bootbox.confirm("Are you sure?", function() {
-    //   $.post(
-    //      "member/delete.php",
-    //      { name: "" },
-    //      function(data) {
-    //        document.location.href="member.php";
-    //        if(data == ""){
-    //          alert(data);
-    //        }else{
-    //         alert(data);
-    //         }
-    //      }
-    //   );
-    // });
 
-
-
-  // $("#bootbox-confirm").on(ace.click_event, function() {
-  //   bootbox.confirm("Are you sure?", function(result) {
-  //     if(result) {
-  //       //
-  //     }
-  //   });
-  // });
-
-//
-//   $("#bootbox-confirm").on(ace.click_event, function() {
-//   bootbox.confirm({
-//   message: "Are you sure?",
-//   buttons: {
-//   confirm: {
-//   label: "OK",
-//   className: "btn-primary btn-sm",
-// },
-// cancel: {
-// label: "Cancel",
-// className: "btn-sm",
-// }
-// },
-// callback: function(result) {
-// if(result) alert(1)
-// }
-// }
-// );
-// });
 
 
 
