@@ -14,17 +14,38 @@
 //     header("Location:../member.php");
 //   }
 // }
-if (isset($_POST["DeAccounts"])) {
-
-  $de = $_POST["DeAccounts"];
-  $true = $db->query(memberDelete($de));
-
+// if (isset($_POST["DeAccountss"])) {
+//
+//   $de = $_POST["DeAccountss"];
+  // $true = $db->query(memberDelete($de));
+// print_r($de);
+  // if ($true == true) {
+  //   echo "刪除成功";
+  // }else {
+  //   echo "刪除失敗";
+  // }
+// }
+// if (isset($_POST["DeAccountss"])) {
+//   $de = $_POST["DeAccountss"];
+//   foreach ($de as $key => $value) {
+//     $true = $db->query(memberDelete($value));
+//   }
+//   if ($true == true) {
+//     echo "刪除成功";
+//   }else {
+//     echo "刪除失敗";
+//   }
+// }
+if (isset($_POST["DeAccountss"])) {
+  $delete = $_POST["DeAccountss"];
+  foreach ($delete as $key => $de) {
+    $true = $db->query(memberDelete($de));
+  }
   if ($true == true) {
     echo "刪除成功";
   }else {
     echo "刪除失敗";
   }
 }
-
 
  ?>
