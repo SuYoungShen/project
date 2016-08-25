@@ -210,8 +210,8 @@
 										<div class="widget-main">
 											<div>
 												<label for="form-field-8">簡介</label>
-												<form  action="" method="post">
-													<textarea class="form-control" id="form-field-8" placeholder="簡介"></textarea>
+												<form  action="about/about.php" method="post">
+													<textarea class="form-control" name="About" id="form-field-8" placeholder="簡介"></textarea>
 													<button class="btn btn-info" type="submit">
 														<i class="ace-icon fa fa-check bigger-110"></i>
 														送出
@@ -228,7 +228,7 @@
 							</div><!-- /.col -->
 						</div>
 
-						<ul class="nav nav-tabs" id="myTab" data-toggle="tab" data-toggle="pill"	>
+						<!-- <ul class="nav nav-tabs" id="myTab" data-toggle="tab" data-toggle="pill"	>
 						  <li class="active"><a href="#home">Home</a></li>
 						  <li><a href="#profile">Profile</a></li>
 						  <li><a href="#messages">Messages</a></li>
@@ -240,7 +240,7 @@
 						  <div class="tab-pane" id="profile">ccc</div>
 						  <div class="tab-pane" id="messages">scsc</div>
 						  <div class="tab-pane" id="settings">sssss</div>
-						</div>
+						</div> -->
 
 
 						<div class="hr hr-18 dotted hr-double"></div>

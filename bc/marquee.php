@@ -7,7 +7,11 @@
           height: 233px;
         }
     </style>
+    <?php
+      include 'mysql/connect.php';
 
+      
+     ?>
     <marquee scrollAmount="20" BEHAVIOR="scroll"  loop="0">
       <img src="../images/marquee/IMG_3350.jpg"  />
       <img src="../images/marquee/white.gif" />
