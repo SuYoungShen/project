@@ -618,21 +618,19 @@
 				//table checkboxes
 				$('th input[type=checkbox], td input[type=checkbox]').prop('checked', false);
 
+				//全選
 				//select/deselect all rows according to table header checkbox
 				$('#dynamic-table > thead > tr > th input[type=checkbox]').eq(0).on('click', function(){
 					var th_checked = this.checked;//checkbox inside "TH" table header
-					var DeAccounts = new Array();
 					var DeAccountss=[];
-					$("input[name='DeAccounts[]']").each(function(i) {
-					  DeAccounts[i] = $(this).val();
-						DeAccountss.push(DeAccounts[i]);
+					$("input[name='DeAccounts[]']").each(function() {
+						DeAccountss.push($(this).val());
 					});
 
 					$(this).closest('table').find('tbody > tr').each(function(){
 						var row = this;
 
 						if(th_checked){
-
 							$(".table-header a[name='Delete']").on(ace.click_event, function() {
 								bootbox.confirm("Are you sure?", function(result) {
 									if (result) {
@@ -644,16 +642,12 @@
 												alerts(data,"member.php");
 											}
 										});
-										// $.post("member/delete.php",{DeAccountss:DeAccounts[i]},function(data) {
-										// 	alerts(data,"member.php");
-										// });
 
 									} else {
 										alert("小心~~~別按錯了!!!");
 									}
 								});
 							});
-
 							tableTools_obj.fnSelect(row);
 
 						}else {
@@ -662,6 +656,7 @@
 					});
 				});
 
+				//單選
 				//select/deselect a row when the checkbox is checked/unchecked
 				$('#dynamic-table').on('click', 'td input[type=checkbox]' , function(){
 

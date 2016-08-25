@@ -2,7 +2,18 @@
   session_start();
   include("../mysql/connect.php");
   include ("common.php");
-
+  
+  if (isset($_POST["DeAccountss"])) {
+    $delete = $_POST["DeAccountss"];
+    foreach ($delete as $key => $de) {
+      $true = $db->query(memberDelete($de));
+    }
+    if ($true == true) {
+      echo "刪除成功";
+    }else {
+      echo "刪除失敗";
+    }
+  }
 // if (isset($_GET["value"])) {
 //
 //   $de = $_GET["value"];
@@ -36,16 +47,6 @@
 //     echo "刪除失敗";
 //   }
 // }
-if (isset($_POST["DeAccountss"])) {
-  $delete = $_POST["DeAccountss"];
-  foreach ($delete as $key => $de) {
-    $true = $db->query(memberDelete($de));
-  }
-  if ($true == true) {
-    echo "刪除成功";
-  }else {
-    echo "刪除失敗";
-  }
-}
+
 
  ?>
