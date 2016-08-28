@@ -12,7 +12,7 @@ $(document).ready(function() {
           url: "member/delete.php",
           data:{'DeAccountss[]':DeAccountss},
           success:function(data){
-            alerts(data,"member.php");
+            alerts(data);
           }
         });
 
@@ -38,7 +38,7 @@ function TableHeaderDelete() {
           url: "member/delete.php",
           data:{'DeAccountss[]':DeAccountss},
           success:function(data){
-            alerts(data,"member.php");
+            alerts(data);//轉回指定葉面
           }
         });
       } else {

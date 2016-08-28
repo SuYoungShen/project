@@ -24,9 +24,15 @@
 		<link rel="stylesheet" href="assets/css/colorbox.min.css" />
 		<!-- text fonts -->
 		<link rel="stylesheet" href="assets/fonts/fonts.googleapis.com.css" />
+		<script src="assets/js/jquery.2.1.1.min.js"></script>
 
 		<!-- ace styles -->
 		<link rel="stylesheet" href="assets/css/ace.min.css" class="ace-main-stylesheet" id="main-ace-style" />
+
+
+		<!-- post -->
+		<!-- <script type="text/javascript" src="about/js/fun.js"></script> -->
+		<!-- post -->
 
 		<!--[if lte IE 9]>
 			<link rel="stylesheet" href="assets/css/ace-part2.min.css" class="ace-main-stylesheet" />
@@ -210,9 +216,10 @@
 										<div class="widget-main">
 											<div>
 												<label for="form-field-8">簡介</label>
-												<form  action="about/about.php" method="post">
-													<textarea class="form-control" name="About" id="form-field-8" placeholder="簡介"></textarea>
-													<button class="btn btn-info" type="submit">
+												<form action="about/about.php" method="post">
+													<textarea class="form-control" name="About" id="form-field-8" placeholder="簡介(最多1000字)"></textarea>
+													<br>
+													<button class="btn btn-info" type="submit" name="AboutSubmit" >
 														<i class="ace-icon fa fa-check bigger-110"></i>
 														送出
 													</button>
@@ -244,6 +251,7 @@
 
 
 						<div class="hr hr-18 dotted hr-double"></div>
+
 						<!--輪放-->
 						<div class="page-header">
 							<h1>輪放</h1>
@@ -271,7 +279,8 @@
 										<form class="" action="" method="post">
 											<div class="form-group">
 												<div class="col-xs-12">
-													<input multiple="" type="file" id="id-input-file-2" multiple="multiple" />
+													<input name="carousel[]" type="file"
+														id="id-input-file-3" multiple="multiple" />
 												</div>
 											</div>
 
@@ -319,7 +328,7 @@
 									<div class="widget-main">
 										<ul class="ace-thumbnails clearfix">
 											<?php
-											include("carousel.php");
+											include("about/carousel.php");
 											?>
 										</ul>
 									</div><!-- PAGE CONTENT ENDS -->
@@ -328,7 +337,6 @@
 						</div>
 						<!--輪放-->
 					</div>
-
 
 					<div class="hr hr-18 dotted hr-double"></div>
 
@@ -344,8 +352,6 @@
 									<i class="ace-icon fa fa-trash-o bigger-150"></i>
 								</a>
 							</div>
-
-							<!-- div.table-responsive -->
 
 							<!-- 地區 -->
 							<div >
@@ -382,6 +388,8 @@
 					</div>
 					<!--地區-->
 
+					<div class="hr hr-18 dotted hr-double"></div>
+
 					<!--跑馬燈-->
 					<div class="row">
 						<div class="col-sm-12">
@@ -411,7 +419,7 @@
 								<div class="widget-body">
 									<div class="widget-main">
 										<?php
-										include("marquee.php");
+										include("about/marquee.php");
 										?>
 									</div>
 								</div>
@@ -510,7 +518,6 @@
 		<!-- basic scripts -->
 
 		<!--[if !IE]> -->
-		<script src="assets/js/jquery.2.1.1.min.js"></script>
 
 		<!-- <![endif]-->
 
