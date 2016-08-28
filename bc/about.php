@@ -29,7 +29,7 @@
 		<!-- ace styles -->
 		<link rel="stylesheet" href="assets/css/ace.min.css" class="ace-main-stylesheet" id="main-ace-style" />
 
-
+		<script type="text/javascript" src="assets/js/alert.js"></script>
 		<!-- post -->
 		<!-- <script type="text/javascript" src="about/js/fun.js"></script> -->
 		<!-- post -->
@@ -276,11 +276,11 @@
 
 								<div class="widget-body">
 									<div class="widget-main">
-										<form class="" action="" method="post">
+										<form  method="post">
 											<div class="form-group">
 												<div class="col-xs-12">
 													<input name="carousel[]" type="file"
-														id="id-input-file-3" multiple="multiple" />
+													id="id-input-file-3" multiple="multiple" />
 												</div>
 											</div>
 

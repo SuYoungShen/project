@@ -19,13 +19,14 @@
     return $about;
   }
 
-  function AboutIn($AboutIn)
+  function AboutIn($AboutIn,$datetime)
   {
     $AboutIn ="INSERT INTO `about`
-                          (`about`)
+                          (`about`,`datetime`)
                           VALUES
                           (
-                            '".$AboutIn."'
+                            '".$AboutIn."',
+                            '".$datetime."'
                           )";
     return $AboutIn;
   }

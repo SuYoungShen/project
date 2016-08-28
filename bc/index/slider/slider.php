@@ -6,6 +6,7 @@
 $sliderse = $db->query(sliderse());//查詢slider資料表
 $row = $sliderse->fetchAll();
 $sliderdir='index/slider/images/';//slider放毒片路徑
+$sliderbasename = basename($_SERVER["PHP_SELF"]);
 
 if (!isset($_SESSION["slidernum"]) && !isset($_SESSION["slidernums"])) {
   $_SESSION["slidernum"] = 0;
@@ -25,7 +26,8 @@ if (!isset($_SESSION["slidernum"]) && !isset($_SESSION["slidernums"])) {
         echo "
         <script>
           var value = '不小心按到送出了齁~~~';
-          alerts(value);
+          var basename='$sliderbasename';
+          alerts(value,basename);
         </script>";
 
       }else if($slider6_error == 0){
