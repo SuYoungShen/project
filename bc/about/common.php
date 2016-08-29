@@ -40,4 +40,32 @@
     return $AboutDe;
   }
 
+  function carouselSe()
+  {
+    $carousel = "SELECT * From `carousel`";
+    return $carousel;
+  }
+
+  function carouselUp(&$carousel_name, &$carouselDir, &$datetime, &$key)
+  {
+
+    $topup = "UPDATE carousel SET
+                      name = '".$carousel_name."',
+                      path = '".$carouselDir."',
+                      datetime = '".$datetime."'
+                    WHERE
+                      id = '".$key."'
+                    ";
+    return $topup;
+  }
+
+  function message($value, $carouselBasename){
+    echo "
+    <script>
+      var value ='$value';
+      var basename= '$carouselBasename';
+      alerts(value, basename);
+    </script>
+    ";
+  }
  ?>

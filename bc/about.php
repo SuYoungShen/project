@@ -251,96 +251,108 @@
 
 
 						<div class="hr hr-18 dotted hr-double"></div>
+						<div class="row">
 
-						<!--輪放-->
-						<div class="page-header">
-							<h1>輪放</h1>
-						</div><!-- /.page-header -->
 
-						<!--輪放-->
-						<div class="col-sm-4">
-							<div class="widget-box">
-								<div class="widget-header">
-									<h4 class="widget-title">上傳輪放照片</h4>
+							<!--輪放-->
+							<div class="page-header">
+								<h1>輪放</h1>
+							</div><!-- /.page-header -->
 
-									<div class="widget-toolbar">
-										<a href="#" data-action="collapse">
-											<i class="ace-icon fa fa-chevron-up"></i>
-										</a>
+							<!--輪放-->
+							<div class="col-sm-4">
+								<div class="widget-box">
+									<div class="widget-header">
+										<h4 class="widget-title">上傳輪放照片</h4>
 
-										<a href="#" data-action="close">
-											<i class="ace-icon fa fa-times"></i>
-										</a>
+										<div class="widget-toolbar">
+											<a href="#" data-action="collapse">
+												<i class="ace-icon fa fa-chevron-up"></i>
+											</a>
+
+											<a href="#" data-action="close">
+												<i class="ace-icon fa fa-times"></i>
+											</a>
+										</div>
 									</div>
-								</div>
 
-								<div class="widget-body">
-									<div class="widget-main">
-										<form  method="post">
-											<div class="form-group">
-												<div class="col-xs-12">
-													<input name="carousel[]" type="file"
-													id="id-input-file-3" multiple="multiple" />
+									<div class="widget-body">
+										<div class="widget-main">
+											<form class="form-horizontal"  role="form" method="post"
+															enctype="multipart/form-data">
+												<div class="form-group">
+													<div class="col-xs-12">
+														<input name="carousel[]" type="file"
+														id="id-input-file-3" multiple="multiple" />
+													</div>
 												</div>
-											</div>
 
-											<label>
-												<br/>
-												<button class="btn btn-info" type="submit">
-													<i class="ace-icon fa fa-check bigger-110"></i>
-													送出
-												</button>
+												<label>
+													<br/>
+													<button class="btn btn-info" type="submit">
+														<i class="ace-icon fa fa-check bigger-110"></i>
+														送出
+													</button>
 
-												&nbsp; &nbsp; &nbsp;
+													&nbsp; &nbsp; &nbsp;
 
-											</label>
-										</form>
+												</label>
+												<label>
+													<br/>
+													<button class="btn btn-info" type="submit" name = "clear">
+														<i class="ace-icon fa fa-check bigger-110"></i>
+														清除name
+													</button>
+													&nbsp; &nbsp; &nbsp;
+												</label>
+											</form>
+										</div>
 									</div>
 								</div>
 							</div>
-						</div>
 
-						<div class="col-sm-8">
-							<div class="widget-box">
-								<div class="widget-header">
-									<h4 class="widget-title">輪放</h4>
+							<div class="col-sm-8">
+								<div class="widget-box">
+									<div class="widget-header">
+										<h4 class="widget-title">輪放</h4>
 
-									<span class="widget-toolbar">
-										<a href="#" data-action="settings">
-											<i class="ace-icon fa fa-cog"></i>
-										</a>
+										<span class="widget-toolbar">
+											<a href="#" data-action="settings">
+												<i class="ace-icon fa fa-cog"></i>
+											</a>
 
-										<a href="#" data-action="reload">
-											<i class="ace-icon fa fa-refresh"></i>
-										</a>
+											<a href="#" data-action="reload">
+												<i class="ace-icon fa fa-refresh"></i>
+											</a>
 
-										<a href="#" data-action="collapse">
-											<i class="ace-icon fa fa-chevron-up"></i>
-										</a>
+											<a href="#" data-action="collapse">
+												<i class="ace-icon fa fa-chevron-up"></i>
+											</a>
 
-										<a href="#" data-action="close">
-											<i class="ace-icon fa fa-times"></i>
-										</a>
-									</span>
-								</div>
+											<a href="#" data-action="close">
+												<i class="ace-icon fa fa-times"></i>
+											</a>
+										</span>
+									</div>
 
-								<div class="widget-body">
-									<div class="widget-main">
-										<ul class="ace-thumbnails clearfix">
-											<?php
-											include("about/carousel.php");
-											?>
-										</ul>
-									</div><!-- PAGE CONTENT ENDS -->
+									<div class="widget-body">
+										<div class="widget-main">
+											<ul class="ace-thumbnails clearfix">
+												<?php
+												include("about/carousel.php");
+												?>
+											</ul>
+										</div><!-- PAGE CONTENT ENDS -->
+									</div>
 								</div>
 							</div>
+							<!--輪放-->
 						</div>
-						<!--輪放-->
 					</div>
 
 					<div class="hr hr-18 dotted hr-double"></div>
 
-					<!--景點-->
+					<!--地區-->
 					<div class="row">
 						<div class="col-sm-12 ">
 							<div class="table-header">
@@ -377,11 +389,11 @@
 											<th></th>
 										</tr>
 									</thead>
-
-									<?php
+									<tbody>
+										<?php
 										include("about/place.php");
-									 ?>
-
+										?>
+									</tbody>
 								</table>
 							</div>
 						</div>
@@ -444,7 +456,8 @@
 								<div class="row">
 									<div class="col-xs-12">
 										<!-- PAGE CONTENT BEGINS -->
-										<form class="form-horizontal" role="form" action="">
+										<form class="form-horizontal"  role="form" method="post"
+														enctype="multipart/form-data">
 											<div class="form-group">
 												<label class="col-sm-3 control-label no-padding-right" for="form-field-1"> 地點名	 </label>
 
@@ -465,7 +478,7 @@
 											<div class="form-group">
 												<label class="col-sm-3 control-label no-padding-right" for="form-field-1-1"> 上傳圖檔 </label>
 												<div class="col-sm-8">
-													<input multiple="" type="file" id="id-input-file-3" />
+													<input multiple="multiple" name="placename[]" type="file" id="id-input-file-4" />
 												</div>
 											</div>
 
@@ -946,7 +959,7 @@
 					//
 				});
 				//pre-show a file name, for example a previously selected file
-				//$('#id-input-file-1').ace_file_input('show_file_list', ['myfile.txt'])
+				// $('#id-input-file-1').ace_file_input('show_file_list', ['myfile.txt'])
 
 
 				$('#id-input-file-3').ace_file_input({
@@ -987,6 +1000,36 @@
 					//{type: 'file', name: 'hello.txt'}
 				//]);
 
+				$('#id-input-file-4').ace_file_input({
+					style:'well',
+					btn_choose:'Drop files here or click to choose',
+					btn_change:null,
+					no_icon:'ace-icon fa fa-cloud-upload',
+					droppable:true,
+					thumbnail:'small'//large | fit
+					//,icon_remove:null//set null, to hide remove/reset button
+					/**,before_change:function(files, dropped) {
+						//Check an example below
+						//or examples/file-upload.html
+						return true;
+					}*/
+					/**,before_remove : function() {
+						return true;
+					}*/
+					,
+					preview_error : function(filename, error_code) {
+						//name of the file that failed
+						//error_code values
+						//1 = 'FILE_LOAD_FAILED',
+						//2 = 'IMAGE_LOAD_FAILED',
+						//3 = 'THUMBNAIL_FAILED'
+						//alert(error_code);
+					}
+
+				}).on('change', function(){
+					//console.log($(this).data('ace_input_files'));
+					//console.log($(this).data('ace_input_method'));
+				});
 
 
 

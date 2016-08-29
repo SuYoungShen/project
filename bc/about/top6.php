@@ -4,7 +4,7 @@
   include ("common.php");//常用語法
 
   $top6dir='index/top6/images/';
-  $topbasename = basename($_SERVER["PHP_SELF"]);
+  $topBasename = basename($_SERVER["PHP_SELF"]);
 if (!isset($_SESSION["topnum"]) && !isset($_SESSION["topnums"])) {
   $_SESSION["topnum"] = 0;
   $_SESSION["topnums"] = 1;
@@ -21,12 +21,7 @@ if (!isset($_SESSION["topnum"]) && !isset($_SESSION["topnums"])) {
 
       if ($top6_error == 4 ) {//判斷是否有錯誤
 
-        echo "
-        <script>
-        var value = '不小心按到送出了齁~~~';
-        var basename= '$topbasename';
-        alerts(value, basename);
-        </script>";
+        message("不小心按到送出了齁",$topBasename);
 
       }else if($top6_error == 0){
 
@@ -41,12 +36,8 @@ if (!isset($_SESSION["topnum"]) && !isset($_SESSION["topnums"])) {
         if (!in_array($top6_tmps,$toptmp)) {//檢查副檔名
 
           $toptmp = "不好意思,只接受".implode(" ",$toptmp)."的副檔名";
-          echo "
-          <script>
-          var value = '$toptmp';
-          var basename= '$topbasename';
-          alerts(value, basename);
-          </script>";
+          message($toptmp,$topBasename);
+
           break;
 
         }else if($top6_size > 2097152){//檢查檔案大小
@@ -55,22 +46,22 @@ if (!isset($_SESSION["topnum"]) && !isset($_SESSION["topnums"])) {
           echo "
           <script>
           var value = '$topsize';
-          var basename= '$topbasename';
+          var basename= '$topBasename';
           alerts(value, basename);
           </script>";
           break;
         }
 
         date_default_timezone_set('Asia/Taipei');//設定時間為台北
-        $date = date("Y-m-d H:i:s");//時間
+        $datetime = date("Y-m-d H:i:s");//時間
 
         if(file_exists($top6dir.$top6_name)){//檢查是否有相同檔案
 
           $topname = basename($top6_name,"$top6_tmps");//去除副檔名,留檔名
           echo "
           <script>
-          var value = '資料夾裡已有名稱'+$topname+'的檔案';
-          var basename= '$topbasename';
+          var value = '資料夾裡已有名稱'+'$topname'+'的檔案';
+          var basename= '$topBasename';
 
           alerts(value, basename);
           </script>
@@ -105,18 +96,18 @@ if (!isset($_SESSION["topnum"]) && !isset($_SESSION["topnums"])) {
 
             }
             //時間比對
-            
+
             $toptime = strtotime($toptimes["$topnum"]) < strtotime($toptimes["$topnums"]);
             $toptimess = strtotime($toptimes["$topnum"]) == strtotime($toptimes["$topnums"]);
 
             if($toptime || $toptimess){
 
-              $topup = topup($top6_name, $top6dir, $date, $topid["$topnum"]);//更新檔名
+              $topup = topup($top6_name, $top6dir, $datetime, $topid["$topnum"]);//更新檔名
               $db->query($topup);//執行更新指令
 
             }else {
 
-              $topup = topup($top6_name, $top6dir, $date, $topid["$topnums"]);//更新檔名
+              $topup = topup($top6_name, $top6dir, $datetime, $topid["$topnums"]);//更新檔名
               $db->query($topup);//執行更新指令
 
             }
@@ -129,13 +120,9 @@ if (!isset($_SESSION["topnum"]) && !isset($_SESSION["topnums"])) {
     }//foreach
   }//FILE["top6"]
 
-
-
-
-
-
   // echo "See=".$_SESSION["topnums"]."<br>";
   // echo "SESSION=".$_SESSION["topnum"]."<br>";
+
 
 $topse = $db->query(topse());//查詢top資料表
 

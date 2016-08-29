@@ -132,7 +132,6 @@ if (!isset($_SESSION["topnum"]) && !isset($_SESSION["topnums"])) {
 
 
 
-
   // echo "See=".$_SESSION["topnums"]."<br>";
   // echo "SESSION=".$_SESSION["topnum"]."<br>";
 
