@@ -1,5 +1,5 @@
 $(document).ready(function() {
-
+  
   $("button[name='AboutSubmit']").on(ace.click_event, function() {
     // var DeAccountss=[];
     var About = $("textarea[name='About']").val();
@@ -14,9 +14,7 @@ $(document).ready(function() {
     //       alert(data);
     //     }
     //   });
-    } 
-
-
+    }
   });
 
 });

@@ -3,9 +3,9 @@ include ("mysql/connect.php");//連接資料庫
 include ("common.php");//常用語法
 
 $carouselDir='about/carousel/images/';
-$carouselSe = $db->query(carouselSe());//查詢top資料表
+$carouselSe = $db->query(CarouselSe());//查詢top資料表
 $display = $carouselSe->fetchAll();//顯示
-$carouselBasename = basename($_SERVER["PHP_SELF"]);//目前的檔案名稱
+$Basename = basename($_SERVER["PHP_SELF"]);//目前的檔案名稱
 
 if (!isset($_SESSION["carouselnum"]) && !isset($_SESSION["carouselnums"])) {
   $_SESSION["carouselnum"] = 0;
@@ -20,7 +20,7 @@ if (isset($_FILES["carousel"])) {
 
     if ($carousel_error == 4 ) {//判斷是否有錯誤
 
-      message("不小心按到送出了齁",$carouselBasename);
+      message("不小心按到送出了齁",$Basename);
 
     }else if($carousel_error == 0){
 
@@ -34,13 +34,13 @@ if (isset($_FILES["carousel"])) {
       if (!in_array($carousel_tmps,$carouseltmp)) {//檢查副檔名
 
         $carouseltmp = "不好意思,只接受".implode(" ",$carouseltmp)."的副檔名";
-        message($carouseltmp,$carouselBasename);      
+        message($carouseltmp,$Basename);
         break;
 
       }else if($carousel_size > 2097152){//檢查檔案大小
 
         $carouselsize = basename($carousel_name,"$carousel_tmps");
-        message($carouselsize."檔案已超過2MB",$carouselBasename);
+        message($carouselsize."檔案已超過2MB",$Basename);
 
         break;
       }
@@ -51,7 +51,7 @@ if (isset($_FILES["carousel"])) {
       if(file_exists($carouselDir.$carousel_name)){//檢查是否有相同檔案
 
         $carouselName = basename($carousel_name,"$carousel_tmps");//去除副檔名,留檔名
-        message("資料夾裡已有名稱".$carouselName."的檔案",$carouselBasename);
+        message("資料夾裡已有名稱".$carouselName."的檔案",$Basename);
 
       }else{
 
@@ -89,14 +89,14 @@ if (isset($_FILES["carousel"])) {
 
           if($carouseltime || $carouseltimess){
 
-            $carouselup = carouselUp($carousel_name, $carouselDir, $datetime, $carouselid["$carouselnum"], $key);//更新檔名
+            $carouselup = CarouselUp($carousel_name, $carouselDir, $datetime, $carouselid["$carouselnum"], $key);//更新檔名
             $db->query($carouselup);//執行更新指令
-            message("新增成功",$carouselBasename);
+            message("新增成功",$Basename);
           }else {
 
-            $carouselup = carouselUp($carousel_name, $carousel6dir, $datetime, $carouselid["$carouselnums"], $key);//更新檔名
+            $carouselup = CarouselUp($carousel_name, $carousel6dir, $datetime, $carouselid["$carouselnums"], $key);//更新檔名
             $db->query($carouselup);//執行更新指令
-            message("新增成功",$carouselBasename);
+            message("新增成功",$Basename);
           }
           $_SESSION["carouselnum"]++;
           $_SESSION["carouselnums"]++;

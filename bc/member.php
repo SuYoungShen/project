@@ -49,15 +49,16 @@
 		<!-- 彈跳視窗 -->
 
 		<script src="assets/js/jquery.2.1.1.min.js"></script>
-		<script src="http://static.runoob.com/assets/jquery-validation-1.14.0/lib/jquery.js"></script>
-		<script src="http://static.runoob.com/assets/jquery-validation-1.14.0/dist/jquery.validate.min.js"></script>
-		<script src="http://static.runoob.com/assets/jquery-validation-1.14.0/dist/localization/messages_zh.js"></script>
 
 		<!-- 刪除 -->
 		<script type="text/javascript" src="member/js/delete.js"></script>
 		<!-- 刪除 -->
 		<script type="text/javascript" src="member/js/fun.js"></script>
 		<!-- 表單驗證 -->
+		<script src="http://static.runoob.com/assets/jquery-validation-1.14.0/lib/jquery.js"></script>
+		<script src="http://static.runoob.com/assets/jquery-validation-1.14.0/dist/jquery.validate.min.js"></script>
+		<script src="http://static.runoob.com/assets/jquery-validation-1.14.0/dist/localization/messages_zh.js"></script>
+
 		<script type="text/javascript" src="assets/js/validate.js"></script>
 		<!-- 表單驗證 -->
 		<style>

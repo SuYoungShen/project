@@ -4,7 +4,6 @@
   //       alert("提交事件!");
   //     }
   // });
-$(document).ready(function(){
   /* Act on the event */
     // var email = $("#email").val();
     // if (validateEmail(email)) {
@@ -22,6 +21,7 @@ $(document).ready(function(){
     //     return false;
     //   }
     // }
+$(document).ready(function(){
 
     var account=/^[a-zA-z0-9]{4,10}$/;
      $("input[name='account']").blur(function(){
@@ -99,15 +99,10 @@ $(document).ready(function(){
    });//name
 
 
-  $(":reset").click(function() {
+  $(":reset").click(function() {//重設
     $(".reset").text("");
     $("input").css("border-color","");
   });
-
-
-
-
-
 
 $('#spinner-opts small').css({display:'inline-block', width:'60px'})
 
@@ -166,12 +161,6 @@ $('#id-pills-stacked').removeAttr('checked').on('click', function(){
   $('.nav-pills').toggleClass('nav-stacked');
 });
 
-
-
-
-
-
-///////////
 $(document).one('ajaxloadstart.page', function(e) {
   $.gritter.removeAll();
   $('.modal').modal('hide');
