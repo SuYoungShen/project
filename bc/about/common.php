@@ -101,18 +101,7 @@
                           )";
     return $placeIn;
   }
-  function test($placeName,$Introduction)
-  {
-    $placeIn ="INSERT INTO `place`
-                          (`place`,`Introduction`)
-                          VALUES
-                          (
-                            '".$placeName."',
-                            '".$Introduction."'
-
-                          )";
-    return $placeIn;
-  }
+  
 
 
  ?>

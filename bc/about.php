@@ -39,8 +39,6 @@
 
 		<!-- 表單驗證 -->
 
-
-
 		<!--[if lte IE 9]>
 			<link rel="stylesheet" href="assets/css/ace-part2.min.css" class="ace-main-stylesheet" />
 		<![endif]-->
@@ -495,7 +493,7 @@
 
 											<div class="clearfix form-actions">
 												<div class="col-md-offset-3 col-md-9">
-													<button class="btn btn-info" type="submit">
+													<button class="btn btn-info" name="insert" type="submit">
 														<i class="ace-icon fa fa-check bigger-110"></i>
 														送出
 													</button>
@@ -535,10 +533,10 @@
 										<form class="form-horizontal" name="place"  role="form" method="post"
 														enctype="multipart/form-data">
 											<div class="form-group">
-												<label class="col-sm-3 control-label no-padding-right" for="form-field-1"> 地點名	 </label>
+												<label class="col-sm-3 control-label no-padding-right"  for="form-field-1"> 地點名	 </label>
 
 												<div class="col-sm-9">
-													<input type="text" id="form-field-1" name="placeName" placeholder="地點名" class="col-xs-10 col-sm-5" required="required"/>
+													<input type="text" id="placeName" name="placeName" readonly="readonly" placeholder="地點名" class="col-xs-10 col-sm-5" required="required"/>
 												</div>
 											</div>
 
@@ -546,7 +544,7 @@
 												<label class="col-sm-3 control-label no-padding-right" for="form-field-1-1"> 地點介紹 </label>
 
 												<div class="col-sm-9">
-													<input type="text" id="form-field-1-1" name="Introduction" placeholder="景點介紹" class="col-xs-10 col-sm-5" required="required"/>
+													<input type="text" id="Introduction" name="Introduction" placeholder="景點介紹" class="col-xs-10 col-sm-5" required="required"/>
 												</div>
 											</div>
 
@@ -555,7 +553,8 @@
 
 												<div class="col-sm-8">
 													<input multiple="multiple" name="picName[]" type="file" id="id-input-file-5" />
-													<img class="col-xs-8"	 src="about/place/images/1(2).jpg">
+													<!-- <input type="text" name="name" id="pic" value=""> -->
+													<span id="pic"></span>
 												</div>
 
 											</div>
