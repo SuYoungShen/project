@@ -1,6 +1,7 @@
-
 <?php
+  $dbname = "top";
   include("mysql/connect.php");
+
   include ("common.php");
   $memberse = $db->query(memberSelect());
 

@@ -1,5 +1,5 @@
 <?php
-
+  $dbname="top";
   include ("mysql/connect.php");//連接資料庫
   include ("common.php");//常用語法
 
@@ -138,13 +138,20 @@ if (!isset($_SESSION["slidernum"]) && !isset($_SESSION["slidernums"])) {
 // }
 
 foreach ($row as $key => $value) {
-   $va = $value[1];
+  $picName = $value[1];
+  $picDir = $value[2];
+  $picNames = basename($picName,".jpg");
+  if (!empty($picName) && !empty($picDir)) {
+    $display = $picDir.$picName;
+  }else {
+    $display = "http://img.ltn.com.tw/2016/new/jul/13/images/bigPic/400_400/phpyq9Xeu.jpg";
+  }
   echo "
   <div class='sl-slide item$key' data-orientation='horizontal' data-slice1-rotation='-25' data-slice2-rotation='-25' data-slice1-scale='2' data-slice2-scale='2'>
     <div class='sl-slide-inner'>
       <div class='container'>
-        <img class='pull-right' src='index/slider/images/$va' alt='' height='520' width='950'/>
-        <h2>高雄85大樓</h2>
+        <img class='pull-right' src='$display' alt='' height='520' width='950'/>
+        <h2>$picNames</h2>
         <!-- <h3 class='gap'>Tincidunt condimentum eros</h3>
         <a class='btn btn-large btn-transparent' href='#'>Learn More</a> -->
       </div>

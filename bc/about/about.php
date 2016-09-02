@@ -1,7 +1,8 @@
 <script type="text/javascript" src="../assets/js/alert.js"></script>
 
 <?php
-  include 'mysql/connect.php';
+  $dbname="about";
+  include ("../mysql/connect.php");
   include 'common.php';
 
   if (isset($_POST["About"])) {

@@ -1,5 +1,6 @@
 <?php
-  include 'about/mysql/connect.php';
+  $dbname="about";
+  include ("mysql/connect.php");
 
   $placeSe = $db->query(PlaceSe());//查詢資料表
   $display = $placeSe->fetchAll();

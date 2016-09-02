@@ -351,7 +351,7 @@
 						<div class="widget-body">
 							<div class="widget-main">
 								<?php
-								include("marquee.php");
+								include("about/marquee.php");
 								?>
 							</div>
 						</div>

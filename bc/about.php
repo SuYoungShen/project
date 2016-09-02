@@ -441,16 +441,9 @@
 
 								<div class="widget-body">
 									<div class="widget-main">
-										<marquee scrollAmount="20" BEHAVIOR="scroll"  loop="0">
 										<?php
-										// include 'mysql/connect.php';//top資料表
-							      // include 'index/top6/common.php';
-
-										include("about/marquee.php");
-
+											include("about/marquee.php");
 										?>
-										</marquee>
-
 									</div>
 								</div>
 							</div>

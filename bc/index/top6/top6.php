@@ -1,5 +1,6 @@
 <?php
 
+  $dbname="top";
   include ("mysql/connect.php");//連接資料庫
   include ("common.php");//常用語法
 
@@ -143,13 +144,21 @@ $topse = $db->query(topse());//查詢top資料表
 
 $row = $topse->fetchAll();
   foreach ($row as $key => $value) {
-    $top6 = $value[1];
+
+    $picName = $value[1];
+    $picDir = $value[2];
+    if (!empty($picName) && !empty($picDir)) {
+			$display = $picDir.$picName;
+		}else {
+			$display = "http://img.ltn.com.tw/2016/new/jul/13/images/bigPic/400_400/phpyq9Xeu.jpg";
+		}
+
     echo "
     <li>
-      <a href='index/top6/images/$top6' title='$top6' data-rel='colorbox'>
-        <img width='150' height='150' alt='150x150' src='index/top6/images/$top6'/>
+      <a href='$display' title='$picName' data-rel='colorbox'>
+        <img width='150' height='150' alt='150x150' src='$display'/>
         <div class='text'>
-          <div class='inner'>$top6</div>
+          <div class='inner'>$picName</div>
         </div>
       </a>
 
