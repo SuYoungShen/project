@@ -36,8 +36,12 @@
 		<script src="http://static.runoob.com/assets/jquery-validation-1.14.0/dist/jquery.validate.min.js"></script>
 		<script src="http://static.runoob.com/assets/jquery-validation-1.14.0/dist/localization/messages_zh.js"></script>
 		<script type="text/javascript" src="about/place/js/fun.js"></script>
-
 		<!-- 表單驗證 -->
+
+    <!-- 刪除 -->
+    <script type="text/javascript" src="about/place/js/delete.js"></script>
+    <!-- 刪除 -->
+
 
 		<!--[if lte IE 9]>
 			<link rel="stylesheet" href="assets/css/ace-part2.min.css" class="ace-main-stylesheet" />
@@ -370,7 +374,7 @@
 								<a href="#place" class="btn btn-app btn-green btn-xs" role="button" class="green" data-toggle="modal">
 									<i class="ace-icon glyphicon-plus bigger-150"></i>
 								</a>
-								<a href="#" class="btn btn-app btn-danger btn-xs" role="button" class="green" data-toggle="modal">
+								<a href="#" name="Delete" class="btn btn-app btn-danger btn-xs" role="button" class="green" data-toggle="modal">
 									<i class="ace-icon fa fa-trash-o bigger-150"></i>
 								</a>
 							</div>
@@ -396,12 +400,11 @@
 											<th></th>
 										</tr>
 									</thead>
-									<tbody>
-										<?php
-										include("about/place.php");
-										?>
-
-									</tbody>
+                  <tbody>
+                    <?php
+                    include("about/place.php");
+                    ?>
+                  </tbody>
 								</table>
 							</div>
 						</div>
@@ -438,9 +441,16 @@
 
 								<div class="widget-body">
 									<div class="widget-main">
+										<marquee scrollAmount="20" BEHAVIOR="scroll"  loop="0">
 										<?php
+										// include 'mysql/connect.php';//top資料表
+							      // include 'index/top6/common.php';
+
 										include("about/marquee.php");
+
 										?>
+										</marquee>
+
 									</div>
 								</div>
 							</div>
@@ -660,7 +670,9 @@
 		<script src="assets/js/jquery.inputlimiter.1.3.1.min.js"></script>
 		<script src="assets/js/jquery.maskedinput.min.js"></script>
 		<script src="assets/js/bootstrap-tag.min.js"></script>
-
+    <!-- 彈跳視窗 -->
+    <script src="assets/js/bootbox.min.js"></script>
+    <!-- 彈跳視窗 -->
 		<!-- ace scripts -->
 		<script src="assets/js/ace-elements.min.js"></script>
 		<script src="assets/js/ace.min.js"></script>
@@ -818,6 +830,7 @@
 
 
 				/////////////////////////////////
+        //多選
 				//table checkboxes
 				$('th input[type=checkbox], td input[type=checkbox]').prop('checked', false);
 
@@ -825,18 +838,50 @@
 				$('#dynamic-table > thead > tr > th input[type=checkbox]').eq(0).on('click', function(){
 					var th_checked = this.checked;//checkbox inside "TH" table header
 
+					var Deplace_names=[];
+					$("input[name='Deplace_name[]']").each(function() {
+						Deplace_names.push($(this).val());
+					});
+
+
 					$(this).closest('table').find('tbody > tr').each(function(){
 						var row = this;
-						if(th_checked) tableTools_obj.fnSelect(row);
-						else tableTools_obj.fnDeselect(row);
+
+  					if(th_checked) {
+							$(".table-header a[name='Delete']").on(ace.click_event, function() {
+								bootbox.confirm("Are you sure?", function(result) {
+							    if (result) {
+							      $.ajax({
+							        type:"POST",
+							        url: "about/place/delete.php",
+							        data:{'Deplace_name[]':Deplace_names},
+							        success:function(data){
+							          alerts(data,"about.php");//轉回指定葉面
+							        }
+							      });
+							    } else {
+							      alert("小心~~~別按錯了!!!");
+							    }
+							  });
+							});
+                tableTools_obj.fnSelect(row);
+            }else{
+              tableTools_obj.fnDeselect(row);
+            }
 					});
 				});
 
+        //單選
 				//select/deselect a row when the checkbox is checked/unchecked
 				$('#dynamic-table').on('click', 'td input[type=checkbox]' , function(){
 					var row = $(this).closest('tr').get(0);
-					if(!this.checked) tableTools_obj.fnSelect(row);
-					else tableTools_obj.fnDeselect($(this).closest('tr').get(0));
+
+					if(!this.checked){
+            OnlyDelete();
+            tableTools_obj.fnSelect(row);
+          }else {
+            tableTools_obj.fnDeselect($(this).closest('tr').get(0));
+          }
 				});
 
 

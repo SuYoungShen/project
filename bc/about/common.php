@@ -59,11 +59,11 @@
     return $topup;
   }
 
-  function message($value, $carouselBasename){
+  function message($value, $Basename){
     echo "
     <script>
       var value ='$value';
-      var basename= '$carouselBasename';
+      var basename= '$Basename';
       alerts(value, basename);
     </script>
     ";
@@ -101,7 +101,15 @@
                           )";
     return $placeIn;
   }
-  
+
+  function PlaceDe($placeName)
+  {
+    $AboutDe ="DELETE FROM `place`
+                      WHERE place=
+                                  '".$placeName."'
+                                  ";
+    return $AboutDe;
+  }
 
 
  ?>

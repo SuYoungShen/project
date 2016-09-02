@@ -10,6 +10,7 @@ $(document).ready(function() {
        Introduction:"(必填)"
      }
    });
+   
 });
 
 function Edit(placeName, Introduction, picDir, pic_name) {

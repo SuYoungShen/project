@@ -21,11 +21,13 @@ if (!isset($_SESSION["topnum"]) && !isset($_SESSION["topnums"])) {
 
       if ($top6_error == 4 ) {//判斷是否有錯誤
 
+        // message($pictmp,$Basename);
+
         echo "
         <script>
         var value = '不小心按到送出了齁~~~';
         var basename= '$topbasename';
-        alerts(value, basename);
+        alerts(value,basename);
         </script>";
 
       }else if($top6_error == 0){
@@ -67,9 +69,11 @@ if (!isset($_SESSION["topnum"]) && !isset($_SESSION["topnums"])) {
         if(file_exists($top6dir.$top6_name)){//檢查是否有相同檔案
 
           $topname = basename($top6_name,"$top6_tmps");//去除副檔名,留檔名
+          $value = "資料夾裡已有名稱{$topname}的檔案";
+
           echo "
           <script>
-          var value = '資料夾裡已有名稱'+$topname+'的檔案';
+          var value = '$value';
           var basename= '$topbasename';
 
           alerts(value, basename);

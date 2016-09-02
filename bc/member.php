@@ -44,10 +44,6 @@
 		<script src="assets/js/respond.min.js"></script>
 		<![endif]-->
 
-		<!-- 彈跳視窗 -->
-		<script src="assets/js/bootbox.min.js"></script>
-		<!-- 彈跳視窗 -->
-
 		<script src="assets/js/jquery.2.1.1.min.js"></script>
 
 		<!-- 刪除 -->
@@ -665,7 +661,7 @@
 
 					var row = $(this).closest('tr').get(0);
 					if(!this.checked){
-						TableHeaderDelete();
+						OnlyDelete();
 						tableTools_obj.fnSelect(row);
 					}else {
 						tableTools_obj.fnDeselect($(this).closest('tr').get(0));

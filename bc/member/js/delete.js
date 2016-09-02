@@ -1,18 +1,18 @@
 $(document).ready(function() {
 
   $("td a[name='Delete']").on(ace.click_event, function() {
-    var DeAccountss=[];
+    // var DeAccountss=[];
     var DeAccounts = $("input[name='DeAccounts[]']").val();
-    DeAccountss.push(DeAccounts);
-
+    // DeAccountss.push(DeAccounts);
+    // alert(DeAccounts);
     bootbox.confirm("Are you sure?", function(result) {
       if (result) {
         $.ajax({
           type:"POST",
           url: "member/delete.php",
-          data:{'DeAccountss[]':DeAccountss},
+          data:{'DeAccountss[]':DeAccounts},
           success:function(data){
-            alerts(data);
+            alerts(data,"member.php");
           }
         });
 
@@ -25,7 +25,7 @@ $(document).ready(function() {
 
 });
 
-function TableHeaderDelete() {
+function OnlyDelete() {
 
   $(".table-header a[name='Delete']").on(ace.click_event, function() {
     var DeAccountss=[];
@@ -38,7 +38,7 @@ function TableHeaderDelete() {
           url: "member/delete.php",
           data:{'DeAccountss[]':DeAccountss},
           success:function(data){
-            alerts(data);//轉回指定葉面
+            alerts(data,"member.php");//轉回指定葉面
           }
         });
       } else {

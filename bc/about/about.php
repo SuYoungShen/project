@@ -49,5 +49,5 @@
   // foreach ($test as $key => $value) {
   //   echo $value[0]."<br>";
   // }
-
+$db=null;
 ?>
