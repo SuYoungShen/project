@@ -228,9 +228,11 @@
 										<th></th>
 									</tr>
 								</thead>
-								<?php
-								include("view/place.php");
-								?>
+								<tbody>
+									<?php
+									include("view/place.php");
+									?>
+								</tbody>
 							</table>
 						</div>
 					</div>
@@ -376,15 +378,13 @@
 						<div class="row">
 							<div class="col-xs-12">
 								<!-- PAGE CONTENT BEGINS -->
-								<form class="form-horizontal" role="form" action="place.php">
+								<form class="form-horizontal"  role="form" method="post"
+												enctype="multipart/form-data">
 									<div class="form-group">
 										<label class="col-sm-3 control-label no-padding-right" for="form-field-1"> 地區名</label>
 										<div class="col-sm-9">
-											<select>
-												<option>地區名</option>
-												<option>地區名</option>
-												<option>地區名</option>
-												<option>地區名</option>
+											<select name="select">
+												<option >1</option>												
 											</select>
 										</div>
 									</div>
