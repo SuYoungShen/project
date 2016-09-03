@@ -23,7 +23,9 @@
 	<link rel="stylesheet" href="assets/css/colorbox.min.css" />
 	<!-- text fonts -->
 	<link rel="stylesheet" href="assets/fonts/fonts.googleapis.com.css" />
+	<script src="assets/js/jquery.2.1.1.min.js"></script>
 
+	<script type="text/javascript" src="view/js/fun.js"></script>
 	<!-- ace styles -->
 	<link rel="stylesheet" href="assets/css/ace.min.css" class="ace-main-stylesheet" id="main-ace-style" />
 	<!--[if lte IE 9]>
@@ -33,7 +35,6 @@
 	<!--[if lte IE 9]>
 	<link rel="stylesheet" href="assets/css/ace-ie.min.css" />
 	<![endif]-->
-
 	<!-- inline styles related to this page -->
 
 	<!-- ace settings handler -->
@@ -384,7 +385,7 @@
 										<label class="col-sm-3 control-label no-padding-right" for="form-field-1"> 地區名</label>
 										<div class="col-sm-9">
 											<select name="select">
-												<option >1</option>												
+												<option></option>
 											</select>
 										</div>
 									</div>
@@ -477,11 +478,9 @@
 
 <!-- basic scripts -->
 
-<!--[if !IE]> -->
-<script src="assets/js/jquery.2.1.1.min.js"></script>
-
-<!-- <![endif]-->
-
+<!-- 彈跳視窗 -->
+<script src="assets/js/bootbox.min.js"></script>
+<!-- 彈跳視窗 -->
 <!--[if IE]>
 <script src="assets/js/jquery.1.11.1.min.js"></script>
 <![endif]-->
