@@ -1,16 +1,25 @@
 	$(document).ready(function() {
-		var test = $("select[name='select']").val();
+		var placeName = $("select[name='placeName']").val();//地區名
+		var viewpoint = $("input[name='viewpoint']").val();//景點名
+		var attractions = $("input[name='attractions']").val();//景點介紹
+		var arrival = $("input[name='arrival']").val();//如何到達
 
-	$(":submit").click(function() {
-				$.ajax({
-					type:"POST",
-					url: "view/place.php",
-					data:{"selects":test},
-					success:function(data){
-						document.location.href=data;
-						alert("成功");//轉回指定葉面
-					}
-				});
-
+	$("button[name='insert']").click(function() {
+			$.ajax({
+				type:"POST",
+				url: "view/place/insert.php",
+				data:{
+					"placeNames":placeName,
+					"viewpoints":viewpoint,
+					"attractionss":attractions,
+					"arrivals":arrival
+				},
+				success:function(data){//data傳回的訊息
+					alert(data);
+				},
+				error:function(data) {
+					alert(data);
+				}
+			});
 		});
 	});

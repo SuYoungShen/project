@@ -25,7 +25,8 @@
 	<link rel="stylesheet" href="assets/fonts/fonts.googleapis.com.css" />
 	<script src="assets/js/jquery.2.1.1.min.js"></script>
 
-	<script type="text/javascript" src="view/js/fun.js"></script>
+  <script type="text/javascript" src="assets/js/alert.js"></script>
+  <script type="text/javascript" src="view/js/fun.js"></script>
 	<!-- ace styles -->
 	<link rel="stylesheet" href="assets/css/ace.min.css" class="ace-main-stylesheet" id="main-ace-style" />
 	<!--[if lte IE 9]>
@@ -222,16 +223,13 @@
 										<th>景點名</th>
 										<th>景點介紹</th>
 										<th class="hidden-480"> 照片 </th>
-
 										<th class="hidden-480">如何到達 </th>
-
-
 										<th></th>
 									</tr>
 								</thead>
 								<tbody>
 									<?php
-									include("view/place.php");
+										include("view/place.php");
 									?>
 								</tbody>
 							</table>
@@ -379,13 +377,15 @@
 						<div class="row">
 							<div class="col-xs-12">
 								<!-- PAGE CONTENT BEGINS -->
-								<form class="form-horizontal"  role="form" method="post"
-												enctype="multipart/form-data">
+								<form class="form-horizontal" role="form" method="post"
+										enctype="multipart/form-data">
 									<div class="form-group">
 										<label class="col-sm-3 control-label no-padding-right" for="form-field-1"> 地區名</label>
 										<div class="col-sm-9">
-											<select name="select">
-												<option></option>
+											<select name="placeName">
+												<?php
+													include("view/place/option.php");
+												 ?>
 											</select>
 										</div>
 									</div>
@@ -393,7 +393,7 @@
 										<label class="col-sm-3 control-label no-padding-right" for="form-field-1"> 景點名	 </label>
 
 										<div class="col-sm-9">
-											<input type="text" id="form-field-1" placeholder="景點名" class="col-xs-10 col-sm-5" />
+											<input type="text" id="form-field-1" name="viewpoint" placeholder="景點名" class="col-xs-10 col-sm-5" />
 										</div>
 									</div>
 
@@ -401,7 +401,7 @@
 										<label class="col-sm-3 control-label no-padding-right" for="form-field-1-1"> 景點介紹 </label>
 
 										<div class="col-sm-9">
-											<input type="text" id="form-field-1-1" placeholder="景點介紹" class="col-xs-10 col-sm-5" />
+											<input type="text" id="form-field-1-1" name="attractions" placeholder="景點介紹" class="col-xs-10 col-sm-5" />
 										</div>
 									</div>
 
@@ -409,20 +409,20 @@
 										<label class="col-sm-3 control-label no-padding-right" for="form-field-1-1"> 如何到達 </label>
 
 										<div class="col-sm-9">
-											<textarea  id="form-field-1-1" placeholder="如何到達" class="col-xs-10 col-sm-5" /></textarea>
+											<textarea  id="form-field-1-1" name="arrival" placeholder="如何到達" class="col-xs-10 col-sm-5" /></textarea>
 										</div>
 									</div>
 
 									<div class="form-group">
 										<label class="col-sm-3 control-label no-padding-right" for="form-field-1-1"> 上傳圖檔 </label>
 										<div class="col-sm-8">
-											<input multiple="" type="file" id="id-input-file-3" />
+											<input multiple="multiple" name="picName[]" type="file" id="id-input-file-3" />
 										</div>
 									</div>
 									<div class="space-4"></div>
 									<div class="clearfix form-actions">
 										<div class="col-md-offset-3 col-md-9">
-											<button class="btn btn-info" type="submit">
+											<button class="btn btn-info" type="submit" name="insert">
 												<i class="ace-icon fa fa-check bigger-110"></i>
 												送出
 											</button>

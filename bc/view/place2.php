@@ -2,10 +2,18 @@
   $dbname="view";
   include ("mysql/connect.php");
   include ("common.php");
-  $placeSe = $db->query(PlaceSe());//查詢資料表
-  $display = $placeSe->fetchAll();
-  $picDir = "about/place/images/";
+  // $placeSe = $db->query(PlaceSe());//查詢資料表
+  // $display = $placeSe->fetchAll();
+// foreach ($display as $key => $value) {
+//   $test = $value[0];
+// }
 
+if (isset($_POST["selects"])) {
+
+  echo "http://tw.yahoo.com/";
+}
+  // $picDir = "about/place/images/";
+  //
   // if (isset($_POST["placeName"]) && isset($_POST["Introduction"])) {
   //
   //   $place_Name = $_POST["placeName"];

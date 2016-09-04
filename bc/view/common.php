@@ -42,5 +42,13 @@
     return $AboutDe;
   }
 
-
+  function message($value, $Basename){
+    echo "
+    <script>
+      var value ='$value';
+      var basename= '$Basename';
+      alerts(value, basename);
+    </script>
+    ";
+  }
  ?>

@@ -1,10 +1,10 @@
 <?php
-  // session_start();
-  include("../mysql/connect.php");
+  $dbname="about";
+  include("../../mysql/connect.php");
   include ("../common.php");
 
   if (isset($_POST["Deplace_name"])) {
-    
+
     $delete = $_POST["Deplace_name"];
 
     foreach ($delete as $key => $de) {
@@ -50,5 +50,5 @@
 //   }
 // }
 
-
+$db=null;
  ?>
