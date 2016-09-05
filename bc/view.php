@@ -25,7 +25,7 @@
 	<link rel="stylesheet" href="assets/fonts/fonts.googleapis.com.css" />
 	<script src="assets/js/jquery.2.1.1.min.js"></script>
 
-  <script type="text/javascript" src="assets/js/alert.js"></script>
+  <!-- <script type="text/javascript" src="assets/js/alert.js"></script> -->
   <script type="text/javascript" src="view/js/fun.js"></script>
 	<!-- ace styles -->
 	<link rel="stylesheet" href="assets/css/ace.min.css" class="ace-main-stylesheet" id="main-ace-style" />
@@ -939,11 +939,11 @@
 	});
 
 
-	//$('#id-input-file-3')
-	//.ace_file_input('show_file_list', [
-	//{type: 'image', name: 'name of image', path: 'http://path/to/image/for/preview'},
-	//{type: 'file', name: 'hello.txt'}
-	//]);
+	// $('#id-input-file-3')
+	// .ace_file_input('show_file_list', [
+	// {type: 'image', name: 'name of image', path: 'http://path/to/image/for/preview'},
+	// {type: 'file', name: 'hello.txt'}
+	// ]);
 
 
 
