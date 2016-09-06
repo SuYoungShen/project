@@ -1,3 +1,76 @@
+<!-- <tr>
+  <td class="center">
+    <label class="pos-rel">
+      <input type="checkbox" class="ace" />
+      <span class="lbl"></span>
+    </label>
+  </td>
+
+  <td>
+    <a href="#">app.com</a>
+  </td>
+  <td>$45</td>
+  <td class="hidden-480 ace-thumbnails clearfix">
+    3,330
+  </td>
+  <td class="ace-thumbnails clearfix"><a href="assets/images/gallery/image-1.jpg"  data-rel="colorbox">Feb 12</a></td>
+
+  <td class="hidden-480">
+    <span class="label label-sm label-warning">Expiring</span>
+  </td>
+
+  <td>
+    <div class="hidden-sm hidden-xs action-buttons">
+      <a class="blue" href="#">
+        <i class="ace-icon fa fa-search-plus bigger-130"></i>
+      </a>
+
+      <a class="green" href="#">
+        <i class="ace-icon fa fa-pencil bigger-130"></i>
+      </a>
+
+      <a class="red" href="#">
+        <i class="ace-icon fa fa-trash-o bigger-130"></i>
+      </a>
+    </div>
+
+    <div class="hidden-md hidden-lg">
+      <div class="inline pos-rel">
+        <button class="btn btn-minier btn-yellow dropdown-toggle" data-toggle="dropdown" data-position="auto">
+          <i class="ace-icon fa fa-caret-down icon-only bigger-120"></i>
+        </button>
+
+        <ul class="dropdown-menu dropdown-only-icon dropdown-yellow dropdown-menu-right dropdown-caret dropdown-close">
+          <li>
+            <a href="#" class="tooltip-info" data-rel="tooltip" title="View">
+              <span class="blue">
+                <i class="ace-icon fa fa-search-plus bigger-120"></i>
+              </span>
+            </a>
+          </li>
+
+          <li>
+            <a href="#" class="tooltip-success" data-rel="tooltip" title="Edit">
+              <span class="green">
+                <i class="ace-icon fa fa-pencil-square-o bigger-120"></i>
+              </span>
+            </a>
+          </li>
+
+          <li>
+            <a href="#" class="tooltip-error" data-rel="tooltip" title="Delete">
+              <span class="red">
+                <i class="ace-icon fa fa-trash-o bigger-120"></i>
+              </span>
+            </a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </td>
+</tr>
+ -->
+
 <?php
   $dbname="view";
   include ("mysql/connect.php");
@@ -5,6 +78,84 @@
   $placeSe = $db->query(PlaceSe());//查詢資料表
   $display = $placeSe->fetchAll();
   $picDir = "about/place/images/";
+
+  foreach ($display as $key => $value) {
+
+    $place_Name=$value[0];
+    $viewpoint=$value[1];
+    $attractions=$value[2];
+    $arrival=$value[3];
+    $picname=$value[4];
+    $path = $value[5];
+    $datetime = $value[6];
+    echo "
+      <tr>
+        <td class='center'>
+          <label class='pos-rel'>
+            <input type='checkbox' class='ace' />
+            <span class='lbl'></span>
+          </label>
+        </td>
+        <td>
+          $place_Name
+        </td>
+        <td>$viewpoint</td>
+        <td>$attractions</td>
+        <td>$arrival</td>
+
+        <td class='hidden-480 ace-thumbnails clearfix'>
+          <a href='$path$picname'  data-rel='colorbox'>$picname</a>
+        </td>
+         
+
+
+
+        <td>
+          <div class='hidden-sm hidden-xs action-buttons'>
+            <a class='green' href='#edit' data-toggle='modal' >
+              <i class='ace-icon fa fa-pencil bigger-130'></i>
+            </a>
+
+            <a class='red' name='Delete'>
+              <i class='ace-icon fa fa-trash-o bigger-130'></i>
+              <input type='hidden' name='Deplace_name[]' value='$place_Name'>
+            </a>
+          </div>
+
+          <div class='hidden-md hidden-lg'>
+            <div class='inline pos-rel'>
+              <button class='btn btn-minier btn-yellow dropdown-toggle' data-toggle='dropdown' data-position='auto'>
+                <i class='ace-icon fa fa-caret-down icon-only bigger-120'></i>
+              </button>
+
+              <ul class='dropdown-menu dropdown-only-icon dropdown-yellow dropdown-menu-right dropdown-caret dropdown-close'>
+
+                <li>
+                  <a href='#edit' class='tooltip-success' data-rel='tooltip' title='Edit'>
+                    <span class='green'>
+                      <i class='ace-icon fa fa-pencil-square-o bigger-120'></i>
+                    </span>
+                  </a>
+                </li>
+
+                <li>
+                  <a href='#' class='tooltip-error' data-rel='tooltip' title='Delete'>
+                    <span class='red'>
+                      <i class='ace-icon fa fa-trash-o bigger-120'></i>
+                    </span>
+                  </a>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </td>
+      </tr>
+
+    ";
+
+  }
+
+
 
   // if (isset($_POST["placeName"]) && isset($_POST["Introduction"])) {
   //

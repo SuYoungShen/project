@@ -224,6 +224,7 @@
 										<th>景點介紹</th>
 										<th class="hidden-480"> 照片 </th>
 										<th class="hidden-480">如何到達 </th>
+										
 										<th></th>
 									</tr>
 								</thead>
@@ -377,7 +378,7 @@
 						<div class="row">
 							<div class="col-xs-12">
 								<!-- PAGE CONTENT BEGINS -->
-								<form class="form-horizontal" role="form" method="post"
+								<form class="form-horizontal" id="insert" action="view/place/insert.php"  role="form" method="post"
 										enctype="multipart/form-data">
 									<div class="form-group">
 										<label class="col-sm-3 control-label no-padding-right" for="form-field-1"> 地區名</label>
@@ -394,6 +395,7 @@
 
 										<div class="col-sm-9">
 											<input type="text" id="form-field-1" name="viewpoint" placeholder="景點名" class="col-xs-10 col-sm-5" />
+											<span class="viewpoint"></span>
 										</div>
 									</div>
 
@@ -422,7 +424,7 @@
 									<div class="space-4"></div>
 									<div class="clearfix form-actions">
 										<div class="col-md-offset-3 col-md-9">
-											<button class="btn btn-info" type="submit" name="insert">
+											<button class="btn btn-info" type="submit" >
 												<i class="ace-icon fa fa-check bigger-110"></i>
 												送出
 											</button>
@@ -529,7 +531,7 @@
 	<script src="assets/js/jquery.colorbox.min.js"></script>
 	<!-- inline scripts related to this page -->
 
-<script src="assets/js/jquery.dataTables.min.js"></script>
+<script src="assets/js/jquery.dataTables.js"></script>
 <script src="assets/js/jquery.dataTables.bootstrap.min.js"></script>
 <script src="assets/js/dataTables.tableTools.min.js"></script>
 <script src="assets/js/dataTables.colVis.min.js"></script>
