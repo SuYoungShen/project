@@ -18,10 +18,10 @@
     return $placeUp;
   }
 
-  function PlaceIn($placeName,$viewpoint,$attractions,$arrival,$pic_name,$picDir)
+  function PlaceIn($placeName,$viewpoint,$attractions,$arrival,$pic_name,$picDir,$datetime)
   {
     $placeIn ="INSERT INTO `place`
-                          (`place`,`viewpoint`,`attractions`,`arrival`,`picname`,`path`)
+                          (`place`,`viewpoint`,`attractions`,`arrival`,`picname`,`path`,`datetime`)
                           VALUES
                           (
                             '".$placeName."',
@@ -29,7 +29,8 @@
                             '".$attractions."',
                             '".$arrival."',
                             '".$pic_name."',
-                            '".$picDir."'
+                            '".$picDir."',
+                            '".$datetime."'
                           )";
     return $placeIn;
   }

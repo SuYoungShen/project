@@ -2,13 +2,9 @@
  <?php
   $dbname="view";
   include ("../../mysql/connect.php");
-  // header('Location: ../../view.php');//轉址
-
   include ("../common.php");
-  // $placeSe = $db->query(PlaceSe());//查詢資料表
-  // $display = $placeSe->fetchAll();
 
-  $picDir = "view/images/";
+  $picDir = "../images/";
   $redirect="../../view.php";
   $msg = "";
   $required = isset($_POST["placeName"]) &&
@@ -86,17 +82,14 @@
                                         $attractions,
                                         $arrival,
                                         $pic_name,
-                                        $picDir
+                                        $picDir,
+                                        $datetime
                                       ));
             if ($true) {
-              echo "
-                <script>
-                  alert('成功');
-                </script>
-              ";
-            header("Location:$redirect");
+              message("成功",$redirect);
+
             }else {
-              echo "失敗";
+              message("失敗",$redirect);
             }
 
           }//else

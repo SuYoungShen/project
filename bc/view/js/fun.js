@@ -41,3 +41,12 @@ $(document).ready(function() {
 	// 	}));
 
 	});
+
+	function Edit(viewpoint, attractions, arrival, pic_name) {
+
+	  document.getElementById("viewpoint").value = viewpoint;
+	  document.getElementById("attractions").value = attractions;
+	  document.getElementById("arrival").value = arrival;
+		document.getElementById("pic").innerHTML = "<img src='"+"view/images/"+pic_name+"'  class='col-xs-8'>";
+
+	}

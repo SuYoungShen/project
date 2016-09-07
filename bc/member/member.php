@@ -70,7 +70,7 @@ foreach ($memberse as $key => $value) {
     <td>
       <div class='hidden-sm hidden-xs action-buttons'>
 
-        <a class='green' href='#edit' onclick='Edit(\"$accounts[$key]\",\"$passwords[$key]\",\"$emails[$key]\",\"$names[$key]\")' data-toggle='modal'>
+        <a class='green' href='#edit'  data-toggle='modal' onclick='Edit(\"$accounts[$key]\",\"$passwords[$key]\",\"$emails[$key]\",\"$names[$key]\")'>
           <i class='ace-icon fa fa-pencil bigger-130'></i>
         </a>
 

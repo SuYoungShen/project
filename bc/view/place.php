@@ -76,17 +76,17 @@
   include ("mysql/connect.php");
   include ("common.php");
   $placeSe = $db->query(PlaceSe());//查詢資料表
-  $display = $placeSe->fetchAll();  
+  $display = $placeSe->fetchAll();
 
   foreach ($display as $key => $value) {
 
-    $place_Name=$value[0];
-    $viewpoint=$value[1];
-    $attractions=$value[2];
-    $arrival=$value[3];
-    $pic_name=$value[4];
-    $picDir = $value[5];
-    $datetime = $value[6];
+    $pla=$place_Name[$key]=$value[0];
+    $vie=$viewpoint[$key]=$value[1];
+    $att=$attractions[$key]=$value[2];
+    $arr=$arrival[$key]=$value[3];
+    $pic=$pic_name[$key]=$value[4];
+    $pdir=$picDir[$key] = $value[5];
+    $dat=$datetime[$key] = $value[6];
     echo "
       <tr>
         <td class='center'>
@@ -96,28 +96,35 @@
           </label>
         </td>
         <td>
-          $place_Name
+          $pla
         </td>
-        <td>$viewpoint</td>
-        <td>$attractions</td>
-        <td>$arrival</td>
+        <td>$vie</td>
+        <td>$att</td>
+        <td>$arr</td>
 
         <td class='hidden-480 ace-thumbnails clearfix'>
-          <a href='$picDir$pic_name'  data-rel='colorbox'>$pic_name</a>
+          <a href='$pdir$pic'  data-rel='colorbox'>$pic</a>
         </td>
-         <td>$datetime</td>
+         <td>$dat</td>
 
 
 
         <td>
           <div class='hidden-sm hidden-xs action-buttons'>
-            <a class='green' href='#edit' data-toggle='modal' >
+            <a class='green' href='#edit' data-toggle='modal'
+              onclick='Edit(
+                            \"$viewpoint[$key]\",
+                            \"$attractions[$key]\",
+                            \"$arrival[$key]\",
+                            \"$pic_name[$key]\",
+                            \"$picDir[$key]\"
+                            )'>
               <i class='ace-icon fa fa-pencil bigger-130'></i>
             </a>
 
-            <a class='red' name='Delete'>
+            <a class='red' name='Delete' >
               <i class='ace-icon fa fa-trash-o bigger-130'></i>
-              <input type='hidden' name='Deplace_name[]' value='$place_Name'>
+              <input type='hidden' name='Deplace_name[]' value='$pla'>
             </a>
           </div>
 
