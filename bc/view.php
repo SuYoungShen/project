@@ -394,7 +394,7 @@
 										<label class="col-sm-3 control-label no-padding-right" for="form-field-1"> 景點名	 </label>
 
 										<div class="col-sm-9">
-											<input type="text" id="viewpoint" name="viewpoint" placeholder="景點名" class="col-xs-10 col-sm-5" />
+											<input type="text" name="viewpoint" placeholder="景點名" class="col-xs-10 col-sm-5" />
 											<span class="viewpoint"></span>
 										</div>
 									</div>
@@ -403,7 +403,7 @@
 										<label class="col-sm-3 control-label no-padding-right" for="form-field-1-1"> 景點介紹 </label>
 
 										<div class="col-sm-9">
-											<textarea type="text" id="attractions" name="attractions" placeholder="景點介紹" class="col-xs-10 col-sm-5" /></textarea>
+											<textarea type="text"  name="attractions" placeholder="景點介紹" class="col-xs-10 col-sm-5" /></textarea>
 										</div>
 									</div>
 
@@ -411,7 +411,7 @@
 										<label class="col-sm-3 control-label no-padding-right" for="form-field-1-1"> 如何到達 </label>
 
 										<div class="col-sm-9">
-											<textarea  id="arrival" name="arrival" placeholder="如何到達" class="col-xs-10 col-sm-5" /></textarea>
+											<textarea  name="arrival" placeholder="如何到達" class="col-xs-10 col-sm-5" /></textarea>
 										</div>
 									</div>
 
@@ -475,7 +475,7 @@
 										<label class="col-sm-3 control-label no-padding-right" for="form-field-1"> 景點名	 </label>
 
 										<div class="col-sm-9">
-											<input type="text" id="form-field-1" name="viewpoint" placeholder="景點名" class="col-xs-10 col-sm-5" />
+											<input type="text" id="viewpoint"  name="viewpoint" placeholder="景點名" class="col-xs-10 col-sm-5" />
 											<span class="viewpoint"></span>
 										</div>
 									</div>
@@ -484,7 +484,7 @@
 										<label class="col-sm-3 control-label no-padding-right" for="form-field-1-1"> 景點介紹 </label>
 
 										<div class="col-sm-9">
-											<textarea type="text" id="form-field-1-1" name="attractions" placeholder="景點介紹" class="col-xs-10 col-sm-5" /></textarea>
+											<textarea type="text" id="attractions" name="attractions" placeholder="景點介紹" class="col-xs-10 col-sm-5" /></textarea>
 										</div>
 									</div>
 
@@ -492,7 +492,7 @@
 										<label class="col-sm-3 control-label no-padding-right" for="form-field-1-1"> 如何到達 </label>
 
 										<div class="col-sm-9">
-											<textarea  id="form-field-1-1" name="arrival" placeholder="如何到達" class="col-xs-10 col-sm-5" /></textarea>
+											<textarea id="arrival"  name="arrival" placeholder="如何到達" class="col-xs-10 col-sm-5" /></textarea>
 										</div>
 									</div>
 
@@ -501,7 +501,7 @@
 										<div class="col-sm-8">
 											<input multiple="multiple" name="picName[]" type="file" id="id-input-file-4" />
 											<span id="pic"></span>
-											
+
 										</div>
 									</div>
 									<div class="space-4"></div>

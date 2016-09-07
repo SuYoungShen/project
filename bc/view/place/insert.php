@@ -5,6 +5,7 @@
   include ("../common.php");
 
   $picDir = "../images/";
+  $picPath = "view/images/";
   $redirect="../../view.php";
   $msg = "";
   $required = isset($_POST["placeName"]) &&
@@ -32,7 +33,7 @@
         }else if($pic_error == 0){
 
           $pic_name = $_FILES["picName"]["name"][$key];//抓取檔案名稱
-          $pic_tmp = $_FILES["picName"]["tmp_name"][$key];//抓取檔案
+          $pic_tmp = $_FILES["picName"]["tmp_name"][$key];//  抓取檔案
           $pic_size = $_FILES["picName"]["size"][$key];//抓取檔案大小
           $pic_tmps = strrchr($pic_name,".");//取得檔案的副檔名
 
@@ -64,14 +65,21 @@
           if(file_exists($picDir.$pic_name)){//檢查是否有相同檔案
 
             $picname = basename($pic_name,"$pic_tmps");//去除副檔名,留檔名
-            echo "
-            <script>
-            var value = '資料夾裡已有名稱'+'$picname'+'的檔案';
-            var basename= '$redirect';
+            $true = $db->query(PlaceIn(
+                                        $placeName,
+                                        $viewpoint,
+                                        $attractions,
+                                        $arrival,
+                                        $pic_name,
+                                        $picPath,
+                                        $datetime
+                                      ));
+            if ($true) {
+              message("新增成功,資料夾裡已有名稱'+'$picname'+'的檔案",$redirect);
 
-            alerts(value, basename);
-            </script>
-            ";
+            }else {
+              message("新增失敗",$redirect);
+            }
 
           }else {
 
@@ -82,14 +90,14 @@
                                         $attractions,
                                         $arrival,
                                         $pic_name,
-                                        $picDir,
+                                        $picPath,
                                         $datetime
                                       ));
             if ($true) {
-              message("成功",$redirect);
+              message("新增成功",$redirect);
 
             }else {
-              message("失敗",$redirect);
+              message("新增失敗",$redirect);
             }
 
           }//else
