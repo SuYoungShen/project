@@ -1,4 +1,4 @@
-<!-- <tr>
+<tr>
   <td class="center">
     <label class="pos-rel">
       <input type="checkbox" class="ace" />
@@ -69,15 +69,14 @@
     </div>
   </td>
 </tr>
- -->
+
 
 <?php
   $dbname="view";
   include ("mysql/connect.php");
   include ("common.php");
   $placeSe = $db->query(PlaceSe());//查詢資料表
-  $display = $placeSe->fetchAll();
-  $picDir = "about/place/images/";
+  $display = $placeSe->fetchAll();  
 
   foreach ($display as $key => $value) {
 
@@ -85,8 +84,8 @@
     $viewpoint=$value[1];
     $attractions=$value[2];
     $arrival=$value[3];
-    $picname=$value[4];
-    $path = $value[5];
+    $pic_name=$value[4];
+    $picDir = $value[5];
     $datetime = $value[6];
     echo "
       <tr>
@@ -104,9 +103,9 @@
         <td>$arrival</td>
 
         <td class='hidden-480 ace-thumbnails clearfix'>
-          <a href='$path$picname'  data-rel='colorbox'>$picname</a>
+          <a href='$picDir$pic_name'  data-rel='colorbox'>$pic_name</a>
         </td>
-         
+         <td>$datetime</td>
 
 
 

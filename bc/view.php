@@ -222,9 +222,9 @@
 										<th>地區名</th>
 										<th>景點名</th>
 										<th>景點介紹</th>
-										<th class="hidden-480"> 照片 </th>
 										<th class="hidden-480">如何到達 </th>
-										
+											<th class="hidden-480"> 照片 </th>
+										<th>時間</th>
 										<th></th>
 									</tr>
 								</thead>
