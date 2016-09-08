@@ -49,7 +49,7 @@
 
             <a class='red' name='Delete' >
               <i class='ace-icon fa fa-trash-o bigger-130'></i>
-              <input type='hidden' name='Delete[]' value='$vie'>
+              <input type='hidden' name='DeViewpoint[]' value='$viewpoint[$key]'>
             </a>
           </div>
 

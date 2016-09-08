@@ -4,7 +4,7 @@ $(document).ready(function() {
     // var DeAccountss=[];
     var DeAccounts = $("input[name='DeAccounts[]']").val();
     // DeAccountss.push(DeAccounts);
-    // alert(DeAccounts);
+    alert(DeAccounts);
     bootbox.confirm("Are you sure?", function(result) {
       if (result) {
         $.ajax({

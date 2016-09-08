@@ -1,8 +1,8 @@
 <?php
-  session_start();
+  $dbname="top";
   include("../mysql/connect.php");
   include ("common.php");
-  
+
   if (isset($_POST["DeAccountss"])) {
     $delete = $_POST["DeAccountss"];
     foreach ($delete as $key => $de) {

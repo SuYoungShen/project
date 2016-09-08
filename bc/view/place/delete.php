@@ -1,5 +1,4 @@
-<script type="text/javascript" src="../../assets/js/alert.js"></script>
- <?php
+<?php
   $dbname="view";
   include ("../../mysql/connect.php");
   include ("../common.php");
@@ -12,8 +11,11 @@
   //             isset($_POST["viewpoint"]) &&
   //             !empty($_POST["viewpoint"])
   //             ?"$_POST['viewpoint']":"";//景點名
-  $test = isset($_POST["Delete"])
-echo "string";
+
+  $test = isset($_POST["DeViewpoints"])?$_POST['DeViewpoints']:"沒直";
+  foreach ($test as $key => $value) {
+    echo "$value";
+  }
   // $required = isset($_POST["placeName"]) &&
   //             !empty($_POST["placeName"]) &&
   //             isset($_POST["viewpoint"]) &&

@@ -2,17 +2,17 @@ $(document).ready(function() {
 
   $("td a[name='Delete']").on(ace.click_event, function() {
     // var DeAccountss=[];
-    var DeViewpoint = $("input[name='Delete[]']").val();
+    var DeViewpoint = $("input[name='DeViewpoint[]']").val();
     // DeAccountss.push(DeAccounts);
-    
+    alert(DeViewpoint);
     bootbox.confirm("Are you sure?", function(result) {
       if (result) {
         $.ajax({
           type:"POST",
           url: "view/place/delete.php",
-          data:{'Delete[]':DeViewpoint},
+          data:{'DeViewpoints[]':DeViewpoint},
           success:function(data){
-            alerts(data,"member.php");
+            alert(data);
           }
         });
 
@@ -27,14 +27,14 @@ function OnlyDelete() {
 
   $(".table-header a[name='Delete']").on(ace.click_event, function() {
     var Deletes=[];
-    var Delete = $("input[name='Delte[]']").val();
+    var Delete = $("input[name='DeViewpoint[]']").val();
     Deletes.push(Delete);
     bootbox.confirm("Are you sure?", function(result) {
       if (result) {
         $.ajax({
           type:"POST",
           url: "member/delete.php",
-          data:{'Delete[]':Deletes},
+          data:{'DeViewpoints[]':Deletes},
           success:function(data){
             alerts(data,"member.php");//轉回指定葉面
           }
