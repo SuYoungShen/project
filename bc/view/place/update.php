@@ -76,21 +76,21 @@
           }else {
 
             move_uploaded_file($pic_tmp,$picDir.$pic_name);//把檔案移到指定dir
-            // $true = $db->query(PlaceIn(
-            //                             $placeName,
-            //                             $viewpoint,
-            //                             $attractions,
-            //                             $arrival,
-            //                             $pic_name,
-            //                             $picDir,
-            //                             $datetime
-            //                           ));
-            // if ($true) {
-            //   message("成功",$redirect);
-            //
-            // }else {
-            //   message("失敗",$redirect);
-            // }
+            $true = $db->query(PlaceUp(
+                                        $placeName,
+                                        $viewpoint,
+                                        $attractions,
+                                        $arrival,
+                                        $pic_name,
+                                        $picDir,
+                                        $datetime
+                                      ));
+            if ($true) {
+              message("成功",$redirect);
+
+            }else {
+              message("失敗",$redirect);
+            }
 
           }//else
         }//if($pic_error)

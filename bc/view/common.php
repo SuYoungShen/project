@@ -5,16 +5,20 @@
     return $placeSe;
   }
 
-  function PlaceUp(){
+  function PlaceUp($placeName,$viewpoint,$attractions,$arrival,$pic_name,$picPath,$datetime){
 
-    $placeUp="UPDATE `place` SET
-                            `place`=[value-1],
-                            `Introduction`=[value-2],
-                            `name`=[value-3],
-                            `path`=[value-4],
-                            `datetime`=[value-5]
+    $placeUp="UPDATE `place`
+                            SET
+                            `place`='$placeName',
+                            `viewpoint`='$viewpoint',
+                            `attractions`='$attractions',
+                            `arrival`='$arrival',
+                            `picname`='$pic_name',
+                            `path`='$picPath',
+                            `datetime`='$datetime'
                             WHERE 1
                             ";
+
     return $placeUp;
   }
 
@@ -24,13 +28,13 @@
                           (`place`,`viewpoint`,`attractions`,`arrival`,`picname`,`path`,`datetime`)
                           VALUES
                           (
-                            '".$placeName."',
-                            '".$viewpoint."',
-                            '".$attractions."',
-                            '".$arrival."',
-                            '".$pic_name."',
-                            '".$picPath."',
-                            '".$datetime."'
+                            '$placeName',
+                            '$viewpoint',
+                            '$attractions',
+                            '$arrival',
+                            '$pic_name',
+                            '$picPath',
+                            '$datetime'
                           )";
     return $placeIn;
   }

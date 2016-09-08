@@ -609,8 +609,6 @@
 				.find('li').wrapInner('<a href="javascript:void(0)" />') //'A' tag is required for better styling
 				.find('input[type=checkbox]').addClass('ace').next().addClass('lbl padding-8');
 
-
-
 				/////////////////////////////////
 				//table checkboxes
 				$('th input[type=checkbox], td input[type=checkbox]').prop('checked', false);
