@@ -47,9 +47,9 @@
               <i class='ace-icon fa fa-pencil bigger-130'></i>
             </a>
 
-            <a class='red' name='Delete' >
+            <a class='red' name='Delete' value='$vie'>
               <i class='ace-icon fa fa-trash-o bigger-130'></i>
-              <input type='hidden' name='DeViewpoint[]' value='$viewpoint[$key]'>
+              <input type='text' name='DeViewpoint[]' value='$viewpoint[$key]'>
             </a>
           </div>
 

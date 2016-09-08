@@ -51,9 +51,9 @@
 		<!-- 刪除 -->
 		<script type="text/javascript" src="member/js/fun.js"></script>
 		<!-- 表單驗證 -->
-		<script src="assets/js/jquery.js"></script>
-		<script src="http://static.runoob.com/assets/jquery-validation-1.14.0/dist/jquery.validate.min.js"></script>
-		<script src="http://static.runoob.com/assets/jquery-validation-1.14.0/dist/localization/messages_zh.js"></script>
+		<!-- <script src="assets/js/jquery.js"></script> -->
+		<!-- <script src="http://ajax.aspnetcdn.com/ajax/jquery.validate/1.15.0/jquery.validate.min.js"></script> -->
+		<!-- <script src="http://static.runoob.com/assets/jquery-validation-1.14.0/dist/localization/messages_zh.js"></script> -->
 
 		<script type="text/javascript" src="assets/js/validate.js"></script>
 		<!-- 表單驗證 -->
