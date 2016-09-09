@@ -12,9 +12,15 @@
   //             !empty($_POST["viewpoint"])
   //             ?"$_POST['viewpoint']":"";//景點名
 
-  $test = isset($_POST["DeViewpoints"])?$_POST['DeViewpoints']:"沒直";
-  foreach ($test as $key => $value) {
-    echo "$value";
+  $DeViewpoints = isset($_POST["DeViewpoints"])?$_POST['DeViewpoints']:"沒直";
+  // echo $test;
+  foreach ($DeViewpoints as $key => $de) {
+      $true = $db->query(PlaceDe($de));
+  }
+  if ($true == true) {
+    echo "刪除成功";
+  }else {
+    echo "刪除失敗";
   }
   // $required = isset($_POST["placeName"]) &&
   //             !empty($_POST["placeName"]) &&

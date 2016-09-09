@@ -3,8 +3,8 @@
   include("../mysql/connect.php");
   include ("common.php");
 
-  if (isset($_POST["DeAccountss"])) {
-    $delete = $_POST["DeAccountss"];
+  if (isset($_POST["DeAccount"])) {
+    $delete = $_POST["DeAccount"];
     foreach ($delete as $key => $de) {
       $true = $db->query(memberDelete($de));
     }

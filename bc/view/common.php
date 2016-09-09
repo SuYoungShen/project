@@ -39,13 +39,13 @@
     return $placeIn;
   }
 
-  function PlaceDe($placeName)
+  function PlaceDe($viewpoint)
   {
-    $AboutDe ="DELETE FROM `place`
-                      WHERE place=
-                                  '".$placeName."'
+    $PlaceDe ="DELETE FROM `place`
+                      WHERE viewpoint=
+                                  '".$viewpoint."'
                                   ";
-    return $AboutDe;
+    return $PlaceDe;
   }
 
   function message($value, $Basename){

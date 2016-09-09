@@ -23,14 +23,17 @@ $(document).ready(function() {
   // });
 
 });
-function Delete(De){
-  
+function Delete(Delete){
+
+  var DeAccounts=[];
+  DeAccounts.push(Delete);
+
   bootbox.confirm("Are you sure?", function(result) {
      if (result) {
        $.ajax({
          type:"POST",
          url: "member/delete.php",
-         data:{'DeAccountss[]':De},
+         data:{'DeAccount[]':DeAccounts},
          success:function(data){
            alerts(data,"member.php");
          }
@@ -44,16 +47,16 @@ function Delete(De){
 function OnlyDelete() {
 
   $(".table-header a[name='Delete']").on(ace.click_event, function() {
-    var DeAccountss=[];
-    var DeAccounts = $("input[name='DeAccounts[]']").val();
+    var DeAccounts=[];
+    var DeAccount = $("input[name='DeAccounts[]']").val();
 
-    DeAccountss.push(DeAccounts);
+    DeAccounts.push(DeAccount);
     bootbox.confirm("Are you sure?", function(result) {
       if (result) {
         $.ajax({
           type:"POST",
           url: "member/delete.php",
-          data:{'DeAccountss[]':DeAccountss},
+          data:{'DeAccount[]':DeAccounts},
           success:function(data){
             alerts(data,"member.php");//轉回指定葉面
           }

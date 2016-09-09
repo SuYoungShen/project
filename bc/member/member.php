@@ -76,7 +76,7 @@ foreach ($memberse as $key => $value) {
 
         <a class='red'  name='Delete' onclick='Delete(\"$accounts[$key]\")'>
           <i class='ace-icon fa fa-trash-o bigger-130'></i>
-          <input type='hidden' name='DeAccounts[]' value=''>
+          <input type='hidden' name='DeAccounts[]' value='$accounts[$key]'>
         </a>
       </div>
 

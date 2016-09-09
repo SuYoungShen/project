@@ -210,7 +210,7 @@
 									<a href="#member" class="btn btn-app btn-green btn-xs" role="button" class="green" data-toggle="modal">
 										<i class="ace-icon glyphicon-plus bigger-150"></i>
 									</a>
-									<a href="#" name="Delete"  class="btn btn-app btn-danger btn-xs" role="button" class="green" data-toggle="modal">
+									<a href="#" name="Delete" onclick="Delete()" class="btn btn-app btn-danger btn-xs" role="button" class="green" data-toggle="modal">
 										<i class="ace-icon fa fa-trash-o bigger-150"></i>
 									</a>
 								</div><!-- div.table-responsive -->
@@ -617,22 +617,24 @@
 				//select/deselect all rows according to table header checkbox
 				$('#dynamic-table > thead > tr > th input[type=checkbox]').eq(0).on('click', function(){
 					var th_checked = this.checked;//checkbox inside "TH" table header
-					var DeAccountss=[];
+					var DeAccounts=[];
+
 					$("input[name='DeAccounts[]']").each(function() {
-						DeAccountss.push($(this).val());
+						DeAccounts.push($(this).val());
 					});
 
 					$(this).closest('table').find('tbody > tr').each(function(){
 						var row = this;
 
 						if(th_checked){
+
 							$(".table-header a[name='Delete']").on(ace.click_event, function() {
 								bootbox.confirm("Are you sure?", function(result) {
 									if (result) {
 										$.ajax({
 											type:"POST",
 											url: "member/delete.php",
-											data:{'DeAccountss[]':DeAccountss},
+											data:{'DeAccount[]':DeAccounts},
 											success:function(data){
 												alerts(data,"member.php");
 											}
