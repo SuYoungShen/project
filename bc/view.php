@@ -795,23 +795,33 @@
 		});
 
 		//單選
-		// var Deletes=[];
-
+		var OnlyDelete = [];
 		//select/deselect a row when the checkbox is checked/unchecked
 		$('#dynamic-table').on('click', 'td input[type=checkbox]' , function(){
-			Deletes = $(this).val();
-			var row = $(this).closest('tr').get(0);
-			// $(this).each(function() {
-			// 	Deletes.push($(this).val());
-			// });
-			if(!this.checked){
 
-				alert(Deletes);
-				Delete(Deletes);//單選刪除
+			var row = $(this).closest('tr').get(0);
+			var Delete = $(this).val();
+
+
+			$(this).each(function() {
+				OnlyDelete.push(Delete);
+			});
+
+			if(!this.checked){
+			
 				tableTools_obj.fnSelect(row);
-			}
-			else{
-				 tableTools_obj.fnDeselect($(this).closest('tr').get(0));
+
+				Deletess(OnlyDelete);//單選刪除
+			}else{
+
+				OnlyDelete = jQuery.grep(OnlyDelete, function(value) {
+					return value != Delete;
+				});
+
+				Deletess(OnlyDelete);//單選刪除
+
+				tableTools_obj.fnDeselect($(this).closest('tr').get(0));
+
 			 }
 		});
 
