@@ -4,8 +4,8 @@
   include ("../../mysql/connect.php");
   include ("../common.php");
 
-  $picDir = "../images/";
-  $picPath = "view/images/";
+  $picDir = "./images/";
+  $picPath = "view/place/images/";
   $redirect="../../view.php";
   $msg = "";
   $required = isset($_POST["placeName"]) &&

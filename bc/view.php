@@ -249,7 +249,7 @@
 					<div class="col-sm-4">
 						<div class="widget-box">
 							<div class="widget-header">
-								<h4 class="widget-title">上傳輪播照片</h4>
+								<h4 class="widget-title">上傳照片</h4>
 								<div class="widget-toolbar">
 									<a href="#" data-action="collapse">
 										<i class="ace-icon fa fa-chevron-up"></i>
@@ -263,17 +263,18 @@
 
 							<div class="widget-body">
 								<div class="widget-main">
-									<form class="form-horizontal" role="form" method="post" action="view/view.php">
+									<form class="form-horizontal" action="view/view/insert.php"  role="form" method="post"
+											enctype="multipart/form-data">
 										<div class="form-group">
 											<div class="col-xs-12">
 												<!--上傳檔案-->
-												<input multiple="" type="file" id="id-input-file-2" multiple="multiple" />
+												<input type="file" name="picName[]" id="id-input-file-4" multiple="multiple" />
 											</div>
 										</div>
 
 										<label>
 											<br/>
-											<button class="btn btn-info" type="button">
+											<button class="btn btn-info" type="submit">
 												<i class="ace-icon fa fa-check bigger-110"></i>
 												送出
 											</button>

@@ -48,6 +48,27 @@
     return $PlaceDe;
   }
 
+  function ViewSe(){
+    $viewSe = "SELECT * From `view`";
+    return $viewSe;
+  }
+
+  function ViewIn($viewpoint,$pic_name,$picPath,$datetime)
+  {
+    $placeIn ="INSERT INTO `view`
+                          (`viewpoint`,`picname`,`path`,`datetime`)
+                          VALUES
+                          (
+                            '$viewpoint',
+                            '$pic_name',
+                            '$picPath',
+                            '$datetime'
+                          )";
+    return $placeIn;
+  }
+
+
+
   function message($value, $Basename){
     echo "
     <script>

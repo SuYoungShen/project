@@ -6,6 +6,7 @@
 
   $top6dir='index/top6/images/';
   $topbasename = basename($_SERVER["PHP_SELF"]);
+  
 if (!isset($_SESSION["topnum"]) && !isset($_SESSION["topnums"])) {
   $_SESSION["topnum"] = 0;
   $_SESSION["topnums"] = 1;
