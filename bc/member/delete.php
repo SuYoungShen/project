@@ -4,15 +4,30 @@
   include ("common.php");
 
   if (isset($_POST["DeAccount"])) {
+
     $delete = $_POST["DeAccount"];
-    foreach ($delete as $key => $de) {
-      $true = $db->query(memberDelete($de));
-    }
-    if ($true == true) {
-      echo "刪除成功";
+
+    if ($delete=="") {
+
     }else {
-      echo "刪除失敗";
+      
+      foreach ($delete as $key => $de) {
+        $true = $db->query(memberDelete($de));
+      }
+      if ($true == true) {
+        echo "刪除成功";
+      }else {
+        echo "刪除失敗";
+      }
+
     }
+
+
+    // if ($true == true) {
+    //   echo "刪除成功";
+    // }else {
+    //   echo "刪除失敗";
+    // }
   }
 // if (isset($_GET["value"])) {
 //

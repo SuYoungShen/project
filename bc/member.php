@@ -210,7 +210,7 @@
 									<a href="#member" class="btn btn-app btn-green btn-xs" role="button" class="green" data-toggle="modal">
 										<i class="ace-icon glyphicon-plus bigger-150"></i>
 									</a>
-									<a href="#" name="Delete" onclick="Delete()" class="btn btn-app btn-danger btn-xs" role="button" class="green" data-toggle="modal">
+									<a href="#" name="Delete" class="btn btn-app btn-danger btn-xs" role="button" class="green" data-toggle="modal">
 										<i class="ace-icon fa fa-trash-o bigger-150"></i>
 									</a>
 								</div><!-- div.table-responsive -->
@@ -614,61 +614,95 @@
 				$('th input[type=checkbox], td input[type=checkbox]').prop('checked', false);
 
 				//全選
+				var DeAccounts=[];
+
 				//select/deselect all rows according to table header checkbox
 				$('#dynamic-table > thead > tr > th input[type=checkbox]').eq(0).on('click', function(){
 					var th_checked = this.checked;//checkbox inside "TH" table header
-					var DeAccounts=[];
 
-					$("input[name='DeAccounts[]']").each(function() {
-						DeAccounts.push($(this).val());
-					});
+					if(th_checked){
 
-					$(this).closest('table').find('tbody > tr').each(function(){
+						$("input[name='DeAccounts[]']").each(function() {
+							DeAccounts.push($(this).val());
+						});
+
+						Deletess(DeAccounts);
+
+					}else {
+
+						var Des=[];
+
+						$("input[name='DeAccounts[]']").each(function() {//取未選值
+							Des.push($(this).val());
+						});
+
+						alert("要刪的值:"+Des);
+
+						DeAccounts = $.grep(DeAccounts, function(value) {
+							return value != value;
+						});
+						Deletess(DeAccounts);
+
+					}
+
+
+					$(this).closest('table').find('tbody > tr ').each(function(){
+
 						var row = this;
 
 						if(th_checked){
 
-							$(".table-header a[name='Delete']").on(ace.click_event, function() {
-								bootbox.confirm("Are you sure?", function(result) {
-									if (result) {
-										$.ajax({
-											type:"POST",
-											url: "member/delete.php",
-											data:{'DeAccount[]':DeAccounts},
-											success:function(data){
-												alerts(data,"member.php");
-											}
-										});
-
-									} else {
-										alert("小心~~~別按錯了!!!");
-									}
-								});
-							});
 							tableTools_obj.fnSelect(row);
 
 						}else {
+
+							// alert("前"+Des);
+							//
+							// Des = $.grep(DeAccounts, function(value) {
+							// 	return value != Des;
+							// });
+							// alert("後"+Des);
+							// var De =[]
+							// $("input[name='DeAccounts[]']").each(function() {
+							// 	De.push($(this).val());
+							// });
+							// alert(De);
 							tableTools_obj.fnDeselect(row);
 						}
 					});
 				});
 
 				//單選
+				var OnlyDelete = [];
+
 				//select/deselect a row when the checkbox is checked/unchecked
 				$('#dynamic-table').on('click', 'td input[type=checkbox]' , function(){
 
 					// var DeAccounts = $("input[name='DeAccounts']").val();
 
 					var row = $(this).closest('tr').get(0);
+					var Delete = $(this).val();//選擇的值
+
+					$(this).each(function() {
+						OnlyDelete.push(Delete);//新值放到陣列後面
+					});
+
 					if(!this.checked){
-						OnlyDelete();
+
 						tableTools_obj.fnSelect(row);
+						Deletess(OnlyDelete);//刪除
+
 					}else {
+
 						tableTools_obj.fnDeselect($(this).closest('tr').get(0));
+
+						OnlyDelete = $.grep(OnlyDelete, function(value) {
+							return value != Delete;
+						});
+						Deletess(OnlyDelete);//單選刪除
+
 					}
 				});
-
-
 
 
 					$(document).on('click', '#dynamic-table .dropdown-toggle', function(e) {

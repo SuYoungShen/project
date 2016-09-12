@@ -18,7 +18,7 @@
       <tr>
         <td class='center'>
           <label class='pos-rel'>
-            <input type='checkbox' class='ace'  value='".$viewpoint[$key]."'/>
+          <input type='checkbox' class='ace'  value='".$viewpoint[$key]."'/>
             <span class='lbl'></span>
           </label>
         </td>
@@ -49,6 +49,8 @@
 
             <a class='red' name='Delete' onclick='bootboxs(\"$viewpoint[$key]\")'>
               <i class='ace-icon fa fa-trash-o bigger-130'></i>
+              <input type='hidden' name='DeViewpoint[]'  value='".$viewpoint[$key]."'/>
+
             </a>
           </div>
 

@@ -51,8 +51,8 @@ foreach ($memberse as $key => $value) {
   <tr>
     <td class='center'>
       <label class='pos-rel'>
-        <input type='checkbox' class='ace' />
-        <span class='lbl '></span>
+        <input type='checkbox' class='ace'  value='".$accounts[$key]."'/>
+        <span class='lbl'></span>
 
       </label>
     </td>
@@ -74,7 +74,7 @@ foreach ($memberse as $key => $value) {
           <i class='ace-icon fa fa-pencil bigger-130'></i>
         </a>
 
-        <a class='red'  name='Delete' onclick='Delete(\"$accounts[$key]\")'>
+        <a class='red'  name='Delete' onclick='Deletess(\"$accounts[$key]\")'>
           <i class='ace-icon fa fa-trash-o bigger-130'></i>
           <input type='hidden' name='DeAccounts[]' value='$accounts[$key]'>
         </a>

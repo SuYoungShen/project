@@ -773,22 +773,26 @@
 		//select/deselect all rows according to table header checkbox
 		$('#dynamic-table > thead > tr > th input[type=checkbox]').eq(0).on('click', function(){
 			var th_checked = this.checked;//checkbox inside "TH" table header
+			var AllDelete = [];
 
-			var Deletes=[];
 			$("input[name='DeViewpoint[]']").each(function() {
-				Deletes.push($(this).val());
+				AllDelete.push($(this).val());
 			});
-
+			alert(AllDelete);
 			$(this).closest('table').find('tbody > tr').each(function(){
-
 				var row = this;
-				if(th_checked){
-					alert(Deletes);
+				// $("input[name='DeViewpoint[]']").each(function() {
+				// 	AllDelete.push($(this).val());
+				// });
 
-					Delete(Deletes);
+				if(th_checked){
+
+
+					Deletess(AllDelete);
 					 tableTools_obj.fnSelect(row);
-				 }
-				else{
+				 }else{
+
+
 					 tableTools_obj.fnDeselect(row);
 				 }
 			});
@@ -802,19 +806,18 @@
 			var row = $(this).closest('tr').get(0);
 			var Delete = $(this).val();
 
-
 			$(this).each(function() {
 				OnlyDelete.push(Delete);
 			});
 
 			if(!this.checked){
-			
+
 				tableTools_obj.fnSelect(row);
 
 				Deletess(OnlyDelete);//單選刪除
 			}else{
 
-				OnlyDelete = jQuery.grep(OnlyDelete, function(value) {
+				OnlyDelete = $.grep(OnlyDelete, function(value) {
 					return value != Delete;
 				});
 
