@@ -53,21 +53,19 @@
     return $viewSe;
   }
 
-  function ViewIn($viewpoint,$pic_name,$picPath,$datetime)
+  function ViewUp($viewpoint,$pic_name,$picPath,$datetime)
   {
-    $placeIn ="INSERT INTO `view`
-                          (`viewpoint`,`picname`,`path`,`datetime`)
-                          VALUES
-                          (
-                            '$viewpoint',
-                            '$pic_name',
-                            '$picPath',
-                            '$datetime'
-                          )";
-    return $placeIn;
+    $ViewUp ="UPDATE `view`
+                        SET
+                        `viewpoint`='".$viewpoint."',
+                        `picname`='".$pic_name."',
+                        `path`='".$picPath."',
+                        `datetime`='".$datetime."'
+                        WHERE id='0';
+
+    ";
+    return $ViewUp;
   }
-
-
 
   function message($value, $Basename){
     echo "

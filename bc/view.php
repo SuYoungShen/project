@@ -263,7 +263,7 @@
 
 							<div class="widget-body">
 								<div class="widget-main">
-									<form class="form-horizontal" action="view/view/insert.php"  role="form" method="post"
+									<form class="form-horizontal" action="view/view/update.php"  role="form" method="post"
 											enctype="multipart/form-data">
 										<div class="form-group">
 											<div class="col-xs-12">
