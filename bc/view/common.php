@@ -53,7 +53,7 @@
     return $viewSe;
   }
 
-  function ViewUp($viewpoint,$pic_name,$picPath,$datetime)
+  function ViewUp($viewpoint,$pic_name,$picPath,$datetime,$i)
   {
     $ViewUp ="UPDATE `view`
                         SET
@@ -61,8 +61,7 @@
                         `picname`='".$pic_name."',
                         `path`='".$picPath."',
                         `datetime`='".$datetime."'
-                        WHERE id='0';
-
+                        WHERE id='".$i."';
     ";
     return $ViewUp;
   }

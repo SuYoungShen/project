@@ -280,6 +280,14 @@
 											</button>
 											&nbsp; &nbsp; &nbsp;
 										</label>
+										<label>
+											<br/>
+											<button class="btn btn-info" name="clear" type="submit">
+												<i class="ace-icon fa fa-check bigger-110"></i>
+												重設
+											</button>
+											&nbsp; &nbsp; &nbsp;
+										</label>
 									</form>
 								</div>
 							</div>

@@ -1,4 +1,5 @@
 <?php
+
   $dbname="view";
   include ("mysql/connect.php");
   include ("common.php");
