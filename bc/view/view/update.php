@@ -11,11 +11,13 @@
 
   $ViewSe = $db->query(ViewSe());//查詢資料表
   $display = $ViewSe->fetchAll();
-  echo "總共幾筆:".count($display);
 
   if (!isset($_SESSION["viewnum"]) && !isset($_SESSION["viewnums"])) {
     $_SESSION["viewnum"] = 0;
     $_SESSION["viewnums"] = 1;
+echo    $_SESSION["viewnum"] ;
+    echo $_SESSION["viewnums"] ;
+
   }
 
   if (isset($_FILES["picName"])) {
@@ -60,20 +62,20 @@
           if(file_exists($picDir.$pic_name)){//檢查是否有相同檔案
 
             $picname = basename($pic_name,"$pic_tmps");//去除副檔名,留檔名
-            $How = $db->query(ViewUp(
-                                      $viewpoint,
-                                      $pic_name,
-                                      $picPath,
-                                      $datetime,
-                                      $key
-                                    ));
-          if ($How) {
-
-            message("新增成功,資料夾裡已有名稱'+'$picname'+'的檔案",$redirect);
-
-          }else{
-            message("新增失敗",$redirect);
-          }
+          //   $How = $db->query(ViewUp(
+          //                             $viewpoint,
+          //                             $pic_name,
+          //                             $picPath,
+          //                             $datetime,
+          //                             $key
+          //                           ));
+          // if ($How) {
+          //
+          //   message("新增成功,資料夾裡已有名稱'+'$picname'+'的檔案",$redirect);
+          //
+          // }else{
+          //   message("新增失敗",$redirect);
+          // }
 
         }else {
 
@@ -83,53 +85,62 @@
             $view_id[$key] = $value[0];
             $time[$key] = $value[4];
           }
-          $sum = count($display);//計算總共有幾筆資料
-          //時間比對
+
           if (isset($_SESSION["viewnum"]) && isset($_SESSION["viewnums"])) {
+            echo $_SESSION["viewnum"];
+            echo $_SESSION["viewnums"];
 
-            $viewnum = $_SESSION["viewnum"];
-            $viewnums = $_SESSION["viewnums"];
+          }
+          $_SESSION["viewnum"]++;
+          $_SESSION["viewnums"]++;
 
-            if ($viewnum > ($sum-1)) {
 
-              $_SESSION["viewnum"] = 0;
-              $viewnum = $_SESSION["viewnum"];
+          // $sum = count($display);//計算總共有幾筆資料
+          // //時間比對
+          // if (isset($_SESSION["viewnum"]) && isset($_SESSION["viewnums"])) {
+          //
+          //   $viewnum = $_SESSION["viewnum"];
+          //   $viewnums = $_SESSION["viewnums"];
+          //
+          //   if ($viewnum > ($sum-1)) {
+          //
+          //     $_SESSION["viewnum"] = 0;
+          //     $viewnum = $_SESSION["viewnum"];
+          //
+          //   }
+          //
+          //   if ($viewnums > ($sum-1)) {
+          //     $_SESSION["viewnums"] = 0;
+          //     $viewnums = $_SESSION["viewnums"];
+          //
+          //   }
+          //   //時間比對
+          //   $times = strtotime($time["$viewnum"]) < strtotime($time["$viewnums"]);
+          //   $timess = strtotime($time["$viewnum"]) == strtotime($time["$viewnums"]);
+          //
+          //   if($times || $timess){
+          //     echo "我".$view_id["$viewnum"];
+          //     // $db->query(ViewUp(
+          //     //                   $pic_name,
+          //     //                   $picDir,
+          //     //                   $datetime,
+          //     //                   $view_id["$viewnum"])
+          //     //                 );//執行更新指令
+          //
+          //   }else {
+          //     echo $view_id["$viewnums"];
+          //
+          //     // $db->query(ViewUp(
+          //     //                   $pic_name,
+          //     //                   $picDir,
+          //     //                   $datetime,
+          //     //                   $view_id["$viewnum"])
+          //     //                 );//執行更新指令
+          //
+          //   }
 
-            }
 
-            if ($viewnums > ($sum-1)) {
-              $_SESSION["viewnums"] = 0;
-              $viewnums = $_SESSION["viewnums"];
-
-            }
-            //時間比對
-            $times = strtotime($time["$viewnum"]) < strtotime($time["$viewnums"]);
-            $timess = strtotime($time["$viewnum"]) == strtotime($time["$viewnums"]);
-
-            if($times || $timess){
-              echo $view_id["$viewnum"];
-              // $db->query(ViewUp(
-              //                   $pic_name,
-              //                   $picDir,
-              //                   $datetime,
-              //                   $view_id["$viewnum"])
-              //                 );//執行更新指令
-
-            }else {
-              echo $view_id["$viewnum"];
-              
-              // $db->query(ViewUp(
-              //                   $pic_name,
-              //                   $picDir,
-              //                   $datetime,
-              //                   $view_id["$viewnum"])
-              //                 );//執行更新指令
-
-            }
-            $_SESSION["viewnum"]++;
-            $_SESSION["viewnums"]++;
-
-        }//else
+        // }//else
       }//if($pic_error)
     }//foreach
   }

@@ -95,6 +95,7 @@ if (!isset($_SESSION["topnum"]) && !isset($_SESSION["topnums"])) {
           $rowsc = count($rows);//計算總共有幾筆資料
           //時間比對
           if (isset($_SESSION["topnum"]) && isset($_SESSION["topnums"])) {
+        
 
             $topnum = $_SESSION["topnum"];
             $topnums = $_SESSION["topnums"];
