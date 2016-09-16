@@ -12,8 +12,10 @@ if (!isset($_SESSION["topnum"]) && !isset($_SESSION["topnums"])) {
   $_SESSION["topnums"] = 1;
 }
 
+
   $toptime = $db->query(topse());
   $rows = $toptime->fetchAll();
+
 
   if (isset($_FILES["top6"])) {
 
@@ -95,7 +97,7 @@ if (!isset($_SESSION["topnum"]) && !isset($_SESSION["topnums"])) {
           $rowsc = count($rows);//計算總共有幾筆資料
           //時間比對
           if (isset($_SESSION["topnum"]) && isset($_SESSION["topnums"])) {
-        
+
 
             $topnum = $_SESSION["topnum"];
             $topnums = $_SESSION["topnums"];
@@ -202,10 +204,6 @@ $row = $topse->fetchAll();
   //   </li>
   //   ";
   // }
-
-    foreach ($rows as $key => $value) { //取得資料庫
-      echo $key.$value[3]."<br>";//顯示id && 時間
-    }
 
     if(isset($_POST["clear"])){
       $clear = $_POST["clear"];

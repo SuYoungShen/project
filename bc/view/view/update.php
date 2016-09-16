@@ -12,13 +12,20 @@
   $ViewSe = $db->query(ViewSe());//查詢資料表
   $display = $ViewSe->fetchAll();
 
-  if (!isset($_SESSION["viewnum"]) && !isset($_SESSION["viewnums"])) {
-    $_SESSION["viewnum"] = 0;
-    $_SESSION["viewnums"] = 1;
-echo    $_SESSION["viewnum"] ;
-    echo $_SESSION["viewnums"] ;
-
+  foreach ($display as $key => $value) {
+     $test[$key]=$value[0];
+    echo $id[$key]=$value[5]."<br>";
+    $time[$key]=$value[4];
   }
+  for ($i=0; $i < ; $i++) { 
+    # code...
+  }
+  if ($time[0]<$time[1]) {
+    echo "time";
+  }else {
+    echo "string";
+  }
+
 
   if (isset($_FILES["picName"])) {
 
@@ -81,18 +88,12 @@ echo    $_SESSION["viewnum"] ;
 
           move_uploaded_file($pic_tmp,$picDir.$pic_name);//把檔案移到指定dir
 
-          foreach ($display as $key => $value) {
-            $view_id[$key] = $value[0];
-            $time[$key] = $value[4];
-          }
+          // foreach ($display as $key => $value) {
+          //   $view_id[$key] = $value[0];
+          //   $time[$key] = $value[4];
+          //
+          // }
 
-          if (isset($_SESSION["viewnum"]) && isset($_SESSION["viewnums"])) {
-            echo $_SESSION["viewnum"];
-            echo $_SESSION["viewnums"];
-
-          }
-          $_SESSION["viewnum"]++;
-          $_SESSION["viewnums"]++;
 
 
           // $sum = count($display);//計算總共有幾筆資料
@@ -250,9 +251,8 @@ echo    $_SESSION["viewnum"] ;
   //   }
   //
   // }
-  foreach ($display as $key => $value) { //取得資料庫
-    echo "<br>".$key.$value[4]."<br>";//顯示id && 時間
-  }
+
+
 
   if(isset($_POST["clear"])){
     $clear = $_POST["clear"];
@@ -271,6 +271,6 @@ echo    $_SESSION["viewnum"] ;
 
   }
 
-  $db=null;
+  // $db=null;
 
  ?>

@@ -66,6 +66,7 @@
     return $ViewUp;
   }
 
+
   function message($value, $Basename){
     echo "
     <script>
