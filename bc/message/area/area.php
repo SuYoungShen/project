@@ -1,4 +1,12 @@
+<?php
+  $dbname="message";
+  include ("mysql/connect.php");
+  if ($db) {
+    echo "string";
+  }
 
+  $db=null;
+ ?>
 <tr>
   <td class="center">
     <label class="pos-rel">

@@ -1,13 +1,3 @@
-<?php
-  $dbname="message";
-  include ("mysql/connect.php");
-  include ("message/common.php");
-  $forumSe = $db->query(ForumSe());
-  $display = $forumSe->fetchAll();
-
-
-  $db=null;
- ?>
 <tr>
   <td class="center">
     <label class="pos-rel">
@@ -17,16 +7,16 @@
   </td>
 
   <td>
-    <a href="#">base.com</a>
+    <a href="#">app.com</a>
   </td>
-  <td>$35</td>
-  <td>$35</td>
-  <td class="hidden-480">2,595</td>
-  <td>Feb 18</td>
-  <td></td>
-
+  <td>$45</td>
+  <td class="hidden-480">3,330</td>
+  <td>Feb 12</td>
+  <td>(管理員回覆)</td>
+  <td>test@test</td>
+  <td>http://...</td>
   <td class="hidden-480">
-    <span class="label label-sm label-success">Registered</span>
+    <span class="label label-sm label-warning">Expiring</span>
   </td>
 
   <td>
@@ -89,15 +79,16 @@
   </td>
 
   <td>
-    <a href="#">max.com</a>
+    <a href="#">base.com</a>
   </td>
-  <td>$60</td>
-  <td>$60</td>
-  <td class="hidden-480">4,400</td>
-  <td>Mar 11</td>
-<td></td>
+  <td>$35</td>
+  <td>2,595</td>
+  <td>Feb 18</td>
+  <td>(管理員回覆)</td>
+  <td>test@test</td>
+  <td>http://...</td>
   <td class="hidden-480">
-    <span class="label label-sm label-warning">Expiring</span>
+    <span class="label label-sm label-success">Registered</span>
   </td>
 
   <td>

@@ -34,7 +34,7 @@
 		<script src="assets/js/ace-extra.min.js"></script>
 
 		<!-- HTML5shiv and Respond.js for IE8 to support HTML5 elements and media queries -->
-
+		<script type="text/javascript" src="assets/js/alert.js"></script>
 		<!--[if lte IE 8]>
 		<script src="assets/js/html5shiv.min.js"></script>
 		<script src="assets/js/respond.min.js"></script>
@@ -175,7 +175,7 @@
 					<div class="page-content">
 						<div class="page-header">
 							<h1>
-								會員
+								討論區
 							</h1>
 						</div><!-- /.page-header -->
 
@@ -183,8 +183,8 @@
 						<div class="row">
 							<div class="col-xs-12">
 								<div class="table-header">
-									會員資料
-									<a href="#member" class="btn btn-app btn-green btn-xs" role="button" class="green" data-toggle="modal">
+									討論區
+									<a href="#discuss" class="btn btn-app btn-green btn-xs" role="button" class="green" data-toggle="modal">
 										<i class="ace-icon glyphicon-plus bigger-150"></i>
 									</a>
 									<a href="#" class="btn btn-app btn-danger btn-xs" role="button" class="green" data-toggle="modal">
@@ -203,7 +203,8 @@
 													</label>
 												</th>
 												<th>主題</th>
-												<th>回覆(紀錄總共有幾則)</th>
+												<th>留言</th>
+												<th>Email</th>
 												<th class="hidden-480">發表人(訪客、抓取會員名)</th>
 
 												<th class="hidden-480">回覆</th>
@@ -232,8 +233,8 @@
 						<hr>
 					</div><!--page-content-->
 
-					<!--member-->
-					<div id="member" class="modal fade" tabindex="-1">
+					<!--discussr-->
+					<div id="discuss" class="modal fade" tabindex="-1">
 						<div class="modal-dialog">
 							<div class="modal-content">
 								<div class="modal-header no-padding">
@@ -241,26 +242,26 @@
 										<button type="button" class="close" data-dismiss="modal" aria-hidden="true">
 											<span class="white">&times;</span>
 										</button>
-										新增會員
+										回覆
 									</div>
 								</div>
 								<div class="row">
 									<div class="col-xs-12">
 										<!-- PAGE CONTENT BEGINS -->
-										<form class="form-horizontal" role="form" action="member/member.php">
+										<form class="form-horizontal" role="form">
 											<div class="form-group">
-												<label class="col-sm-3 control-label no-padding-right" for="form-field-1"> 帳號	 </label>
+												<label class="col-sm-3 control-label no-padding-right" for="form-field-1"> 主題	 </label>
 
 												<div class="col-sm-9">
-													<input type="text" id="form-field-1" placeholder="帳號" class="col-xs-10 col-sm-5" />
+													<input type="text" id="form-field-1" name="theme" placeholder="主題" class="col-xs-10 col-sm-5" />
 												</div>
 											</div>
 
 											<div class="form-group">
-												<label class="col-sm-3 control-label no-padding-right" for="form-field-1-1"> 密碼 </label>
+												<label class="col-sm-3 control-label no-padding-right" for="form-field-1-1"> 留言內容 </label>
 
 												<div class="col-sm-9">
-													<input type="text" id="form-field-1-1" placeholder="密碼" class="col-xs-10 col-sm-5" />
+													<textarea id="form-field-1-1" placeholder="留言內容" name="message" class="col-xs-10 col-sm-5" /></textarea>
 												</div>
 											</div>
 
@@ -268,21 +269,28 @@
 												<label class="col-sm-3 control-label no-padding-right" for="form-field-1-1"> E-mail </label>
 
 												<div class="col-sm-9">
-													<input type="text" id="form-field-1-1" placeholder="E-mail" class="col-xs-10 col-sm-5" />
+													<input type="text" id="form-field-1-1" placeholder="E-mail" name="email" class="col-xs-10 col-sm-5" />
 												</div>
 											</div>
 
 											<div class="form-group">
-												<label class="col-sm-3 control-label no-padding-right" for="form-field-1-1"> 姓名 </label>
+												<label class="col-sm-3 control-label no-padding-right" for="form-field-1-1"> 發表人ˊ </label>
 
 												<div class="col-sm-9">
-													<input type="text" id="form-field-1-1" placeholder="姓名" class="col-xs-10 col-sm-5" />
+													<input type="text" id="form-field-1-1" placeholder="發表人" name="posted" class="col-xs-10 col-sm-5" />
+												</div>
+											</div>
+
+											<div class="form-group">
+												<label class="col-sm-3 control-label no-padding-right" for="form-field-1-1"> 回覆 </label>
+
+												<div class="col-sm-9">
+													<textarea  id="form-field-1-1" placeholder="回覆" name="reply" class="col-xs-10 col-sm-5" /></textarea>
 												</div>
 											</div>
 
 
 											<div class="space-4"></div>
-
 
 											<div class="clearfix form-actions">
 												<div class="col-md-offset-3 col-md-9">
@@ -378,7 +386,7 @@
 					bAutoWidth: false,
 					"aoColumns": [
 					  { "bSortable": false },
-					  null, null,null, null, null, null,
+					  null, null,null, null, null, null,null,
 					  { "bSortable": false }
 					],
 					"aaSorting": [],
