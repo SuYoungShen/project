@@ -1,9 +1,7 @@
 <?php
   $dbname="message";
   include ("mysql/connect.php");
-  if ($db) {
-    echo "string";
-  }
+  
 
   $db=null;
  ?>

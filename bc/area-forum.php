@@ -245,9 +245,18 @@
 									 <div class="row">
 										 <div class="col-xs-12">
 											 <!-- PAGE CONTENT BEGINS -->
-											 <form class="form-horizontal" role="form" action="area-forum/area-forum.php">
+											 <form class="form-horizontal" role="form" action="message/area/update.php" >
+
 												 <div class="form-group">
-													 <label class="col-sm-3 control-label no-padding-right" for="form-field-1"> 主題	 </label>
+													 <label class="col-sm-3 control-label no-padding-right" for="form-field-1"> 地區	 </label>
+
+													 <div class="col-sm-9">
+														 <input type="text" id="form-field-1"  placeholder="(訪客、抓取會員名)" class="col-xs-10 col-sm-5" />
+													 </div>
+												 </div>
+
+												 <div class="form-group">
+													 <label class="col-sm-3 control-label no-padding-right" for="form-field-1"> 景點名	 </label>
 
 													 <div class="col-sm-9">
 														 <input type="text" id="form-field-1" placeholder="顯示發表者主題	" class="col-xs-10 col-sm-5" />
@@ -258,7 +267,15 @@
 													 <label class="col-sm-3 control-label no-padding-right" for="form-field-1"> 發表人	 </label>
 
 													 <div class="col-sm-9">
-														 <input type="text" id="form-field-1" placeholder="(訪客、抓取會員名)" class="col-xs-10 col-sm-5" />
+														 <input type="text" id="form-field-1"  placeholder="(訪客、抓取會員名)" class="col-xs-10 col-sm-5" />
+													 </div>
+												 </div>
+
+												 <div class="form-group">
+													 <label class="col-sm-3 control-label no-padding-right" for="form-field-1"> 發表內容	 </label>
+
+													 <div class="col-sm-9">
+														 <input type="text" id="form-field-1"  placeholder="想說什麼???" class="col-xs-10 col-sm-5" />
 													 </div>
 												 </div>
 
@@ -269,6 +286,22 @@
 														 <textarea  id="form-field-1-1" placeholder="管理員回覆內容" class="col-xs-10 col-sm-5" /></textarea>
 													 </div>
 												 </div>
+
+												 <div class="form-group">
+													 <label class="col-sm-3 control-label no-padding-right" for="form-field-1-1"> email </label>
+
+													 <div class="col-sm-9">
+														 <textarea  id="form-field-1-1" placeholder="email" class="col-xs-10 col-sm-5" /></textarea>
+													 </div>
+												 </div>
+
+												 <div class="form-group">
+													<label class="col-sm-3 control-label no-padding-right" for="form-field-1-1"> 網址 </label>
+
+													<div class="col-sm-9">
+														<textarea  id="form-field-1-1" placeholder="網址" class="col-xs-10 col-sm-5" /></textarea>
+													</div>
+												</div>
 
 												 <div class="form-group">
 													 <label class="col-sm-3 control-label no-padding-right" for="form-field-1-1"> 顯示時間 </label>
@@ -300,19 +333,14 @@
 											 </form>
 										 </div><!-- /.col -->
 									 </div><!-- /.row -->
-
 								 </div><!-- /.modal-content -->
 							 </div><!-- /.modal-dialog -->
 						 </div><!-- PAGE CONTENT ENDS -->
 						 <!--會員-->
 
-
-
 					 </div><!-- /.main-content-inner -->
-
 				 </div><!-- /.main-content -->
 			 </div><!-- /.main-container -->
-
 			</div><!-- /.main-content -->
 
 			<div class="footer">
