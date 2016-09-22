@@ -28,8 +28,9 @@
 		  <link rel="stylesheet" href="assets/css/ace-ie.min.css" />
 		<![endif]-->
 
-		<!-- inline styles related to this page -->
 
+	<script src="assets/js/jquery.2.1.1.min.js"></script>
+	<script type="text/javascript" src="message/area/js/validate.js"></script>
 		<!-- ace settings handler -->
 		<script src="assets/js/ace-extra.min.js"></script>
 
@@ -202,7 +203,7 @@
 													 <th>地區</th>
 													 <th>景點名</th>
 													 <th>發表人</th>
-													 <th>發表內容</th>
+													 <th>留言</th>
 													 <th >回覆</th>
 													 <th>E-mail</th>
 													 <th>網址</th>
@@ -245,13 +246,13 @@
 									 <div class="row">
 										 <div class="col-xs-12">
 											 <!-- PAGE CONTENT BEGINS -->
-											 <form class="form-horizontal" role="form" action="message/area/update.php" >
+											 <form class="form-horizontal" method="post" role="form" action="message/area/update.php" >
 
 												 <div class="form-group">
 													 <label class="col-sm-3 control-label no-padding-right" for="form-field-1"> 地區	 </label>
 
 													 <div class="col-sm-9">
-														 <input type="text" id="form-field-1"  placeholder="(訪客、抓取會員名)" class="col-xs-10 col-sm-5" />
+														 <input type="text" id="form-field-1" name="placename"  placeholder="(訪客、抓取會員名)" class="col-xs-10 col-sm-5" />
 													 </div>
 												 </div>
 
@@ -259,7 +260,7 @@
 													 <label class="col-sm-3 control-label no-padding-right" for="form-field-1"> 景點名	 </label>
 
 													 <div class="col-sm-9">
-														 <input type="text" id="form-field-1" placeholder="顯示發表者主題	" class="col-xs-10 col-sm-5" />
+														 <input type="text" id="form-field-1" name="viewpoint" placeholder="顯示發表者主題	" class="col-xs-10 col-sm-5" />
 													 </div>
 												 </div>
 
@@ -267,7 +268,7 @@
 													 <label class="col-sm-3 control-label no-padding-right" for="form-field-1"> 發表人	 </label>
 
 													 <div class="col-sm-9">
-														 <input type="text" id="form-field-1"  placeholder="(訪客、抓取會員名)" class="col-xs-10 col-sm-5" />
+														 <input type="text" id="form-field-1" name="posted"  placeholder="(訪客、抓取會員名)" class="col-xs-10 col-sm-5" />
 													 </div>
 												 </div>
 
@@ -275,7 +276,7 @@
 													 <label class="col-sm-3 control-label no-padding-right" for="form-field-1"> 發表內容	 </label>
 
 													 <div class="col-sm-9">
-														 <input type="text" id="form-field-1"  placeholder="想說什麼???" class="col-xs-10 col-sm-5" />
+														 <input type="text" id="form-field-1" name="message" placeholder="想說什麼???" class="col-xs-10 col-sm-5" />
 													 </div>
 												 </div>
 
@@ -283,7 +284,7 @@
 													 <label class="col-sm-3 control-label no-padding-right" for="form-field-1-1"> 回覆 </label>
 
 													 <div class="col-sm-9">
-														 <textarea  id="form-field-1-1" placeholder="管理員回覆內容" class="col-xs-10 col-sm-5" /></textarea>
+														 <textarea  id="form-field-1-1" name="reply" placeholder="管理員回覆內容" class="col-xs-10 col-sm-5" /></textarea>
 													 </div>
 												 </div>
 
@@ -291,7 +292,7 @@
 													 <label class="col-sm-3 control-label no-padding-right" for="form-field-1-1"> email </label>
 
 													 <div class="col-sm-9">
-														 <textarea  id="form-field-1-1" placeholder="email" class="col-xs-10 col-sm-5" /></textarea>
+														 <textarea  id="form-field-1-1" name="email" placeholder="email" class="col-xs-10 col-sm-5" /></textarea>
 													 </div>
 												 </div>
 
@@ -299,7 +300,7 @@
 													<label class="col-sm-3 control-label no-padding-right" for="form-field-1-1"> 網址 </label>
 
 													<div class="col-sm-9">
-														<textarea  id="form-field-1-1" placeholder="網址" class="col-xs-10 col-sm-5" /></textarea>
+														<textarea  id="form-field-1-1" name="site" placeholder="網址" class="col-xs-10 col-sm-5" /></textarea>
 													</div>
 												</div>
 
@@ -364,7 +365,7 @@
 		<!-- basic scripts -->
 
 		<!--[if !IE]> -->
-		<script src="assets/js/jquery.2.1.1.min.js"></script>
+
 
 		<!-- <![endif]-->
 

@@ -46,7 +46,8 @@ if (!isset($_SESSION["slidernum"]) && !isset($_SESSION["slidernums"])) {
           echo "
           <script>
           var value = '$slidertmp';
-          alerts(value);
+		  var sliderbasename = '$sliderbasename';
+          alerts(value,sliderbasename);
           </script>";
           break;
 
@@ -56,7 +57,8 @@ if (!isset($_SESSION["slidernum"]) && !isset($_SESSION["slidernums"])) {
           echo "
           <script>
             var value = '$slidersize';
-            alerts(value);
+			var sliderbasename = '$sliderbasename';
+            alerts(value,sliderbasename);
           </script>";
           break;
         }
@@ -70,7 +72,8 @@ if (!isset($_SESSION["slidernum"]) && !isset($_SESSION["slidernums"])) {
           echo "
           <script>
             var value = '資料夾裡已有名稱'+$slidername+'的檔案';
-            alerts(value);
+			var sliderbasename = '$sliderbasename';
+            alerts(value,sliderbasename);
           </script>
           ";
 
