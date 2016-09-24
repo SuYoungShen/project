@@ -174,26 +174,39 @@
                     <p>(發表內容)</p>
                   </div>
                 </div>
-
               </div>
+              <br/>
+              <script type="text/javascript">
+              function getNowTime(){
+	var timeDate= new Date();
+	var tMonth = (timeDate.getMonth()+1) > 9 ? (timeDate.getMonth()+1) : '0'+(timeDate.getMonth()+1);
+	var tDate = timeDate.getDate() > 9 ? timeDate.getDate() : '0'+timeDate.getDate();
+	var tHours = timeDate.getHours() > 9 ? timeDate.getHours() : '0'+timeDate.getHours();
+	var tMinutes = timeDate.getMinutes() > 9 ? timeDate.getMinutes() : '0'+timeDate.getMinutes();
+	var tSeconds = timeDate.getSeconds() > 9 ? timeDate.getSeconds() : '0'+timeDate.getSeconds();
+	return timeDate= timeDate.getFullYear()+'/'+ tMonth +'/'+ tDate +' '+ tHours +':'+ tMinutes +':'+ tSeconds;
+}
+document.write("現在時間:"+getNowTime());
+              </script>
               <!-- Start Comment Form -->
               <div class="comment-form">
-                <h4>發表評論</h4>
+                <h4>請留言</h4>
                 <p class="muted">Make sure you enter the (*) required information where indicated. HTML code is not allowed.</p>
-                <form name="comment-form" id="comment-form">
+                <form name="comment-form" method="post" action="bc/message/area/insert.php">
                   <div class="row-fluid">
                     <div class="span4">
-                      <input type="text" name="name" required="required" class="input-block-level" placeholder="姓名(抓取會員名)" />
+                      <input type="text" name="posted"  required="required" class="input-block-level" placeholder="姓名(抓取會員名)" />
                     </div>
                     <div class="span4">
-                      <input type="email" name="email" required="required" class="input-block-level" placeholder="Email" />
+                      <input type="email" name="email"  required="required" class="input-block-level" placeholder="Email" />
                     </div>
                     <div class="span4">
-                      <input type="url" name="website" class="input-block-level" placeholder="網址" />
+                      <input type="url" name="site"  required="required" class="input-block-level" placeholder="網址" />
                     </div>
                   </div>
-                  <textarea rows="10" name="message" id="message" required="required" class="input-block-level" placeholder="有什麼話要說..."></textarea>
+                  <textarea rows="10" name="message" id="message" class="input-block-level" placeholder="有什麼話要說..."></textarea>
                   <input type="submit" value="送出" class="btn btn-large btn-primary" />
+                  <input type="reset" value="重置" class="btn btn-large btn-primary" />
                 </form>
               </div>
               <!-- End Comment Form -->

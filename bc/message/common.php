@@ -1,4 +1,5 @@
 <?php
+
   function message($value,$basename){
     echo "
       <script>
@@ -8,13 +9,39 @@
       </script>
     ";
   }
+
   function AreaUp($placename)
   {
 
       $AreaUp ="UPDATE `area` SET
-                                `placename`='".$placename."'
+                                `placename`='".$placename."',
+                                `viewpoint`='".$viewpoint."',
+                                `posted`='".$posted."',
+                                `reply`='".$reply."',
+                                `email`='".$email."',
+                                `site`='".$site."',
+                                `datetime`='".$datetime."'
                                 WHERE message='1'
                 ";
+
+    return $AreaUp;
+  }
+
+  function AreaIn($posted,$email,$site,$message)
+  {
+
+      $AreaUp ="INSERT INTO `area`(
+                                    `posted`,
+                                    `message`,
+                                    `email`,
+                                    `site`
+
+                                  )VALUES (
+                                  '".$posted."',
+                                  '".$email."',
+                                  '".$site."',
+                                  '".$message."'
+                                  )";
 
     return $AreaUp;
   }

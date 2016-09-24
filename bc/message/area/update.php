@@ -3,12 +3,16 @@
   $dbname="message";
   include ("../../mysql/connect.php");
   include ("../common.php");
-  $BackWeb="../../area-forum.php";//回到哪個頁面
+  $BackWeb="../../../area.php";//回到哪個頁面
 
-  if (isset($_POST["placename"])) {
+  if (isset($_POST["posted"])) {
 
-    $placename=$_POST["placename"];
-    $true=$db->query(AreaUp($placename));
+    $posted=$_POST["posted"];
+    $email=$_POST["email"];
+    $site=$_POST["site"];
+    $message=$_POST["message"];
+    $true=$db->query(test($posted,$email,$site));
+
     if ($true) {
       message("更新成功",$BackWeb);
     }else {

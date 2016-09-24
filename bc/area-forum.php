@@ -300,7 +300,7 @@
 													<label class="col-sm-3 control-label no-padding-right" for="form-field-1-1"> 網址 </label>
 
 													<div class="col-sm-9">
-														<textarea  id="site" name="site" placeholder="網址" class="col-xs-10 col-sm-5" /></textarea>
+														<input type="url" id="site" name="site" placeholder="網址" class="col-xs-10 col-sm-5" />
 													</div>
 												</div>
 
