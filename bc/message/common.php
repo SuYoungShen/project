@@ -27,20 +27,22 @@
     return $AreaUp;
   }
 
-  function AreaIn($posted,$email,$site,$message)
+  function AreaIn($posted, $email, $site, $message, $datetime)
   {
 
       $AreaUp ="INSERT INTO `area`(
                                     `posted`,
                                     `message`,
                                     `email`,
-                                    `site`
+                                    `site`,
+                                    `datetime`
 
                                   )VALUES (
                                   '".$posted."',
                                   '".$email."',
                                   '".$site."',
-                                  '".$message."'
+                                  '".$message."',
+                                  '".$datetime."'
                                   )";
 
     return $AreaUp;
@@ -48,7 +50,7 @@
 
   function AreaSe()
   {
-    $AreaSe = "SELECT * From area";
+    $AreaSe = "SELECT * From area ORDER BY datetime DESC";
 
     return $AreaSe;
   }

@@ -12,15 +12,16 @@
       $message=$_POST["message"];//留言
       $email=$_POST["email"];//email
       $site=$_POST["site"];//網址
+      $datetime=$_COOKIE["datetime"];//時間
 
-      $true=$db->query(AreaIn($posted,$message,$email,$site));
+      $true=$db->query(AreaIn($posted, $message, $email, $site, $datetime));
 
       if ($true) {
         message("留言成功",$BackWeb);
+
       }else {
         message("留言失敗",$BackWeb);
       }
-
   }
 
 

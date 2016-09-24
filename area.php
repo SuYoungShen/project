@@ -15,7 +15,7 @@
     <link rel="stylesheet" href="css/font-awesome.min.css">
     <link rel="stylesheet" href="css/main.css">
     <link rel="stylesheet" href="css/sl-slide.css">
-
+    <script type="text/javascript" src='NowTime.js'></script>
     <!-- Le fav and touch icons -->
     <?php
       include("ico.php");
@@ -134,9 +134,9 @@
               <div class="comments-list">
 
                 <div class="user-info media box">
-                  <div class="pull-left">
+                  <!-- <div class="pull-left">
                     <img class="avatar" src="images/sample/cAvatar1.jpg" alt="" />
-                  </div>
+                  </div> -->
 
                   <div class="media-body">
                     <strong>發表人:
@@ -149,9 +149,9 @@
                 </div>
 
                 <div class="comment media">
-                  <div class="pull-left">
+                  <!-- <div class="pull-left">
                     <img class="avatar" src="images/sample/cAvatar1.jpg" alt="" />
-                  </div>
+                  </div> -->
 
                   <div class="media-body">
                     <strong>發表人:<a href="#">(會員名)</a></strong><br>
@@ -161,9 +161,9 @@
                 </div>
 
                 <div class="user-info media box">
-                  <div class="pull-left">
+                  <!-- <div class="pull-left">
                     <img class="avatar" src="images/sample/cAvatar1.jpg" alt="" />
-                  </div>
+                  </div> -->
 
                   <div class="media-body">
                     <strong>發表人:
@@ -176,18 +176,7 @@
                 </div>
               </div>
               <br/>
-              <script type="text/javascript">
-              function getNowTime(){
-	var timeDate= new Date();
-	var tMonth = (timeDate.getMonth()+1) > 9 ? (timeDate.getMonth()+1) : '0'+(timeDate.getMonth()+1);
-	var tDate = timeDate.getDate() > 9 ? timeDate.getDate() : '0'+timeDate.getDate();
-	var tHours = timeDate.getHours() > 9 ? timeDate.getHours() : '0'+timeDate.getHours();
-	var tMinutes = timeDate.getMinutes() > 9 ? timeDate.getMinutes() : '0'+timeDate.getMinutes();
-	var tSeconds = timeDate.getSeconds() > 9 ? timeDate.getSeconds() : '0'+timeDate.getSeconds();
-	return timeDate= timeDate.getFullYear()+'/'+ tMonth +'/'+ tDate +' '+ tHours +':'+ tMinutes +':'+ tSeconds;
-}
-document.write("現在時間:"+getNowTime());
-              </script>
+
               <!-- Start Comment Form -->
               <div class="comment-form">
                 <h4>請留言</h4>
@@ -203,6 +192,9 @@ document.write("現在時間:"+getNowTime());
                     <div class="span4">
                       <input type="url" name="site"  required="required" class="input-block-level" placeholder="網址" />
                     </div>
+                    <script type="text/javascript">
+                      document.cookie="datetime="+getNowTime();
+                    </script>
                   </div>
                   <textarea rows="10" name="message" id="message" class="input-block-level" placeholder="有什麼話要說..."></textarea>
                   <input type="submit" value="送出" class="btn btn-large btn-primary" />
