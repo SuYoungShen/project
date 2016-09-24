@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- 主機: 127.0.0.1
--- 產生時間： 2016-09-20 13:30:59
+-- 產生時間： 2016-09-24 21:22:41
 -- 伺服器版本: 10.1.16-MariaDB
 -- PHP 版本： 5.6.24
 
@@ -28,13 +28,22 @@ SET time_zone = "+00:00";
 
 CREATE TABLE `area` (
   `placename` char(100) COLLATE utf8_unicode_ci NOT NULL,
-  `theme` char(10) COLLATE utf8_unicode_ci NOT NULL,
-  `message` varchar(1000) COLLATE utf8_unicode_ci NOT NULL,
-  `posted` varchar(36) COLLATE utf8_unicode_ci NOT NULL,
-  `reply` varchar(10) COLLATE utf8_unicode_ci NOT NULL,
-  `frequency` int(11) NOT NULL,
+  `viewpoint` char(10) COLLATE utf8_unicode_ci NOT NULL,
+  `posted` char(10) COLLATE utf8_unicode_ci NOT NULL,
+  `message` varchar(500) COLLATE utf8_unicode_ci NOT NULL,
+  `reply` varchar(500) COLLATE utf8_unicode_ci NOT NULL,
+  `email` varchar(36) COLLATE utf8_unicode_ci NOT NULL,
+  `site` varchar(100) COLLATE utf8_unicode_ci NOT NULL,
   `datetime` datetime NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+
+--
+-- 資料表的匯出資料 `area`
+--
+
+INSERT INTO `area` (`placename`, `viewpoint`, `posted`, `message`, `reply`, `email`, `site`, `datetime`) VALUES
+('', '', 'a', 'a', '', 'a@a', 'http://a', '2016-09-25 02:05:55'),
+('', '', 'aaa', 'aaa', '', 'aaa@aaa.com', 'http://ww', '2016-09-25 02:26:21');
 
 -- --------------------------------------------------------
 

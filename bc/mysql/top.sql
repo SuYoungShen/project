@@ -3,9 +3,9 @@
 -- http://www.phpmyadmin.net
 --
 -- 主機: 127.0.0.1
--- 產生時間： 2016-09-15 21:51:22
--- 伺服器版本: 10.1.13-MariaDB
--- PHP 版本： 7.0.5
+-- 產生時間： 2016-09-24 21:23:15
+-- 伺服器版本: 10.1.16-MariaDB
+-- PHP 版本： 5.6.24
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 SET time_zone = "+00:00";
@@ -39,10 +39,7 @@ CREATE TABLE `member` (
 --
 
 INSERT INTO `member` (`account`, `password`, `email`, `name`, `datetime`) VALUES
-('2', '1', '1', '1', '0000-00-00 00:00:00'),
-('3', '1', '1', '1', '0000-00-00 00:00:00'),
-('1', '1', '1', '1', '0000-00-00 00:00:00'),
-('ssssss', 'ssdsdsdssd', 'ssdd@gmai.com', 'sss', '2016-09-13 18:32:12');
+('ssssss', 'ssdsdsdss', 'ssdd@gmai.com', 'sss', '2016-09-24 15:07:07');
 
 -- --------------------------------------------------------
 
