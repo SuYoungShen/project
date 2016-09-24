@@ -1,28 +1,33 @@
-// function validate(){
-  // $.validator.setDefaults({
-  //     submitHandler: function() {
-  //       alert("提交事件!");
-  //     }
-  // });
-  /* Act on the event */
-    // var email = $("#email").val();
-    // if (validateEmail(email)) {
-    //   alert('Nice!! your Email is valid, now you can continue..');
-    // }else {
-    //   alert('Invalid Email Address');
-    //   // e.preventDefault();
-    // }
-    // function validateEmail(email) {
-    //   var filter = /^[\w\-\.\+]+\@[a-zA-Z0-9\.\-]+\.[a-zA-z0-9]{2,4}$/;
-    //   if (filter.test(email)) {
-    //     return true;
-    //   }
-    //   else {
-    //     return false;
-    //   }
-    // }
+
 $(document).ready(function(){
-  
+
+  $(":submit").on(ace.click_event, function() {
+    var placename=$("#placename").val();
+    var viewpoint=$("#viewpoint").val();
+    var posted=$("#posted").val();
+    var message=$("#message").val();
+    var reply=$("#reply").val();
+    var email=$("#email").val();
+    var site=$("#site").val();
+    var datetime=$("#datetime").val();
+
+    $.ajax({
+      type:"POST",
+      url: "message/area/update.php",
+      data:{
+        'placename':placename,
+        'viewpoint':viewpoint
+
+      },
+      success:function(data){
+        alert(data);
+      },
+      error:function(data){
+        alert("s");
+      }
+    });
+  });
+
 //     var account=/^[a-zA-z0-9]{4,10}$/;
 //      $("input[name='account']").blur(function(){
 //        var accountVal = $(this).val();

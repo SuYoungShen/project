@@ -1,6 +1,6 @@
 <?php
 
-  function memberup(&$account, &$passowrd, &$email, &$name, &$datetime)
+  function memberUpdate(&$account, &$passowrd, &$email, &$name, &$datetime)
   {
 
     $memberup = "UPDATE member SET

@@ -1,19 +1,29 @@
 <?php
-
-  function memberup(&$account, &$passowrd, &$email, &$name, &$datetime)
+  function message($value,$basename){
+    echo "
+      <script>
+        var value = '$value';
+        var basename = '$basename';
+        alerts(value,basename);
+      </script>
+    ";
+  }
+  function AreaUp($placename)
   {
 
-    $memberup = "UPDATE member SET
-                      account = '".$account."',
-                      password = '".$passowrd."',
-                      email = '".$email."',
-                      name = '".$name."',
-                      datetime = '".$datetime."'
-                    WHERE
-                      account = '".$account."'
-                    ";
+      $AreaUp ="UPDATE `area` SET
+                                `placename`='".$placename."'
+                                WHERE message='1'
+                ";
 
-    return $memberup;
+    return $AreaUp;
+  }
+
+  function AreaSe()
+  {
+    $AreaSe = "SELECT * From area";
+
+    return $AreaSe;
   }
 
   function ForumSe()

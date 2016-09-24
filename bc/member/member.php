@@ -22,6 +22,7 @@
     if(isset($_POST["update"])){
       $memberup = memberUpdate($account ,$password ,$email ,$name ,$datetime);//更新會員資料
       $db->query($memberup);
+
     }
 
     if(isset($_POST["insert"])){
