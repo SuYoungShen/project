@@ -11,7 +11,7 @@
 
 	$dbname="top";
 	include("bc/mysql/connect.php");//top資料表
-	include("bc/index/top6/common.php");
+	// include("bc/index/top6/common.php");
 
 	$topse = $db->query(topse());
 	$row=$topse->fetchAll();

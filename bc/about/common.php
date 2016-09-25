@@ -69,6 +69,12 @@
     ";
   }
 
+  function topse()
+  {
+    $topse = "SELECT * From top";
+    return $topse;
+  }
+
   function PlaceSe(){
     $placeSe = "SELECT * From `place`";
     return $placeSe;

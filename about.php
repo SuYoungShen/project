@@ -100,7 +100,11 @@
       <div class="row-fluid">
         <div class="span6">
           <h2>高雄</h2>
-          <p>高雄地區介紹</p>
+          <p>
+            <?php
+              include ("about/about.php");
+             ?>
+          </p>
         </div>
         <!--輪放-->
         <div class="span6">

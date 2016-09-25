@@ -5,7 +5,7 @@
   $dbname="about";
   include ("../mysql/connect.php");
   include ("common.php");
-
+  
   if (isset($_POST["About"])) {
 
     $about = $_POST["About"];
