@@ -16,7 +16,7 @@
     <link rel="stylesheet" href="css/font-awesome.min.css">
     <link rel="stylesheet" href="css/main.css">
     <link rel="stylesheet" href="css/sl-slide.css">
-    
+
     <script src="js/vendor/modernizr-2.6.2-respond-1.1.0.min.js"></script>
 
     <!-- Le fav and touch icons -->
@@ -83,44 +83,9 @@
       <div id="slider" class="sl-slider-wrapper">
         <!--Slider Items-->
         <div class="sl-slider">
-          <!--Slider Item1-->
-          <div class="sl-slide item1" data-orientation="horizontal" data-slice1-rotation="-25" data-slice2-rotation="-25" data-slice1-scale="2" data-slice2-scale="2">
-            <div class="sl-slide-inner">
-              <div class="container">
-                <img class="pull-right" src="images/sample/slider/autox520.jpg" alt="" />
-                <h2>高雄85大樓</h2>
-                <!-- <h3 class="gap">Tincidunt condimentum eros</h3>
-                <a class="btn btn-large btn-transparent" href="#">Learn More</a> -->
-              </div>
-            </div>
-          </div>
-          <!--/Slider Item1-->
-
-          <!--Slider Item2-->
-          <div class="sl-slide item2" data-orientation="vertical" data-slice1-rotation="10" data-slice2-rotation="-15" data-slice1-scale="1.5" data-slice2-scale="1.5">
-            <div class="sl-slide-inner">
-              <div class="container">
-                <img class="pull-right" src="images/sample/slider/autox520-1.jpg" alt="" />
-                <h2>高雄85大樓</h2>
-                <!-- <h3 class="gap">Aenean ultricies mi vitast</h3>
-                <a class="btn btn-large btn-transparent" href="#">Learn More</a> -->
-              </div>
-            </div>
-          </div>
-          <!--Slider Item2-->
-
-          <!--Slider Item3-->
-          <div class="sl-slide item3" data-orientation="horizontal" data-slice1-rotation="3" data-slice2-rotation="3" data-slice1-scale="2" data-slice2-scale="1">
-            <div class="sl-slide-inner">
-              <div class="container">
-                <img class="pull-right" src="images/sample/slider/autox520-2.jpg" alt="" />
-                <h2>高雄85大樓</h2>
-                <!-- <h3 class="gap">Breatures who have been utterly</h3>
-                <a class="btn btn-large btn-transparent" href="#">Learn More</a> -->
-              </div>
-            </div>
-          </div>
-          <!--Slider Item3-->
+          <?php
+            include("index/slider/slider.php");
+          ?>
         </div>
         <!--/Slider Items-->
 
@@ -146,29 +111,30 @@
     <ul class="gallery col-4">
       <!--Item 1-->
       <?php
-        for ($i=1; $i <= 6 ; $i++) {
-          echo "
-          <li>
-            <div class='preview'>
-              <img alt=' ' src='images/portfolio/thumb/300x180.jpg'>
-              <div class='overlay'>
-              </div>
-              <div class='links'>
-                <a data-toggle='modal' href='#modal-1'><i class='icon-eye-open'></i></a><a href='#'><i class='icon-heart'></i></a>
-              </div>
-            </div>
-            <div class='desc'>
-              <h5>景點名</h5>
-            </div>
-            <div id='modal-1' class='modal hide fade'>
-              <a class='close-modal' href='javascript:;' data-dismiss='modal' aria-hidden='true'><i class='icon-remove'></i></a>
-              <div class='modal-body'>
-                <img src='images/portfolio/full/500x300.jpg' alt=' '>
-              </div>
-            </div>
-          </li>
-          ";
-        }
+      include("index/top6/top6.php");
+        // for ($i=1; $i <= 6 ; $i++) {
+        //   echo "
+        //   <li>
+        //     <div class='preview'>
+        //       <img alt=' ' src='images/portfolio/thumb/300x180.jpg'>
+        //       <div class='overlay'>
+        //       </div>
+        //       <div class='links'>
+        //         <a data-toggle='modal' href='#modal-1'><i class='icon-eye-open'></i></a><a href='#'><i class='icon-heart'></i></a>
+        //       </div>
+        //     </div>
+        //     <div class='desc'>
+        //       <h5>景點名</h5>
+        //     </div>
+        //     <div id='modal-1' class='modal hide fade'>
+        //       <a class='close-modal' href='javascript:;' data-dismiss='modal' aria-hidden='true'><i class='icon-remove'></i></a>
+        //       <div class='modal-body'>
+        //         <img src='images/portfolio/full/500x300.jpg' alt=' '>
+        //       </div>
+        //     </div>
+        //   </li>
+        //   ";
+        // }
 
        ?>
       </ul>

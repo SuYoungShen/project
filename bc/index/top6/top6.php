@@ -122,11 +122,13 @@ if (!isset($_SESSION["topnum"]) && !isset($_SESSION["topnums"])) {
 
               $topup = topup($top6_name, $top6dir, $date, $topid["$topnum"]);//更新檔名
               $db->query($topup);//執行更新指令
-
+              message("上傳成功",$topbasename);
             }else {
 
               $topup = topup($top6_name, $top6dir, $date, $topid["$topnums"]);//更新檔名
               $db->query($topup);//執行更新指令
+              message("上傳成功",$topbasename);
+              
 
             }
             $_SESSION["topnum"]++;

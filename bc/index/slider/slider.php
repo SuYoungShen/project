@@ -46,7 +46,7 @@ if (!isset($_SESSION["slidernum"]) && !isset($_SESSION["slidernums"])) {
           echo "
           <script>
           var value = '$slidertmp';
-		  var sliderbasename = '$sliderbasename';
+		      var sliderbasename = '$sliderbasename';
           alerts(value,sliderbasename);
           </script>";
           break;
@@ -72,7 +72,7 @@ if (!isset($_SESSION["slidernum"]) && !isset($_SESSION["slidernums"])) {
           echo "
           <script>
             var value = '資料夾裡已有名稱'+$slidername+'的檔案';
-			var sliderbasename = '$sliderbasename';
+			      var sliderbasename = '$sliderbasename';
             alerts(value,sliderbasename);
           </script>
           ";
@@ -113,12 +113,25 @@ if (!isset($_SESSION["slidernum"]) && !isset($_SESSION["slidernums"])) {
 
               $sliderup = sliderup($slider6_name, $sliderdir, $date, $sliderid["$slidernum"]);//更新檔名
               $db->query($sliderup);//執行更新指令
+              echo "
+              <script>
+                var value = '上傳成功';
+    			      var sliderbasename = '$sliderbasename';
+                alerts(value,sliderbasename);
+              </script>
+              ";
 
             }else {
 
               $sliderup = sliderup($slider6_name, $sliderdir, $date, $sliderid["$slidernums"]);//更新檔名
               $db->query($sliderup);//執行更新指令
-
+              echo "
+              <script>
+                var value = '上傳成功';
+    			      var sliderbasename = '$sliderbasename';
+                alerts(value,sliderbasename);
+              </script>
+              ";
             }
             $_SESSION["slidernum"]++;
             $_SESSION["slidernums"]++;
