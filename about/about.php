@@ -11,7 +11,7 @@
   }
 
   if (!isset($displays[0])) {
-    $displays[0]="空";
+    $displays[0]="暫無資料";
   }
   echo $displays[0];
 

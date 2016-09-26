@@ -110,14 +110,15 @@
         <div class="span6">
           <div class="slider_container">
             <?php
-              for ($i=1; $i <= 6 ; $i++) {
-                echo "
-                <div>
-                <img src='images/picloop/400x280.jpg' alt='pure css3 slider' />
-                <span class='info'>景點名</span>
-                </div>
-                ";
-              }
+              // for ($i=1; $i <= 6 ; $i++) {
+              //   echo "
+              //   <div>
+              //   <img src='images/picloop/400x280.jpg' alt='pure css3 slider' />
+              //   <span class='info'>景點名</span>
+              //   </div>
+              //   ";
+              // }
+              include("about/carousel.php");
              ?>
           </div>
         </div>
@@ -133,7 +134,7 @@
         <div class="gap"></div>
 
         <table class="table table-striped table-bordered table-hover ">
-          <tr>
+          <!-- <tr>
             <td>
               <a data-toggle="modal" href="#modal-1" >
                 高雄地區名
@@ -150,7 +151,11 @@
                 <p>地區介紹</p>
               </div>
             </div>
-          </tr>
+          </tr> -->
+
+          <?php
+            include("about/place.php");
+           ?>
         </table>
       </div>
 
