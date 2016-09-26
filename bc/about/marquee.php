@@ -11,7 +11,7 @@
 
 	$dbname="top";
 	include("mysql/connect.php");//top資料表
-	
+	// include ("common.php");
 
 	$topse = $db->query(topse());
 	$row=$topse->fetchAll();
@@ -30,6 +30,11 @@
 	}
 
 	$db=null;
+	function topse()
+  {
+    $topse = "SELECT * From top";
+    return $topse;
+  }
 ?>
 </marquee>
 
