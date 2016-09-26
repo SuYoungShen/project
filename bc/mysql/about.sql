@@ -3,9 +3,9 @@
 -- http://www.phpmyadmin.net
 --
 -- 主機: 127.0.0.1
--- 產生時間： 2016-09-15 21:52:03
--- 伺服器版本: 10.1.13-MariaDB
--- PHP 版本： 7.0.5
+-- 產生時間： 2016-09-26 14:08:24
+-- 伺服器版本: 10.1.16-MariaDB
+-- PHP 版本： 5.6.24
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 SET time_zone = "+00:00";
@@ -31,6 +31,14 @@ CREATE TABLE `about` (
   `datetime` datetime NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
+--
+-- 資料表的匯出資料 `about`
+--
+
+INSERT INTO `about` (`about`, `datetime`) VALUES
+('s', '2016-09-25 21:35:10'),
+('我愛高雄', '2016-09-25 21:35:20');
+
 -- --------------------------------------------------------
 
 --
@@ -49,12 +57,9 @@ CREATE TABLE `carousel` (
 --
 
 INSERT INTO `carousel` (`id`, `name`, `path`, `datetime`) VALUES
-('0', '1(2).jpg', 'about/carousel/images/', '2016-09-02 22:21:00'),
-('1', '', 'about/carousel/images/', '0000-00-00 00:00:00'),
-('2', '', 'about/carousel/images/', '0000-00-00 00:00:00'),
-('3', '', 'about/carousel/images/', '0000-00-00 00:00:00'),
-('4', '', 'about/carousel/images/', '0000-00-00 00:00:00'),
-('5', '', 'about/carousel/images/', '0000-00-00 00:00:00');
+('0', '20160111032549251.jpg', 'about/carousel/images/', '2016-09-26 15:08:32'),
+('1', 'Handschar-13th-SS-Division-Emblem.png', 'about/carousel/images/', '2016-09-26 15:09:04'),
+('2', '', '', '0000-00-00 00:00:00');
 
 -- --------------------------------------------------------
 
