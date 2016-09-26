@@ -154,7 +154,7 @@
           </tr> -->
 
           <?php
-            include("about/place.php");
+            // include("about/place.php");
            ?>
         </table>
       </div>

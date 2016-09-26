@@ -8,25 +8,34 @@ $carouselSe = $db->query(CarouselSe());//查詢top資料表
 $display = $carouselSe->fetchAll();//顯示
 
 
+// while ($displayss = $carouselSe->fetch()){//顯示
+//   $displaysss=$displayss[1];
+//   echo "
+//        <div>
+//          <img src='$picDir$displaysss'/>
+//          <span class='info'>景點名</span>
+//        </div>
+//      ";
+// }
+
 foreach ($display as $key => $value) {
-
-  $picName = $value[1];
-  // var_dump($picName);
-  // if (empty($picName)) {
-  //
-  //      $displays = "http://img.ltn.com.tw/2016/new/jul/13/images/bigPic/400_400/phpyq9Xeu.jpg";
-  //   //    $displays = $picDir.$picName;
-  //   //    $displays =  "http://img.ltn.com.tw/2016/new/jul/13/images/bigPic/400_400/phpyq9Xeu.jpg";
-  //
-  // }else {
-  //   $displays = $picDir.$picName;
-  // }
-    $displays = $picDir.$picName;
-
+//
+  $picNames = $value[1];
+  $display = $picDir.$picNames;
+//
+//   // if (!empty($picNames)) {
+//     $display = $picDir.$picNames;
+//   // }else {
+//     // $display = "http://img.ltn.com.tw/2016/new/jul/13/images/bigPic/400_400/phpyq9Xeu.jpg";
+//   // }
+//     // $displays = $picDir.$picName;
+//     if (empty($picNames)) {
+//       $display = "http://img.ltn.com.tw/2016/new/jul/13/images/bigPic/400_400/phpyq9Xeu.jpg";
+//     }
   echo "
      <div>
-       <img src='$displays'/>
-       <span class='info'>景點名</span>
+       <img src='$display'/>
+       <span class='info'>$key</span>
      </div>
    ";
   // echo "

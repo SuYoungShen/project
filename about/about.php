@@ -5,15 +5,15 @@
 
   $aboutse = $db->query(AboutSe());
 
-  $display = $aboutse->fetchAll();
+  $AboutDisplay = $aboutse->fetchAll();
 
-  foreach ($display as $key => $displays) {
+  foreach ($AboutDisplay as $key => $AboutDisplays) {
   }
 
-  if (!isset($displays[0])) {
-    $displays[0]="暫無資料";
+  if (!isset($AboutDisplays[0])) {
+    $AboutDisplays[0]="暫無資料";
   }
-  echo $displays[0];
+  echo $AboutDisplays[0];
 
 
   // if (isset($displays[0])) {

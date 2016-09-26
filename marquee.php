@@ -15,10 +15,11 @@
 
 	$topse = $db->query(topse());
 	$row=$topse->fetchAll();
+	$picDir = "bc/index/top6/images/";
 	foreach ($row as $key => $value) {
 		$picName = $value[1];
-		$picDir = $value[2];
-		if (!empty($picName) && !empty($picDir)) {
+
+		if (!empty($picName)) {
 			$display = $picDir.$picName;
 		}else {
 			$display = "http://img.ltn.com.tw/2016/new/jul/13/images/bigPic/400_400/phpyq9Xeu.jpg";
