@@ -1,6 +1,6 @@
 <?php
 
-  $dbname="top";
+  $dbname="project";
   include ("bc/mysql/connect.php");//連接資料庫
   include ("common.php");//常用語法
   $picDir = "bc/index/top6/images/";

@@ -1,8 +1,8 @@
 <?php
-  $dbname = "top";
+  $dbname = "project";
   include("mysql/connect.php");
-
   include ("common.php");
+  
   $memberse = $db->query(memberSelect());
 
   $member = isset($_POST["account"]) &&

@@ -1,5 +1,5 @@
 <?php
-  $dbname="message";
+  $dbname="project";
   include ("mysql/connect.php");
   include ("message/common.php");
   $forumSe = $db->query(ForumSe());

@@ -1,6 +1,6 @@
 <script type="text/javascript" src="../../assets/js/alert.js"></script>
 <?php
-  $dbname="message";
+  $dbname="project";
   include ("../../mysql/connect.php");
   include ("../common.php");
   $BackWeb="../../../area.php";//回到哪個頁面

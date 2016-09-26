@@ -1,5 +1,5 @@
 <?php
-  $dbname="top";
+  $dbname="project";
   include("../mysql/connect.php");
   include ("common.php");
 
@@ -10,7 +10,7 @@
     if ($delete=="") {
 
     }else {
-      
+
       foreach ($delete as $key => $de) {
         $true = $db->query(memberDelete($de));
       }

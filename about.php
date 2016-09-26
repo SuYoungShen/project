@@ -110,14 +110,6 @@
         <div class="span6">
           <div class="slider_container">
             <?php
-              // for ($i=1; $i <= 6 ; $i++) {
-              //   echo "
-              //   <div>
-              //   <img src='images/picloop/400x280.jpg' alt='pure css3 slider' />
-              //   <span class='info'>景點名</span>
-              //   </div>
-              //   ";
-              // }
               include("about/carousel.php");
              ?>
           </div>
@@ -154,7 +146,7 @@
           </tr> -->
 
           <?php
-            // include("about/place.php");
+            include("about/place.php");
            ?>
         </table>
       </div>

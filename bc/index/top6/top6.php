@@ -1,6 +1,6 @@
 <?php
 
-  $dbname="top";
+  $dbname="project";
   include ("mysql/connect.php");//連接資料庫
   include ("common.php");//常用語法
 
@@ -128,7 +128,7 @@ if (!isset($_SESSION["topnum"]) && !isset($_SESSION["topnums"])) {
               $topup = topup($top6_name, $top6dir, $date, $topid["$topnums"]);//更新檔名
               $db->query($topup);//執行更新指令
               message("上傳成功",$topbasename);
-              
+
 
             }
             $_SESSION["topnum"]++;

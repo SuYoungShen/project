@@ -1,5 +1,5 @@
 <?php
-  $dbname="about";
+  $dbname="project";
   include ("bc/mysql/connect.php");
   include ("common.php");
 

@@ -1,5 +1,5 @@
 <?php
-  $dbname="about";
+  $dbname="project";
   include ("mysql/connect.php");
 
   $placeSe = $db->query(PlaceSe());//查詢資料表

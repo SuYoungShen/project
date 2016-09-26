@@ -244,8 +244,8 @@
 
 				<div class="page-header">
 					<h1>各地區景點</h1>
-				</div><!-- /.page-header -->
-				<div class="row">
+				</div>
+				 <div class="row">
 					<div class="col-sm-4">
 						<div class="widget-box">
 							<div class="widget-header">
@@ -267,7 +267,7 @@
 											enctype="multipart/form-data">
 										<div class="form-group">
 											<div class="col-xs-12">
-												<!--上傳檔案-->
+
 												<input type="file" name="picName[]" id="id-input-file-4" multiple="multiple" />
 											</div>
 										</div>
@@ -327,15 +327,16 @@
 										include("view/view.php");
 										?>
 									</ul>
-								</div><!-- PAGE CONTENT ENDS -->
+								</div>
 							</div>
 						</div>
 					</div>
 				</div>
-			</div><!--page-content-->
+
+			</div>
 
 			<!--跑馬燈-->
-			<div class="row">
+			 <div class="row">
 				<div class="col-sm-12">
 					<div class="widget-box">
 						<div class="widget-header">
