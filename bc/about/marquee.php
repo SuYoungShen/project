@@ -9,7 +9,7 @@
 <marquee scrollAmount="20" BEHAVIOR="scroll"  loop="0">
 <?php
 
-	$dbname="top";
+	$dbname="project";
 	include("mysql/connect.php");//top資料表
 	// include ("common.php");
 

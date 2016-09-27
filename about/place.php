@@ -4,7 +4,7 @@
 
   $placeSe = $db->query(PlaceSe());//查詢資料表
   $display = $placeSe->fetchAll();
-  $picDir = "about/place/images/";
+  $picDir = "bc/about/place/images/";
 
   foreach ($display as $key => $value) {
 

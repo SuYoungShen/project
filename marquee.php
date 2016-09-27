@@ -31,5 +31,11 @@
 	}
 
 	$db=null;
+
+	function topse()
+  {
+    $topse = "SELECT * From top";
+    return $topse;
+  }
 ?>
 </marquee>
