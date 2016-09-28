@@ -3,7 +3,7 @@
   $dbname="project";
   include ("mysql/connect.php");
   include ("common.php");
-  
+
   $placeSe = $db->query(PlaceSe());//查詢資料表
   $display = $placeSe->fetchAll();
 
@@ -43,8 +43,8 @@
                             \"$viewpoint[$key]\",
                             \"$attractions[$key]\",
                             \"$arrival[$key]\",
-                            \"$pic_name[$key]\",
-                            \"$picDir[$key]\"
+                            \"$picDir[$key]\",
+                            \"$pic_name[$key]\"
                             )'>
               <i class='ace-icon fa fa-pencil bigger-130'></i>
             </a>

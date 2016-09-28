@@ -463,7 +463,7 @@
 								<button type="button" class="close" data-dismiss="modal" aria-hidden="true">
 									<span class="white">&times;</span>
 								</button>
-								新增景點
+								更新景點
 							</div>
 						</div><!--modal-header-->
 
@@ -510,7 +510,7 @@
 									<div class="form-group">
 										<label class="col-sm-3 control-label no-padding-right" for="form-field-1-1"> 上傳圖檔 </label>
 										<div class="col-sm-8">
-											<input multiple="multiple" name="picName[]" type="file" id="id-input-file-4" />
+											<input multiple="multiple" name="picName[]" type="file" id="id-input-file-5" />
 											<span id="pic"></span>
 
 										</div>
@@ -1099,6 +1099,37 @@ preview_error : function(filename, error_code) {
 	//2 = 'IMAGE_LOAD_FAILED',
 	//3 = 'THUMBNAIL_FAILED'
 	//alert(error_code);
+}
+
+}).on('change', function(){
+//console.log($(this).data('ace_input_files'));
+//console.log($(this).data('ace_input_method'));
+});
+
+$('#id-input-file-5').ace_file_input({
+	style:'well',
+	btn_choose:'Drop files here or click to choose',
+	btn_change:null,
+	no_icon:'ace-icon fa fa-cloud-upload',
+	droppable:true,
+	thumbnail:'small'//large | fit
+	//,icon_remove:null//set null, to hide remove/reset button
+	/**,before_change:function(files, dropped) {
+	//Check an example below
+	//or examples/file-upload.html
+	return true;
+}*/
+/**,before_remove : function() {
+return true;
+}*/
+,
+preview_error : function(filename, error_code) {
+//name of the file that failed
+//error_code values
+//1 = 'FILE_LOAD_FAILED',
+//2 = 'IMAGE_LOAD_FAILED',
+//3 = 'THUMBNAIL_FAILED'
+//alert(error_code);
 }
 
 }).on('change', function(){
