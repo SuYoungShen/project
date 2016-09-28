@@ -75,7 +75,7 @@
 
   foreach ($display as $key => $value) {
 
-    $place_Name=$value[0];
+    $place_Name=$place_Names[$key]=$value[0];
     $Introduction=$value[1];
     $pic_name=$value[2];
     $picDir=$value[3];
@@ -85,7 +85,7 @@
       <tr>
         <td class='center'>
           <label class='pos-rel'>
-            <input type='checkbox' class='ace' />
+            <input type='checkbox' class='ace' value='".$place_Name."'/>
             <span class='lbl'></span>
           </label>
         </td>
@@ -108,9 +108,9 @@
               <i class='ace-icon fa fa-pencil bigger-130'></i>
             </a>
 
-            <a class='red' name='Delete'>
+            <a class='red' name='Delete' onclick='bootboxs(\"$place_Names[$key]\")'>
               <i class='ace-icon fa fa-trash-o bigger-130'></i>
-              <input type='hidden' name='Deplace_name[]' value='$place_Name'>
+              <input type='hidden' name='DePlace[]' value='$place_Names[$key]'>
             </a>
           </div>
 

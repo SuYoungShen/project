@@ -620,53 +620,33 @@
 				$('#dynamic-table > thead > tr > th input[type=checkbox]').eq(0).on('click', function(){
 					var th_checked = this.checked;//checkbox inside "TH" table header
 
-					if(th_checked){
-
-						$("input[name='DeAccounts[]']").each(function() {
-							DeAccounts.push($(this).val());
-						});
-
-						Deletess(DeAccounts);
-
-					}else {
-
-						var Des=[];
-
-						$("input[name='DeAccounts[]']").each(function() {//取未選值
-							Des.push($(this).val());
-						});
-
-						alert("要刪的值:"+Des);
-
-						DeAccounts = $.grep(DeAccounts, function(value) {
-							return value != value;
-						});
-						Deletess(DeAccounts);
-
-					}
-
-
 					$(this).closest('table').find('tbody > tr ').each(function(){
 
 						var row = this;
 
 						if(th_checked){
 
+							$("input[name='DeAccounts[]']").each(function() {
+								DeAccounts.push($(this).val());
+							});
+							Deletess(DeAccounts);
 							tableTools_obj.fnSelect(row);
 
 						}else {
 
-							// alert("前"+Des);
-							//
-							// Des = $.grep(DeAccounts, function(value) {
-							// 	return value != Des;
-							// });
-							// alert("後"+Des);
-							// var De =[]
-							// $("input[name='DeAccounts[]']").each(function() {
-							// 	De.push($(this).val());
-							// });
-							// alert(De);
+							var Des=[];
+
+							$("input[name='DeAccounts[]']").each(function() {//取未選值
+								Des.push($(this).val());
+							});
+
+							DeAccounts = $.grep(DeAccounts, function(value) {
+
+								return value == Des;
+							});
+
+							Deletess(DeAccounts);
+
 							tableTools_obj.fnDeselect(row);
 						}
 					});
@@ -674,7 +654,6 @@
 
 				//單選
 				var OnlyDelete = [];
-
 				//select/deselect a row when the checkbox is checked/unchecked
 				$('#dynamic-table').on('click', 'td input[type=checkbox]' , function(){
 

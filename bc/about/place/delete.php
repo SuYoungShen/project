@@ -1,11 +1,11 @@
 <?php
-  $dbname="about";
+  // $dbname="project";
   include("../../mysql/connect.php");
   include ("../common.php");
 
-  if (isset($_POST["Deplace_name"])) {
+  if (isset($_POST["DePlaces"])) {
 
-    $delete = $_POST["Deplace_name"];
+    $delete = $_POST["DePlaces"];
 
     foreach ($delete as $key => $de) {
       $true = $db->query(PlaceDe($de));
@@ -15,6 +15,8 @@
     }else {
       echo "刪除失敗";
     }
+  }else {
+    echo "沒值~刪什麼~~~";
   }
 // if (isset($_GET["value"])) {
 //

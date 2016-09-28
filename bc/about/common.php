@@ -69,9 +69,9 @@
     ";
   }
 
-  
+
   function PlaceSe(){
-    $placeSe = "SELECT * From `place`";
+    $placeSe = "SELECT * From `place` ORDER BY datetime DESC";
     return $placeSe;
   }
 

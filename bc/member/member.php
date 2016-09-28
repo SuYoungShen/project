@@ -2,7 +2,7 @@
   $dbname = "project";
   include("mysql/connect.php");
   include ("common.php");
-  
+
   $memberse = $db->query(memberSelect());
 
   $member = isset($_POST["account"]) &&
@@ -75,7 +75,7 @@ foreach ($memberse as $key => $value) {
           <i class='ace-icon fa fa-pencil bigger-130'></i>
         </a>
 
-        <a class='red'  name='Delete' onclick='Deletess(\"$accounts[$key]\")'>
+        <a class='red'  name='Delete' onclick='bootboxs(\"$accounts[$key]\")'>
           <i class='ace-icon fa fa-trash-o bigger-130'></i>
           <input type='hidden' name='DeAccounts[]' value='$accounts[$key]'>
         </a>

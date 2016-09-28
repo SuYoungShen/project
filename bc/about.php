@@ -820,61 +820,75 @@
 				.find('li').wrapInner('<a href="javascript:void(0)" />') //'A' tag is required for better styling
 				.find('input[type=checkbox]').addClass('ace').next().addClass('lbl padding-8');
 
-
-
-				/////////////////////////////////
         //多選
 				//table checkboxes
 				$('th input[type=checkbox], td input[type=checkbox]').prop('checked', false);
+				var DeAll=[];
 
 				//select/deselect all rows according to table header checkbox
 				$('#dynamic-table > thead > tr > th input[type=checkbox]').eq(0).on('click', function(){
 					var th_checked = this.checked;//checkbox inside "TH" table header
 
-					var Deplace_names=[];
-					$("input[name='Deplace_name[]']").each(function() {
-						Deplace_names.push($(this).val());
-					});
 
 
 					$(this).closest('table').find('tbody > tr').each(function(){
 						var row = this;
 
   					if(th_checked) {
-							$(".table-header a[name='Delete']").on(ace.click_event, function() {
-								bootbox.confirm("Are you sure?", function(result) {
-							    if (result) {
-							      $.ajax({
-							        type:"POST",
-							        url: "about/place/delete.php",
-							        data:{'Deplace_name[]':Deplace_names},
-							        success:function(data){
-							          alerts(data,"about.php");//轉回指定葉面
-							        }
-							      });
-							    } else {
-							      alert("小心~~~別按錯了!!!");
-							    }
-							  });
+
+							$("input[name='DePlace[]'").each(function() {
+								DeAll.push($(this).val());
 							});
-                tableTools_obj.fnSelect(row);
+
+							Deletess(DeAll);
+              tableTools_obj.fnSelect(row);
+
             }else{
+
+							var Des=[];
+
+							$("input[name='DePlace[]'").each(function() {//取未選值
+								Des.push($(this).val());
+							});
+
+							DeAll = $.grep(DeAll, function(value) {
+
+								return value == Des;
+							});
+							
+							Deletess(DeAll);
+
               tableTools_obj.fnDeselect(row);
             }
 					});
 				});
 
         //單選
+				var OnlyDelete = [];
 				//select/deselect a row when the checkbox is checked/unchecked
 				$('#dynamic-table').on('click', 'td input[type=checkbox]' , function(){
+
 					var row = $(this).closest('tr').get(0);
+					var Delete = $(this).val();//選擇的值
+
+					$(this).each(function() {
+						OnlyDelete.push(Delete);//新值放到陣列後面
+					});
 
 					if(!this.checked){
-            OnlyDelete();
+
+						Deletess(OnlyDelete);//刪除
             tableTools_obj.fnSelect(row);
+
           }else {
+
             tableTools_obj.fnDeselect($(this).closest('tr').get(0));
-          }
+
+						OnlyDelete = $.grep(OnlyDelete, function(value) {
+							return value != Delete;
+						});
+						Deletess(OnlyDelete);//單選刪除
+				  }
 				});
 
 

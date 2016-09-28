@@ -26,15 +26,12 @@ $(document).ready(function() {
 
 function Deletess(Deletes) {//單選刪除
 
-  if (Deletes =="") {
-
-
-  }else {
 
     $(".table-header a[name='Delete']").on(ace.click_event, function() {
+
       bootboxs(Deletes);//彈跳視窗
     });//大垃圾桶
-  }
+
 }
 
 function bootboxs(Deletes) {//彈跳視窗
@@ -53,7 +50,7 @@ function bootboxs(Deletes) {//彈跳視窗
         }
       });
     } else {
-      alert("小心~~~別按錯了!!!");
+      alerts("小心~~~別按錯了!!!","member.php");
     }
   });
 }

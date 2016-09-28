@@ -19,15 +19,9 @@
       }else {
         echo "刪除失敗";
       }
-
     }
-
-
-    // if ($true == true) {
-    //   echo "刪除成功";
-    // }else {
-    //   echo "刪除失敗";
-    // }
+  }else {
+    echo "沒值~是要刪什麼~~~";
   }
 // if (isset($_GET["value"])) {
 //

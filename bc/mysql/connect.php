@@ -2,7 +2,7 @@
   try {
     $username = 'root';
     $password = '123456';
-    // $dbname="top";
+    $dbname="project";
     $dsn = "mysql:host=localhost;dbname=$dbname";
            $options = array(
                    PDO::MYSQL_ATTR_INIT_COMMAND => 'SET NAMES utf8',
