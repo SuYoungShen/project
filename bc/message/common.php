@@ -10,18 +10,13 @@
     ";
   }
 
-  function AreaUp($placename)
+  function AreaUp($posted, $message, $reply, $datetime)
   {
 
       $AreaUp ="UPDATE `area` SET
-                                `placename`='".$placename."',
-                                `viewpoint`='".$viewpoint."',
-                                `posted`='".$posted."',
                                 `reply`='".$reply."',
-                                `email`='".$email."',
-                                `site`='".$site."',
                                 `datetime`='".$datetime."'
-                                WHERE message='1'
+                                WHERE `posted`='".$posted."' && `message`='".$message."'
                 ";
 
     return $AreaUp;
@@ -30,7 +25,7 @@
   function AreaIn($posted, $email, $site, $message, $datetime)
   {
 
-      $AreaUp ="INSERT INTO `area`(
+      $AreaIn ="INSERT INTO `area`(
                                     `posted`,
                                     `message`,
                                     `email`,
@@ -45,7 +40,7 @@
                                   '".$datetime."'
                                   )";
 
-    return $AreaUp;
+    return $AreaIn;
   }
 
   function AreaSe()

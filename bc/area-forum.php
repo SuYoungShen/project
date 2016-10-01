@@ -27,10 +27,18 @@
 		<!--[if lte IE 9]>
 		  <link rel="stylesheet" href="assets/css/ace-ie.min.css" />
 		<![endif]-->
+		<script src="assets/js/jquery.2.1.1.min.js"></script>
+		<!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script> -->
 
-	<script type="text/javascript" src="assets/js/alert.js"></script>
-	<script src="assets/js/jquery.2.1.1.min.js"></script>
-	<!-- <script type="text/javascript" src="message/area/js/validate.js"></script> -->
+<!-- 自行寫 -->
+		<!-- <script type="text/javascript" src="message/area/js/validate.js"></script> -->
+		<script type="text/javascript" src="message/area/js/fun.js"></script>
+<!-- 自行寫 -->
+<!-- 表單驗證 -->
+	<!-- <script src="http://static.runoob.com/assets/jquery-validation-1.14.0/dist/jquery.validate.min.js"></script>
+	<script src="http://static.runoob.com/assets/jquery-validation-1.14.0/dist/localization/messages_zh.js"></script> -->
+<!-- 表單驗證 -->
+
 		<!-- ace settings handler -->
 		<script src="assets/js/ace-extra.min.js"></script>
 
@@ -182,7 +190,7 @@
 							 <div class="row">
 								 <div class="col-xs-12">
 									 <div class="table-header">
-										 <a href="#forum" class="btn btn-app btn-green btn-xs" role="button" class="green" data-toggle="modal">
+										 <a href="#reply" class="btn btn-app btn-green btn-xs" role="button" class="green" data-toggle="modal">
 											 回復
 										 </a>
 										 <a href="#" class="btn btn-app btn-danger btn-xs" role="button" class="green" data-toggle="modal">
@@ -230,8 +238,8 @@
 						 </div><!--page-content-->
 
 
-						 <!--會員-->
-						 <div id="forum" class="modal fade" tabindex="-1">
+						 <!--place-->
+						 <div id="reply" class="modal fade" tabindex="-1">
 							 <div class="modal-dialog">
 								 <div class="modal-content">
 									 <div class="modal-header no-padding">
@@ -252,7 +260,7 @@
 													 <label class="col-sm-3 control-label no-padding-right" for="form-field-1"> 地區	 </label>
 
 													 <div class="col-sm-9">
-														 <input type="text" id="placename" name="placename"  placeholder="(訪客、抓取會員名)" class="col-xs-10 col-sm-5" />
+														 <input type="text" id="placename" name="placename"  placeholder="(訪客、抓取會員名)" class="col-xs-10 col-sm-5" readonly="readonly"/>
 													 </div>
 												 </div>
 
@@ -260,7 +268,7 @@
 													 <label class="col-sm-3 control-label no-padding-right" for="form-field-1"> 景點名	 </label>
 
 													 <div class="col-sm-9">
-														 <input type="text" id="viewpoint" name="viewpoint" placeholder="顯示發表者主題	" class="col-xs-10 col-sm-5" />
+														 <input type="text" id="viewpoint" name="viewpoint" placeholder="顯示發表者主題	" class="col-xs-10 col-sm-5" readonly="readonly"/>
 													 </div>
 												 </div>
 
@@ -284,7 +292,7 @@
 													 <label class="col-sm-3 control-label no-padding-right" for="form-field-1-1"> 回覆 </label>
 
 													 <div class="col-sm-9">
-														 <textarea  id="reply" name="reply" placeholder="管理員回覆內容" class="col-xs-10 col-sm-5" /></textarea>
+														 <textarea  id="replys" name="reply" placeholder="管理員回覆內容" class="col-xs-10 col-sm-5" /></textarea>
 													 </div>
 												 </div>
 
@@ -308,7 +316,7 @@
 													 <label class="col-sm-3 control-label no-padding-right" for="form-field-1-1"> 顯示時間 </label>
 
 													 <div class="col-sm-9">
-														 <input type="text" id="form-field-1-1" placeholder="抓取系統時間" class="col-xs-10 col-sm-5" />
+														 <input type="text" id="datetime" placeholder="抓取系統時間"  class="col-xs-10 col-sm-5"  readonly="readonly"/>
 													 </div>
 												 </div>
 
@@ -318,7 +326,7 @@
 
 												 <div class="clearfix form-actions">
 													 <div class="col-md-offset-3 col-md-9">
-														 <button class="btn btn-info" type="submit">
+														 <button class="btn btn-info" type="submit" name="submit">
 															 <i class="ace-icon fa fa-check bigger-110"></i>
 															 送出
 														 </button>
@@ -337,7 +345,8 @@
 								 </div><!-- /.modal-content -->
 							 </div><!-- /.modal-dialog -->
 						 </div><!-- PAGE CONTENT ENDS -->
-						 <!--會員-->
+						 <!--place-->
+
 
 					 </div><!-- /.main-content-inner -->
 				 </div><!-- /.main-content -->
@@ -374,9 +383,9 @@
 <![endif]-->
 
 		<!--[if !IE]> -->
-		<script type="text/javascript">
+		<!-- <script type="text/javascript">
 			window.jQuery || document.write("<script src='assets/js/jquery.min.js'>"+"<"+"/script>");
-		</script>
+		</script> -->
 
 		<!-- <![endif]-->
 

@@ -8,14 +8,14 @@
 
   foreach ($Display as $key => $value) {
 
-    $placename = $value[0];//地區名
-    $viewpoint = $value[1];//景點名
-    $posted = $value[2];//發表人
-    $message = $value[3];//留言
-    $reply = $value[4];//回覆
-    $email = $value[5];//email
-    $site = $value[6];//網址
-    $datetime = $value[7];//時間
+    $placename = $placenames[$key] = $value[0];//地區名
+    $viewpoint = $viewpoints[$key] = $value[1];//景點名
+    $posted = $posteds[$key] = $value[2];//發表人
+    $message = $messages[$key] = $value[3];//留言
+    $reply = $replys[$key] = $value[4];//回覆
+    $email = $emails[$key] = $value[5];//email
+    $site = $sites[$key] = $value[6];//網址
+    $datetime = $datetimes[$key] = $value[7];//時間
 
     echo "
       <tr>
@@ -41,15 +41,27 @@
 
         <td>
           <div class='hidden-sm hidden-xs action-buttons'>
+          <!--
             <a class='blue' href='#'>
               <i class='ace-icon fa fa-search-plus bigger-130'></i>
             </a>
+            -->
 
-            <a class='green' href='#'>
+            <a class='green' href='#reply' data-toggle='modal'
+            onclick='Edit(
+                          \"$placenames[$key]\",
+                          \"$viewpoints[$key]\",
+                          \"$posteds[$key]\",
+                          \"$messages[$key]\",
+                          \"$replys[$key]\",
+                          \"$emails[$key]\",
+                          \"$sites[$key]\",
+                          \"$datetimes[$key]\"
+                          )'>
               <i class='ace-icon fa fa-pencil bigger-130'></i>
             </a>
 
-            <a class='red' href='#'>
+            <a class='red' name='Delete' href='#' >
               <i class='ace-icon fa fa-trash-o bigger-130'></i>
             </a>
           </div>

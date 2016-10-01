@@ -3,22 +3,28 @@
   $dbname="project";
   include ("../../mysql/connect.php");
   include ("../common.php");
-  $BackWeb="../../../area.php";//回到哪個頁面
+  $BackWeb="../../area-forum.php";//回到哪個頁面
 
-  if (isset($_POST["posted"])) {
+  $true = isset($_POST["posted"]) &&
+          !empty($_POST["message"]) &&
+          isset($_POST["reply"]);
 
-    $posted=$_POST["posted"];
-    $email=$_POST["email"];
-    $site=$_POST["site"];
-    $message=$_POST["message"];
-    $true=$db->query(test($posted,$email,$site));
+  if ($true) {
 
-    if ($true) {
-      message("更新成功",$BackWeb);
+    $posted = $_POST["posted"];//發表人
+    $message = $_POST["message"];//訊息
+    $reply = $_POST["reply"];//回覆訊息
+
+    date_default_timezone_set('Asia/Taipei');//設定時間為台北
+    $datetime = date("Y-m-d H:i:s");//時間
+
+     $trues = $db->query(AreaUp($posted, $message, $reply, $datetime));
+
+    if ($trues) {
+      message("成功",$BackWeb);
     }else {
-      message("更新失敗",$BackWeb);
+      message("失敗",$BackWeb);
     }
-
   }
 
 

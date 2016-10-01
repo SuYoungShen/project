@@ -16,14 +16,19 @@ $(document).ready(function(){
       url: "message/area/update.php",
       data:{
         'placename':placename,
-        'viewpoint':viewpoint
-
+        'viewpoint':viewpoint,
+        'posted':posted,
+        'message':message,
+        'reply':reply,
+        'email':email,
+        'site':site,
+        'datetime':datetime
       },
       success:function(data){
         alert(data);
       },
       error:function(data){
-        alert("s");
+        alert(data);
       }
     });
   });
