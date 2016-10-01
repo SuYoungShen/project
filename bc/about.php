@@ -30,9 +30,9 @@
 		<link rel="stylesheet" href="assets/css/ace.min.css" class="ace-main-stylesheet" id="main-ace-style" />
 
 		<script type="text/javascript" src="assets/js/alert.js"></script>
-
+		<script type="text/javascript" src="assets/js/jquery.js"></script>
 		<!-- 表單驗證 -->
-		<script src="http://static.runoob.com/assets/jquery-validation-1.14.0/lib/jquery.js"></script>
+		<!-- <script src="http://static.runoob.com/assets/jquery-validation-1.14.0/lib/jquery.js"></script> -->
 		<script src="http://static.runoob.com/assets/jquery-validation-1.14.0/dist/jquery.validate.min.js"></script>
 		<script src="http://static.runoob.com/assets/jquery-validation-1.14.0/dist/localization/messages_zh.js"></script>
 		<script type="text/javascript" src="about/place/js/fun.js"></script>
@@ -855,7 +855,7 @@
 
 								return value == Des;
 							});
-							
+
 							Deletess(DeAll);
 
               tableTools_obj.fnDeselect(row);

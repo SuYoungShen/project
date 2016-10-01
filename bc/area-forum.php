@@ -218,7 +218,7 @@
 
 											 <tbody>
 												 <?php
-												 include("message/area/area.php");
+												 include("message/area.php");
 												 ?>
 											 </tbody>
 										 </table>

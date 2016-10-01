@@ -6,7 +6,7 @@ var parts = document.location.search.slice( 1 ).split( "&" ),
 	src = scripts[ scripts.length - 1].src,
 	i = 0,
 	current,
-	version = "2.1.1.min",
+	version = "1.11.1.min",
 	file = "jquery-git.js";
 
 for ( ; i < length; i++ ) {
