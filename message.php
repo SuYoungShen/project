@@ -18,6 +18,19 @@
 
   <script src="js/vendor/modernizr-2.6.2-respond-1.1.0.min.js"></script>
 
+  <!-- 自行載入 -->
+
+		<!-- <script type="text/javascript" src="message/area/js/validate.js"></script> -->
+		<script type="text/javascript" src="message/area/js/fun.js"></script>
+    <script type="text/javascript" src='NowTime.js'></script>
+
+
+		<script type="text/javascript" src="assets/js/alert.js"></script>
+
+
+  <!-- 自行載入 -->
+
+
   <!-- Le fav and touch icons -->
   <?php
     include("ico.php");
@@ -100,88 +113,35 @@
 
   <!-- Career -->
   <section id="career" class="container">
-    <div class="span12">
-      <ul class="gallery col-4">
-        <!--Item 1-->
-        <li>
-          <div class="preview">
-            <a href="message.php">
-              <input type="submit" class="btn btn-mini btn-primary" value="發表主題">
-            </a>
+    <div class="container">
+      <h2>想說什麼就說什麼</h2>
+
+      <div class="row">
+        <form class="form-horizontal" method="post"  role="form" action="bc/message/forum/insert.php">
+          <div class="span12">
+            <input type="text" id="form-field-1" name="theme" placeholder="主題"  class="span4"/>
+            <input type="text" id="form-field-1" name="posted" placeholder="發表人" class="span4" />
+            <input type="email" id="form-field-1" name="email" placeholder="email" class="span4"/>
           </div>
-        </li>
-      </div>
 
+          <div class="span12">
+            <textarea type="text" id="form-field-1" name="message" placeholder="想說什麼" rows="10"class="span12" /></textarea>
+          </div>
+          <script type="text/javascript">
+            document.cookie="datetime="+getNowTime();
+          </script>
+          <div class="span2">
+            <input type="submit" class="btn btn-large btn-primary" value="送出">
+          </div>
+        </form>
+    </div>
+    </div>
     <br/>
-    <table class="table table-striped table-bordered table-hover">
-      <thead>
-        <tr align="center">
-          <th width="30%" >主題</th>
-          <th>回覆</th>
-          <th>發表人</th>
-          <th>觀看</th>
-          <th>最新回應</th>
-        </tr>
-      </thead>
 
-      <tbody  align="center">
-        <tr>
-          <td>test</td>
-          <td>(記綠總共有幾則)</td>
-          <td>(訪客、抓取會員名)</td>
-          <td>(觀看次數)</td>
-          <td>Y/H/M</td>
-        </tr>
-        <tr>
-          <td>test</td>
-          <td>(記綠總共有幾則)</td>
-          <td>(訪客、抓取會員名)</td>
-          <td>(觀看次數)</td>
-          <td>Y/H/M</td>
-        </tr>
-        <tr>
-          <td>test</td>
-          <td>(記綠總共有幾則)</td>
-          <td>(訪客、抓取會員名)</td>
-          <td>(觀看次數)</td>
-          <td>Y/H/M</td>
-        </tr>
-        <tr>
-          <td>test</td>
-          <td>(記綠總共有幾則)</td>
-          <td>(訪客、抓取會員名)</td>
-          <td>(觀看次數)</td>
-          <td>Y/H/M</td>
-        </tr>
-        <tr>
-          <td>test</td>
-          <td>(記綠總共有幾則)</td>
-          <td>(訪客、抓取會員名)</td>
-          <td>(觀看次數)</td>
-          <td>Y/H/M</td>
-        </tr>
-
-      </tbody>
-    </table>
-    <p>&nbsp;</p>
-
-</section>
+  </section>
 <!-- /Career -->
 
- <!-- pagination -->
- <div class="pagination pagination-centered ">
-   <ul class="pagination-lg">
-     <li><a href="#"><i class="icon-angle-left"></i></a></li>
-     <li><a href="#">1</a></li>
-     <li><a href="#">2</a></li>
-     <li><a href="#">3</a></li>
-     <li><a href="#">4</a></li>
-     <li><a href="#">5</a></li>
-     <li><a href="#"><i class="icon-angle-right"></i></a></li>
-   </ul>
- </div>
-
-<!--Footer-->
+ <!--Footer-->
 <?php
   include("footer.php");
  ?>

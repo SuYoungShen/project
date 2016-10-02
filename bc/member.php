@@ -641,7 +641,6 @@
 							});
 
 							DeAccounts = $.grep(DeAccounts, function(value) {
-
 								return value == Des;
 							});
 

@@ -63,45 +63,39 @@
 
   function ForumSe()
   {
-    $forumSe = "SELECT * From forum";
+    $ForumSe = "SELECT * From forum ORDER BY datetime DESC";
 
-    return $forumSe;
+    return $ForumSe;
   }
 
-  function memberInsert($account ,$password ,$email ,$name ,$datetime)
-  {
-
-    $memberin ="INSERT INTO `member`
-                            (
-                              `account`,
-                              `password`,
-                              `email`,
-                              `name`,
-                              `datetime`
-                            )
-                            VALUES
-                            (
-                              '$account',
-                              '$password',
-                              '$email',
-                              '$name',
-                              '$datetime'
-                            )";
-
-    return $memberin;
+  // function ForumIn($themes, $posteds, $emails){
+  //   $ForumIn = "INSERT INTO `forum`(
+  //                                   `theme`,
+  //                                   `posted`,
+  //                                   `email`
+  //                                 ) VALUES (
+  //                                   '".$themes."',
+  //                                   '".$posteds."',
+  //                                   '".$emails."'
+  //                                 )";
+  //   return $ForumIn;
+  // }
+  function ForumIn($themes, $posteds, $emails, $messages, $datetimes){
+    $ForumIn = "INSERT INTO `forum`(
+                                    `theme`,
+                                    `posted`,
+                                    `email`,
+                                    `message`,
+                                    `datetime`
+                                  ) VALUES (
+                                    '".$themes."',
+                                    '".$posteds."',
+                                    '".$emails."',
+                                    '".$messages."',
+                                    '".$datetimes."'
+                                  )";
+    return $ForumIn;
   }
-
-  function memberDelete($account){
-
-    $memberDelete = "DELETE FROM `member`
-                            WHERE
-                            `account`= '$account'
-                            ";
-
-    return $memberDelete;
-  }
-
-
 
 
  ?>

@@ -203,9 +203,9 @@
 													</label>
 												</th>
 												<th>主題</th>
-												<th>留言</th>
+												<th>發表人</th>
 												<th>Email</th>
-												<th class="hidden-480">發表人(訪客、抓取會員名)</th>
+												<th class="hidden-480">留言</th>
 
 												<th class="hidden-480">回覆</th>
 												<th>
@@ -222,7 +222,7 @@
 
 										<tbody>
 											<?php
-											include("message/forum/forum.php");
+											include("message/forum.php");
 											?>
 										</tbody>
 									</table>

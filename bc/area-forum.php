@@ -570,17 +570,38 @@
 				//全選
 				//table checkboxes
 				$('th input[type=checkbox], td input[type=checkbox]').prop('checked', false);
+				var DeAll=[];
 
 				//select/deselect all rows according to table header checkbox
 				$('#dynamic-table > thead > tr > th input[type=checkbox]').eq(0).on('click', function(){
 					var th_checked = this.checked;//checkbox inside "TH" table header
 
 					$(this).closest('table').find('tbody > tr').each(function(){
+
 						var row = this;
+
 						if(th_checked){
 
+							$("input[type='checkbox']").each(function() {
+								DeAll.push($(this).val());
+							});
+							Deletess(DeAll);
+
 						 tableTools_obj.fnSelect(row);
+
 					 }else{
+
+						 var Des=[];
+
+						 $("input[type='checkbox']").each(function() {//取未選值
+							 Des.push($(this).val());
+						 });
+						 
+						 DeAll = $.grep(DeAll, function(value) {
+							 return value == Des;
+						 });
+
+						 Deletess(DeAll);
 						 tableTools_obj.fnDeselect(row);
 						}
 					});
