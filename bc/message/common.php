@@ -22,6 +22,17 @@
     return $AreaUp;
   }
 
+  function AreaDe($message)
+  {
+
+    $AreaDe = "DELETE FROM `area`
+                            WHERE
+                            `message`= '$message'
+                            ";
+
+    return $AreaDe;
+  }
+
   function AreaIn($posted, $email, $site, $message, $datetime)
   {
 

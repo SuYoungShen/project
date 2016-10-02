@@ -190,7 +190,7 @@
                       <input type="email" name="email"  required="required" class="input-block-level" placeholder="Email" />
                     </div>
                     <div class="span4">
-                      <input type="url" name="site"  required="required" class="input-block-level" placeholder="網址" />
+                      <textarea type="url" name="site"  required="required" class="input-block-level" placeholder="網址" /></textarea>
                     </div>
                     <script type="text/javascript">
                       document.cookie="datetime="+getNowTime();

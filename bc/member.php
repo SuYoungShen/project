@@ -673,13 +673,12 @@
 
 					}else {
 
-						tableTools_obj.fnDeselect($(this).closest('tr').get(0));
-
 						OnlyDelete = $.grep(OnlyDelete, function(value) {
 							return value != Delete;
 						});
 						Deletess(OnlyDelete);//單選刪除
 
+						tableTools_obj.fnDeselect($(this).closest('tr').get(0));
 					}
 				});
 

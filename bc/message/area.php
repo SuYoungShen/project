@@ -21,7 +21,7 @@
       <tr>
         <td class='center'>
           <label class='pos-rel'>
-            <input type='checkbox' class='ace' />
+            <input type='checkbox' class='ace' value='".$messages[$key]."'/>
             <span class='lbl'></span>
           </label>
         </td>
@@ -41,27 +41,26 @@
 
         <td>
           <div class='hidden-sm hidden-xs action-buttons'>
-          <!--
-            <a class='blue' href='#'>
-              <i class='ace-icon fa fa-search-plus bigger-130'></i>
-            </a>
-            -->
 
             <a class='green' href='#reply' data-toggle='modal'
-            onclick='Edit(
-                          \"$placenames[$key]\",
-                          \"$viewpoints[$key]\",
-                          \"$posteds[$key]\",
-                          \"$messages[$key]\",
-                          \"$replys[$key]\",
-                          \"$emails[$key]\",
-                          \"$sites[$key]\",
-                          \"$datetimes[$key]\"
-                          )'>
+              onclick='Edit(
+                            \"$placenames[$key]\",
+                            \"$viewpoints[$key]\",
+                            \"$posteds[$key]\",
+                            \"$messages[$key]\",
+                            \"$replys[$key]\",
+                            \"$emails[$key]\",
+                            \"$sites[$key]\",
+                            \"$datetimes[$key]\"
+                            )'>
               <i class='ace-icon fa fa-pencil bigger-130'></i>
             </a>
 
-            <a class='red' name='Delete' href='#' >
+            <a class='red' onclick='bootboxs(
+                                \"$posteds[$key]\",
+                                \"$messages[$key]\",
+                                \"$datetimes[$key]\"
+                                )'>
               <i class='ace-icon fa fa-trash-o bigger-130'></i>
             </a>
           </div>

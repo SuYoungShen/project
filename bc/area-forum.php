@@ -30,10 +30,19 @@
 		<script src="assets/js/jquery.2.1.1.min.js"></script>
 		<!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script> -->
 
-<!-- 自行寫 -->
+<!-- 自行套 -->
 		<!-- <script type="text/javascript" src="message/area/js/validate.js"></script> -->
 		<script type="text/javascript" src="message/area/js/fun.js"></script>
-<!-- 自行寫 -->
+
+		<!-- 刪除 -->
+		<script type="text/javascript" src="message/area/js/delete.js"></script>
+		<!-- 刪除 -->
+		<script type="text/javascript" src="assets/js/alert.js"></script>
+		<!-- 彈跳視窗 -->
+		<script src="assets/js/bootbox.min.js"></script>
+		<!-- 彈跳視窗 -->
+<!-- 自行套 -->
+
 <!-- 表單驗證 -->
 	<!-- <script src="http://static.runoob.com/assets/jquery-validation-1.14.0/dist/jquery.validate.min.js"></script>
 	<script src="http://static.runoob.com/assets/jquery-validation-1.14.0/dist/localization/messages_zh.js"></script> -->
@@ -193,7 +202,7 @@
 										 <a href="#reply" class="btn btn-app btn-green btn-xs" role="button" class="green" data-toggle="modal">
 											 回復
 										 </a>
-										 <a href="#" class="btn btn-app btn-danger btn-xs" role="button" class="green" data-toggle="modal">
+										 <a href="#" name="Delete" class="btn btn-app btn-danger btn-xs" role="button" class="green" data-toggle="modal">
 											 <i class="ace-icon fa fa-trash-o bigger-150"></i>
 										 </a>
 									 </div>
@@ -284,7 +293,8 @@
 													 <label class="col-sm-3 control-label no-padding-right" for="form-field-1"> 發表內容	 </label>
 
 													 <div class="col-sm-9">
-														 <input type="text" id="message" name="message" placeholder="想說什麼???" class="col-xs-10 col-sm-5" />
+														 <!-- <input type="text" id="messages" name="messages" value=""> -->
+														 <textarea  id="messages" name="message" placeholder="想說什麼???" class="col-xs-10 col-sm-5" /></textarea>
 													 </div>
 												 </div>
 
@@ -300,15 +310,17 @@
 													 <label class="col-sm-3 control-label no-padding-right" for="form-field-1-1"> email </label>
 
 													 <div class="col-sm-9">
-														 <textarea  id="email" name="email" placeholder="email" class="col-xs-10 col-sm-5" /></textarea>
+														 <input type="text"  id="email" name="email" placeholder="email" class="col-xs-10 col-sm-5" />
 													 </div>
 												 </div>
 
 												 <div class="form-group">
-													<label class="col-sm-3 control-label no-padding-right" for="form-field-1-1"> 網址 </label>
+													<label class="col-sm-3 control-label no-padding-right" for="form-field-1-1"> 網址: </label>
 
 													<div class="col-sm-9">
-														<input type="url" id="site" name="site" placeholder="網址" class="col-xs-10 col-sm-5" />
+														<!-- <a href id="site" name="site"></a> -->
+														<!-- <div class="col-xs-10 col-sm-5" id="site" name="site"></div> -->
+														<input type="text" id="site" name="site" placeholder="網址" class="col-xs-10 col-sm-5" />
 													</div>
 												</div>
 
@@ -316,7 +328,8 @@
 													 <label class="col-sm-3 control-label no-padding-right" for="form-field-1-1"> 顯示時間 </label>
 
 													 <div class="col-sm-9">
-														 <input type="text" id="datetime" placeholder="抓取系統時間"  class="col-xs-10 col-sm-5"  readonly="readonly"/>
+														<div class="col-xs-10 col-sm-5" id="datetime"></div>
+														 <!-- <input type="text" id="datetime" placeholder="抓取系統時間"  class="col-xs-10 col-sm-5"  readonly="readonly"/> -->
 													 </div>
 												 </div>
 
@@ -554,6 +567,7 @@
 				.find('input[type=checkbox]').addClass('ace').next().addClass('lbl padding-8');
 
 				/////////////////////////////////
+				//全選
 				//table checkboxes
 				$('th input[type=checkbox], td input[type=checkbox]').prop('checked', false);
 
@@ -563,16 +577,43 @@
 
 					$(this).closest('table').find('tbody > tr').each(function(){
 						var row = this;
-						if(th_checked) tableTools_obj.fnSelect(row);
-						else tableTools_obj.fnDeselect(row);
+						if(th_checked){
+
+						 tableTools_obj.fnSelect(row);
+					 }else{
+						 tableTools_obj.fnDeselect(row);
+						}
 					});
 				});
 
+				//單選
+				var OnlyDelete = [];
 				//select/deselect a row when the checkbox is checked/unchecked
 				$('#dynamic-table').on('click', 'td input[type=checkbox]' , function(){
+
 					var row = $(this).closest('tr').get(0);
-					if(!this.checked) tableTools_obj.fnSelect(row);
-					else tableTools_obj.fnDeselect($(this).closest('tr').get(0));
+					var Delete = $(this).val();//選擇的值
+
+					$(this).each(function() {
+						OnlyDelete.push(Delete);//新值放到陣列後面
+					});
+
+					if(!this.checked) {
+
+						Deletess(OnlyDelete);//刪除
+						tableTools_obj.fnSelect(row);
+
+					}else{
+
+						OnlyDelete = $.grep(OnlyDelete, function(value) {
+							return value != Delete;
+						});
+
+						Deletess(OnlyDelete);//單選刪除
+
+						tableTools_obj.fnDeselect($(this).closest('tr').get(0));
+
+						}
 				});
 
 					$(document).on('click', '#dynamic-table .dropdown-toggle', function(e) {

@@ -21,9 +21,9 @@
      $trues = $db->query(AreaUp($posted, $message, $reply, $datetime));
 
     if ($trues) {
-      message("成功",$BackWeb);
+      message("回覆成功",$BackWeb);
     }else {
-      message("失敗",$BackWeb);
+      message("回覆失敗",$BackWeb);
     }
   }
 
