@@ -42,11 +42,11 @@
 
 foreach ($memberse as $key => $value) {
 
-  $acc=$accounts[$key] = $value[0];
-  $pas=$passwords[$key] = $value[1];
-  $ema=$emails[$key] = $value[2];
-  $nam=$names[$key] = $value[3];
-  $dat=$datetimes[$key] = $value[4];
+  $acc=$accounts[$key] = $value["account"];
+  $pas=$passwords[$key] = $value["password"];
+  $ema=$emails[$key] = $value["email"];
+  $nam=$names[$key] = $value["name"];
+  $dat=$datetimes[$key] = $value["datetime"];
 
   echo "
   <tr>

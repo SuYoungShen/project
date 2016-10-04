@@ -17,24 +17,13 @@
   <link rel="stylesheet" href="css/sl-slide.css">
 
   <script src="js/vendor/modernizr-2.6.2-respond-1.1.0.min.js"></script>
-  <script type="text/javascript" src="https://code.jquery.com/jquery-1.12.3.js"></script>
-  <script type="text/javascript" src="https://cdn.datatables.net/1.10.12/js/jquery.dataTables.min.js"></script>
-  <script type="text/javascript" src="https://cdn.datatables.net/1.10.12/js/dataTables.bootstrap.min.js">
-
-  </script>
-  <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" media="screen" title="no title">
-<link rel="stylesheet" href="https://cdn.datatables.net/1.10.12/css/dataTables.bootstrap.min.css" media="screen" title="no title">
 
 
   <!-- Le fav and touch icons -->
   <?php
     include("ico.php");
    ?>
-   <script type="text/javascript">
-   $(document).ready(function() {
-   $('#example').DataTable();
-} );
-   </script>
+   
 </head>
 
 <body>
@@ -177,7 +166,7 @@
       </tbody>
     </table>
     <p>&nbsp;</p>
-    <table id="example" class="table table-striped table-bordered" cellspacing="0" width="100%">
+    <!-- <table id="example" class="table table-striped table-bordered" cellspacing="0" width="100%">
             <thead>
                 <tr>
                     <th>Name</th>
@@ -657,21 +646,11 @@
                 </tr>
             </tbody>
         </table>
+ -->
+
 </section>
 <!-- /Career -->
 
- <!-- pagination -->
- <div class="pagination pagination-centered ">
-   <ul class="pagination-lg">
-     <li><a href="#"><i class="icon-angle-left"></i></a></li>
-     <li><a href="#">1</a></li>
-     <li><a href="#">2</a></li>
-     <li><a href="#">3</a></li>
-     <li><a href="#">4</a></li>
-     <li><a href="#">5</a></li>
-     <li><a href="#"><i class="icon-angle-right"></i></a></li>
-   </ul>
- </div>
 
 <!--Footer-->
 <?php

@@ -44,18 +44,18 @@
 
                       <div class="space-6"></div>
 
-                      <form>
+                      <form action= method="">
                         <fieldset>
                           <label class="block clearfix">
                             <span class="block input-icon input-icon-right">
-                              <input type="text" class="form-control" placeholder="帳號" />
+                              <input type="text" class="form-control" name="account" placeholder="帳號" />
                               <i class="ace-icon fa fa-user"></i>
                             </span>
                           </label>
 
                           <label class="block clearfix">
                             <span class="block input-icon input-icon-right">
-                              <input type="password" class="form-control" placeholder="密碼" />
+                              <input type="password" class="form-control" name="passowrd" placeholder="密碼" />
                               <i class="ace-icon fa fa-lock"></i>
                             </span>
                           </label>

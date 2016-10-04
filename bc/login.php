@@ -33,6 +33,23 @@
 		<script src="assets/js/html5shiv.min.js"></script>
 		<script src="assets/js/respond.min.js"></script>
 		<![endif]-->
+		<?php
+		session_start();
+			include("mysql/connect.php");			
+
+			// if (isset($_POST["accounts"])) {
+			// 	$account = $_POST["accounts"];
+			//
+			// 	$query_RecLogin = "SELECT * FROM `member` WHERE `account`='".$account."'";
+			// 	$RecLogin = $db->query($query_RecLogin);
+			//
+			// 	$display = $RecLogin->fetch();
+			// 	$admin = $display["level"];
+			// echo 	$_SESSION["account"]=$admin;
+			//
+			// }
+		 ?>
+
 	</head>
 
 	<body class="login-layout">
@@ -63,18 +80,18 @@
 
 											<div class="space-6"></div>
 
-											<form>
+											<form method="post">
 												<fieldset>
 													<label class="block clearfix">
 														<span class="block input-icon input-icon-right">
-															<input type="text" class="form-control" placeholder="管理員" />
+															<input type="text" name="accounts" class="form-control" placeholder="管理員" />
 															<i class="ace-icon fa fa-user"></i>
 														</span>
 													</label>
 
 													<label class="block clearfix">
 														<span class="block input-icon input-icon-right">
-															<input type="password" class="form-control" placeholder="密碼" />
+															<input type="password" name="password" class="form-control" placeholder="密碼" />
 															<i class="ace-icon fa fa-lock"></i>
 														</span>
 													</label>
@@ -102,7 +119,7 @@
 
 									</div><!-- /.widget-body -->
 								</div><!-- /.login-box -->
-							</div><!-- /.position-relative -->						
+							</div><!-- /.position-relative -->
 						</div>
 					</div><!-- /.col -->
 				</div><!-- /.row -->
