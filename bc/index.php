@@ -58,11 +58,7 @@
 		<script src="assets/js/respond.min.js"></script>
 		<![endif]-->
 		<?php
-		session_start();
-
-			include("mysql/connect.php");
-			
-
+			// include("login/check_login.php");
 		 ?>
 	</head>
 
