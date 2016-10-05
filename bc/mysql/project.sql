@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- 主機: 127.0.0.1
--- 產生時間： 2016-09-27 15:38:54
+-- 產生時間： 2016-10-05 21:13:16
 -- 伺服器版本: 10.1.16-MariaDB
 -- PHP 版本： 5.6.24
 
@@ -14,7 +14,7 @@ SET time_zone = "+00:00";
 /*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
 /*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
 /*!40101 SET @OLD_COLLATION_CONNECTION=@@COLLATION_CONNECTION */;
-/*!40101 SET NAMES utf8 */;
+/*!40101 SET NAMES utf8mb4 */;
 
 --
 -- 資料庫： `project`
@@ -103,21 +103,24 @@ CREATE TABLE `forum` (
 --
 
 CREATE TABLE `member` (
-  `account` char(10) COLLATE utf8_unicode_ci NOT NULL,
-  `password` char(36) COLLATE utf8_unicode_ci NOT NULL,
+  `id` int(11) NOT NULL,
+  `account` varchar(20) COLLATE utf8_unicode_ci NOT NULL,
+  `password` varchar(100) COLLATE utf8_unicode_ci NOT NULL,
   `email` varchar(36) COLLATE utf8_unicode_ci NOT NULL,
   `name` varchar(10) COLLATE utf8_unicode_ci NOT NULL,
-  `datetime` datetime NOT NULL
+  `level` enum('admin','member','','') COLLATE utf8_unicode_ci NOT NULL DEFAULT 'member',
+  `datetime` datetime NOT NULL,
+  `jointime` datetime NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
 --
 -- 資料表的匯出資料 `member`
 --
 
-INSERT INTO `member` (`account`, `password`, `email`, `name`, `datetime`) VALUES
-('2', '1', '1', '1', '0000-00-00 00:00:00'),
-('1', '1', '1', '1', '0000-00-00 00:00:00'),
-('ssssss', 'ssdsdsdssd', 'ssdd@gmai.com', 'sss', '2016-09-13 18:32:12');
+INSERT INTO `member` (`id`, `account`, `password`, `email`, `name`, `level`, `datetime`, `jointime`) VALUES
+(0, '2', '1', '1', '1', 'member', '0000-00-00 00:00:00', '0000-00-00 00:00:00'),
+(0, '1', '1', '1', '1', 'member', '0000-00-00 00:00:00', '0000-00-00 00:00:00'),
+(0, 'ssssss', 'ssdsdsdssd', 'ssdd@gmai.com', 'sss', 'member', '2016-09-13 18:32:12', '0000-00-00 00:00:00');
 
 -- --------------------------------------------------------
 
