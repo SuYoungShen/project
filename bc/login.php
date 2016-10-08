@@ -34,22 +34,13 @@
 		<script src="assets/js/respond.min.js"></script>
 		<![endif]-->
 		<?php
-			// session_start();
-			// include("mysql/connect.php");
+			session_start();
+			include("mysql/connect.php");
 			include("login/check_login.php");
 			// unset($_SESSION["login_account"]);
-			if (isset($_POST["login_account"])) {
-				$account = $_POST["login_account"];
-
-				$query_RecLogin = "SELECT * FROM `member` WHERE `account`='".$account."'";
-				$RecLogin = $db->query($query_RecLogin);
-
-				$display = $RecLogin->fetch();
-				$level = $display["level"];
-				$_SESSION["account_level"] = $level;
-
-
-			}
+			Login($db);
+			// Login_Out($_GET["login_out"]);
+			
 		 ?>
 
 	</head>

@@ -66,11 +66,13 @@
           </ul>
         </li>
         <li class="light-blue">
-          <a data-toggle="dropdown" href="#" class="dropdown-toggle">
+          <a data-toggle="dropdown" href="" class="dropdown-toggle">
 
             <span class="user-info">
               <small>Welcome,</small>
-              (管理員)
+              <?php
+                echo $_SESSION["login_account"];
+               ?>
             </span>
 
             <i class="ace-icon fa fa-caret-down"></i>
@@ -78,7 +80,7 @@
 
           <ul class="user-menu dropdown-menu-right dropdown-menu dropdown-yellow dropdown-caret dropdown-close">
             <li>
-              <a href="#">
+              <a href="?login_out=true">
                 <i class="ace-icon fa fa-power-off"></i>
                 登出
               </a>

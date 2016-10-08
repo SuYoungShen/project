@@ -58,7 +58,15 @@
 		<script src="assets/js/respond.min.js"></script>
 		<![endif]-->
 		<?php
-			// include("login/check_login.php");
+			session_start();
+			include("mysql/connect.php");
+			include("login/check_login.php");
+			Login_Check();
+			if (isset($_GET["login_out"]) && ($_GET["login_out"]=="true")) {
+	      unset($_SESSION["login_account"]);
+	      header("Location:login.php");
+	    }
+
 		 ?>
 	</head>
 
@@ -145,9 +153,7 @@
 							<i class="menu-icon fa fa-user"></i>
 							<span class="menu-text"> 會員管理 </span>
 						</a>
-
 						<b class="arrow"></b>
-
 					</li>
 					<!--會員-->
 				</ul><!-- /.nav-list -->
