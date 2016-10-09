@@ -61,12 +61,8 @@
 			session_start();
 			include("mysql/connect.php");
 			include("login/check_login.php");
-			Login_Check();
-			if (isset($_GET["login_out"]) && ($_GET["login_out"]=="true")) {
-	      unset($_SESSION["login_account"]);
-	      header("Location:login.php");
-	    }
-
+			Login_Check();			
+			Login_Out();
 		 ?>
 	</head>
 

@@ -33,6 +33,8 @@
 		<script src="assets/js/html5shiv.min.js"></script>
 		<script src="assets/js/respond.min.js"></script>
 		<![endif]-->
+
+
 		<?php
 			session_start();
 			include("mysql/connect.php");
@@ -40,7 +42,7 @@
 			// unset($_SESSION["login_account"]);
 			Login($db);
 			// Login_Out($_GET["login_out"]);
-			
+
 		 ?>
 
 	</head>
@@ -120,11 +122,9 @@
 		</div><!-- /.main-container -->
 
 		<!-- basic scripts -->
-
-		<!--[if !IE]> -->
 		<script src="assets/js/jquery.2.1.1.min.js"></script>
 
-		<!-- <![endif]-->
+
 
 		<!--[if IE]>
 <script src="assets/js/jquery.1.11.1.min.js"></script>

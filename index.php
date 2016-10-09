@@ -18,7 +18,20 @@
     <link rel="stylesheet" href="css/sl-slide.css">
 
     <script src="js/vendor/modernizr-2.6.2-respond-1.1.0.min.js"></script>
+    <!-- bootstrap & fontawesome -->
+    <!-- <link rel="stylesheet" href="bc/assets/css/bootstrap.min.css" /> -->
+    <link rel="stylesheet" href="bc/assets/font-awesome/4.2.0/css/font-awesome.min.css" />
 
+    <!-- text fonts -->
+    <link rel="stylesheet" href="bc/assets/fonts/fonts.googleapis.com.css" />
+
+    <!-- ace styles -->
+    <link rel="stylesheet" href="css/ace.min.css" />
+
+    <!--[if lte IE 9]>
+      <link rel="stylesheet" href="assets/css/ace-part2.min.css" />
+    <![endif]-->
+    <link rel="stylesheet" href="bc/assets/css/ace-rtl.min.css" />
     <!-- Le fav and touch icons -->
     <?php
       include("ico.php");

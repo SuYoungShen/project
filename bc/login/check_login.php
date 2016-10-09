@@ -27,34 +27,57 @@
   //     header("Location:index.php");
   //   }
   // }
-  function Login_Out(){
+  function Login_Out(){//登出
+
     if (isset($_GET["login_out"]) && ($_GET["login_out"]=="true")) {
       unset($_SESSION["login_account"]);
       header("Location:login.php");
     }
+
   }
-  function Login($db){
 
-    if (isset($_POST["login_account"])) {
+  function Login($db){//登入
 
-      $account = $_POST["login_account"];//帳號
-      $_SESSION["login_account"] = $account;
+    $true = isset($_POST["login_account"]) &&
+            !empty($_POST["login_account"]) &&
+            isset($_POST["login_password"]) &&
+            !empty($_POST["login_password"]);
 
-      $RecLogin = $db->query(MemberSe($account));
+    if ($true) {
+
+      $login_account = $_POST["login_account"];//帳號
+      $login_passwd = $_POST["login_password"];//密碼
+
+      $_SESSION["login_account"] = $login_account;
+      $_SESSION["login_password"] = $login_passwd;
+      $RecLogin = $db->query(MemberSe($login_account));
 
       $display = $RecLogin->fetch();
+
+      $account = $display["account"];
+      $passwd = $display["password"];
+
       $level = $display["level"];
       $_SESSION["account_level"] = $level;
-      if ($level=="admin") {
-        header("Location:index.php");
+
+      if ($account=="admin" && ($login_passwd==$passwd)) {
+        if ($level == "admin") {
+          header("Location:index.php");
+        }
+      }else {
+        echo "
+          <script>alert('不是檔案管理員~滾~');</script>
+        ";
       }
     }
   }
-  function Login_Check(){
+
+  function Login_Check(){//登入檢查
 
     if (!isset($_SESSION["login_account"]) || empty($_SESSION["login_account"])) {
       header("Location:login.php");
     }
+
   }
 
   function MemberSe($account){
