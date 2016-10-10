@@ -61,8 +61,8 @@
       $level = $display["level"];
       $_SESSION["account_level"] = $level;
 
-      if ($account=="admin" && ($login_password==$passwd)) {
-          if ($level == "admin") {
+      if ($login_account==$account && ($login_password==$passwd)) {
+          if ($level == "member") {
             header("Location:index.php");
           }
       }

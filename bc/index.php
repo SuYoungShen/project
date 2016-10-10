@@ -61,7 +61,7 @@
 			session_start();
 			include("mysql/connect.php");
 			include("login/check_login.php");
-			Login_Check();			
+			Login_Check();
 			Login_Out();
 		 ?>
 	</head>
