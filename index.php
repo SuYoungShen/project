@@ -20,13 +20,13 @@
     <script src="js/vendor/modernizr-2.6.2-respond-1.1.0.min.js"></script>
     <!-- bootstrap & fontawesome -->
     <!-- <link rel="stylesheet" href="bc/assets/css/bootstrap.min.css" /> -->
-    <!-- <link rel="stylesheet" href="bc/assets/font-awesome/4.2.0/css/font-awesome.min.css" /> -->
+    <link rel="stylesheet" href="bc/assets/font-awesome/4.2.0/css/font-awesome.min.css" />
 
     <!-- text fonts -->
-    <!-- <link rel="stylesheet" href="bc/assets/fonts/fonts.googleapis.com.css" /> -->
+    <link rel="stylesheet" href="bc/assets/fonts/fonts.googleapis.com.css" />
 
     <!-- ace styles -->
-    <!-- <link rel="stylesheet" href="css/ace.min.css" /> -->
+    <link rel="stylesheet" href="css/ace.min.css" />
 
     <!-- 自行填入 -->
     <script type="text/javascript" src="js/jquery-1.11.0.min.js"></script>
@@ -36,7 +36,7 @@
     <!--[if lte IE 9]>
       <link rel="stylesheet" href="assets/css/ace-part2.min.css" />
     <![endif]-->
-    <!-- <link rel="stylesheet" href="bc/assets/css/ace-rtl.min.css" /> -->
+    <link rel="stylesheet" href="bc/assets/css/ace-rtl.min.css" />
     <!-- Le fav and touch icons -->
     <?php
       include("ico.php");
@@ -86,8 +86,8 @@
             <li><a href="forum.php">討論區</a></li>
             <!--<li><a href="contact-us.html">Contact</a></li>-->
             <li class="login">
-              <!-- <a data-toggle="modal" href="#loginForm"><i class="icon-user"></i></a> -->
-              <a  href="login.php"><i class="icon-user"></i></a>
+              <a data-toggle="modal" href="#loginForm"><i class="icon-user"></i></a>
+              <!-- <a  href="login.php"><i class="icon-user"></i></a> -->
             </li>
           </ul>
         </div><!--/.nav-collapse -->

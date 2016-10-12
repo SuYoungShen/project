@@ -2,7 +2,7 @@
 <!-- <a href="#myModal" role="button" class="btn" data-toggle="modal">執行範例對話視窗</a> -->
 
 <!-- Modal -->
-
+<!--
   <div class="row">
     <div class="span12">
 
@@ -53,9 +53,10 @@
 
 
   </div>
-</div>
+</div> -->
 
-  <!-- <div class="login-layout modal hide fade in " id="loginForm" aria-hidden="false">
+  <div class="login-layout modal hide fade in" id="loginForm" aria-hidden="false">
+    <!-- <div class="col-xs-6 col-sm-4"> -->
     <div class="col-sm-10 col-sm-offset-1">
       <div class="login-container">
 
@@ -243,7 +244,7 @@
         </div>
       </div>
     </div>
-  </div> -->
+  </div>
 
 
   <!-- basic scripts -->
