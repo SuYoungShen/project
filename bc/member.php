@@ -57,6 +57,13 @@
 
 		<script type="text/javascript" src="assets/js/validate.js"></script>
 		<!-- 表單驗證 -->
+		<?php
+			session_start();
+			include("mysql/connect.php");
+			include("login/check_login.php");
+			Login_Check();
+			Login_Out();
+		 ?>
 		<style>
 			.error{
 				color:red;

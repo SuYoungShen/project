@@ -27,6 +27,33 @@
   //     header("Location:index.php");
   //   }
   // }
+  function Member_Information(){
+
+    if (isset($_SESSION["login_account"]) && !empty($_SESSION["login_account"])) {
+      echo "
+      <li class='dropdown'>
+        <a href='view.php' class='dropdown-toggle' data-toggle='dropdown'>
+          <i class='icon-user'></i>
+        </a>
+        <div class='dropdown-menu'>
+          <table class='table table-hover '>
+            <tr >
+              <td><a href='user.php'>個人資料</a></td>
+              <td><a href='?login_out=true'>登出</a></td>
+            </tr>
+          </table>
+        </div>
+      </li>
+      ";
+    }else {
+      echo "
+      <li class='login'>
+        <a data-toggle='modal' href='#loginForm'><i class='icon-user'></i></a>
+      </li>
+      ";
+    }
+  }
+
   function Login_Out(){//登出
 
     if (isset($_GET["login_out"]) && ($_GET["login_out"]=="true")) {
@@ -60,9 +87,10 @@
       $_SESSION["account_level"] = $level;
 
       if ($login_account==$account && ($login_password==$passwd)) {
-        $_SESSION["login_account"] = $login_account;
-        $_SESSION["login_password"] = $login_password;
+
           if ($level == "member") {
+            $_SESSION["login_account"] = $login_account;
+            $_SESSION["login_password"] = $login_password;
             header("Location:index.php");
           }
       }else {

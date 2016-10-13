@@ -1,6 +1,5 @@
 <?php
-$dbname="project";
-include ("mysql/connect.php");//連接資料庫
+
 include ("common.php");//常用語法
 
 $carouselDir='about/carousel/images/';

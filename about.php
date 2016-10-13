@@ -17,8 +17,16 @@
     <link rel="stylesheet" href="css/sl-slide.css">
 	  <link rel="stylesheet" type="text/css" href="css/picloop.css">
     <!-- Le fav and touch icons -->
+
     <?php
+      session_start();
+      include("bc/mysql/connect.php");
+      include("login/check_login.php");
+
+      Login($db);
+      Login_Out();
       include("ico.php");
+
      ?>
 
 </head>
@@ -65,9 +73,9 @@
 
              <li><a href="forum.php">討論區</a></li>
              <!--<li><a href="contact-us.html">Contact</a></li>-->
-             <li class="login">
-               <a data-toggle="modal" href="#loginForm"><i class="icon-user"></i></a>
-             </li>
+             <?php
+                Member_Information();
+              ?>
            </ul>
          </div><!--/.nav-collapse -->
        </div>

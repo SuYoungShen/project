@@ -54,6 +54,13 @@
 
   </div>
 </div> -->
+<link rel="stylesheet" href="bc/assets/font-awesome/4.2.0/css/font-awesome.min.css" />
+
+<link rel="stylesheet" href="bc/assets/fonts/fonts.googleapis.com.css" />
+
+<link rel="stylesheet" href="css/ace.min.css" />
+
+<link rel="stylesheet" href="bc/assets/css/ace-rtl.min.css" />
 
   <div class="login-layout modal hide fade in" id="loginForm" aria-hidden="false">
     <!-- <div class="col-xs-6 col-sm-4"> -->

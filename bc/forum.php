@@ -39,6 +39,13 @@
 		<script src="assets/js/html5shiv.min.js"></script>
 		<script src="assets/js/respond.min.js"></script>
 		<![endif]-->
+		<?php
+			session_start();
+			include("mysql/connect.php");
+			include("login/check_login.php");
+			Login_Check();
+			Login_Out();
+		 ?>
 	</head>
 
 	<body class="no-skin">
