@@ -71,7 +71,7 @@
             <span class="user-info">
               <small>Welcome,</small>
               <?php
-                echo $_SESSION["login_account"];
+                echo $_SESSION["admin_account"];
                ?>
             </span>
 

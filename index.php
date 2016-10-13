@@ -30,7 +30,7 @@
 
     <!-- 自行填入 -->
     <script type="text/javascript" src="js/jquery-1.11.0.min.js"></script>
-    <script type="text/javascript" src="js/registered.js"></script>
+    <!-- <script type="text/javascript" src="js/registered.js"></script> -->
     <!-- 自行填入 -->
 
     <!--[if lte IE 9]>
@@ -39,7 +39,14 @@
     <link rel="stylesheet" href="bc/assets/css/ace-rtl.min.css" />
     <!-- Le fav and touch icons -->
     <?php
+      session_start();
+      include("bc/mysql/connect.php");
+      include("login/check_login.php");
+
+      Login($db);
+      Login_Out();
       include("ico.php");
+
      ?>
 </head>
 
@@ -84,11 +91,34 @@
             </li>
 
             <li><a href="forum.php">討論區</a></li>
-            <!--<li><a href="contact-us.html">Contact</a></li>-->
-            <li class="login">
-              <a data-toggle="modal" href="#loginForm"><i class="icon-user"></i></a>
-              <!-- <a  href="login.php"><i class="icon-user"></i></a> -->
-            </li>
+
+            <?php
+
+            if (isset($_SESSION["login_account"]) && !empty($_SESSION["login_account"])) {
+              echo "
+              <li class='dropdown'>
+                <a href='view.php' class='dropdown-toggle' data-toggle='dropdown'>
+                  <i class='icon-user'></i>
+                </a>
+                <div class='dropdown-menu'>
+                  <table class='table table-hover '>
+                    <tr >
+                      <td><a href='?login_out=true'>登出</a></td>
+                      <td><a href='area.php'>地區名</a></td>
+                    </tr>
+                  </table>
+                </div>
+              </li>
+              ";
+            }else {
+              echo "
+              <li class='login'>
+                <a data-toggle='modal' href='#loginForm'><i class='icon-user'></i></a>
+              </li>
+              ";
+            }
+             ?>
+
           </ul>
         </div><!--/.nav-collapse -->
       </div>
@@ -174,7 +204,7 @@ include("login-form.php");
  ?>
 <!--  /Login form -->
 
-<script src="js/vendor/jquery-1.9.1.min.js"></script>
+<!-- <script src="js/vendor/jquery-1.9.1.min.js"></script> -->
 <script src="js/vendor/bootstrap.min.js"></script>
 <script src="js/main.js"></script>
 <!-- Required javascript files for Slider -->

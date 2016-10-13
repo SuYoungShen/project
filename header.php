@@ -40,6 +40,7 @@
         <li class="login">
           <a data-toggle="modal" href="#loginForm"><i class="icon-user"></i></a>
         </li>
+        
       </ul>
     </div><!--/.nav-collapse -->
   </div>

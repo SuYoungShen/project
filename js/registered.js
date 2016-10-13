@@ -68,6 +68,43 @@ $(document).ready(function() {
     // }
   });
 
+  $("button[name='login']").click(function() {
+
+    var account = $("input[name='login_account']").val();
+    var password = $("input[name='login_password']").val();
+
+
+      $.ajax({
+          type:"POST",
+          url: "login/check_login.php",
+          data:{
+            'login_account':account,
+            'login_password':password
+          },
+          success:function(data){
+            alert(data);
+            document.location.href="index.php";
+          },
+          error: function(data){
+            alert(data);
+          }
+        });
+
+
+
+        // if (About == "") {
+    //   alert("請輸入資料");
+    // }else {
+    //   $.ajax({
+    //     type:"POST",
+    //     url: "about/about.php",
+    //     data:{'About':About},
+    //     success:function(data){
+    //       alert(data);
+    //     }
+    //   });
+    // }
+  });
   // $("button[name='login']").click(function() {
   //
   //   var account = $("input[name='account']").val();

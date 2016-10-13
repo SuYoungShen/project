@@ -57,7 +57,7 @@
 
   <div class="login-layout modal hide fade in" id="loginForm" aria-hidden="false">
     <!-- <div class="col-xs-6 col-sm-4"> -->
-    <div class="col-sm-10 col-sm-offset-1">
+    <!-- <div class="col-sm-10 col-sm-offset-1"> -->
       <div class="login-container">
 
         <div class="space-6"></div>
@@ -73,7 +73,7 @@
 
                 <div class="space-6"></div>
 
-                <form>
+                <form method="post">
                   <fieldset>
                     <label class="block clearfix">
                       <span class="block input-icon input-icon-right">
@@ -97,7 +97,7 @@
                         <span class="lbl"> 記住我</span>
                       </label>
 
-                      <button type="button" class="width-35 pull-right btn btn-sm btn-primary">
+                      <button type="submit" name="login" class="width-30 pull-right btn btn-sm btn-primary">
                         <i class="ace-icon fa fa-key"></i>
                         <span class="bigger-110">登入</span>
                       </button>

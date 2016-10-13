@@ -32,7 +32,7 @@
     if (isset($_GET["login_out"]) && ($_GET["login_out"]=="true")) {
       unset($_SESSION["login_account"]);
       unset($_SESSION["login_password"]);
-      header("Location:login.php");
+      header("Location:index.php");
     }
 
   }
@@ -49,8 +49,6 @@
       $login_account = $_POST["login_account"];//帳號
       $login_password = $_POST["login_password"];//密碼
 
-      $_SESSION["login_account"] = $login_account;
-      $_SESSION["login_password"] = $login_password;
       $RecLogin = $db->query(MemberSe($login_account));
 
       $display = $RecLogin->fetch();
@@ -62,9 +60,15 @@
       $_SESSION["account_level"] = $level;
 
       if ($login_account==$account && ($login_password==$passwd)) {
+        $_SESSION["login_account"] = $login_account;
+        $_SESSION["login_password"] = $login_password;
           if ($level == "member") {
             header("Location:index.php");
           }
+      }else {
+        echo "
+          <script>alert('帳號或密碼有誤');</script>
+        ";
       }
     }
 }
