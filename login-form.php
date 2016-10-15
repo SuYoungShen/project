@@ -54,6 +54,9 @@
 
   </div>
 </div> -->
+<!-- <script type="text/javascript" src="bc/assets/js/validate.js"> -->
+
+</script>
 <link rel="stylesheet" href="bc/assets/font-awesome/4.2.0/css/font-awesome.min.css" />
 
 <link rel="stylesheet" href="bc/assets/fonts/fonts.googleapis.com.css" />
@@ -97,7 +100,7 @@
                     </label>
 
                     <div class="space"></div>
-                    
+
                     <div class="clearfix">
                       <label class="inline">
                         <input type="checkbox" class="ace" />
@@ -183,41 +186,41 @@
                 </h4>
 
                 <div class="space-6"></div>
-                <p> 輸入基本資料 </p>
+                <p> 輸入基本資料 (全部為必填)</p>
 
-                <form>
-                  <fieldset>
+                <form class="form-horizontal" role="form" method="post">
+
                     <label class="block clearfix">
                       <span class="block input-icon input-icon-right">
-                        <input type="email" name="email" class="form-control" placeholder="Email" />
+                        <input type="email" name="email" class="form-control" placeholder="Email" required/>
                         <i class="ace-icon fa fa-envelope"></i>
                       </span>
                     </label>
 
                     <label class="block clearfix">
                       <span class="block input-icon input-icon-right">
-                        <input type="text" name="name" class="form-control" placeholder="姓名" />
+                        <input type="text" name="name" class="form-control" placeholder="姓名" required/>
                         <i class="ace-icon fa fa-user"></i>
                       </span>
                     </label>
 
                     <label class="block clearfix">
                       <span class="block input-icon input-icon-right">
-                        <input type="text" name="account" class="form-control" placeholder="帳號" />
+                        <input type="text" name="account" class="form-control" placeholder="帳號(最少4碼)" required/>
                         <i class="ace-icon fa fa-user"></i>
                       </span>
                     </label>
 
                     <label class="block clearfix">
                       <span class="block input-icon input-icon-right">
-                        <input type="password" name="password" class="form-control" placeholder="密碼" />
+                        <input type="password" name="password" class="form-control" placeholder="密碼(最少5碼)" required/>
                         <i class="ace-icon fa fa-lock"></i>
                       </span>
                     </label>
 
                     <label class="block clearfix">
                       <span class="block input-icon input-icon-right">
-                        <input type="password" name="apassword"  class="form-control" placeholder="再輸入一次密碼" />
+                        <input type="password" name="apassword"  class="form-control" placeholder="再輸入一次密碼" required/>
                         <i class="ace-icon fa fa-retweet"></i>
                       </span>
                     </label>
@@ -230,13 +233,13 @@
                         <span class="bigger-110">重填</span>
                       </button>
 
-                      <button type="button" name="registered" class="width-30 pull-right btn btn-sm btn-success">
+                      <button type="submit" name="registered" class="width-30 pull-right btn btn-sm btn-success">
                         <span class="bigger-110">註冊</span>
 
                         <i class="ace-icon fa fa-arrow-right icon-on-right"></i>
                       </button>
                     </div>
-                  </fieldset>
+
                 </form>
               </div>
 

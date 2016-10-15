@@ -27,7 +27,7 @@
 
     <!-- 自行填入 -->
     <script type="text/javascript" src="js/jquery-1.11.0.min.js"></script>
-    <!-- <script type="text/javascript" src="js/registered.js"></script> -->
+    <script type="text/javascript" src="js/registered.js"></script>
     <!-- 自行填入 -->
 
     <!--[if lte IE 9]>
@@ -43,12 +43,6 @@
       Login_Out();
       include("ico.php");
      ?>
-
-     <!--  Login form -->
-     <?php
-     include("login-form.php");
-      ?>
-     <!--  /Login form -->
 
 </head>
 
@@ -176,6 +170,12 @@
   include("footer.php");
  ?>
 <!--/Footer-->
+
+<!--  Login form -->
+<?php
+include("login-form.php");
+ ?>
+<!--  /Login form -->
 
 <!-- <script src="js/vendor/jquery-1.9.1.min.js"></script> -->
 <script src="js/vendor/bootstrap.min.js"></script>
