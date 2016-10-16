@@ -36,6 +36,7 @@
 
 
 		<?php
+		
 			session_start();
 			include("mysql/connect.php");
 			include("login/check_login.php");

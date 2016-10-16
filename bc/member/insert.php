@@ -17,6 +17,7 @@
           !empty($_POST["account"]) &&
           isset($_POST["password"]) &&
           !empty($_POST["password"]);
+        
 
   if ($true==true) {
 

@@ -39,6 +39,7 @@
 
   function Login($db){//登入
 
+
     $true = isset($_POST["login_account"]) &&
             !empty($_POST["login_account"]) &&
             isset($_POST["login_password"]) &&

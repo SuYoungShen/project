@@ -57,6 +57,9 @@
 		<script src="assets/js/html5shiv.min.js"></script>
 		<script src="assets/js/respond.min.js"></script>
 		<![endif]-->
+
+		<script type="text/javascript" src="login/js/login_out_time.js"></script>
+
 		<?php
 			session_start();
 			include("mysql/connect.php");
@@ -64,6 +67,7 @@
 			Login_Check();
 			Login_Out();
 		 ?>
+
 	</head>
 
 	<body class="no-skin">
