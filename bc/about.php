@@ -42,6 +42,9 @@
     <script type="text/javascript" src="about/place/js/delete.js"></script>
     <!-- 刪除 -->
 
+		<!-- 登出時間 -->
+		<script type="text/javascript" src="login/js/login_out_time.js"></script>
+		<!-- 登出時間 -->
 
 		<!--[if lte IE 9]>
 			<link rel="stylesheet" href="assets/css/ace-part2.min.css" class="ace-main-stylesheet" />

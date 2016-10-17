@@ -41,6 +41,11 @@
 		<!-- 彈跳視窗 -->
 		<script src="assets/js/bootbox.min.js"></script>
 		<!-- 彈跳視窗 -->
+
+		<!-- 登出時間 -->
+		<script type="text/javascript" src="login/js/login_out_time.js"></script>
+		<!-- 登出時間 -->
+		
 <!-- 自行套 -->
 
 <!-- 表單驗證 -->

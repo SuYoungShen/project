@@ -41,7 +41,10 @@
 
 	<!-- ace settings handler -->
 	<script src="assets/js/ace-extra.min.js"></script>
-
+	
+	<!-- 登出時間 -->
+	<script type="text/javascript" src="login/js/login_out_time.js"></script>
+	<!-- 登出時間 -->
 	<!-- HTML5shiv and Respond.js for IE8 to support HTML5 elements and media queries -->
 
 	<!--[if lte IE 8]>

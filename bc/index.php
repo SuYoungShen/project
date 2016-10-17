@@ -58,7 +58,9 @@
 		<script src="assets/js/respond.min.js"></script>
 		<![endif]-->
 
+		<!-- 登出時間 -->
 		<script type="text/javascript" src="login/js/login_out_time.js"></script>
+		<!-- 登出時間 -->
 
 		<?php
 			session_start();

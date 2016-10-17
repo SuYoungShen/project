@@ -57,6 +57,10 @@
 
 		<script type="text/javascript" src="assets/js/validate.js"></script>
 		<!-- 表單驗證 -->
+
+		<!-- 登出時間 -->
+		<script type="text/javascript" src="login/js/login_out_time.js"></script>
+		<!-- 登出時間 -->
 		<?php
 			session_start();
 			include("mysql/connect.php");

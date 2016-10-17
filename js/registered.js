@@ -42,32 +42,46 @@ function account(){
   var account_m = "帳號";
 
   $(accounts_p).blur(function(){
-    Foolproof(accountRule, accounts_p, account_m, account_min, account_max);
-  });//account
+    account = Foolproof(accountRule, accounts_p, account_m, account_min, account_max);
+  });
 }
 
 function password(){
 
   var passwordRule=/^[a-zA-z0-9]{5,36}$/;
   var password_p = "input[name='password']";
+  var password_r = "input[name='apassword']";
   var password_min = 5;
   var password_max = 36;
   var password_m = "密碼";
 
    $(password_p).blur(function(){
-     Foolproof(passwordRule, password_p, password_m, password_min, password_max);
+     password =  Foolproof(passwordRule, password_p, password_m, password_min, password_max);
   });//password
+
+  $(password_r).blur(function(){
+    apassword = Foolproof(passwordRule, password_r, password_m, password_min, password_max);
+
+    if (password==apassword) {
+      $(password_r).css("border-color","green");
+      password=apassword;
+    }else {
+      BorderColorRed(password_r);
+      alert("密碼不一致");
+    }
+ });//password
+
+
+
 }
 
 function email(){
   var emailRule=/^[\w]+\@[a-zA-Z0-9]+\.[a-zA-z0-9]{2,4}$/;
   var email_p = "input[name='email']";
-  // var password_min = 5;
-  // var password_max = 36;
   var email_m = "email";
 
   $(email_p).blur(function(){
-    Foolproof(emailRule, email_p, email_m);
+    email = Foolproof(emailRule, email_p, email_m);
   });//password
 }
 
@@ -76,9 +90,10 @@ $("input[name='name']").blur(function(){
   var nameVal = $(this).val();
 
    if(nameVal){
+     name = nameVal;
      $(this).css("border-color","green");
    }else if(nameVal == ""){
-     alert("必填")
+     alert("姓名必填")
      $(this).css("border-color","red");
    }
 });//name
@@ -87,22 +102,44 @@ $("input[name='name']").blur(function(){
   password();
   email();
 
+  $(":reset").click(function() {//重設
+    $("input").css("border-color","");
+  });
 
   $("button[name='registered']").click(function() {//註冊按鈕
 
-    var accountRule=/^[a-zA-z0-9]{4,10}$/;
-    var accounts_p = "input[name='account']";
-    var account_min = 4;
-    var account_max = 10;
-    var account_m = "帳號";
-    var account = Foolproof(accountRule, accounts_p, account_min, account_max, account_m);
+    var trues = (account != "") &&
+                (password != "") &&
+                (email != "") &&
+                (name != "");
 
-    var passwordRule=/^[a-zA-z0-9]{5,36}$/;
-    var password_p = "input[name='password']";
-    var password_min = 5;
-    var password_max = 36;
-    var password_m = "密碼";
-    var password = Foolproof(passwordRule, password_p, password_min, password_max, password_m);
+    if (trues==true) {
+      $.ajax({
+        type:"POST",
+        url: "bc/member/insert.php",
+        data:{
+          'email':email,
+          'name':name,
+          'account':account,
+          'password':password
+        },
+        success:function(data){
+          alert(data);
+          document.location.href="index.php";
+        },
+        error: function(data){
+          alert(data);
+        }
+      });
+    }
+
+    // apassword = $("input[name='apassword']").val();
+    // if (password == apassword) {
+    //   password=apassword;
+    // }else {
+    //   alert("密碼不一致");
+    // }
+    // alert(password);
 
     // var email = $("input[name='email']").val();
     // var name = $("input[name='name']").val();
