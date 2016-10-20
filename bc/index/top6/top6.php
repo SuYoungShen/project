@@ -58,7 +58,7 @@ if (!isset($_SESSION["topnum"]) && !isset($_SESSION["topnums"])) {
 
           }else if($pic_size > 2097152){//檢查檔案大小
 
-            $picsize = basename($pic_Name,"$pic_tmps");
+            $picsize = basename("$pic_Name","$pic_tmps");
             message($picsize."檔案已超過2MB",$Basename);
 
             break;

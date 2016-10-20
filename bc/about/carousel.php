@@ -97,127 +97,105 @@ if (!isset($_SESSION["carouselnum"]) && !isset($_SESSION["carouselnums"])) {
 
   }
 
-if (isset($_POST["insert"])) {
+  if (isset($_POST["carouselIn"])) {
 
-  if (isset($_FILES["carousel"])) {
+    if (isset($_FILES["carousel"])) {
 
-    foreach($_FILES["carousel"]["tmp_name"] as $key => $top6_tmp_name){//檔案以陣列方式接收
-      // echo "key:".$key;
-      $top6_error = $_FILES["carousel"]["error"][$key];//取得錯誤值
+      foreach($_FILES["carousel"]["tmp_name"] as $key => $carousel_tmp_name){//檔案以陣列方式接收
 
-      if ($top6_error == 4 ) {//判斷是否有錯誤
+        $carousel_error = $_FILES["carousel"]["error"][$key];//取得錯誤值
 
-        // message($pictmp,$Basename);
+        if ($carousel_error == 4 ) {//判斷是否有錯誤
 
-        echo "
-        <script>
-          var value = '不小心按到送出了齁~~~';
-          var basename= '$topbasename';
-          alerts(value,basename);
-        </script>
-        ";
+          message("不小心按到送出了齁",$Basename);
 
-      }else if($top6_error == 0){
+        }else if($carousel_error == 0){
 
-        $top6_name = $_FILES["carousel"]["name"][$key];//抓取檔案名稱
-        $top6_tmp = $_FILES["carousel"]["tmp_name"][$key];//抓取檔案
-        $top6_size = $_FILES["carousel"]["size"][$key];//抓取檔案大小
-        $top6_tmps = strrchr($top6_name,".");//取得檔案的副檔名
+          $carousel_name = $_FILES["carousel"]["name"][$key];//抓取檔案名稱
+          $carousel_tmp = $_FILES["carousel"]["tmp_name"][$key];//抓取檔案
+          $carousel_size = $_FILES["carousel"]["size"][$key];//抓取檔案大小
+          $carousel_tmps = strrchr($carousel_name,".");//取得檔案的副檔名
+          $carouseltmp = array('.jpg', '.JPG', '.png', '.PNG'
+          , '.bmp', '.gif');//設定副檔名
+        
+          if (!in_array($carousel_tmps,$carouseltmp)) {//檢查副檔名
 
-        $toptmp = array('.jpg', '.JPG', '.png', '.PNG'
-                        , '.bmp', '.gif');//設定副檔名
+            $carouseltmp = "不好意思,只接受".implode(" ",$carouseltmp)."的副檔名";
+            message($carouseltmp,$Basename);
+            break;
 
-        if (!in_array($top6_tmps,$toptmp)) {//檢查副檔名
+          }else if($carousel_size > 2097152){//檢查檔案大小
 
-          $toptmp = "不好意思,只接受".implode(" ",$toptmp)."的副檔名";
-          echo "
-          <script>
-          var value = '$toptmp';
-          var basename= '$topbasename';
-          alerts(value, basename);
-          </script>";
-          break;
+            $carouselsize = basename($carousel_name,"$carousel_tmps");
+            message($carouselsize."檔案已超過2MB","$Basename");
 
-        }else if($top6_size > 2097152){//檢查檔案大小
-
-          $topsize = $top6_name."檔案已超過2MB";
-          echo "
-          <script>
-          var value = '$topsize';
-          var basename= '$topbasename';
-          alerts(value, basename);
-          </script>";
-          break;
-        }
-
-        date_default_timezone_set('Asia/Taipei');//設定時間為台北
-        $date = date("Y-m-d H:i:s");//時間
-
-        // if(file_exists($top6dir.$top6_name)){//檢查是否有相同檔案
-        //
-        //   $topname = basename($top6_name,"$top6_tmps");//去除副檔名,留檔名
-        //   $value = "資料夾裡已有名稱{$topname}的檔案";
-        //
-        //   echo "
-        //   <script>
-        //   var value = '$value';
-        //   var basename= '$topbasename';
-        //
-        //   alerts(value, basename);
-        //   </script>
-        //   ";
-        //
-        // }else {
-
-          move_uploaded_file($top6_tmp,$carouselDir.$top6_name);//把檔案移到指定dir
-
-          foreach ($display as $keys => $value) {
-            // echo "keys:".$keys;
-            $topid[$keys] = $value['id'];//取id
-            $toptimes[$keys] = $value['datetime'];//取時間
+            break;
           }
-          $displayc = count($display);//計算總共有幾筆資料
-          //時間比對
-          if (isset($_SESSION["carouselnum"]) && isset($_SESSION["carouselnums"])) {
 
-            $carouselnum = $_SESSION["carouselnum"];
-            $carouselnums = $_SESSION["carouselnums"];
+          date_default_timezone_set('Asia/Taipei');//設定時間為台北
+          $datetime = date("Y-m-d H:i:s");//時間
 
-            if ($carouselnum > ($displayc-1)) {
+          if(file_exists($carouselDir.$carousel_name)){//檢查是否有相同檔案
 
-              $_SESSION["carouselnum"] = 0;
-              $carouselnum = $_SESSION["carouselnum"];
+            $carouselName = basename($carousel_name,"$carousel_tmps");//去除副檔名,留檔名
+            message("資料夾裡已有名稱".$carouselName."的檔案",$Basename);
 
+          }else{
+
+            move_uploaded_file($carousel_tmp,$carouselDir.$carousel_name);//把檔案移到指定dir
+
+            foreach ($display as $keys => $value) {
+              // echo "keys:".$keys;
+              $carouselid[$keys] = $value["id"];//取id
+              $carouseltimes[$keys] = $value["datetime"];//取時間
             }
+            $rowsc = count($display);//計算總共有幾筆資料
 
-            if ($carouselnums > ($displayc-1)) {
-              $_SESSION["carouselnums"] = 0;
-              $carouselnums = $_SESSION["carouselnums"];
-            }
             //時間比對
-            $toptime = strtotime($toptimes["$carouselnum"]) < strtotime($toptimes["$carouselnums"]);
-            $toptimess = strtotime($toptimes["$carouselnum"]) == strtotime($toptimes["$carouselnums"]);
+            if (isset($_SESSION["carouselnum"]) && isset($_SESSION["carouselnums"])) {
 
-            if($toptime || $toptimess){
-              $test = "";
-              $topup = topup($topid["$carouselnum"],$test,$top6_name, $top6dir, $date);//更新檔名
-              $db->query($topup);//執行更新指令
-              message("上傳成功",$topbasename);
+              $carouselnum = $_SESSION["carouselnum"];
+              $carouselnums = $_SESSION["carouselnums"];
 
-            }else {
-              $topup = topup($topid["$carouselnums"],$test,$top6_name, $top6dir, $date);//更新檔名
-              $db->query($topup);//執行更新指令
-              message("上傳成功",$topbasename);
-            }
-            $_SESSION["carouselnum"]++;
-            $_SESSION["carouselnums"]++;
+              if ($carouselnum > ($rowsc-1)) {
 
-          }//if(session["topnum"])
-        // }//else
-      }//if($top6_error)
-    }//foreach
-  }//FILE["top6"]
-}
+                $_SESSION["carouselnum"] = 0;
+                $carouselnum = $_SESSION["carouselnum"];
+
+              }
+
+              if ($carouselnums > ($rowsc-1)) {
+                $_SESSION["carouselnums"] = 0;
+                $carouselnums = $_SESSION["carouselnums"];
+
+              }
+              //時間比對
+
+              $carouseltime = strtotime($carouseltimes["$carouselnum"]) < strtotime($carouseltimes["$carouselnums"]);
+              $carouseltimess = strtotime($carouseltimes["$carouselnum"]) == strtotime($carouseltimes["$carouselnums"]);
+
+              if($carouseltime || $carouseltimess){
+
+                $carouselup = CarouselUp($carousel_name, $carouselDir, $datetime, $carouselid["$carouselnum"]);//更新檔名
+                $db->query($carouselup);//執行更新指令
+                message("新增成功",$Basename);
+              }else {
+
+                $carouselup = CarouselUp($carousel_name, $carouselDir, $datetime, $carouselid["$carouselnums"]);//更新檔名
+                $db->query($carouselup);//執行更新指令
+                message("新增成功",$Basename);
+              }
+              $_SESSION["carouselnum"]++;
+              $_SESSION["carouselnums"]++;
+
+            }//if(session["carouselnum"])
+          }//else
+        }//$carousel_error
+      }//foreach
+    }//FILE["carousel"]
+  }
+
+
 
   foreach ($display as $key => $value) {
     $id = $value["id"];
@@ -281,7 +259,7 @@ if (isset($_POST["insert"])) {
     if(isset($_POST["clear"])){
       $clear = $_POST["clear"];
       for ($i=0; $i < 6; $i++) {
-        $clear = $db->query("UPDATE top SET
+        $clear = $db->query("UPDATE carousel SET
                           place='',
                           name = ' ',
                           datetime = ' '

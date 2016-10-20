@@ -12,11 +12,6 @@ if (!isset($_SESSION["carouselnum"]) && !isset($_SESSION["carouselnums"])) {
   $_SESSION["carouselnums"] = 1;
 }
 
-if (isset($_POST["update"])) {
-
-
-}
-
 if (isset($_POST["carouselIn"])) {
 
   if (isset($_FILES["carousel"])) {
@@ -114,6 +109,9 @@ if (isset($_POST["carouselIn"])) {
     }//foreach
   }//FILE["carousel"]
 }
+
+
+
 
 foreach ($display as $key => $value) {
   $id = $value["id"];

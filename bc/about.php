@@ -737,6 +737,9 @@
     <!-- 彈跳視窗 -->
     <script src="assets/js/bootbox.min.js"></script>
     <!-- 彈跳視窗 -->
+
+		<script src="../js/checkFile.js"></script><!--檢查檔案-->
+
 		<!-- ace scripts -->
 		<script src="assets/js/ace-elements.min.js"></script>
 		<script src="assets/js/ace.min.js"></script>
