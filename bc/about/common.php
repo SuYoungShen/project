@@ -75,15 +75,26 @@
     return $placeSe;
   }
 
-  function PlaceUp(){
+  function PlaceUp($place, $Introduction, $name, $path, $time){
 
     $placeUp="UPDATE `place` SET
-                            `place`=[value-1],
-                            `Introduction`=[value-2],
-                            `name`=[value-3],
-                            `path`=[value-4],
-                            `datetime`=[value-5]
-                            WHERE 1
+
+                            `Introduction`='".$Introduction."',
+                            `name`='".$name."',
+                            `path`='".$path."',
+                            `datetime`='".$time."'
+                            WHERE `place`='".$place."'
+                            ";
+    return $placeUp;
+  }
+
+  function PlaceUps($id, $place, $Introduction, $time){
+
+    $placeUp="UPDATE `place` SET
+                             `place`='".$place."',
+                            `Introduction`='".$Introduction."',
+                            `datetime`='".$time."'
+                            WHERE `id`='".$id."'
                             ";
     return $placeUp;
   }

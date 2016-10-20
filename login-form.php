@@ -56,7 +56,7 @@
 </div> -->
 <!-- <script type="text/javascript" src="bc/assets/js/validate.js"> -->
 
-</script>
+<!-- </script> -->
 <link rel="stylesheet" href="bc/assets/font-awesome/4.2.0/css/font-awesome.min.css" />
 
 <link rel="stylesheet" href="bc/assets/fonts/fonts.googleapis.com.css" />
@@ -102,10 +102,10 @@
                     <div class="space"></div>
 
                     <div class="clearfix">
-                      <label class="inline">
+                      <!-- <label class="inline">
                         <input type="checkbox" class="ace" />
                         <span class="lbl"> 記住我</span>
-                      </label>
+                      </label> -->
 
                       <button type="submit" name="login" class="width-30 pull-right btn btn-sm btn-primary">
                         <i class="ace-icon fa fa-key"></i>

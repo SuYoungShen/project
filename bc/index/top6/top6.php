@@ -7,15 +7,96 @@
   $top6dir='index/top6/images/';
   $topbasename = basename($_SERVER["PHP_SELF"]);
 
+  $toptime = $db->query(topse());
+  $display = $toptime->fetchAll();
+
 if (!isset($_SESSION["topnum"]) && !isset($_SESSION["topnums"])) {
   $_SESSION["topnum"] = 0;
   $_SESSION["topnums"] = 1;
 }
 
 
-  $toptime = $db->query(topse());
-  $rows = $toptime->fetchAll();
+  if (isset($_POST["update"])) {
 
+    $id = $_POST["id"];
+    $place_Names = $_POST["placeName"];
+
+    if(isset($_FILES["top6"])){
+
+      foreach($_FILES["top6"]["tmp_name"] as $key => $value){//檔案以陣列方式接收
+
+        $error = $_FILES["top6"]["error"][$key];//取得錯誤碼
+
+        if ($error == 4) {
+
+          date_default_timezone_set('Asia/Taipei');//設定時間為台北
+          $datetime = date("Y-m-d H:i:s");//時間
+
+          $placeUp = topups($id,$place_Names ,$datetime);//更新檔名
+          $true = $db->query($placeUp);//執行更新指令
+          if ($true) {
+            message("更新成功,但照片未更新",$Basename);
+          }else {
+            message("更新失敗s",$Basename);
+          }
+          // message("照片未更新",$Basename);
+
+        }else if ($error == 0) {
+
+          $pic_Name = $_FILES["top6"]["name"][$key];//檔案名稱
+          $pic_tmp = $_FILES["top6"]["tmp_name"][$key];//抓取檔案
+          $pic_size = $_FILES["top6"]["size"][$key];//抓取檔案大小
+          $pic_tmps = strrchr($pic_Name,".");//取得檔案的副檔名
+          $pictmp = array('.jpg', '.JPG', '.png', '.PNG'
+          , '.bmp', '.gif');//設定副檔名
+
+          if (!in_array($pic_tmps,$pictmp)) {//檢查副檔名
+
+            $pictmp = "不好意思,只接受".implode(" ",$pictmp)."的副檔名";
+            message($pictmp,$Basename);
+            break;
+
+          }else if($pic_size > 2097152){//檢查檔案大小
+
+            $picsize = basename($pic_Name,"$pic_tmps");
+            message($picsize."檔案已超過2MB",$Basename);
+
+            break;
+          }//$pic_size
+
+          date_default_timezone_set('Asia/Taipei');//設定時間為台北
+          $datetime = date("Y-m-d H:i:s");//時間
+
+          // if(file_exists($picDir.$pic_Name)){//檢查是否有相同檔案
+          //
+          //   $picName = basename($pic_Name,"$pic_tmps");//去除副檔名,留檔名
+          //   // message("資料夾裡已有名稱".$picName."的檔案",$Basename);
+          //   $placeUp = PlaceUp($place_Name,$Introduction ,$pic_Name ,$picDir, $datetime);//更新檔名
+          //   $true = $db->query($placeUp);//執行更新指令
+          //   if ($true) {
+          //     message("更新成功",$Basename);
+          //   }else {
+          //     message("更新失敗",$Basename);
+          //   }
+          // }else{
+
+          move_uploaded_file($pic_tmp,$top6dir.$pic_Name);//把檔案移到指定dir
+          $placeUp = topup($id,$place_Names ,$pic_Name ,$picDir, $datetime);//更新檔名
+          $true = $db->query($placeUp);//執行更新指令
+          if ($true) {
+            message("更新成功",$Basename);
+          }else {
+            message("更新失敗",$Basename);
+          }
+          // }//else
+        }//$error == 0
+      }//foreach
+    }//$_FILES["picName"]
+
+
+  }
+
+if (isset($_POST["insert"])) {
 
   if (isset($_FILES["top6"])) {
 
@@ -71,89 +152,78 @@ if (!isset($_SESSION["topnum"]) && !isset($_SESSION["topnums"])) {
         date_default_timezone_set('Asia/Taipei');//設定時間為台北
         $date = date("Y-m-d H:i:s");//時間
 
-        if(file_exists($top6dir.$top6_name)){//檢查是否有相同檔案
-
-          $topname = basename($top6_name,"$top6_tmps");//去除副檔名,留檔名
-          $value = "資料夾裡已有名稱{$topname}的檔案";
-
-          echo "
-          <script>
-          var value = '$value';
-          var basename= '$topbasename';
-
-          alerts(value, basename);
-          </script>
-          ";
-
-        }else {
+        // if(file_exists($top6dir.$top6_name)){//檢查是否有相同檔案
+        //
+        //   $topname = basename($top6_name,"$top6_tmps");//去除副檔名,留檔名
+        //   $value = "資料夾裡已有名稱{$topname}的檔案";
+        //
+        //   echo "
+        //   <script>
+        //   var value = '$value';
+        //   var basename= '$topbasename';
+        //
+        //   alerts(value, basename);
+        //   </script>
+        //   ";
+        //
+        // }else {
 
           move_uploaded_file($top6_tmp,$top6dir.$top6_name);//把檔案移到指定dir
 
-          foreach ($rows as $keys => $value) {
+          foreach ($display as $keys => $value) {
             // echo "keys:".$keys;
-            $topid[$keys] = $value[0];//取id
-            $toptimes[$keys] = $value[3];//取時間
+            $topid[$keys] = $value['id'];//取id
+            $toptimes[$keys] = $value['datetime'];//取時間
           }
-          $rowsc = count($rows);//計算總共有幾筆資料
+          $displayc = count($display);//計算總共有幾筆資料
           //時間比對
           if (isset($_SESSION["topnum"]) && isset($_SESSION["topnums"])) {
-
 
             $topnum = $_SESSION["topnum"];
             $topnums = $_SESSION["topnums"];
 
-            if ($topnum > ($rowsc-1)) {
+            if ($topnum > ($displayc-1)) {
 
               $_SESSION["topnum"] = 0;
               $topnum = $_SESSION["topnum"];
 
             }
 
-            if ($topnums > ($rowsc-1)) {
+            if ($topnums > ($displayc-1)) {
               $_SESSION["topnums"] = 0;
               $topnums = $_SESSION["topnums"];
-
             }
             //時間比對
             $toptime = strtotime($toptimes["$topnum"]) < strtotime($toptimes["$topnums"]);
             $toptimess = strtotime($toptimes["$topnum"]) == strtotime($toptimes["$topnums"]);
 
             if($toptime || $toptimess){
-
-              $topup = topup($top6_name, $top6dir, $date, $topid["$topnum"]);//更新檔名
+              $test = "";
+              $topup = topup($topid["$topnum"],$test,$top6_name, $top6dir, $date);//更新檔名
               $db->query($topup);//執行更新指令
               message("上傳成功",$topbasename);
+
             }else {
-
-              $topup = topup($top6_name, $top6dir, $date, $topid["$topnums"]);//更新檔名
+              $topup = topup($topid["$topnums"],$test,$top6_name, $top6dir, $date);//更新檔名
               $db->query($topup);//執行更新指令
               message("上傳成功",$topbasename);
-
-
             }
             $_SESSION["topnum"]++;
             $_SESSION["topnums"]++;
 
           }//if(session["topnum"])
-        }//else
+        // }//else
       }//if($top6_error)
     }//foreach
   }//FILE["top6"]
+}
 
+  foreach ($display as $key => $value) {
+    $id = $value["id"];
+    $placeName = $value["place"];
+    $picName = $value["name"];
+    $picDir = $value["path"];
 
-
-
-
-  // echo "See=".$_SESSION["topnums"]."<br>";
-  // echo "SESSION=".$_SESSION["topnum"]."<br>";
-
-$topse = $db->query(topse());//查詢top資料表
-
-$row = $topse->fetchAll();
-  foreach ($row as $key => $value) {
-
-    $picName = $value[1];
-    $picDir = $value[2];
     if (!empty($picName) && !empty($picDir)) {
 			$display = $picDir.$picName;
 		}else {
@@ -162,19 +232,19 @@ $row = $topse->fetchAll();
 
     echo "
     <li>
-      <a href='$display' title='$picName' data-rel='colorbox'>
+      <a href='$display' title='$placeName' data-rel='colorbox'>
         <img width='150' height='150' alt='150x150' src='$display'/>
         <div class='text'>
-          <div class='inner'>$picName</div>
+          <div class='inner'>$placeName</div>
         </div>
       </a>
 
       <div class='tools tools-top'>
-        <a href='#'>
+        <a href='#edit' data-toggle='modal' onclick='Edit(\"$id\",\"$placeName\",\"$picDir\",\"$picName\")'>
           <i class='ace-icon fa fa-pencil'></i>
         </a>
 
-        <a href='#'>
+        <a href='#' onclick='bootboxs(\"$id\")'>
           <i class='ace-icon fa fa-times red'></i>
         </a>
       </div>
@@ -211,6 +281,7 @@ $row = $topse->fetchAll();
       $clear = $_POST["clear"];
       for ($i=0; $i < 6; $i++) {
         $clear = $db->query("UPDATE top SET
+                          place='',
                           name = ' ',
                           datetime = ' '
                         WHERE
@@ -220,6 +291,7 @@ $row = $topse->fetchAll();
 
       $_SESSION["topnum"] = 0;
       $_SESSION["topnums"] = 1;
+      message("重設成功",$Basename);
 
     }
 $db = null;

@@ -9,9 +9,11 @@ $topse = $db->query(topse());//查詢top資料表
 
 $row = $topse->fetchAll();
   foreach ($row as $key => $value) {
-
-    $picName = $value[1];
-
+    $placeName = $value['place'];
+    $picName = $value['name'];
+    if (empty($placeName)) {
+          $placeName = "燒等補資料";
+        }
     if (!empty($picName)) {
 			$display = $picDir.$picName;
 		}else {
@@ -19,6 +21,7 @@ $row = $topse->fetchAll();
 		}
 
     echo "
+
     <li>
       <div class='preview'>
         <img src='$display'>
@@ -29,15 +32,18 @@ $row = $topse->fetchAll();
         </div>
       </div>
       <div class='desc'>
-        <h5>$picName</h5>
+        <h5>$placeName</h5>
       </div>
       <div id='modal-$key' class='modal hide fade'>
-        <a class='close-modal' href='javascript:;' data-dismiss='modal' aria-hidden='true'><i class='icon-remove'></i></a>
+        <a class='close-modal' href='javascript:;' data-dismiss='modal' aria-hidden='true'></a>
         <div class='modal-body'>
           <img src='$display' alt=' '>
+
+
         </div>
       </div>
     </li>
+
     ";
 
   }

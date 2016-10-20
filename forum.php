@@ -23,7 +23,7 @@
   <?php
     include("ico.php");
    ?>
-   
+
 </head>
 
 <body>
@@ -88,7 +88,7 @@
         <div class="span6">
           <ul class="breadcrumb pull-right">
             <li>
-              <a href="index.html">首頁</a>
+              <a href="index.php">首頁</a>
               <span class="divider">/</span>
             </li>
 

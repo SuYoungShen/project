@@ -91,6 +91,7 @@
           if ($level == "member") {
             $_SESSION["login_account"] = $login_account;
             $_SESSION["login_password"] = $login_password;
+
             header("Location:index.php");
           }
       }else {

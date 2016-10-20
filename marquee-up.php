@@ -5,12 +5,13 @@
   	$dbname="top";
   	include("bc/mysql/connect.php");//top資料表
   	include("bc/index/top6/common.php");
-
+    $picDir = "bc/index/top6/images/";
+    
   	$topse = $db->query(topse());
   	$row=$topse->fetchAll();
   	foreach ($row as $key => $value) {
-  		$picName = $value[1];
-  		$picDir = $value[2];
+  		$picName = $value["name"];
+  		// $picDir = $value["path"];
   		if (!empty($picName) && !empty($picDir)) {
   			$display = $picDir.$picName;
   		}else {

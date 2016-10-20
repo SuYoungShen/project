@@ -10,7 +10,7 @@
                     WHERE
                       id = '".$key."'
                     ";
-                    
+
     return $sliderup;
   }
 
@@ -28,6 +28,17 @@
                           (
                             [value-1],[value-2],[value-3],[value-4]
                           )";
+  }
+
+  function message($value,$basename){
+    echo "
+      <script>
+      var value = '$value';
+      var basename= '$basename';
+
+      alerts(value, basename);
+      </script>
+    ";
   }
 
  ?>

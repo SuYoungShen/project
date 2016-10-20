@@ -34,9 +34,9 @@
           <span class="icon-bar"></span>
           <span class="icon-bar"></span>
         </a>
-        <!--
-        <a id="logo" class="pull-left" href="index.html"></a>
-      -->
+
+        <a id="logo" class="pull-left" href="index.php"></a>
+
       <div class="nav-collapse collapse pull-right">
         <form class="navbar-search pull-left" action="" method="">
           <input type="text" class="search-query" placeholder="要去哪ㄜ...?">
@@ -84,10 +84,10 @@
        </div>
        <div class="span6">
          <ul class="breadcrumb pull-right">
-           <li><a href="index.html">首頁</a>
+           <li><a href="index.php">首頁</a>
              <span class="divider">/</span>
            </li>
-           <li class="active">景點</li>
+           <li class="active">景點首頁</li>
          </ul>
        </div>
      </div>

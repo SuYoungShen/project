@@ -16,8 +16,8 @@
 	$topse = $db->query(topse());
 	$row=$topse->fetchAll();
 	foreach ($row as $key => $value) {
-		$picName = $value[1];
-		$picDir = $value[2];
+		$picName = $value["name"];
+		$picDir = $value["path"];
 		if (!empty($picName) && !empty($picDir)) {
 			$display = $picDir.$picName;
 		}else {

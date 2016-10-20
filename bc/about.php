@@ -37,10 +37,12 @@
 		<script src="http://static.runoob.com/assets/jquery-validation-1.14.0/dist/localization/messages_zh.js"></script>
 		<script type="text/javascript" src="about/place/js/fun.js"></script>
 		<!-- 表單驗證 -->
+		<script type="text/javascript" src="about/carousel/js/fun.js"></script>
 
     <!-- 刪除 -->
     <script type="text/javascript" src="about/place/js/delete.js"></script>
     <!-- 刪除 -->
+
 
 		<!-- 登出時間 -->
 		<script type="text/javascript" src="login/js/login_out_time.js"></script>
@@ -313,7 +315,7 @@
 
 												<label>
 													<br/>
-													<button class="btn btn-info" type="submit">
+													<button class="btn btn-info" name="carouselIn" type="submit">
 														<i class="ace-icon fa fa-check bigger-110"></i>
 														送出
 													</button>
@@ -536,7 +538,7 @@
 										<button type="button" class="close" data-dismiss="modal" aria-hidden="true">
 											<span class="white">&times;</span>
 										</button>
-										新增地點
+										更新地點
 									</div>
 								</div>
 
@@ -546,18 +548,21 @@
 										<form class="form-horizontal" name="place"  role="form" method="post"
 														enctype="multipart/form-data">
 											<div class="form-group">
-												<label class="col-sm-3 control-label no-padding-right"  for="form-field-1"> 地點名	 </label>
+
+												<label class="col-sm-3 control-label no-padding-right"  for="form-field-1"> 地區名	 </label>
 
 												<div class="col-sm-9">
-													<input type="text" id="placeName" name="placeName" readonly="readonly" placeholder="地點名" class="col-xs-10 col-sm-5" required="required"/>
+													<input type="hidden" id="id" name="id"/>
+
+													<input type="text" id="placeName" name="placeName" placeholder="地點名" class="col-xs-10 col-sm-5" required="required"/>
 												</div>
 											</div>
 
 											<div class="form-group">
-												<label class="col-sm-3 control-label no-padding-right" for="form-field-1-1"> 地點介紹 </label>
+												<label class="col-sm-3 control-label no-padding-right" for="form-field-1-1"> 地區介紹 </label>
 
 												<div class="col-sm-9">
-													<input type="text" id="Introduction" name="Introduction" placeholder="景點介紹" class="col-xs-10 col-sm-5" required="required"/>
+													<textarea type="text" id="Introduction" name="Introduction" placeholder="景點介紹" class="col-xs-10 col-sm-5" required="required"/></textarea>
 												</div>
 											</div>
 
@@ -586,7 +591,6 @@
 														<i class="ace-icon fa fa-undo bigger-110"></i>
 														重填
 													</button>
-
 												</div>
 											</div>
 										</form>
@@ -596,16 +600,71 @@
 						</div><!-- /.modal-dialog -->
 					</div><!-- place ENDS -->
 
+					<!--place-->
+					<div id="edits" class="modal fade" tabindex="-1">
+						<div class="modal-dialog">
+							<div class="modal-content">
+								<div class="modal-header no-padding">
+									<div class="table-header">
+										<button type="button" class="close" data-dismiss="modal" aria-hidden="true">
+											<span class="white">&times;</span>
+										</button>
+										更新地點
+									</div>
+								</div>
 
+								<div class="row">
+									<div class="col-xs-12">
+										<!-- PAGE CONTENT BEGINS -->
+										<form class="form-horizontal" name="place"  role="form" method="post"
+														enctype="multipart/form-data">
+											<div class="form-group">
 
+												<label class="col-sm-3 control-label no-padding-right"  for="form-field-1"> 地區名	 </label>
+
+												<div class="col-sm-9">
+													<input type="hidden" id="id" name="id"/>
+
+													<input type="text" id="placeNames" name="placeName" placeholder="地點名" class="col-xs-10 col-sm-5" required="required"/>
+												</div>
+											</div>
+
+											<div class="form-group">
+												<label class="col-sm-3 control-label no-padding-right" for="form-field-1-1"> 上傳圖檔 </label>
+
+												<div class="col-sm-8">
+													<input multiple="multiple" name="picName[]" type="file" id="id-input-file-6" />
+													<!-- <input type="text" name="name" id="pic" value=""> -->
+													<span id="pics"></span>
+												</div>
+
+											</div>
+
+											<div class="space-4"></div>
+
+											<div class="clearfix form-actions">
+												<div class="col-md-offset-3 col-md-9">
+													<button class="btn btn-info" name="update" type="submit">
+														<i class="ace-icon fa fa-check bigger-110"></i>
+														更新
+													</button>
+
+													&nbsp; &nbsp; &nbsp;
+													<button class="btn" type="reset">
+														<i class="ace-icon fa fa-undo bigger-110"></i>
+														重填
+													</button>
+												</div>
+											</div>
+										</form>
+									</div><!-- /.col -->
+								</div><!-- /.row -->
+							</div><!-- /.modal-content -->
+						</div><!-- /.modal-dialog -->
+					</div><!-- place ENDS -->
 
 				</div><!-- /.main-content-inner -->
 			</div><!-- /.main-content -->
-
-
-
-
-
 
 			<div class="footer">
 				<div class="footer-inner">
@@ -642,7 +701,9 @@
 		</script>
 
 		<!-- <![endif]-->
-
+		<!-- 彈跳視窗 -->
+		<script src="assets/js/bootbox.min.js"></script>
+		<!-- 彈跳視窗 -->
 		<!--[if IE]>
 <script type="text/javascript">
  window.jQuery || document.write("<script src='assets/js/jquery1x.min.js'>"+"<"+"/script>");
@@ -1179,6 +1240,37 @@
 				});
 
 				$('#id-input-file-5').ace_file_input({
+					style:'well',
+					btn_choose:'Drop files here or click to choose',
+					btn_change:null,
+					no_icon:'ace-icon fa fa-cloud-upload',
+					droppable:true,
+					thumbnail:'small'//large | fit
+					//,icon_remove:null//set null, to hide remove/reset button
+					/**,before_change:function(files, dropped) {
+						//Check an example below
+						//or examples/file-upload.html
+						return true;
+					}*/
+					/**,before_remove : function() {
+						return true;
+					}*/
+					,
+					preview_error : function(filename, error_code) {
+						//name of the file that failed
+						//error_code values
+						//1 = 'FILE_LOAD_FAILED',
+						//2 = 'IMAGE_LOAD_FAILED',
+						//3 = 'THUMBNAIL_FAILED'
+						//alert(error_code);
+					}
+
+				}).on('change', function(){
+					//console.log($(this).data('ace_input_files'));
+					//console.log($(this).data('ace_input_method'));
+				});
+
+				$('#id-input-file-6').ace_file_input({
 					style:'well',
 					btn_choose:'Drop files here or click to choose',
 					btn_change:null,

@@ -20,7 +20,7 @@ $display = $carouselSe->fetchAll();//顯示
 
 foreach ($display as $key => $value) {
 //
-  $picNames = $value[1];
+  $picNames = $value["name"];
   $display = $picDir.$picNames;
 //
 //   // if (!empty($picNames)) {
@@ -35,7 +35,7 @@ foreach ($display as $key => $value) {
   echo "
      <div>
        <img src='$display'/>
-       <span class='info'>$key</span>
+       <span class='info'>高雄</span>
      </div>
    ";
   // echo "

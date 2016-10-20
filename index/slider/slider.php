@@ -9,9 +9,12 @@ $sliderdir='bc/index/slider/images/';//slider放毒片路徑
 
 
 foreach ($display as $key => $value) {
+
   $picName = $value[1];
   $picDir = $value[2];
+
   $picNames = basename($picName,".jpg");
+
   if (!empty($picName)) {
     $displays = $sliderdir.$picName;
   }else {
@@ -19,16 +22,21 @@ foreach ($display as $key => $value) {
   }
 
   echo "
-  <div class='sl-slide item$key' data-orientation='horizontal' data-slice1-rotation='-25' data-slice2-rotation='-25' data-slice1-scale='2' data-slice2-scale='2'>
-    <div class='sl-slide-inner'>
-      <div class='container'>
-        <img class='pull-right' src='$displays' alt='' height='520' width='950'/>
-        <h2>$picNames</h2>
-        <!-- <h3 class='gap'>Tincidunt condimentum eros</h3>
-        <a class='btn btn-large btn-transparent' href='#'>Learn More</a> -->
+
+    <div class='sl-slide item$key' data-orientation='horizontal' data-slice1-rotation='-25' data-slice2-rotation='-25' data-slice1-scale='2' data-slice2-scale='2'>
+      <div class='sl-slide-inner'>
+        <div class='container' style='max-height:445px'>
+
+
+
+              <img class='pull-right' width='950' height='445' src='$displays' alt=''/>
+
+            <!-- <h3 class='gap'>Tincidunt condimentum eros</h3>
+            <a class='btn btn-large btn-transparent' href='#'>Learn More</a> -->
+
+        </div>
       </div>
     </div>
-  </div>
   ";
 }
 

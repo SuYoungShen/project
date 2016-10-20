@@ -6,17 +6,21 @@
   $display = $placeSe->fetchAll();
   $picDir = "bc/about/place/images/";
 
+echo "<tr>";
   foreach ($display as $key => $value) {
 
-    $place_Name=$value[0];//地區名
-    $Introduction=$value[1];//地區介紹
-    $pic_name=$value[2];//照片名
-    $datetime=$value[4];//時間
+    $place_Name=$value["place"];//地區名
+    $Introduction=$value["Introduction"];//地區介紹
+    $pic_name=$value["name"];//照片名
+    $datetime=$value["datetime"];//時間
 
+    if (empty($place_Name)) {
+      $place_Name="暫無資料";
+    }
     echo "
-     <tr>
+
       <td>
-        <a data-toggle='modal' href='#modal-$key' >
+        <a data-toggle='modal' href='#modal-$key'>
           $place_Name
         </a>
       </td>
@@ -31,12 +35,10 @@
           <p>$Introduction</p>
         </div>
       </div>
-    </tr>
     ";
-
   }
 
-
+echo "</tr>";
   $db=null;
 
  ?>

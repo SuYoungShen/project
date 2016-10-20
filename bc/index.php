@@ -34,6 +34,8 @@
 		<script type="text/javascript" src="assets/js/alert.js"></script>
 		<!-- alert -->
 
+		<script type="text/javascript" src="index/top6/js/fun.js"></script>
+
 		<!-- ace styles -->
 		<link rel="stylesheet" href="assets/css/ace.min.css" class="ace-main-stylesheet" id="main-ace-style" />
 
@@ -296,7 +298,7 @@
 									<div class="col-sm-4">
 										<div class="widget-box">
 											<div class="widget-header">
-												<h4 class="widget-title">上傳輪播照片</h4>
+												<h4 class="widget-title">上TOP6照片</h4>
 
 												<div class="widget-toolbar">
 													<a href="#" data-action="collapse">
@@ -322,7 +324,7 @@
 
 														<label>
 															<br/>
-															<button class="btn btn-info" type="submit" >
+															<button class="btn btn-info" name="insert" type="submit" >
 																<i class="ace-icon fa fa-check bigger-110"></i>
 																送出
 															</button>
@@ -387,6 +389,70 @@
 		</div>
 	</div><!-- /.main-content -->
 
+	<!--place-->
+	<div id="edit" class="modal fade" tabindex="-1">
+		<div class="modal-dialog">
+			<div class="modal-content">
+				<div class="modal-header no-padding">
+					<div class="table-header">
+						<button type="button" class="close" data-dismiss="modal" aria-hidden="true">
+							<span class="white">&times;</span>
+						</button>
+						照片資訊
+					</div>
+				</div>
+
+				<div class="row">
+					<div class="col-xs-12">
+						<!-- PAGE CONTENT BEGINS -->
+						<form class="form-horizontal" name="place"  role="form" method="post"
+										enctype="multipart/form-data">
+							<div class="form-group">
+
+								<label class="col-sm-3 control-label no-padding-right"  for="form-field-1"> 地點名	 </label>
+
+								<div class="col-sm-9">
+									<input type="hidden" id="id" name="id"/>
+
+									<input type="text" id="placeName" name="placeName" placeholder="地點名" class="col-xs-10 col-sm-5" required="required"/>
+								</div>
+							</div>
+							<div class="form-group">
+								<label class="col-sm-3 control-label no-padding-right" for="form-field-1-1"> 上傳圖檔 </label>
+
+								<div class="col-sm-8">
+									<input multiple="multiple" name="top6[]" type="file" id="id-input-file-5" />
+									<!-- <input type="text" name="name" id="pic" value=""> -->
+									<span id="pic"></span>
+								</div>
+
+							</div>
+
+							<div class="space-4"></div>
+
+							<div class="clearfix form-actions">
+								<div class="col-md-offset-3 col-md-9">
+									<button class="btn btn-info" name="update" type="submit">
+										<i class="ace-icon fa fa-check bigger-110"></i>
+										更新
+									</button>
+
+									&nbsp; &nbsp; &nbsp;
+									<button class="btn" type="reset">
+										<i class="ace-icon fa fa-undo bigger-110"></i>
+										重填
+									</button>
+
+								</div>
+							</div>
+						</form>
+					</div><!-- /.col -->
+				</div><!-- /.row -->
+			</div><!-- /.modal-content -->
+		</div><!-- /.modal-dialog -->
+	</div><!-- place ENDS -->
+
+
 			<div class="footer">
 				<div class="footer-inner">
 					<div class="footer-content">
@@ -421,6 +487,10 @@
 		<script type="text/javascript">
 			window.jQuery || document.write("<script src='assets/js/jquery.min.js'>"+"<"+"/script>");
 		</script>
+
+		<!-- 彈跳視窗 -->
+		<script src="assets/js/bootbox.min.js"></script>
+		<!-- 彈跳視窗 -->
 
 		<!-- <![endif]-->
 
@@ -684,6 +754,36 @@
 					//console.log($(this).data('ace_input_method'));
 				});
 
+				$('#id-input-file-5').ace_file_input({
+					style:'well',
+					btn_choose:'Drop files here or click to choose',
+					btn_change:null,
+					no_icon:'ace-icon fa fa-cloud-upload',
+					droppable:true,
+					thumbnail:'small'//large | fit
+					//,icon_remove:null//set null, to hide remove/reset button
+					/**,before_change:function(files, dropped) {
+						//Check an example below
+						//or examples/file-upload.html
+						return true;
+					}*/
+					/**,before_remove : function() {
+						return true;
+					}*/
+					,
+					preview_error : function(filename, error_code) {
+						//name of the file that failed
+						//error_code values
+						//1 = 'FILE_LOAD_FAILED',
+						//2 = 'IMAGE_LOAD_FAILED',
+						//3 = 'THUMBNAIL_FAILED'
+						//alert(error_code);
+					}
+
+				}).on('change', function(){
+					//console.log($(this).data('ace_input_files'));
+					//console.log($(this).data('ace_input_method'));
+				});
 				//$('#id-input-file-3')
 				//.ace_file_input('show_file_list', [
 					//{type: 'image', name: 'name of image', path: 'http://path/to/image/for/preview'},

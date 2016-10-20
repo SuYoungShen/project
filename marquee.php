@@ -17,7 +17,8 @@
 	$row=$topse->fetchAll();
 	$picDir = "bc/index/top6/images/";
 	foreach ($row as $key => $value) {
-		$picName = $value[1];
+		$picName = $value["name"];
+		// $picDir = $value["path"];
 
 		if (!empty($picName)) {
 			$display = $picDir.$picName;

@@ -13,7 +13,8 @@ $(document).ready(function() {
 
 });
 
-function Edit(placeName, Introduction, picDir, pic_name) {
+function Edit(id, placeName, Introduction, picDir, pic_name) {
+  document.getElementById("id").value = id;
   document.getElementById("placeName").value = placeName;
   document.getElementById("Introduction").value = Introduction;
   document.getElementById("pic").innerHTML = "<img src='"+picDir+pic_name+"'  class='col-xs-8'>";

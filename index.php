@@ -27,7 +27,7 @@
 
     <!-- 自行填入 -->
     <script type="text/javascript" src="js/jquery-1.11.0.min.js"></script>
-    <script type="text/javascript" src="js/registered.js"></script>
+    <script type="text/javascript" src="login/js/registered.js"></script>
     <!-- 自行填入 -->
 
     <!--[if lte IE 9]>
@@ -105,10 +105,15 @@
     <section id="slide-show">
       <div id="slider" class="sl-slider-wrapper">
         <!--Slider Items-->
+        <!-- <div class="span12"> -->
         <div class="sl-slider">
+
+
+
           <?php
             include("index/slider/slider.php");
           ?>
+          <!-- </div> -->
         </div>
         <!--/Slider Items-->
 
@@ -125,6 +130,7 @@
 
 <!--熱門排行-->
 <section id="recent-works">
+
   <div class="container">
     <div class="center">
       <h3>TOP6</h3>
@@ -132,6 +138,10 @@
     </div>
     <div class="gap"></div>
     <ul class="gallery col-4">
+      <div class="row-fluid">
+
+
+
       <!--Item 1-->
       <?php
       include("index/top6/top6.php");
@@ -160,6 +170,9 @@
         // }
 
        ?>
+
+
+       </div>
       </ul>
     </div>
 

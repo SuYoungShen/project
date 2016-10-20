@@ -13,7 +13,7 @@
   if (!isset($AboutDisplays[0])) {
     $AboutDisplays[0]="暫無資料";
   }
-  echo $AboutDisplays[0];
+  echo $AboutDisplays["about"];
 
 
   // if (isset($displays[0])) {

@@ -41,7 +41,7 @@
 
 	<!-- ace settings handler -->
 	<script src="assets/js/ace-extra.min.js"></script>
-	
+
 	<!-- 登出時間 -->
 	<script type="text/javascript" src="login/js/login_out_time.js"></script>
 	<!-- 登出時間 -->
@@ -798,7 +798,7 @@
 			$("input[name='DeViewpoint[]']").each(function() {
 				AllDelete.push($(this).val());
 			});
-			alert(AllDelete);
+			// alert(AllDelete);
 			$(this).closest('table').find('tbody > tr').each(function(){
 				var row = this;
 				// $("input[name='DeViewpoint[]']").each(function() {

@@ -8,7 +8,7 @@ function Timeout(){
 
 function ReCalculate(){
   clearTimeout(oTimerId);
-  oTimerId = setTimeout('Timeout()', 1000);//以毫秒為計算1秒=1000毫秒
+  oTimerId = setTimeout('Timeout()', 6000000);//以毫秒為計算1秒=1000毫秒
 }
 
 document.onmousedown = ReCalculate;

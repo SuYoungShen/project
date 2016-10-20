@@ -6,80 +6,165 @@
   $display = $placeSe->fetchAll();
   $picDir = "about/place/images/";
 
+
+
+    if(isset($_POST["placeName"]) && isset($_POST["Introduction"])) {
+  if (isset($_POST["update"])) {
+      $id = $_POST["id"];
+      $place_Names = $_POST["placeName"];
+      $Introductions = $_POST["Introduction"];
+
+    if(isset($_FILES["picName"])){
+
+      foreach($_FILES["picName"]["tmp_name"] as $key => $value){//檔案以陣列方式接收
+
+        $error = $_FILES["picName"]["error"][$key];//取得錯誤碼
+
+        if ($error == 4) {
+
+          date_default_timezone_set('Asia/Taipei');//設定時間為台北
+          $datetime = date("Y-m-d H:i:s");//時間
+
+          $placeUp = PlaceUps($id,$place_Names,$Introductions ,$datetime);//更新檔名
+          $true = $db->query($placeUp);//執行更新指令
+          if ($true) {
+            message("更新成功,但照片未更新",$Basename);
+          }else {
+            message("更新失敗s",$Basename);
+          }
+          // message("照片未更新",$Basename);
+
+        }else if ($error == 0) {
+
+          $pic_Name = $_FILES["picName"]["name"][$key];//檔案名稱
+          $pic_tmp = $_FILES["picName"]["tmp_name"][$key];//抓取檔案
+          $pic_size = $_FILES["picName"]["size"][$key];//抓取檔案大小
+          $pic_tmps = strrchr($pic_Name,".");//取得檔案的副檔名
+          $pictmp = array('.jpg', '.JPG', '.png', '.PNG'
+          , '.bmp', '.gif');//設定副檔名
+
+          if (!in_array($pic_tmps,$pictmp)) {//檢查副檔名
+
+            $pictmp = "不好意思,只接受".implode(" ",$pictmp)."的副檔名";
+            message($pictmp,$Basename);
+            break;
+
+          }else if($pic_size > 2097152){//檢查檔案大小
+
+            $picsize = basename($pic_Name,"$pic_tmps");
+            message($picsize."檔案已超過2MB",$Basename);
+
+            break;
+          }//$pic_size
+
+          date_default_timezone_set('Asia/Taipei');//設定時間為台北
+          $datetime = date("Y-m-d H:i:s");//時間
+
+          // if(file_exists($picDir.$pic_Name)){//檢查是否有相同檔案
+          //
+          //   $picName = basename($pic_Name,"$pic_tmps");//去除副檔名,留檔名
+          //   // message("資料夾裡已有名稱".$picName."的檔案",$Basename);
+          //   $placeUp = PlaceUp($place_Name,$Introduction ,$pic_Name ,$picDir, $datetime);//更新檔名
+          //   $true = $db->query($placeUp);//執行更新指令
+          //   if ($true) {
+          //     message("更新成功",$Basename);
+          //   }else {
+          //     message("更新失敗",$Basename);
+          //   }
+          // }else{
+
+            move_uploaded_file($pic_tmp,$picDir.$pic_Name);//把檔案移到指定dir
+            $placeUp = PlaceUp($place_Name,$Introduction ,$pic_Name ,$picDir, $datetime);//更新檔名
+            $true = $db->query($placeUp);//執行更新指令
+            if ($true) {
+              message("更新成功",$Basename);
+            }else {
+              message("更新失敗",$Basename);
+            }
+          // }//else
+        }//$error == 0
+      }//foreach
+    }//$_FILES["picName"]
+  }
+}
+
+
+if (isset($_POST["insert"])) {
+
   if (isset($_POST["placeName"]) && isset($_POST["Introduction"])) {
 
     $place_Name = $_POST["placeName"];
     $Introduction = $_POST["Introduction"];
 
-    if (isset($_POST["insert"])) {
-      if(isset($_FILES["picName"])){
 
-        foreach($_FILES["picName"]["tmp_name"] as $key => $value){//檔案以陣列方式接收
+    if(isset($_FILES["picName"])){
 
-          $error = $_FILES["picName"]["error"][$key];//取得錯誤碼
+      foreach($_FILES["picName"]["tmp_name"] as $key => $value){//檔案以陣列方式接收
 
-          if ($error == 4) {
+        $error = $_FILES["picName"]["error"][$key];//取得錯誤碼
 
-            message("照片還沒傳",$Basename);
+        if ($error == 4) {
 
-          }else if ($error == 0) {
+          message("照片還沒傳",$Basename);
 
-            $pic_Name = $_FILES["picName"]["name"][$key];//檔案名稱
-            $pic_tmp = $_FILES["picName"]["tmp_name"][$key];//抓取檔案
-            $pic_size = $_FILES["picName"]["size"][$key];//抓取檔案大小
-            $pic_tmps = strrchr($pic_Name,".");//取得檔案的副檔名
-            $pictmp = array('.jpg', '.JPG', '.png', '.PNG'
-            , '.bmp', '.gif');//設定副檔名
+        }else if ($error == 0) {
 
-            if (!in_array($pic_tmps,$pictmp)) {//檢查副檔名
+          $pic_Name = $_FILES["picName"]["name"][$key];//檔案名稱
+          $pic_tmp = $_FILES["picName"]["tmp_name"][$key];//抓取檔案
+          $pic_size = $_FILES["picName"]["size"][$key];//抓取檔案大小
+          $pic_tmps = strrchr($pic_Name,".");//取得檔案的副檔名
+          $pictmp = array('.jpg', '.JPG', '.png', '.PNG'
+          , '.bmp', '.gif');//設定副檔名
 
-              $pictmp = "不好意思,只接受".implode(" ",$pictmp)."的副檔名";
-              message($pictmp,$Basename);
-              break;
+          if (!in_array($pic_tmps,$pictmp)) {//檢查副檔名
 
-            }else if($pic_size > 2097152){//檢查檔案大小
+            $pictmp = "不好意思,只接受".implode(" ",$pictmp)."的副檔名";
+            message($pictmp,$Basename);
+            break;
 
-              $picsize = basename($pic_Name,"$pic_tmps");
-              message($picsize."檔案已超過2MB",$Basename);
+          }else if($pic_size > 2097152){//檢查檔案大小
 
-              break;
-            }//$pic_size
+            $picsize = basename($pic_Name,"$pic_tmps");
+            message($picsize."檔案已超過2MB",$Basename);
 
-            date_default_timezone_set('Asia/Taipei');//設定時間為台北
-            $datetime = date("Y-m-d H:i:s");//時間
+            break;
+          }//$pic_size
 
-            if(file_exists($picDir.$pic_Name)){//檢查是否有相同檔案
-
-              $picName = basename($pic_Name,"$pic_tmps");//去除副檔名,留檔名
-              message("資料夾裡已有名稱".$picName."的檔案",$Basename);
-
-            }else{
-
-              move_uploaded_file($pic_tmp,$picDir.$pic_Name);//把檔案移到指定dir
-              $placeIn = PlaceIn($place_Name,$Introduction ,$pic_Name ,$picDir, $datetime);//更新檔名
-              $true = $db->query($placeIn);//執行更新指令
-              if ($true) {
-                message("新增成功",$Basename);
-              }else {
-                message("新增失敗",$Basename);
-              }
-            }//else
-          }//$error == 0
-        }//foreach
-      }//$_FILES["picName"]
+          date_default_timezone_set('Asia/Taipei');//設定時間為台北
+          $datetime = date("Y-m-d H:i:s");//時間
+          //
+          // if(file_exists($picDir.$pic_Name)){//檢查是否有相同檔案
+          //
+          //   $picName = basename($pic_Name,"$pic_tmps");//去除副檔名,留檔名
+          //   message("資料夾裡已有名稱".$picName."的檔案",$Basename);
+          //
+          // }else{
 
 
-    }//$_POST["insert"]
-  }//isset($_POST["placeName"])
+          move_uploaded_file($pic_tmp,$picDir.$pic_Name);//把檔案移到指定dir
+          $placeIn = PlaceIn($place_Name,$Introduction ,$pic_Name ,$picDir, $datetime);//更新檔名
+          $true = $db->query($placeIn);//執行更新指令
+          if ($true) {
+            message("新增成功",$Basename);
+          }else {
+            message("新增失敗",$Basename);
+          }
+          // }//else
+        }//$error == 0
+      }//foreach
+    }//$_FILES["picName"]
+  }//$_POST["insert"]
+}//isset($_POST["placeName"])
+
 
 
   foreach ($display as $key => $value) {
-
-    $place_Name=$place_Names[$key]=$value[0];
-    $Introduction=$value[1];
-    $pic_name=$value[2];
-    $picDir=$value[3];
-    $datetime=$value[4];
+    $id = $value["id"];
+    $place_Name=$place_Names[$key]=$value["place"];
+    $Introduction=$value["Introduction"];
+    $pic_name=$value["name"];
+    $picDir=$value["path"];
+    $datetime=$value["datetime"];
 
     echo "
       <tr>
@@ -101,10 +186,9 @@
 
         <td></td>
 
-
         <td>
           <div class='hidden-sm hidden-xs action-buttons'>
-            <a class='green' href='#edit' data-toggle='modal' onclick=Edit(\"$place_Name\",\"$Introduction\",\"$picDir\",\"$pic_name\")>
+            <a class='green' href='#edit' data-toggle='modal' onclick=Edit(\"$id\",\"$place_Name\",\"$Introduction\",\"$picDir\",\"$pic_name\")>
               <i class='ace-icon fa fa-pencil bigger-130'></i>
             </a>
 
