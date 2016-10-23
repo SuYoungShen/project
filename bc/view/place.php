@@ -8,14 +8,14 @@
   $display = $placeSe->fetchAll();
 
   foreach ($display as $key => $value) {
-
-    $pla=$place_Name[$key]=$value[0];
-    $vie=$viewpoint[$key]=$value[1];
-    $att=$attractions[$key]=$value[2];
-    $arr=$arrival[$key]=$value[3];
-    $pic=$pic_name[$key]=$value[4];
-    $pdir=$picDir[$key] = $value[5];
-    $dat=$datetime[$key] = $value[6];
+    $id = $value["id"];
+    $pla=$place_Name[$key]=$value["place"];
+    $vie=$viewpoint[$key]=$value["viewpoint"];
+    $att=$attractions[$key]=$value["attractions"];
+    $arr=$arrival[$key]=$value["arrival"];
+    $pic=$pic_name[$key]=$value["name"];
+    $pdir=$picDir[$key] = $value["path"];
+    $dat=$datetime[$key] = $value["datetime"];
     echo "
       <tr>
         <td class='center'>

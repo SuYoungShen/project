@@ -17,13 +17,37 @@
 //     }
 //   });
 //
-// });
-function Edit(placeName, Introduction, pic_name) {
-  document.getElementById("placeName").value = placeName;
-  document.getElementById("Introduction").value = Introduction;
-  document.getElementById("pic").innerHTML = "<img src='about/place/images/"+pic_name+"'  class='col-xs-8'>";
 
+function bootboxss(id) {//彈跳視窗
+
+  bootbox.confirm("Are you sure?", function(result) {
+    if (result) {
+      $.ajax({
+        type:"POST",
+        url: "about/delete.php",
+        data:{'id':id},
+        success:function(data){
+          alerts(data,"about.php");//轉回指定葉面
+        },
+        error:function(){
+          alerts(data,"about.php");
+        }
+      });
+    } else {
+      alerts("小心~~~別按錯了!!!","about.php");
+    }
+  });
 }
+
+function Edits(id, placeName, path, pic_name) {
+  document.getElementById("ids").value = id;
+  document.getElementById("placeNames").value = placeName;
+  // document.getElementById("Introduction").value = Introduction;
+  document.getElementById("pics").innerHTML = "<img src='"+path+""+pic_name+"'  class='col-xs-8'>";
+}
+
+
+// });
 
 // function test(data){
 //   dataa=data;

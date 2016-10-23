@@ -34,6 +34,7 @@ if (!isset($_SESSION["topnum"]) && !isset($_SESSION["topnums"])) {
 
           $placeUp = topups($id,$place_Names ,$datetime);//更新檔名
           $true = $db->query($placeUp);//執行更新指令
+          
           if ($true) {
             message("更新成功,但照片未更新",$Basename);
           }else {

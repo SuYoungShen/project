@@ -48,6 +48,7 @@
         /* 5-6秒淡出*/
     }
 }
+
 .slider_container div:nth-child(1) {
     -webkit-animation-delay: 0s;
             animation-delay: 0s;
@@ -71,6 +72,10 @@
 .slider_container div:nth-child(5) {
     -webkit-animation-delay: 20s;
             animation-delay: 20s;
+}
+.slider_container div:nth-child(6) {
+    -webkit-animation-delay: 25s;
+            animation-delay: 25s;
 }
 
 .slider_container span {

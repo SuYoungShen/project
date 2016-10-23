@@ -69,139 +69,131 @@
           <ul class="nav">
             <li class="active">
               <a href="index.php">首頁</a>
-            </li>
-            <li>
-              <a href="about.php">認識高雄</a>
-            </li>
-            <li class="dropdown">
-              <a href="view.php" class="dropdown-toggle" data-toggle="dropdown">景點
-                <i class="icon-angle-down"></i>
-              </a>
-              <div class="dropdown-menu">
-                <table class="table table-hover ">
-                  <tr >
-                    <td><a href="view.php">首頁</a></td>
-                    <td><a href="area.php">地區名</a></td>
-                  </tr>
-                </table>
-              </div>
-            </li>
+              </li>
+              <li>
+                <a href="about.php">認識高雄</a>
+              </li>
+              <li class="dropdown">
+                <a href="view.php" class="dropdown-toggle" data-toggle="dropdown">景點
+                  <i class="icon-angle-down"></i>
+                </a>
+                <div class="dropdown-menu">
+                  <table class="table table-hover ">
+                    <tr >
+                      <td><a href="view.php">首頁</a></td>
+                      <td><a href="area.php">地區名</a></td>
+                    </tr>
+                  </table>
+                </div>
+              </li>
 
-            <li><a href="forum.php">討論區</a></li>
+              <li><a href="forum.php">討論區</a></li>
 
-            <?php
-              Member_Information();
-             ?>
+              <?php
+                Member_Information();
+               ?>
 
-          </ul>
-        </div><!--/.nav-collapse -->
-      </div>
-    </div>
-    </header>
-
-    <!-- /header -->
-
-    <!--Slider輪播-->
-    <section id="slide-show">
-      <div id="slider" class="sl-slider-wrapper">
-        <!--Slider Items-->
-        <!-- <div class="span12"> -->
-        <div class="sl-slider">
-
-
-
-          <?php
-            include("index/slider/slider.php");
-          ?>
-          <!-- </div> -->
+            </ul>
+          </div><!--/.nav-collapse -->
         </div>
-        <!--/Slider Items-->
-
-        <!--Slider Next Prev button-->
-        <nav id="nav-arrows" class="nav-arrows">
-          <span class="nav-arrow-prev"><i class="icon-angle-left"></i></span>
-          <span class="nav-arrow-next"><i class="icon-angle-right"></i></span>
-        </nav>
-        <!--/Slider Next Prev button-->
       </div>
-      <!-- /slider-wrapper -->
-    </section>
-    <!--/Slider-->
+      </header>
 
-<!--熱門排行-->
-<section id="recent-works">
+      <!-- /header -->
 
-  <div class="container">
-    <div class="center">
-      <h3>TOP6</h3>
-      <!--<p class="lead">高雄熱門景點</p>-->
-    </div>
-    <div class="gap"></div>
-    <ul class="gallery col-4">
-      <div class="row-fluid">
+      <!--Slider輪播-->
+      <section id="slide-show">
+        <div id="slider" class="sl-slider-wrapper">
+          <!--Slider Items-->
+          <!-- <div class="span12"> -->
+          <div class="sl-slider">
+            <?php
+              include("index/slider/slider.php");
+            ?>
+            <!-- </div> -->
+          </div>
+          <!--/Slider Items-->
 
+          <!--Slider Next Prev button-->
+          <nav id="nav-arrows" class="nav-arrows">
+            <span class="nav-arrow-prev"><i class="icon-angle-left"></i></span>
+            <span class="nav-arrow-next"><i class="icon-angle-right"></i></span>
+          </nav>
+          <!--/Slider Next Prev button-->
+        </div>
+        <!-- /slider-wrapper -->
+      </section>
+      <!--/Slider-->
 
+  <!--熱門排行-->
 
-      <!--Item 1-->
-      <?php
-      include("index/top6/top6.php");
-        // for ($i=1; $i <= 6 ; $i++) {
-        //   echo "
-        //   <li>
-        //     <div class='preview'>
-        //       <img alt=' ' src='images/portfolio/thumb/300x180.jpg'>
-        //       <div class='overlay'>
-        //       </div>
-        //       <div class='links'>
-        //         <a data-toggle='modal' href='#modal-1'><i class='icon-eye-open'></i></a><a href='#'><i class='icon-heart'></i></a>
-        //       </div>
-        //     </div>
-        //     <div class='desc'>
-        //       <h5>景點名</h5>
-        //     </div>
-        //     <div id='modal-1' class='modal hide fade'>
-        //       <a class='close-modal' href='javascript:;' data-dismiss='modal' aria-hidden='true'><i class='icon-remove'></i></a>
-        //       <div class='modal-body'>
-        //         <img src='images/portfolio/full/500x300.jpg' alt=' '>
-        //       </div>
-        //     </div>
-        //   </li>
-        //   ";
-        // }
+  <section id="recent-works">
 
-       ?>
+    <div class="container">
+      <div class="center">
+        <h3>TOP6</h3>
+        <!--<p class="lead">高雄熱門景點</p>-->
+      </div>
+      <div class="gap"></div>
+      <ul class="gallery col-4">
+        <div class="row-fluid">
+        <?php
+          include("index/top6/top6.php");
+          // for ($i=1; $i <= 6 ; $i++) {
+          //   echo "
+          //   <li>
+          //     <div class='preview'>
+          //       <img alt=' ' src='images/portfolio/thumb/300x180.jpg'>
+          //       <div class='overlay'>
+          //       </div>
+          //       <div class='links'>
+          //         <a data-toggle='modal' href='#modal-1'><i class='icon-eye-open'></i></a><a href='#'><i class='icon-heart'></i></a>
+          //       </div>
+          //     </div>
+          //     <div class='desc'>
+          //       <h5>景點名</h5>
+          //     </div>
+          //     <div id='modal-1' class='modal hide fade'>
+          //       <a class='close-modal' href='javascript:;' data-dismiss='modal' aria-hidden='true'><i class='icon-remove'></i></a>
+          //       <div class='modal-body'>
+          //         <img src='images/portfolio/full/500x300.jpg' alt=' '>
+          //       </div>
+          //     </div>
+          //   </li>
+          //   ";
+          // }
+         ?>
+         </div>
+        </ul>
+      </div>
 
+  </section>
 
-       </div>
-      </ul>
-    </div>
+  <!--熱門排行-->
 
-</section>
-<!--熱門排行-->
+  <!--Footer-->
+  <?php
+    include("footer.php");
+   ?>
+  <!--/Footer-->
 
-<!--Footer-->
-<?php
-  include("footer.php");
- ?>
-<!--/Footer-->
+  <!--  Login form -->
+  <?php
+  include("login-form.php");
+   ?>
+  <!--  /Login form -->
 
-<!--  Login form -->
-<?php
-include("login-form.php");
- ?>
-<!--  /Login form -->
+  <script src="js/vendor/jquery-1.9.1.min.js"></script>
+  <script src="js/vendor/bootstrap.min.js"></script>
+  <script src="js/main.js"></script>
+  <!-- Required javascript files for Slider -->
+  <script src="js/jquery.ba-cond.min.js"></script>
+  <script src="js/jquery.slitslider.js"></script>
+  <!-- /Required javascript files for Slider -->
 
-<!-- <script src="js/vendor/jquery-1.9.1.min.js"></script> -->
-<script src="js/vendor/bootstrap.min.js"></script>
-<script src="js/main.js"></script>
-<!-- Required javascript files for Slider -->
-<script src="js/jquery.ba-cond.min.js"></script>
-<script src="js/jquery.slitslider.js"></script>
-<!-- /Required javascript files for Slider -->
+  <!-- SL Slider -->
+  <script type="text/javascript" src="js/slider.js"></script>
+  <!-- /SL Slider -->
+  </body>
 
-<!-- SL Slider -->
-<script type="text/javascript" src="js/slider.js"></script>
-<!-- /SL Slider -->
-</body>
-
-</html>
+  </html>

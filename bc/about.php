@@ -36,12 +36,12 @@
 		<script src="http://static.runoob.com/assets/jquery-validation-1.14.0/dist/jquery.validate.min.js"></script>
 		<script src="http://static.runoob.com/assets/jquery-validation-1.14.0/dist/localization/messages_zh.js"></script>
 		<script type="text/javascript" src="about/place/js/fun.js"></script>
-		<!-- 表單驗證 -->
-		<script type="text/javascript" src="about/carousel/js/fun.js"></script>
-
-    <!-- 刪除 -->
+		<!-- 刪除 -->
     <script type="text/javascript" src="about/place/js/delete.js"></script>
     <!-- 刪除 -->
+
+		<!-- 表單驗證 -->
+		<script type="text/javascript" src="about/js/fun.js"></script>
 
 
 		<!-- 登出時間 -->
@@ -623,9 +623,8 @@
 												<label class="col-sm-3 control-label no-padding-right"  for="form-field-1"> 地區名	 </label>
 
 												<div class="col-sm-9">
-													<input type="hidden" id="id" name="id"/>
-
-													<input type="text" id="placeNames" name="placeName" placeholder="地點名" class="col-xs-10 col-sm-5" required="required"/>
+													<input type="hidden" id="ids" name="id"/>
+													<input type="text" id="placeNames" name="placeNamess" placeholder="地點名" class="col-xs-10 col-sm-5" required="required"/>
 												</div>
 											</div>
 
@@ -633,7 +632,7 @@
 												<label class="col-sm-3 control-label no-padding-right" for="form-field-1-1"> 上傳圖檔 </label>
 
 												<div class="col-sm-8">
-													<input multiple="multiple" name="picName[]" type="file" id="id-input-file-6" />
+													<input multiple="multiple" name="picNames[]" type="file" id="id-input-file-6" />
 													<!-- <input type="text" name="name" id="pic" value=""> -->
 													<span id="pics"></span>
 												</div>
@@ -894,7 +893,7 @@
 				.find('li').wrapInner('<a href="javascript:void(0)" />') //'A' tag is required for better styling
 				.find('input[type=checkbox]').addClass('ace').next().addClass('lbl padding-8');
 
-        //多選
+        //全選
 				//table checkboxes
 				$('th input[type=checkbox], td input[type=checkbox]').prop('checked', false);
 				var DeAll=[];
@@ -956,17 +955,15 @@
 
           }else {
 
-            tableTools_obj.fnDeselect($(this).closest('tr').get(0));
 
 						OnlyDelete = $.grep(OnlyDelete, function(value) {
 							return value != Delete;
 						});
 						Deletess(OnlyDelete);//單選刪除
+						tableTools_obj.fnDeselect($(this).closest('tr').get(0));
+						
 				  }
 				});
-
-
-
 
 					$(document).on('click', '#dynamic-table .dropdown-toggle', function(e) {
 					e.stopImmediatePropagation();

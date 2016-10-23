@@ -496,6 +496,7 @@
 										<label class="col-sm-3 control-label no-padding-right" for="form-field-1"> 景點名	 </label>
 
 										<div class="col-sm-9">
+											<input type="text" name="id" id='id'>
 											<input type="text" id="viewpoint"  name="viewpoint" placeholder="景點名" class="col-xs-10 col-sm-5" />
 											<span class="viewpoint"></span>
 										</div>

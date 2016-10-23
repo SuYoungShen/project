@@ -46,17 +46,30 @@
     return $carousel;
   }
 
-  function CarouselUp(&$carousel_name, &$carouselDir, &$datetime, &$key)
+  function CarouselUps($key, $place, $datetime)
   {
 
-    $topup = "UPDATE carousel SET
-                      name = '".$carousel_name."',
-                      path = '".$carouselDir."',
+    $CarouselUps = "UPDATE carousel SET
+                      place = '".$place."',
                       datetime = '".$datetime."'
                     WHERE
                       id = '".$key."'
                     ";
-    return $topup;
+    return $CarouselUps;
+  }
+
+  function CarouselUp(&$id, &$place,&$pic_Name, &$path, &$datetime)
+  {
+
+    $CarouselUp = "UPDATE carousel SET
+                      place = '".$place."',
+                      name = '".$pic_Name."',
+                      path = '".$path."',
+                      datetime = '".$datetime."'
+                    WHERE
+                      id = '".$id."'
+                    ";
+    return $CarouselUp;
   }
 
   function message($value, $Basename){
@@ -75,15 +88,15 @@
     return $placeSe;
   }
 
-  function PlaceUp($place, $Introduction, $name, $path, $time){
+  function PlaceUp($id, $place, $Introduction, $name, $path, $time){
 
     $placeUp="UPDATE `place` SET
-
+                            `place`='".$place."',
                             `Introduction`='".$Introduction."',
                             `name`='".$name."',
                             `path`='".$path."',
                             `datetime`='".$time."'
-                            WHERE `place`='".$place."'
+                            WHERE  `id`='".$id."'
                             ";
     return $placeUp;
   }

@@ -105,26 +105,30 @@
     <!-- / .title -->
 
     <section id="about-us" class="container main">
-      <div class="row-fluid">
-        <div class="span6">
-          <h2>介紹高雄</h2>
-          <p style='font-size:20px'>
-            <?php
+      <div class="container">
+        <div class="row-fluid">
+          <div class="span6">
+            <h2>介紹高雄</h2>
+            <p style='font-size:20px'>
+              <?php
               include ("about/about.php");
-             ?>
-          </p>
-        </div>
-        <!--輪放-->
-        <div class="span6">
-          <div class="slider_container">
-            <?php
-              include("about/carousel.php");
-             ?>
+              ?>
+            </p>
           </div>
-        </div>
-        <!--輪放-->
-      </div>
+          <!--輪放-->
 
+
+          <div class="span6">
+            <div class="slider_container">
+              <?php
+              include("about/carousel.php");
+              ?>
+            </div>
+          </div>
+          <!--輪放-->
+
+        </div>
+      </div>
       <hr>
       <div class="container">
         <div class="center">
@@ -156,6 +160,39 @@
           <?php
             include("about/place.php");
            ?>
+           <!-- <tr>
+             <td>
+           <div class="accordion" id="accordion3">
+             <div class="accordion-group">
+               <div class="accordion-heading">
+                 <a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion3" href="#collapseThree">
+                   景點名
+                 </a>
+               </div>
+               <div id="collapseThree" class="accordion-body collapse">
+                 <div class="accordion-inner">
+
+                     <a data-toggle='modal' href='#modal-0'>
+                       $place_Name
+                     </a>
+
+                   <div id='modal-0' class='modal hide fade'>
+                     <a class='close-modal' href='javascript:;' data-dismiss='modal' aria-hidden='true'>
+                       <i class='icon-remove'></i>
+                     </a>
+                     <div class='box'>
+                       <img src='$picDir$pic_name'>
+                       <h5>$place_Name</h5>
+                       <p>$Introduction</p>
+                     </div>
+                   </div>
+                 </div>
+               </div>
+             </div>
+           </div>
+         </td>
+
+          </tr> -->
         </table>
       </div>
 

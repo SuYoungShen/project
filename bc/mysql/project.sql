@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- 主機: 127.0.0.1
--- 產生時間： 2016-10-17 18:58:00
+-- 產生時間： 2016-10-20 21:38:11
 -- 伺服器版本: 10.1.16-MariaDB
 -- PHP 版本： 5.6.24
 
@@ -31,6 +31,14 @@ CREATE TABLE `about` (
   `datetime` datetime NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
+--
+-- 資料表的匯出資料 `about`
+--
+
+INSERT INTO `about` (`about`, `datetime`) VALUES
+('高雄市位於臺灣西南部東經120.15度、北緯22.31度，面積為153.6029平方公里，是臺灣第二大都市，也是台灣人口密度最高與重工業最發達的都市；而位於臺灣西南部東經120.24度、北緯22.3度，面積2792.6744平方公里的高雄縣，北鄰南投縣、東鄰嘉義縣和台南市、南鄰屏東縣、東鄰花蓮縣和台東縣，為臺灣第四大都市，在2010年12月25日五都改制後與高雄市合併，並與台北市、新北市(原台北縣)、台中市、台南市並列臺灣五大直轄市。合併後的高雄市行政區域劃分除原有的楠梓區、左營區、鼓山區、三民區、苓雅區、新興區、前金區、鹽埕區、小港區、旗津區、前鎮區之外，另新增鳳山區、岡山區、旗山區、美濃區、大寮區、茄萣區、永安區、大園區、大社區、杉林區、仁武區、田寮區、燕巢區、路竹區、阿蓮區、甲仙區、大樹區、湖內區、桃源區、鳥松區、彌陀區、那瑪夏區(原三民鄉)、梓官區、內門區、茂林區、橋頭區、六龜區、林園區等共39個行政區，為五都中最多行政區的直轄市。', '2016-10-18 02:01:04'),
+('ssssss', '2016-10-18 19:47:45');
+
 -- --------------------------------------------------------
 
 --
@@ -53,8 +61,8 @@ CREATE TABLE `area` (
 --
 
 INSERT INTO `area` (`placename`, `viewpoint`, `posted`, `message`, `reply`, `email`, `site`, `datetime`) VALUES
-('', '', 'a', 'a', '', 'a@a', 'http://a', '2016-09-25 02:05:55'),
-('', '', 'aaa', 'aaa', '', 'aaa@aaa.com', 'http://ww', '2016-09-25 02:26:21');
+('', '', 'sss', 'ssss', '', 'ss@fc.om', 'http://tw.ay.com/', '2016-10-18 18:41:08'),
+('', '', 'ssss', 'sss', 'ssss', 'sss@d.com', 'http://rtw.tw.xom/', '2016-10-18 19:48:57');
 
 -- --------------------------------------------------------
 
@@ -64,6 +72,7 @@ INSERT INTO `area` (`placename`, `viewpoint`, `posted`, `message`, `reply`, `ema
 
 CREATE TABLE `carousel` (
   `id` char(100) CHARACTER SET latin1 NOT NULL,
+  `place` char(10) COLLATE utf8_unicode_ci NOT NULL,
   `name` char(100) COLLATE utf8_unicode_ci NOT NULL,
   `path` char(100) COLLATE utf8_unicode_ci NOT NULL,
   `datetime` datetime NOT NULL
@@ -73,13 +82,13 @@ CREATE TABLE `carousel` (
 -- 資料表的匯出資料 `carousel`
 --
 
-INSERT INTO `carousel` (`id`, `name`, `path`, `datetime`) VALUES
-('0', '1(2).jpg', 'about/carousel/images/', '2016-09-02 22:21:00'),
-('1', '', 'about/carousel/images/', '0000-00-00 00:00:00'),
-('2', '', 'about/carousel/images/', '0000-00-00 00:00:00'),
-('3', '', 'about/carousel/images/', '0000-00-00 00:00:00'),
-('4', '', 'about/carousel/images/', '0000-00-00 00:00:00'),
-('5', '', 'about/carousel/images/', '0000-00-00 00:00:00');
+INSERT INTO `carousel` (`id`, `place`, `name`, `path`, `datetime`) VALUES
+('0', '', 'myhome.jpg', 'about/carousel/images/', '2016-10-20 20:10:03'),
+('1', '', '14697224_1398087366875938_1451523683_o.png', 'about/carousel/images/', '2016-10-20 20:10:36'),
+('2', '', 'S__8487281.jpg', 'about/carousel/images/', '2016-10-20 20:40:35'),
+('3', '', '', 'about/carousel/images/', '0000-00-00 00:00:00'),
+('4', '', '', 'about/carousel/images/', '0000-00-00 00:00:00'),
+('5', '', '', 'about/carousel/images/', '0000-00-00 00:00:00');
 
 -- --------------------------------------------------------
 
@@ -118,7 +127,10 @@ CREATE TABLE `member` (
 --
 
 INSERT INTO `member` (`id`, `account`, `password`, `email`, `name`, `level`, `datetime`, `jointime`) VALUES
-(0, 'admin', 'admin', '', '', 'admin', '0000-00-00 00:00:00', '0000-00-00 00:00:00');
+(0, 'admin', 'admin', '', '', 'admin', '0000-00-00 00:00:00', '0000-00-00 00:00:00'),
+(0, 'aaaa', 'aaaaa', 'aaaa@gmail.com', 'aa', 'member', '2016-10-18 08:41:17', '0000-00-00 00:00:00'),
+(0, 'ssss', 'sssss', 'sss@gmail.com', 'ssss', 'member', '2016-10-17 23:22:28', '0000-00-00 00:00:00'),
+(0, 'ssss', 'ddddd', 'd33@gc.com', 'sss', 'member', '2016-10-18 19:47:00', '0000-00-00 00:00:00');
 
 -- --------------------------------------------------------
 
@@ -127,6 +139,7 @@ INSERT INTO `member` (`id`, `account`, `password`, `email`, `name`, `level`, `da
 --
 
 CREATE TABLE `place` (
+  `id` int(11) NOT NULL,
   `place` char(10) COLLATE utf8_unicode_ci NOT NULL,
   `Introduction` varchar(1000) COLLATE utf8_unicode_ci NOT NULL,
   `name` char(100) COLLATE utf8_unicode_ci NOT NULL,
@@ -138,8 +151,9 @@ CREATE TABLE `place` (
 -- 資料表的匯出資料 `place`
 --
 
-INSERT INTO `place` (`place`, `Introduction`, `name`, `path`, `datetime`) VALUES
-('test', 's', '1(2).jpg', 'about/place/images/', '2016-09-07 15:59:35');
+INSERT INTO `place` (`id`, `place`, `Introduction`, `name`, `path`, `datetime`) VALUES
+(8, '85大樓', '高雄85大樓', '1.jpg', 'about/place/images/', '2016-10-18 19:41:16'),
+(9, 'sss', 'sss', '14697224_1398087366875938_1451523683_o.png', 'about/place/images/', '2016-10-20 16:10:48');
 
 -- --------------------------------------------------------
 
@@ -162,8 +176,7 @@ CREATE TABLE `places` (
 --
 
 INSERT INTO `places` (`place`, `viewpoint`, `attractions`, `arrival`, `picname`, `path`, `datetime`) VALUES
-('1', '1', '1', '1', '1', '1', '0000-00-00 00:00:00'),
-('2', '2', '2', '2', '2', '2', '0000-00-00 00:00:00');
+('85大樓', 'ss', 'sss', 'sss', '14697224_1398087366875938_1451523683_o.png', 'view/place/images/', '2016-10-20 16:07:44');
 
 -- --------------------------------------------------------
 
@@ -183,12 +196,12 @@ CREATE TABLE `slider` (
 --
 
 INSERT INTO `slider` (`id`, `name`, `path`, `datetime`) VALUES
-('0', '', 'index/slider/images/', '0000-00-00 00:00:00'),
-('1', '', 'index/slider/images/', '0000-00-00 00:00:00'),
-('2', '', 'index/slider/images/', '0000-00-00 00:00:00'),
-('3', '', 'index/slider/images/', '0000-00-00 00:00:00'),
-('4', '', 'index/slider/images/', '0000-00-00 00:00:00'),
-('5', '', 'index/slider/images/', '0000-00-00 00:00:00');
+('0', '1.jpg', 'index/slider/images/', '2016-10-18 16:11:16'),
+('1', '2.jpg', 'index/slider/images/', '2016-10-18 16:11:16'),
+('2', '3.jpg', 'index/slider/images/', '2016-10-18 16:11:16'),
+('3', '4.jpg', 'index/slider/images/', '2016-10-18 16:11:16'),
+('4', '5.jpg', 'index/slider/images/', '2016-10-18 16:11:16'),
+('5', '711.jpg', 'index/slider/images/', '2016-10-18 16:11:16');
 
 -- --------------------------------------------------------
 
@@ -198,6 +211,7 @@ INSERT INTO `slider` (`id`, `name`, `path`, `datetime`) VALUES
 
 CREATE TABLE `top` (
   `id` char(100) CHARACTER SET latin1 NOT NULL,
+  `place` char(10) COLLATE utf8_unicode_ci NOT NULL,
   `name` char(100) COLLATE utf8_unicode_ci NOT NULL,
   `path` char(100) COLLATE utf8_unicode_ci NOT NULL,
   `datetime` datetime NOT NULL
@@ -207,13 +221,13 @@ CREATE TABLE `top` (
 -- 資料表的匯出資料 `top`
 --
 
-INSERT INTO `top` (`id`, `name`, `path`, `datetime`) VALUES
-('0', '', 'index/top6/images/', '0000-00-00 00:00:00'),
-('1', '', 'index/top6/images/', '0000-00-00 00:00:00'),
-('2', '', 'index/top6/images/', '0000-00-00 00:00:00'),
-('3', '', 'index/top6/images/', '0000-00-00 00:00:00'),
-('4', '', 'index/top6/images/', '0000-00-00 00:00:00'),
-('5', '', 'index/top6/images/', '0000-00-00 00:00:00');
+INSERT INTO `top` (`id`, `place`, `name`, `path`, `datetime`) VALUES
+('0', '', '', 'index/top6/images/', '0000-00-00 00:00:00'),
+('1', '', '', 'index/top6/images/', '0000-00-00 00:00:00'),
+('2', '', '', 'index/top6/images/', '0000-00-00 00:00:00'),
+('3', '', '', 'index/top6/images/', '0000-00-00 00:00:00'),
+('4', '', '', 'index/top6/images/', '0000-00-00 00:00:00'),
+('5', '', '', 'index/top6/images/', '0000-00-00 00:00:00');
 
 -- --------------------------------------------------------
 
@@ -258,7 +272,7 @@ ALTER TABLE `carousel`
 -- 資料表索引 `place`
 --
 ALTER TABLE `place`
-  ADD PRIMARY KEY (`place`);
+  ADD PRIMARY KEY (`id`);
 
 --
 -- 資料表索引 `slider`
@@ -272,6 +286,15 @@ ALTER TABLE `slider`
 ALTER TABLE `top`
   ADD PRIMARY KEY (`id`);
 
+--
+-- 在匯出的資料表使用 AUTO_INCREMENT
+--
+
+--
+-- 使用資料表 AUTO_INCREMENT `place`
+--
+ALTER TABLE `place`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;

@@ -8,8 +8,10 @@
 
 
 
-    if(isset($_POST["placeName"]) && isset($_POST["Introduction"])) {
+    // if(isset($_POST["placeName"]) && isset($_POST["Introduction"])) {
   if (isset($_POST["update"])) {
+    if (isset($_POST["placeName"]) && isset($_POST["Introduction"])) {
+
       $id = $_POST["id"];
       $place_Names = $_POST["placeName"];
       $Introductions = $_POST["Introduction"];
@@ -74,7 +76,7 @@
           // }else{
 
             move_uploaded_file($pic_tmp,$picDir.$pic_Name);//把檔案移到指定dir
-            $placeUp = PlaceUp($place_Name,$Introduction ,$pic_Name ,$picDir, $datetime);//更新檔名
+            $placeUp = PlaceUp($id, $place_Names, $Introductions , $pic_Name, $picDir, $datetime);//更新檔名
             $true = $db->query($placeUp);//執行更新指令
             if ($true) {
               message("更新成功",$Basename);
@@ -96,7 +98,6 @@ if (isset($_POST["insert"])) {
     $place_Name = $_POST["placeName"];
     $Introduction = $_POST["Introduction"];
 
-
     if(isset($_FILES["picName"])){
 
       foreach($_FILES["picName"]["tmp_name"] as $key => $value){//檔案以陣列方式接收
@@ -105,6 +106,12 @@ if (isset($_POST["insert"])) {
 
         if ($error == 4) {
 
+          date_default_timezone_set('Asia/Taipei');//設定時間為台北
+          $datetime = date("Y-m-d H:i:s");//時間
+
+          $placeIn = PlaceIn($place_Name,$Introduction ,$pic_Name ,$picDir, $datetime);//檔名
+
+          $true = $db->query($placeIn);//執行上傳指令
           message("照片還沒傳",$Basename);
 
         }else if ($error == 0) {
@@ -159,12 +166,13 @@ if (isset($_POST["insert"])) {
 
 
   foreach ($display as $key => $value) {
+
     $id = $value["id"];
-    $place_Name=$place_Names[$key]=$value["place"];
-    $Introduction=$value["Introduction"];
-    $pic_name=$value["name"];
-    $picDir=$value["path"];
-    $datetime=$value["datetime"];
+    $place_Name = $place_Names[$key]=$value["place"];
+    $Introduction = $value["Introduction"];
+    $pic_name = $value["name"];
+    $picDir = $value["path"];
+    $datetime = $value["datetime"];
 
     echo "
       <tr>
@@ -180,7 +188,7 @@ if (isset($_POST["insert"])) {
 
         <td>$Introduction</td>
         <td class='hidden-480 ace-thumbnails clearfix'>
-          <a href='$picDir$pic_name'  data-rel='colorbox'>$pic_name</a>
+          <a href='$picDir$pic_name' title='$place_Name'  data-rel='colorbox'>$pic_name</a>
         </td>
         <td>$datetime</td>
 
@@ -188,7 +196,7 @@ if (isset($_POST["insert"])) {
 
         <td>
           <div class='hidden-sm hidden-xs action-buttons'>
-            <a class='green' href='#edit' data-toggle='modal' onclick=Edit(\"$id\",\"$place_Name\",\"$Introduction\",\"$picDir\",\"$pic_name\")>
+            <a class='green' href='#edit' data-toggle='modal' onclick='Edit(\"$id\",\"$place_Name\",\"$Introduction\",\"$picDir\",\"$pic_name\")'>
               <i class='ace-icon fa fa-pencil bigger-130'></i>
             </a>
 
@@ -207,7 +215,7 @@ if (isset($_POST["insert"])) {
               <ul class='dropdown-menu dropdown-only-icon dropdown-yellow dropdown-menu-right dropdown-caret dropdown-close'>
 
                 <li>
-                  <a href='#edit' class='tooltip-success' data-rel='tooltip' title='Edit'>
+                  <a href='#edit' data-toggle='modal' class='tooltip-success' data-rel='tooltip' title='Edit'  onclick='Edit(\"$id\",\"$place_Name\",\"$Introduction\",\"$picDir\",\"$pic_name\")'>
                     <span class='green'>
                       <i class='ace-icon fa fa-pencil-square-o bigger-120'></i>
                     </span>
@@ -215,7 +223,7 @@ if (isset($_POST["insert"])) {
                 </li>
 
                 <li>
-                  <a href='#' class='tooltip-error' data-rel='tooltip' title='Delete'>
+                  <a href='#' name='Delete'  class='tooltip-error' data-rel='tooltip' title='Delete' onclick='bootboxs(\"$place_Names[$key]\")'>
                     <span class='red'>
                       <i class='ace-icon fa fa-trash-o bigger-120'></i>
                     </span>

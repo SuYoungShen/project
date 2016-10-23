@@ -14,7 +14,7 @@ $(document).ready(function() {
 });
 
 function Edits(id, placeName, picDir, pic_name) {
-  document.getElementById("id").value = id;
+  document.getElementById("ids").value = id;
   document.getElementById("placeNames").value = placeName;
   // document.getElementById("Introduction").value = Introduction;
   document.getElementById("pics").innerHTML = "<img src='"+picDir+pic_name+"'  class='col-xs-8'>";

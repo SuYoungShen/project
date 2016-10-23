@@ -4,7 +4,7 @@
   include ("mysql/connect.php");//連接資料庫
   include ("common.php");//常用語法
 
-  $carouselDir='about/carousel/images/';
+  $picDir='about/carousel/images/';
 
   $Basename = basename($_SERVER["PHP_SELF"]);//目前的檔案名稱
 
@@ -16,37 +16,37 @@ if (!isset($_SESSION["carouselnum"]) && !isset($_SESSION["carouselnums"])) {
   $_SESSION["carouselnums"] = 1;
 }
 
-
   if (isset($_POST["update"])) {
 
     $id = $_POST["id"];
-    $place_Names = $_POST["placeName"];
+    $place_Names = $_POST["placeNamess"];
 
-    if(isset($_FILES["carousel"])){
+    if(isset($_FILES["picNames"])){
 
-      foreach($_FILES["carousel"]["tmp_name"] as $key => $value){//檔案以陣列方式接收
+      foreach($_FILES["picNames"]["tmp_name"] as $key => $value){//檔案以陣列方式接收
 
-        $error = $_FILES["carousel"]["error"][$key];//取得錯誤碼
+        $error = $_FILES["picNames"]["error"][$key];//取得錯誤碼
 
         if ($error == 4) {
 
           date_default_timezone_set('Asia/Taipei');//設定時間為台北
           $datetime = date("Y-m-d H:i:s");//時間
 
-          $placeUp = topups($id,$place_Names ,$datetime);//更新檔名
+          $placeUp = CarouselUps($id, $place_Names, $datetime);//更新檔名
           $true = $db->query($placeUp);//執行更新指令
+
           if ($true) {
             message("更新成功,但照片未更新",$Basename);
           }else {
-            message("更新失敗s",$Basename);
+            message("更新失敗",$Basename);
           }
           // message("照片未更新",$Basename);
 
         }else if ($error == 0) {
 
-          $pic_Name = $_FILES["carousel"]["name"][$key];//檔案名稱
-          $pic_tmp = $_FILES["carousel"]["tmp_name"][$key];//抓取檔案
-          $pic_size = $_FILES["carousel"]["size"][$key];//抓取檔案大小
+          $pic_Name = $_FILES["picNames"]["name"][$key];//檔案名稱
+          $pic_tmp = $_FILES["picNames"]["tmp_name"][$key];//抓取檔案
+          $pic_size = $_FILES["picNames"]["size"][$key];//抓取檔案大小
           $pic_tmps = strrchr($pic_Name,".");//取得檔案的副檔名
           $pictmp = array('.jpg', '.JPG', '.png', '.PNG'
           , '.bmp', '.gif');//設定副檔名
@@ -81,9 +81,10 @@ if (!isset($_SESSION["carouselnum"]) && !isset($_SESSION["carouselnums"])) {
           //   }
           // }else{
 
-          move_uploaded_file($pic_tmp,$carouselDir.$pic_Name);//把檔案移到指定dir
-          $placeUp = topup($id,$place_Names ,$pic_Name ,$picDir, $datetime);//更新檔名
+          move_uploaded_file($pic_tmp,$picDir.$pic_Name);//把檔案移到指定dir
+          $placeUp = CarouselUp($id, $place_Names, $pic_Name, $picDir, $datetime);//更新檔名
           $true = $db->query($placeUp);//執行更新指令
+
           if ($true) {
             message("更新成功",$Basename);
           }else {
@@ -93,9 +94,9 @@ if (!isset($_SESSION["carouselnum"]) && !isset($_SESSION["carouselnums"])) {
         }//$error == 0
       }//foreach
     }//$_FILES["picName"]
-
-
   }
+
+
 
   if (isset($_POST["carouselIn"])) {
 
@@ -117,7 +118,7 @@ if (!isset($_SESSION["carouselnum"]) && !isset($_SESSION["carouselnums"])) {
           $carousel_tmps = strrchr($carousel_name,".");//取得檔案的副檔名
           $carouseltmp = array('.jpg', '.JPG', '.png', '.PNG'
           , '.bmp', '.gif');//設定副檔名
-        
+
           if (!in_array($carousel_tmps,$carouseltmp)) {//檢查副檔名
 
             $carouseltmp = "不好意思,只接受".implode(" ",$carouseltmp)."的副檔名";
@@ -135,14 +136,14 @@ if (!isset($_SESSION["carouselnum"]) && !isset($_SESSION["carouselnums"])) {
           date_default_timezone_set('Asia/Taipei');//設定時間為台北
           $datetime = date("Y-m-d H:i:s");//時間
 
-          if(file_exists($carouselDir.$carousel_name)){//檢查是否有相同檔案
+          // if(file_exists($picDir.$carousel_name)){//檢查是否有相同檔案
+          //
+          //   $carouselName = basename($carousel_name,"$carousel_tmps");//去除副檔名,留檔名
+          //   message("資料夾裡已有名稱".$carouselName."的檔案",$Basename);
+          //
+          // }else{
 
-            $carouselName = basename($carousel_name,"$carousel_tmps");//去除副檔名,留檔名
-            message("資料夾裡已有名稱".$carouselName."的檔案",$Basename);
-
-          }else{
-
-            move_uploaded_file($carousel_tmp,$carouselDir.$carousel_name);//把檔案移到指定dir
+            move_uploaded_file($carousel_tmp,$picDir.$carousel_name);//把檔案移到指定dir
 
             foreach ($display as $keys => $value) {
               // echo "keys:".$keys;
@@ -170,18 +171,18 @@ if (!isset($_SESSION["carouselnum"]) && !isset($_SESSION["carouselnums"])) {
 
               }
               //時間比對
-
+              $null = "";
               $carouseltime = strtotime($carouseltimes["$carouselnum"]) < strtotime($carouseltimes["$carouselnums"]);
               $carouseltimess = strtotime($carouseltimes["$carouselnum"]) == strtotime($carouseltimes["$carouselnums"]);
 
               if($carouseltime || $carouseltimess){
 
-                $carouselup = CarouselUp($carousel_name, $carouselDir, $datetime, $carouselid["$carouselnum"]);//更新檔名
+                $carouselup = CarouselUp($carouselid["$carouselnum"], $null,$carousel_name, $picDir, $datetime);//更新檔名
                 $db->query($carouselup);//執行更新指令
                 message("新增成功",$Basename);
               }else {
 
-                $carouselup = CarouselUp($carousel_name, $carouselDir, $datetime, $carouselid["$carouselnums"]);//更新檔名
+                $carouselup = CarouselUp($carouselid["$carouselnums"], $null, $carousel_name, $picDir, $datetime);//更新檔名
                 $db->query($carouselup);//執行更新指令
                 message("新增成功",$Basename);
               }
@@ -189,7 +190,7 @@ if (!isset($_SESSION["carouselnum"]) && !isset($_SESSION["carouselnums"])) {
               $_SESSION["carouselnums"]++;
 
             }//if(session["carouselnum"])
-          }//else
+          // }//else
         }//$carousel_error
       }//foreach
     }//FILE["carousel"]
@@ -198,6 +199,7 @@ if (!isset($_SESSION["carouselnum"]) && !isset($_SESSION["carouselnums"])) {
 
 
   foreach ($display as $key => $value) {
+
     $id = $value["id"];
     $placeName = $value["place"];
     $picName = $value["name"];
@@ -219,11 +221,11 @@ if (!isset($_SESSION["carouselnum"]) && !isset($_SESSION["carouselnums"])) {
       </a>
 
       <div class='tools tools-top'>
-        <a href='#edit' data-toggle='modal' onclick='Edit(\"$id\",\"$placeName\",\"$picDir\",\"$picName\")'>
+        <a href='#edits' data-toggle='modal' onclick='Edits(\"$id\",\"$placeName\",\"$picDir\",\"$picName\")'>
           <i class='ace-icon fa fa-pencil'></i>
         </a>
 
-        <a href='#' onclick='bootboxs(\"$id\")'>
+        <a href='#' onclick='bootboxss(\"$id\")'>
           <i class='ace-icon fa fa-times red'></i>
         </a>
       </div>

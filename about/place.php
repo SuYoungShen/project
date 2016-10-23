@@ -6,7 +6,8 @@
   $display = $placeSe->fetchAll();
   $picDir = "bc/about/place/images/";
 
-echo "<tr>";
+// echo "<tr>";
+
   foreach ($display as $key => $value) {
 
     $place_Name=$value["place"];//地區名
@@ -17,28 +18,115 @@ echo "<tr>";
     if (empty($place_Name)) {
       $place_Name="暫無資料";
     }
-    echo "
 
-      <td>
-        <a data-toggle='modal' href='#modal-$key'>
-          $place_Name
-        </a>
-      </td>
+    if (($key%6) == 0) {
 
-      <div id='modal-$key' class='modal hide fade'>
-        <a class='close-modal' href='javascript:;' data-dismiss='modal' aria-hidden='true'>
-          <i class='icon-remove'></i>
-        </a>
-        <div class='box'>
-          <img src='$picDir$pic_name'>
-          <h5>$place_Name</h5>
-          <p>$Introduction</p>
+      echo "
+      <tr>
+        <td>
+          <a data-toggle='modal' href='#modal-$key'>$place_Name</a>
+        </td>
+
+        <div id='modal-$key' class='modal hide fade'>
+          <a class='close-modal' href='javascript:;' data-dismiss='modal' aria-hidden='true'>
+            <i class='icon-remove'></i>
+            </a>
+          <div class='box'>
+            <img src='$picDir$pic_name'>
+            <h5>$place_Name</h5>
+            <p>$Introduction</p>
+          </div>
         </div>
-      </div>
-    ";
+      ";
+      // echo "
+      // <td>
+      //   <div class='accordion' id='accordion3'>
+      //     <div class='accordion-group'>
+      //       <div class='accordion-heading'>
+      //         <a class='accordion-toggle' data-toggle='collapse' data-parent='#accordion3' href='#collapseThree'>
+      //           景點名
+      //         </a>
+      //       </div>
+      //       <div id='collapseThree' class='accordion-body collapse'>
+      //         <div class='accordion-inner'>
+      //           <img src='http://autismcleveland.net/wp-content/uploads/2015/11/150210073337pm_1012106165.png'>
+      //           景點介紹
+      //         </div>
+      //       </div>
+      //     </div>
+      //     <div class='accordion-group'>
+      //       <div class='accordion-heading'>
+      //         <a class='accordion-toggle' data-toggle='collapse' data-parent='#accordion3' href='#collapseFour'>
+      //           景點名
+      //         </a>
+      //       </div>
+      //       <div id='collapseFour' class='accordion-body collapse'>
+      //         <div class='accordion-inner'>
+      //           <img src='http://autismcleveland.net/wp-content/uploads/2015/11/150210073337pm_1012106165.png'>
+      //           景點介紹
+      //         </div>
+      //       </div>
+      //     </div>
+      //   </div>
+      // </td>
+      // ";
+    }else {
+
+      echo "
+        <td>
+          <a data-toggle='modal' href='#modal-$key'>
+            $place_Name
+          </a>
+        </td>
+
+        <div id='modal-$key' class='modal hide fade'>
+          <a class='close-modal' href='javascript:;' data-dismiss='modal' aria-hidden='true'>
+            <i class='icon-remove'></i>
+          </a>
+          <div class='box'>
+            <img src='$picDir$pic_name'>
+            <h5>$place_Name</h5>
+            <p>$Introduction</p>
+          </div>
+        </div>
+      ";
+      // echo "
+      // <td>
+      //   <div class='accordion' id='accordion3'>
+      //     <div class='accordion-group'>
+      //       <div class='accordion-heading'>
+      //         <a class='accordion-toggle' data-toggle='collapse' data-parent='#accordion3' href='#collapseThree'>
+      //           景點名
+      //         </a>
+      //       </div>
+      //       <div id='collapseThree' class='accordion-body collapse'>
+      //         <div class='accordion-inner'>
+      //           <img src='http://autismcleveland.net/wp-content/uploads/2015/11/150210073337pm_1012106165.png'>
+      //           景點介紹
+      //         </div>
+      //       </div>
+      //     </div>
+      //     <div class='accordion-group'>
+      //       <div class='accordion-heading'>
+      //         <a class='accordion-toggle' data-toggle='collapse' data-parent='#accordion3' href='#collapseFour'>
+      //           景點名
+      //         </a>
+      //       </div>
+      //       <div id='collapseFour' class='accordion-body collapse'>
+      //         <div class='accordion-inner'>
+      //           <img src='http://autismcleveland.net/wp-content/uploads/2015/11/150210073337pm_1012106165.png'>
+      //           景點介紹
+      //         </div>
+      //       </div>
+      //     </div>
+      //   </div>
+      // </td>
+      // ";
+    }
   }
 
 echo "</tr>";
+
   $db=null;
 
  ?>
