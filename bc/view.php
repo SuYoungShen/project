@@ -496,7 +496,7 @@
 										<label class="col-sm-3 control-label no-padding-right" for="form-field-1"> 景點名	 </label>
 
 										<div class="col-sm-9">
-											<input type="text" name="id" id='id'>
+											<input type="hidden" name="id" id='id'>
 											<input type="text" id="viewpoint"  name="viewpoint" placeholder="景點名" class="col-xs-10 col-sm-5" />
 											<span class="viewpoint"></span>
 										</div>
@@ -531,7 +531,7 @@
 										<div class="col-md-offset-3 col-md-9">
 											<button class="btn btn-info" type="submit" >
 												<i class="ace-icon fa fa-check bigger-110"></i>
-												送出
+												更新
 											</button>
 
 											&nbsp; &nbsp; &nbsp;
@@ -833,9 +833,9 @@
 
 			if(!this.checked){
 
+				Deletess(OnlyDelete);//單選刪除
 				tableTools_obj.fnSelect(row);
 
-				Deletess(OnlyDelete);//單選刪除
 			}else{
 
 				OnlyDelete = $.grep(OnlyDelete, function(value) {

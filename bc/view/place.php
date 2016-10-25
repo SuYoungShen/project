@@ -8,6 +8,7 @@
   $display = $placeSe->fetchAll();
 
   foreach ($display as $key => $value) {
+
     $id = $value["id"];
     $pla=$place_Name[$key]=$value["place"];
     $vie=$viewpoint[$key]=$value["viewpoint"];
@@ -16,6 +17,7 @@
     $pic=$pic_name[$key]=$value["name"];
     $pdir=$picDir[$key] = $value["path"];
     $dat=$datetime[$key] = $value["datetime"];
+
     echo "
       <tr>
         <td class='center'>
@@ -40,6 +42,7 @@
           <div class='hidden-sm hidden-xs action-buttons'>
             <a class='green' href='#edit' data-toggle='modal'
               onclick='Edit(
+                            \"$id\",
                             \"$viewpoint[$key]\",
                             \"$attractions[$key]\",
                             \"$arrival[$key]\",
@@ -49,9 +52,9 @@
               <i class='ace-icon fa fa-pencil bigger-130'></i>
             </a>
 
-            <a class='red' name='Delete' onclick='bootboxs(\"$viewpoint[$key]\")'>
+            <a class='red' name='Delete' onclick='bootboxs(\"$id\")'>
               <i class='ace-icon fa fa-trash-o bigger-130'></i>
-              <input type='hidden' name='DeViewpoint[]'  value='".$viewpoint[$key]."'/>
+              <input type='hidden' name='DeViewpoint[]'  value='".$id."'/>
 
             </a>
           </div>

@@ -42,8 +42,8 @@ $(document).ready(function() {
 
 	});
 
-	function Edit(viewpoint, attractions, arrival, pic_dir, pic_name) {
-
+	function Edit(id, viewpoint, attractions, arrival, pic_dir, pic_name) {
+		document.getElementById("id").value = id;		
 	  document.getElementById("viewpoint").value = viewpoint;
 	  document.getElementById("attractions").value = attractions;
 	  document.getElementById("arrival").value = arrival;

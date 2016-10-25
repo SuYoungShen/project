@@ -6,8 +6,9 @@
 
   $picDir = "./images/";
   $picPath = "view/place/images/";
-  $redirect="../../view.php";
+  $Basename="../../view.php";
   $msg = "";
+
   $required = isset($_POST["placeName"]) &&
               !empty($_POST["placeName"]) &&
               isset($_POST["viewpoint"]) &&
@@ -28,7 +29,23 @@
 
         if ($pic_error == 4 ) {//判斷是否有錯誤
 
-          message("不小心按到送出了齁",$redirect);
+          date_default_timezone_set('Asia/Taipei');//設定時間為台北
+          $datetime = date("Y-m-d H:i:s");//時間
+          $true = $db->query(PlaceIns(
+                                      $placeName,
+                                      $viewpoint,
+                                      $attractions,
+                                      $arrival,
+                                      $datetime
+                                    ));
+          if ($true) {
+            message("新增成功,但照片未上傳",$Basename);
+
+          }else {
+            message("新增失敗",$Basename);
+          }
+
+          message("不小心按到送出了齁",$Basename);
 
         }else if($pic_error == 0){
 
@@ -43,7 +60,7 @@
           if (!in_array($pic_tmps,$pictmp)) {//檢查副檔名
 
             $pictmp = "不好意思,只接受".implode(" ",$pictmp)."的副檔名";
-            message($pictmp,$redirect);
+            message($pictmp,$Basename);
 
             break;
 
@@ -53,7 +70,7 @@
             echo "
             <script>
             var value = '$picsize';
-            var basename= '$redirect';
+            var basename= '$Basename';
             alerts(value, basename);
             </script>";
             break;
@@ -75,10 +92,10 @@
                                         $datetime
                                       ));
             if ($true) {
-              message("新增成功,資料夾裡已有名稱'+'$picname'+'的檔案",$redirect);
+              message("新增成功,資料夾裡已有名稱'+'$picname'+'的檔案",$Basename);
 
             }else {
-              message("新增失敗",$redirect);
+              message("新增失敗",$Basename);
             }
 
           }else {
@@ -94,10 +111,10 @@
                                         $datetime
                                       ));
             if ($true) {
-              message("新增成功",$redirect);
+              message("新增成功",$Basename);
 
             }else {
-              message("新增失敗",$redirect);
+              message("新增失敗",$Basename);
             }
 
           }//else
@@ -107,7 +124,7 @@
 
 
   }else {
-    echo "失敗";
+    message("不小心按到送出了齁~~~",$Basename);
   }
   // if (isset($_FILES)) {
   //

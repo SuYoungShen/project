@@ -10,7 +10,7 @@
     return $placeSe;
   }
 
-  function PlaceUp($placeName,$viewpoint,$attractions,$arrival,$pic_name,$picPath,$datetime){
+  function PlaceUp($id,$placeName,$viewpoint,$attractions,$arrival,$pic_name,$picPath,$datetime){
 
     $placeUp="UPDATE `places`
                             SET
@@ -18,10 +18,25 @@
                             `viewpoint`='$viewpoint',
                             `attractions`='$attractions',
                             `arrival`='$arrival',
-                            `picname`='$pic_name',
+                            `name`='$pic_name',
                             `path`='$picPath',
                             `datetime`='$datetime'
-                            WHERE 1
+                            WHERE `id`='$id'
+                            ";
+
+    return $placeUp;
+  }
+
+  function PlaceUps($id,$placeName,$viewpoint,$attractions,$arrival,$datetime){
+
+    $placeUp="UPDATE `places`
+                            SET
+                            `place`='$placeName',
+                            `viewpoint`='$viewpoint',
+                            `attractions`='$attractions',
+                            `arrival`='$arrival',
+                            `datetime`='$datetime'
+                            WHERE `id`='$id'
                             ";
 
     return $placeUp;
@@ -30,7 +45,7 @@
   function PlaceIn($placeName,$viewpoint,$attractions,$arrival,$pic_name,$picPath,$datetime)
   {
     $placeIn ="INSERT INTO `places`
-                          (`place`,`viewpoint`,`attractions`,`arrival`,`picname`,`path`,`datetime`)
+                          (`place`,`viewpoint`,`attractions`,`arrival`,`name`,`path`,`datetime`)
                           VALUES
                           (
                             '$placeName',
@@ -44,12 +59,26 @@
     return $placeIn;
   }
 
-  function PlaceDe($viewpoint)
+  function PlaceIns($placeName,$viewpoint,$attractions,$arrival,$datetime)
+  {
+    $placeIn ="INSERT INTO `places`
+                          (`place`,`viewpoint`,`attractions`,`arrival`,`datetime`)
+                          VALUES
+                          (
+                            '$placeName',
+                            '$viewpoint',
+                            '$attractions',
+                            '$arrival',
+                            '$datetime'
+                          )";
+    return $placeIn;
+  }
+
+  function PlaceDe($id)
   {
     $PlaceDe ="DELETE FROM `places`
-                      WHERE viewpoint=
-                                  '".$viewpoint."'
-                                  ";
+                      WHERE id='".$id."'
+                      ";
     return $PlaceDe;
   }
 

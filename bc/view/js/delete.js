@@ -11,7 +11,7 @@ function bootboxs(Deletes) {//彈跳視窗
       $.ajax({
         type:"POST",
         url: "view/place/delete.php",
-        data:{'DeViewpoints[]':Deletes},
+        data:{'id[]':Deletes},
         success:function(data){
           alerts(data,"view.php");//轉回指定葉面
         },

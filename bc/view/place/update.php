@@ -1,11 +1,11 @@
 <script type="text/javascript" src="../../assets/js/alert.js"></script>
  <?php
-  $dbname="view";
+  $dbname="project";
   include ("../../mysql/connect.php");
   include ("../common.php");
 
   $picDir = "view/images/";
-  $redirect="../../view.php";
+  $Basename="../../view.php";
   $msg = "";
   $required = isset($_POST["placeName"]) &&
               !empty($_POST["placeName"]) &&
@@ -14,6 +14,7 @@
 
   if ($required) {
 
+    $id = $_POST["id"];
     $placeName = $_POST["placeName"];//地區名
     $viewpoint = $_POST["viewpoint"];//景點名
     $attractions = $_POST["attractions"];//景點介紹
@@ -26,8 +27,23 @@
         $pic_error = $_FILES["picName"]["error"][$key];//取得錯誤值
 
         if ($pic_error == 4 ) {//判斷是否有錯誤
+          date_default_timezone_set('Asia/Taipei');//設定時間為台北
+          $datetime = date("Y-m-d H:i:s");//時間
+          $true = $db->query(PlaceUps(
+                                      $id,
+                                      $placeName,
+                                      $viewpoint,
+                                      $attractions,
+                                      $arrival,
+                                      $datetime
+                                    ));//更新檔名
 
-          message("不小心按到送出了齁",$redirect);
+          if ($true) {
+            message("更新成功,但照片未更新",$Basename);
+          }else {
+            message("更新失敗",$Basename);
+          }
+
 
         }else if($pic_error == 0){
 
@@ -42,7 +58,7 @@
           if (!in_array($pic_tmps,$pictmp)) {//檢查副檔名
 
             $pictmp = "不好意思,只接受".implode(" ",$pictmp)."的副檔名";
-            message($pictmp,$redirect);
+            message($pictmp,$Basename);
 
             break;
 
@@ -52,7 +68,7 @@
             echo "
             <script>
             var value = '$picsize';
-            var basename= '$redirect';
+            var basename= '$Basename';
             alerts(value, basename);
             </script>";
             break;
@@ -61,22 +77,23 @@
           date_default_timezone_set('Asia/Taipei');//設定時間為台北
           $datetime = date("Y-m-d H:i:s");//時間
 
-          if(file_exists($picDir.$pic_name)){//檢查是否有相同檔案
-
-            $picname = basename($pic_name,"$pic_tmps");//去除副檔名,留檔名
-            echo "
-            <script>
-            var value = '資料夾裡已有名稱'+'$picname'+'的檔案';
-            var basename= '$redirect';
-
-            alerts(value, basename);
-            </script>
-            ";
-
-          }else {
+          // if(file_exists($picDir.$pic_name)){//檢查是否有相同檔案
+          //
+          //   $picname = basename($pic_name,"$pic_tmps");//去除副檔名,留檔名
+          //   echo "
+          //   <script>
+          //   var value = '資料夾裡已有名稱'+'$picname'+'的檔案';
+          //   var basename= '$redirect';
+          //
+          //   alerts(value, basename);
+          //   </script>
+          //   ";
+          //
+          // }else {
 
             move_uploaded_file($pic_tmp,$picDir.$pic_name);//把檔案移到指定dir
             $true = $db->query(PlaceUp(
+                                        $id,
                                         $placeName,
                                         $viewpoint,
                                         $attractions,
@@ -86,20 +103,19 @@
                                         $datetime
                                       ));
             if ($true) {
-              message("成功",$redirect);
+              message("更新成功",$Basename);
 
             }else {
-              message("失敗",$redirect);
+              message("更新失敗",$Basename);
             }
-
-          }//else
+          // }//else
         }//if($pic_error)
       }//foreach
     }
 
 
   }else {
-    echo "失敗";
+    message("更新失敗",$Basename);
   }
 
   // }
