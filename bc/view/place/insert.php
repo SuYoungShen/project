@@ -111,7 +111,7 @@
                                         $datetime
                                       ));
             if ($true) {
-              message("新增成功",$Basename);
+              message("新增成功s",$Basename);
 
             }else {
               message("新增失敗",$Basename);
