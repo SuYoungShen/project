@@ -8,7 +8,7 @@
 
   $picDir = "view/view/images/";
 
-  $redirect="view.php";
+  $Basename="view.php";
   $msg = "";
 
   if (!isset($_SESSION["viewnum"]) && !isset($_SESSION["viewnums"])) {
@@ -16,7 +16,9 @@
     $_SESSION["viewnums"] = 1;
   }
 
-  if (isset($_FILES["picName"])) {
+  if (isset($_POST["insert"])) {
+
+    if (isset($_FILES["picName"])) {
 
       foreach ($_FILES["picName"]["tmp_name"] as $key => $value) {
 
@@ -24,7 +26,7 @@
 
         if ($pic_error==4) {
 
-          message("不小心按到送出齁",$redirect);
+          message("不小心按到送出齁",$Basename);
 
         }else if($pic_error == 0){
 
@@ -39,7 +41,7 @@
           if (!in_array($pic_tmps,$pictmp)) {//檢查副檔名
 
             $pictmp = "不好意思,只接受".implode(" ",$pictmp)."的副檔名";
-            message($pictmp,$redirect);
+            message($pictmp,$Basename);
 
             break;
 
@@ -47,7 +49,7 @@
 
             $picsize = $pic_name."檔案已超過2MB";
 
-            message($picsize,$redirect);
+            message($picsize,$Basename);
 
             break;
           }
@@ -58,28 +60,28 @@
           if(file_exists($picDir.$pic_name)){//檢查是否有相同檔案
 
             $picname = basename($pic_name,"$pic_tmps");//去除副檔名,留檔名
-          //   $How = $db->query(ViewUp(
-          //                             $viewpoint,
-          //                             $pic_name,
-          //                             $picPath,
-          //                             $datetime,
-          //                             $key
-          //                           ));
-          // if ($How) {
-          //
-          //   message("新增成功,資料夾裡已有名稱'+'$picname'+'的檔案",$redirect);
-          //
-          // }else{
-          //   message("新增失敗",$redirect);
-          // }
+            $How = $db->query(ViewUp(
+                                      $viewpoint,
+                                      $picname,
+                                      $picPath,
+                                      $datetime,
+                                      $key
+                                    ));
+          if ($How) {
+
+            message("新增成功,資料夾裡已有名稱'+'$picname'+'的檔案",$Basename);
+
+          }else{
+            message("新增失敗",$Basename);
+          }
 
         }else{
 
           move_uploaded_file($pic_tmp,$picDir.$pic_name);//把檔案移到指定dir
 
           foreach ($display as $key => $value) {
-            $view_id[$key] = $value[0];
-            $time[$key] = $value[4];
+            $view_id[$key] = $value["id"];
+            $time[$key] = $value["datetime"];
           }
 
           $sum = count($display);//計算總共有幾筆資料
@@ -105,40 +107,41 @@
             $timess = strtotime($time["$viewnum"]) == strtotime($time["$viewnums"]);
 
             if($times || $timess){
+              $How = $db->query(
+                                ViewUp(
+                                        "",
+                                        $pic_name,
+                                        $picDir,
+                                        $datetime,
+                                        $view_id["$viewnum"])
+                                      );//執行更新指令
 
-              $How = $db->query(ViewUp(
-                                "",
-                                $pic_name,
-                                $picDir,
-                                $datetime,
-                                $view_id["$viewnum"])
-                              );//執行更新指令
-
-            }else {
-
-              $How = $db->query(ViewUp(
-                                "",
-                                $pic_name,
-                                $picDir,
-                                $datetime,
-                                $view_id["$viewnums"])
-                              );//執行更新指令
-
-            }
-            if ($How) {
-
+              message("新增成功",$Basename);
 
             }else {
-              # code...
+              $How = $db->query(
+                                ViewUp(
+                                        "",
+                                        $pic_name,
+                                        $picDir,
+                                        $datetime,
+                                        $view_id["$viewnums"])
+                                      );//執行更新指令
+
+              message("新增成功",$Basename);
+
             }
+
             $_SESSION["viewnum"]++;
             $_SESSION["viewnums"]++;
 
           }//else
-      }//if($pic_error)
-    }//foreach
+        }//if($pic_error)
+      }//foreach
+    }
   }
 }
+
   foreach ($display as $key => $value) {
 
     $vi=$viewpoint[$key]=$value[1];
@@ -162,6 +165,7 @@
       </a>
 
       <div class='tools tools-top'>
+      <!--
         <a href='#'>
           <i class='ace-icon fa fa-link'></i>
         </a>
@@ -169,8 +173,8 @@
         <a href='#'>
           <i class='ace-icon fa fa-paperclip'></i>
         </a>
-
-        <a href='#'>
+        -->
+        <a href='#edit' data-toggle='modal'>
           <i class='ace-icon fa fa-pencil'></i>
         </a>
 

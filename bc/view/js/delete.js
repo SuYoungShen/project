@@ -17,7 +17,7 @@ function bootboxs(Deletes) {//彈跳視窗
         },
       });
     } else {
-      alert("小心~~~別按錯了!!!");
+      alerts("小心~~~別按錯了!!!","view.php");
     }
   });
 

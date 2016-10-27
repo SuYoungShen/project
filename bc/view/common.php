@@ -6,7 +6,7 @@
   }
 
   function PlaceSe(){
-    $placeSe = "SELECT * From `places`";
+    $placeSe = "SELECT * From `places` ORDER BY datetime desc";
     return $placeSe;
   }
 
@@ -87,7 +87,7 @@
     return $viewSe;
   }
 
-  function ViewUp($viewpoint,$pic_name,$picPath,$datetime,$i)
+  function ViewUp($viewpoint,$pic_name,$picPath,$datetime,$id)
   {
     $ViewUp ="UPDATE `view`
                         SET
@@ -95,7 +95,7 @@
                         `picname`='".$pic_name."',
                         `path`='".$picPath."',
                         `datetime`='".$datetime."'
-                        WHERE id='".$i."';
+                        WHERE id='".$id."';
     ";
     return $ViewUp;
   }

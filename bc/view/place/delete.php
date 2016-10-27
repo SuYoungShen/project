@@ -4,7 +4,7 @@
   include ("../common.php");
 
   $picDir = "../images/";
-  $picPath = "view/images/";
+  $picPath = "view/place/images/";
   $redirect="../../view.php";
   $msg = "";
   // $viewpoint =

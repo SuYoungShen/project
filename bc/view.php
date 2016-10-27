@@ -235,7 +235,7 @@
 										<th>景點介紹</th>
 										<th class="hidden-480">如何到達 </th>
 											<th class="hidden-480"> 照片 </th>
-										<th>時間</th>
+										<th>修改時間</th>
 										<th></th>
 									</tr>
 								</thead>
@@ -277,14 +277,13 @@
 											enctype="multipart/form-data">
 										<div class="form-group">
 											<div class="col-xs-12">
-
 												<input type="file" name="picName[]" id="id-input-file-4" multiple="multiple" />
 											</div>
 										</div>
 
 										<label>
 											<br/>
-											<button class="btn btn-info" type="submit">
+											<button class="btn btn-info" name="insert" type="submit">
 												<i class="ace-icon fa fa-check bigger-110"></i>
 												送出
 											</button>
@@ -791,14 +790,12 @@
 		$('th input[type=checkbox], td input[type=checkbox]').prop('checked', false);
 
 		//全選
+		var AllDelete = [];
+
 		//select/deselect all rows according to table header checkbox
 		$('#dynamic-table > thead > tr > th input[type=checkbox]').eq(0).on('click', function(){
 			var th_checked = this.checked;//checkbox inside "TH" table header
-			var AllDelete = [];
 
-			$("input[name='DeViewpoint[]']").each(function() {
-				AllDelete.push($(this).val());
-			});
 			// alert(AllDelete);
 			$(this).closest('table').find('tbody > tr').each(function(){
 				var row = this;
@@ -808,11 +805,24 @@
 
 				if(th_checked){
 
+					$("input[name='DeViewpoint[]']").each(function() {
+						AllDelete.push($(this).val());
+					});
 
 					Deletess(AllDelete);
 					 tableTools_obj.fnSelect(row);
+
 				 }else{
 
+					 var Des=[];
+					 $("input[name='DeViewpoint[]']").each(function() {//取未選值
+							Des.push($(this).val());
+						});
+
+						AllDelete = $.grep(AllDelete, function(value) {
+							return value == Des;
+						});
+						Deletess(AllDelete);
 
 					 tableTools_obj.fnDeselect(row);
 				 }
@@ -833,8 +843,8 @@
 
 			if(!this.checked){
 
-				Deletess(OnlyDelete);//單選刪除
 				tableTools_obj.fnSelect(row);
+				Deletess(OnlyDelete);//單選刪除
 
 			}else{
 

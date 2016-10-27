@@ -24,7 +24,7 @@ $(document).ready(function() {
 
 });
 
-function Deletess(Deletes) {//單選刪除
+function Deletess(Deletes) {//刪除
 
 
     $(".table-header a[name='Delete']").on(ace.click_event, function() {

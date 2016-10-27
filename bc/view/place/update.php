@@ -4,7 +4,7 @@
   include ("../../mysql/connect.php");
   include ("../common.php");
 
-  $picDir = "view/images/";
+  $picPath = "view/place/images/";
   $Basename="../../view.php";
   $msg = "";
   $required = isset($_POST["placeName"]) &&
@@ -91,7 +91,7 @@
           //
           // }else {
 
-            move_uploaded_file($pic_tmp,$picDir.$pic_name);//把檔案移到指定dir
+            move_uploaded_file($pic_tmp,$picPath.$pic_name);//把檔案移到指定dir
             $true = $db->query(PlaceUp(
                                         $id,
                                         $placeName,
@@ -99,7 +99,7 @@
                                         $attractions,
                                         $arrival,
                                         $pic_name,
-                                        $picDir,
+                                        $picPath,
                                         $datetime
                                       ));
             if ($true) {

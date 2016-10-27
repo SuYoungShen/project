@@ -640,6 +640,7 @@
 							$("input[name='DeAccounts[]']").each(function() {
 								DeAccounts.push($(this).val());
 							});
+							
 							Deletess(DeAccounts);
 							tableTools_obj.fnSelect(row);
 
