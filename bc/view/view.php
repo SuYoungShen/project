@@ -8,6 +8,7 @@
 
   $picDir = "view/view/images/";
   $Basename="view.php";
+  $deletePage = "view/view/delete.php";
 
   $msg = "";
 //
@@ -178,7 +179,7 @@
           <i class='ace-icon fa fa-pencil'></i>
         </a>
 
-        <a href='#'>
+        <a href='#'  onclick='bootboxs(\"$id\",\"$deletePage\")'>
           <i class='ace-icon fa fa-times red'></i>
         </a>
       </div>
