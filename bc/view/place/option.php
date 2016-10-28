@@ -7,7 +7,7 @@
   $display = $placeSe->fetchAll();
 
   foreach ($display as $key => $value) {
-    $placeName = $value[0];
+    $placeName = $value["place"];
     echo "<option>$placeName</option>";
   }
 

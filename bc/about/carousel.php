@@ -190,12 +190,13 @@ if (!isset($_SESSION["carouselnum"]) && !isset($_SESSION["carouselnums"])) {
               $_SESSION["carouselnums"]++;
 
             }//if(session["carouselnum"])
+
           // }//else
         }//$carousel_error
       }//foreach
     }//FILE["carousel"]
   }
-
+  
 
 
   foreach ($display as $key => $value) {

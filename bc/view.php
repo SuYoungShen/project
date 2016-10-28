@@ -28,6 +28,7 @@
 	<script type="text/javascript" src="view/js/delete.js"></script>
   <script type="text/javascript" src="assets/js/alert.js"></script>
   <script type="text/javascript" src="view/js/fun.js"></script>
+
 	<!-- ace styles -->
 	<link rel="stylesheet" href="assets/css/ace.min.css" class="ace-main-stylesheet" id="main-ace-style" />
 	<!--[if lte IE 9]>
@@ -273,7 +274,7 @@
 
 							<div class="widget-body">
 								<div class="widget-main">
-									<form class="form-horizontal" action=""  role="form" method="post"
+									<form class="form-horizontal" action="view/view/insert.php"  role="form" method="post"
 											enctype="multipart/form-data">
 										<div class="form-group">
 											<div class="col-xs-12">
@@ -444,7 +445,7 @@
 									<div class="space-4"></div>
 									<div class="clearfix form-actions">
 										<div class="col-md-offset-3 col-md-9">
-											<button class="btn btn-info" type="submit" >
+											<button class="btn btn-info" name="insert" type="submit" >
 												<i class="ace-icon fa fa-check bigger-110"></i>
 												送出
 											</button>
@@ -462,6 +463,66 @@
 					</div><!-- /.modal-content -->
 				</div><!-- /.modal-dialog -->
 			</div><!-- place ENDS -->
+
+			<!--view-->
+			<div id="edits" class="modal fade" tabindex="-1">
+				<div class="modal-dialog">
+					<div class="modal-content">
+						<div class="modal-header no-padding">
+							<div class="table-header">
+								<button type="button" class="close" data-dismiss="modal" aria-hidden="true">
+									<span class="white">&times;</span>
+								</button>
+								更新地點
+							</div>
+						</div><!--modal-header-->
+
+						<div class="row">
+							<div class="col-xs-12">
+								<!-- PAGE CONTENT BEGINS -->
+								<form class="form-horizontal"  action="view/view/update.php"  role="form" method="post"
+										enctype="multipart/form-data">
+
+									<div class="form-group">
+										<label class="col-sm-3 control-label no-padding-right" for="form-field-1"> 景點名	 </label>
+
+										<div class="col-sm-9">
+											<input type="hidden" name="id" id='ids'>
+											<input type="text" id="viewpoint"  name="viewpoint" placeholder="景點名" class="col-xs-10 col-sm-5" />
+											<span class="viewpoint"></span>
+										</div>
+									</div>
+
+									<div class="form-group">
+										<label class="col-sm-3 control-label no-padding-right" for="form-field-1-1"> 上傳圖檔 </label>
+										<div class="col-sm-8">
+											<input multiple="multiple" name="picName[]" type="file" id="id-input-file-6" />
+											<span id="pics"></span>
+
+										</div>
+									</div>
+									<div class="space-4"></div>
+									<div class="clearfix form-actions">
+										<div class="col-md-offset-3 col-md-9">
+											<button class="btn btn-info" name="update" type="submit" >
+												<i class="ace-icon fa fa-check bigger-110"></i>
+												更新
+											</button>
+
+											&nbsp; &nbsp; &nbsp;
+											<button class="btn" type="reset">
+												<i class="ace-icon fa fa-undo bigger-110"></i>
+												重填
+											</button>
+										</div><!--col-md-offset-3-->
+									</div>
+								</form>
+							</div><!-- /.col -->
+						</div><!-- /.row -->
+					</div><!-- /.modal-content -->
+				</div><!-- /.modal-dialog -->
+			</div><!-- edit ENDS -->
+			<!-- place -->
 
 			<!--place-->
 			<div id="edit" class="modal fade" tabindex="-1">
@@ -546,8 +607,7 @@
 					</div><!-- /.modal-content -->
 				</div><!-- /.modal-dialog -->
 			</div><!-- edit ENDS -->
-
-
+			<!-- view -->
 
 			<table id="grid-table"></table>
 
@@ -1158,6 +1218,36 @@ preview_error : function(filename, error_code) {
 //console.log($(this).data('ace_input_method'));
 });
 
+$('#id-input-file-6').ace_file_input({
+	style:'well',
+	btn_choose:'Drop files here or click to choose',
+	btn_change:null,
+	no_icon:'ace-icon fa fa-cloud-upload',
+	droppable:true,
+	thumbnail:'small'//large | fit
+	//,icon_remove:null//set null, to hide remove/reset button
+	/**,before_change:function(files, dropped) {
+	//Check an example below
+	//or examples/file-upload.html
+	return true;
+}*/
+/**,before_remove : function() {
+return true;
+}*/
+,
+preview_error : function(filename, error_code) {
+//name of the file that failed
+//error_code values
+//1 = 'FILE_LOAD_FAILED',
+//2 = 'IMAGE_LOAD_FAILED',
+//3 = 'THUMBNAIL_FAILED'
+//alert(error_code);
+}
+
+}).on('change', function(){
+//console.log($(this).data('ace_input_files'));
+//console.log($(this).data('ace_input_method'));
+});
 	// $('#id-input-file-3')
 	// .ace_file_input('show_file_list', [
 	// {type: 'image', name: 'name of image', path: 'http://path/to/image/for/preview'},

@@ -34,7 +34,7 @@ if (!isset($_SESSION["topnum"]) && !isset($_SESSION["topnums"])) {
 
           $placeUp = topups($id,$place_Names ,$datetime);//更新檔名
           $true = $db->query($placeUp);//執行更新指令
-          
+
           if ($true) {
             message("更新成功,但照片未更新",$Basename);
           }else {
@@ -68,18 +68,19 @@ if (!isset($_SESSION["topnum"]) && !isset($_SESSION["topnums"])) {
           date_default_timezone_set('Asia/Taipei');//設定時間為台北
           $datetime = date("Y-m-d H:i:s");//時間
 
-          // if(file_exists($picDir.$pic_Name)){//檢查是否有相同檔案
-          //
-          //   $picName = basename($pic_Name,"$pic_tmps");//去除副檔名,留檔名
-          //   // message("資料夾裡已有名稱".$picName."的檔案",$Basename);
-          //   $placeUp = PlaceUp($place_Name,$Introduction ,$pic_Name ,$picDir, $datetime);//更新檔名
-          //   $true = $db->query($placeUp);//執行更新指令
-          //   if ($true) {
-          //     message("更新成功",$Basename);
-          //   }else {
-          //     message("更新失敗",$Basename);
-          //   }
-          // }else{
+          if(file_exists($picDir.$pic_Name)){//檢查是否有相同檔案
+
+            $picName = basename($pic_Name,"$pic_tmps");//去除副檔名,留檔名
+            // $placeUp = PlaceUp($place_Name,$Introduction ,$pic_Name ,$picDir, $datetime);//更新檔名
+            $placeUp = topup($id,$place_Names ,$pic_Name ,$picDir, $datetime);//更新檔名
+            $true = $db->query($placeUp);//執行更新指令
+            if ($true) {
+              message("更新成功,但資料夾裡已有名稱".$picName."的檔案",$Basename);
+            }else {
+              message("更新失敗",$Basename);
+            }
+
+          }else{
 
           move_uploaded_file($pic_tmp,$top6dir.$pic_Name);//把檔案移到指定dir
           $placeUp = topup($id,$place_Names ,$pic_Name ,$picDir, $datetime);//更新檔名
@@ -89,7 +90,7 @@ if (!isset($_SESSION["topnum"]) && !isset($_SESSION["topnums"])) {
           }else {
             message("更新失敗",$Basename);
           }
-          // }//else
+          }//else
         }//$error == 0
       }//foreach
     }//$_FILES["picName"]
@@ -153,21 +154,21 @@ if (isset($_POST["insert"])) {
         date_default_timezone_set('Asia/Taipei');//設定時間為台北
         $date = date("Y-m-d H:i:s");//時間
 
-        // if(file_exists($top6dir.$top6_name)){//檢查是否有相同檔案
-        //
-        //   $topname = basename($top6_name,"$top6_tmps");//去除副檔名,留檔名
-        //   $value = "資料夾裡已有名稱{$topname}的檔案";
-        //
-        //   echo "
-        //   <script>
-        //   var value = '$value';
-        //   var basename= '$topbasename';
-        //
-        //   alerts(value, basename);
-        //   </script>
-        //   ";
-        //
-        // }else {
+        if(file_exists($top6dir.$top6_name)){//檢查是否有相同檔案
+
+          $topname = basename($top6_name,"$top6_tmps");//去除副檔名,留檔名
+          $value = "資料夾裡已有名稱{$topname}的檔案";
+
+          echo "
+          <script>
+          var value = '$value';
+          var basename= '$topbasename';
+
+          alerts(value, basename);
+          </script>
+          ";
+
+        }else {
 
           move_uploaded_file($top6_tmp,$top6dir.$top6_name);//把檔案移到指定dir
 
@@ -199,13 +200,14 @@ if (isset($_POST["insert"])) {
             $toptimess = strtotime($toptimes["$topnum"]) == strtotime($toptimes["$topnums"]);
 
             if($toptime || $toptimess){
-              $test = "";
-              $topup = topup($topid["$topnum"],$test,$top6_name, $top6dir, $date);//更新檔名
+
+              $topup = topup($topid["$topnum"],"",$top6_name, $top6dir, $date);//更新檔名
               $db->query($topup);//執行更新指令
               message("上傳成功",$topbasename);
 
             }else {
-              $topup = topup($topid["$topnums"],$test,$top6_name, $top6dir, $date);//更新檔名
+
+              $topup = topup($topid["$topnums"],"",$top6_name, $top6dir, $date);//更新檔名
               $db->query($topup);//執行更新指令
               message("上傳成功",$topbasename);
             }
@@ -213,7 +215,7 @@ if (isset($_POST["insert"])) {
             $_SESSION["topnums"]++;
 
           }//if(session["topnum"])
-        // }//else
+        }//else
       }//if($top6_error)
     }//foreach
   }//FILE["top6"]

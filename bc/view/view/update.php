@@ -6,28 +6,18 @@
 
   $picDir = "./images/";
   $picPath = "view/view/images/";
-  $redirect="../../view.php";
+  $Basename = "../../view.php";
   $msg = "";
 
   $ViewSe = $db->query(ViewSe());//查詢資料表
   $display = $ViewSe->fetchAll();
 
-  foreach ($display as $key => $value) {
-     $test[$key]=$value[0];
-    echo $id[$key]=$value[5]."<br>";
-    $time[$key]=$value[4];
-  }
-  for ($i=0; $i < ; $i++) { 
-    # code...
-  }
-  if ($time[0]<$time[1]) {
-    echo "time";
-  }else {
-    echo "string";
-  }
+  if (isset($_POST["update"])) {
 
+    $id = $_POST["id"];
+    $viewpoint = $_POST["viewpoint"];
 
-  if (isset($_FILES["picName"])) {
+    if (isset($_FILES["picName"])) {
 
       foreach ($_FILES["picName"]["tmp_name"] as $key => $value) {
 
@@ -35,7 +25,19 @@
 
         if ($pic_error==4) {
 
-          message("不小心按到送出齁",$redirect);
+          date_default_timezone_set('Asia/Taipei');//設定時間為台北
+          $datetime = date("Y-m-d H:i:s");//時間
+          $true = $db->query(ViewUps(
+                                      $id,
+                                      $viewpoint,
+                                      $datetime
+                                    ));//更新檔名
+
+          if ($true) {
+            message("更新成功,但照片未更新",$Basename);
+          }else {
+            message("更新失敗",$Basename);
+          }
 
         }else if($pic_error == 0){
 
@@ -50,7 +52,7 @@
           if (!in_array($pic_tmps,$pictmp)) {//檢查副檔名
 
             $pictmp = "不好意思,只接受".implode(" ",$pictmp)."的副檔名";
-            message($pictmp,$redirect);
+            message($pictmp,$Basename);
 
             break;
 
@@ -58,7 +60,7 @@
 
             $picsize = $pic_name."檔案已超過2MB";
 
-            message($picsize,$redirect);
+            message($picsize,$Basename);
 
             break;
           }
@@ -69,83 +71,42 @@
           if(file_exists($picDir.$pic_name)){//檢查是否有相同檔案
 
             $picname = basename($pic_name,"$pic_tmps");//去除副檔名,留檔名
-          //   $How = $db->query(ViewUp(
-          //                             $viewpoint,
-          //                             $pic_name,
-          //                             $picPath,
-          //                             $datetime,
-          //                             $key
-          //                           ));
-          // if ($How) {
-          //
-          //   message("新增成功,資料夾裡已有名稱'+'$picname'+'的檔案",$redirect);
-          //
-          // }else{
-          //   message("新增失敗",$redirect);
-          // }
+            $How = $db->query(ViewUp(
+                                      $id,
+                                      $viewpoint,
+                                      $pic_name,
+                                      $picPath,
+                                      $datetime
+                                    ));
+            if ($How == true) {
+              message("更新成功,資料夾裡已有名稱'+'$picname'+'的檔案",$Basename);
+            }else{
+              message("更新失敗",$Basename);
+            }
 
-        }else {
+          }else {
 
-          move_uploaded_file($pic_tmp,$picDir.$pic_name);//把檔案移到指定dir
-
-          // foreach ($display as $key => $value) {
-          //   $view_id[$key] = $value[0];
-          //   $time[$key] = $value[4];
-          //
-          // }
-
-
-
-          // $sum = count($display);//計算總共有幾筆資料
-          // //時間比對
-          // if (isset($_SESSION["viewnum"]) && isset($_SESSION["viewnums"])) {
-          //
-          //   $viewnum = $_SESSION["viewnum"];
-          //   $viewnums = $_SESSION["viewnums"];
-          //
-          //   if ($viewnum > ($sum-1)) {
-          //
-          //     $_SESSION["viewnum"] = 0;
-          //     $viewnum = $_SESSION["viewnum"];
-          //
-          //   }
-          //
-          //   if ($viewnums > ($sum-1)) {
-          //     $_SESSION["viewnums"] = 0;
-          //     $viewnums = $_SESSION["viewnums"];
-          //
-          //   }
-          //   //時間比對
-          //   $times = strtotime($time["$viewnum"]) < strtotime($time["$viewnums"]);
-          //   $timess = strtotime($time["$viewnum"]) == strtotime($time["$viewnums"]);
-          //
-          //   if($times || $timess){
-          //     echo "我".$view_id["$viewnum"];
-          //     // $db->query(ViewUp(
-          //     //                   $pic_name,
-          //     //                   $picDir,
-          //     //                   $datetime,
-          //     //                   $view_id["$viewnum"])
-          //     //                 );//執行更新指令
-          //
-          //   }else {
-          //     echo $view_id["$viewnums"];
-          //
-          //     // $db->query(ViewUp(
-          //     //                   $pic_name,
-          //     //                   $picDir,
-          //     //                   $datetime,
-          //     //                   $view_id["$viewnum"])
-          //     //                 );//執行更新指令
-          //
-          //   }
+            move_uploaded_file($pic_tmp,$picDir.$pic_name);//把檔案移到指定dir
+            $How = $db->query(ViewUp(
+                                      $id,
+                                      $viewpoint,
+                                      $pic_name,
+                                      $picPath,
+                                      $datetime
+                                    ));
+            if ($How == true) {
+              message("更新成功",$Basename);
+            }else{
+              message("更新失敗",$Basename);
+            }
 
 
-        // }//else
-      }//if($pic_error)
-    }//foreach
-  }
-}
+            }//else
+          }//if($pic_error)
+        }//foreach
+      }
+    }
+// }
   // if ($required) {
   //
   //   $picName = $_POST["picName"];//地區名
@@ -161,7 +122,7 @@
   //
   //       if ($pic_error == 4 ) {//判斷是否有錯誤
   //
-  //         message("不小心按到送出了齁",$redirect);
+  //         message("不小心按到送出了齁",$Basename);
   //
   //       }else if($pic_error == 0){
   //
@@ -176,7 +137,7 @@
   //         if (!in_array($pic_tmps,$pictmp)) {//檢查副檔名
   //
   //           $pictmp = "不好意思,只接受".implode(" ",$pictmp)."的副檔名";
-  //           message($pictmp,$redirect);
+  //           message($pictmp,$Basename);
   //
   //           break;
   //
@@ -186,7 +147,7 @@
   //           echo "
   //           <script>
   //           var value = '$picsize';
-  //           var basename= '$redirect';
+  //           var basename= '$Basename';
   //           alerts(value, basename);
   //           </script>";
   //           break;
@@ -208,10 +169,10 @@
   //                                       $datetime
   //                                     ));
   //           if ($true) {
-  //             message("新增成功,資料夾裡已有名稱'+'$picname'+'的檔案",$redirect);
+  //             message("新增成功,資料夾裡已有名稱'+'$picname'+'的檔案",$Basename);
   //
   //           }else {
-  //             message("新增失敗",$redirect);
+  //             message("新增失敗",$Basename);
   //           }
   //
   //         }else {
@@ -227,10 +188,10 @@
   //                                       $datetime
   //                                     ));
   //           if ($true) {
-  //             message("新增成功",$redirect);
+  //             message("新增成功",$Basename);
   //
   //           }else {
-  //             message("新增失敗",$redirect);
+  //             message("新增失敗",$Basename);
   //           }
   //
   //         }//else

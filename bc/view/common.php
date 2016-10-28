@@ -82,12 +82,13 @@
     return $PlaceDe;
   }
 
+
   function ViewSe(){
     $viewSe = "SELECT * From `view`";
     return $viewSe;
   }
 
-  function ViewUp($viewpoint,$pic_name,$picPath,$datetime,$id)
+  function ViewUp($id,$viewpoint,$pic_name,$picPath,$datetime)
   {
     $ViewUp ="UPDATE `view`
                         SET
@@ -100,6 +101,16 @@
     return $ViewUp;
   }
 
+  function ViewUps($id,$viewpoint,$datetime)
+  {
+    $ViewUps ="UPDATE `view`
+                        SET
+                        `viewpoint`='".$viewpoint."',
+                        `datetime`='".$datetime."'
+                        WHERE id='".$id."';
+    ";
+    return $ViewUps;
+  }
 
   function message($value, $Basename){
     echo "

@@ -43,11 +43,17 @@ $(document).ready(function() {
 	});
 
 	function Edit(id, viewpoint, attractions, arrival, pic_dir, pic_name) {
-		document.getElementById("id").value = id;		
+		document.getElementById("id").value = id;
 	  document.getElementById("viewpoint").value = viewpoint;
 	  document.getElementById("attractions").value = attractions;
 	  document.getElementById("arrival").value = arrival;
 		document.getElementById("pic").innerHTML = "<img src='"+pic_dir+pic_name+"'  class='col-xs-8'>";
+	}
 
+	function Edits(id, placeName, picDir, pic_name) {
+	  document.getElementById("ids").value = id;
+	  document.getElementById("viewpoint").value = placeName;
+	  // document.getElementById("Introduction").value = Introduction;
+	  document.getElementById("pics").innerHTML = "<img src='"+picDir+pic_name+"'  class='col-xs-8'>";
 
 	}
