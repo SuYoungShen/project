@@ -20,12 +20,14 @@
     }else {
 
       foreach ($delete as $key => $de) {
-        $true = $db->query(PlaceDe($de));
+        echo $de;
+        // $true = $db->query(ViewDe($de));
       }
+      
       if ($true == true) {
-        echo "刪除成功";
+        echo "刪除成功s";
       }else {
-        echo "刪除失敗";
+        echo "刪除失敗ss";
       }
     }
   }else {

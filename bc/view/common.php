@@ -88,6 +88,12 @@
     return $viewSe;
   }
 
+  function ViewDe($de){
+    $viewDE = "
+                DELETE FROM `view` WHERE `id` = '".$de."'
+    ";
+  }
+
   function ViewUp($id,$viewpoint,$pic_name,$picPath,$datetime)
   {
     $ViewUp ="UPDATE `view`
