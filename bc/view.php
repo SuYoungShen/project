@@ -25,9 +25,10 @@
 	<link rel="stylesheet" href="assets/fonts/fonts.googleapis.com.css" />
 	<script src="assets/js/jquery.2.1.1.min.js"></script>
 
+	<script type="text/javascript" src="view/js/fun.js"></script>
 	<script type="text/javascript" src="view/js/delete.js"></script>
   <script type="text/javascript" src="assets/js/alert.js"></script>
-  <script type="text/javascript" src="view/js/fun.js"></script>
+
 
 	<!-- ace styles -->
 	<link rel="stylesheet" href="assets/css/ace.min.css" class="ace-main-stylesheet" id="main-ace-style" />

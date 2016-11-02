@@ -102,7 +102,7 @@
                         `picname`='".$pic_name."',
                         `path`='".$picPath."',
                         `datetime`='".$datetime."'
-                        WHERE id='".$id."';
+                        WHERE id='".$id."'
     ";
     return $ViewUp;
   }

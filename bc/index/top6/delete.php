@@ -4,10 +4,10 @@
   include ("common.php");
 
   if (isset($_POST["id"])) {
-    $test="";
+    $null="";
     $delete = $_POST["id"];
 
-    $true = $db->query(topup($delete,$test,$test,$test,$test));
+    $true = $db->query(topup($delete, $null,$null, $null, $null));
 
       if ($true == true) {
         echo "刪除成功";

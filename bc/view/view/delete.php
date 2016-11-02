@@ -6,31 +6,28 @@
   $picDir = "../images/";
   $picPath = "view/place/images/";
   $redirect="../../view.php";
-  $msg = "";
+  $null = "";
   // $viewpoint =
   //             isset($_POST["viewpoint"]) &&
   //             !empty($_POST["viewpoint"])
   //             ?"$_POST['viewpoint']":"";//景點名
   if (isset($_POST["id"])) {
-
+    $null="";
     $delete = $_POST["id"];
-
-    if ($delete=="") {
-
-    }else {
-
-      foreach ($delete as $key => $de) {
-        echo $de;
-        // $true = $db->query(ViewDe($de));
-      }
+    // print_r($delete);
+    foreach ($delete as $key => $value) {
       
-      if ($true == true) {
-        echo "刪除成功s";
-      }else {
-        echo "刪除失敗ss";
-      }
+      $true = $db->query(
+                          ViewUp($value[0], $null, $null, $null, $null)
+                        );
     }
-  }else {
+
+      if ($true == true) {
+        echo "刪除成功";
+      }else {
+        echo "刪除失敗";
+      }
+    }else {
     echo "沒值~是要刪什麼~~~";
   }
 

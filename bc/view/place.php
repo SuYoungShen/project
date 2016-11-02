@@ -68,7 +68,15 @@
               <ul class='dropdown-menu dropdown-only-icon dropdown-yellow dropdown-menu-right dropdown-caret dropdown-close'>
 
                 <li>
-                  <a href='#edit' class='tooltip-success' data-rel='tooltip' title='Edit'>
+                  <a href='#edit' class='tooltip-success' data-rel='tooltip' title='Edit' data-toggle='modal'
+                    onclick='Edit(
+                                \"$id\",
+                                \"$viewpoint[$key]\",
+                                \"$attractions[$key]\",
+                                \"$arrival[$key]\",
+                                \"$picDir[$key]\",
+                                \"$pic_name[$key]\"
+                                )'>
                     <span class='green'>
                       <i class='ace-icon fa fa-pencil-square-o bigger-120'></i>
                     </span>
@@ -76,7 +84,8 @@
                 </li>
 
                 <li>
-                  <a href='#' class='tooltip-error' data-rel='tooltip' title='Delete'>
+                  <a href='#' class='tooltip-error' data-rel='tooltip' title='Delete'
+                  name='Delete' onclick='bootboxs(\"$id\",\"$deletePage\")' >
                     <span class='red'>
                       <i class='ace-icon fa fa-trash-o bigger-120'></i>
                     </span>
