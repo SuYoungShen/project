@@ -489,7 +489,7 @@
 
 										<div class="col-sm-9">
 											<input type="hidden" name="id" id='ids'>
-											<input type="text" id="viewpoint"  name="viewpoint" placeholder="景點名" class="col-xs-10 col-sm-5" />
+											<input type="text" id="viewpoints"  name="viewpoint" placeholder="景點名" class="col-xs-10 col-sm-5" />
 											<span class="viewpoint"></span>
 										</div>
 									</div>
@@ -546,11 +546,15 @@
 									<div class="form-group">
 										<label class="col-sm-3 control-label no-padding-right" for="form-field-1"> 地區名</label>
 										<div class="col-sm-9">
-											<select name="placeName">
+
 												<?php
-													include("view/place/option.php");
+													echo "<select>";
+														include ("view/place/option.php");
+													echo "</select>";
 												 ?>
-											</select>
+												<!-- <option id="placeNames"></option> -->
+
+											<!-- <input type="text" id="placeNames"  name="placeName" placeholder="" class="col-xs-10 col-sm-5" /> -->
 										</div>
 									</div>
 									<div class="form-group">
@@ -863,6 +867,7 @@
 				// $("input[name='DeViewpoint[]']").each(function() {
 				// 	AllDelete.push($(this).val());
 				// });
+				var Deletepage = "view/place/delete.php";
 
 				if(th_checked){
 
@@ -870,7 +875,7 @@
 						AllDelete.push($(this).val());
 					});
 
-					Deletess(AllDelete);
+					Deletess(AllDelete,Deletepage);
 					 tableTools_obj.fnSelect(row);
 
 				 }else{
@@ -883,7 +888,7 @@
 						AllDelete = $.grep(AllDelete, function(value) {
 							return value == Des;
 						});
-						Deletess(AllDelete);
+						Deletess(AllDelete,Deletepage);
 
 					 tableTools_obj.fnDeselect(row);
 				 }
@@ -897,7 +902,7 @@
 
 			var row = $(this).closest('tr').get(0);
 			var Delete = $(this).val();
-
+			var Deletepage = "view/place/delete.php";
 			$(this).each(function() {
 				OnlyDelete.push(Delete);
 			});
@@ -905,7 +910,7 @@
 			if(!this.checked){
 
 				tableTools_obj.fnSelect(row);
-				Deletess(OnlyDelete);//單選刪除
+				Deletess(OnlyDelete,Deletepage);//單選刪除
 
 			}else{
 
@@ -913,7 +918,7 @@
 					return value != Delete;
 				});
 
-				Deletess(OnlyDelete);//單選刪除
+				Deletess(OnlyDelete,Deletepage);//單選刪除
 
 				tableTools_obj.fnDeselect($(this).closest('tr').get(0));
 

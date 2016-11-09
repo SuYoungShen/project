@@ -16,7 +16,7 @@
     $delete = $_POST["id"];
     // print_r($delete);
     foreach ($delete as $key => $value) {
-      
+
       $true = $db->query(
                           ViewUp($value[0], $null, $null, $null, $null)
                         );

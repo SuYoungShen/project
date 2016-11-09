@@ -8,9 +8,7 @@
   $Basename="../../view.php";
   $msg = "";
   $required = isset($_POST["placeName"]) &&
-              !empty($_POST["placeName"]) &&
-              isset($_POST["viewpoint"]) &&
-              !empty($_POST["viewpoint"]);//必填
+              !empty($_POST["placeName"]) ;//必填
 
   if ($required) {
 

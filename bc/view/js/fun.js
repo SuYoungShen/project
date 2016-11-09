@@ -44,6 +44,8 @@ $(document).ready(function() {
 
 	function Edit(id, viewpoint, attractions, arrival, pic_dir, pic_name) {
 		document.getElementById("id").value = id;
+		// document.getElementById("placeNames").value = place_name;
+		// document.getElementById("placeNames").selected = "true";
 	  document.getElementById("viewpoint").value = viewpoint;
 	  document.getElementById("attractions").value = attractions;
 	  document.getElementById("arrival").value = arrival;
@@ -52,7 +54,7 @@ $(document).ready(function() {
 
 	function Edits(id, placeName, picDir, pic_name) {
 	  document.getElementById("ids").value = id;
-	  document.getElementById("viewpoint").value = placeName;
+	  document.getElementById("viewpoints").value = placeName;
 	  // document.getElementById("Introduction").value = Introduction;
 	  document.getElementById("pics").innerHTML = "<img src='"+picDir+pic_name+"'  class='col-xs-8'>";
 

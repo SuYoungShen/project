@@ -35,7 +35,7 @@
         <td>$arr</td>
 
         <td class='hidden-480 ace-thumbnails clearfix'>
-          <a href='$pdir$pic'  data-rel='colorbox'>$pic</a>
+          <a href='$pdir$pic'  data-rel='colorbox' title='$vie'>$pic</a>
         </td>
          <td>$dat</td>
 
@@ -44,6 +44,7 @@
             <a class='green' href='#edit' data-toggle='modal'
               onclick='Edit(
                             \"$id\",
+                                                       
                             \"$viewpoint[$key]\",
                             \"$attractions[$key]\",
                             \"$arrival[$key]\",
@@ -85,7 +86,7 @@
 
                 <li>
                   <a href='#' class='tooltip-error' data-rel='tooltip' title='Delete'
-                  name='Delete' onclick='bootboxs(\"$id\",\"$deletePage\")' >
+                      name='Delete' onclick='bootboxs(\"$id\",\"$deletePage\")' >
                     <span class='red'>
                       <i class='ace-icon fa fa-trash-o bigger-120'></i>
                     </span>

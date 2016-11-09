@@ -81,7 +81,7 @@
             if ($How == true) {
               message("更新成功,資料夾裡已有名稱'+'$picname'+'的檔案",$Basename);
             }else{
-              message("更新失敗",$Basename);
+              message("更新失敗s",$Basename);
             }
 
           }else {

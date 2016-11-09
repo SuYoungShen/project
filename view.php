@@ -91,7 +91,6 @@
          </ul>
        </div>
      </div>
-   </div>
  </section>
     <!-- / .title -->
     <div class="container">
@@ -103,52 +102,58 @@
       <div class="gap"></div>
 
       <table class="table table-striped table-bordered table-hover">
-        <tr>
+        <!-- <tr>
           <td>
             <a  href="#" >
               高雄地區名
             </a>
           </td>
-        </tr>
+        </tr> -->
+        <?php
+          include ("view/place.php");
+         ?>
       </table>
     </div>
 <hr>
 
+
 <!--熱門排行-->
-<section id="portfolio">
- <div class="container">
+  <section id="portfolio">
+    <div class="container">
+      <div class="gap"></div>
 
-    <div class="gap"></div>
-    <ul class="gallery col-4">
+      <ul class="gallery col-4">
 
-      <?php
-        for ($i=1; $i <= 9; $i++) {
-          echo "
-          <li>
-            <div class='preview'>
-              <img alt=' ' src='images/portfolio/thumb/300x180.jpg'>
-              <div class='overlay'>
-              </div>
-              <div class='links'>
-                <a data-toggle='modal' href='#modal-$i'><i class='icon-eye-open'></i></a><a href='#'><i class='icon-heart'></i></a>
-              </div>
-            </div>
-            <div class='desc'>
-              <h5>景點名</h5>
-            </div>
-            <div id='modal-$i' class='modal hide fade'>
-              <a class='close-modal' href='javascript:;' data-dismiss='modal' aria-hidden='true'><i class='icon-remove'></i></a>
-              <div class='modal-body'>
-                <img src='images/portfolio/full/500x300.jpg' alt=' '>
-              </div>
-            </div>
-          </li>";
-        }
-       ?>
-      </ul>
-    </div>
+        <?php
+          // for ($i=1; $i <= 9; $i++) {
+          //   echo "
+          //   <li>
+          //     <div class='preview'>
+          //       <img alt=' ' src='images/portfolio/thumb/300x180.jpg'>
+          //       <div class='overlay'>
+          //       </div>
+          //       <div class='links'>
+          //         <a data-toggle='modal' href='#modal-$i'><i class='icon-eye-open'></i></a><a href='#'><i class='icon-heart'></i></a>
+          //       </div>
+          //     </div>
+          //     <div class='desc'>
+          //       <h5>景點名</h5>
+          //     </div>
+          //     <div id='modal-$i' class='modal hide fade'>
+          //       <a class='close-modal' href='javascript:;' data-dismiss='modal' aria-hidden='true'><i class='icon-remove'></i></a>
+          //       <div class='modal-body'>
+          //         <img src='images/portfolio/full/500x300.jpg' alt=' '>
+          //       </div>
+          //     </div>
+          //   </li>";
+          // }
+          include ("view/view.php");
+         ?>
+        </ul>
 
-</section>
+      </div>
+
+  </section>
 <!--熱門排行-->
 
 <section id="clients" class="main">

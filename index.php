@@ -127,49 +127,48 @@
       <!--/Slider-->
 
   <!--熱門排行-->
-
-  <section id="recent-works">
-
-    <div class="container">
-      <div class="center">
-        <h3>TOP6</h3>
-        <!--<p class="lead">高雄熱門景點</p>-->
-      </div>
-      <div class="gap"></div>
-      <ul class="gallery col-4">
-        <div class="row-fluid">
-        <?php
-          include("index/top6/top6.php");
-          // for ($i=1; $i <= 6 ; $i++) {
-          //   echo "
-          //   <li>
-          //     <div class='preview'>
-          //       <img alt=' ' src='images/portfolio/thumb/300x180.jpg'>
-          //       <div class='overlay'>
-          //       </div>
-          //       <div class='links'>
-          //         <a data-toggle='modal' href='#modal-1'><i class='icon-eye-open'></i></a><a href='#'><i class='icon-heart'></i></a>
-          //       </div>
-          //     </div>
-          //     <div class='desc'>
-          //       <h5>景點名</h5>
-          //     </div>
-          //     <div id='modal-1' class='modal hide fade'>
-          //       <a class='close-modal' href='javascript:;' data-dismiss='modal' aria-hidden='true'><i class='icon-remove'></i></a>
-          //       <div class='modal-body'>
-          //         <img src='images/portfolio/full/500x300.jpg' alt=' '>
-          //       </div>
-          //     </div>
-          //   </li>
-          //   ";
-          // }
-         ?>
-         </div>
+  <!-- <div class="container" > -->
+    <section id="recent-works">
+      <div class="container">
+        <div class="center">
+          <h3>TOP6</h3>
+          <!--<p class="lead">高雄熱門景點</p>-->
+        </div>
+        <div class="gap"></div>
+        <ul class="gallery col-4">
+          <div class="row-fluid">
+            <?php
+            include("index/top6/top6.php");
+            // for ($i=1; $i <= 6 ; $i++) {
+            //   echo "
+            //   <li>
+            //     <div class='preview'>
+            //       <img alt=' ' src='images/portfolio/thumb/300x180.jpg'>
+            //       <div class='overlay'>
+            //       </div>
+            //       <div class='links'>
+            //         <a data-toggle='modal' href='#modal-1'><i class='icon-eye-open'></i></a><a href='#'><i class='icon-heart'></i></a>
+            //       </div>
+            //     </div>
+            //     <div class='desc'>
+            //       <h5>景點名</h5>
+            //     </div>
+            //     <div id='modal-1' class='modal hide fade'>
+            //       <a class='close-modal' href='javascript:;' data-dismiss='modal' aria-hidden='true'><i class='icon-remove'></i></a>
+            //       <div class='modal-body'>
+            //         <img src='images/portfolio/full/500x300.jpg' alt=' '>
+            //       </div>
+            //     </div>
+            //   </li>
+            //   ";
+            // }
+            ?>
+          </div>
         </ul>
+
       </div>
-
-  </section>
-
+    </section>
+  <!-- </div> -->
   <!--熱門排行-->
 
   <!--Footer-->

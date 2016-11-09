@@ -1,6 +1,6 @@
 <script type="text/javascript" src="../../assets/js/alert.js"></script>
  <?php
-  $dbname="view";
+  $dbname="project";
   include ("../../mysql/connect.php");
   include ("../common.php");
 

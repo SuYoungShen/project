@@ -1,7 +1,7 @@
 <?php
 
   function Place(){
-    $place = "SELECT place From `place`";
+    $place = "SELECT `place` From `place`";
     return $place;
   }
 
