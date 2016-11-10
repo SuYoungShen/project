@@ -6,21 +6,37 @@
   include ("../common.php");
   $BackWeb="../../../forum.php";//回到哪個頁面
 
-  $true = !empty($_POST["theme"]) &&
+  $true = isset($_POST["theme"]) &&
+          !empty($_POST["theme"]) &&
+          isset($_POST["posted"]) &&
           !empty($_POST["posted"]) &&
-          !empty($_POST["message"]);
+          isset($_POST["email"]) &&
+          !empty($_POST["email"]) &&
+          isset($_POST["message"]) &&
+          !empty($_POST["message"])
+          ;
 
   if ($true) {
 
-    $theme=$_POST["theme"];//網址
-    $posted=$_POST["posted"];//發表人
-    $email=$_POST["email"];//email
-    $message=$_POST["message"];//留言
-    $datetime=$_COOKIE["datetime"];//時間
+    $theme = trim($_POST["theme"]);//網址
+    $posted = trim($_POST["posted"]);//發表人
+    $email = trim($_POST["email"]);//email
+    $message = trim($_POST["message"]);//留言
+    // $datetime=$_COOKIE["datetime"];//時間
+    date_default_timezone_set('Asia/Taipei');//設定時間為台北
+    $datetime = date("Y-m-d H:i:s");//時間
 
     // $trues=$db->query(ForumIn($theme, $posted, $email));
 
-      $trues=$db->query(ForumIn($theme, $posted, $email, $message, $datetime));
+      $trues=$db->query(
+                        ForumIn(
+                                $theme,
+                                $posted,
+                                $email,
+                                $message,
+                                $datetime
+                              )
+                        );
 
       if ($trues) {
         message("留言成功",$BackWeb);

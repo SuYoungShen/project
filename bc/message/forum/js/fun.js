@@ -1,6 +1,8 @@
-function Edit(account, password, email, name) {
-  document.getElementById("account").value = account;
-  document.getElementById("password").value = password;
+function Edit(id, theme, message, email, posted, replys) {
+  document.getElementById("id").value = id;
+  document.getElementById("theme").value = theme;
+  document.getElementById("message").value = message;
   document.getElementById("email").value = email;
-  document.getElementById("name").value = name;
+  document.getElementById("posted").value = posted;
+  document.getElementById("replys").value = replys;
 }

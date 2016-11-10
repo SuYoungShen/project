@@ -119,17 +119,17 @@
       <div class="row">
         <form class="form-horizontal" method="post"  role="form" action="bc/message/forum/insert.php">
           <div class="span12">
-            <input type="text" id="form-field-1" name="theme" placeholder="主題"  class="span4"/>
-            <input type="text" id="form-field-1" name="posted" placeholder="發表人" class="span4" />
-            <input type="email" id="form-field-1" name="email" placeholder="email" class="span4"/>
+            <input type="text" id="theme" name="theme" placeholder="主題"  class="span4"/>
+            <input type="text" id="posted" name="posted" placeholder="發表人" class="span4" />
+            <input type="email" id="email" name="email" placeholder="email" class="span4"/>
           </div>
 
           <div class="span12">
-            <textarea type="text" id="form-field-1" name="message" placeholder="想說什麼" rows="10"class="span12" /></textarea>
+            <textarea type="text" id="message" name="message" placeholder="想說什麼" rows="10"class="span12" /></textarea>
           </div>
-          <script type="text/javascript">
+          <!-- <script type="text/javascript">
             document.cookie="datetime="+getNowTime();
-          </script>
+          </script> -->
           <div class="span2">
             <input type="submit" class="btn btn-large btn-primary" value="送出">
           </div>

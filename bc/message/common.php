@@ -97,5 +97,19 @@
     return $ForumIn;
   }
 
+  function ForumUp($id, $themes, $posteds, $emails, $messages, $replys, $datetimes){
+    $ForumUp = "UPDATE
+                  `forum`
+                SET
+                  `theme`='".$themes."',
+                  `posted`='".$posteds."',
+                  `email`='".$emails."',
+                  `message`='".$messages."',
+                  `reply`='".$replys."',
+                  `datetime`='".$datetimes."'
+                WHERE `id` = '".$id."'
+                ";
+    return $ForumUp;
+  }
 
  ?>

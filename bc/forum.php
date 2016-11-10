@@ -23,7 +23,7 @@
 		<!--[if lte IE 9]>
 			<link rel="stylesheet" href="assets/css/ace-part2.min.css" class="ace-main-stylesheet" />
 		<![endif]-->
-
+		<script type="text/javascript" src="message/forum/js/fun.js"></script>
 		<!--[if lte IE 9]>
 		  <link rel="stylesheet" href="assets/css/ace-ie.min.css" />
 		<![endif]-->
@@ -43,7 +43,7 @@
 		<!-- 登出時間 -->
 		<script type="text/javascript" src="login/js/login_out_time.js"></script>
 		<!-- 登出時間 -->
-		
+
 		<?php
 			session_start();
 			include("mysql/connect.php");
@@ -197,7 +197,7 @@
 								<div class="table-header">
 									討論區
 									<a href="#discuss" class="btn btn-app btn-green btn-xs" role="button" class="green" data-toggle="modal">
-										<i class="ace-icon glyphicon-plus bigger-150"></i>
+										<!-- <i class="ace-icon glyphicon-plus bigger-150"></i> -->回覆
 									</a>
 									<a href="#" class="btn btn-app btn-danger btn-xs" role="button" class="green" data-toggle="modal">
 										<i class="ace-icon fa fa-trash-o bigger-150"></i>
@@ -225,7 +225,7 @@
 												</th>
 												<th>
 													<i class="ace-icon fa fa-clock-o bigger-110 hidden-480"></i>
-													最後登入時間
+													最後留言時間
 												</th>
 
 												<th></th>
@@ -260,12 +260,13 @@
 								<div class="row">
 									<div class="col-xs-12">
 										<!-- PAGE CONTENT BEGINS -->
-										<form class="form-horizontal" role="form">
+										<form class="form-horizontal" role="form" method="post" action="message/forum/update.php">
 											<div class="form-group">
 												<label class="col-sm-3 control-label no-padding-right" for="form-field-1"> 主題	 </label>
 
 												<div class="col-sm-9">
-													<input type="text" id="form-field-1" name="theme" placeholder="主題" class="col-xs-10 col-sm-5" />
+													<input type="text" id="theme" name="theme" placeholder="主題" class="col-xs-10 col-sm-5" />
+													<input type="hidden" id="id" name="theme" placeholder="" class="col-xs-10 col-sm-5" />
 												</div>
 											</div>
 
@@ -273,7 +274,7 @@
 												<label class="col-sm-3 control-label no-padding-right" for="form-field-1-1"> 留言內容 </label>
 
 												<div class="col-sm-9">
-													<textarea id="form-field-1-1" placeholder="留言內容" name="message" class="col-xs-10 col-sm-5" /></textarea>
+													<textarea id="message" placeholder="留言內容" name="message" class="col-xs-10 col-sm-5" /></textarea>
 												</div>
 											</div>
 
@@ -281,7 +282,7 @@
 												<label class="col-sm-3 control-label no-padding-right" for="form-field-1-1"> E-mail </label>
 
 												<div class="col-sm-9">
-													<input type="text" id="form-field-1-1" placeholder="E-mail" name="email" class="col-xs-10 col-sm-5" />
+													<input type="text" id="email" placeholder="E-mail" name="email" class="col-xs-10 col-sm-5" />
 												</div>
 											</div>
 
@@ -289,7 +290,7 @@
 												<label class="col-sm-3 control-label no-padding-right" for="form-field-1-1"> 發表人ˊ </label>
 
 												<div class="col-sm-9">
-													<input type="text" id="form-field-1-1" placeholder="發表人" name="posted" class="col-xs-10 col-sm-5" />
+													<input type="text" id="posted" placeholder="發表人" name="posted" class="col-xs-10 col-sm-5" />
 												</div>
 											</div>
 
@@ -297,7 +298,7 @@
 												<label class="col-sm-3 control-label no-padding-right" for="form-field-1-1"> 回覆 </label>
 
 												<div class="col-sm-9">
-													<textarea  id="form-field-1-1" placeholder="回覆" name="reply" class="col-xs-10 col-sm-5" /></textarea>
+													<textarea  id="replys" placeholder="回覆" name="replys" class="col-xs-10 col-sm-5" /></textarea>
 												</div>
 											</div>
 

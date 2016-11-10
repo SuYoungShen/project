@@ -7,13 +7,15 @@
 
   foreach ($display as $key => $value) {
 
-    $theme = $themes[$key] = $value[0];//地區名
-    $posted = $posteds[$key] = $value[1];//發表人
-    $email = $emails[$key] = $value[2];//email
-    $message = $messages[$key] = $value[3];//留言
-    $reply = $replys[$key] = $value[4];//回覆
-    $frequency = $frequencys[$key] = $value[5];//典籍次數
-    $datetime = $datetimes[$key] = $value[6];//時間
+    $id = $value["id"];//id
+    $theme = $themes[$key] = $value["theme"];//地區名
+    $posted = $posteds[$key] = $value["posted"];//發表人
+    $email = $emails[$key] = $value["email"];//email
+    $message = $messages[$key] = $value["message"];//留言
+    $reply = $replys[$key] = $value["reply"];//回覆
+    $frequency = $frequencys[$key] = $value["frequency"];//典籍次數
+    $datetime = $datetimes[$key] = $value["datetime"];//時間
+
     echo "
       <tr>
         <td class='center'>
@@ -33,12 +35,12 @@
         <td>$frequency</td>
         <td>$datetime</td>
 
-
         <td>
           <div class='hidden-sm hidden-xs action-buttons'>
 
-            <a class='green' href='#reply' data-toggle='modal'
+            <a class='green' href='#discuss' data-toggle='modal'
               onclick='Edit(
+                            \"$id\",
                             \"$themes[$key]\",
                             \"$posteds[$key]\",
                             \"$emails[$key]\",
