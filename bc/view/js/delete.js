@@ -7,7 +7,7 @@ function Deletess(Deletes,Deletepage) {//單選刪除
 function bootboxs(Deletes,DeletePage) {//彈跳視窗
 
   bootbox.confirm("Are you sure?", function(result) {
-    
+
     if (result) {
       $.ajax({
         type:"POST",

@@ -38,18 +38,18 @@ function Deletess(Deletes) {//單選刪除
 }
 
 function bootboxs(Deletes) {//彈跳視窗
-
+alert(Deletes);
   bootbox.confirm("Are you sure?", function(result) {
     if (result) {
       $.ajax({
         type:"POST",
-        url: "member/delete.php",
-        data:{'DeAccount[]':Deletes},
+        url: "message/forum/delete.php",
+        data:{'De[]':Deletes},
         success:function(data){
-          alerts(data,"member.php");//轉回指定葉面
+          alerts(data,"forum.php");//轉回指定葉面
         },
         error:function(){
-          alerts(data,"member.php");
+          alerts(data,"forum.php");
         }
       });
     } else {

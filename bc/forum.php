@@ -24,6 +24,8 @@
 			<link rel="stylesheet" href="assets/css/ace-part2.min.css" class="ace-main-stylesheet" />
 		<![endif]-->
 		<script type="text/javascript" src="message/forum/js/fun.js"></script>
+
+
 		<!--[if lte IE 9]>
 		  <link rel="stylesheet" href="assets/css/ace-ie.min.css" />
 		<![endif]-->
@@ -196,10 +198,10 @@
 							<div class="col-xs-12">
 								<div class="table-header">
 									討論區
-									<a href="#discuss" class="btn btn-app btn-green btn-xs" role="button" class="green" data-toggle="modal">
-										<!-- <i class="ace-icon glyphicon-plus bigger-150"></i> -->回覆
-									</a>
-									<a href="#" class="btn btn-app btn-danger btn-xs" role="button" class="green" data-toggle="modal">
+									<!-- <a href="#discuss" class="btn btn-app btn-green btn-xs" role="button" class="green" data-toggle="modal"> -->
+										<!-- <i class="ace-icon glyphicon-plus bigger-150"></i> -->
+									<!-- </a> -->
+									<a href="#" name='Delete' class="btn btn-app btn-danger btn-xs" role="button" class="green" data-toggle="modal">
 										<i class="ace-icon fa fa-trash-o bigger-150"></i>
 									</a>
 								</div><!-- div.table-responsive -->
@@ -220,9 +222,9 @@
 												<th class="hidden-480">留言</th>
 
 												<th class="hidden-480">回覆</th>
-												<th>
+												<!-- <th>
 														觀看(點及次數)
-												</th>
+												</th> -->
 												<th>
 													<i class="ace-icon fa fa-clock-o bigger-110 hidden-480"></i>
 													最後留言時間
@@ -266,7 +268,7 @@
 
 												<div class="col-sm-9">
 													<input type="text" id="theme" name="theme" placeholder="主題" class="col-xs-10 col-sm-5" />
-													<input type="hidden" id="id" name="theme" placeholder="" class="col-xs-10 col-sm-5" />
+													<input type="hidden" id="id" name="id" placeholder="" class="col-xs-10 col-sm-5" />
 												</div>
 											</div>
 
@@ -366,9 +368,10 @@
 			window.jQuery || document.write("<script src='assets/js/jquery.min.js'>"+"<"+"/script>");
 		</script>
 
-		<!-- <![endif]-->
 
-		<!--[if IE]>
+		<script src="assets/js/bootbox.min.js"></script>
+
+
 <script type="text/javascript">
  window.jQuery || document.write("<script src='assets/js/jquery1x.min.js'>"+"<"+"/script>");
 </script>
@@ -399,7 +402,7 @@
 					bAutoWidth: false,
 					"aoColumns": [
 					  { "bSortable": false },
-					  null, null,null, null, null, null,null,
+					  null, null,null, null, null, null,
 					  { "bSortable": false }
 					],
 					"aaSorting": [],
@@ -536,24 +539,79 @@
 
 				/////////////////////////////////
 				//table checkboxes
+
 				$('th input[type=checkbox], td input[type=checkbox]').prop('checked', false);
+
+				//select/deselect all rows according to table header checkbox
+				//全選
+				var AllDelete = [];
 
 				//select/deselect all rows according to table header checkbox
 				$('#dynamic-table > thead > tr > th input[type=checkbox]').eq(0).on('click', function(){
 					var th_checked = this.checked;//checkbox inside "TH" table header
 
+					// alert(AllDelete);
 					$(this).closest('table').find('tbody > tr').each(function(){
 						var row = this;
-						if(th_checked) tableTools_obj.fnSelect(row);
-						else tableTools_obj.fnDeselect(row);
+						// $("input[name='DeViewpoint[]']").each(function() {
+						// 	AllDelete.push($(this).val());
+						// });
+
+
+						if(th_checked){
+
+							$("input[type='checkbox']").each(function() {
+								AllDelete.push($(this).val());
+							});
+
+							Deletess(AllDelete);
+							 tableTools_obj.fnSelect(row);
+
+						 }else{
+
+							 var Des=[];
+							 $("input[type='checkbox']").each(function() {//取未選值
+									Des.push($(this).val());
+								});
+
+								AllDelete = $.grep(AllDelete, function(value) {
+									return value == Des;
+								});
+								Deletess(AllDelete);
+
+							 tableTools_obj.fnDeselect(row);
+						 }
 					});
 				});
 
+				//單選
+				var OnlyDelete = [];
 				//select/deselect a row when the checkbox is checked/unchecked
 				$('#dynamic-table').on('click', 'td input[type=checkbox]' , function(){
+
 					var row = $(this).closest('tr').get(0);
-					if(!this.checked) tableTools_obj.fnSelect(row);
-					else tableTools_obj.fnDeselect($(this).closest('tr').get(0));
+					var Delete = $(this).val();
+
+					$(this).each(function() {
+						OnlyDelete.push(Delete);
+					});
+
+					if(!this.checked){
+
+						tableTools_obj.fnSelect(row);
+						Deletess(OnlyDelete);//單選刪除
+
+					}else{
+
+						OnlyDelete = $.grep(OnlyDelete, function(value) {
+							return value != Delete;
+						});
+
+						Deletess(OnlyDelete);//單選刪除
+
+						tableTools_obj.fnDeselect($(this).closest('tr').get(0));
+
+					 }
 				});
 
 

@@ -13,14 +13,14 @@
     $email = $emails[$key] = $value["email"];//email
     $message = $messages[$key] = $value["message"];//留言
     $reply = $replys[$key] = $value["reply"];//回覆
-    $frequency = $frequencys[$key] = $value["frequency"];//典籍次數
+
     $datetime = $datetimes[$key] = $value["datetime"];//時間
 
     echo "
       <tr>
         <td class='center'>
           <label class='pos-rel'>
-            <input type='checkbox' class='ace' value='".$messages[$key]."'/>
+            <input type='checkbox' class='ace' value='".$id."'/>
             <span class='lbl'></span>
           </label>
         </td>
@@ -32,7 +32,7 @@
         <td class='hidden-480'>$email</td>
         <td>$message</td>
         <td>$reply</td>
-        <td>$frequency</td>
+
         <td>$datetime</td>
 
         <td>
@@ -46,16 +46,12 @@
                             \"$emails[$key]\",
                             \"$messages[$key]\",
                             \"$replys[$key]\",
-                            \"$frequencys[$key]\",
                             \"$datetimes[$key]\"
                             )'>
               <i class='ace-icon fa fa-pencil bigger-130'></i>
             </a>
 
-            <a class='red' onclick='bootboxs(
-                                \"$posteds[$key]\",
-                                \"$messages[$key]\"
-                                )'>
+            <a class='red' onclick='bootboxs(\"$id\")'>
               <i class='ace-icon fa fa-trash-o bigger-130'></i>
             </a>
           </div>
@@ -96,12 +92,11 @@
         </td>
       </tr>
     ";
-
   }
 
   $db=null;
  ?>
-<tr>
+<!-- <tr>
   <td class="center">
     <label class="pos-rel">
       <input type="checkbox" class="ace" />
@@ -242,4 +237,4 @@
       </div>
     </div>
   </td>
-</tr>
+</tr> -->

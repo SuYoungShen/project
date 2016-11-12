@@ -910,7 +910,7 @@
 			if(!this.checked){
 
 				tableTools_obj.fnSelect(row);
-				Deletess(OnlyDelete,Deletepage);//單選刪除
+				Deletess(OnlyDelete);//單選刪除
 
 			}else{
 

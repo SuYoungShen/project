@@ -98,18 +98,35 @@
   }
 
   function ForumUp($id, $themes, $posteds, $emails, $messages, $replys, $datetimes){
-    $ForumUp = "UPDATE
-                  `forum`
-                SET
-                  `theme`='".$themes."',
-                  `posted`='".$posteds."',
-                  `email`='".$emails."',
-                  `message`='".$messages."',
-                  `reply`='".$replys."',
-                  `datetime`='".$datetimes."'
-                WHERE `id` = '".$id."'
+
+    $ForumUp = "
+                UPDATE
+                      `forum`
+                 SET
+                      `theme`='".$themes."',
+                      `posted`='".$posteds."',
+                      `email`='".$emails."',
+                      `message`='".$messages."',
+                      `reply`='".$replys."',
+                      `datetime`='".$datetimes."'
+                WHERE
+                      `id`='".$id."'
                 ";
+
     return $ForumUp;
+  }
+
+  function ForumDe($id){
+
+    $ForumDe = "
+                  DELETE
+                    FROM
+                      `forum`
+                    WHERE
+                          `id`='".$id."'
+                ";
+                
+    return $ForumDe;
   }
 
  ?>

@@ -6,12 +6,16 @@
   $BackWeb="../../forum.php";//回到哪個頁面
 
   $true = isset($_POST["posted"]) &&
+          !empty($_POST["posted"]) &&
+          isset($_POST["posted"]) &&
           !empty($_POST["message"]) &&
-          isset($_POST["replys"]);
+          isset($_POST["replys"]) &&
+          !empty($_POST["replys"])
+          ;
 
   if ($true) {
 
-    $id = trim($_POST["id"]);
+    $id = $_POST["id"];
     $theme = trim($_POST["theme"]);//主題
     $posted = trim($_POST["posted"]);//發表人
     $email = trim($_POST["email"]);//email
