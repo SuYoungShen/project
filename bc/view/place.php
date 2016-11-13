@@ -23,7 +23,7 @@
       <tr>
         <td class='center'>
           <label class='pos-rel'>
-          <input type='checkbox' class='ace'  value='$id'/>
+          <input type='checkbox' class='ace'  value='".$id."'/>
             <span class='lbl'></span>
           </label>
         </td>
@@ -44,7 +44,6 @@
             <a class='green' href='#edit' data-toggle='modal'
               onclick='Edit(
                             \"$id\",
-                                                       
                             \"$viewpoint[$key]\",
                             \"$attractions[$key]\",
                             \"$arrival[$key]\",

@@ -62,7 +62,14 @@ $(function(){
 	//須與form表單ID名稱相同
 	$("#replyss").validate({
 		rules:{
-			email:{required:true}
+			email:{
+				required:true
+			}
+		},
+		messages:{
+			email:{
+				required:"必填"
+			}
 		}
 
 	});

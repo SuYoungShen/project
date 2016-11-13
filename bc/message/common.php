@@ -37,10 +37,12 @@
     return $AreaDe;
   }
 
-  function AreaIn($posted, $email, $site, $message, $datetime)
+  function AreaIn($place_name, $viewpoint, $posted, $email, $site, $message, $datetime)
   {
 
       $AreaIn ="INSERT INTO `area`(
+                                    `placename`,
+                                    `viewpoint`,
                                     `posted`,
                                     `message`,
                                     `email`,
@@ -48,6 +50,8 @@
                                     `datetime`
 
                                   )VALUES (
+                                  '".$place_name."',
+                                  '".$viewpoint."',
                                   '".$posted."',
                                   '".$email."',
                                   '".$site."',

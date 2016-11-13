@@ -5,10 +5,11 @@
   include ("../common.php");
 
   $picPath = "view/place/images/";
+  $picDir = "images/";
   $Basename="../../view.php";
   $msg = "";
   $required = isset($_POST["placeName"]) &&
-              !empty($_POST["placeName"]) ;//必填
+              !empty($_POST["placeName"]) ;
 
   if ($required) {
 
@@ -89,7 +90,7 @@
           //
           // }else {
 
-            move_uploaded_file($pic_tmp,$picPath.$pic_name);//把檔案移到指定dir
+            move_uploaded_file($pic_tmp,$picDir.$pic_name);//把檔案移到指定dir
             $true = $db->query(PlaceUp(
                                         $id,
                                         $placeName,

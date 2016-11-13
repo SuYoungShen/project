@@ -546,12 +546,11 @@
 									<div class="form-group">
 										<label class="col-sm-3 control-label no-padding-right" for="form-field-1"> 地區名</label>
 										<div class="col-sm-9">
-
+											<select name="placeName">
 												<?php
-													echo "<select>";
-														include ("view/place/option.php");
-													echo "</select>";
-												 ?>
+												include ("view/place/option.php");
+												?>
+											</select>
 												<!-- <option id="placeNames"></option> -->
 
 											<!-- <input type="text" id="placeNames"  name="placeName" placeholder="" class="col-xs-10 col-sm-5" /> -->
@@ -910,7 +909,7 @@
 			if(!this.checked){
 
 				tableTools_obj.fnSelect(row);
-				Deletess(OnlyDelete);//單選刪除
+				Deletess(OnlyDelete,Deletepage);//單選刪除
 
 			}else{
 

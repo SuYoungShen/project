@@ -6,7 +6,7 @@
 <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-    <title>地區名</title>
+    <title><?php echo $_GET["viewpoint"]; ?></title>
     <meta name="description" content="">
     <meta name="viewport" content="width=device-width">
 
@@ -62,7 +62,14 @@
               <table class="table table-hover ">
                 <tr >
                   <td><a href="view.php">首頁</a></td>
-                  <td><a href="area.php" >地區名</a></td>
+                  <!-- <td><a href="area.php">地區名</a></td> -->
+                  <?php
+                    include ("area/place.php");
+                    function Placess(){
+                      $place = "SELECT * From `places`";
+                      return $place;
+                    }
+                   ?>
                 </tr>
               </table>
             </div>
@@ -107,13 +114,9 @@
    <div class="gap"></div>
 
    <table class="table table-striped table-bordered table-hover">
-     <tr>
-       <td>
-         <a  href="#" >
-           高雄地區名
-         </a>
-       </td>
-     </tr>
+    <?php
+      include ("area/place.php");
+     ?>
    </table>
 
  </div>
@@ -124,14 +127,10 @@
       <div class="span8">
         <div class="blog">
           <div class="blog-item well">
-            <a href="#"><h2>景點名</h2></a>
-
-            <p>
-              <img src="images/sample/blog1.jpg" width="100%" alt="" />
-            </p>
-            <p>景點介紹</p>
-            <p>如何到達</p>
-
+            <a href="#"><h2><?php echo $_GET["viewpoint"]; ?></h2></a>
+            <?php
+              include ("area/places.php");
+             ?>
             <p>&nbsp;</p>
 
             <div id="comments" class="comments">
@@ -190,6 +189,12 @@
                 <form name="comment-form" method="post" action="bc/message/area/insert.php">
                   <div class="row-fluid">
                     <div class="span4">
+                      <?php
+                        $place_name=$_GET["place_name"];
+                        $viewpoint = $_GET["viewpoint"];
+                       ?>
+                       <input type="hidden" name="place_name" value="<?php echo $place_name?>">
+                    <input type="hidden" name="viewpoint" value="<?php echo $viewpoint?>">
                       <input type="text" name="posted"  required="required" class="input-block-level" placeholder="姓名(抓取會員名)" />
                     </div>
                     <div class="span4">
@@ -225,6 +230,9 @@
       </div>
     </div>
   </section>
+
+
+
 
 <!--Footer-->
 <?php

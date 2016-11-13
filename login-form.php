@@ -259,9 +259,6 @@
 
   <!-- basic scripts -->
 
-
-
-
     <!--[if !IE]> -->
     <script src="bc/assets/js/jquery.2.1.1.min.js"></script>
 

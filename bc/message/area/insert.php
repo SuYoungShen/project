@@ -7,16 +7,19 @@
   $BackWeb="../../../area.php";//回到哪個頁面
 
   if (isset($_POST["message"]) && !empty($_POST["message"])) {
-
+      $place_name = $_POST["place_name"];
+      $viewpoint = $_POST["viewpoint"];
       $posted = trim($_POST["posted"]);//發表人
       $message = trim($_POST["message"]);//留言
       $email = trim($_POST["email"]);//email
       $site = $_POST["site"];//網址
       date_default_timezone_set('Asia/Taipei');//設定時間為台北
       $datetime = date("Y-m-d H:i:s");//時間
-      
+
       $true=$db->query(
                         AreaIn(
+                          $place_name,
+                          $viewpoint,
                           $posted,
                           $message,
                           $email,
