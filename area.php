@@ -127,7 +127,7 @@
       <div class="span8">
         <div class="blog">
           <div class="blog-item well">
-            <a href="#"><h2><?php echo $_GET["viewpoint"]; ?></h2></a>
+            <a href="#"><h2><?php echo $_GET["id"]; ?></h2></a>
             <?php
               include ("area/places.php");
              ?>
@@ -189,12 +189,7 @@
                 <form name="comment-form" method="post" action="bc/message/area/insert.php">
                   <div class="row-fluid">
                     <div class="span4">
-                      <?php
-                        $place_name=$_GET["place_name"];
-                        $viewpoint = $_GET["viewpoint"];
-                       ?>
-                       <input type="hidden" name="place_name" value="<?php echo $place_name?>">
-                    <input type="hidden" name="viewpoint" value="<?php echo $viewpoint?>">
+                      
                       <input type="text" name="posted"  required="required" class="input-block-level" placeholder="姓名(抓取會員名)" />
                     </div>
                     <div class="span4">

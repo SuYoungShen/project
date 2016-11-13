@@ -4,11 +4,13 @@
   $dbname = "project";
   include ("../../mysql/connect.php");
   include ("../common.php");
-  $BackWeb="../../../area.php";//回到哪個頁面
+  $place_name = $_POST["place_name"];
+  $viewpoint = $_POST["viewpoint"];
+  $BackWeb="../../../area.php?place_name=$place_name&viewpoint=$viewpoint";//回到哪個頁面
 
   if (isset($_POST["message"]) && !empty($_POST["message"])) {
-      $place_name = $_POST["place_name"];
-      $viewpoint = $_POST["viewpoint"];
+
+
       $posted = trim($_POST["posted"]);//發表人
       $message = trim($_POST["message"]);//留言
       $email = trim($_POST["email"]);//email

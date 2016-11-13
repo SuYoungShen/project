@@ -17,7 +17,7 @@
   }
 
   function Places(){
-    $place = "SELECT * From `places` where `viewpoint`='".$_GET["viewpoint"]."'";
+    $place = "SELECT * From `places` where `id`='".$_GET["id"]."'";
     return $place;
   }
   $db=null;
