@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- 主機: 127.0.0.1
--- 產生時間： 2016-11-25 20:01:39
+-- 產生時間： 2016-11-13 14:59:53
 -- 伺服器版本: 10.1.16-MariaDB
 -- PHP 版本： 5.6.24
 
@@ -46,6 +46,7 @@ INSERT INTO `about` (`about`, `datetime`) VALUES
 --
 
 CREATE TABLE `area` (
+  `id` int(11) NOT NULL,
   `placename` char(100) COLLATE utf8_unicode_ci NOT NULL,
   `viewpoint` char(10) COLLATE utf8_unicode_ci NOT NULL,
   `posted` char(10) COLLATE utf8_unicode_ci NOT NULL,
@@ -60,9 +61,9 @@ CREATE TABLE `area` (
 -- 資料表的匯出資料 `area`
 --
 
-INSERT INTO `area` (`placename`, `viewpoint`, `posted`, `message`, `reply`, `email`, `site`, `datetime`) VALUES
-('', '', 'sss', 'ssss', '', 'ss@fc.om', 'http://tw.ay.com/', '2016-10-18 18:41:08'),
-('', '', 'ssss', 'sss', 'ssss', 'sss@d.com', 'http://rtw.tw.xom/', '2016-10-18 19:48:57');
+INSERT INTO `area` (`id`, `placename`, `viewpoint`, `posted`, `message`, `reply`, `email`, `site`, `datetime`) VALUES
+(1, '', '', 'ㄋ', 's', '', 's@c.com', 'http://www', '2016-11-13 14:50:41'),
+(2, '', '', 'ss', 's', '', 'ss@dc.om', 'http://ssss', '2016-11-13 14:50:04');
 
 -- --------------------------------------------------------
 
@@ -83,9 +84,9 @@ CREATE TABLE `carousel` (
 --
 
 INSERT INTO `carousel` (`id`, `place`, `name`, `path`, `datetime`) VALUES
-('0', 'ㄔ', '1.jpg', 'about/carousel/images/', '2016-10-22 21:28:49'),
-('1', '美麗島', '2.jpg', 'about/carousel/images/', '2016-10-22 21:24:26'),
-('2', '高雄', '3.jpg', 'about/carousel/images/', '2016-10-22 21:24:32'),
+('0', 'c', '1.jpg', 'about/carousel/images/', '2016-11-03 17:26:23'),
+('1', '', '', '', '0000-00-00 00:00:00'),
+('2', '', '3.jpg', 'about/carousel/images/', '2016-10-28 16:12:28'),
 ('3', '2', '4.jpg', 'about/carousel/images/', '2016-10-22 21:23:36'),
 ('4', '3', '5.jpg', 'about/carousel/images/', '2016-10-22 21:23:36'),
 ('5', '4', '6.jpg', 'about/carousel/images/', '2016-10-22 21:23:36');
@@ -97,11 +98,12 @@ INSERT INTO `carousel` (`id`, `place`, `name`, `path`, `datetime`) VALUES
 --
 
 CREATE TABLE `forum` (
+  `id` int(100) NOT NULL,
   `theme` char(10) COLLATE utf8_unicode_ci NOT NULL,
-  `message` varchar(1000) COLLATE utf8_unicode_ci NOT NULL,
   `posted` varchar(36) COLLATE utf8_unicode_ci NOT NULL,
+  `email` varchar(100) COLLATE utf8_unicode_ci NOT NULL,
+  `message` varchar(1000) COLLATE utf8_unicode_ci NOT NULL,
   `reply` varchar(10) COLLATE utf8_unicode_ci NOT NULL,
-  `frequency` int(11) NOT NULL,
   `datetime` datetime NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
@@ -152,12 +154,10 @@ CREATE TABLE `place` (
 --
 
 INSERT INTO `place` (`id`, `place`, `Introduction`, `name`, `path`, `datetime`) VALUES
-(22, 'bbb', 'bbb', '2.jpg', 'about/place/images/', '2016-10-23 15:24:42'),
+(22, '高雄', 'bbb', '2.jpg', 'about/place/images/', '2016-11-03 13:47:05'),
 (23, 'ccc', 'ccc', '2.jpg', 'about/place/images/', '2016-10-23 15:24:55'),
-(36, 'aaa', 'aaa', '3.jpg', 'about/place/images/', '2016-10-23 16:18:43'),
-(37, 'dddd', 'dddd', '3.jpg', 'about/place/images/', '2016-10-23 16:18:51'),
-(38, 'eee', 'ee', '4.jpg', 'about/place/images/', '2016-10-23 16:18:58'),
-(39, 'eee', 'eee', '5.jpg', 'about/place/images/', '2016-10-23 16:19:05');
+(36, '屏', 'aak', '3.jpg', 'about/place/images/', '2016-11-03 13:59:32'),
+(37, 'ssss', 'sss', '5.jpg', 'about/place/images/', '2016-11-03 20:10:43');
 
 -- --------------------------------------------------------
 
@@ -181,8 +181,7 @@ CREATE TABLE `places` (
 --
 
 INSERT INTO `places` (`id`, `place`, `viewpoint`, `attractions`, `arrival`, `name`, `path`, `datetime`) VALUES
-(7, 'bbb', 's', '1', '', '4.jpg', 'view/place/images/', '2016-10-24 19:07:10'),
-(8, 'bbb', 's', '1', '', '4.jpg', 'view/images/', '2016-10-24 19:07:10');
+(1, '高雄', '高雄', '', '', '', '', '2016-11-13 14:48:59');
 
 -- --------------------------------------------------------
 
@@ -228,11 +227,11 @@ CREATE TABLE `top` (
 --
 
 INSERT INTO `top` (`id`, `place`, `name`, `path`, `datetime`) VALUES
-('0', '85大樓', '1.jpg', 'index/top6/images/', '2016-10-23 16:19:40'),
-('1', '', '', 'index/top6/images/', '0000-00-00 00:00:00'),
-('2', '', '', 'index/top6/images/', '0000-00-00 00:00:00'),
-('3', '', '', 'index/top6/images/', '0000-00-00 00:00:00'),
-('4', '', '', 'index/top6/images/', '0000-00-00 00:00:00'),
+('0', '', '', '', '0000-00-00 00:00:00'),
+('1', '', '1.jpg', 'index/top6/images/', '2016-10-28 14:30:50'),
+('2', '', '1.jpg', 'index/top6/images/', '2016-10-28 14:31:30'),
+('3', '', '1.jpg', 'index/top6/images/', '2016-10-28 14:32:23'),
+('4', '', '1.jpg', 'index/top6/images/', '2016-10-28 14:32:59'),
 ('5', '', '', 'index/top6/images/', '0000-00-00 00:00:00');
 
 -- --------------------------------------------------------
@@ -254,24 +253,36 @@ CREATE TABLE `view` (
 --
 
 INSERT INTO `view` (`id`, `viewpoint`, `picname`, `path`, `datetime`) VALUES
-(0, '', '', '', '0000-00-00 00:00:00'),
-(1, '', '', '', '0000-00-00 00:00:00'),
-(2, '', '', '', '0000-00-00 00:00:00'),
-(3, '', '', '', '0000-00-00 00:00:00'),
-(4, '', '', '', '0000-00-00 00:00:00'),
-(5, '', '', '', '0000-00-00 00:00:00'),
-(6, '', '', '', '0000-00-00 00:00:00'),
-(7, '', '', '', '0000-00-00 00:00:00'),
-(8, '', '', '', '0000-00-00 00:00:00');
+(0, 'a', '1.jpg', 'view/view/images/', '2016-11-03 17:25:16'),
+(1, 'b', '1.jpg', 'view/view/images/', '2016-11-03 17:25:21'),
+(2, 'c', '4.jpg', 'view/view/images/', '2016-11-03 17:25:25'),
+(3, '', '4.jpg', 'view/view/images/', '2016-11-03 09:30:55'),
+(4, '', '5.jpg', 'view/view/images/', '2016-11-03 09:30:55'),
+(5, 's', '4.jpg', 'view/view/images/', '2016-11-04 18:49:17'),
+(6, '', '711.jpg', 'view/view/images/', '2016-11-03 09:30:55'),
+(7, '', 'PIC1040727_2.jpg', 'view/view/images/', '2016-11-03 09:30:55'),
+(8, '', '6.jpg', 'view/view/images/', '2016-11-03 09:31:31');
 
 --
 -- 已匯出資料表的索引
 --
 
 --
+-- 資料表索引 `area`
+--
+ALTER TABLE `area`
+  ADD PRIMARY KEY (`id`);
+
+--
 -- 資料表索引 `carousel`
 --
 ALTER TABLE `carousel`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- 資料表索引 `forum`
+--
+ALTER TABLE `forum`
   ADD PRIMARY KEY (`id`);
 
 --
@@ -303,15 +314,25 @@ ALTER TABLE `top`
 --
 
 --
+-- 使用資料表 AUTO_INCREMENT `area`
+--
+ALTER TABLE `area`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+--
+-- 使用資料表 AUTO_INCREMENT `forum`
+--
+ALTER TABLE `forum`
+  MODIFY `id` int(100) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+--
 -- 使用資料表 AUTO_INCREMENT `place`
 --
 ALTER TABLE `place`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=40;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=38;
 --
 -- 使用資料表 AUTO_INCREMENT `places`
 --
 ALTER TABLE `places`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;

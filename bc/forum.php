@@ -141,7 +141,7 @@
 					<li class="">
 						<a href="member.php">
 							<i class="menu-icon fa fa-user"></i>
-							<span class="menu-text"> 討論區 </span>
+							<span class="menu-text"> 會員管理 </span>
 						</a>
 						<b class="arrow"></b>
 					</li>
@@ -176,7 +176,7 @@
 							<li class="active">討論區</li>
 						</ul><!-- /.breadcrumb -->
 
-						<div class="nav-search" id="nav-search">
+						<!-- <div class="nav-search" id="nav-search">
 							<form class="form-search">
 								<span class="input-icon">
 									<input type="text" placeholder="Search ..." class="nav-search-input" id="nav-search-input" autocomplete="off" />
@@ -193,7 +193,7 @@
 							</h1>
 						</div><!-- /.page-header -->
 
-						<!--會員-->
+						<!--	-->
 						<div class="row">
 							<div class="col-xs-12">
 								<div class="table-header">

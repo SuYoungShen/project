@@ -700,7 +700,7 @@
 	<script src="assets/js/jquery.colorbox.min.js"></script>
 	<!-- inline scripts related to this page -->
 
-<script src="assets/js/jquery.dataTables.js"></script>
+<script src="assets/js/jquery.dataTables.min.js"></script>
 <script src="assets/js/jquery.dataTables.bootstrap.min.js"></script>
 <script src="assets/js/dataTables.tableTools.min.js"></script>
 <script src="assets/js/dataTables.colVis.min.js"></script>

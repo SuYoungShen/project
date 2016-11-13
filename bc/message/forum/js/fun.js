@@ -1,3 +1,6 @@
+
+
+
 function Edit(id, theme, message, email, posted, replys) {
   document.getElementById("id").value = id;
   document.getElementById("theme").value = theme;

@@ -7,15 +7,15 @@
   $Display = $AreaSe->fetchAll();//顯示
 
   foreach ($Display as $key => $value) {
-
-    $placename = $value[0];//地區名
-    $viewpoint = $value[1];//景點名
-    $posted = $value[2];//發表人
-    $message = $value[3];//留言
-    $reply = $value[4];//回覆
-    $email = $value[5];//email
-    $site = $value[6];//網址
-    $datetime = $value[7];//時間
+    
+    $placename = $value["placename"];//地區名
+    $viewpoint = $value["viewpoint"];//景點名
+    $posted = $value["posted"];//發表人
+    $message = $value["message"];//留言
+    $reply = $value["reply"];//回覆
+    $email = $value["email"];//email
+    $site = $value["site"];//網址
+    $datetime = $value["datetime"];//時間
 
     echo "
       <tr>

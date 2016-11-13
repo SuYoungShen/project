@@ -21,15 +21,13 @@
   <!-- 自行載入 -->
 
 		<!-- <script type="text/javascript" src="message/area/js/validate.js"></script> -->
-		<script type="text/javascript" src="message/area/js/fun.js"></script>
+		<!-- <script type="text/javascript" src="message/area/js/fun.js"></script> -->
     <script type="text/javascript" src='NowTime.js'></script>
+    <script src="js/vendor/jquery-1.9.1.min.js"></script>
+		<!-- <script type="text/javascript" src="assets/js/alert.js"></script> -->
 
-
-		<script type="text/javascript" src="assets/js/alert.js"></script>
-
-
+    <script type="text/javascript" src="forum/js/fun.js"></script>
   <!-- 自行載入 -->
-
 
   <!-- Le fav and touch icons -->
   <?php
@@ -152,7 +150,6 @@
  ?>
 <!--  /Login form -->
 
-<script src="js/vendor/jquery-1.9.1.min.js"></script>
 <script src="js/vendor/bootstrap.min.js"></script>
 <script src="js/main.js"></script>
 
