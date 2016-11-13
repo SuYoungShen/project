@@ -2,8 +2,8 @@
 $(document).ready(function(){
 
   $(":submit").on(ace.click_event, function() {
-    var placename=$("#placename").val();
-    var viewpoint=$("#viewpoint").val();
+
+    var id=$("input[name='id'").val();
     var posted=$("#posted").val();
     var message=$("#message").val();
     var reply=$("#reply").val();
@@ -15,8 +15,7 @@ $(document).ready(function(){
       type:"POST",
       url: "message/area/update.php",
       data:{
-        'placename':placename,
-        'viewpoint':viewpoint,
+        'id':id,
         'posted':posted,
         'message':message,
         'reply':reply,

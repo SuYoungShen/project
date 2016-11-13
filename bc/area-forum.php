@@ -33,9 +33,9 @@
 <!-- 自行套 -->
 		<!-- <script type="text/javascript" src="message/area/js/validate.js"></script> -->
 		<script type="text/javascript" src="message/area/js/fun.js"></script>
-
+		<script type="text/javascript" src="assets/js/jquery.validate.min.js"></script>
 		<!-- 刪除 -->
-		<script type="text/javascript" src="message/area/js/delete.js"></script>
+		<!-- <script type="text/javascript" src="message/area/js/delete.js"></script> -->
 		<!-- 刪除 -->
 		<script type="text/javascript" src="assets/js/alert.js"></script>
 		<!-- 彈跳視窗 -->
@@ -45,14 +45,29 @@
 		<!-- 登出時間 -->
 		<script type="text/javascript" src="login/js/login_out_time.js"></script>
 		<!-- 登出時間 -->
-		
+
 <!-- 自行套 -->
 
 <!-- 表單驗證 -->
-	<!-- <script src="http://static.runoob.com/assets/jquery-validation-1.14.0/dist/jquery.validate.min.js"></script>
-	<script src="http://static.runoob.com/assets/jquery-validation-1.14.0/dist/localization/messages_zh.js"></script> -->
+	<script src="assets/js/jquery.validate.js"></script>
+	<!-- <script src="http://static.runoob.com/assets/jquery-validation-1.14.0/dist/localization/messages_zh.js"></script> -->
 <!-- 表單驗證 -->
+<style>
+	.error{
+		color: red;
+	}
+</style>
+<script type="text/javascript">
+$(function(){
+	//須與form表單ID名稱相同
+	$("#replyss").validate({
+		rules:{
+			email:{required:true}
+		}
 
+	});
+});
+</script>
 		<!-- ace settings handler -->
 		<script src="assets/js/ace-extra.min.js"></script>
 
@@ -211,9 +226,9 @@
 							 <div class="row">
 								 <div class="col-xs-12">
 									 <div class="table-header">
-										 <a href="#reply" class="btn btn-app btn-green btn-xs" role="button" class="green" data-toggle="modal">
+										 <!-- <a href="#reply" class="btn btn-app btn-green btn-xs" role="button" class="green" data-toggle="modal">
 											 回復
-										 </a>
+										 </a> -->
 										 <a href="#" name="Delete" class="btn btn-app btn-danger btn-xs" role="button" class="green" data-toggle="modal">
 											 <i class="ace-icon fa fa-trash-o bigger-150"></i>
 										 </a>
@@ -275,13 +290,14 @@
 									 <div class="row">
 										 <div class="col-xs-12">
 											 <!-- PAGE CONTENT BEGINS -->
-											 <form class="form-horizontal" method="post" role="form" action="message/area/update.php">
+											 <form class="form-horizontal" id="replyss" method="post" role="form" action="message/area/update.php">
 
 												 <div class="form-group">
 													 <label class="col-sm-3 control-label no-padding-right" for="form-field-1"> 地區	 </label>
 
 													 <div class="col-sm-9">
-														 <input type="text" id="placename" name="placename"  placeholder="(訪客、抓取會員名)" class="col-xs-10 col-sm-5" readonly="readonly"/>
+														 <input type="text" id="placename" name="placename"  class="col-xs-10 col-sm-5" readonly="readonly"/>
+														 <input type="hidden" id="id" name="id" value="">
 													 </div>
 												 </div>
 
@@ -289,7 +305,7 @@
 													 <label class="col-sm-3 control-label no-padding-right" for="form-field-1"> 景點名	 </label>
 
 													 <div class="col-sm-9">
-														 <input type="text" id="viewpoint" name="viewpoint" placeholder="顯示發表者主題	" class="col-xs-10 col-sm-5" readonly="readonly"/>
+														 <input type="text" id="viewpoint" name="viewpoint"  class="col-xs-10 col-sm-5" readonly="readonly"/>
 													 </div>
 												 </div>
 
@@ -322,7 +338,7 @@
 													 <label class="col-sm-3 control-label no-padding-right" for="form-field-1-1"> email </label>
 
 													 <div class="col-sm-9">
-														 <input type="text"  id="email" name="email" placeholder="email" class="col-xs-10 col-sm-5" />
+														 <input type="email"  id="email" name="email" placeholder="email" class="col-xs-10 col-sm-5" />
 													 </div>
 												 </div>
 
@@ -332,7 +348,7 @@
 													<div class="col-sm-9">
 														<!-- <a href id="site" name="site"></a> -->
 														<!-- <div class="col-xs-10 col-sm-5" id="site" name="site"></div> -->
-														<input type="text" id="site" name="site" placeholder="網址" class="col-xs-10 col-sm-5" />
+														<input type="url" id="site" name="site" placeholder="網址" class="col-xs-10 col-sm-5" />
 													</div>
 												</div>
 
@@ -582,40 +598,45 @@
 				//全選
 				//table checkboxes
 				$('th input[type=checkbox], td input[type=checkbox]').prop('checked', false);
-				var DeAll=[];
+
+				var AllDelete = [];
 
 				//select/deselect all rows according to table header checkbox
 				$('#dynamic-table > thead > tr > th input[type=checkbox]').eq(0).on('click', function(){
 					var th_checked = this.checked;//checkbox inside "TH" table header
 
+					// alert(AllDelete);
 					$(this).closest('table').find('tbody > tr').each(function(){
-
 						var row = this;
+						var input = "input[type='checkbox']";
+						// $("input[name='DeViewpoint[]']").each(function() {
+						// 	AllDelete.push($(this).val());
+						// });
+						// var Deletepage = "view/place/delete.php";
 
 						if(th_checked){
 
-							$("input[type='checkbox']").each(function() {
-								DeAll.push($(this).val());
+							$(input).each(function() {
+								AllDelete.push($(this).val());
 							});
-							Deletess(DeAll);
 
-						 tableTools_obj.fnSelect(row);
+							Deletess(AllDelete);
+							 tableTools_obj.fnSelect(row);
 
-					 }else{
+						 }else{
 
-						 var Des=[];
+							 var Des=[];
+							 $(input).each(function() {//取未選值
+									Des.push($(this).val());
+								});
 
-						 $("input[type='checkbox']").each(function() {//取未選值
-							 Des.push($(this).val());
-						 });
+								AllDelete = $.grep(AllDelete, function(value) {
+									return value == Des;
+								});
+								Deletess(AllDelete);
 
-						 DeAll = $.grep(DeAll, function(value) {
-							 return value == Des;
-						 });
-
-						 Deletess(DeAll);
-						 tableTools_obj.fnDeselect(row);
-						}
+							 tableTools_obj.fnDeselect(row);
+						 }
 					});
 				});
 
@@ -625,16 +646,16 @@
 				$('#dynamic-table').on('click', 'td input[type=checkbox]' , function(){
 
 					var row = $(this).closest('tr').get(0);
-					var Delete = $(this).val();//選擇的值
-
+					var Delete = $(this).val();
+					// var Deletepage = "view/place/delete.php";
 					$(this).each(function() {
-						OnlyDelete.push(Delete);//新值放到陣列後面
+						OnlyDelete.push(Delete);
 					});
 
-					if(!this.checked) {
+					if(!this.checked){
 
-						Deletess(OnlyDelete);//刪除
 						tableTools_obj.fnSelect(row);
+						Deletess(OnlyDelete);//單選刪除
 
 					}else{
 
@@ -646,7 +667,7 @@
 
 						tableTools_obj.fnDeselect($(this).closest('tr').get(0));
 
-						}
+					 }
 				});
 
 					$(document).on('click', '#dynamic-table .dropdown-toggle', function(e) {

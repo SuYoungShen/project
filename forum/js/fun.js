@@ -18,4 +18,5 @@ $(document).ready(function() {
        $(this).css("border-color","red");
      }
   });//email
+  
 });

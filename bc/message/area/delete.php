@@ -3,12 +3,14 @@
   include("../../mysql/connect.php");
   include ("../common.php");
 
-  if (isset($_POST["DeMe"])) {
+  if (isset($_POST["DeId"])) {
 
-    $delete = $_POST["DeMe"];
+    $delete = $_POST["DeId"];
 
     if ($delete=="") {
+
       echo "空值";
+
     }else {
 
       foreach ($delete as $key => $de) {

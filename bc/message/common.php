@@ -10,24 +10,28 @@
     ";
   }
 
-  function AreaUp($posted, $message, $reply, $datetime)
+  function AreaUp($id, $posted, $message, $reply, $email, $site, $datetime)
   {
 
       $AreaUp ="UPDATE `area` SET
+                                `posted`='".$posted."',
+                                `message`='".$message."',
                                 `reply`='".$reply."',
+                                `email`='".$email."',
+                                `site`='".$site."',
                                 `datetime`='".$datetime."'
-                                WHERE `posted`='".$posted."' && `message`='".$message."'
+                                WHERE `id`='".$id."'
                 ";
 
     return $AreaUp;
   }
 
-  function AreaDe($message)
+  function AreaDe($id)
   {
 
     $AreaDe = "DELETE FROM `area`
                             WHERE
-                            `message`= '$message'
+                            `id`= '".$id."'
                             ";
 
     return $AreaDe;
@@ -125,7 +129,7 @@
                     WHERE
                           `id`='".$id."'
                 ";
-                
+
     return $ForumDe;
   }
 

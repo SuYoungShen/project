@@ -8,20 +8,21 @@
 
   foreach ($Display as $key => $value) {
 
-    $placename = $placenames[$key] = $value[0];//地區名
-    $viewpoint = $viewpoints[$key] = $value[1];//景點名
-    $posted = $posteds[$key] = $value[2];//發表人
-    $message = $messages[$key] = $value[3];//留言
-    $reply = $replys[$key] = $value[4];//回覆
-    $email = $emails[$key] = $value[5];//email
-    $site = $sites[$key] = $value[6];//網址
-    $datetime = $datetimes[$key] = $value[7];//時間
+    $id = $value["id"];//id
+    $placename = $placenames[$key] = $value["placename"];//地區名
+    $viewpoint = $viewpoints[$key] = $value["viewpoint"];//景點名
+    $posted = $posteds[$key] = $value["posted"];//發表人
+    $message = $messages[$key] = $value["message"];//留言
+    $reply = $replys[$key] = $value["reply"];//回覆
+    $email = $emails[$key] = $value["email"];//email
+    $site = $sites[$key] = $value["site"];//網址
+    $datetime = $datetimes[$key] = $value["datetime"];//時間
 
     echo "
       <tr>
         <td class='center'>
           <label class='pos-rel'>
-            <input type='checkbox' class='ace' value='".$messages[$key]."'/>
+            <input type='checkbox' class='ace' value='".$id."'/>
             <span class='lbl'></span>
           </label>
         </td>
@@ -44,6 +45,7 @@
 
             <a class='green' href='#reply' data-toggle='modal'
               onclick='Edit(
+                            \"$id\",
                             \"$placenames[$key]\",
                             \"$viewpoints[$key]\",
                             \"$posteds[$key]\",
@@ -56,11 +58,7 @@
               <i class='ace-icon fa fa-pencil bigger-130'></i>
             </a>
 
-            <a class='red' onclick='bootboxs(
-                                \"$posteds[$key]\",
-                                \"$messages[$key]\",
-                                \"$datetimes[$key]\"
-                                )'>
+            <a class='red' onclick='bootboxs(\"$id\")'>
               <i class='ace-icon fa fa-trash-o bigger-130'></i>
             </a>
           </div>
@@ -106,4 +104,3 @@
 
   $db=null;
  ?>
- 
