@@ -4,9 +4,10 @@
   $dbname = "project";
   include ("../../mysql/connect.php");
   include ("../common.php");
+
   $place_name = $_POST["place_name"];
   $viewpoint = $_POST["viewpoint"];
-  $BackWeb="../../../area.php?place_name=$place_name&viewpoint=$viewpoint";//回到哪個頁面
+  $BackWeb="../../../area.php?id=$id&place_name=$place_name&viewpoint=$viewpoint";//回到哪個頁面
 
   if (isset($_POST["message"]) && !empty($_POST["message"])) {
 

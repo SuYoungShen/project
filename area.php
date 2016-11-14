@@ -127,7 +127,7 @@
       <div class="span8">
         <div class="blog">
           <div class="blog-item well">
-            <a href="#"><h2><?php echo $_GET["id"]; ?></h2></a>
+            <a href="#"><h2><?php echo $_GET["viewpoint"]; ?></h2></a>
             <?php
               include ("area/places.php");
              ?>
@@ -138,11 +138,11 @@
               <h4>3 回應</h4>
               <div class="comments-list">
 
-                <div class="user-info media box">
+                <div class="media box">
                   <!-- <div class="pull-left">
                     <img class="avatar" src="images/sample/cAvatar1.jpg" alt="" />
                   </div> -->
-
+<!--
                   <div class="media-body">
                     <strong>發表人:
                       <a href="#">(會員名)</a>
@@ -150,13 +150,16 @@
                     <br>
                     <small>(發表時間)</small><br>
                     <p>(發表內容)</p>
-                  </div>
+                  </div> -->
+                  <?php
+                      include("area/reply.php");
+                   ?>
                 </div>
 
-                <div class="comment media">
-                  <!-- <div class="pull-left">
+                <!-- <div class="comment media">
+                  <div class="pull-left">
                     <img class="avatar" src="images/sample/cAvatar1.jpg" alt="" />
-                  </div> -->
+                  </div>
 
                   <div class="media-body">
                     <strong>發表人:<a href="#">(會員名)</a></strong><br>
@@ -166,9 +169,9 @@
                 </div>
 
                 <div class="user-info media box">
-                  <!-- <div class="pull-left">
+                  <div class="pull-left">
                     <img class="avatar" src="images/sample/cAvatar1.jpg" alt="" />
-                  </div> -->
+                  </div>
 
                   <div class="media-body">
                     <strong>發表人:
@@ -178,7 +181,8 @@
                     <small>(發表時間)</small><br>
                     <p>(發表內容)</p>
                   </div>
-                </div>
+                </div> -->
+
               </div>
               <br/>
 
@@ -189,7 +193,16 @@
                 <form name="comment-form" method="post" action="bc/message/area/insert.php">
                   <div class="row-fluid">
                     <div class="span4">
-                      
+                      <?php
+
+                        $id = $_GET["id"];
+                        $place_name = $_GET["place_name"];
+                        $viewpoint =$_GET["viewpoint"];
+                        echo "<input type='hidden' name='id' value='$id'>";
+                        echo "<input type='hidden' name='place_name' value='$place_name'>";
+                        echo "<input type='hidden' name='viewpoint' value='$viewpoint'>";
+
+                       ?>
                       <input type="text" name="posted"  required="required" class="input-block-level" placeholder="姓名(抓取會員名)" />
                     </div>
                     <div class="span4">

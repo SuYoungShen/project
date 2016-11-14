@@ -24,7 +24,7 @@
       echo "
       <tr>
         <td>
-          <a href='area.php?id=$id&viewpoint=$viewpoint'>$place_Name</a>
+          <a href='area.php?id=$id&place_name=$place_Name&viewpoint=$viewpoint'>$place_Name</a>
         </td>
       ";
       // echo "
@@ -63,7 +63,7 @@
 
       echo "
         <td>
-          <a href='area.php?id=$id&viewpoint=$viewpoint'>
+          <a href='area.php?id=$id&place_name=$place_Name&viewpoint=$viewpoint'>
             $place_Name
           </a>
         </td>

@@ -19,7 +19,7 @@
                                 `reply`='".$reply."',
                                 `email`='".$email."',
                                 `site`='".$site."',
-                                `datetime`='".$datetime."'
+                                `replydatetime`='".$datetime."'
                                 WHERE `id`='".$id."'
                 ";
 
