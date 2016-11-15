@@ -135,7 +135,7 @@
 
             <div id="comments" class="comments">
 
-              <h4>3 回應</h4>
+              <h4>回覆</h4>
               <div class="comments-list">
 
                 <div class="media box">

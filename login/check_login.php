@@ -36,12 +36,18 @@
           <i class='icon-user'></i>
         </a>
         <div class='dropdown-menu'>
-          <table class='table table-hover'>
+         <table class='table table-hover'>
             <tr >
               <td><a href='user.php'>個人資料</a></td>
               <td><a href='?login_out=true'>登出</a></td>
             </tr>
+            <tr>
+              <td><a href='?login_out=true'>登出</a></td>
+            </tr>
           </table>
+          <!--<a href='user.php'>個人資料</a><br>
+          <a href='?login_out=true'>登出</a>-->
+
         </div>
       </li>
       ";

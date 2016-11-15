@@ -12,7 +12,7 @@
   $msg = "";
 
 
-  foreach ($display as $key => $value) {
+  foreach ($display as $keys => $value) {
 
     $id = $value["id"];
     $vi=$viewpoint[$key]=$value["viewpoint"];
@@ -32,11 +32,9 @@
     echo "
     <li>
       <div class='preview'>
-
-        <img alt=' ' src='$displays'>
-
+        <img alt=' ' src='$displays'  style='max-height:204px'>
         <div class='overlay'>
-        </div>
+      </div>
       <div class='links'>
         <a data-toggle='modal' href='#modal-$id'><i class='icon-eye-open'></i></a><a href='#'><i class='icon-heart'></i></a>
       </div>
@@ -45,7 +43,7 @@
       <div id='modal-$id' class='modal hide fade'>
         <a class='close-modal' href='javascript:;' data-dismiss='modal' aria-hidden='true'><i class='icon-remove'></i></a>
         <div class='modal-body'>
-            <img alt=' ' src='$displays'>
+            <img alt=' ' src='$displays' >
             <h5>$vi</h5>
         </div>
       </div>

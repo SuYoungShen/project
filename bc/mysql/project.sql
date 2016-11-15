@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- 主機: 127.0.0.1
--- 產生時間： 2016-11-13 14:59:53
+-- 產生時間： 2016-11-15 18:39:18
 -- 伺服器版本: 10.1.16-MariaDB
 -- PHP 版本： 5.6.24
 
@@ -54,16 +54,16 @@ CREATE TABLE `area` (
   `reply` varchar(500) COLLATE utf8_unicode_ci NOT NULL,
   `email` varchar(36) COLLATE utf8_unicode_ci NOT NULL,
   `site` varchar(100) COLLATE utf8_unicode_ci NOT NULL,
-  `datetime` datetime NOT NULL
+  `datetime` datetime NOT NULL,
+  `replydatetime` datetime NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
 --
 -- 資料表的匯出資料 `area`
 --
 
-INSERT INTO `area` (`id`, `placename`, `viewpoint`, `posted`, `message`, `reply`, `email`, `site`, `datetime`) VALUES
-(1, '', '', 'ㄋ', 's', '', 's@c.com', 'http://www', '2016-11-13 14:50:41'),
-(2, '', '', 'ss', 's', '', 'ss@dc.om', 'http://ssss', '2016-11-13 14:50:04');
+INSERT INTO `area` (`id`, `placename`, `viewpoint`, `posted`, `message`, `reply`, `email`, `site`, `datetime`, `replydatetime`) VALUES
+(1, '高雄', 'd', 'ddd', 'ss', '很好', 'ddd@c.comd', 'http://ssss.cdd', '2016-11-15 16:25:12', '2016-11-15 16:25:42');
 
 -- --------------------------------------------------------
 
@@ -107,6 +107,13 @@ CREATE TABLE `forum` (
   `datetime` datetime NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
+--
+-- 資料表的匯出資料 `forum`
+--
+
+INSERT INTO `forum` (`id`, `theme`, `posted`, `email`, `message`, `reply`, `datetime`) VALUES
+(5, 's', 's', 's@c.dom', 's', 's', '2016-11-13 16:29:53');
+
 -- --------------------------------------------------------
 
 --
@@ -130,9 +137,7 @@ CREATE TABLE `member` (
 
 INSERT INTO `member` (`id`, `account`, `password`, `email`, `name`, `level`, `datetime`, `jointime`) VALUES
 (0, 'admin', 'admin', '', '', 'admin', '0000-00-00 00:00:00', '0000-00-00 00:00:00'),
-(0, 'aaaa', 'aaaaa', 'aaaa@gmail.com', 'aa', 'member', '2016-10-18 08:41:17', '0000-00-00 00:00:00'),
-(0, 'ssss', 'sssss', 'sss@gmail.com', 'ssss', 'member', '2016-10-17 23:22:28', '0000-00-00 00:00:00'),
-(0, 'ssss', 'ddddd', 'd33@gc.com', 'sss', 'member', '2016-10-18 19:47:00', '0000-00-00 00:00:00');
+(0, 'aaaa', 'aaaaa', 'aaaa@gmail.com', 'aa', 'member', '2016-10-18 08:41:17', '0000-00-00 00:00:00');
 
 -- --------------------------------------------------------
 
@@ -181,7 +186,9 @@ CREATE TABLE `places` (
 --
 
 INSERT INTO `places` (`id`, `place`, `viewpoint`, `attractions`, `arrival`, `name`, `path`, `datetime`) VALUES
-(1, '高雄', '高雄', '', '', '', '', '2016-11-13 14:48:59');
+(11, '高雄', 'd', 'd', 'd', '2.jpg', 'view/place/images/', '2016-11-15 14:35:39'),
+(12, 'ccc', 's', 's', 's', '2.jpg', 'view/place/images/', '2016-11-15 14:36:09'),
+(13, '屏', 'd', 'd', 'd', '3.jpg', 'view/place/images/', '2016-11-15 14:48:45');
 
 -- --------------------------------------------------------
 
@@ -227,7 +234,7 @@ CREATE TABLE `top` (
 --
 
 INSERT INTO `top` (`id`, `place`, `name`, `path`, `datetime`) VALUES
-('0', '', '', '', '0000-00-00 00:00:00'),
+('0', 's', '4.jpg', 'index/slider/images/', '2016-11-15 13:46:27'),
 ('1', '', '1.jpg', 'index/top6/images/', '2016-10-28 14:30:50'),
 ('2', '', '1.jpg', 'index/top6/images/', '2016-10-28 14:31:30'),
 ('3', '', '1.jpg', 'index/top6/images/', '2016-10-28 14:32:23'),
@@ -253,15 +260,15 @@ CREATE TABLE `view` (
 --
 
 INSERT INTO `view` (`id`, `viewpoint`, `picname`, `path`, `datetime`) VALUES
-(0, 'a', '1.jpg', 'view/view/images/', '2016-11-03 17:25:16'),
-(1, 'b', '1.jpg', 'view/view/images/', '2016-11-03 17:25:21'),
-(2, 'c', '4.jpg', 'view/view/images/', '2016-11-03 17:25:25'),
-(3, '', '4.jpg', 'view/view/images/', '2016-11-03 09:30:55'),
-(4, '', '5.jpg', 'view/view/images/', '2016-11-03 09:30:55'),
-(5, 's', '4.jpg', 'view/view/images/', '2016-11-04 18:49:17'),
-(6, '', '711.jpg', 'view/view/images/', '2016-11-03 09:30:55'),
-(7, '', 'PIC1040727_2.jpg', 'view/view/images/', '2016-11-03 09:30:55'),
-(8, '', '6.jpg', 'view/view/images/', '2016-11-03 09:31:31');
+(0, 'aaa', '1.jpg', 'view/view/images/', '2016-11-15 14:23:28'),
+(1, 'aaa', '2.jpg', 'view/view/images/', '2016-11-15 14:51:04'),
+(2, 'aaa', '1.jpg', 'view/view/images/', '2016-11-15 14:23:48'),
+(3, 'c', '4.jpg', 'view/view/images/', '2016-11-15 14:59:19'),
+(4, '', '', '', '0000-00-00 00:00:00'),
+(5, '', '', '', '0000-00-00 00:00:00'),
+(6, '', '', '', '0000-00-00 00:00:00'),
+(7, '', '', '', '0000-00-00 00:00:00'),
+(8, '', '', '', '0000-00-00 00:00:00');
 
 --
 -- 已匯出資料表的索引
@@ -317,12 +324,12 @@ ALTER TABLE `top`
 -- 使用資料表 AUTO_INCREMENT `area`
 --
 ALTER TABLE `area`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 --
 -- 使用資料表 AUTO_INCREMENT `forum`
 --
 ALTER TABLE `forum`
-  MODIFY `id` int(100) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+  MODIFY `id` int(100) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 --
 -- 使用資料表 AUTO_INCREMENT `place`
 --
@@ -332,7 +339,7 @@ ALTER TABLE `place`
 -- 使用資料表 AUTO_INCREMENT `places`
 --
 ALTER TABLE `places`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=14;
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;

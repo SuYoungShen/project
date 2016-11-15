@@ -7,6 +7,7 @@
   $picDir = "bc/about/place/images/";
 
   foreach ($display as $key => $value) {
+
     $id = $value["id"];
     $place_Name=$value["place"];//地區名
     $viewpoint=$value["viewpoint"];//地區介紹
@@ -31,7 +32,7 @@
             </a>
           <div class='box'>
             <img src='$picDir$pic_name'>
-            <h5>$place_Name</h5>
+            <h5>$id.$place_Name</h5>
             <p>$viewpoint</p>
           </div>
         </div>
@@ -72,18 +73,18 @@
 
       echo "
         <td>
-          <a data-toggle='modal' href='#modal-$key'>
+          <a data-toggle='modal' href='#modal-$id'>
             $place_Name
           </a>
         </td>
 
-        <div id='modal-$key' class='modal hide fade'>
+        <div id='modal-$id' class='modal hide fade'>
           <a class='close-modal' href='javascript:;' data-dismiss='modal' aria-hidden='true'>
             <i class='icon-remove'></i>
           </a>
           <div class='box'>
             <img src='$picDir$pic_name'>
-            <h5>$place_Name</h5>
+            <h5>$id.$place_Name</h5>
             <p>$viewpoint</p>
           </div>
         </div>

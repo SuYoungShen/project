@@ -5,14 +5,15 @@ include ("bc/mysql/connect.php");
 $id = $_GET["id"];
 $viewpoint = $_GET["viewpoint"];
 $placeSe = $db->query(Reply($id,$viewpoint));//查詢資料表
-$display = $placeSe->fetchAll();
+$displays = $placeSe->fetchAll();
 
 
-foreach ($display as $key => $value) {
+foreach ($displays as $key => $value) {
 
   $posted = $value["posted"];
   $message = $value["message"];
   $site = $value["site"];
+  $reply = $value["reply"];//回覆
   $datetime = $value["datetime"];
   $replydatetime = $value["replydatetime"];
 
@@ -32,12 +33,13 @@ foreach ($display as $key => $value) {
           <br/>
           <small>$datetime</small>
           <br>
+          <br>
           <strong>回覆:
             <a href='#'>管理員</a>
           </strong>
           <br>
+          <p>$reply</p>
           <small>$replydatetime</small>
-
         </div>
         <br/>
     ";
