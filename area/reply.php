@@ -12,10 +12,13 @@ foreach ($display as $key => $value) {
 
   $posted = $value["posted"];
   $message = $value["message"];
+  $site = $value["site"];
   $datetime = $value["datetime"];
   $replydatetime = $value["replydatetime"];
 
-
+  if ($replydatetime=="0000-00-00 00:00:00") {
+    echo $replydatetime="";
+  }
   echo "
         <div class='media-body'>
           <strong>發表人:
@@ -23,10 +26,14 @@ foreach ($display as $key => $value) {
           </strong>
           <br>
           <p>$message</p>
+          <strong>參考網址:
+            <a href='$site'>$site</a>
+          <strong>
+          <br/>
           <small>$datetime</small>
           <br>
           <strong>回覆:
-            <a href='#'>$posted</a>
+            <a href='#'>管理員</a>
           </strong>
           <br>
           <small>$replydatetime</small>

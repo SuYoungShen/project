@@ -4,7 +4,7 @@
   $dbname = "project";
   include ("../../mysql/connect.php");
   include ("../common.php");
-
+  $id = $_POST["id"];
   $place_name = $_POST["place_name"];
   $viewpoint = $_POST["viewpoint"];
   $BackWeb="../../../area.php?id=$id&place_name=$place_name&viewpoint=$viewpoint";//回到哪個頁面
@@ -37,6 +37,8 @@
       }else {
         message("留言失敗",$BackWeb);
       }
+  }else {
+      message("賣來亂",$BackWeb);
   }
 
 

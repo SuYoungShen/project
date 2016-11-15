@@ -92,13 +92,13 @@
    <div class="container">
      <div class="row-fluid">
        <div class="span6">
-         <h1>地區名</h1>
+         <h1><?php echo $_GET["place_name"]; ?></h1>
        </div>
        <div class="span6">
          <ul class="breadcrumb pull-right">
            <li><a href="index.php">首頁</a> <span class="divider">/</span></li>
            <li><a href="view.php">景點首頁</a> <span class="divider">/</span></li>
-           <li class="active">地區名</li>
+           <li class="active"><?php echo $_GET["place_name"]; ?></li>
          </ul>
        </div>
      </div>
@@ -193,23 +193,28 @@
                 <form name="comment-form" method="post" action="bc/message/area/insert.php">
                   <div class="row-fluid">
                     <div class="span4">
-                      <?php
 
+                      <?php
+                      if (isset($_SESSION["login_account"]) && !empty($_SESSION["login_account"])) {
+                        $login_account = $_SESSION["login_account"];
+                      }else {
+                        $login_account="";
+                      }
                         $id = $_GET["id"];
                         $place_name = $_GET["place_name"];
                         $viewpoint =$_GET["viewpoint"];
                         echo "<input type='hidden' name='id' value='$id'>";
                         echo "<input type='hidden' name='place_name' value='$place_name'>";
                         echo "<input type='hidden' name='viewpoint' value='$viewpoint'>";
-
+                        echo "<input type='text' name='posted'  class='input-block-level' value='$login_account' placeholder='姓名(抓取會員名)' />";
                        ?>
-                      <input type="text" name="posted"  required="required" class="input-block-level" placeholder="姓名(抓取會員名)" />
+
                     </div>
                     <div class="span4">
-                      <input type="email" name="email"  required="required" class="input-block-level" placeholder="Email" />
+                      <input type="email" name="email"  class="input-block-level" placeholder="Email" />
                     </div>
                     <div class="span4">
-                      <textarea type="url" name="site"  required="required" class="input-block-level" placeholder="網址" /></textarea>
+                      <textarea type="url" name="site"  class="input-block-level" placeholder="網址" /></textarea>
                     </div>
                     <script type="text/javascript">
                       document.cookie="datetime="+getNowTime();
