@@ -961,7 +961,7 @@
 						});
 						Deletess(OnlyDelete);//單選刪除
 						tableTools_obj.fnDeselect($(this).closest('tr').get(0));
-						
+
 				  }
 				});
 
