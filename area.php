@@ -15,7 +15,9 @@
     <link rel="stylesheet" href="css/font-awesome.min.css">
     <link rel="stylesheet" href="css/main.css">
     <link rel="stylesheet" href="css/sl-slide.css">
-    <script type="text/javascript" src='NowTime.js'></script>
+
+    <script type="text/javascript" charset="utf-8" language="javascript" src="js/jquery.js"></script>
+    <script type="text/javascript" src='NowTime.js'></script><!--現在時間-->
     <!-- Le fav and touch icons -->
     <?php
       session_start();

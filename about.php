@@ -17,6 +17,8 @@
     <link rel="stylesheet" href="css/sl-slide.css">
 	  <link rel="stylesheet" type="text/css" href="css/picloop.css">
     <!-- Le fav and touch icons -->
+    <script type="text/javascript" charset="utf-8" language="javascript" src="js/jquery.js"></script>
+    
 
     <?php
       session_start();

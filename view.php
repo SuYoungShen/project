@@ -16,6 +16,7 @@
     <link rel="stylesheet" href="css/main.css">
     <link rel="stylesheet" href="css/sl-slide.css">
 
+    <script type="text/javascript" charset="utf-8" language="javascript" src="js/jquery.js"></script>
     <script src="js/vendor/modernizr-2.6.2-respond-1.1.0.min.js"></script>
 
     <!-- Le fav and touch icons -->

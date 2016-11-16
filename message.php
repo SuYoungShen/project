@@ -31,7 +31,15 @@
 
   <!-- Le fav and touch icons -->
   <?php
-    include("ico.php");
+  session_start();
+  include("bc/mysql/connect.php");
+  include("login/check_login.php");
+
+  Login($db);
+  Login_Out();
+
+  include("ico.php");
+
    ?>
 </head>
 
