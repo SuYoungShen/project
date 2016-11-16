@@ -257,20 +257,12 @@
   </div>
 
 
-  <!-- basic scripts -->
 
-    <!--[if !IE]> -->
-    <script src="bc/assets/js/jquery.2.1.1.min.js"></script>
-
-    <!-- <![endif]-->
-
-    <!--[if IE]>
-  <script src="assets/js/jquery.1.11.1.min.js"></script>
-  <![endif]-->
+    <!-- <script src="bc/assets/js/jquery.2.1.1.min.js"></script> -->
 
     <!--[if !IE]> -->
     <script type="text/javascript">
-      window.jQuery || document.write("<script src='bc/assets/js/jquery.min.js'>"+"<"+"/script>");
+      // window.jQuery || document.write("<script src='bc/assets/js/jquery.min.js'>"+"<"+"/script>");
     </script>
 
     <!-- <![endif]-->
