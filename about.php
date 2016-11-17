@@ -18,14 +18,14 @@
 	  <link rel="stylesheet" type="text/css" href="css/picloop.css">
     <!-- Le fav and touch icons -->
     <script type="text/javascript" charset="utf-8" language="javascript" src="js/jquery.js"></script>
-    
+
 
     <?php
       session_start();
       include("bc/mysql/connect.php");
       include("login/check_login.php");
 
-      Login($db);
+      Login($db,"about.php");
       Login_Out();
       include("ico.php");
 

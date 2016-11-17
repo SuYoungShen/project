@@ -40,7 +40,7 @@
       include("bc/mysql/connect.php");
       include("login/check_login.php");
 
-      Login($db);
+      Login($db,"index.php");
       Login_Out();
 
       include("ico.php");

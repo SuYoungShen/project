@@ -24,8 +24,13 @@
       include("bc/mysql/connect.php");
       include("login/check_login.php");
 
-      Login($db);
-      Login_Out();
+      $Back = $_SERVER["PHP_SELF"];
+      Login($db,$Back);
+      Login_Out($Back."?
+                        id='".$_GET['id']."'&
+                        place_name='".$_GET['place_name']."'&
+                        viewpoint='".$_GET['viewpoint']."'");
+
       include("ico.php");
      ?>
 </head>
@@ -191,24 +196,30 @@
               <!-- Start Comment Form -->
               <div class="comment-form">
                 <h4>請留言</h4>
-                <p class="muted">Make sure you enter the (*) required information where indicated. HTML code is not allowed.</p>
+                <!-- <p class="muted">Make sure you enter the (*) required information where indicated. HTML code is not allowed.</p> -->
                 <form name="comment-form" method="post" action="bc/message/area/insert.php">
                   <div class="row-fluid">
                     <div class="span4">
 
                       <?php
-                      if (isset($_SESSION["login_account"]) && !empty($_SESSION["login_account"])) {
-                        $login_account = $_SESSION["login_account"];
-                      }else {
-                        $login_account="";
-                      }
+                        if (isset($_SESSION["login_account"]) && !empty($_SESSION["login_account"])) {
+                          include("bc/mysql/connect.php");
+                          $login_account = $_SESSION["login_account"];
+                          $logins = $db->query("SELECT name FROM member WHERE account='".$login_account."'");
+                          while ($login_name = $logins->fetch()) {
+                            $login_names = $login_name["name"];
+                          }
+
+                        }else {
+                          $login_names="";
+                        }
                         $id = $_GET["id"];
                         $place_name = $_GET["place_name"];
                         $viewpoint =$_GET["viewpoint"];
                         echo "<input type='hidden' name='id' value='$id'>";
                         echo "<input type='hidden' name='place_name' value='$place_name'>";
                         echo "<input type='hidden' name='viewpoint' value='$viewpoint'>";
-                        echo "<input type='text' name='posted'  class='input-block-level' value='$login_account' placeholder='姓名(抓取會員名)' />";
+                        echo "<input type='text' name='posted'  class='input-block-level' value='$login_names' placeholder='姓名(抓取會員名)' />";
                        ?>
 
                     </div>

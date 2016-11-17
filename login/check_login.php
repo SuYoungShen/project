@@ -39,7 +39,6 @@
          <table class='table table-hover'>
             <tr >
               <td><a href='user.php'>個人資料</a></td>
-              <td><a href='?login_out=true'>登出</a></td>
             </tr>
             <tr>
               <td><a href='?login_out=true'>登出</a></td>
@@ -60,22 +59,22 @@
     }
   }
 
-  function Login_Out(){//登出
+  function Login_Out($Back){//登出
 
     if (isset($_GET["login_out"]) && ($_GET["login_out"]=="true")) {
       unset($_SESSION["login_account"]);
       unset($_SESSION["login_password"]);
-      header("Location:index.php");
+      header("Location:$Back");
     }
 
   }
 
-  function Login($db){//登入
+  function Login($db,$Back){//登入
 
     $true = isset($_POST["login_account"]) &&
-            !empty($_POST["login_account"]) &&
-            isset($_POST["login_password"]) &&
-            !empty($_POST["login_password"]);
+    !empty($_POST["login_account"]) &&
+    isset($_POST["login_password"]) &&
+    !empty($_POST["login_password"]);
 
     if ($true) {
 
@@ -94,19 +93,22 @@
 
       if ($login_account==$account && ($login_password==$passwd)) {
 
-          if ($level == "member") {
-            $_SESSION["login_account"] = $login_account;
-            $_SESSION["login_password"] = $login_password;
+        if ($level == "member") {
 
-            header("Location:index.php");
-          }
+          $_SESSION["login_account"] = $login_account;
+          $_SESSION["login_password"] = $login_password;
+
+          header("Location:$Back");
+        }
       }else {
         echo "
-          <script>alert('帳號或密碼有誤');</script>
+        <script>alert('帳號或密碼有誤');</script>
         ";
       }
-    }
-}
+    }//true
+  }
+
+
   function Login_Check(){//登入檢查
 
     if (!isset($_SESSION["login_account"]) || empty($_SESSION["login_account"])) {

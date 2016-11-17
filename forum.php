@@ -27,15 +27,14 @@
   <script src="js/vendor/modernizr-2.6.2-respond-1.1.0.min.js"></script>
 
   <?php
-  session_start();
-  include("bc/mysql/connect.php");
-  include("login/check_login.php");
+    session_start();
+    include("bc/mysql/connect.php");
+    include("login/check_login.php");
+    include("ico.php");
 
-  Login($db);
-  Login_Out();
-
-  include("ico.php");
-
+    $Back = $_SERVER['PHP_SELF'];
+    Login($db,$Back);
+    Login_Out($Back);
    ?>
 
 </head>
@@ -83,7 +82,9 @@
           <li class="active"><a href="forum.php">討論區</a></li>
           <!--<li><a href="contact-us.html">Contact</a></li>-->
           <li class="login">
-            <a data-toggle="modal" href="#loginForm"><i class="icon-user"></i></a>
+            <?php
+              Member_Information();
+             ?>
           </li>
         </ul>
       </div><!--/.nav-collapse -->
