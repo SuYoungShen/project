@@ -24,12 +24,9 @@
       include("bc/mysql/connect.php");
       include("login/check_login.php");
 
-      $Back = $_SERVER["PHP_SELF"];
+      $Back = "view.php";
       Login($db,$Back);
-      Login_Out($Back."?
-                        id='".$_GET['id']."'&
-                        place_name='".$_GET['place_name']."'&
-                        viewpoint='".$_GET['viewpoint']."'");
+      Login_Out($Back);
 
       include("ico.php");
      ?>

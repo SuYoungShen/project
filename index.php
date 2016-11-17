@@ -39,9 +39,9 @@
       session_start();
       include("bc/mysql/connect.php");
       include("login/check_login.php");
-
-      Login($db,"index.php");
-      Login_Out();
+      $Back = "index.php";
+      Login($db,$Back);
+      Login_Out($Back);
 
       include("ico.php");
      ?>
@@ -163,9 +163,9 @@
             //   ";
             // }
             ?>
+
           </div>
         </ul>
-
       </div>
     </section>
   <!-- </div> -->

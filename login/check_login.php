@@ -72,9 +72,9 @@
   function Login($db,$Back){//登入
 
     $true = isset($_POST["login_account"]) &&
-    !empty($_POST["login_account"]) &&
-    isset($_POST["login_password"]) &&
-    !empty($_POST["login_password"]);
+            !empty($_POST["login_account"]) &&
+            isset($_POST["login_password"]) &&
+            !empty($_POST["login_password"]);
 
     if ($true) {
 
@@ -105,7 +105,9 @@
         <script>alert('帳號或密碼有誤');</script>
         ";
       }
-    }//true
+    }else {
+      $login_account = "";
+    }
   }
 
 
