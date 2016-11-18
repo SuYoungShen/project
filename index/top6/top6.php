@@ -4,7 +4,7 @@
   include ("bc/mysql/connect.php");//連接資料庫
   include ("common.php");//常用語法
   $picDir = "bc/index/top6/images/";
-
+  $WebSite = $_SERVER["PHP_SELF"];
   $topse = $db->query(topse());//查詢top資料表
   $row = $topse->fetchAll();
 
@@ -29,7 +29,15 @@
         <div class='overlay'>
         </div>
         <div class='links'>
-            <a data-toggle='modal' href='#modal-$key'><i class='icon-eye-open'></i></a><a href='#'><i class='icon-heart' onclick='Insert(\"$accounts\",\"$placeName\")'></i></a>
+            <a data-toggle='modal' href='#modal-$key'>
+              <i class='icon-eye-open'></i></a><a href='#'><i class='icon-heart' onclick='Insert(
+                                                                                                  \"$accounts\",
+                                                                                                  \"$placeName\",
+                                                                                                  \"$picName\",
+                                                                                                  \"$picDir\",
+                                                                                                  \"$WebSite\"
+                                                                                                  )'></i>
+            </a>
         </div>
       </div>
       <div class='desc'>
