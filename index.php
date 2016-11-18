@@ -22,7 +22,7 @@
     <!-- bootstrap & fontawesome -->
     <!-- <link rel="stylesheet" href="bc/assets/css/bootstrap.min.css" /> -->
 
-    <!-- text fonts -->
+    <script type="text/javascript" src="favorite/fun.js"></script>
 
     <!-- ace styles -->
 
@@ -43,6 +43,11 @@
       Login($db,$Back);
       Login_Out($Back);
 
+      if (isset($_SESSION["login_account"]) && !empty($_SESSION["login_account"])) {
+         $accounts = $_SESSION["login_account"];
+      }else {
+        $accounts = "";
+      }
       include("ico.php");
      ?>
 
@@ -138,7 +143,7 @@
         <ul class="gallery col-4">
           <div class="row-fluid">
             <?php
-            include("index/top6/top6.php");
+              include("index/top6/top6.php");
             // for ($i=1; $i <= 6 ; $i++) {
             //   echo "
             //   <li>
@@ -179,7 +184,7 @@
 
   <!--  Login form -->
   <?php
-  include("login-form.php");
+    include("login-form.php");
    ?>
   <!--  /Login form -->
 

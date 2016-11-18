@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- 主機: 127.0.0.1
--- 產生時間： 2016-11-15 18:39:18
+-- 產生時間： 2016-11-18 16:13:23
 -- 伺服器版本: 10.1.16-MariaDB
 -- PHP 版本： 5.6.24
 
@@ -63,7 +63,9 @@ CREATE TABLE `area` (
 --
 
 INSERT INTO `area` (`id`, `placename`, `viewpoint`, `posted`, `message`, `reply`, `email`, `site`, `datetime`, `replydatetime`) VALUES
-(1, '高雄', 'd', 'ddd', 'ss', '很好', 'ddd@c.comd', 'http://ssss.cdd', '2016-11-15 16:25:12', '2016-11-15 16:25:42');
+(1, '高雄', 'd', 'ddd', 'ss', '很好', 'ddd@c.comd', 'http://ssss.cdd', '2016-11-15 16:25:12', '2016-11-15 16:25:42'),
+(2, '高雄', 'd', 'sssss', 'sss', '', 'sss@cd.sssss', 'sssss', '2016-11-15 19:06:33', '0000-00-00 00:00:00'),
+(3, 'ccc', 's', 'sss', 's', '', 'sss@sss', 'ssssss', '2016-11-15 19:07:05', '0000-00-00 00:00:00');
 
 -- --------------------------------------------------------
 
@@ -94,6 +96,29 @@ INSERT INTO `carousel` (`id`, `place`, `name`, `path`, `datetime`) VALUES
 -- --------------------------------------------------------
 
 --
+-- 資料表結構 `favorite`
+--
+
+CREATE TABLE `favorite` (
+  `Account` varchar(100) COLLATE utf8_unicode_ci NOT NULL,
+  `Place_Name` varchar(100) COLLATE utf8_unicode_ci NOT NULL,
+  `PicName` varchar(100) COLLATE utf8_unicode_ci NOT NULL,
+  `PicPath` varchar(100) COLLATE utf8_unicode_ci NOT NULL,
+  `WebSite` varchar(100) COLLATE utf8_unicode_ci NOT NULL,
+  `Datetime` datetime NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+
+--
+-- 資料表的匯出資料 `favorite`
+--
+
+INSERT INTO `favorite` (`Account`, `Place_Name`, `PicName`, `PicPath`, `WebSite`, `Datetime`) VALUES
+('aaaa', '', '', '', '', '0000-00-00 00:00:00'),
+('aaaa', '', '', '', '', '0000-00-00 00:00:00');
+
+-- --------------------------------------------------------
+
+--
 -- 資料表結構 `forum`
 --
 
@@ -106,13 +131,6 @@ CREATE TABLE `forum` (
   `reply` varchar(10) COLLATE utf8_unicode_ci NOT NULL,
   `datetime` datetime NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
-
---
--- 資料表的匯出資料 `forum`
---
-
-INSERT INTO `forum` (`id`, `theme`, `posted`, `email`, `message`, `reply`, `datetime`) VALUES
-(5, 's', 's', 's@c.dom', 's', 's', '2016-11-13 16:29:53');
 
 -- --------------------------------------------------------
 
@@ -324,12 +342,12 @@ ALTER TABLE `top`
 -- 使用資料表 AUTO_INCREMENT `area`
 --
 ALTER TABLE `area`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 --
 -- 使用資料表 AUTO_INCREMENT `forum`
 --
 ALTER TABLE `forum`
-  MODIFY `id` int(100) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+  MODIFY `id` int(100) NOT NULL AUTO_INCREMENT;
 --
 -- 使用資料表 AUTO_INCREMENT `place`
 --

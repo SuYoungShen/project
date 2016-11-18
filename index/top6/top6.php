@@ -29,7 +29,7 @@
         <div class='overlay'>
         </div>
         <div class='links'>
-          <a data-toggle='modal' href='#modal-$key'><i class='icon-eye-open'></i></a><a href='#'><i class='icon-heart'></i></a>
+            <a data-toggle='modal' href='#modal-$key'><i class='icon-eye-open'></i></a><a href='#'><i class='icon-heart' onclick='Insert(\"$accounts\",\"$placeName\")'></i></a>
         </div>
       </div>
       <div class='desc'>
