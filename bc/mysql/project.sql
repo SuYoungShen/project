@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 4.5.1
+-- version 4.5.2
 -- http://www.phpmyadmin.net
 --
--- 主機: 127.0.0.1
--- 產生時間： 2016-11-18 16:13:23
--- 伺服器版本: 10.1.16-MariaDB
--- PHP 版本： 5.6.24
+-- 主機: localhost
+-- 產生時間： 2016 年 11 月 19 日 14:02
+-- 伺服器版本: 10.1.19-MariaDB
+-- PHP 版本： 7.0.9
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 SET time_zone = "+00:00";
@@ -65,7 +65,8 @@ CREATE TABLE `area` (
 INSERT INTO `area` (`id`, `placename`, `viewpoint`, `posted`, `message`, `reply`, `email`, `site`, `datetime`, `replydatetime`) VALUES
 (1, '高雄', 'd', 'ddd', 'ss', '很好', 'ddd@c.comd', 'http://ssss.cdd', '2016-11-15 16:25:12', '2016-11-15 16:25:42'),
 (2, '高雄', 'd', 'sssss', 'sss', '', 'sss@cd.sssss', 'sssss', '2016-11-15 19:06:33', '0000-00-00 00:00:00'),
-(3, 'ccc', 's', 'sss', 's', '', 'sss@sss', 'ssssss', '2016-11-15 19:07:05', '0000-00-00 00:00:00');
+(3, 'ccc', 's', 'sss', 's', '', 'sss@sss', 'ssssss', '2016-11-15 19:07:05', '0000-00-00 00:00:00'),
+(4, '高雄', 'd', 'aa', 's', '', 'sss@c.dm', 'ht', '2016-11-19 19:30:34', '0000-00-00 00:00:00');
 
 -- --------------------------------------------------------
 
@@ -101,7 +102,7 @@ INSERT INTO `carousel` (`id`, `place`, `name`, `path`, `datetime`) VALUES
 
 CREATE TABLE `favorite` (
   `Account` varchar(100) COLLATE utf8_unicode_ci NOT NULL,
-  `Place_Name` varchar(100) COLLATE utf8_unicode_ci NOT NULL,
+  `place` varchar(100) COLLATE utf8_unicode_ci NOT NULL,
   `PicName` varchar(100) COLLATE utf8_unicode_ci NOT NULL,
   `PicPath` varchar(100) COLLATE utf8_unicode_ci NOT NULL,
   `WebSite` varchar(100) COLLATE utf8_unicode_ci NOT NULL,
@@ -112,9 +113,8 @@ CREATE TABLE `favorite` (
 -- 資料表的匯出資料 `favorite`
 --
 
-INSERT INTO `favorite` (`Account`, `Place_Name`, `PicName`, `PicPath`, `WebSite`, `Datetime`) VALUES
-('aaaa', '', '', '', '', '0000-00-00 00:00:00'),
-('aaaa', '', '', '', '', '0000-00-00 00:00:00');
+INSERT INTO `favorite` (`Account`, `place`, `PicName`, `PicPath`, `WebSite`, `Datetime`) VALUES
+('aaaa', 's', '4.jpg', 'bc/index/top6/images/', '/project/index.php', '2016-11-19 19:25:58');
 
 -- --------------------------------------------------------
 
@@ -131,6 +131,13 @@ CREATE TABLE `forum` (
   `reply` varchar(10) COLLATE utf8_unicode_ci NOT NULL,
   `datetime` datetime NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+
+--
+-- 資料表的匯出資料 `forum`
+--
+
+INSERT INTO `forum` (`id`, `theme`, `posted`, `email`, `message`, `reply`, `datetime`) VALUES
+(1, 'test', 'aa', '', 'test', '', '0000-00-00 00:00:00');
 
 -- --------------------------------------------------------
 
@@ -342,12 +349,12 @@ ALTER TABLE `top`
 -- 使用資料表 AUTO_INCREMENT `area`
 --
 ALTER TABLE `area`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 --
 -- 使用資料表 AUTO_INCREMENT `forum`
 --
 ALTER TABLE `forum`
-  MODIFY `id` int(100) NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(100) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 --
 -- 使用資料表 AUTO_INCREMENT `place`
 --
