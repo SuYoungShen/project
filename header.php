@@ -38,9 +38,11 @@
         <li><a href="forum.php">討論區</a></li>
         <!--<li><a href="contact-us.html">Contact</a></li>-->
         <li class="login">
-          <a data-toggle="modal" href="#loginForm"><i class="icon-user"></i></a>
+          <?php
+            Member_Information();
+           ?>         
         </li>
-        
+
       </ul>
     </div><!--/.nav-collapse -->
   </div>

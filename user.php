@@ -4,24 +4,38 @@
 <!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
 <!--[if gt IE 8]><!--> <html class="no-js"> <!--<![endif]-->
 <head>
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-    <title>使用者介面</title>
-    <meta name="description" content="">
-    <meta name="viewport" content="width=device-width">
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <title>使用者介面</title>
+  <meta name="description" content="">
+  <meta name="viewport" content="width=device-width">
 
-    <link rel="stylesheet" href="css/bootstrap.min.css">
-    <link rel="stylesheet" href="css/bootstrap-responsive.min.css">
-    <link rel="stylesheet" href="css/font-awesome.min.css">
-    <link rel="stylesheet" href="css/main.css">
-    <link rel="stylesheet" href="css/sl-slide.css">
+  <link rel="stylesheet" href="css/bootstrap.min.css">
+  <link rel="stylesheet" href="css/bootstrap-responsive.min.css">
+  <link rel="stylesheet" href="css/font-awesome.min.css">
+  <link rel="stylesheet" href="css/main.css">
+  <link rel="stylesheet" href="css/sl-slide.css">
 
-    <script src="js/vendor/modernizr-2.6.2-respond-1.1.0.min.js"></script>
+  <script src="js/vendor/modernizr-2.6.2-respond-1.1.0.min.js"></script>
 
-    <!-- Le fav and touch icons -->
-    <?php
-      include("ico.php");
-     ?>
+  <script type="text/javascript" src="js/jquery-1.11.0.min.js"></script>
+
+  <!-- Le fav and touch icons -->
+  <?php
+    session_start();
+    include("bc/mysql/connect.php");
+    include("login/check_login.php");
+    $Back = "index.php";
+    Login($db,$Back);
+    Login_Out($Back);
+
+    if (isset($_SESSION["login_account"]) && !empty($_SESSION["login_account"])) {
+       $accounts = $_SESSION["login_account"];
+    }else {
+      $accounts = "";
+    }
+    include("ico.php");
+  ?>
 
 </head>
 
@@ -32,50 +46,16 @@
  ?>
 <!-- /header -->
 
-
 <!--Slider輪播-->
-<section id="slide-show">
+<section id="slide-show" >
   <div id="slider" class="sl-slider-wrapper">
     <!--Slider Items-->
+    <!-- <div class="span12"> -->
     <div class="sl-slider">
-      <!--Slider Item1-->
-      <div class="sl-slide item1" data-orientation="horizontal" data-slice1-rotation="-25" data-slice2-rotation="-25" data-slice1-scale="2" data-slice2-scale="2">
-        <div class="sl-slide-inner">
-          <div class="container">
-            <img class="pull-right" src="images/sample/slider/autox520.jpg" alt="" />
-            <h2>高雄85大樓</h2>
-            <!-- <h3 class="gap">Tincidunt condimentum eros</h3>
-            <a class="btn btn-large btn-transparent" href="#">Learn More</a> -->
-          </div>
-        </div>
-      </div>
-      <!--/Slider Item1-->
-
-      <!--Slider Item2-->
-      <div class="sl-slide item2" data-orientation="vertical" data-slice1-rotation="10" data-slice2-rotation="-15" data-slice1-scale="1.5" data-slice2-scale="1.5">
-        <div class="sl-slide-inner">
-          <div class="container">
-            <img class="pull-right" src="images/sample/slider/autox520-1.jpg" alt="" />
-            <h2>高雄85大樓</h2>
-            <!-- <h3 class="gap">Aenean ultricies mi vitast</h3>
-            <a class="btn btn-large btn-transparent" href="#">Learn More</a> -->
-          </div>
-        </div>
-      </div>
-      <!--Slider Item2-->
-
-      <!--Slider Item3-->
-      <div class="sl-slide item3" data-orientation="horizontal" data-slice1-rotation="3" data-slice2-rotation="3" data-slice1-scale="2" data-slice2-scale="1">
-        <div class="sl-slide-inner">
-          <div class="container">
-            <img class="pull-right" src="images/sample/slider/autox520-2.jpg" alt="" />
-            <h2>高雄85大樓</h2>
-            <!-- <h3 class="gap">Breatures who have been utterly</h3>
-            <a class="btn btn-large btn-transparent" href="#">Learn More</a> -->
-          </div>
-        </div>
-      </div>
-      <!--Slider Item3-->
+      <?php
+        include("index/slider/slider.php");
+      ?>
+      <!-- </div> -->
     </div>
     <!--/Slider Items-->
 
@@ -88,8 +68,7 @@
   </div>
   <!-- /slider-wrapper -->
 </section>
-<!--/Slider-->
-
+<!--Slider輪播-->
 
 </div>
 <!-- /slider-wrapper -->
@@ -101,7 +80,7 @@
 			<fieldset>
 			<div class="row-fluid">
 				<div class="span6">
-				<legend>新增景點</legend>
+				<legend>留言區</legend>
 
 				<table class="table table-bordered" >
 					<tr>
@@ -200,7 +179,7 @@
  ?>
 <!--  /Login form -->
 
-<script src="js/vendor/jquery-1.9.1.min.js"></script>
+<!-- <script src="js/vendor/jquery-1.9.1.min.js"></script> -->
 <script src="js/vendor/bootstrap.min.js"></script>
 <script src="js/main.js"></script>
 <!-- Required javascript files for Slider -->

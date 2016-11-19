@@ -108,7 +108,7 @@
       <!-- /header -->
 
       <!--Slider輪播-->
-      <section id="slide-show">
+      <section id="slide-show" >
         <div id="slider" class="sl-slider-wrapper">
           <!--Slider Items-->
           <!-- <div class="span12"> -->
@@ -129,7 +129,7 @@
         </div>
         <!-- /slider-wrapper -->
       </section>
-      <!--/Slider-->
+      <!--Slider輪播-->
 
   <!--熱門排行-->
   <!-- <div class="container" > -->
