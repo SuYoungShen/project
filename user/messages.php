@@ -30,7 +30,7 @@
 
                 <a class='accordion-toggle' data-toggle='collapse' data-parent='#accordion2' href='#collapses'>
                   $Place_Name
-                </a>
+                </a
 
               </div>
               <div id='collapses' class='accordion-body collapse'>
