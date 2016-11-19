@@ -22,7 +22,7 @@
     <!-- bootstrap & fontawesome -->
     <!-- <link rel="stylesheet" href="bc/assets/css/bootstrap.min.css" /> -->
 
-    <script type="text/javascript" src="favorite/fun.js"></script>
+    <script type="text/javascript" src="favorite/js/insert.js"></script>
 
     <!-- ace styles -->
 

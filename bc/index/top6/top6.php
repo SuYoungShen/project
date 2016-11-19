@@ -68,11 +68,13 @@ if (!isset($_SESSION["topnum"]) && !isset($_SESSION["topnums"])) {
           date_default_timezone_set('Asia/Taipei');//設定時間為台北
           $datetime = date("Y-m-d H:i:s");//時間
 
-          if(file_exists($picDir.$pic_Name)){//檢查是否有相同檔案
+          if(file_exists($top6dir.$pic_Name)){//檢查是否有相同檔案
 
             $picName = basename($pic_Name,"$pic_tmps");//去除副檔名,留檔名
             // $placeUp = PlaceUp($place_Name,$Introduction ,$pic_Name ,$picDir, $datetime);//更新檔名
-            $placeUp = topup($id,$place_Names ,$pic_Name ,$picDir, $datetime);//更新檔名
+            move_uploaded_file($pic_tmp,$top6dir.$pic_Name);//把檔案移到指定dir
+
+            $placeUp = topup($id,$place_Names ,$pic_Name ,$top6dir, $datetime);//更新檔名
             $true = $db->query($placeUp);//執行更新指令
             if ($true) {
               message("更新成功,但資料夾裡已有名稱".$picName."的檔案",$Basename);
@@ -83,7 +85,7 @@ if (!isset($_SESSION["topnum"]) && !isset($_SESSION["topnums"])) {
           }else{
 
           move_uploaded_file($pic_tmp,$top6dir.$pic_Name);//把檔案移到指定dir
-          $placeUp = topup($id,$place_Names ,$pic_Name ,$picDir, $datetime);//更新檔名
+          $placeUp = topup($id,$place_Names ,$pic_Name ,$top6dir, $datetime);//更新檔名
           $true = $db->query($placeUp);//執行更新指令
           if ($true) {
             message("更新成功",$Basename);
