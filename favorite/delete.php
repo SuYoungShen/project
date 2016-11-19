@@ -1,10 +1,13 @@
 <?php
   $dbname="project";
   include("../bc/mysql/connect.php");
+
   $true = isset($_POST["Account"]) &&
           !empty($_POST["Account"]) &&
           isset($_POST["Place_Name"]) &&
           !empty($_POST["Place_Name"]) &&
+          isset($_POST["PicName"]) &&
+          !empty($_POST["PicName"]) &&
           isset($_POST["PicPath"]) &&
           !empty($_POST["PicPath"]) &&
           isset($_POST["WebSite"]) &&
@@ -14,6 +17,7 @@
 
     $Account = $_POST["Account"];
     $Place_Name = $_POST["Place_Name"];
+    $PicName = $_POST["PicName"];
     $PicPath = $_POST["PicPath"];
     $WebSite = $_POST["WebSite"];
 
@@ -21,6 +25,7 @@
                         FavDe(
                           $Account,
                           $Place_Name,
+                          $PicName,
                           $PicPath,
                           $WebSite
                         )
@@ -35,11 +40,12 @@
     echo "沒值~是要刪什麼~~~";
   }
 
-  function FavDe($Account, $Place_Name, $PicPath, $WebSite){
+  function FavDe($Account, $Place_Name, $PicName, $PicPath, $WebSite){
     $FavDe = "DELETE FROM `favorite` WHERE
                                           `Account` = '".$Account."' AND
-                                          `Place_Name` = '".$Place_Name."' AND
-                                          `PicPath` = '".$PicPath."' AND 
+                                          `place` = '".$Place_Name."' AND
+                                          `PicName` = '".$PicName."' AND                                          
+                                          `PicPath` = '".$PicPath."' AND
                                           `WebSite` = '".$WebSite."'
                                           ";
     return $FavDe;

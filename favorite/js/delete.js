@@ -1,5 +1,5 @@
 
-function Delete(Account, Place_Name, PicPath, WebSite) {//彈跳視窗
+function Delete(Account, Place_Name, PicName,PicPath, WebSite) {//彈跳視窗
 
   bootbox.confirm("Are you sure?", function(result) {
     if (result) {
@@ -9,6 +9,7 @@ function Delete(Account, Place_Name, PicPath, WebSite) {//彈跳視窗
         data:{
           'Account' : Account,
           'Place_Name' : Place_Name,
+          'PicName' : PicName,
           'PicPath' : PicPath,
           'WebSite' : WebSite
         },

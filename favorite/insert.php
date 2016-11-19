@@ -35,7 +35,7 @@
 
     $favorite = "INSERT INTO `favorite`(
                                         `Account`,
-                                        `Place_Name`,
+                                        `place`,
                                         `PicName`,
                                         `PicPath`,
                                         `WebSite`,
