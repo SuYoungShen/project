@@ -80,12 +80,15 @@
 			<fieldset>
 			<div class="row-fluid">
 				<div class="span6">
-				<legend>留言區</legend>
+				<legend>我的最愛</legend>
 
 				<table class="table table-bordered" >
 					<tr>
 						<td>
-              <div class="accordion" id="accordion2">
+              <?php
+                include ("user/favorite.php");
+              ?>
+              <!-- <div class="accordion" id="accordion2">
                 <div class="accordion-group">
                   <div class="accordion-heading">
                     <a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion2" href="#collapseOne">
@@ -112,14 +115,14 @@
                     </div>
                   </div>
                 </div>
-              </div>
+              </div> -->
             </td>
 					</tr>
 				</table>
 
         </div>
 				<div class="span6">
-				<legend>我的最愛</legend>
+				<legend>留言區</legend>
 
 				<table class="table table-bordered">
 					<tr>
