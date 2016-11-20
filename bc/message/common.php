@@ -93,8 +93,8 @@
                                     `theme`,
                                     `posted`,
                                     `email`,
-                                    `message`,
-                                    `datetime`
+                                    `messages`,
+                                    `datetimes`
                                   ) VALUES (
                                     '".$themes."',
                                     '".$posteds."',
@@ -114,9 +114,9 @@
                       `theme`='".$themes."',
                       `posted`='".$posteds."',
                       `email`='".$emails."',
-                      `message`='".$messages."',
+                      `messages`='".$messages."',
                       `reply`='".$replys."',
-                      `datetime`='".$datetimes."'
+                      `datetimes`='".$datetimes."'
                 WHERE
                       `id`='".$id."'
                 ";

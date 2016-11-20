@@ -11,10 +11,10 @@
     $theme = $themes[$key] = $value["theme"];//地區名
     $posted = $posteds[$key] = $value["posted"];//發表人
     $email = $emails[$key] = $value["email"];//email
-    $message = $messages[$key] = $value["message"];//留言
+    $message = $messages[$key] = $value["messages"];//留言
     $reply = $replys[$key] = $value["reply"];//回覆
 
-    $datetime = $datetimes[$key] = $value["datetime"];//時間
+    $datetime = $datetimes[$key] = $value["datetimes"];//時間
 
     echo "
       <tr>
