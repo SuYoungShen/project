@@ -18,12 +18,12 @@
       <div class='accordion' id='accordion2'>
         <div class='accordion-group'>
           <div class='accordion-heading'>
-            <a class='accordion-toggle' data-toggle='collapse' data-parent='#accordion2' href='#collapse$key'>
+            <a class='accordion-toggle' data-toggle='collapse' data-parent='#accordion2' href='#Favorite$key'>
               $Place_Name
             </a>
 
         </div>
-          <div id='collapse$key' class='accordion-body collapse'>
+          <div id='Favorite$key' class='accordion-body collapse'>
             <div class='accordion-inner'>
               <img src='$PicPath$PicName'>
               <a href='$WebSite'>$Place_Name</a>

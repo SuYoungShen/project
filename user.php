@@ -17,6 +17,7 @@
   <link rel="stylesheet" href="css/sl-slide.css">
 
   <script type="text/javascript" src="favorite/js/delete.js"></script>
+  <script type="text/javascript" src="message/js/delete.js"></script>
   <script src="js/vendor/modernizr-2.6.2-respond-1.1.0.min.js"></script>
   <script type="text/javascript" src="js/jquery-1.11.0.min.js"></script>
   <script type="text/javascript" src="bc/assets/js/alert.js"></script>
@@ -135,7 +136,7 @@
 					</tr>
 				</table>
 
-        
+
     </div>
 			</fieldset>
 		</form>

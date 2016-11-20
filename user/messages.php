@@ -12,13 +12,17 @@
 
     // $Account = $value["Account"];//帳號
     /* 景點area */
+
     $Place_Name = $value["placename"];//地區名
     $ViewPoint = $value["viewpoint"];//景點名
     $Posted = $value["posted"];//發表人
     $AreaMessage = $value["message"];//訊息
+    $AreaReply = $value["reply"];//回覆
     $AreaDate = $value["datetime"];//時間
     /* 景點 area */
-
+    if (empty($AreaReply)) {
+      $AreaReply = "(等待回覆)";
+    }
     if (!empty($Place_Name)) {
 
       echo "
@@ -26,24 +30,25 @@
             <div class='accordion-group'>
               <div class='accordion-heading'>
 
-                <a class='accordion-toggle' data-toggle='collapse' data-parent='#accordion2' href='#collapses'>
+                <a class='accordion-toggle' data-toggle='collapse' data-parent='#accordion2' href='#Area$key'>
                   $Place_Name
                 </a>
 
               </div>
-              <div id='collapses' class='accordion-body collapse'>
+              <div id='Area$key' class='accordion-body collapse'>
                 <div class='accordion-inner'>
                 景點名：
                   <a href='$WebSite'>$ViewPoint</a>
-                  <a onclick='Delete(
-                  \"$Account\",
+                  <a onclick='AreaDelete(
                   \"$Place_Name\",
-                  \"$PicName\",
-                  \"$PicPath\",
-                  \"$WebSite\"
+                  \"$ViewPoint\",
+                  \"$Posted\",
+                  \"$AreaMessage\",
+                  \"$AreaDate\"
                   )'>
                   <i class='icon-remove pull-right'></i></a><br/>
                   <p>留言：$AreaMessage</p>
+                  <p>回覆：$AreaReply</p>
                   <p>時間：$AreaDate</p>
                 </div>
               </div>
@@ -82,29 +87,17 @@
     //   </div>
     //   ";
     // }
-
-
-
   }
 
   echo "<legend>討論區</legend>";
   foreach ($ForumDislpay as $key => $value) {
 
-    // $Account = $value["Account"];//帳號
-    /* 景點area */
-    // $Place_Name = $value["placename"];//地區名
-    // $ViewPoint = $value["viewpoint"];//景點名
-    // $Posted = $value["posted"];//發表人
-    // $AreaMessage = $value["message"];//訊息
-    // $AreaDate = $value["datetime"];//時間
-
-    /* 景點 area */
-
     /* 討論區 forum */
     $Theme = $value["theme"];//主題
-    $ForumMessages = $value["messages"];//訊息
-    $Reply = $value["reply"];//回覆
-    $ForDate = $value["datetimes"];//時間
+    $ForumPosted = $value["posted"];//發表人
+    $ForumMessages = $value["message"];//訊息
+    $ForumReply = $value["reply"];//回覆
+    $ForDate = $value["datetime"];//時間
     /* 討論區 forum */
 
     if (!empty($Place_Name)) {
@@ -114,25 +107,23 @@
             <div class='accordion-group'>
               <div class='accordion-heading'>
 
-                <a class='accordion-toggle' data-toggle='collapse' data-parent='#accordion2' href='#collapses'>
+                <a class='accordion-toggle' data-toggle='collapse' data-parent='#accordion2' href='#Forum$key'>
                   $Theme
                 </a>
 
               </div>
-              <div id='collapses' class='accordion-body collapse'>
+              <div id='Forum$key' class='accordion-body collapse'>
                 <div class='accordion-inner'>
-                景點名：
-                  <a href='$WebSite'>$ViewPoint</a>
-                  <a onclick='Delete(
-                  \"$Account\",
-                  \"$Place_Name\",
-                  \"$PicName\",
-                  \"$PicPath\",
-                  \"$WebSite\"
+                發表人：$ForumPosted
+                  <a onclick='ForumDelete(
+                  \"$Theme\",
+                  \"$ForumPosted\",
+                  \"$ForumMessages\",
+                  \"$ForDate\"
                   )'>
                   <i class='icon-remove pull-right'></i></a><br/>
                   <p>留言：$ForumMessages</p>
-                  <p>回覆：$Reply</p>
+                  <p>回覆：$ForumReply</p>
                   <p>時間：$ForDate</p>
                 </div>
               </div>
