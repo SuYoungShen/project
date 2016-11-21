@@ -85,7 +85,13 @@
                   <table class="table table-hover ">
                     <tr >
                       <td><a href="view.php">首頁</a></td>
-                      <td><a href="area.php">地區名</a></td>
+                      <?php
+                        include ("area/place.php");
+                        function Placess(){
+                          $place = "SELECT * From `places`";
+                          return $place;
+                        }
+                       ?>
                     </tr>
                   </table>
                 </div>

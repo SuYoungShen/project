@@ -368,7 +368,7 @@
 												include("about/carousel.php");
 												?>
 											</ul>
-										</div><!-- PAGE CONTENT ENDS -->
+										</div><!-- PA5GE CONTENT ENDS -->
 									</div>
 								</div>
 							</div>
@@ -408,7 +408,6 @@
 
 											<th class="hidden-480"><i class="ace-icon fa fa-clock-o bigger-110 hidden-480"></i> 時間</th>
 
-											<th>瀏覽次數</th>
 											<th></th>
 										</tr>
 									</thead>
@@ -760,7 +759,7 @@
 					bAutoWidth: false,
 					"aoColumns": [
 						{ "bSortable": false },
-						null, null,null, null, null,
+						null, null,null, null,
 						{ "bSortable": false }
 					],
 					"aaSorting": [],

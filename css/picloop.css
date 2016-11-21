@@ -1,7 +1,8 @@
 
 .slider_container {
     margin: 30px auto;
-    width: 400px;
+    width: auto;
+    max-height: 350px;
     height: 350px;
     position: relative;
     border: 20px solid;
@@ -26,8 +27,8 @@
 
 
 .slider_container div img{
-	width:400px;
-	height:350px;
+	width:auto;
+	height:auto;
 }
 
 

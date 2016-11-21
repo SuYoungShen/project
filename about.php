@@ -60,9 +60,15 @@
                </a>
                <div class="dropdown-menu">
                  <table class="table table-hover ">
-                   <tr >
+                   <tr>
                      <td><a href="view.php">首頁</a></td>
-                     <td><a href="area.php">地區名</a></td>
+                     <?php
+                       include ("area/place.php");
+                       function Placess(){
+                         $place = "SELECT * From `places`";
+                         return $place;
+                       }
+                      ?>
                    </tr>
                  </table>
                </div>
@@ -114,18 +120,18 @@
           </div>
           <!--輪放-->
 
-
           <div class="span6">
-            <div class="slider_container">
+            <div class="slider_container container">
               <?php
               include("about/carousel.php");
               ?>
             </div>
           </div>
           <!--輪放-->
-
         </div>
       </div>
+
+
       <hr>
       <div class="container">
         <div class="center">
@@ -135,61 +141,9 @@
         <div class="gap"></div>
 
         <table class="table table-striped table-bordered table-hover ">
-          <!-- <tr>
-            <td>
-              <a data-toggle="modal" href="#modal-1" >
-                高雄地區名
-              </a>
-            </td>
-
-            <div id="modal-1" class="modal hide fade">
-              <a class="close-modal" href="javascript:;" data-dismiss="modal" aria-hidden="true">
-                <i class="icon-remove"></i>
-              </a>
-              <div class="box">
-                <img src="images/portfolio/full/500x300.jpg">
-                <h5>地區名</h5>
-                <p>地區介紹</p>
-              </div>
-            </div>
-          </tr> -->
-
           <?php
             include("about/place.php");
            ?>
-           <!-- <tr>
-             <td>
-           <div class="accordion" id="accordion3">
-             <div class="accordion-group">
-               <div class="accordion-heading">
-                 <a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion3" href="#collapseThree">
-                   景點名
-                 </a>
-               </div>
-               <div id="collapseThree" class="accordion-body collapse">
-                 <div class="accordion-inner">
-
-                     <a data-toggle='modal' href='#modal-0'>
-                       $place_Name
-                     </a>
-
-                   <div id='modal-0' class='modal hide fade'>
-                     <a class='close-modal' href='javascript:;' data-dismiss='modal' aria-hidden='true'>
-                       <i class='icon-remove'></i>
-                     </a>
-                     <div class='box'>
-                       <img src='$picDir$pic_name'>
-                       <h5>$place_Name</h5>
-                       <p>$Introduction</p>
-                     </div>
-                   </div>
-                 </div>
-               </div>
-             </div>
-           </div>
-         </td>
-
-          </tr> -->
         </table>
       </div>
 

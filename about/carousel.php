@@ -35,8 +35,8 @@ foreach ($display as $key => $value) {
     //   $place_Name = "假的";
     // }
   echo "
-     <div >
-       <img src='$display'/>
+     <div>
+       <img src='$display' align='center'/>
        <span class='info'>$place_Name</span>
      </div>
    ";

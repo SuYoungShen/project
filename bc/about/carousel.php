@@ -196,7 +196,7 @@ if (!isset($_SESSION["carouselnum"]) && !isset($_SESSION["carouselnums"])) {
       }//foreach
     }//FILE["carousel"]
   }
-  
+
 
 
   foreach ($display as $key => $value) {
@@ -233,31 +233,6 @@ if (!isset($_SESSION["carouselnum"]) && !isset($_SESSION["carouselnums"])) {
     </li>
     ";
   }
-
-
-  // while ($row = $topse->fetch()) {
-  //   $top6 = $row[1];
-  //   echo "
-  //   <li>
-  //     <a href='index/top6/images/$top6' title='$top6' data-rel='colorbox'>
-  //       <img width='150' height='150' alt='150x150' src='index/top6/images/$top6'/>
-  //       <div class='text'>
-  //         <div class='inner'>$top6</div>
-  //       </div>
-  //     </a>
-  //
-  //     <div class='tools tools-top'>
-  //       <a href='#'>
-  //         <i class='ace-icon fa fa-pencil'></i>
-  //       </a>
-  //
-  //       <a href='#'>
-  //         <i class='ace-icon fa fa-times red'></i>
-  //       </a>
-  //     </div>
-  //   </li>
-  //   ";
-  // }
 
     if(isset($_POST["clear"])){
       $clear = $_POST["clear"];
