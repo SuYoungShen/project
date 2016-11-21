@@ -494,7 +494,7 @@
 												<div class="col-sm-9">
 													<textarea type="text" id="form-field-1-1" name="Introduction" placeholder="地區介紹" class="col-xs-10 col-sm-5" required="required"/></textarea>
 												</div>
-											</div
+											</div>
 
 											<div class="form-group">
 												<label class="col-sm-3 control-label no-padding-right" for="form-field-1-1"> 上傳圖檔 </label>

@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 4.5.2
+-- version 4.5.1
 -- http://www.phpmyadmin.net
 --
--- 主機: localhost
--- 產生時間： 2016 年 11 月 19 日 14:02
--- 伺服器版本: 10.1.19-MariaDB
--- PHP 版本： 7.0.9
+-- 主機: 127.0.0.1
+-- 產生時間： 2016-11-21 23:09:45
+-- 伺服器版本: 10.1.16-MariaDB
+-- PHP 版本： 5.6.24
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 SET time_zone = "+00:00";
@@ -37,7 +37,8 @@ CREATE TABLE `about` (
 
 INSERT INTO `about` (`about`, `datetime`) VALUES
 ('高雄市位於臺灣西南部東經120.15度、北緯22.31度，面積為153.6029平方公里，是臺灣第二大都市，也是台灣人口密度最高與重工業最發達的都市；而位於臺灣西南部東經120.24度、北緯22.3度，面積2792.6744平方公里的高雄縣，北鄰南投縣、東鄰嘉義縣和台南市、南鄰屏東縣、東鄰花蓮縣和台東縣，為臺灣第四大都市，在2010年12月25日五都改制後與高雄市合併，並與台北市、新北市(原台北縣)、台中市、台南市並列臺灣五大直轄市。合併後的高雄市行政區域劃分除原有的楠梓區、左營區、鼓山區、三民區、苓雅區、新興區、前金區、鹽埕區、小港區、旗津區、前鎮區之外，另新增鳳山區、岡山區、旗山區、美濃區、大寮區、茄萣區、永安區、大園區、大社區、杉林區、仁武區、田寮區、燕巢區、路竹區、阿蓮區、甲仙區、大樹區、湖內區、桃源區、鳥松區、彌陀區、那瑪夏區(原三民鄉)、梓官區、內門區、茂林區、橋頭區、六龜區、林園區等共39個行政區，為五都中最多行政區的直轄市。', '2016-10-18 02:01:04'),
-('ssssss', '2016-10-18 19:47:45');
+('ssssss', '2016-10-18 19:47:45'),
+('高雄市位於臺灣西南部東經120.15度、北緯22.31度，面積為153.6029平方公里', '2016-11-21 15:10:56');
 
 -- --------------------------------------------------------
 
@@ -65,8 +66,7 @@ CREATE TABLE `area` (
 INSERT INTO `area` (`id`, `placename`, `viewpoint`, `posted`, `message`, `reply`, `email`, `site`, `datetime`, `replydatetime`) VALUES
 (1, '高雄', 'd', 'ddd', 'ss', '很好', 'ddd@c.comd', 'http://ssss.cdd', '2016-11-15 16:25:12', '2016-11-15 16:25:42'),
 (2, '高雄', 'd', 'sssss', 'sss', '', 'sss@cd.sssss', 'sssss', '2016-11-15 19:06:33', '0000-00-00 00:00:00'),
-(3, 'ccc', 's', 'sss', 's', '', 'sss@sss', 'ssssss', '2016-11-15 19:07:05', '0000-00-00 00:00:00'),
-(4, '高雄', 'd', 'aa', 's', '', 'sss@c.dm', 'ht', '2016-11-19 19:30:34', '0000-00-00 00:00:00');
+(3, 'ccc', 's', 'sss', 's', '', 'sss@sss', 'ssssss', '2016-11-15 19:07:05', '0000-00-00 00:00:00');
 
 -- --------------------------------------------------------
 
@@ -87,12 +87,12 @@ CREATE TABLE `carousel` (
 --
 
 INSERT INTO `carousel` (`id`, `place`, `name`, `path`, `datetime`) VALUES
-('0', 'c', '1.jpg', 'about/carousel/images/', '2016-11-03 17:26:23'),
-('1', '', '', '', '0000-00-00 00:00:00'),
-('2', '', '3.jpg', 'about/carousel/images/', '2016-10-28 16:12:28'),
-('3', '2', '4.jpg', 'about/carousel/images/', '2016-10-22 21:23:36'),
-('4', '3', '5.jpg', 'about/carousel/images/', '2016-10-22 21:23:36'),
-('5', '4', '6.jpg', 'about/carousel/images/', '2016-10-22 21:23:36');
+('0', '85大樓夜景', '1.jpg', 'about/carousel/images/', '2016-11-21 15:06:32'),
+('1', '高雄圖書總館', '6.jpg', 'about/carousel/images/', '2016-11-21 15:11:55'),
+('2', '蓮池潭', '2.jpg', 'about/carousel/images/', '2016-11-21 15:12:05'),
+('3', '美麗島', '3.jpg', 'about/carousel/images/', '2016-11-21 15:12:10'),
+('4', '愛河', '4.jpg', 'about/carousel/images/', '2016-11-21 15:12:17'),
+('5', '真愛碼頭', '5.jpg', 'about/carousel/images/', '2016-11-21 15:12:27');
 
 -- --------------------------------------------------------
 
@@ -114,7 +114,13 @@ CREATE TABLE `favorite` (
 --
 
 INSERT INTO `favorite` (`Account`, `place`, `PicName`, `PicPath`, `WebSite`, `Datetime`) VALUES
-('aaaa', 's', '4.jpg', 'bc/index/top6/images/', '/project/index.php', '2016-11-19 19:25:58');
+('aaaa', '85大樓夜景', '1.jpg', 'bc/index/top6/images/', '/project/index.php', '2016-11-21 08:54:06'),
+('aaaa', '蓮池潭', '2.jpg', 'bc/index/top6/images/', '/project/index.php', '2016-11-21 08:54:54'),
+('aaaa', '高雄美麗島', '3.jpg', 'bc/index/top6/images/', '/project/index.php', '2016-11-21 08:55:28'),
+('aaaa', '燒等補資料', '6.jpg', 'bc/index/top6/images/', '/project/index.php', '2016-11-21 15:43:56'),
+('aaaa', '燒等補資料', '5.jpg', 'bc/index/top6/images/', '/project/index.php', '2016-11-21 17:05:36'),
+('aaaa', '燒等補資料', '2.jpg', 'bc/index/top6/images/', '/project/index.php', '2016-11-21 17:05:38'),
+('aaaa', '燒等補資料', '6.jpg', 'bc/index/top6/images/', '/project/index.php', '2016-11-21 17:05:44');
 
 -- --------------------------------------------------------
 
@@ -137,7 +143,7 @@ CREATE TABLE `forum` (
 --
 
 INSERT INTO `forum` (`id`, `theme`, `posted`, `email`, `message`, `reply`, `datetime`) VALUES
-(1, 'test', 'aa', '', 'test', '', '0000-00-00 00:00:00');
+(2, 'sss', 'sss', 'sss@ddd', 'ddd', '', '2016-11-21 00:03:22');
 
 -- --------------------------------------------------------
 
@@ -184,10 +190,7 @@ CREATE TABLE `place` (
 --
 
 INSERT INTO `place` (`id`, `place`, `Introduction`, `name`, `path`, `datetime`) VALUES
-(22, '高雄', 'bbb', '2.jpg', 'about/place/images/', '2016-11-03 13:47:05'),
-(23, 'ccc', 'ccc', '2.jpg', 'about/place/images/', '2016-10-23 15:24:55'),
-(36, '屏', 'aak', '3.jpg', 'about/place/images/', '2016-11-03 13:59:32'),
-(37, 'ssss', 'sss', '5.jpg', 'about/place/images/', '2016-11-03 20:10:43');
+(38, '苓雅區', '苓雅區為臺灣高雄市一市轄區，位於市內西南部，市中心中部，北臨三民區，西北連新興區、前金區，西隔愛河與鹽埕區、鼓山區為界，南接前鎮區，東鄰鳳山區，是高雄市政府四維行政中心的所在地。', '1.jpg', 'about/place/images/', '2016-11-21 17:05:03');
 
 -- --------------------------------------------------------
 
@@ -233,12 +236,12 @@ CREATE TABLE `slider` (
 --
 
 INSERT INTO `slider` (`id`, `name`, `path`, `datetime`) VALUES
-('0', '', 'index/slider/images/', '0000-00-00 00:00:00'),
-('1', '', 'index/slider/images/', '0000-00-00 00:00:00'),
-('2', '', 'index/slider/images/', '0000-00-00 00:00:00'),
-('3', '', 'index/slider/images/', '0000-00-00 00:00:00'),
-('4', '', 'index/slider/images/', '0000-00-00 00:00:00'),
-('5', '', 'index/slider/images/', '0000-00-00 00:00:00');
+('0', '6.jpg', 'index/slider/images/', '2016-11-21 15:02:05'),
+('1', '2.jpg', 'index/slider/images/', '2016-11-21 15:02:05'),
+('2', '3.jpg', 'index/slider/images/', '2016-11-21 15:02:05'),
+('3', '4.jpg', 'index/slider/images/', '2016-11-21 15:02:05'),
+('4', '5.jpg', 'index/slider/images/', '2016-11-21 15:02:05'),
+('5', '6.jpg', 'index/slider/images/', '2016-11-21 15:01:36');
 
 -- --------------------------------------------------------
 
@@ -259,12 +262,12 @@ CREATE TABLE `top` (
 --
 
 INSERT INTO `top` (`id`, `place`, `name`, `path`, `datetime`) VALUES
-('0', 's', '4.jpg', 'index/slider/images/', '2016-11-15 13:46:27'),
-('1', '', '1.jpg', 'index/top6/images/', '2016-10-28 14:30:50'),
-('2', '', '1.jpg', 'index/top6/images/', '2016-10-28 14:31:30'),
-('3', '', '1.jpg', 'index/top6/images/', '2016-10-28 14:32:23'),
-('4', '', '1.jpg', 'index/top6/images/', '2016-10-28 14:32:59'),
-('5', '', '', 'index/top6/images/', '0000-00-00 00:00:00');
+('0', '', '1.jpg', 'index/top6/images/', '2016-11-21 09:28:46'),
+('1', '', '2.jpg', 'index/top6/images/', '2016-11-21 09:28:47'),
+('2', '', '3.jpg', 'index/top6/images/', '2016-11-21 09:28:47'),
+('3', '', '4.jpg', 'index/top6/images/', '2016-11-21 09:28:47'),
+('4', '', '5.jpg', 'index/top6/images/', '2016-11-21 09:28:47'),
+('5', '', '6.jpg', 'index/top6/images/', '2016-11-21 09:28:47');
 
 -- --------------------------------------------------------
 
@@ -285,12 +288,12 @@ CREATE TABLE `view` (
 --
 
 INSERT INTO `view` (`id`, `viewpoint`, `picname`, `path`, `datetime`) VALUES
-(0, 'aaa', '1.jpg', 'view/view/images/', '2016-11-15 14:23:28'),
+(0, '', '1.jpg', 'view/view/images/', '2016-11-21 09:18:34'),
 (1, 'aaa', '2.jpg', 'view/view/images/', '2016-11-15 14:51:04'),
-(2, 'aaa', '1.jpg', 'view/view/images/', '2016-11-15 14:23:48'),
+(2, '', '3.jpg', 'view/view/images/', '2016-11-21 09:18:02'),
 (3, 'c', '4.jpg', 'view/view/images/', '2016-11-15 14:59:19'),
-(4, '', '', '', '0000-00-00 00:00:00'),
-(5, '', '', '', '0000-00-00 00:00:00'),
+(4, '', '4.jpg', 'view/view/images/', '2016-11-21 09:18:02'),
+(5, '', '1.jpg', 'view/view/images/', '2016-11-21 09:18:05'),
 (6, '', '', '', '0000-00-00 00:00:00'),
 (7, '', '', '', '0000-00-00 00:00:00'),
 (8, '', '', '', '0000-00-00 00:00:00');
@@ -349,17 +352,17 @@ ALTER TABLE `top`
 -- 使用資料表 AUTO_INCREMENT `area`
 --
 ALTER TABLE `area`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 --
 -- 使用資料表 AUTO_INCREMENT `forum`
 --
 ALTER TABLE `forum`
-  MODIFY `id` int(100) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `id` int(100) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 --
 -- 使用資料表 AUTO_INCREMENT `place`
 --
 ALTER TABLE `place`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=38;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=39;
 --
 -- 使用資料表 AUTO_INCREMENT `places`
 --
