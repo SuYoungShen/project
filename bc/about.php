@@ -481,18 +481,18 @@
 										<form class="form-horizontal" name="place"  role="form" method="post"
 														enctype="multipart/form-data">
 											<div class="form-group">
-												<label class="col-sm-3 control-label no-padding-right" for="form-field-1"> 地點名	 </label>
+												<label class="col-sm-3 control-label no-padding-right" for="form-field-1"> 地區名	 </label>
 
 												<div class="col-sm-9">
-													<input type="text" id="form-field-1" name="placeName" placeholder="地點名" class="col-xs-10 col-sm-5" required="required"/>
+													<input type="text" id="form-field-1" name="placeName" placeholder="地區名" class="col-xs-10 col-sm-5" required="required"/>
 												</div>
 											</div>
 
 											<div class="form-group">
-												<label class="col-sm-3 control-label no-padding-right" for="form-field-1-1"> 地點介紹 </label>
+												<label class="col-sm-3 control-label no-padding-right" for="form-field-1-1"> 地區介紹 </label>
 
 												<div class="col-sm-9">
-													<textarea type="text" id="form-field-1-1" name="Introduction" placeholder="景點介紹" class="col-xs-10 col-sm-5" required="required"/></textarea>
+													<textarea type="text" id="form-field-1-1" name="Introduction" placeholder="地區介紹" class="col-xs-10 col-sm-5" required="required"/></textarea>
 												</div>
 											</div>
 
