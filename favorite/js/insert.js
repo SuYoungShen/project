@@ -1,7 +1,7 @@
 function Insert(account, placeName, picName, picDir, WebSite) {
 
   if (account=="") {
-    alert("請先登入會員");
+    alerts("請先登入會員","index.php");
   }else {
     $.ajax({
       type:"POST",
@@ -14,7 +14,7 @@ function Insert(account, placeName, picName, picDir, WebSite) {
         'WebSite':WebSite
       },
       success:function(data){
-        alert(data);//傳回成功訊息
+        alerts(data);//傳回成功訊息
       },
       error:function(data){//傳回失敗訊息
         alert(data);

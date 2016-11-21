@@ -25,11 +25,11 @@
     echo "
     <li>
       <div class='preview'>
-        <img src='$display'>
+        <img src='$display' style='max-height:243px'>
         <div class='overlay'>
         </div>
         <div class='links'>
-            <a data-toggle='modal' href='#modal-$key'>
+            <a data-toggle='modal' href='#modal-$key' >
               <i class='icon-eye-open'></i></a><a href=''><i class='icon-heart' onclick='Insert(
                                                                                                   \"$accounts\",
                                                                                                   \"$placeName\",
@@ -46,7 +46,7 @@
       <div id='modal-$key' class='modal hide fade'>
         <a class='close-modal' href='javascript:;' data-dismiss='modal' aria-hidden='true'></a>
         <div class='modal-body'>
-          <img src='$display' alt=' '>
+          <img src='$display' width='100%' style='max-height:400px' alt=' '>
         </div>
       </div>
     </li>

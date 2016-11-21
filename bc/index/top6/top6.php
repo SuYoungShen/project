@@ -156,21 +156,24 @@ if (isset($_POST["insert"])) {
         date_default_timezone_set('Asia/Taipei');//設定時間為台北
         $date = date("Y-m-d H:i:s");//時間
 
-        if(file_exists($top6dir.$top6_name)){//檢查是否有相同檔案
-
-          $topname = basename($top6_name,"$top6_tmps");//去除副檔名,留檔名
-          $value = "資料夾裡已有名稱{$topname}的檔案";
-
-          echo "
-          <script>
-          var value = '$value';
-          var basename= '$topbasename';
-
-          alerts(value, basename);
-          </script>
-          ";
-
-        }else {
+        // if(file_exists($top6dir.$top6_name)){//檢查是否有相同檔案
+        //
+        //   $topname = basename($top6_name,"$top6_tmps");//去除副檔名,留檔名
+        //   $topup = topup($topid[$_SESSION["topnums"]],"",$top6_name, $top6dir, $date);//更新檔名
+        //   $db->query($topup);//執行更新指令
+        //
+        //   $value = "更新成功,資料夾裡已有名稱{$topname}的檔案";
+        //
+        //   echo "
+        //   <script>
+        //   var value = '$value';
+        //   var basename= '$topbasename';
+        //
+        //   alerts(value, basename);
+        //   </script>
+        //   ";
+        //
+        // }else {
 
           move_uploaded_file($top6_tmp,$top6dir.$top6_name);//把檔案移到指定dir
 
@@ -217,7 +220,7 @@ if (isset($_POST["insert"])) {
             $_SESSION["topnums"]++;
 
           }//if(session["topnum"])
-        }//else
+        // }//else
       }//if($top6_error)
     }//foreach
   }//FILE["top6"]

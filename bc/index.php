@@ -259,29 +259,21 @@
 
 										<div class="widget-body">
 											<div class="widget-main">
-
-												<section id="slide-show">
+												
+												<section id="slide-show" >
 													<div id="slider" class="sl-slider-wrapper">
-														<!--Slider Items-->
 														<div class="sl-slider">
 														<?php
 															include ("index/slider/slider.php");
 														 ?>
 														</div>
-														<!--/Slider Items-->
 
-														<!--Slider Next Prev button-->
 														<nav id="nav-arrows" class="nav-arrows">
-
 															<span class="nav-arrow-prev"><i class="icon-angle-left"></i></span>
 															<span class="nav-arrow-next"><i class="icon-angle-right"></i></span>
 														</nav>
-														<!--/Slider Next Prev button-->
 													</div>
-													<!-- /slider-wrapper -->
 												</section>
-
-												<!--/Slider-->
 											</div>
 										</div>
 									</div>

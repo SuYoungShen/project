@@ -21,7 +21,7 @@
     <script src="js/vendor/modernizr-2.6.2-respond-1.1.0.min.js"></script>
     <!-- bootstrap & fontawesome -->
     <!-- <link rel="stylesheet" href="bc/assets/css/bootstrap.min.css" /> -->
-
+    <script type="text/javascript" src="js/alert.js"></script>
     <script type="text/javascript" src="favorite/js/insert.js"></script>
 
     <!-- ace styles -->
@@ -47,7 +47,8 @@
          $accounts = $_SESSION["login_account"];
       }else {
         $accounts = "";
-      }
+      }//加入我的最愛使用
+
       include("ico.php");
      ?>
 
@@ -68,9 +69,6 @@
           <a id="logo" class="pull-left" href="index.php"></a>
 
         <div class="nav-collapse collapse pull-right">
-          <form class="navbar-search pull-left" action="" method="">
-            <input type="text" class="search-query" placeholder="要去哪ㄜ...?">
-          </form>
 
           <ul class="nav">
             <li class="active">
@@ -141,7 +139,7 @@
         </div>
         <div class="gap"></div>
         <ul class="gallery col-4">
-          <div class="row-fluid">
+
             <?php
               include("index/top6/top6.php");
             // for ($i=1; $i <= 6 ; $i++) {
@@ -169,7 +167,7 @@
             // }
             ?>
 
-          </div>
+
         </ul>
       </div>
     </section>

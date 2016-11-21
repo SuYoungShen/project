@@ -19,16 +19,14 @@
     <!-- Le fav and touch icons -->
     <script type="text/javascript" charset="utf-8" language="javascript" src="js/jquery.js"></script>
 
-
     <?php
       session_start();
       include("bc/mysql/connect.php");
       include("login/check_login.php");
-
-      Login($db,"about.php");
-      Login_Out();
+      $Back = "about.php";
+      Login($db,$Back);
+      Login_Out($Back);
       include("ico.php");
-
      ?>
 
 </head>
@@ -48,9 +46,6 @@
            <a id="logo" class="pull-left" href="index.php"></a>
 
          <div class="nav-collapse collapse pull-right">
-           <form class="navbar-search pull-left" action="" method="">
-             <input type="text" class="search-query" placeholder="要去哪ㄜ...?">
-           </form>
 
            <ul class="nav">
              <li>

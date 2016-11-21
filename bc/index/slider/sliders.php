@@ -13,7 +13,6 @@ if (!isset($_SESSION["slidernum"]) && !isset($_SESSION["slidernums"])) {
 }
 
   $toptime = $db->query(sliderse());
-  $display = $toptime->fetchAll();
 
 
   if (isset($_FILES["slider"])) {
@@ -126,6 +125,8 @@ if (!isset($_SESSION["slidernum"]) && !isset($_SESSION["slidernums"])) {
               $topup = sliderup($top6_name, $top6dir, $date, $topid["$topnums"]);//更新檔名
               $db->query($topup);//執行更新指令
               message("上傳成功",$topbasename);
+
+
             }
             $_SESSION["slidernum"]++;
             $_SESSION["slidernums"]++;
@@ -135,11 +136,11 @@ if (!isset($_SESSION["slidernum"]) && !isset($_SESSION["slidernums"])) {
       }//if($top6_error)
     }//foreach
   }//FILE["top6"]
-
-
-  foreach ($display as $key => $value) {
-    $picName = $value["name"];
-    $picDir = $value["path"];
+  echo "<ol class='carousel-indicators'>";
+    while($display = $toptime->fetch()){
+    $id = $display["id"];
+    $picName = $display["name"];
+    $picDir = $display["path"];
     $picNames = basename($picName,".jpg");
     if (!empty($picName) && !empty($picDir)) {
       $display = $picDir.$picName;
@@ -147,18 +148,72 @@ if (!isset($_SESSION["slidernum"]) && !isset($_SESSION["slidernums"])) {
       $display = "http://img.ltn.com.tw/2016/new/jul/13/images/bigPic/400_400/phpyq9Xeu.jpg";
     }
     echo "
-    <div class='sl-slide item$key' data-orientation='horizontal' data-slice1-rotation='-25' data-slice2-rotation='-25' data-slice1-scale='2' data-slice2-scale='2'>
-      <div class='sl-slide-inner'>
-
-          <img src='$display' alt='' style='width:100%;height:100%'/>
-          <!--<h2>$picNames</h2>-->
-          <!-- <h3 class='gap'>Tincidunt condimentum eros</h3>
-          <a class='btn btn-large btn-transparent' href='#'>Learn More</a> -->
-
-      </div>
-    </div>
+      <li data-target='#carousel-example-generic' data-slide-to='$id' class='active'></li>
     ";
   }
+  echo "</ol>";
+  echo "
+  <div class='carousel-inner' role='listbox'>
+    <div class='item active'>";
+  while($display = $toptime->fetch()){
+  $id = $display["id"];
+  $picName = $display["name"];
+  $picDir = $display["path"];
+  $picNames = basename($picName,".jpg");
+  if (!empty($picName) && !empty($picDir)) {
+    $display = $picDir.$picName;
+  }else {
+    $display = "http://img.ltn.com.tw/2016/new/jul/13/images/bigPic/400_400/phpyq9Xeu.jpg";
+  }
+echo "<img src='$display' alt=''>
+</div>
+<div class='item'>
+  <img src='$display' alt=''>
+</div>
+
+</div>
+";
+
+}
+  echo "
+
+
+    <div class='item'>
+      <img src='$display' alt=''>
+    </div>
+
+  </div>
+  ";
+  //
+  // foreach ($display as $key => $value) {
+  //   $picName = $value["name"];
+  //   $picDir = $value["path"];
+  //   $picNames = basename($picName,".jpg");
+  //   if (!empty($picName) && !empty($picDir)) {
+  //     $display = $picDir.$picName;
+  //   }else {
+  //     $display = "http://img.ltn.com.tw/2016/new/jul/13/images/bigPic/400_400/phpyq9Xeu.jpg";
+  //   }
+  //   echo "
+  //
+  //   <ol class='carousel-indicators'>
+  //     <li data-target='#carousel-example-generic' data-slide-to='$key' class='active'></li>
+  //   </ol>
+  //
+  //   <div class='carousel-inner' role='listbox'>
+  //     <div class='item active'>
+  //       <img src='$display' alt=''>
+  //
+  //     </div>
+  //     <div class='item'>
+  //       <img src='$display' alt='...'>
+  //     </div>
+  //
+  //   </div>
+  //   ";
+  //
+  // }
+
 
 
   // while ($row = $topse->fetch()) {
