@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- 主機: 127.0.0.1
--- 產生時間： 2016-11-22 09:25:32
+-- 產生時間： 2016-11-22 17:04:18
 -- 伺服器版本: 10.1.16-MariaDB
 -- PHP 版本： 5.6.24
 
@@ -190,7 +190,8 @@ CREATE TABLE `place` (
 --
 
 INSERT INTO `place` (`id`, `place`, `Introduction`, `name`, `path`, `datetime`) VALUES
-(38, '苓雅區', '苓雅區為臺灣高雄市一市轄區，位於市內西南部，市中心中部，北臨三民區，西北連新興區、前金區，西隔愛河與鹽埕區、鼓山區為界，南接前鎮區，東鄰鳳山區，是高雄市政府四維行政中心的所在地。', '1.jpg', 'about/place/images/', '2016-11-21 17:05:03');
+(38, '苓雅區', '苓雅區為臺灣高雄市一市轄區，位於市內西南部，市中心中部，北臨三民區，西北連新興區、前金區，西隔愛河與鹽埕區、鼓山區為界，南接前鎮區，東鄰鳳山區，是高雄市政府四維行政中心的所在地。', '1.jpg', 'about/place/images/', '2016-11-21 17:05:03'),
+(39, '鳥松區', 'ㄋ', '7.jpg', 'about/place/images/', '2016-11-22 16:28:09');
 
 -- --------------------------------------------------------
 
@@ -214,9 +215,8 @@ CREATE TABLE `places` (
 --
 
 INSERT INTO `places` (`id`, `place`, `viewpoint`, `attractions`, `arrival`, `name`, `path`, `datetime`) VALUES
-(11, '高雄', 'd', 'd', 'd', '2.jpg', 'view/place/images/', '2016-11-15 14:35:39'),
-(12, 'ccc', 's', 's', 's', '2.jpg', 'view/place/images/', '2016-11-15 14:36:09'),
-(13, '屏', 'd', 'd', 'd', '3.jpg', 'view/place/images/', '2016-11-15 14:48:45');
+(39, '苓雅區', '85大樓', '高雄85大樓位於高雄市苓雅區東側為自強路，南側為新光路，北側為三多路，西邊只隔半條街與成功路相毗鄰，與高雄港、高雄市小港機場、高雄市火車站和新光碼頭距離相近，又稱東帝士85國際廣場或東帝士建臺大樓，於西元1997年完工、由建築師李祖原設計，是南台灣最高的摩天大樓、全台灣第2高樓，目前是世界第13高的摩天大樓。', '★ 搭乘大眾運輸：1、捷運：(1)、搭乘捷運紅線至R8三多商圈站，出2號出口往新光路方向步行約8分鐘即可抵達。', '1.jpg', 'view/place/images/', '2016-11-22 16:18:07'),
+(40, '鳥松區', '澄清湖', '鳥松濕地公園位於澄清湖風景區門口東側，原本是自來水公司澄清湖淨水場的沉沙地，於1999年動工、2000年完工成為台灣第一座以人工濕地為主題的自然生態公園；鳥松濕地公園佔地約為3公頃，陸地和水路面積各占三分之一和三分之二，豐富的地形地貌孕育出許多種植物，包含約90種鳥類、250種以上的昆蟲和340種以上的植物，加上鄰近澄清湖因此是高雄是相當不錯的戶外教學和自然觀察的好場所，目前鳥松濕地公園社團法人高雄市野鳥學會所認養。', '', '7.jpg', 'view/place/images/', '2016-11-22 16:19:19');
 
 -- --------------------------------------------------------
 
@@ -288,13 +288,13 @@ CREATE TABLE `view` (
 --
 
 INSERT INTO `view` (`id`, `viewpoint`, `picname`, `path`, `datetime`) VALUES
-(0, '', '1.jpg', 'view/view/images/', '2016-11-21 09:18:34'),
-(1, 'aaa', '2.jpg', 'view/view/images/', '2016-11-15 14:51:04'),
-(2, '', '3.jpg', 'view/view/images/', '2016-11-21 09:18:02'),
-(3, 'c', '4.jpg', 'view/view/images/', '2016-11-15 14:59:19'),
-(4, '', '4.jpg', 'view/view/images/', '2016-11-21 09:18:02'),
-(5, '', '1.jpg', 'view/view/images/', '2016-11-21 09:18:05'),
-(6, '', '', '', '0000-00-00 00:00:00'),
+(0, '', '1.jpg', 'view/view/images/', '2016-11-22 16:30:23'),
+(1, '', '2.jpg', 'view/view/images/', '2016-11-22 16:30:23'),
+(2, '', '3.jpg', 'view/view/images/', '2016-11-22 16:30:23'),
+(3, '', '4.jpg', 'view/view/images/', '2016-11-22 16:30:23'),
+(4, '', '5.jpg', 'view/view/images/', '2016-11-22 16:30:23'),
+(5, '', '6.jpg', 'view/view/images/', '2016-11-22 16:30:23'),
+(6, '', '7.jpg', 'view/view/images/', '2016-11-22 16:30:23'),
 (7, '', '', '', '0000-00-00 00:00:00'),
 (8, '', '', '', '0000-00-00 00:00:00');
 
@@ -362,12 +362,12 @@ ALTER TABLE `forum`
 -- 使用資料表 AUTO_INCREMENT `place`
 --
 ALTER TABLE `place`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=39;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=40;
 --
 -- 使用資料表 AUTO_INCREMENT `places`
 --
 ALTER TABLE `places`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=14;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=41;
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
