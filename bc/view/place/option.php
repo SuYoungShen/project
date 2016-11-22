@@ -8,7 +8,7 @@
 
   foreach ($display as $key => $value) {
     $placeName = $value["place"];
-    echo "<option>$placeName</option>";
+    echo "<option value='$placeName'>$placeName</option>";
   }
 
   $db=null;

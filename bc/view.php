@@ -546,7 +546,7 @@
 									<div class="form-group">
 										<label class="col-sm-3 control-label no-padding-right" for="form-field-1"> 地區名</label>
 										<div class="col-sm-9">
-											<select name="placeName">
+											<select name="placeName" id="placeName">
 												<?php
 												include ("view/place/option.php");
 												?>
@@ -587,9 +587,9 @@
 										<div class="col-sm-8">
 											<input multiple="multiple" name="picName[]" type="file" id="id-input-file-5" />
 											<span id="pic"></span>
-
 										</div>
 									</div>
+
 									<div class="space-4"></div>
 									<div class="clearfix form-actions">
 										<div class="col-md-offset-3 col-md-9">

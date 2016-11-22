@@ -39,9 +39,6 @@
         <a id="logo" class="pull-left" href="index.php"></a>
 
       <div class="nav-collapse collapse pull-right">
-        <form class="navbar-search pull-left" action="" method="">
-          <input type="text" class="search-query" placeholder="要去哪ㄜ...?">
-        </form>
 
         <ul class="nav">
           <li>
@@ -62,7 +59,7 @@
                   <?php
                     include ("area/place.php");
                     function Placess(){
-                      $place = "SELECT * From `places`";
+                      $place = "SELECT * From `place`";
                       return $place;
                     }
                    ?>

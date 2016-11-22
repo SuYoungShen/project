@@ -44,11 +44,12 @@
             <a class='green' href='#edit' data-toggle='modal'
               onclick='Edit(
                             \"$id\",
-                            \"$viewpoint[$key]\",
-                            \"$attractions[$key]\",
-                            \"$arrival[$key]\",
-                            \"$picDir[$key]\",
-                            \"$pic_name[$key]\"
+                            \"$pla\",
+                            \"$vie\",
+                            \"$att\",
+                            \"$arr\",
+                            \"$pdir\",
+                            \"$pic\"
                             )'>
               <i class='ace-icon fa fa-pencil bigger-130'></i>
             </a>

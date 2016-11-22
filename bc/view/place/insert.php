@@ -14,12 +14,13 @@
               isset($_POST["viewpoint"]) &&
               !empty($_POST["viewpoint"]);//必填
 
+
   if ($required) {
 
-    $placeName = $_POST["placeName"];//地區名
-    $viewpoint = $_POST["viewpoint"];//景點名
-    $attractions = $_POST["attractions"];//景點介紹
-    $arrival = $_POST["arrival"];//如何到達
+    $placeName = trim($_POST["placeName"]);//地區名
+    $viewpoint = trim($_POST["viewpoint"]);//景點名
+    $attractions = trim($_POST["attractions"]);//景點介紹
+    $arrival = preg_replace('/[<br>]/','',$_POST["arrival"]);//如何到達
 
     if (isset($_FILES["picName"])) {
 
@@ -40,12 +41,9 @@
                                     ));
           if ($true) {
             message("新增成功,但照片未上傳",$Basename);
-
           }else {
             message("新增失敗",$Basename);
           }
-
-          message("不小心按到送出了齁",$Basename);
 
         }else if($pic_error == 0){
 

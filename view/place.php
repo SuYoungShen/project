@@ -11,6 +11,7 @@
     $id = $value["id"];
     $place_Name=$value["place"];//地區名
     $viewpoint=$value["viewpoint"];//地區介紹
+    $attractions = $value["attractions"];//景點介紹
     $pic_name=$value["name"];//照片名
     $datetime=$value["datetime"];//時間
 
@@ -32,8 +33,9 @@
             </a>
           <div class='box'>
             <img src='$picDir$pic_name'>
-            <h5>$id.$place_Name</h5>
-            <p>$viewpoint</p>
+            <h5>地區名:$place_Name</h5>
+            <p>景點名:$viewpoint</p>
+            <p>景點介紹:<br/>$attractions</p>
           </div>
         </div>
       ";
@@ -84,8 +86,9 @@
           </a>
           <div class='box'>
             <img src='$picDir$pic_name'>
-            <h5>$id.$place_Name</h5>
-            <p>$viewpoint</p>
+            <h5>地區名:$place_Name</h5>
+            <p>景點名:$viewpoint</p>
+            <p>景點介紹:<br/>$attractions</p>
           </div>
         </div>
       ";

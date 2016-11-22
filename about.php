@@ -6,7 +6,7 @@
 <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-    <title>關於高雄</title>
+    <title>認識高雄</title>
     <meta name="description" content="">
     <meta name="viewport" content="width=device-width">
 
@@ -65,7 +65,7 @@
                      <?php
                        include ("area/place.php");
                        function Placess(){
-                         $place = "SELECT * From `places`";
+                         $place = "SELECT * From `place`";
                          return $place;
                        }
                       ?>
