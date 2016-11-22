@@ -547,7 +547,7 @@
 										<label class="col-sm-3 control-label no-padding-right" for="form-field-1"> 地區名</label>
 										<div class="col-sm-9">
 											<select name="placeName" id="placeName">
-												<?php
+												<?ph
 												include ("view/place/option.php");
 												?>
 											</select>
