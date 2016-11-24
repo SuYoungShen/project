@@ -9,7 +9,7 @@
     <title>高雄 景點</title>
     <meta name="description" content="">
     <meta name="viewport" content="width=device-width">
-
+    <meta name="twitter:"  charset="utf-8" content="">
     <link rel="stylesheet" href="css/bootstrap.min.css">
     <link rel="stylesheet" href="css/bootstrap-responsive.min.css">
     <link rel="stylesheet" href="css/font-awesome.min.css">
@@ -21,7 +21,20 @@
 
     <!-- Le fav and touch icons -->
     <?php
-      include'ico.php';
+      session_start();
+      include("bc/mysql/connect.php");
+      include("login/check_login.php");
+      $Back = "view.php";
+      Login($db,$Back);
+      Login_Out($Back);
+
+      if (isset($_SESSION["login_account"]) && !empty($_SESSION["login_account"])) {
+         $accounts = $_SESSION["login_account"];
+      }else {
+        $accounts = "";
+      }//加入我的最愛使用
+
+      include("ico.php");
      ?>
 </head>
 
@@ -38,45 +51,47 @@
 
         <a id="logo" class="pull-left" href="index.php"></a>
 
-      <div class="nav-collapse collapse pull-right">
+        <div class="nav-collapse collapse pull-right">
 
-        <ul class="nav">
-          <li>
-            <a href="index.php">首頁</a>
-          </li>
-          <li>
-            <a href="about.php">認識高雄</a>
-          </li>
-          <li class="dropdown active">
-            <a href="view.php" class="dropdown-toggle" data-toggle="dropdown">景點
-              <i class="icon-angle-down"></i>
-            </a>
-            <div class="dropdown-menu">
-              <table class="table table-hover ">
-                <tr >
-                  <td><a href="view.php">首頁</a></td>
-                  <!-- <td><a href="area.php">地區名</a></td> -->
-                  <?php
+          <ul class="nav">
+            <li>
+              <a href="index.php">首頁</a>
+            </li>
+            <li>
+              <a href="about.php">認識高雄</a>
+            </li>
+            <li class="dropdown active">
+              <a href="view.php" class="dropdown-toggle" data-toggle="dropdown">景點
+                <i class="icon-angle-down"></i>
+              </a>
+              <div class="dropdown-menu">
+                <table class="table table-hover ">
+                  <tr >
+                    <td><a href="view.php">首頁</a></td>
+                    <!-- <td><a href="area.php">地區名</a></td> -->
+                    <?php
                     include ("area/place.php");
                     function Placess(){
                       $place = "SELECT * From `place`";
                       return $place;
                     }
-                   ?>
-                </tr>
-              </table>
-            </div>
-          </li>
+                    ?>
+                  </tr>
+                </table>
+              </div>
+            </li>
 
-          <li><a href="forum.php">討論區</a></li>
-          <!--<li><a href="contact-us.html">Contact</a></li>-->
-          <li class="login">
-            <a data-toggle="modal" href="#loginForm"><i class="icon-user"></i></a>
-          </li>
-        </ul>
-      </div><!--/.nav-collapse -->
+            <li><a href="forum.php">討論區</a></li>
+            <!--<li><a href="contact-us.html">Contact</a></li>-->
+            <li class="login">
+              <?php
+              Member_Information();
+              ?>
+            </li>
+          </ul>
+        </div><!--/.nav-collapse -->
+      </div>
     </div>
-  </div>
   </header>
 
  <!-- /header -->
@@ -96,7 +111,7 @@
          </ul>
        </div>
      </div>
- </section>
+   </section>
     <!-- / .title -->
     <div class="container">
       <div class="center">
@@ -121,7 +136,6 @@
     </div>
 <hr>
 
-
 <!--熱門排行-->
   <section id="portfolio" >
     <div class="container">
@@ -130,28 +144,6 @@
       <ul class="gallery col-4">
 
         <?php
-          // for ($i=1; $i <= 9; $i++) {
-          //   echo "
-          //   <li>
-          //     <div class='preview'>
-          //       <img alt=' ' src='images/portfolio/thumb/300x180.jpg'>
-          //       <div class='overlay'>
-          //       </div>
-          //       <div class='links'>
-          //         <a data-toggle='modal' href='#modal-$i'><i class='icon-eye-open'></i></a><a href='#'><i class='icon-heart'></i></a>
-          //       </div>
-          //     </div>
-          //     <div class='desc'>
-          //       <h5>景點名</h5>
-          //     </div>
-          //     <div id='modal-$i' class='modal hide fade'>
-          //       <a class='close-modal' href='javascript:;' data-dismiss='modal' aria-hidden='true'><i class='icon-remove'></i></a>
-          //       <div class='modal-body'>
-          //         <img src='images/portfolio/full/500x300.jpg' alt=' '>
-          //       </div>
-          //     </div>
-          //   </li>";
-          // }
           include ("view/view.php");
          ?>
         </ul>

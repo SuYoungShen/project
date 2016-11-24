@@ -15,15 +15,17 @@
   foreach ($display as $keys => $value) {
 
     $id = $value["id"];
-    $vi=$viewpoint[$key]=$value["viewpoint"];
-    $pic=$picnames[$key]=$value["picname"];
+    $viewpoint=$value["viewpoint"];
+    $picnames=$value["picname"];
     // $picpath=$path[$key] = $value["path"];
-    $dat=$datetime[$key] = $value["datetime"];
+    $datetime = $value["datetime"];
+
     if (empty($vi)) {
           $vi = "燒等補資料";
         }
-    if (!empty($pic)) {
-      $displays = $picDir.$pic;
+
+    if (!empty($picnames)) {
+      $displays = $picDir.$picnames;
     }else {
       $displays = "http://img.ltn.com.tw/2016/new/jul/13/images/bigPic/400_400/phpyq9Xeu.jpg";
 
@@ -43,8 +45,8 @@
       <div id='modal-$id' class='modal hide fade'>
         <a class='close-modal' href='javascript:;' data-dismiss='modal' aria-hidden='true'><i class='icon-remove'></i></a>
         <div class='modal-body'>
-            <img alt=' ' src='$displays' >
-            <h5>$vi</h5>
+          <img alt=' ' src='$displays' >
+          <h5>$viewpoint</h5>
         </div>
       </div>
     </li>
