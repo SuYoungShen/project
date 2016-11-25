@@ -6,8 +6,8 @@
   $viewse = $db->query(ViewSe());//查詢資料表
   $display = $viewse->fetchAll();
 
-  $picDir = "bc/view/view/images/";
-
+  $picDir = "bc/view/view/images/";//照片位置
+  $WebSite = $_SERVER["PHP_SELF"];//網站位置
   $redirect="view.php";
   $msg = "";
 
@@ -20,8 +20,8 @@
     // $picpath=$path[$key] = $value["path"];
     $datetime = $value["datetime"];
 
-    if (empty($vi)) {
-          $vi = "燒等補資料";
+    if (empty($viewpoint)) {
+          $viewpoint = "燒等補資料";
         }
 
     if (!empty($picnames)) {
@@ -38,7 +38,15 @@
         <div class='overlay'>
       </div>
       <div class='links'>
-        <a data-toggle='modal' href='#modal-$id'><i class='icon-eye-open'></i></a><a href='#'><i class='icon-heart'></i></a>
+        <a data-toggle='modal' href='#modal-$id'>
+          <i class='icon-eye-open'></i>
+          </a><a href='#'><i class='icon-heart' onclick='Insert(
+                                                                \"$accounts\",
+                                                                \"$viewpoint\",
+                                                                \"$picnames\",
+                                                                \"$picDir\",
+                                                                \"$WebSite\"
+                                                                )'></i></a>
       </div>
     </div>
 

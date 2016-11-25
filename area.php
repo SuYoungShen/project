@@ -47,10 +47,7 @@
         <a id="logo" class="pull-left" href="index.php"></a>
 
       <div class="nav-collapse collapse pull-right">
-        <form class="navbar-search pull-left" action="" method="">
-          <input type="text" class="search-query" placeholder="要去哪ㄜ...?">
-        </form>
-
+      
         <ul class="nav">
           <li>
             <a href="index.php">首頁</a>

@@ -6,14 +6,11 @@
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
       </a>
-      <!--
-      <a id="logo" class="pull-left" href="index.html"></a>
-    -->
-    <div class="nav-collapse collapse pull-right">
-      <form class="navbar-search pull-left" action="" method="">
-        <input type="text" class="search-query" placeholder="要去哪ㄜ...?">
-      </form>
 
+      <a id="logo" class="pull-left" href="index.html"></a>
+
+    <div class="nav-collapse collapse pull-right">
+    
       <ul class="nav">
         <li>
           <a href="index.php">首頁</a>
@@ -29,7 +26,13 @@
             <table class="table table-hover ">
               <tr >
                 <td><a href="view.php">首頁</a></td>
-                <td><a href="area.php">地區名</a></td>
+                <?php
+                  include ("area/place.php");
+                  function Placess(){
+                    $place = "SELECT * From `places`";
+                    return $place;
+                  }
+                 ?>
               </tr>
             </table>
           </div>
@@ -40,7 +43,7 @@
         <li class="login">
           <?php
             Member_Information();
-           ?>         
+           ?>
         </li>
 
       </ul>

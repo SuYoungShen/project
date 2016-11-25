@@ -10,8 +10,9 @@
 
   foreach ($display as $key => $value) {
     $id = $value["id"];
+    $viewpoint = $value["viewpoint"];
     $place_Name = $value["place"];//地區名
-    $Introduction = $value["Introduction"];//地區介紹
+    $Introduction = $value["attractions"];//地區介紹
     // $pic_name=$value["name"];//照片名
     // $datetime=$value["datetime"];//時間
 
@@ -24,7 +25,7 @@
       echo "
       <tr>
         <td>
-          <a href='area.php?id=$id&place_name=$place_Name'>$place_Name</a>
+          <a href='area.php?id=$id&viewpoint=$viewpoint&place_name=$place_Name'>$place_Name</a>
         </td>
       ";
       // echo "
@@ -63,7 +64,7 @@
 
       echo "
         <td>
-          <a href='area.php?id=$id&place_name=$place_Name'>
+          <a href='area.php?id=$id&viewpoint=$viewpoint&place_name=$place_Name'>
             $place_Name
           </a>
         </td>

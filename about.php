@@ -65,7 +65,7 @@
                      <?php
                        include ("area/place.php");
                        function Placess(){
-                         $place = "SELECT * From `place`";
+                         $place = "SELECT * From `places`";
                          return $place;
                        }
                       ?>

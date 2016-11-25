@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- 主機: 127.0.0.1
--- 產生時間： 2016-11-23 17:16:15
+-- 產生時間： 2016-11-25 15:01:27
 -- 伺服器版本: 10.1.16-MariaDB
 -- PHP 版本： 5.6.24
 
@@ -114,13 +114,7 @@ CREATE TABLE `favorite` (
 --
 
 INSERT INTO `favorite` (`Account`, `place`, `PicName`, `PicPath`, `WebSite`, `Datetime`) VALUES
-('aaaa', '85大樓夜景', '1.jpg', 'bc/index/top6/images/', '/project/index.php', '2016-11-21 08:54:06'),
-('aaaa', '蓮池潭', '2.jpg', 'bc/index/top6/images/', '/project/index.php', '2016-11-21 08:54:54'),
-('aaaa', '高雄美麗島', '3.jpg', 'bc/index/top6/images/', '/project/index.php', '2016-11-21 08:55:28'),
-('aaaa', '燒等補資料', '6.jpg', 'bc/index/top6/images/', '/project/index.php', '2016-11-21 15:43:56'),
-('aaaa', '燒等補資料', '5.jpg', 'bc/index/top6/images/', '/project/index.php', '2016-11-21 17:05:36'),
-('aaaa', '燒等補資料', '2.jpg', 'bc/index/top6/images/', '/project/index.php', '2016-11-21 17:05:38'),
-('aaaa', '燒等補資料', '6.jpg', 'bc/index/top6/images/', '/project/index.php', '2016-11-21 17:05:44');
+('aaaa', '85大樓夜景', '1.jpg', 'bc/index/top6/images/', '/project/index.php', '2016-11-21 08:54:06');
 
 -- --------------------------------------------------------
 
@@ -288,12 +282,12 @@ CREATE TABLE `view` (
 --
 
 INSERT INTO `view` (`id`, `viewpoint`, `picname`, `path`, `datetime`) VALUES
-(0, '', '1.jpg', 'view/view/images/', '2016-11-22 16:30:23'),
-(1, '', '2.jpg', 'view/view/images/', '2016-11-22 16:30:23'),
-(2, '', '3.jpg', 'view/view/images/', '2016-11-22 16:30:23'),
-(3, '', '4.jpg', 'view/view/images/', '2016-11-22 16:30:23'),
-(4, '', '5.jpg', 'view/view/images/', '2016-11-22 16:30:23'),
-(5, '', '6.jpg', 'view/view/images/', '2016-11-22 16:30:23'),
+(0, '高雄85大樓', '1.jpg', 'view/view/images/', '2016-11-25 14:26:00'),
+(1, '高雄蓮池潭', '2.jpg', 'view/view/images/', '2016-11-24 09:58:47'),
+(2, '美麗島', '3.jpg', 'view/view/images/', '2016-11-25 14:26:09'),
+(3, '高雄愛河', '4.jpg', 'view/view/images/', '2016-11-25 14:26:17'),
+(4, '真愛碼頭', '5.jpg', 'view/view/images/', '2016-11-25 14:26:36'),
+(5, '高雄圖書總館', '6.jpg', 'view/view/images/', '2016-11-25 14:26:45'),
 (6, '', '7.jpg', 'view/view/images/', '2016-11-22 16:30:23'),
 (7, '', '', '', '0000-00-00 00:00:00'),
 (8, '', '', '', '0000-00-00 00:00:00');
