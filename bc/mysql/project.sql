@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- 主機: 127.0.0.1
--- 產生時間： 2016-10-20 21:38:11
+-- 產生時間： 2016-11-25 20:01:39
 -- 伺服器版本: 10.1.16-MariaDB
 -- PHP 版本： 5.6.24
 
@@ -83,12 +83,12 @@ CREATE TABLE `carousel` (
 --
 
 INSERT INTO `carousel` (`id`, `place`, `name`, `path`, `datetime`) VALUES
-('0', '', 'myhome.jpg', 'about/carousel/images/', '2016-10-20 20:10:03'),
-('1', '', '14697224_1398087366875938_1451523683_o.png', 'about/carousel/images/', '2016-10-20 20:10:36'),
-('2', '', 'S__8487281.jpg', 'about/carousel/images/', '2016-10-20 20:40:35'),
-('3', '', '', 'about/carousel/images/', '0000-00-00 00:00:00'),
-('4', '', '', 'about/carousel/images/', '0000-00-00 00:00:00'),
-('5', '', '', 'about/carousel/images/', '0000-00-00 00:00:00');
+('0', 'ㄔ', '1.jpg', 'about/carousel/images/', '2016-10-22 21:28:49'),
+('1', '美麗島', '2.jpg', 'about/carousel/images/', '2016-10-22 21:24:26'),
+('2', '高雄', '3.jpg', 'about/carousel/images/', '2016-10-22 21:24:32'),
+('3', '2', '4.jpg', 'about/carousel/images/', '2016-10-22 21:23:36'),
+('4', '3', '5.jpg', 'about/carousel/images/', '2016-10-22 21:23:36'),
+('5', '4', '6.jpg', 'about/carousel/images/', '2016-10-22 21:23:36');
 
 -- --------------------------------------------------------
 
@@ -152,8 +152,12 @@ CREATE TABLE `place` (
 --
 
 INSERT INTO `place` (`id`, `place`, `Introduction`, `name`, `path`, `datetime`) VALUES
-(8, '85大樓', '高雄85大樓', '1.jpg', 'about/place/images/', '2016-10-18 19:41:16'),
-(9, 'sss', 'sss', '14697224_1398087366875938_1451523683_o.png', 'about/place/images/', '2016-10-20 16:10:48');
+(22, 'bbb', 'bbb', '2.jpg', 'about/place/images/', '2016-10-23 15:24:42'),
+(23, 'ccc', 'ccc', '2.jpg', 'about/place/images/', '2016-10-23 15:24:55'),
+(36, 'aaa', 'aaa', '3.jpg', 'about/place/images/', '2016-10-23 16:18:43'),
+(37, 'dddd', 'dddd', '3.jpg', 'about/place/images/', '2016-10-23 16:18:51'),
+(38, 'eee', 'ee', '4.jpg', 'about/place/images/', '2016-10-23 16:18:58'),
+(39, 'eee', 'eee', '5.jpg', 'about/place/images/', '2016-10-23 16:19:05');
 
 -- --------------------------------------------------------
 
@@ -162,11 +166,12 @@ INSERT INTO `place` (`id`, `place`, `Introduction`, `name`, `path`, `datetime`) 
 --
 
 CREATE TABLE `places` (
+  `id` int(11) NOT NULL,
   `place` char(10) COLLATE utf8_unicode_ci NOT NULL,
   `viewpoint` char(100) COLLATE utf8_unicode_ci NOT NULL,
   `attractions` varchar(1000) COLLATE utf8_unicode_ci NOT NULL,
   `arrival` varchar(1000) COLLATE utf8_unicode_ci NOT NULL,
-  `picname` char(100) COLLATE utf8_unicode_ci NOT NULL,
+  `name` char(100) COLLATE utf8_unicode_ci NOT NULL,
   `path` char(100) COLLATE utf8_unicode_ci NOT NULL,
   `datetime` datetime NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
@@ -175,8 +180,9 @@ CREATE TABLE `places` (
 -- 資料表的匯出資料 `places`
 --
 
-INSERT INTO `places` (`place`, `viewpoint`, `attractions`, `arrival`, `picname`, `path`, `datetime`) VALUES
-('85大樓', 'ss', 'sss', 'sss', '14697224_1398087366875938_1451523683_o.png', 'view/place/images/', '2016-10-20 16:07:44');
+INSERT INTO `places` (`id`, `place`, `viewpoint`, `attractions`, `arrival`, `name`, `path`, `datetime`) VALUES
+(7, 'bbb', 's', '1', '', '4.jpg', 'view/place/images/', '2016-10-24 19:07:10'),
+(8, 'bbb', 's', '1', '', '4.jpg', 'view/images/', '2016-10-24 19:07:10');
 
 -- --------------------------------------------------------
 
@@ -196,12 +202,12 @@ CREATE TABLE `slider` (
 --
 
 INSERT INTO `slider` (`id`, `name`, `path`, `datetime`) VALUES
-('0', '1.jpg', 'index/slider/images/', '2016-10-18 16:11:16'),
-('1', '2.jpg', 'index/slider/images/', '2016-10-18 16:11:16'),
-('2', '3.jpg', 'index/slider/images/', '2016-10-18 16:11:16'),
-('3', '4.jpg', 'index/slider/images/', '2016-10-18 16:11:16'),
-('4', '5.jpg', 'index/slider/images/', '2016-10-18 16:11:16'),
-('5', '711.jpg', 'index/slider/images/', '2016-10-18 16:11:16');
+('0', '', 'index/slider/images/', '0000-00-00 00:00:00'),
+('1', '', 'index/slider/images/', '0000-00-00 00:00:00'),
+('2', '', 'index/slider/images/', '0000-00-00 00:00:00'),
+('3', '', 'index/slider/images/', '0000-00-00 00:00:00'),
+('4', '', 'index/slider/images/', '0000-00-00 00:00:00'),
+('5', '', 'index/slider/images/', '0000-00-00 00:00:00');
 
 -- --------------------------------------------------------
 
@@ -222,7 +228,7 @@ CREATE TABLE `top` (
 --
 
 INSERT INTO `top` (`id`, `place`, `name`, `path`, `datetime`) VALUES
-('0', '', '', 'index/top6/images/', '0000-00-00 00:00:00'),
+('0', '85大樓', '1.jpg', 'index/top6/images/', '2016-10-23 16:19:40'),
 ('1', '', '', 'index/top6/images/', '0000-00-00 00:00:00'),
 ('2', '', '', 'index/top6/images/', '0000-00-00 00:00:00'),
 ('3', '', '', 'index/top6/images/', '0000-00-00 00:00:00'),
@@ -275,6 +281,12 @@ ALTER TABLE `place`
   ADD PRIMARY KEY (`id`);
 
 --
+-- 資料表索引 `places`
+--
+ALTER TABLE `places`
+  ADD PRIMARY KEY (`id`);
+
+--
 -- 資料表索引 `slider`
 --
 ALTER TABLE `slider`
@@ -294,7 +306,12 @@ ALTER TABLE `top`
 -- 使用資料表 AUTO_INCREMENT `place`
 --
 ALTER TABLE `place`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=40;
+--
+-- 使用資料表 AUTO_INCREMENT `places`
+--
+ALTER TABLE `places`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
