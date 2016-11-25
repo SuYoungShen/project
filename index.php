@@ -66,7 +66,7 @@
             <span class="icon-bar"></span>
           </a>
 
-          <a id="logo" class="pull-left" href="index.php"></a>
+          <a class="pull-left " href="index.php"><img src='images/logo.png' width="100%" alt='' /></a>
 
         <div class="nav-collapse collapse pull-right">
 

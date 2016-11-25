@@ -25,7 +25,7 @@
     echo "
     <li>
       <div class='preview'>
-        <img src='$display' style='max-height:243px'>
+        <img src='$display' class='img-responsive' style='max-height:243px'>
         <div class='overlay'>
         </div>
         <div class='links'>

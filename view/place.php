@@ -10,15 +10,18 @@
 
     $id = $value["id"];
     $place_Name=$value["place"];//地區名
-    $viewpoint=$value["viewpoint"];//地區介紹
+    $viewpoint=$value["viewpoint"];//景點名
     $attractions = $value["attractions"];//景點介紹
+    $arrival = $value["arrival"];//如何到達
     $pic_name=$value["name"];//照片名
     $datetime=$value["datetime"];//時間
 
     if (empty($place_Name)) {
-      $place_Name="暫無資料";
+      $place_Name="稍後補資料";
     }
-
+    if (empty($arrival)) {
+      $arriva="稍後補資料";
+    }
     if (($key%6) == 0) {
 
       echo "
@@ -36,6 +39,7 @@
             <h5>地區名:$place_Name</h5>
             <p>景點名:$viewpoint</p>
             <p>景點介紹:<br/>$attractions</p>
+            <p>如何到達:<br/>$arrival</p>
           </div>
         </div>
       ";
@@ -89,6 +93,8 @@
             <h5>地區名:$place_Name</h5>
             <p>景點名:$viewpoint</p>
             <p>景點介紹:<br/>$attractions</p>
+            <p>如何到達:<br/>$arrival</p>
+
           </div>
         </div>
       ";

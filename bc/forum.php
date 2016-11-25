@@ -23,8 +23,9 @@
 		<!--[if lte IE 9]>
 			<link rel="stylesheet" href="assets/css/ace-part2.min.css" class="ace-main-stylesheet" />
 		<![endif]-->
+		<script type="text/javascript" src="assets/js/jquery.2.1.1.min.js"></script>
+		<script type="text/javascript" src="assets/js/jquery.validate.min.js"></script>
 		<script type="text/javascript" src="message/forum/js/fun.js"></script>
-
 
 		<!--[if lte IE 9]>
 		  <link rel="stylesheet" href="assets/css/ace-ie.min.css" />
@@ -53,6 +54,29 @@
 			Login_Check();
 			Login_Out();
 		 ?>
+		 <style>
+		 	.error{
+		 		color: red;
+		 	}
+		 </style>
+		 <script type="text/javascript">
+		 $(function(){
+		 	//須與form表單ID名稱相同
+		 	$("#forum").validate({
+		 		rules:{
+		 			email:{
+		 				required:true
+		 			}
+		 		},
+		 		messages:{
+		 			email:{
+		 				required:"必填"
+		 			}
+		 		}
+
+		 	});
+		 });
+		 </script>
 	</head>
 
 	<body class="no-skin">
@@ -262,7 +286,7 @@
 								<div class="row">
 									<div class="col-xs-12">
 										<!-- PAGE CONTENT BEGINS -->
-										<form class="form-horizontal" role="form" method="post" action="message/forum/update.php">
+										<form class="form-horizontal" id="forum" role="form" method="post" action="message/forum/update.php">
 											<div class="form-group">
 												<label class="col-sm-3 control-label no-padding-right" for="form-field-1"> 主題	 </label>
 
@@ -284,7 +308,7 @@
 												<label class="col-sm-3 control-label no-padding-right" for="form-field-1-1"> E-mail </label>
 
 												<div class="col-sm-9">
-													<input type="text" id="email" placeholder="E-mail" name="email" class="col-xs-10 col-sm-5" />
+													<input type="email" id="email" placeholder="E-mail" name="email" class="col-xs-10 col-sm-5" />
 												</div>
 											</div>
 
@@ -354,10 +378,7 @@
 
 		<!-- basic scripts -->
 
-		<!--[if !IE]> -->
-		<script src="assets/js/jquery.2.1.1.min.js"></script>
 
-		<!-- <![endif]-->
 
 		<!--[if IE]>
 <script src="assets/js/jquery.1.11.1.min.js"></script>

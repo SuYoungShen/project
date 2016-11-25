@@ -49,7 +49,7 @@
 <!-- 自行套 -->
 
 <!-- 表單驗證 -->
-	<script src="assets/js/jquery.validate.js"></script>
+	<!-- <script src="assets/js/jquery.validate.js"></script> -->
 	<!-- <script src="http://static.runoob.com/assets/jquery-validation-1.14.0/dist/localization/messages_zh.js"></script> -->
 <!-- 表單驗證 -->
 <style>
