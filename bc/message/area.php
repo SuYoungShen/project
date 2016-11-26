@@ -17,7 +17,7 @@
     $email = $emails[$key] = $value["email"];//email
     $site = $sites[$key] = $value["site"];//網址
     $datetime = $datetimes[$key] =
-    (strtotime($value["datetime"])> strtotime($value["replydatetime"]))?$value["datetime"]:$value["replydatetime"];//時間
+    (strtotime($value["datetime"]) > strtotime($value["replydatetime"]))?$value["datetime"]:$value["replydatetime"];//時間
 
     echo "
       <tr>

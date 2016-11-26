@@ -1,7 +1,7 @@
 <?php
   try {
     $username = 'root';
-    $password = '123456';
+    $password = '12345678';
     $dbname="project";
     $dsn = "mysql:host=localhost;dbname=$dbname";
            $options = array(
