@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 4.5.1
--- http://www.phpmyadmin.net
+-- version 4.6.4
+-- https://www.phpmyadmin.net/
 --
--- 主機: 127.0.0.1
--- 產生時間： 2016-11-25 19:26:51
--- 伺服器版本: 10.1.16-MariaDB
--- PHP 版本： 5.6.24
+-- 主機: localhost
+-- 產生時間： 2016-11-28 02:51:03
+-- 伺服器版本: 5.7.15-log
+-- PHP 版本： 5.6.26
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 SET time_zone = "+00:00";
@@ -185,7 +185,7 @@ CREATE TABLE `place` (
 
 INSERT INTO `place` (`id`, `place`, `Introduction`, `name`, `path`, `datetime`) VALUES
 (38, '苓雅區', '苓雅區為臺灣高雄市一市轄區，位於市內西南部，市中心中部，北臨三民區，西北連新興區、前金區，西隔愛河與鹽埕區、鼓山區為界，南接前鎮區，東鄰鳳山區，是高雄市政府四維行政中心的所在地。', '1.jpg', 'about/place/images/', '2016-11-21 17:05:03'),
-(39, '鳥松區', 'ㄋ', '7.jpg', 'about/place/images/', '2016-11-22 16:28:09');
+(39, '鳥松區', '鳥松濕地公園位於澄清湖風景區門口東側，原本是自來水公司澄清湖淨水場的沉沙地，於1999年動工、2000年完工成為台灣第一座以人工濕地為主題的自然生態公園；鳥松濕地公園佔地約為3公頃，陸地和水路面積各占三分之一和三分之二，豐富的地形地貌孕育出許多種植物，包含約90種鳥類、250種以上的昆蟲和340種以上的植物，加上鄰近澄清湖因此是高雄是相當不錯的戶外教學和自然觀察的好場所，目前鳥松濕地公園社團法人高雄市野鳥學會所認養。', '7.jpg', 'about/place/images/', '2016-11-28 02:48:29');
 
 -- --------------------------------------------------------
 
@@ -361,7 +361,7 @@ ALTER TABLE `place`
 -- 使用資料表 AUTO_INCREMENT `places`
 --
 ALTER TABLE `places`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=41;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=46;
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
