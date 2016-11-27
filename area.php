@@ -24,6 +24,7 @@
       include("bc/mysql/connect.php");
       include("login/check_login.php");
 
+      // $Back = "area.php?id=39&viewpoint=".$_GET['viewpoint']."&place_name=".$_GET['place_name']."";
       $Back = "view.php";
       Login($db,$Back);
       Login_Out($Back);
@@ -47,7 +48,7 @@
         <a id="logo" class="pull-left" href="index.php"></a>
 
       <div class="nav-collapse collapse pull-right">
-      
+
         <ul class="nav">
           <li>
             <a href="index.php">首頁</a>
@@ -128,73 +129,29 @@
       <div class="span8">
         <div class="blog">
           <div class="blog-item well">
-            <a href="#"><h2><?php echo $_GET["viewpoint"]; ?></h2></a>
             <?php
               include ("area/places.php");
              ?>
-            <p>&nbsp;</p>
-
+            <!-- <p>&nbsp;</p>
             <div id="comments" class="comments">
 
               <h4>回覆</h4>
               <div class="comments-list">
-
                 <div class="media box">
-                  <!-- <div class="pull-left">
-                    <img class="avatar" src="images/sample/cAvatar1.jpg" alt="" />
-                  </div> -->
-<!--
-                  <div class="media-body">
-                    <strong>發表人:
-                      <a href="#">(會員名)</a>
-                    </strong>
-                    <br>
-                    <small>(發表時間)</small><br>
-                    <p>(發表內容)</p>
-                  </div> -->
                   <?php
-                      include("area/reply.php");
+                    // include("area/rep`ly.php");
                    ?>
                 </div>
-
-                <!-- <div class="comment media">
-                  <div class="pull-left">
-                    <img class="avatar" src="images/sample/cAvatar1.jpg" alt="" />
-                  </div>
-
-                  <div class="media-body">
-                    <strong>發表人:<a href="#">(會員名)</a></strong><br>
-                    <small>(發表時間)</small><br>
-                    <p>(發表內容)</p>
-                  </div>
-                </div>
-
-                <div class="user-info media box">
-                  <div class="pull-left">
-                    <img class="avatar" src="images/sample/cAvatar1.jpg" alt="" />
-                  </div>
-
-                  <div class="media-body">
-                    <strong>發表人:
-                      <a href="#">(會員名)</a>
-                    </strong>
-                    <br>
-                    <small>(發表時間)</small><br>
-                    <p>(發表內容)</p>
-                  </div>
-                </div> -->
-
               </div>
-              <br/>
+              <br/> -->
 
-              <!-- Start Comment Form -->
+
               <div class="comment-form">
                 <h4>請留言</h4>
-                <!-- <p class="muted">Make sure you enter the (*) required information where indicated. HTML code is not allowed.</p> -->
+              
                 <form name="comment-form" method="post" action="bc/message/area/insert.php">
                   <div class="row-fluid">
                     <div class="span4">
-
                       <?php
                         if (isset($_SESSION["login_account"]) && !empty($_SESSION["login_account"])) {
                           include("bc/mysql/connect.php");
@@ -214,6 +171,7 @@
                         echo "<input type='hidden' name='place_name' value='$place_name'>";
                         echo "<input type='hidden' name='viewpoint' value='$viewpoint'>";
                         echo "<input type='text' name='posted'  class='input-block-level' value='$login_names' placeholder='姓名(抓取會員名)' />";
+                        $db=null;
                        ?>
 
                     </div>

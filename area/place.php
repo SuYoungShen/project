@@ -9,6 +9,7 @@
 // echo "<tr>";
 
   foreach ($display as $key => $value) {
+    
     $id = $value["id"];
     $viewpoint = $value["viewpoint"];
     $place_Name = $value["place"];//地區名

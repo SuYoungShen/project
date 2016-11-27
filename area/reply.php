@@ -7,7 +7,6 @@ $viewpoint = $_GET["viewpoint"];
 $placeSe = $db->query(Reply($id,$viewpoint));//查詢資料表
 $displays = $placeSe->fetchAll();
 
-
 foreach ($displays as $key => $value) {
 
   $posted = $value["posted"];
@@ -21,27 +20,36 @@ foreach ($displays as $key => $value) {
     echo $replydatetime="";
   }
   echo "
-        <div class='media-body'>
-          <strong>發表人:
-            <a href='#'>$posted</a>
-          </strong>
-          <br>
-          <p>$message</p>
-          <strong>參考網址:
-            <a href='$site'>$site</a>
-          <strong>
-          <br/>
-          <small>$datetime</small>
-          <br>
-          <br>
-          <strong>回覆:
-            <a href='#'>管理員</a>
-          </strong>
-          <br>
-          <p>$reply</p>
-          <small>$replydatetime</small>
-        </div>
+
+  <p>&nbsp;</p>
+    <div id='comments' class='comments'>
+      <h4>回覆</h4>
+      <div class='comments-list'>
+        <div class='media box'>
+          <div class='media-body'>
+            <strong>發表人:
+              <a href='#'>$posted</a>
+            </strong>
+            <br>
+            <p>$message</p>
+            <strong>參考網址:
+              <a href='$site'>$site</a>
+            <strong>
+            <br/>
+            <small>$datetime</small>
+            <br>
+            <br>
+            <strong>回覆:
+              <a href='#'>管理員</a>
+            </strong>
+            <br>
+            <p>$reply</p>
+            <small>$replydatetime</small>
+          </div>
         <br/>
+      </div>
+    </div>
+    <br/>
     ";
 }
 

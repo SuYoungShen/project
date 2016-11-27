@@ -16,10 +16,7 @@
             <tr>
               <td><a href='?login_out=true'>登出</a></td>
             </tr>
-          </table>
-          <!--<a href='user.php'>個人資料</a><br>
-          <a href='?login_out=true'>登出</a>-->
-
+          </table>        
         </div>
       </li>
       ";
