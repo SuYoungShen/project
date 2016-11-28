@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- 主機: localhost
--- 產生時間： 2016-11-28 02:51:03
+-- 產生時間： 2016-11-28 16:56:29
 -- 伺服器版本: 5.7.15-log
 -- PHP 版本： 5.6.26
 
@@ -64,9 +64,9 @@ CREATE TABLE `area` (
 --
 
 INSERT INTO `area` (`id`, `placename`, `viewpoint`, `posted`, `message`, `reply`, `email`, `site`, `datetime`, `replydatetime`) VALUES
-(2, '高雄', 'd', 'sssss', 'sss', '', 'sss@cd.sssss', 'sssss', '2016-11-15 19:06:33', '0000-00-00 00:00:00'),
-(3, 'ccc', 's', 'sss', 's', '', 'sss@sss', 'ssssss', '2016-11-15 19:07:05', '0000-00-00 00:00:00'),
-(4, '苓雅區', '85大樓', '蘇湧盛', 'www', '', 'd7339803@gmcul.som', 'https://wwww', '2016-11-25 15:32:11', '0000-00-00 00:00:00');
+(10, '苓雅區', '85大樓', '蘇湧盛', '這裡好美呀~~~', '感謝回覆', 'd7339803@gmail.com', '', '2016-11-28 16:28:27', '2016-11-28 16:46:34'),
+(11, '鳥松區', '澄清湖', '蘇湧盛', '超喜歡這裡', '感謝回覆~~~', 'd7339803@gmail.com', '', '2016-11-28 16:47:24', '2016-11-28 16:47:35'),
+(12, '鳥松區', '澄清湖', '蘇湧盛', '讚哦', '', 'd7339803@gmail.com', '', '2016-11-28 16:48:33', '0000-00-00 00:00:00');
 
 -- --------------------------------------------------------
 
@@ -132,13 +132,6 @@ CREATE TABLE `forum` (
   `datetime` datetime NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
---
--- 資料表的匯出資料 `forum`
---
-
-INSERT INTO `forum` (`id`, `theme`, `posted`, `email`, `message`, `reply`, `datetime`) VALUES
-(2, 'sss', 'ddd', 'sss@ddd', 'sss', '幹嘛', '2016-11-25 15:43:23');
-
 -- --------------------------------------------------------
 
 --
@@ -162,7 +155,7 @@ CREATE TABLE `member` (
 
 INSERT INTO `member` (`id`, `account`, `password`, `email`, `name`, `level`, `datetime`, `jointime`) VALUES
 (0, 'admin', 'admin', '', '', 'admin', '0000-00-00 00:00:00', '0000-00-00 00:00:00'),
-(0, 'aaaa', 'aaaaa', 'aaaa@gmail.com', 'aa', 'member', '2016-10-18 08:41:17', '0000-00-00 00:00:00');
+(0, 'd7339803', 'D7339803', 'd7339803@gmail.com', '蘇湧盛', 'member', '2016-11-28 16:21:03', '0000-00-00 00:00:00');
 
 -- --------------------------------------------------------
 
@@ -185,7 +178,8 @@ CREATE TABLE `place` (
 
 INSERT INTO `place` (`id`, `place`, `Introduction`, `name`, `path`, `datetime`) VALUES
 (38, '苓雅區', '苓雅區為臺灣高雄市一市轄區，位於市內西南部，市中心中部，北臨三民區，西北連新興區、前金區，西隔愛河與鹽埕區、鼓山區為界，南接前鎮區，東鄰鳳山區，是高雄市政府四維行政中心的所在地。', '1.jpg', 'about/place/images/', '2016-11-21 17:05:03'),
-(39, '鳥松區', '鳥松濕地公園位於澄清湖風景區門口東側，原本是自來水公司澄清湖淨水場的沉沙地，於1999年動工、2000年完工成為台灣第一座以人工濕地為主題的自然生態公園；鳥松濕地公園佔地約為3公頃，陸地和水路面積各占三分之一和三分之二，豐富的地形地貌孕育出許多種植物，包含約90種鳥類、250種以上的昆蟲和340種以上的植物，加上鄰近澄清湖因此是高雄是相當不錯的戶外教學和自然觀察的好場所，目前鳥松濕地公園社團法人高雄市野鳥學會所認養。', '7.jpg', 'about/place/images/', '2016-11-28 02:48:29');
+(39, '鳥松區', '鳥松濕地公園位於澄清湖風景區門口東側，原本是自來水公司澄清湖淨水場的沉沙地，於1999年動工、2000年完工成為台灣第一座以人工濕地為主題的自然生態公園；鳥松濕地公園佔地約為3公頃，陸地和水路面積各占三分之一和三分之二，豐富的地形地貌孕育出許多種植物，包含約90種鳥類、250種以上的昆蟲和340種以上的植物，加上鄰近澄清湖因此是高雄是相當不錯的戶外教學和自然觀察的好場所，目前鳥松濕地公園社團法人高雄市野鳥學會所認養。', '7.jpg', 'about/place/images/', '2016-11-28 02:48:29'),
+(40, 's', 's', '', 'about/place/images/', '2016-11-28 09:45:42');
 
 -- --------------------------------------------------------
 
@@ -346,7 +340,7 @@ ALTER TABLE `top`
 -- 使用資料表 AUTO_INCREMENT `area`
 --
 ALTER TABLE `area`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=13;
 --
 -- 使用資料表 AUTO_INCREMENT `forum`
 --
@@ -356,12 +350,12 @@ ALTER TABLE `forum`
 -- 使用資料表 AUTO_INCREMENT `place`
 --
 ALTER TABLE `place`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=40;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=41;
 --
 -- 使用資料表 AUTO_INCREMENT `places`
 --
 ALTER TABLE `places`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=46;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=42;
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
