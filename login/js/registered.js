@@ -23,12 +23,14 @@ $(document).ready(function() {
         },
         success:function(data){
           alert(data);
-          document.location.href="index.php";
+          // document.location.href="index.php";
         },
         error: function(data){
           alert(data);
         }
       });
+    }else{
+      alert("失敗");
     }//if
  });//註冊按鈕
 
@@ -41,11 +43,12 @@ $(document).ready(function() {
 
        if(rule.test(Val)){
          $(place).css("border-color","green");
+
          return Val;
 
        }else if(Val ==""){
          // $(this).text('(必填)').css({"color":"red"});
-         alert(me+"必填");
+        //  alert(me+"必填");
          BorderColorRed(place);
 
        }else if(Length < min){
@@ -69,12 +72,13 @@ $(document).ready(function() {
      }
 
      // function email(){
-       var emailRule=/^[\w]+\@[a-zA-Z0-9]+\.[a-zA-z0-9]{2,4}$/;
+       var emailRule=/^[^\s]+@[^\s]+\.[^\s]{2,3}$/;
        var email_p = "input[name='email']";
        var email_m = "email";
 
        $(email_p).blur(function(){
          email = Foolproof(emailRule, email_p, email_m);
+
        });//password
      // }
 
@@ -114,7 +118,7 @@ $(document).ready(function() {
         var password_m = "密碼";
 
         $(password_p).blur(function(){
-          password =  Foolproof(passwordRule, password_p, password_m, password_min, password_max);          
+          password =  Foolproof(passwordRule, password_p, password_m, password_min, password_max);
         });//password
 
         $(password_r).blur(function(){

@@ -156,9 +156,10 @@
                         if (isset($_SESSION["login_account"]) && !empty($_SESSION["login_account"])) {
                           include("bc/mysql/connect.php");
                           $login_account = $_SESSION["login_account"];
-                          $logins = $db->query("SELECT name FROM member WHERE account='".$login_account."'");
+                          $logins = $db->query("SELECT name,email FROM member WHERE account='".$login_account."'");
                           while ($login_name = $logins->fetch()) {
                             $login_names = $login_name["name"];
+                            $email = $login_name["email"];
                           }
 
                         }else {
@@ -167,16 +168,15 @@
                         $id = $_GET["id"];
                         $place_name = $_GET["place_name"];
                         $viewpoint =$_GET["viewpoint"];
-                        echo "<input type='hidden' name='id' value='$id'>";
-                        echo "<input type='hidden' name='place_name' value='$place_name'>";
-                        echo "<input type='hidden' name='viewpoint' value='$viewpoint'>";
-                        echo "<input type='text' name='posted'  class='input-block-level' value='$login_names' placeholder='姓名(抓取會員名)' />";
-                        $db=null;
-                       ?>
 
+                       ?>
+                       <input type='hidden' name='id' value="<?php echo $id ?>">
+                       <input type='hidden' name='place_name' value="<?php echo $place_name ?>">
+                       <input type='hidden' name='viewpoint' value="<?php echo $viewpoint ?>">
+                       <input type='text' name='posted'  class='input-block-level' value="<?php echo $login_names?>" placeholder='姓名(抓取會員名)' />
                     </div>
                     <div class="span4">
-                      <input type="email" name="email"  class="input-block-level" placeholder="Email" />
+                      <input type="email" name="email"  class="input-block-level" placeholder="Email" value="<?php echo $email; ?>"/>
                     </div>
                     <div class="span4">
                       <textarea type="url" name="site"  class="input-block-level" placeholder="網址" /></textarea>
