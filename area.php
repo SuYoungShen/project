@@ -132,23 +132,23 @@
             <?php
               include ("area/places.php");
              ?>
-            <!-- <p>&nbsp;</p>
+            <p>&nbsp;</p>
             <div id="comments" class="comments">
 
               <h4>回覆</h4>
               <div class="comments-list">
                 <div class="media box">
                   <?php
-                    // include("area/rep`ly.php");
+                    include("area/reply.php");
                    ?>
                 </div>
               </div>
-              <br/> -->
+              <br/>
 
 
               <div class="comment-form">
                 <h4>請留言</h4>
-              
+
                 <form name="comment-form" method="post" action="bc/message/area/insert.php">
                   <div class="row-fluid">
                     <div class="span4">

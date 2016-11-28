@@ -19,13 +19,7 @@ foreach ($displays as $key => $value) {
   if ($replydatetime=="0000-00-00 00:00:00") {
     echo $replydatetime="";
   }
-  echo "
-
-  <p>&nbsp;</p>
-    <div id='comments' class='comments'>
-      <h4>回覆</h4>
-      <div class='comments-list'>
-        <div class='media box'>
+  echo "      
           <div class='media-body'>
             <strong>發表人:
               <a href='#'>$posted</a>
@@ -46,10 +40,6 @@ foreach ($displays as $key => $value) {
             <p>$reply</p>
             <small>$replydatetime</small>
           </div>
-        <br/>
-      </div>
-    </div>
-    <br/>
     ";
 }
 
