@@ -149,7 +149,7 @@
 
         <div class="gallery col-4">
           <div class='preview'>
-            <div class="row">
+            <div class="row-fluid">
               <div class="span4">
                 <img src='bc\index\top6\images\1.jpg' class='img-responsive' style="max-height:243px">
                 <div class='overlay'>
@@ -208,7 +208,7 @@
               </div>
             </div>
           </div>
-          
+
           <div id='modal-$key' class='modal hide fade'>
             <a class='close-modal' href='javascript:;' data-dismiss='modal' aria-hidden='true'></a>
             <div class='modal-body'>
