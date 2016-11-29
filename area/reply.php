@@ -16,30 +16,33 @@ foreach ($displays as $key => $value) {
   $datetime = $value["datetime"];
   $replydatetime = $value["replydatetime"];
 
+  if (empty($reply)) {
+    $reply = "(等待回覆)";
+  }
   if ($replydatetime=="0000-00-00 00:00:00") {
     echo $replydatetime="";
   }
-  echo "      
-          <div class='media-body'>
-            <strong>發表人:
-              <a href='#'>$posted</a>
-            </strong>
-            <br>
-            <p>$message</p>
-            <strong>參考網址:
-              <a href='$site'>$site</a>
-            <strong>
-            <br/>
-            <small>$datetime</small>
-            <br>
-            <br>
-            <strong>回覆:
-              <a href='#'>管理員</a>
-            </strong>
-            <br>
-            <p>$reply</p>
-            <small>$replydatetime</small>
-          </div>
+  echo "
+    <div class='media-body'>
+      <strong>發表人:
+        <a href='#'>$posted</a>
+      </strong>
+    <br>
+      <p>$message</p>
+      <strong>參考網址:
+        <a href='$site'>$site</a>
+      <strong>
+    <br/>
+      <small>$datetime</small>
+    <br>
+    <br>
+      <strong>回覆:
+        <a href='#'>管理員</a>
+      </strong>
+    <br>
+      <p>$reply</p>
+      <small>$replydatetime</small>
+    </div>
     ";
 }
 

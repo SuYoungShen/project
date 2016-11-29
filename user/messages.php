@@ -9,15 +9,14 @@
 
   echo "<legend>景點留言</legend>";
   foreach ($AreaDislpay as $key => $value) {
-
-    // $Account = $value["Account"];//帳號
     /* 景點area */
-
     $Place_Name = $value["placename"];//地區名
     $ViewPoint = $value["viewpoint"];//景點名
+    $Pic = $value["pic"];//照片
     $Posted = $value["posted"];//發表人
     $AreaMessage = $value["message"];//訊息
     $AreaReply = $value["reply"];//回覆
+    $WebSite = $value["WebSite"];//網頁
     $AreaDate = $value["datetime"];//時間
     /* 景點 area */
     if (empty($AreaReply)) {
@@ -37,6 +36,7 @@
               </div>
               <div id='Area$key' class='accordion-body collapse'>
                 <div class='accordion-inner'>
+                <img src='$Pic'>
                 景點名：
                   <a href='$WebSite'>$ViewPoint</a>
                   <a onclick='AreaDelete(

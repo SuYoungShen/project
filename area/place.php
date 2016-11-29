@@ -9,7 +9,7 @@
 // echo "<tr>";
 
   foreach ($display as $key => $value) {
-    
+
     $id = $value["id"];
     $viewpoint = $value["viewpoint"];
     $place_Name = $value["place"];//地區名
@@ -29,38 +29,7 @@
           <a href='area.php?id=$id&viewpoint=$viewpoint&place_name=$place_Name'>$place_Name</a>
         </td>
       ";
-      // echo "
-      // <td>
-      //   <div class='accordion' id='accordion3'>
-      //     <div class='accordion-group'>
-      //       <div class='accordion-heading'>
-      //         <a class='accordion-toggle' data-toggle='collapse' data-parent='#accordion3' href='#collapseThree'>
-      //           景點名
-      //         </a>
-      //       </div>
-      //       <div id='collapseThree' class='accordion-body collapse'>
-      //         <div class='accordion-inner'>
-      //           <img src='http://autismcleveland.net/wp-content/uploads/2015/11/150210073337pm_1012106165.png'>
-      //           景點介紹
-      //         </div>
-      //       </div>
-      //     </div>
-      //     <div class='accordion-group'>
-      //       <div class='accordion-heading'>
-      //         <a class='accordion-toggle' data-toggle='collapse' data-parent='#accordion3' href='#collapseFour'>
-      //           景點名
-      //         </a>
-      //       </div>
-      //       <div id='collapseFour' class='accordion-body collapse'>
-      //         <div class='accordion-inner'>
-      //           <img src='http://autismcleveland.net/wp-content/uploads/2015/11/150210073337pm_1012106165.png'>
-      //           景點介紹
-      //         </div>
-      //       </div>
-      //     </div>
-      //   </div>
-      // </td>
-      // ";
+
     }else {
 
       echo "
@@ -72,38 +41,7 @@
 
 
       ";
-      // echo "
-      // <td>
-      //   <div class='accordion' id='accordion3'>
-      //     <div class='accordion-group'>
-      //       <div class='accordion-heading'>
-      //         <a class='accordion-toggle' data-toggle='collapse' data-parent='#accordion3' href='#collapseThree'>
-      //           景點名
-      //         </a>
-      //       </div>
-      //       <div id='collapseThree' class='accordion-body collapse'>
-      //         <div class='accordion-inner'>
-      //           <img src='http://autismcleveland.net/wp-content/uploads/2015/11/150210073337pm_1012106165.png'>
-      //           景點介紹
-      //         </div>
-      //       </div>
-      //     </div>
-      //     <div class='accordion-group'>
-      //       <div class='accordion-heading'>
-      //         <a class='accordion-toggle' data-toggle='collapse' data-parent='#accordion3' href='#collapseFour'>
-      //           景點名
-      //         </a>
-      //       </div>
-      //       <div id='collapseFour' class='accordion-body collapse'>
-      //         <div class='accordion-inner'>
-      //           <img src='http://autismcleveland.net/wp-content/uploads/2015/11/150210073337pm_1012106165.png'>
-      //           景點介紹
-      //         </div>
-      //       </div>
-      //     </div>
-      //   </div>
-      // </td>
-      // ";
+      
     }
   }
 

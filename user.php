@@ -78,70 +78,37 @@
 <!--/Slider-->
 
     <section  class="container">
-		<form>
-			<fieldset>
-			<div class="row-fluid">
-				<div class="span6">
-				<legend>我的最愛</legend>
+      <form>
+        <fieldset>
+          <div class="row-fluid">
+            <div class="span6">
+              <legend>我的最愛</legend>
+              <table class="table table-bordered" >
+                <tr>
+                  <td>
+                    <?php
+                    include ("user/favorite.php");
+                    ?>
+                  </td>
+                </tr>
+              </table>
+            </div>
 
-				<table class="table table-bordered" >
-					<tr>
-						<td>
-              <?php
-                include ("user/favorite.php");
-              ?>
-              <!-- <div class="accordion" id="accordion2">
-                <div class="accordion-group">
-                  <div class="accordion-heading">
-                    <a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion2" href="#collapseOne">
-                      景點名
-                    </a>
-                  </div>
-                  <div id="collapseOne" class="accordion-body collapse">
-                    <div class="accordion-inner">
-                      <img src="http://autismcleveland.net/wp-content/uploads/2015/11/150210073337pm_1012106165.png">
-                      景點介紹
-                    </div>
-                  </div>
-                </div>
-                <div class="accordion-group">
-                  <div class="accordion-heading">
-                    <a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion2" href="#collapseTwo">
-                      景點名
-                    </a>
-                  </div>
-                  <div id="collapseTwo" class="accordion-body collapse">
-                    <div class="accordion-inner">
-                      <img src="http://autismcleveland.net/wp-content/uploads/2015/11/150210073337pm_1012106165.png">
-                      景點介紹
-                    </div>
-                  </div>
-                </div>
-              </div> -->
-            </td>
-					</tr>
-				</table>
+            <div class="span6">
+              <legend>留言區</legend>
 
-        </div>
-				<div class="span6">
-				<legend>留言區</legend>
-
-				<table class="table table-bordered">
-					<tr>
-						<td>
-              <?php
-                include 'user/messages.php';
-               ?>
-						</td>
-					</tr>
-				</table>
-
-
-    </div>
-			</fieldset>
-		</form>
-
-
+              <table class="table table-bordered">
+                <tr>
+                  <td>
+                    <?php
+                    include 'user/messages.php';
+                    ?>
+                  </td>
+                </tr>
+              </table>
+            </div>
+          </fieldset>
+        </form>
     </section>
     <!-- /404 error -->
 

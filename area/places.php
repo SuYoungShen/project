@@ -25,6 +25,7 @@
     }else {
       $displays = $picDir."wait.jpg";
     }
+    $_GET["picname"] = $displays;
     echo "<a href='#'><h2>$viewpoint</h2></a>";
     echo "
         <p>
@@ -71,7 +72,6 @@
 
   function Places(){
     $place = "SELECT * From
-
                             `places`
                       where
                             places.place='".$_GET["place_name"]."'

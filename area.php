@@ -155,24 +155,29 @@
                       <?php
                         if (isset($_SESSION["login_account"]) && !empty($_SESSION["login_account"])) {
                           include("bc/mysql/connect.php");
+
                           $login_account = $_SESSION["login_account"];
                           $logins = $db->query("SELECT name,email FROM member WHERE account='".$login_account."'");
+
                           while ($login_name = $logins->fetch()) {
                             $login_names = $login_name["name"];
                             $email = $login_name["email"];
                           }
-
                         }else {
                           $login_names="";
                         }
                         $id = $_GET["id"];
                         $place_name = $_GET["place_name"];
                         $viewpoint =$_GET["viewpoint"];
-
+                        $Site = $_SERVER['PHP_SELF']."?id=$id&viewpoint=$viewpoint&place_name=$place_name";
+                        $Pic = $_GET["picname"];
+                        $db = null;
                        ?>
                        <input type='hidden' name='id' value="<?php echo $id ?>">
                        <input type='hidden' name='place_name' value="<?php echo $place_name ?>">
                        <input type='hidden' name='viewpoint' value="<?php echo $viewpoint ?>">
+                       <input type='hidden' name='pic' value="<?php echo $Pic ?>">
+                       <input type="hidden" name="WebSite" value="<?php echo $Site?>">
                        <input type='text' name='posted'  class='input-block-level' value="<?php echo $login_names?>" placeholder='姓名(抓取會員名)' />
                     </div>
                     <div class="span4">
