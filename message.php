@@ -45,7 +45,6 @@
 </head>
 
 <body>
-
   <!--Header-->
   <header class="navbar navbar-fixed-top">
     <div class="navbar-inner">
@@ -55,13 +54,10 @@
           <span class="icon-bar"></span>
           <span class="icon-bar"></span>
         </a>
-        <!--
-        <a id="logo" class="pull-left" href="index.html"></a>
-      -->
+
+        <a id="logo" class="pull-left" href="index.php"></a>
+
       <div class="nav-collapse collapse pull-right">
-        <form class="navbar-search pull-left" action="" method="">
-          <input type="text" class="search-query" placeholder="要去哪ㄜ...?">
-        </form>
 
         <ul class="nav">
           <li>
@@ -78,7 +74,13 @@
               <table class="table table-hover ">
                 <tr >
                   <td><a href="view.php">首頁</a></td>
-                  <td><a href="area.php">地區名</a></td>
+                  <?php
+                    include ("area/place.php");
+                    function Placess(){
+                      $place = "SELECT * From `places`";
+                      return $place;
+                    }
+                   ?>
                 </tr>
               </table>
             </div>
@@ -108,7 +110,7 @@
         <div class="span6">
           <ul class="breadcrumb pull-right">
             <li>
-              <a href="index.html">首頁</a>
+              <a href="index.php">首頁</a>
               <span class="divider">/</span>
             </li>
 
@@ -129,8 +131,14 @@
         <form class="form-horizontal" method="post"  role="form" action="bc/message/forum/insert.php">
           <div class="span12">
             <input type="text" id="theme" name="theme" placeholder="主題"  class="span4"/>
-            <input type="text" id="posted" name="posted" placeholder="發表人" class="span4" />
-            <input type="email" id="email" name="email" placeholder="email" class="span4"/>
+            <?php
+              include 'login/login_account_In.php';
+            ?>
+            <input type="text" id="posted" name="posted"
+                    placeholder="發表人" class="span4" value="<?php echo $login_names?>"/>
+
+            <input type="email" id="email" name="email"
+                    placeholder="email" class="span4" value="<?php echo $email?>"/>
           </div>
 
           <div class="span12">

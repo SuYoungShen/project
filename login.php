@@ -212,15 +212,7 @@
 															<input type="password" name="apassword" class="form-control" placeholder="再輸入一次密碼" />
 															<i class="ace-icon fa fa-retweet"></i>
 														</span>
-													</label>
-
-													<!-- <label class="block">
-														<input type="checkbox" class="ace" />
-														<span class="lbl">
-															I accept the
-															<a href="#">User Agreement</a>
-														</span>
-													</label> -->
+													</label>											
 
 													<div class="space-24"></div>
 
