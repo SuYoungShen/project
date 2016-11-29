@@ -27,7 +27,7 @@
     <!-- ace styles -->
 
     <!-- 自行填入 -->
-    
+
     <script type="text/javascript" src="js/jquery-1.11.0.min.js"></script>
     <script type="text/javascript" src="login/js/registered.js"></script>
 
@@ -146,38 +146,82 @@
           <!--<p class="lead">高雄熱門景點</p>-->
         </div>
         <div class="gap"></div>
-        <ul class="gallery col-4">
+
+        <div class="gallery col-4">
+          <div class='preview'>
+            <div class="row">
+              <div class="span4">
+                <img src='bc\index\top6\images\1.jpg' class='img-responsive' style="max-height:243px">
+                <div class='overlay'>
+                </div>
+
+                <div class='desc'>
+                  <h5>$placeName</h5>
+                </div>
+              </div>
+              <div class="span4">
+                <img src='bc\index\top6\images\2.jpg' class='img-responsive' style="max-height:243px">
+                <div class='overlay'>
+                </div>
+
+                <div class='desc'>
+                  <h5>$placeName</h5>
+                </div>
+              </div>
+              <div class="span4">
+                <img src='bc\index\top6\images\3.jpg' class='img-responsive' style="max-height:243px">
+                <div class='overlay'>
+                </div>
+
+                <div class='desc'>
+                  <h5>$placeName</h5>
+                </div>
+              </div>
+            </div>
+            <div class="row">
+              <div class="span4">
+                <img src='bc\index\top6\images\4.jpg' class='img-responsive' style="max-height:243px">
+                <div class='overlay'>
+                </div>
+
+                <div class='desc'>
+                  <h5>$placeName</h5>
+                </div>
+              </div>
+              <div class="span4">
+                <img src='bc\index\top6\images\5.jpg' class='img-responsive' style="max-height:243px">
+                <div class='overlay'>
+                </div>
+
+                <div class='desc'>
+                  <h5>$placeName</h5>
+                </div>
+              </div>
+              <div class="span4">
+                <img src='bc\index\top6\images\6.jpg' class='img-responsive' style="max-height:243px">
+                <div class='overlay'>
+                </div>
+
+                <div class='desc'>
+                  <h5>$placeName</h5>
+                </div>
+              </div>
+            </div>
+          </div>
+          
+          <div id='modal-$key' class='modal hide fade'>
+            <a class='close-modal' href='javascript:;' data-dismiss='modal' aria-hidden='true'></a>
+            <div class='modal-body'>
+              <img src='bc\index\top6\images\1.jpg' width='100%' style='max-height:400px' alt=' '>
+            </div>
+          </div>
+
 
             <?php
-              include("index/top6/top6.php");
-            // for ($i=1; $i <= 6 ; $i++) {
-            //   echo "
-            //   <li>
-            //     <div class='preview'>
-            //       <img alt=' ' src='images/portfolio/thumb/300x180.jpg'>
-            //       <div class='overlay'>
-            //       </div>
-            //       <div class='links'>
-            //         <a data-toggle='modal' href='#modal-1'><i class='icon-eye-open'></i></a><a href='#'><i class='icon-heart'></i></a>
-            //       </div>
-            //     </div>
-            //     <div class='desc'>
-            //       <h5>景點名</h5>
-            //     </div>
-            //     <div id='modal-1' class='modal hide fade'>
-            //       <a class='close-modal' href='javascript:;' data-dismiss='modal' aria-hidden='true'><i class='icon-remove'></i></a>
-            //       <div class='modal-body'>
-            //         <img src='images/portfolio/full/500x300.jpg' alt=' '>
-            //       </div>
-            //     </div>
-            //   </li>
-            //   ";
-            // }
+              // include("index/top6/top6.php");
+
             ?>
-
-
-        </ul>
-      </div>
+        </div>
     </section>
   <!-- </div> -->
   <!--熱門排行-->

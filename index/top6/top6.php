@@ -8,6 +8,7 @@
   $topse = $db->query(topse());//查詢top資料表
   $row = $topse->fetchAll();
 
+
   foreach ($row as $key => $value) {
 
     $placeName = $value['place'];
@@ -23,7 +24,7 @@
 		}
 
     echo "
-    <li>
+
       <div class='preview'>
         <img src='$display' class='img-responsive' style='max-height:243px'>
         <div class='overlay'>
@@ -49,9 +50,8 @@
           <img src='$display' width='100%' style='max-height:400px' alt=' '>
         </div>
       </div>
-    </li>
-    ";
 
+    ";
   }
 
 
