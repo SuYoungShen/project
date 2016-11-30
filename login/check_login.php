@@ -16,14 +16,14 @@
             <tr>
               <td><a href='?login_out=true'>登出</a></td>
             </tr>
-          </table>        
+          </table>
         </div>
       </li>
       ";
     }else {
       echo "
       <li class='login'>
-        <a data-toggle='modal' href='#loginForm'><i class='icon-user'></i></a>
+        <a data-toggle='modal' href='#myModal'><i class='icon-user'></i></a>
       </li>
       ";
     }

@@ -3,6 +3,7 @@
 <!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
 <!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
 <!--[if gt IE 8]><!-->
+
 <html class="no-js"> <!--<![endif]-->
 <head>
     <meta charset="utf-8">
@@ -56,85 +57,106 @@
 
 </head>
 
-<body>
+<body  style="background-color:#DDDDDD">
+  <!--Header-->
+  <header class="navbar navbar-fixed-top">
+    <div class="navbar-inner">
+      <div class="container">
+        <a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </a>
 
-    <!--Header-->
-    <header class="navbar navbar-fixed-top">
-      <div class="navbar-inner">
-        <div class="container">
-          <a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-          </a>
-
-          <a class="pull-left " href="index.php"><img src='images/logo.png' width="100%" alt='' /></a>
+        <a class="pull-left " href="index.php"><img src='images/logo.png' width="100%" alt='' /></a>
 
         <div class="nav-collapse collapse pull-right">
 
           <ul class="nav">
             <li class="active">
               <a href="index.php">首頁</a>
-              </li>
-              <li>
-                <a href="about.php">認識高雄</a>
-              </li>
-              <li class="dropdown">
-                <a href="view.php" class="dropdown-toggle" data-toggle="dropdown">景點
-                  <i class="icon-angle-down"></i>
-                </a>
-                <div class="dropdown-menu">
-                  <table class="table table-hover ">
-                    <tr >
-                      <td><a href="view.php">首頁</a></td>
-                      <?php
-                        include ("area/place.php");
-                        function Placess(){
-                          $place = "SELECT * From `places`";
-                          return $place;
-                        }
-                       ?>
-                    </tr>
-                  </table>
-                </div>
-              </li>
+            </li>
+            <li>
+              <a href="about.php">認識高雄</a>
+            </li>
+            <li class="dropdown">
+              <a href="view.php" class="dropdown-toggle" data-toggle="dropdown">景點
+                <i class="icon-angle-down"></i>
+              </a>
+              <div class="dropdown-menu">
+                <table class="table table-hover ">
+                  <tr >
+                    <td><a href="view.php">首頁</a></td>
+                    <?php
+                    include ("area/place.php");
+                    function Placess(){
+                      $place = "SELECT * From `places`";
+                      return $place;
+                    }
+                    ?>
+                  </tr>
+                </table>
+              </div>
+            </li>
 
-              <li><a href="forum.php">討論區</a></li>
+            <li><a href="forum.php">討論區</a></li>
 
-              <?php
-                Member_Information();
-               ?>
+            <?php
+            Member_Information();
+            ?>
 
-            </ul>
-          </div><!--/.nav-collapse -->
-        </div>
+          </ul>
+        </div><!--/.nav-collapse -->
       </div>
-      </header>
+    </div>
+  </header>
+  <!-- /header -->
 
-      <!-- /header -->
+<div class="container">
+  <div class="row">
+    <div class="span12">
+      <div id="myCarousel" class="carousel slide">
+        <ol class="carousel-indicators">
+          <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+          <li data-target="#myCarousel" data-slide-to="1"></li>
+          <li data-target="#myCarousel" data-slide-to="2"></li>
+        </ol>
+
+        <div class="carousel-inner" align='center'>
+          <div class="active item"><img src="bc\index\slider\images\1.jpg" width="60%"  class='img-responsive' alt=""></div>
+          <div class="item"><img src="bc\index\slider\images\2.jpg" width="60%"  class='img-responsive' alt=""></div>
+          <div class="item"><img src="bc\index\slider\images\3.jpg" width="60%"  class='img-responsive' alt=""></div>
+        </div>
+
+        <a class="carousel-control left" href="#myCarousel" data-slide="prev">&lsaquo;</a>
+        <a class="carousel-control right" href="#myCarousel" data-slide="next">&rsaquo;</a>
+      </div>
+
+  </div>
+</div>
+
+</div>
+
 
       <!--Slider輪播-->
-      <section id="slide-show" >
+      <!-- <section id="slide-show" >
         <div id="slider" class="sl-slider-wrapper">
-          <!--Slider Items-->
-          <!-- <div class="span12"> -->
+
           <div class="sl-slider">
             <?php
-              include("index/slider/slider.php");
+              // include("index/slider/slider.php");
             ?>
-            <!-- </div> -->
-          </div>
-          <!--/Slider Items-->
 
-          <!--Slider Next Prev button-->
+          </div>
+
           <nav id="nav-arrows" class="nav-arrows">
             <span class="nav-arrow-prev"><i class="icon-angle-left"></i></span>
             <span class="nav-arrow-next"><i class="icon-angle-right"></i></span>
           </nav>
-          <!--/Slider Next Prev button-->
+
         </div>
-        <!-- /slider-wrapper -->
-      </section>
+
+      </section> -->
       <!--Slider輪播-->
 
   <!--熱門排行-->
@@ -146,8 +168,12 @@
           <!--<p class="lead">高雄熱門景點</p>-->
         </div>
         <div class="gap"></div>
-
         <div class="gallery col-4">
+        <?php
+          include 'index/top6/top6.php';
+         ?>
+       </div>
+        <!-- <div class="gallery col-4">
           <div class='preview'>
             <div class="row-fluid">
               <div class="span4">
@@ -178,7 +204,8 @@
                 </div>
               </div>
             </div>
-            <div class="row">
+
+            <div class="row-fluid">
               <div class="span4">
                 <img src='bc\index\top6\images\4.jpg' class='img-responsive' style="max-height:243px">
                 <div class='overlay'>
@@ -221,7 +248,9 @@
               // include("index/top6/top6.php");
 
             ?>
-        </div>
+        </div> -->
+
+
     </section>
   <!-- </div> -->
   <!--熱門排行-->
@@ -232,9 +261,55 @@
    ?>
   <!--/Footer-->
 
+
+
+  <!-- Button to trigger modal -->
+  <a href="#myModal" role="button" class="btn" data-toggle="modal">執行範例對話視窗</a>
+
+  <!-- Modal -->
+  <div id="myModal" class="modal hide fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+    <div class="modal-header">
+      <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+      <h3 id="myModalLabel">登入</h3>
+    </div>
+    <div class="modal-body">
+
+
+      <form method="post" >
+        <span >
+          <input type="text" name="login_account" class="form-control" placeholder="帳號" />
+
+        </span>
+        <br>
+        <span>
+          <input type="password" name="login_password" class="form-control" placeholder="密碼" />
+
+        </span>
+
+        <div class="space"></div>
+
+        <div class="clearfix">
+          <button type="submit" name="login" class="width-30  btn btn-sm btn-primary">
+            <i class="ace-icon fa fa-key"></i>
+            <span class="bigger-110">登入</span>
+          </button>
+        </div>
+
+        <div class="space-4"></div>
+      </form>
+
+
+
+    </div>
+    <div class="modal-footer">
+      <button class="btn" data-dismiss="modal" aria-hidden="true">關閉</button>
+      <button class="btn btn-primary">儲存變更</button>
+    </div>
+
+  </div>
   <!--  Login form -->
   <?php
-    include("login-form.php");
+    // include("login-form.php");
    ?>
   <!--  /Login form -->
 
