@@ -19,43 +19,37 @@ function display($display, $sliderdir){
 
   foreach ($display as $key => $value) {
 
-    $picName = $pic["0"] = $value["name"];
+    $picName = $pic[$key] = $value["name"];
     $picDir = $value["path"];
 
-    $picNames = basename($picName,".jpg");
-
-    if (!empty($picName)) {
-      $displayss = $sliderdir.$picName;
-    }else {
-      $displays = "http://img.ltn.com.tw/2016/new/jul/13/images/bigPic/400_400/phpyq9Xeu.jpg";
-    }
-
   }
+  if (!empty($pic['0'])) {
+    $displayss = $sliderdir.$pic['0'];
+  }else {
+    $displayss = "http://img.ltn.com.tw/2016/new/jul/13/images/bigPic/400_400/phpyq9Xeu.jpg";
+  }
+
   echo "
     <div class='active item'>
       <img src='$displayss' width='60%'  class='img-responsive' alt=''>
     </div>
   ";
-foreach ($display as $key => $value) {
 
-  $picName = $value["name"];
-  $picDir = $value["path"];
+  for ($i=1; $i < count($pic); $i++) {
+    if (!empty($picName)) {
+      $displays = $sliderdir.$pic[$i];
+    }else {
+      $displays = "http://img.ltn.com.tw/2016/new/jul/13/images/bigPic/400_400/phpyq9Xeu.jpg";
+    }
 
-  $picNames = basename($picName,".jpg");
+    echo "
 
-  if (!empty($picName)) {
-    $displays = $sliderdir.$picName;
-  }else {
-    $displays = "http://img.ltn.com.tw/2016/new/jul/13/images/bigPic/400_400/phpyq9Xeu.jpg";
+    <div class='item'>
+      <img src='$displays' width='60%'  class='img-responsive' alt=''>
+    </div>
+    ";
   }
 
-  echo "
-
-  <div class='item'>
-    <img src='$displays' width='60%'  class='img-responsive' alt=''>
-  </div>
-  ";
-}
 
   // echo "
   //   <div class='sl-slide item$key' data-orientation='horizontal' data-slice1-rotation='-25' data-slice2-rotation='-25' data-slice1-scale='2' data-slice2-scale='2'>

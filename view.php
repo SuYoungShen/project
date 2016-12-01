@@ -142,17 +142,14 @@
   <section id="portfolio" >
     <div class="container">
       <div class="gap"></div>
-
-      <ul class="gallery col-4">
-
+      <div class="gallery col-4">
         <?php
-          include ("view/view.php");
-         ?>
-        </ul>
-
+        include ("view/view.php");
+        ?>
       </div>
-
+    </div>
   </section>
+
 <!--熱門排行-->
 
 <section id="clients" class="main">

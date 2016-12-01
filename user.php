@@ -49,29 +49,32 @@
 <!-- /header -->
 
 <!--Slider輪播-->
-<div class="container">
-  <div class="row">
-    <div class="span12">
-      <div id="myCarousel" class="carousel slide">
-        <ol class="carousel-indicators">
-          <?php
-          include 'index/slider/slider.php';
-          counts($display);
-          ?>
-        </ol>
 
-        <div class="carousel-inner" align='center'>
-          <?php
-          display($display, $sliderdir);
-          ?>
+<section id="blackbackground">
+  <div class="container">
+    <div class="row">
+      <div class="span12">
+        <div id="myCarousel" class="carousel slide">
+          <ol class="carousel-indicators">
+            <?php
+            include 'index/slider/slider.php';
+            counts($display);
+            ?>
+          </ol>
+
+          <div class="carousel-inner" align='center'>
+            <?php
+            display($display, $sliderdir);
+            ?>
+          </div>
+
+          <a class="carousel-control left" href="#myCarousel" data-slide="prev">&lsaquo;</a>
+          <a class="carousel-control right" href="#myCarousel" data-slide="next">&rsaquo;</a>
         </div>
-
-        <a class="carousel-control left" href="#myCarousel" data-slide="prev">&lsaquo;</a>
-        <a class="carousel-control right" href="#myCarousel" data-slide="next">&rsaquo;</a>
       </div>
     </div>
   </div>
-</div>
+</section>
 <!--Slider輪播-->
 
 </div>
@@ -79,42 +82,39 @@
 </section>
 <!--/Slider-->
 
-    <section class="container">
-      <form>
-        <fieldset>
-          <div class="row-fluid">
-            <div class="span6">
-              <legend>我的最愛</legend>
-              <table class="table table-bordered" >
-                <tr>
-                  <td>
-                    <?php
-                    include ("user/favorite.php");
-                    ?>
-                  </td>
-                </tr>
-              </table>
-            </div>
+<section class="container">
+  <form>
+    <fieldset>
+      <div class="row-fluid">
+        <div class="span6">
+          <legend>我的最愛</legend>
+          <table class="table table-bordered" >
+            <tr>
+              <td>
+                <?php
+                include ("user/favorite.php");
+                ?>
+              </td>
+            </tr>
+          </table>
+        </div>
 
-            <div class="span6">
-              <legend>留言區</legend>
+        <div class="span6">
+          <legend>留言區</legend>
 
-              <table class="table table-bordered">
-                <tr>
-                  <td>
-                    <?php
-                    include 'user/messages.php';
-                    ?>
-                  </td>
-                </tr>
-              </table>
-            </div>
-          </fieldset>
-        </form>
-    </section>
-    <!-- /404 error -->
-
-
+          <table class="table table-bordered">
+            <tr>
+              <td>
+                <?php
+                include 'user/messages.php';
+                ?>
+              </td>
+            </tr>
+          </table>
+        </div>
+      </fieldset>
+    </form>
+  </section>
 
 <!--Footer-->
 <?php

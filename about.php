@@ -11,7 +11,7 @@
     <meta name="viewport" content="width=device-width">
 
     <link rel="stylesheet" href="css/bootstrap.min.css">
-    <link rel="stylesheet" href="css/bootstrap-responsive.min.css">
+    <!-- <link rel="stylesheet" href="css/bootstrap-responsive.min.css"> -->
     <link rel="stylesheet" href="css/font-awesome.min.css">
     <link rel="stylesheet" href="css/main.css">
     <link rel="stylesheet" href="css/sl-slide.css">
@@ -32,63 +32,62 @@
 </head>
 
 <body>
+  <!--Header-->
+  <header class="navbar navbar-fixed-top">
+    <div class="navbar-inner">
+      <div class="container-fluid">
+        <a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </a>
 
-     <!--Header-->
-     <header class="navbar navbar-fixed-top">
-       <div class="navbar-inner">
-         <div class="container">
-           <a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
-             <span class="icon-bar"></span>
-             <span class="icon-bar"></span>
-             <span class="icon-bar"></span>
-           </a>
+        <a id="logo" class="pull-left" href="index.php"></a>
 
-           <a id="logo" class="pull-left" href="index.php"></a>
+      <div class="nav-collapse collapse pull-right">
 
-         <div class="nav-collapse collapse pull-right">
+        <ul class="nav">
+          <li>
+            <a href="index.php">首頁</a>
+          </li>
+          <li class="active">
+            <a href="about.php">認識高雄</a>
+          </li>
+          <li class="dropdown">
+            <a href="view.php" class="dropdown-toggle" data-toggle="dropdown">景點
+              <i class="icon-angle-down"></i>
+            </a>
+            <div class="dropdown-menu">
+              <table class="table table-hover ">
+                <tr>
+                  <td><a href="view.php">首頁</a></td>
+                  <?php
+                    include ("area/place.php");
+                    function Placess(){
+                      $place = "SELECT * From `places`";
+                      return $place;
+                    }
+                   ?>
+                </tr>
+              </table>
+            </div>
+          </li>
 
-           <ul class="nav">
-             <li>
-               <a href="index.php">首頁</a>
-             </li>
-             <li class="active">
-               <a href="about.php">認識高雄</a>
-             </li>
-             <li class="dropdown">
-               <a href="view.php" class="dropdown-toggle" data-toggle="dropdown">景點
-                 <i class="icon-angle-down"></i>
-               </a>
-               <div class="dropdown-menu">
-                 <table class="table table-hover ">
-                   <tr>
-                     <td><a href="view.php">首頁</a></td>
-                     <?php
-                       include ("area/place.php");
-                       function Placess(){
-                         $place = "SELECT * From `places`";
-                         return $place;
-                       }
-                      ?>
-                   </tr>
-                 </table>
-               </div>
-             </li>
+          <li><a href="forum.php">討論區</a></li>
+          <!--<li><a href="contact-us.html">Contact</a></li>-->
+          <?php
+             Member_Information();
+           ?>
+        </ul>
+      </div><!--/.nav-collapse -->
+    </div>
+  </div>
+  </header>
+  <!-- /header -->
 
-             <li><a href="forum.php">討論區</a></li>
-             <!--<li><a href="contact-us.html">Contact</a></li>-->
-             <?php
-                Member_Information();
-              ?>
-           </ul>
-         </div><!--/.nav-collapse -->
-       </div>
-     </div>
-     </header>
-
-    <!-- /header -->
 
     <section class="title">
-        <div class="container">
+        <div class="container-fluid">
             <div class="row-fluid">
                 <div class="span6">
                     <h1>高雄</h1>
@@ -108,7 +107,7 @@
     <!-- / .title -->
 
     <section id="about-us" class="container main">
-      <div class="container">
+      <div class="container-fluid">
         <div class="row-fluid">
           <div class="span6">
             <h2>介紹高雄</h2>
@@ -133,7 +132,7 @@
 
 
       <hr>
-      <div class="container">
+      <div class="container-fluid">
         <div class="center">
           <h3>高雄地區</h3>
           <!--<p class="lead">Look at some of the recent projects we have completed for our valuble clients</p>-->

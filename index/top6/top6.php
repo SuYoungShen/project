@@ -59,41 +59,9 @@
 
       ";
     }
-    // echo "
-    //   <div class='row'>
-    //   <div class='preview'>
-    //   <div class='span4'>
-    //     <img src='$display' class='img-responsive' style='max-height:243px'>
-    //     </div>
-    //     <div class='overlay'>
-    //     </div>
-    //     <div class='links'>
-    //         <a data-toggle='modal' href='#modal-$key' >
-    //           <i class='icon-eye-open'></i></a><a href=''><i class='icon-heart' onclick='Insert(
-    //                                                                                               \"$accounts\",
-    //                                                                                               \"$placeName\",
-    //                                                                                               \"$picName\",
-    //                                                                                               \"$picDir\",
-    //                                                                                               \"$WebSite\"
-    //                                                                                               )'></i>
-    //         </a>
-    //     </div>
-    //   </div>
-    //   <div class='desc'>
-    //     <h5>$placeName</h5>
-    //   </div>
-    //   </div>
-    //
-    //   <div id='modal-$key' class='modal hide fade'>
-    //     <a class='close-modal' href='javascript:;' data-dismiss='modal' aria-hidden='true'></a>
-    //     <div class='modal-body'>
-    //       <img src='$display' width='100%' style='max-height:400px' alt=' '>
-    //     </div>
-    //   </div>
-    // ";
 
   }
-echo "
+  echo "
 
     </div>
 
@@ -118,8 +86,7 @@ echo "
       echo "
       <div class='span4'>
         <img src='$display' class='img-responsive' style='max-height:243px'>
-        <div class='overlay'>
-        </div>
+        <div class='overlay'></div>
         <div class='links'>
           <a data-toggle='modal' href='#modal-$key' >
           <i class='icon-eye-open'></i></a><a href=''><i class='icon-heart' onclick='Insert(
@@ -145,44 +112,9 @@ echo "
 
       ";
     }
-    // echo "
-    //   <div class='row'>
-    //   <div class='preview'>
-    //   <div class='span4'>
-    //     <img src='$display' class='img-responsive' style='max-height:243px'>
-    //     </div>
-    //     <div class='overlay'>
-    //     </div>
-    //     <div class='links'>
-    //         <a data-toggle='modal' href='#modal-$key' >
-    //           <i class='icon-eye-open'></i></a><a href=''><i class='icon-heart' onclick='Insert(
-    //                                                                                               \"$accounts\",
-    //                                                                                               \"$placeName\",
-    //                                                                                               \"$picName\",
-    //                                                                                               \"$picDir\",
-    //                                                                                               \"$WebSite\"
-    //                                                                                               )'></i>
-    //         </a>
-    //     </div>
-    //   </div>
-    //   <div class='desc'>
-    //     <h5>$placeName</h5>
-    //   </div>
-    //   </div>
-    //
-    //   <div id='modal-$key' class='modal hide fade'>
-    //     <a class='close-modal' href='javascript:;' data-dismiss='modal' aria-hidden='true'></a>
-    //     <div class='modal-body'>
-    //       <img src='$display' width='100%' style='max-height:400px' alt=' '>
-    //     </div>
-    //   </div>
-    // ";
-
-    }
-    echo "
-
+  }
+  echo "
     </div>
-
   </div>
   ";
 

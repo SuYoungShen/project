@@ -258,7 +258,7 @@
 										</div>
 
 										<div class="widget-body">
-											<div class="widget-main">												
+											<div class="widget-main">
 												<section id="slide-show" >
 													<div id="slider" class="sl-slider-wrapper">
 														<div class="sl-slider">

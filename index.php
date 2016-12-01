@@ -14,7 +14,7 @@
 
     <!-- <link rel="stylesheet" href="css/bootstrap.min.css"> -->
     <link rel="stylesheet" href="css/bootstrap.min.css">
-    <link rel="stylesheet" href="css/bootstrap-responsive.min.css">
+    <!-- <link rel="stylesheet" href="css/bootstrap-responsive.min.css"> -->
     <link rel="stylesheet" href="css/font-awesome.min.css">
     <link rel="stylesheet" href="css/main.css">
     <link rel="stylesheet" href="css/sl-slide.css">
@@ -57,7 +57,7 @@
 
 </head>
 
-<body  style="background-color:#DDDDDD">
+<body>
   <!--Header-->
   <header class="navbar navbar-fixed-top">
     <div class="navbar-inner">
@@ -112,51 +112,33 @@
   </header>
   <!-- /header -->
 
-<div class="container">
-  <div class="row">
-    <div class="span12">
-      <div id="myCarousel" class="carousel slide">
-        <ol class="carousel-indicators">
-          <?php
-          include 'index/slider/slider.php';
-          counts($display);
-          ?>
-        </ol>
+  <!--Slider輪播-->
+  <section id="blackbackground">
+    <div class="container">
+      <div class="row">
+        <div class="span12">
+          <div id="myCarousel" class="carousel slide">
+            <ol class="carousel-indicators">
+              <?php
+              include 'index/slider/slider.php';
+              counts($display);
+              ?>
+            </ol>
 
-        <div class="carousel-inner" align='center'>
-          <?php
-          display($display, $sliderdir);
-          ?>
+            <div class="carousel-inner" align='center'>
+              <?php
+              display($display, $sliderdir);
+              ?>
+            </div>
+
+            <a class="carousel-control left" href="#myCarousel" data-slide="prev">&lsaquo;</a>
+            <a class="carousel-control right" href="#myCarousel" data-slide="next">&rsaquo;</a>
+          </div>
         </div>
-
-        <a class="carousel-control left" href="#myCarousel" data-slide="prev">&lsaquo;</a>
-        <a class="carousel-control right" href="#myCarousel" data-slide="next">&rsaquo;</a>
       </div>
     </div>
-  </div>
-</div>
-
-
-      <!--Slider輪播-->
-      <!-- <section id="slide-show" >
-        <div id="slider" class="sl-slider-wrapper">
-
-          <div class="sl-slider">
-            <?php
-              // include("index/slider/slider.php");
-            ?>
-
-          </div>
-
-          <nav id="nav-arrows" class="nav-arrows">
-            <span class="nav-arrow-prev"><i class="icon-angle-left"></i></span>
-            <span class="nav-arrow-next"><i class="icon-angle-right"></i></span>
-          </nav>
-
-        </div>
-
-      </section> -->
-      <!--Slider輪播-->
+  </section>
+  <!--Slider輪播-->
 
   <!--熱門排行-->
   <!-- <div class="container" > -->
@@ -181,8 +163,6 @@
     include("footer.php");
    ?>
   <!--/Footer-->
-
-
 
   <!--  Login form -->
   <?php
