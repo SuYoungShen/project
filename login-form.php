@@ -7,7 +7,8 @@
 
 <link rel="stylesheet" href="bc/assets/css/ace-rtl.min.css" />
 
-<div id="myModal" class="modal hide fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+
+<div id="myModal"   class="modal hide fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
   <div class="modal-header">
     <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
     <h3 id="myModalLabel">會員</h3>
@@ -48,14 +49,16 @@
           </div>
         </div>
       </div>
-      <div class="accordion-group">
+
+
+      <div class="accordion-group" >
         <div class="accordion-heading">
           <a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion2" href="#collapseTwo">
             <h4>會員註冊</h4>
 
           </a>
         </div>
-        <div id="collapseTwo" class="accordion-body collapse">
+        <div id="collapseTwo" class="accordion-body collapse" style="height:100px;overflow-y:scroll;overflow-x:hidden;background-color:white;">
           <div class="accordion-inner">
             <p> 輸入基本資料 (全部為必填)</p>
 

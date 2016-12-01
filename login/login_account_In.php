@@ -11,5 +11,6 @@ if (isset($_SESSION["login_account"]) && !empty($_SESSION["login_account"])) {
   }
 }else {
   $login_names="";
+  $email = "";
 }
  ?>
