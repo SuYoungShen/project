@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 4.6.4
--- https://www.phpmyadmin.net/
+-- version 4.5.2
+-- http://www.phpmyadmin.net
 --
 -- 主機: localhost
--- 產生時間： 2016-12-01 10:28:43
--- 伺服器版本: 5.7.15-log
--- PHP 版本： 5.6.26
+-- 產生時間： 2016 年 12 月 01 日 16:56
+-- 伺服器版本: 10.1.19-MariaDB
+-- PHP 版本： 5.6.28
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 SET time_zone = "+00:00";
@@ -61,13 +61,6 @@ CREATE TABLE `area` (
   `replydatetime` datetime NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
---
--- 資料表的匯出資料 `area`
---
-
-INSERT INTO `area` (`id`, `placename`, `viewpoint`, `pic`, `posted`, `message`, `reply`, `email`, `site`, `WebSite`, `datetime`, `replydatetime`) VALUES
-(25, '苓雅區', '85大樓', 'bc/view/place/images/1.jpg', '蘇湧盛', 's', '', 'd7339803@gmail.com', '', '../../../../project/area.php?id=39&viewpoint=85大樓&place_name=苓雅區', '2016-11-29 15:21:48', '0000-00-00 00:00:00');
-
 -- --------------------------------------------------------
 
 --
@@ -114,7 +107,8 @@ CREATE TABLE `favorite` (
 --
 
 INSERT INTO `favorite` (`Account`, `place`, `PicName`, `PicPath`, `WebSite`, `Datetime`) VALUES
-('aaaa', '85大樓夜景', '1.jpg', 'bc/index/top6/images/', '/project/index.php', '2016-11-21 08:54:06');
+('aaaa', '85大樓夜景', '1.jpg', 'bc/index/top6/images/', '/project/index.php', '2016-11-21 08:54:06'),
+('d7339803', '高雄蓮池潭', '2.jpg', 'bc/view/view/images/', '/project/view.php', '2016-12-01 14:40:36');
 
 -- --------------------------------------------------------
 
@@ -231,7 +225,7 @@ CREATE TABLE `slider` (
 --
 
 INSERT INTO `slider` (`id`, `name`, `path`, `datetime`) VALUES
-('0', '6.jpg', 'index/slider/images/', '2016-11-21 15:02:05'),
+('0', '1.jpg', 'index/slider/images/', '2016-11-21 15:02:05'),
 ('1', '2.jpg', 'index/slider/images/', '2016-11-21 15:02:05'),
 ('2', '3.jpg', 'index/slider/images/', '2016-11-21 15:02:05'),
 ('3', '4.jpg', 'index/slider/images/', '2016-11-21 15:02:05'),
@@ -257,12 +251,12 @@ CREATE TABLE `top` (
 --
 
 INSERT INTO `top` (`id`, `place`, `name`, `path`, `datetime`) VALUES
-('0', '', '1.jpg', 'index/top6/images/', '2016-11-21 09:28:46'),
-('1', '', '2.jpg', 'index/top6/images/', '2016-11-21 09:28:47'),
-('2', '', '3.jpg', 'index/top6/images/', '2016-11-21 09:28:47'),
-('3', '', '4.jpg', 'index/top6/images/', '2016-11-21 09:28:47'),
-('4', '', '5.jpg', 'index/top6/images/', '2016-11-21 09:28:47'),
-('5', '', '6.jpg', 'index/top6/images/', '2016-11-21 09:28:47');
+('0', '85大樓', '1.jpg', 'index/top6/images/', '2016-12-01 14:41:27'),
+('1', '蓮池潭', '2.jpg', 'index/top6/images/', '2016-12-01 14:41:45'),
+('2', '美麗島站', '3.jpg', 'index/top6/images/', '2016-12-01 14:44:43'),
+('3', '愛河', '4.jpg', 'index/top6/images/', '2016-12-01 14:44:50'),
+('4', '真愛碼頭', '5.jpg', 'index/top6/images/', '2016-12-01 14:45:00'),
+('5', '圖書總館', '6.jpg', 'index/top6/images/', '2016-12-01 14:45:09');
 
 -- --------------------------------------------------------
 
@@ -347,7 +341,7 @@ ALTER TABLE `top`
 -- 使用資料表 AUTO_INCREMENT `area`
 --
 ALTER TABLE `area`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=27;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
 --
 -- 使用資料表 AUTO_INCREMENT `forum`
 --
