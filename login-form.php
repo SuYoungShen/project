@@ -51,14 +51,14 @@
       </div>
 
 
-      <div class="accordion-group" >
+      <div class="accordion-group" style="height:200px;overflow-y:scroll;overflow-x:hidden;background-color:white;">
         <div class="accordion-heading">
           <a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion2" href="#collapseTwo">
             <h4>會員註冊</h4>
 
           </a>
         </div>
-        <div id="collapseTwo" class="accordion-body collapse" style="height:100px;overflow-y:scroll;overflow-x:hidden;background-color:white;">
+        <div id="collapseTwo" class="accordion-body collapse">
           <div class="accordion-inner">
             <p> 輸入基本資料 (全部為必填)</p>
 

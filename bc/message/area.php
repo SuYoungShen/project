@@ -32,14 +32,12 @@
           <a href='#'>$placename</a>
         </td>
         <td>$viewpoint</td>
-        <td class='hidden-480'>$posted</td>
+        <td>$posted</td>
         <td>$message</td>
         <td>$reply</td>
         <td>$email</td>
         <td>$site</td>
-        <td class='hidden-480'>
-          <span class='label label-sm label-success'>$datetime</span>
-        </td>
+        <td>$datetime</td>
 
         <td>
           <div class='hidden-sm hidden-xs action-buttons'>
@@ -75,7 +73,17 @@
                 <li>
                   <a href='#reply' class='tooltip-success' data-rel='tooltip' title='Edit' data-toggle='modal'>
                     <span class='green'>
-                      <i class='ace-icon fa fa-pencil-square-o bigger-120'></i>
+                      <i class='ace-icon fa fa-pencil-square-o bigger-120' onclick='Edit(
+                                                                                        \"$id\",
+                                                                                        \"$placenames[$key]\",
+                                                                                        \"$viewpoints[$key]\",
+                                                                                        \"$posteds[$key]\",
+                                                                                        \"$messages[$key]\",
+                                                                                        \"$replys[$key]\",
+                                                                                        \"$emails[$key]\",
+                                                                                        \"$sites[$key]\",
+                                                                                        \"$datetimes[$key]\"
+                                                                                        )'></i>
                     </span>
                   </a>
                 </li>
@@ -83,7 +91,7 @@
                 <li>
                   <a href='#' class='tooltip-error' data-rel='tooltip' title='Delete'>
                     <span class='red'>
-                      <i class='ace-icon fa fa-trash-o bigger-120'></i>
+                      <i class='ace-icon fa fa-trash-o bigger-120' onclick='bootboxs(\"$id\")'></i>
                     </span>
                   </a>
                 </li>

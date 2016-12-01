@@ -7,10 +7,10 @@
         <span class="icon-bar"></span>
       </a>
 
-      <a id="logo" class="pull-left" href="index.html"></a>
+      <a id="logo" class="pull-left" href="index.php"></a>
 
     <div class="nav-collapse collapse pull-right">
-    
+
       <ul class="nav">
         <li>
           <a href="index.php">首頁</a>

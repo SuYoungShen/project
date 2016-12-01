@@ -92,7 +92,7 @@ foreach ($memberse as $key => $value) {
             <li>
               <a href='#' class='tooltip-success' data-rel='tooltip' title='Edit'>
                 <span class='green'>
-                  <i class='ace-icon fa fa-pencil-square-o bigger-120'></i>
+                  <i class='ace-icon fa fa-pencil-square-o bigger-120' onclick='Edit(\"$accounts[$key]\",\"$passwords[$key]\",\"$emails[$key]\",\"$names[$key]\")'></i>
                 </span>
               </a>
             </li>
@@ -100,7 +100,7 @@ foreach ($memberse as $key => $value) {
             <li>
               <a href='#' class='tooltip-error' data-rel='tooltip' title='Delete'>
                 <span class='red'>
-                  <i class='ace-icon fa fa-trash-o bigger-120' ></i>
+                  <i class='ace-icon fa fa-trash-o bigger-120' onclick='bootboxs(\"$accounts[$key]\")'></i>
                 </span>
               </a>
             </li>

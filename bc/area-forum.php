@@ -93,7 +93,7 @@ $(function(){
 		 ?>
 	</head>
 
-	<body class="no-skin">
+	<body class="no-skin ">
 		<?php
 			include("header.php");
 		 ?>
@@ -195,6 +195,7 @@ $(function(){
 					 </script>
 				 </div><!--sidebar-->
 
+
 				 <div class="main-content">
 					 <div class="main-content-inner">
 						 <div class="breadcrumbs" id="breadcrumbs">
@@ -231,17 +232,14 @@ $(function(){
 
 							 <!--會員-->
 							 <div class="row">
-								 <div class="col-xs-12">
+								 <div class="col-xs-12 col-md-12">
 									 <div class="table-header">
-										 <!-- <a href="#reply" class="btn btn-app btn-green btn-xs" role="button" class="green" data-toggle="modal">
-											 回復
-										 </a> -->
+
 										 <a href="#" name="Delete" class="btn btn-app btn-danger btn-xs" role="button" class="green" data-toggle="modal">
 											 <i class="ace-icon fa fa-trash-o bigger-150"></i>
 										 </a>
 									 </div>
 
-									 <div>
 										 <table id="dynamic-table" class="table table-striped table-bordered table-hover">
 											 <thead>
 												 <tr>
@@ -274,7 +272,7 @@ $(function(){
 											 </tbody>
 										 </table>
 									 </div>
-								 </div>
+
 							 </div>
 							 <!--會員-->
 							 <hr>
@@ -397,9 +395,10 @@ $(function(){
 
 
 					 </div><!-- /.main-content-inner -->
-				 </div><!-- /.main-content -->
-			 </div><!-- /.main-container -->
-			</div><!-- /.main-content -->
+				 </div>
+
+			 </div>
+
 
 			<div class="footer">
 				<div class="footer-inner">
