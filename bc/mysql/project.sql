@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- 主機: localhost
--- 產生時間： 2016-11-28 16:56:29
+-- 產生時間： 2016-12-01 10:28:43
 -- 伺服器版本: 5.7.15-log
 -- PHP 版本： 5.6.26
 
@@ -50,11 +50,13 @@ CREATE TABLE `area` (
   `id` int(11) NOT NULL,
   `placename` char(100) COLLATE utf8_unicode_ci NOT NULL,
   `viewpoint` char(10) COLLATE utf8_unicode_ci NOT NULL,
+  `pic` varchar(100) COLLATE utf8_unicode_ci NOT NULL,
   `posted` char(10) COLLATE utf8_unicode_ci NOT NULL,
   `message` varchar(500) COLLATE utf8_unicode_ci NOT NULL,
   `reply` varchar(500) COLLATE utf8_unicode_ci NOT NULL,
   `email` varchar(36) COLLATE utf8_unicode_ci NOT NULL,
   `site` varchar(100) COLLATE utf8_unicode_ci NOT NULL,
+  `WebSite` varchar(200) COLLATE utf8_unicode_ci NOT NULL,
   `datetime` datetime NOT NULL,
   `replydatetime` datetime NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
@@ -63,10 +65,8 @@ CREATE TABLE `area` (
 -- 資料表的匯出資料 `area`
 --
 
-INSERT INTO `area` (`id`, `placename`, `viewpoint`, `posted`, `message`, `reply`, `email`, `site`, `datetime`, `replydatetime`) VALUES
-(10, '苓雅區', '85大樓', '蘇湧盛', '這裡好美呀~~~', '感謝回覆', 'd7339803@gmail.com', '', '2016-11-28 16:28:27', '2016-11-28 16:46:34'),
-(11, '鳥松區', '澄清湖', '蘇湧盛', '超喜歡這裡', '感謝回覆~~~', 'd7339803@gmail.com', '', '2016-11-28 16:47:24', '2016-11-28 16:47:35'),
-(12, '鳥松區', '澄清湖', '蘇湧盛', '讚哦', '', 'd7339803@gmail.com', '', '2016-11-28 16:48:33', '0000-00-00 00:00:00');
+INSERT INTO `area` (`id`, `placename`, `viewpoint`, `pic`, `posted`, `message`, `reply`, `email`, `site`, `WebSite`, `datetime`, `replydatetime`) VALUES
+(25, '苓雅區', '85大樓', 'bc/view/place/images/1.jpg', '蘇湧盛', 's', '', 'd7339803@gmail.com', '', '../../../../project/area.php?id=39&viewpoint=85大樓&place_name=苓雅區', '2016-11-29 15:21:48', '0000-00-00 00:00:00');
 
 -- --------------------------------------------------------
 
@@ -131,6 +131,13 @@ CREATE TABLE `forum` (
   `reply` varchar(10) COLLATE utf8_unicode_ci NOT NULL,
   `datetime` datetime NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+
+--
+-- 資料表的匯出資料 `forum`
+--
+
+INSERT INTO `forum` (`id`, `theme`, `posted`, `email`, `message`, `reply`, `datetime`) VALUES
+(1, 'sss', 'sss', 'd7339803@gmail.com', '蘇湧盛', 'ss', '2016-11-29 15:40:07');
 
 -- --------------------------------------------------------
 
@@ -340,12 +347,12 @@ ALTER TABLE `top`
 -- 使用資料表 AUTO_INCREMENT `area`
 --
 ALTER TABLE `area`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=13;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=27;
 --
 -- 使用資料表 AUTO_INCREMENT `forum`
 --
 ALTER TABLE `forum`
-  MODIFY `id` int(100) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `id` int(100) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 --
 -- 使用資料表 AUTO_INCREMENT `place`
 --
@@ -355,7 +362,7 @@ ALTER TABLE `place`
 -- 使用資料表 AUTO_INCREMENT `places`
 --
 ALTER TABLE `places`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=42;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=41;
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
