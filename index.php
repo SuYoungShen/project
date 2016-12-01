@@ -117,24 +117,23 @@
     <div class="span12">
       <div id="myCarousel" class="carousel slide">
         <ol class="carousel-indicators">
-          <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
-          <li data-target="#myCarousel" data-slide-to="1"></li>
-          <li data-target="#myCarousel" data-slide-to="2"></li>
+          <?php
+          include 'index/slider/slider.php';
+          counts($display);
+          ?>
         </ol>
 
         <div class="carousel-inner" align='center'>
-          <div class="active item"><img src="bc\index\slider\images\1.jpg" width="60%"  class='img-responsive' alt=""></div>
-          <div class="item"><img src="bc\index\slider\images\2.jpg" width="60%"  class='img-responsive' alt=""></div>
-          <div class="item"><img src="bc\index\slider\images\3.jpg" width="60%"  class='img-responsive' alt=""></div>
+          <?php
+          display($display, $sliderdir);
+          ?>
         </div>
 
         <a class="carousel-control left" href="#myCarousel" data-slide="prev">&lsaquo;</a>
         <a class="carousel-control right" href="#myCarousel" data-slide="next">&rsaquo;</a>
       </div>
-
+    </div>
   </div>
-</div>
-
 </div>
 
 
@@ -173,84 +172,6 @@
           include 'index/top6/top6.php';
          ?>
        </div>
-        <!-- <div class="gallery col-4">
-          <div class='preview'>
-            <div class="row-fluid">
-              <div class="span4">
-                <img src='bc\index\top6\images\1.jpg' class='img-responsive' style="max-height:243px">
-                <div class='overlay'>
-                </div>
-
-                <div class='desc'>
-                  <h5>$placeName</h5>
-                </div>
-              </div>
-              <div class="span4">
-                <img src='bc\index\top6\images\2.jpg' class='img-responsive' style="max-height:243px">
-                <div class='overlay'>
-                </div>
-
-                <div class='desc'>
-                  <h5>$placeName</h5>
-                </div>
-              </div>
-              <div class="span4">
-                <img src='bc\index\top6\images\3.jpg' class='img-responsive' style="max-height:243px">
-                <div class='overlay'>
-                </div>
-
-                <div class='desc'>
-                  <h5>$placeName</h5>
-                </div>
-              </div>
-            </div>
-
-            <div class="row-fluid">
-              <div class="span4">
-                <img src='bc\index\top6\images\4.jpg' class='img-responsive' style="max-height:243px">
-                <div class='overlay'>
-                </div>
-
-                <div class='desc'>
-                  <h5>$placeName</h5>
-                </div>
-              </div>
-              <div class="span4">
-                <img src='bc\index\top6\images\5.jpg' class='img-responsive' style="max-height:243px">
-                <div class='overlay'>
-                </div>
-
-                <div class='desc'>
-                  <h5>$placeName</h5>
-                </div>
-              </div>
-              <div class="span4">
-                <img src='bc\index\top6\images\6.jpg' class='img-responsive' style="max-height:243px">
-                <div class='overlay'>
-                </div>
-
-                <div class='desc'>
-                  <h5>$placeName</h5>
-                </div>
-              </div>
-            </div>
-          </div>
-
-          <div id='modal-$key' class='modal hide fade'>
-            <a class='close-modal' href='javascript:;' data-dismiss='modal' aria-hidden='true'></a>
-            <div class='modal-body'>
-              <img src='bc\index\top6\images\1.jpg' width='100%' style='max-height:400px' alt=' '>
-            </div>
-          </div>
-
-
-            <?php
-              // include("index/top6/top6.php");
-
-            ?>
-        </div> -->
-
-
     </section>
   <!-- </div> -->
   <!--熱門排行-->
@@ -263,53 +184,9 @@
 
 
 
-  <!-- Button to trigger modal -->
-  <a href="#myModal" role="button" class="btn" data-toggle="modal">執行範例對話視窗</a>
-
-  <!-- Modal -->
-  <div id="myModal" class="modal hide fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
-    <div class="modal-header">
-      <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
-      <h3 id="myModalLabel">登入</h3>
-    </div>
-    <div class="modal-body">
-
-
-      <form method="post" >
-        <span >
-          <input type="text" name="login_account" class="form-control" placeholder="帳號" />
-
-        </span>
-        <br>
-        <span>
-          <input type="password" name="login_password" class="form-control" placeholder="密碼" />
-
-        </span>
-
-        <div class="space"></div>
-
-        <div class="clearfix">
-          <button type="submit" name="login" class="width-30  btn btn-sm btn-primary">
-            <i class="ace-icon fa fa-key"></i>
-            <span class="bigger-110">登入</span>
-          </button>
-        </div>
-
-        <div class="space-4"></div>
-      </form>
-
-
-
-    </div>
-    <div class="modal-footer">
-      <button class="btn" data-dismiss="modal" aria-hidden="true">關閉</button>
-      <button class="btn btn-primary">儲存變更</button>
-    </div>
-
-  </div>
   <!--  Login form -->
   <?php
-    // include("login-form.php");
+    include("login-form.php");
    ?>
   <!--  /Login form -->
 

@@ -49,27 +49,29 @@
 <!-- /header -->
 
 <!--Slider輪播-->
-<section id="slide-show" >
-  <div id="slider" class="sl-slider-wrapper">
-    <!--Slider Items-->
-    <!-- <div class="span12"> -->
-    <div class="sl-slider">
-      <?php
-        include("index/slider/slider.php");
-      ?>
-      <!-- </div> -->
-    </div>
-    <!--/Slider Items-->
+<div class="container">
+  <div class="row">
+    <div class="span12">
+      <div id="myCarousel" class="carousel slide">
+        <ol class="carousel-indicators">
+          <?php
+          include 'index/slider/slider.php';
+          counts($display);
+          ?>
+        </ol>
 
-    <!--Slider Next Prev button-->
-    <nav id="nav-arrows" class="nav-arrows">
-      <span class="nav-arrow-prev"><i class="icon-angle-left"></i></span>
-      <span class="nav-arrow-next"><i class="icon-angle-right"></i></span>
-    </nav>
-    <!--/Slider Next Prev button-->
+        <div class="carousel-inner" align='center'>
+          <?php
+          display($display, $sliderdir);
+          ?>
+        </div>
+
+        <a class="carousel-control left" href="#myCarousel" data-slide="prev">&lsaquo;</a>
+        <a class="carousel-control right" href="#myCarousel" data-slide="next">&rsaquo;</a>
+      </div>
+    </div>
   </div>
-  <!-- /slider-wrapper -->
-</section>
+</div>
 <!--Slider輪播-->
 
 </div>
@@ -77,7 +79,7 @@
 </section>
 <!--/Slider-->
 
-    <section  class="container">
+    <section class="container">
       <form>
         <fieldset>
           <div class="row-fluid">
