@@ -1,11 +1,11 @@
 <?php
   $dbname="project";
-  include ("mysql/connect.php");//連接資料庫
+  include ("bc/mysql/connect.php");//連接資料庫
   include ("common.php");//常用語法
 
 $sliderse = $db->query(sliderse());//查詢slider資料表
 $display = $sliderse->fetchAll();
-$sliderdir='index/slider/images/';//slider放毒片路徑
+$sliderdir='bc/index/slider/images/';//slider放毒片路徑
 
 echo "<li data-target='#myCarousel' data-slide-to='0' class='active'></li>";
 

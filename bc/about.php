@@ -1,6 +1,6 @@
 
 <!DOCTYPE html>
-<html lang="en">
+<html lang="zh-Hant">
 	<head>
 		<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
 		<meta charset="utf-8" />
@@ -220,7 +220,7 @@
 						</div><!-- /.nav-search -->
 					</div>
 
-					<div class="page-content">
+					<div class="container-fluid">
 						<div class="row">
 							<div class="col-xs-12 col-sm-12">
 								<div class="widget-box">
@@ -261,25 +261,9 @@
 							</div><!-- /.col -->
 						</div>
 
-						<!-- <ul class="nav nav-tabs" id="myTab" data-toggle="tab" data-toggle="pill"	>
-						  <li class="active"><a href="#home">Home</a></li>
-						  <li><a href="#profile">Profile</a></li>
-						  <li><a href="#messages">Messages</a></li>
-						  <li><a href="#settings">Settings</a></li>
-						</ul>
-
-						<div class="tab-content">
-						  <div class="tab-pane active" id="home">sss</div>
-						  <div class="tab-pane" id="profile">ccc</div>
-						  <div class="tab-pane" id="messages">scsc</div>
-						  <div class="tab-pane" id="settings">sssss</div>
-						</div> -->
-
-
 						<div class="hr hr-18 dotted hr-double"></div>
+
 						<div class="row">
-
-
 							<!--輪放-->
 							<div class="page-header">
 								<h1>輪放</h1>
@@ -305,82 +289,82 @@
 									<div class="widget-body">
 										<div class="widget-main">
 											<form class="form-horizontal"  role="form" method="post"
-															enctype="multipart/form-data">
-												<div class="form-group">
-													<div class="col-xs-12">
-														<input name="carousel[]" type="file"
-														id="id-input-file-3" multiple="multiple" />
-													</div>
+											enctype="multipart/form-data">
+											<div class="form-group">
+												<div class="col-xs-12">
+													<input name="carousel[]" type="file"
+													id="id-input-file-3" multiple="multiple" />
 												</div>
+											</div>
 
-												<label>
-													<br/>
-													<button class="btn btn-info" name="carouselIn" type="submit">
-														<i class="ace-icon fa fa-check bigger-110"></i>
-														送出
-													</button>
+											<label>
+												<br/>
+												<button class="btn btn-info" name="carouselIn" type="submit">
+													<i class="ace-icon fa fa-check bigger-110"></i>
+													送出
+												</button>
 
-													&nbsp; &nbsp; &nbsp;
+												&nbsp; &nbsp; &nbsp;
 
-												</label>
-												<label>
-													<br/>
-													<button class="btn btn-info" type="submit" name = "clear">
-														<i class="ace-icon fa fa-check bigger-110"></i>
-														清除name
-													</button>
-													&nbsp; &nbsp; &nbsp;
-												</label>
-											</form>
-										</div>
+											</label>
+											<label>
+												<br/>
+												<button class="btn btn-info" type="submit" name = "clear">
+													<i class="ace-icon fa fa-check bigger-110"></i>
+													清除name
+												</button>
+												&nbsp; &nbsp; &nbsp;
+											</label>
+										</form>
 									</div>
 								</div>
 							</div>
-
-							<div class="col-sm-8">
-								<div class="widget-box">
-									<div class="widget-header">
-										<h4 class="widget-title">輪放</h4>
-
-										<span class="widget-toolbar">
-											<a href="#" data-action="settings">
-												<i class="ace-icon fa fa-cog"></i>
-											</a>
-
-											<a href="#" data-action="reload">
-												<i class="ace-icon fa fa-refresh"></i>
-											</a>
-
-											<a href="#" data-action="collapse">
-												<i class="ace-icon fa fa-chevron-up"></i>
-											</a>
-
-											<a href="#" data-action="close">
-												<i class="ace-icon fa fa-times"></i>
-											</a>
-										</span>
-									</div>
-
-									<div class="widget-body">
-										<div class="widget-main">
-											<ul class="ace-thumbnails clearfix">
-												<?php
-												include("about/carousel.php");
-												?>
-											</ul>
-										</div><!-- PA5GE CONTENT ENDS -->
-									</div>
-								</div>
-							</div>
-							<!--輪放-->
 						</div>
+
+						<div class="col-sm-8">
+							<div class="widget-box">
+								<div class="widget-header">
+									<h4 class="widget-title">輪放</h4>
+
+									<span class="widget-toolbar">
+										<a href="#" data-action="settings">
+											<i class="ace-icon fa fa-cog"></i>
+										</a>
+
+										<a href="#" data-action="reload">
+											<i class="ace-icon fa fa-refresh"></i>
+										</a>
+
+										<a href="#" data-action="collapse">
+											<i class="ace-icon fa fa-chevron-up"></i>
+										</a>
+
+										<a href="#" data-action="close">
+											<i class="ace-icon fa fa-times"></i>
+										</a>
+									</span>
+								</div>
+
+								<div class="widget-body">
+									<div class="widget-main">
+										<ul class="ace-thumbnails clearfix">
+											<?php
+											include("about/carousel.php");
+											?>
+										</ul>
+									</div><!-- PA5GE CONTENT ENDS -->
+								</div>
+							</div>
+						</div>
+						<!--輪放-->
 					</div>
+
 
 					<div class="hr hr-18 dotted hr-double"></div>
 
 					<!--地區-->
 					<div class="row">
-						<div class="col-sm-12 ">
+						<div class="col-sm-12">
 							<div class="table-header">
 								高雄地區
 								<a href="#place" class="btn btn-app btn-green btn-xs" role="button" class="green" data-toggle="modal">
@@ -392,8 +376,8 @@
 							</div>
 
 							<!-- 地區 -->
-							<div >
-								<table id="dynamic-table" class="table table-striped table-bordered table-hover">
+							<div class="table-responsive">
+								<table id="dynamic-table" class="table  table-striped table-bordered table-hover">
 									<thead>
 										<tr>
 											<th class="center">
@@ -404,22 +388,22 @@
 											</th>
 											<th>地區名</th>
 											<th>地區介紹</th>
-											<th class="hidden-480"> 照片 </th>
+											<th> 照片 </th>
 
-											<th class="hidden-480"><i class="ace-icon fa fa-clock-o bigger-110 hidden-480"></i> 時間</th>
+											<th>時間</th>
 
 											<th></th>
 										</tr>
 									</thead>
-                  <tbody>
-                    <?php
-                    include("about/place.php");
-                    ?>
-                  </tbody>
+									<tbody>
+										<?php
+										include("about/place.php");
+										?>
+									</tbody>
 								</table>
-							</div>
+							</div><!--table-responsive-->
 						</div>
-					</div>
+					</div><!--row-->
 					<!--地區-->
 
 					<div class="hr hr-18 dotted hr-double"></div>
@@ -453,14 +437,17 @@
 								<div class="widget-body">
 									<div class="widget-main">
 										<?php
-											include("about/marquee.php");
+										include("about/marquee.php");
 										?>
 									</div>
 								</div>
 							</div>
 						</div>
-					</div>
+					</div><!--row-->
+
 					<!--跑馬燈-->
+
+				</div><!--container-fluid-->
 
 					<!--place-->
 					<div id="place" class="modal fade" tabindex="-1">
@@ -756,11 +743,12 @@
 				$('#dynamic-table')
 				//.wrap("<div class='dataTables_borderWrap' />")   //if you are applying horizontal scrolling (sScrollX)
 				.dataTable( {
-					bAutoWidth: false,
+					responsive: true,
+					bAutoWidth: true,
 					"aoColumns": [
-						{ "bSortable": false },
+						{ "bSortable": true },
 						null, null,null, null,
-						{ "bSortable": false }
+						{ "bSortable": true }
 					],
 					"aaSorting": [],
 
@@ -774,7 +762,7 @@
 					//Note: if you are applying horizontal scrolling (sScrollX) on a ".table-bordered"
 					//you may want to wrap the table inside a "div.dataTables_borderWrap" element
 
-					//"iDisplayLength": 50
+					"iDisplayLength": 50
 					} );
 				//oTable1.fnAdjustColumnSizing();
 

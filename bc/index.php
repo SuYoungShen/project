@@ -261,20 +261,27 @@
 
 										<div class="widget-body">
 											<div class="widget-main">
-												<section id="slide-show" >
-													<div id="slider" class="sl-slider-wrapper">
-														<div class="sl-slider">
-														<?php
-															include ("index/slider/slider.php");
-														 ?>
+												<!--Slider輪播-->
+												<section id="blackbackground">
+													<div id="myCarousel" class="carousel slide">
+														<ol class="carousel-indicators">
+															<?php
+																include 'index/slider/slider.php';
+																counts($display);
+															?>
+														</ol>
+
+														<div class="carousel-inner" align='center'>
+															<?php
+																display($display, $sliderdir);
+															?>
 														</div>
 
-														<nav id="nav-arrows" class="nav-arrows">
-															<span class="nav-arrow-prev"><i class="icon-angle-left"></i></span>
-															<span class="nav-arrow-next"><i class="icon-angle-right"></i></span>
-														</nav>
+														<a class="carousel-control left" href="#myCarousel" data-slide="prev">&lsaquo;</a>
+														<a class="carousel-control right" href="#myCarousel" data-slide="next">&rsaquo;</a>
 													</div>
 												</section>
+												<!--Slider輪播-->
 											</div>
 										</div>
 									</div>
