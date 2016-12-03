@@ -211,7 +211,7 @@
 
 				<!--景點-->
 				<div class="row">
-					<div class="col-sm-12 ">
+					<div class="col-sm-12">
 						<div class="table-header">
 							地區景點
 							<a href="#place" class="btn btn-app btn-green btn-xs" role="button" class="green" data-toggle="modal">
@@ -222,32 +222,30 @@
 							</a>
 						</div>
 
-						<div>
-							<table id="dynamic-table" class="table table-striped table-bordered table-hover">
-								<thead>
-									<tr>
-										<th class="center">
-											<label class="pos-rel">
-												<input type="checkbox" class="ace" />
-												<span class="lbl"></span>
-											</label>
-										</th>
-										<th>地區名</th>
-										<th>景點名</th>
-										<th>景點介紹</th>
-										<th class="hidden-480">如何到達 </th>
-											<th class="hidden-480"> 照片 </th>
-										<th>修改時間</th>
-										<th></th>
-									</tr>
-								</thead>
-								<tbody>
-									<?php
-										include("view/place.php");
-									?>
-								</tbody>
-							</table>
-						</div>
+						<table id="dynamic-table" class="table table-responsive table-bordered table-hover">
+							<thead>
+								<tr>
+									<th class="center">
+										<label class="pos-rel">
+											<input type="checkbox" class="ace" />
+											<span class="lbl"></span>
+										</label>
+									</th>
+									<th>地區名</th>
+									<th>景點名</th>
+									<th>景點介紹</th>
+									<th class="hidden-480">如何到達 </th>
+									<th class="hidden-480"> 照片 </th>
+									<th>修改時間</th>
+									<th></th>
+								</tr>
+							</thead>
+							<tbody>
+								<?php
+								include("view/place.php");
+								?>
+							</tbody>
+						</table>
 					</div>
 				</div>
 				<!--景點-->

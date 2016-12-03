@@ -1,13 +1,13 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="zh-Hant">
 	<head>
-		<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+		<!-- <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" /> -->
 		<meta charset="utf-8" />
 		<title>首頁</title>
 
 		<meta name="description" content="Common form elements and layouts" />
-		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0" />
-
+		<!-- <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0" /> -->
+		<meta name="viewport" content="width=device-width, initial-scale=1">
 		<!-- bootstrap & fontawesome -->
 		<link rel="stylesheet" href="assets/css/bootstrap.min.css" />
 		<link rel="stylesheet" href="assets/font-awesome/4.2.0/css/font-awesome.min.css" />
@@ -75,15 +75,17 @@
 	</head>
 
 	<body class="no-skin">
+
 		<?php
 			include("header.php");
 		?>
+
 		<div class="main-container" id="main-container">
 			<script type="text/javascript">
 				try{ace.settings.check('main-container' , 'fixed')}catch(e){}
 			</script>
 
-			<div id="sidebar" class="sidebar responsive">
+			<div id="sidebar" class="sidebar responsive ">
 				<script type="text/javascript">
 					try{ace.settings.check('sidebar' , 'fixed')}catch(e){}
 				</script>
@@ -196,7 +198,7 @@
 						</div><!-- /.nav-search -->
 					</div>
 
-					<div class="page-content">
+					<div class="container-fluid">
 
 						<div class="page-header">
 							<h1>輪播照片</h1>
@@ -280,93 +282,97 @@
 							</div>
 						</div>
 							<!--輪播照片-->
-								<div class="hr hr-18 dotted hr-double"></div>
-								<div class="page-header">
-									<h1>Top6</h1>
-								</div><!-- /.page-header -->
+								<div class="container-fluid">
+									<div class="hr hr-18 dotted hr-double"></div>
 
-								<div class="row">
-									<div class="col-sm-4">
-										<div class="widget-box">
-											<div class="widget-header">
-												<h4 class="widget-title">上TOP6照片</h4>
+										<div class="page-header">
+											<h1>Top6</h1>
+										</div><!-- /.page-header -->
 
-												<div class="widget-toolbar">
-													<a href="#" data-action="collapse">
-														<i class="ace-icon fa fa-chevron-up"></i>
-													</a>
 
-													<a href="#" data-action="close">
-														<i class="ace-icon fa fa-times"></i>
-													</a>
-												</div>
-											</div>
+										<div class="row">
+											<div class="col-sm-4">
+												<div class="widget-box">
+													<div class="widget-header">
+														<h4 class="widget-title">上TOP6照片</h4>
 
-											<div class="widget-body">
-												<div class="widget-main">
-													<form class="form-horizontal"  role="form" method="post"
-																	enctype="multipart/form-data">
-														<div class="form-group">
-															<div class="col-xs-12">
-																<input name="top6[]" type="file"
-																	id="id-input-file-4" multiple="multiple" />
-															</div>
+														<div class="widget-toolbar">
+															<a href="#" data-action="collapse">
+																<i class="ace-icon fa fa-chevron-up"></i>
+															</a>
+
+															<a href="#" data-action="close">
+																<i class="ace-icon fa fa-times"></i>
+															</a>
 														</div>
+													</div>
 
-														<label>
-															<br/>
-															<button class="btn btn-info" name="insert" type="submit" >
-																<i class="ace-icon fa fa-check bigger-110"></i>
-																送出
-															</button>
-															&nbsp; &nbsp; &nbsp;
-														</label>
+													<div class="widget-body">
+														<div class="widget-main">
+															<form class="form-horizontal"  role="form" method="post"
+															enctype="multipart/form-data">
+															<div class="form-group">
+																<div class="col-xs-12">
+																	<input name="top6[]" type="file"
+																	id="id-input-file-4" multiple="multiple" />
+																</div>
+															</div>
 
-														<label>
-															<br/>
-															<button class="btn btn-info" type="submit" name = "clear">
-																<i class="ace-icon fa fa-check bigger-110"></i>
-																清除name
-															</button>
-															&nbsp; &nbsp; &nbsp;
-														</label>
-													</form>
+															<label>
+																<br/>
+																<button class="btn btn-info" name="insert" type="submit" >
+																	<i class="ace-icon fa fa-check bigger-110"></i>
+																	送出
+																</button>
+																&nbsp; &nbsp; &nbsp;
+															</label>
+
+															<label>
+																<br/>
+																<button class="btn btn-info" type="submit" name = "clear">
+																	<i class="ace-icon fa fa-check bigger-110"></i>
+																	清除name
+																</button>
+																&nbsp; &nbsp; &nbsp;
+															</label>
+														</form>
+													</div>
 												</div>
 											</div>
 										</div>
-									</div>
-									<div class="col-sm-8">
-										<div class="widget-box">
-											<div class="widget-header">
-												<h4 class="widget-title">Top6</h4>
+										<div class="col-sm-8">
+											<div class="widget-box">
+												<div class="widget-header">
+													<h4 class="widget-title">Top6</h4>
 
-												<span class="widget-toolbar">
-													<a href="#" data-action="settings">
-														<i class="ace-icon fa fa-cog"></i>
-													</a>
+													<span class="widget-toolbar">
+														<a href="#" data-action="settings">
+															<i class="ace-icon fa fa-cog"></i>
+														</a>
 
-													<a href="#" data-action="reload">
-														<i class="ace-icon fa fa-refresh"></i>
-													</a>
+														<a href="#" data-action="reload">
+															<i class="ace-icon fa fa-refresh"></i>
+														</a>
 
-													<a href="#" data-action="collapse">
-														<i class="ace-icon fa fa-chevron-up"></i>
-													</a>
+														<a href="#" data-action="collapse">
+															<i class="ace-icon fa fa-chevron-up"></i>
+														</a>
 
-													<a href="#" data-action="close">
-														<i class="ace-icon fa fa-times"></i>
-													</a>
-												</span>
-											</div>
+														<a href="#" data-action="close">
+															<i class="ace-icon fa fa-times"></i>
+														</a>
+													</span>
+												</div>
 
-											<div class="widget-body">
-												<div class="widget-main">
-													<ul class="ace-thumbnails clearfix">
-														<?php
+												<div class="widget-body">
+													<div class="widget-main">
+														<ul class="ace-thumbnails clearfix">
+															<?php
 															include ("index/top6/top6.php");
-														?>
-													</ul>
-												</div><!-- PAGE CONTENT ENDS -->
+															?>
+														</ul>
+													</div><!-- PAGE CONTENT ENDS -->
+												</div>
 											</div>
 										</div>
 									</div>

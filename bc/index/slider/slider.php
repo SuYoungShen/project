@@ -150,7 +150,7 @@ if (!isset($_SESSION["slidernum"]) && !isset($_SESSION["slidernums"])) {
     <div class='sl-slide item$key' data-orientation='horizontal' data-slice1-rotation='-25' data-slice2-rotation='-25' data-slice1-scale='2' data-slice2-scale='2'>
       <div class='sl-slide-inner'>
 
-          <img src='$display' alt='' style='width:100%;height:100%'/>
+          <img src='$display' alt='' class='img-responsive'/>
           <!--<h2>$picNames</h2>-->
           <!-- <h3 class='gap'>Tincidunt condimentum eros</h3>
           <a class='btn btn-large btn-transparent' href='#'>Learn More</a> -->
