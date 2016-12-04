@@ -144,16 +144,19 @@
   <!-- <div class="container" > -->
     <section id="recent-works">
       <div class="container">
-        <div class="center">
-          <h3>TOP6</h3>
-          <!--<p class="lead">高雄熱門景點</p>-->
+        <div class="row">
+          <div class="center">
+            <h3>TOP6</h3>
+            <!--<p class="lead">高雄熱門景點</p>-->
+          </div>
+          <div class="gap"></div>
+          <div class="gallery span12">
+            <?php
+            include 'index/top6/top6.php';
+            ?>
+          </div>
         </div>
-        <div class="gap"></div>
-        <div class="gallery col-4">
-        <?php
-          include 'index/top6/top6.php';
-         ?>
-       </div>
+      </div>
     </section>
   <!-- </div> -->
   <!--熱門排行-->

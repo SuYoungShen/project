@@ -103,7 +103,7 @@
   function Display($displays, $id, $accounts, $viewpoint, $picnames, $picDir, $WebSite){
     echo "
       <div class='span4'>
-        <img alt=' ' src='$displays' style='max-height:243px'>
+        <img alt=' ' src='$displays' >
         <div class='overlay'></div>
         <div class='links'>
           <a data-toggle='modal' href='#modal-$id'>

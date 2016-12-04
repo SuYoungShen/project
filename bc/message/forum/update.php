@@ -29,9 +29,9 @@
                           ForumUp(
                                   $id,
                                   $theme,
-                                  $posted,
-                                  $email,
                                   $message,
+                                  $email,
+                                  $posted,
                                   $reply,
                                   $datetime
                                 )

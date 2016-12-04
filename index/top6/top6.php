@@ -30,7 +30,7 @@
 
       echo "
       <div class='span4'>
-        <img src='$display' class='img-responsive' style='max-height:243px'>
+        <img src='$display' class='img-responsive'>
         <div class='overlay'>
         </div>
         <div class='links'>
@@ -85,7 +85,7 @@
 
       echo "
       <div class='span4'>
-        <img src='$display' class='img-responsive' style='max-height:243px'>
+        <img src='$display' class='img-responsive'>
         <div class='overlay'></div>
         <div class='links'>
           <a data-toggle='modal' href='#modal-$key' >

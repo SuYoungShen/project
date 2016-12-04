@@ -141,11 +141,13 @@
 <!--熱門排行-->
   <section id="portfolio" >
     <div class="container">
-      <div class="gap"></div>
-      <div class="gallery col-4">
-        <?php
-        include ("view/view.php");
-        ?>
+      <div class="row">
+        <div class="gap"></div>
+        <div class="gallery span12">
+          <?php
+          include ("view/view.php");
+          ?>
+        </div>
       </div>
     </div>
   </section>

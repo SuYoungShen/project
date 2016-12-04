@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 4.5.2
--- http://www.phpmyadmin.net
+-- version 4.6.4
+-- https://www.phpmyadmin.net/
 --
 -- 主機: localhost
--- 產生時間： 2016 年 12 月 04 日 23:24
--- 伺服器版本: 10.1.19-MariaDB
--- PHP 版本： 5.6.28
+-- 產生時間： 2016-12-05 04:57:32
+-- 伺服器版本: 5.7.15-log
+-- PHP 版本： 5.6.26
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 SET time_zone = "+00:00";
@@ -38,7 +38,8 @@ CREATE TABLE `about` (
 INSERT INTO `about` (`about`, `datetime`) VALUES
 ('高雄市位於臺灣西南部東經120.15度、北緯22.31度，面積為153.6029平方公里，是臺灣第二大都市，也是台灣人口密度最高與重工業最發達的都市；而位於臺灣西南部東經120.24度、北緯22.3度，面積2792.6744平方公里的高雄縣，北鄰南投縣、東鄰嘉義縣和台南市、南鄰屏東縣、東鄰花蓮縣和台東縣，為臺灣第四大都市，在2010年12月25日五都改制後與高雄市合併，並與台北市、新北市(原台北縣)、台中市、台南市並列臺灣五大直轄市。合併後的高雄市行政區域劃分除原有的楠梓區、左營區、鼓山區、三民區、苓雅區、新興區、前金區、鹽埕區、小港區、旗津區、前鎮區之外，另新增鳳山區、岡山區、旗山區、美濃區、大寮區、茄萣區、永安區、大園區、大社區、杉林區、仁武區、田寮區、燕巢區、路竹區、阿蓮區、甲仙區、大樹區、湖內區、桃源區、鳥松區、彌陀區、那瑪夏區(原三民鄉)、梓官區、內門區、茂林區、橋頭區、六龜區、林園區等共39個行政區，為五都中最多行政區的直轄市。', '2016-10-18 02:01:04'),
 ('ssssss', '2016-10-18 19:47:45'),
-('高雄市位於臺灣西南部東經120.15度、北緯22.31度，面積為153.6029平方公里', '2016-11-21 15:10:56');
+('高雄市位於臺灣西南部東經120.15度、北緯22.31度，面積為153.6029平方公里', '2016-11-21 15:10:56'),
+('高雄市是中華民國的直轄市，位於臺灣本島西南部的都市，由原高雄直轄市與原高雄縣於2010年12月25日合併而來。其轄域東北至中央山脈以及玉山主峰，西南至南海上之南沙太平島、中洲島，以及東沙群島。順時針方向與臺南市、嘉義縣、南投縣、花蓮縣、臺東縣、屏東縣等縣市相鄰。面積達2,952平方公里；戶籍人口約278萬人，為台灣重要的商港及軍港乃至重工業中心。', '2016-12-05 04:37:48');
 
 -- --------------------------------------------------------
 
@@ -66,7 +67,7 @@ CREATE TABLE `area` (
 --
 
 INSERT INTO `area` (`id`, `placename`, `viewpoint`, `pic`, `posted`, `message`, `reply`, `email`, `site`, `WebSite`, `datetime`, `replydatetime`) VALUES
-(1, '苓雅區', '85大樓', 'bc/view/place/images/1.jpg', 'ss', 'sdasdsdsadasdasdasdasdasdasdasddas', '', 'sss@c.dm', '', '../../../../project/area.php?id=39&viewpoint=85大樓&place_name=苓雅區', '2016-12-04 17:48:37', '0000-00-00 00:00:00');
+(2, '苓雅區', '85大樓', 'bc/view/place/images/1.jpg', '蘇湧盛', '這地方好漂亮~', '你喜歡就好', 'd7339803@gmail.com', '', '../../../../project/area.php?id=39&viewpoint=85大樓&place_name=苓雅區', '2016-12-05 02:01:16', '2016-12-05 04:56:58');
 
 -- --------------------------------------------------------
 
@@ -115,7 +116,7 @@ CREATE TABLE `favorite` (
 
 INSERT INTO `favorite` (`Account`, `place`, `PicName`, `PicPath`, `WebSite`, `Datetime`) VALUES
 ('aaaa', '85大樓夜景', '1.jpg', 'bc/index/top6/images/', '/project/index.php', '2016-11-21 08:54:06'),
-('d7339803', '高雄蓮池潭', '2.jpg', 'bc/view/view/images/', '/project/view.php', '2016-12-01 14:40:36');
+('d7339803', '蓮池潭', '2.jpg', 'bc/index/top6/images/', '/project/index.php', '2016-12-05 04:50:15');
 
 -- --------------------------------------------------------
 
@@ -138,7 +139,7 @@ CREATE TABLE `forum` (
 --
 
 INSERT INTO `forum` (`id`, `theme`, `posted`, `email`, `message`, `reply`, `datetime`) VALUES
-(1, 'sss', 'sss', 'd7339803@gmail.com', '蘇湧盛', 'ss', '2016-11-29 15:40:07');
+(4, '網站', '蘇湧盛', 'd7339803@gmail.com', '網站很讚哦~', '謝謝', '2016-12-05 04:56:20');
 
 -- --------------------------------------------------------
 
@@ -257,7 +258,7 @@ CREATE TABLE `top` (
 --
 
 INSERT INTO `top` (`id`, `place`, `name`, `path`, `datetime`) VALUES
-('0', '85大樓', '1.jpg', 'index/top6/images/', '2016-12-03 08:12:42'),
+('0', '85大樓', '1.jpg', 'index/top6/images/', '2016-12-05 04:49:17'),
 ('1', '蓮池潭', '2.jpg', 'index/top6/images/', '2016-12-01 14:41:45'),
 ('2', '美麗島站', '3.jpg', 'index/top6/images/', '2016-12-01 14:44:43'),
 ('3', '愛河', '4.jpg', 'index/top6/images/', '2016-12-01 14:44:50'),
@@ -290,8 +291,8 @@ INSERT INTO `view` (`id`, `viewpoint`, `picname`, `path`, `datetime`) VALUES
 (4, '真愛碼頭', '5.jpg', 'view/view/images/', '2016-11-25 14:26:36'),
 (5, '高雄圖書總館', '6.jpg', 'view/view/images/', '2016-11-25 14:26:45'),
 (6, '', '7.jpg', 'view/view/images/', '2016-11-22 16:30:23'),
-(7, '', '', '', '0000-00-00 00:00:00'),
-(8, '', '', '', '0000-00-00 00:00:00');
+(7, '彩虹', '27859814170_d4edc0685c_b.jpg', 'view/view/images/', '2016-12-05 01:59:13'),
+(8, '駁二', '09.jpg', 'view/view/images/', '2016-12-05 02:00:05');
 
 --
 -- 已匯出資料表的索引
@@ -347,12 +348,12 @@ ALTER TABLE `top`
 -- 使用資料表 AUTO_INCREMENT `area`
 --
 ALTER TABLE `area`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 --
 -- 使用資料表 AUTO_INCREMENT `forum`
 --
 ALTER TABLE `forum`
-  MODIFY `id` int(100) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `id` int(100) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 --
 -- 使用資料表 AUTO_INCREMENT `place`
 --
