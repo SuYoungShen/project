@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="zh-Hant">
 	<head>
 		<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
 		<meta charset="utf-8" />
@@ -215,24 +215,25 @@ $(function(){
 								 <li class="active">景點留言</li>
 							 </ul><!-- /.breadcrumb -->
 
-							 <div class="nav-search" id="nav-search">
+							 <!-- <div class="nav-search" id="nav-search">
 								 <form class="form-search">
 									 <span class="input-icon">
 										 <input type="text" placeholder="Search ..." class="nav-search-input" id="nav-search-input" autocomplete="off" />
 										 <i class="ace-icon fa fa-search nav-search-icon"></i>
 									 </span>
 								 </form>
-							 </div><!-- /.nav-search -->
+							 </div> -->
+							 <!-- /.nav-search -->
 						 </div><!--breadcrumbs-->
 
-						 <div class="page-content">
+						 <div class="container-fluid">
 							 <div class="page-header">
 								 <h1>景點留言</h1>
 							 </div><!-- /.page-header -->
 
 							 <!--會員-->
 							 <div class="row">
-								 <div class="col-xs-12 col-md-12">
+								 <div class="col-xs-12 col-sm-12">
 									 <div class="table-header">
 
 										 <a href="#" name="Delete" class="btn btn-app btn-danger btn-xs" role="button" class="green" data-toggle="modal">
@@ -240,7 +241,8 @@ $(function(){
 										 </a>
 									 </div>
 
-										 <table id="dynamic-table" class="table table-striped table-bordered table-hover">
+									 <div class="table-responsive">
+										<table id="dynamic-table" class="table table-striped table-bordered table-hover">
 											 <thead>
 												 <tr>
 													 <th class="center">
@@ -257,7 +259,7 @@ $(function(){
 													 <th>E-mail</th>
 													 <th>網址</th>
 													 <th>
-														 <i class="ace-icon fa fa-clock-o bigger-110 hidden-480"></i>
+														 <i class="ace-icon fa fa-clock-o bigger-110"></i>
 														 最新回應時間
 													 </th>
 
@@ -272,11 +274,11 @@ $(function(){
 											 </tbody>
 										 </table>
 									 </div>
-
-							 </div>
+								</div>
+							</div>
 							 <!--會員-->
 							 <hr>
-						 </div><!--page-content-->
+						 </div><!--container-fluid-->
 
 
 						 <!--place-->
@@ -462,13 +464,14 @@ $(function(){
 				//initiate dataTables plugin
 				var oTable1 =
 				$('#dynamic-table')
-				//.wrap("<div class='dataTables_borderWrap' />")   //if you are applying horizontal scrolling (sScrollX)
+				.wrap("<div class='dataTables_borderWrap' />")   //if you are applying horizontal scrolling (sScrollX)
 				.dataTable( {
-					bAutoWidth: false,
+					responsive: true,
+					bAutoWidth: true,
 					"aoColumns": [
-					  { "bSortable": false },
+					  { "bSortable": true },
 					  null, null,null, null, null, null, null, null,
-					  { "bSortable": false }
+					  { "bSortable": true }
 					],
 					"aaSorting": [],
 
@@ -476,13 +479,13 @@ $(function(){
 					//"sScrollY": "200px",
 					//"bPaginate": false,
 
-					//"sScrollX": "100%",
-					//"sScrollXInner": "120%",
-					//"bScrollCollapse": true,
+					"sScrollX": "100%",
+					"sScrollXInner": "100%",
+					"bScrollCollapse": true,
 					//Note: if you are applying horizontal scrolling (sScrollX) on a ".table-bordered"
 					//you may want to wrap the table inside a "div.dataTables_borderWrap" element
 
-					//"iDisplayLength": 50
+					"iDisplayLength": 50
 			    } );
 				//oTable1.fnAdjustColumnSizing();
 

@@ -210,16 +210,15 @@
 						</div><!-- /.nav-search -->
 					</div><!--breadcrumbs-->
 
-					<div class="page-content">
+					<div class="container-fluid">
 						<div class="page-header">
 							<h1>
 								討論區
 							</h1>
 						</div><!-- /.page-header -->
 
-						<!--	-->
 						<div class="row">
-							<div class="col-xs-12">
+							<div class="col-sm-12">
 								<div class="table-header">
 									討論區
 									<!-- <a href="#discuss" class="btn btn-app btn-green btn-xs" role="button" class="green" data-toggle="modal"> -->
@@ -228,9 +227,9 @@
 									<a href="#" name='Delete' class="btn btn-app btn-danger btn-xs" role="button" class="green" data-toggle="modal">
 										<i class="ace-icon fa fa-trash-o bigger-150"></i>
 									</a>
-								</div><!-- div.table-responsive -->
+								</div>
 
-								<div>
+								<div class="table-responsive">
 									<table id="dynamic-table" class="table table-striped table-bordered table-hover">
 										<thead>
 											<tr>
@@ -243,17 +242,15 @@
 												<th>主題</th>
 												<th>發表人</th>
 												<th>Email</th>
-												<th class="hidden-480">留言</th>
-
-												<th class="hidden-480">回覆</th>
+												<th>留言</th><!--.hidden-480 解析度小餘480會隱藏-->
+												<th>回覆</th>
 												<!-- <th>
 														觀看(點及次數)
 												</th> -->
 												<th>
-													<i class="ace-icon fa fa-clock-o bigger-110 hidden-480"></i>
+													<i class="ace-icon fa fa-clock-o bigger-110"></i>
 													最後留言時間
 												</th>
-
 												<th></th>
 											</tr>
 										</thead>
@@ -267,9 +264,9 @@
 								</div>
 							</div>
 						</div>
-						<!--會員-->
+
 						<hr>
-					</div><!--page-content-->
+					</div><!--container-fluid-->
 
 					<!--discussr-->
 					<div id="discuss" class="modal fade" tabindex="-1">

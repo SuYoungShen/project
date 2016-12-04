@@ -210,6 +210,7 @@
 							</li>
 						</ul><!-- /.breadcrumb -->
 						<!-- /.nav-search -->
+<!--
 						<div class="nav-search" id="nav-search">
 							<form class="form-search">
 								<span class="input-icon">
@@ -217,7 +218,8 @@
 									<i class="ace-icon fa fa-search nav-search-icon"></i>
 								</span>
 							</form>
-						</div><!-- /.nav-search -->
+						</div> -->
+						<!-- /.nav-search -->
 					</div>
 
 					<div class="container-fluid">
@@ -377,7 +379,7 @@
 
 							<!-- 地區 -->
 							<div class="table-responsive">
-								<table id="dynamic-table" class="table  table-striped table-bordered table-hover">
+								<table id="dynamic-table" class="table table-striped table-bordered table-hover">
 									<thead>
 										<tr>
 											<th class="center">

@@ -28,7 +28,7 @@
           <a href='#'>$theme</a>
         </td>
         <td>$posted</td>
-        <td class='hidden-480'>$email</td>
+        <td>$email</td>
         <td>$message</td>
         <td>$reply</td>
 
