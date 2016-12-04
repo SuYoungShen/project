@@ -388,10 +388,8 @@
 											</th>
 											<th>地區名</th>
 											<th>地區介紹</th>
-											<th> 照片 </th>
-
+											<th>照片</th>
 											<th>時間</th>
-
 											<th></th>
 										</tr>
 									</thead>
@@ -450,7 +448,7 @@
 				</div><!--container-fluid-->
 
 					<!--place-->
-					<div id="place" class="modal fade" tabindex="-1">
+					<div id="place" class="modal fade " tabindex="-1">
 						<div class="modal-dialog">
 							<div class="modal-content">
 								<div class="modal-header no-padding">

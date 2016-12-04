@@ -188,7 +188,7 @@ if (isset($_POST["insert"])) {
         <td>$Introduction</td>
 
 
-        <td class='hidden-480 ace-thumbnails clearfix'>
+        <td class='ace-thumbnails clearfix'>
           <a href='$picDir$pic_name' title='$place_Name'  data-rel='colorbox'>$pic_name</a>
         </td>
         <td>$datetime</td>

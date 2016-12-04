@@ -34,7 +34,7 @@
         <td>$att</td>
         <td>$arr</td>
 
-        <td class='hidden-480 ace-thumbnails clearfix'>
+        <td class='ace-thumbnails clearfix'>
           <a href='$pdir$pic'  data-rel='colorbox' title='$vie'>$pic</a>
         </td>
          <td>$dat</td>
@@ -72,6 +72,7 @@
                   <a href='#edit' class='tooltip-success' data-rel='tooltip' title='Edit' data-toggle='modal'
                     onclick='Edit(
                                 \"$id\",
+                                \"$pla\",
                                 \"$viewpoint[$key]\",
                                 \"$attractions[$key]\",
                                 \"$arrival[$key]\",

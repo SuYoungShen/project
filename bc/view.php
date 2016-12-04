@@ -205,7 +205,7 @@
 				</div><!-- /.nav-search -->
 			</div><!--breadcrumbs-->
 
-			<div class="page-content">
+			<div class="container-fluid">
 
 				<div class="hr hr-18 dotted hr-double"></div>
 
@@ -221,31 +221,32 @@
 								<i class="ace-icon fa fa-trash-o bigger-150"></i>
 							</a>
 						</div>
-
-						<table id="dynamic-table" class="table table-responsive table-bordered table-hover">
-							<thead>
-								<tr>
-									<th class="center">
-										<label class="pos-rel">
-											<input type="checkbox" class="ace" />
-											<span class="lbl"></span>
-										</label>
-									</th>
-									<th>地區名</th>
-									<th>景點名</th>
-									<th>景點介紹</th>
-									<th class="hidden-480">如何到達 </th>
-									<th class="hidden-480"> 照片 </th>
-									<th>修改時間</th>
-									<th></th>
-								</tr>
-							</thead>
-							<tbody>
-								<?php
-								include("view/place.php");
-								?>
-							</tbody>
-						</table>
+						<div class="table-responsive">
+							<table id="dynamic-table" class="table table-responsive table-bordered table-hover">
+								<thead>
+									<tr>
+										<th class="center">
+											<label class="pos-rel">
+												<input type="checkbox" class="ace" />
+												<span class="lbl"></span>
+											</label>
+										</th>
+										<th>地區名</th>
+										<th>景點名</th>
+										<th>景點介紹</th>
+										<th>如何到達 </th>
+										<th> 照片 </th>
+										<th>修改時間</th>
+										<th></th>
+									</tr>
+								</thead>
+								<tbody>
+									<?php
+									include("view/place.php");
+									?>
+								</tbody>
+							</table>
+						</div>
 					</div>
 				</div>
 				<!--景點-->
@@ -255,7 +256,7 @@
 				<div class="page-header">
 					<h1>各地區景點</h1>
 				</div>
-				 <div class="row">
+				<div class="row">
 					<div class="col-sm-4">
 						<div class="widget-box">
 							<div class="widget-header">
@@ -274,78 +275,76 @@
 							<div class="widget-body">
 								<div class="widget-main">
 									<form class="form-horizontal" action="view/view/insert.php"  role="form" method="post"
-											enctype="multipart/form-data">
-										<div class="form-group">
-											<div class="col-xs-12">
-												<input type="file" name="picName[]" id="id-input-file-4" multiple="multiple" />
-											</div>
+									enctype="multipart/form-data">
+									<div class="form-group">
+										<div class="col-xs-12">
+											<input type="file" name="picName[]" id="id-input-file-4" multiple="multiple" />
 										</div>
+									</div>
 
-										<label>
-											<br/>
-											<button class="btn btn-info" name="insert" type="submit">
-												<i class="ace-icon fa fa-check bigger-110"></i>
-												送出
-											</button>
-											&nbsp; &nbsp; &nbsp;
-										</label>
-										<label>
-											<br/>
-											<button class="btn btn-info" name="clear" type="submit">
-												<i class="ace-icon fa fa-check bigger-110"></i>
-												重設
-											</button>
-											&nbsp; &nbsp; &nbsp;
-										</label>
-									</form>
-								</div>
-							</div>
-						</div>
-					</div>
-
-
-					<div class="col-sm-8">
-						<div class="widget-box">
-							<div class="widget-header">
-								<h4 class="widget-title">各地區景點</h4>
-
-								<span class="widget-toolbar">
-									<a href="#" data-action="settings">
-										<i class="ace-icon fa fa-cog"></i>
-									</a>
-
-									<a href="#" data-action="reload">
-										<i class="ace-icon fa fa-refresh"></i>
-									</a>
-
-									<a href="#" data-action="collapse">
-										<i class="ace-icon fa fa-chevron-up"></i>
-									</a>
-
-									<a href="#" data-action="close">
-										<i class="ace-icon fa fa-times"></i>
-									</a>
-
-								</span>
-							</div>
-
-							<div class="widget-body">
-								<div class="widget-main">
-									<ul class="ace-thumbnails clearfix">
-										<?php
-										include("view/view.php");
-										?>
-									</ul>
-								</div>
+									<label>
+										<br/>
+										<button class="btn btn-info" name="insert" type="submit">
+											<i class="ace-icon fa fa-check bigger-110"></i>
+											送出
+										</button>
+										&nbsp; &nbsp; &nbsp;
+									</label>
+									<label>
+										<br/>
+										<button class="btn btn-info" name="clear" type="submit">
+											<i class="ace-icon fa fa-check bigger-110"></i>
+											重設
+										</button>
+										&nbsp; &nbsp; &nbsp;
+									</label>
+								</form>
 							</div>
 						</div>
 					</div>
 				</div>
 
+
+				<div class="col-sm-8">
+					<div class="widget-box">
+						<div class="widget-header">
+							<h4 class="widget-title">各地區景點</h4>
+
+							<span class="widget-toolbar">
+								<a href="#" data-action="settings">
+									<i class="ace-icon fa fa-cog"></i>
+								</a>
+
+								<a href="#" data-action="reload">
+									<i class="ace-icon fa fa-refresh"></i>
+								</a>
+
+								<a href="#" data-action="collapse">
+									<i class="ace-icon fa fa-chevron-up"></i>
+								</a>
+
+								<a href="#" data-action="close">
+									<i class="ace-icon fa fa-times"></i>
+								</a>
+
+							</span>
+						</div>
+
+						<div class="widget-body">
+							<div class="widget-main">
+								<ul class="ace-thumbnails clearfix">
+									<?php
+									include("view/view.php");
+									?>
+								</ul>
+							</div>
+						</div>
+					</div>
+				</div>
 			</div>
 
 			<!--跑馬燈-->
-			 <div class="row">
+			<div class="row">
 				<div class="col-sm-12">
 					<div class="widget-box">
 						<div class="widget-header">
@@ -382,6 +381,7 @@
 			</div>
 			<!--跑馬燈-->
 
+		</div><!--container-fluid-->
 			<!--place-->
 			<div id="place" class="modal fade" tabindex="-1">
 				<div class="modal-dialog">
@@ -707,7 +707,7 @@
 		//initiate dataTables plugin
 		var oTable1 =
 		$('#dynamic-table')
-		//.wrap("<div class='dataTables_borderWrap' />")   //if you are applying horizontal scrolling (sScrollX)
+		// .wrap("<div class='dataTables_borderWrap' />")   //if you are applying horizontal scrolling (sScrollX)
 		.dataTable( {
 			bAutoWidth: false,
 			"aoColumns": [
@@ -715,19 +715,19 @@
 				null, null,null, null, null, null,
 				{ "bSortable": false }
 			],
-			"aaSorting": [],
+			// "aaSorting": [],
 
 			//,
 			//"sScrollY": "200px",
 			//"bPaginate": false,
 
-			//"sScrollX": "100%",
-			//"sScrollXInner": "120%",
-			//"bScrollCollapse": true,
+			// "sScrollX": "100%",
+			// "sScrollXInner": "120%",
+			// "bScrollCollapse": true,
 			//Note: if you are applying horizontal scrolling (sScrollX) on a ".table-bordered"
 			//you may want to wrap the table inside a "div.dataTables_borderWrap" element
 
-			//"iDisplayLength": 50
+			// "iDisplayLength": 50
 			} );
 		//oTable1.fnAdjustColumnSizing();
 
