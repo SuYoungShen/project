@@ -202,7 +202,7 @@
 							<i class="ace-icon fa fa-search nav-search-icon"></i>
 						</span>
 					</form>
-				</div>--><!-- /.nav-search --> 
+				</div>--><!-- /.nav-search -->
 			</div><!--breadcrumbs-->
 
 			<div class="container-fluid">
@@ -222,7 +222,7 @@
 							</a>
 						</div>
 						<div class="table-responsive">
-							<table id="dynamic-table" class="table table-responsive table-bordered table-hover">
+							<table id="dynamic-table" class="table table-bordered table-hover">
 								<thead>
 									<tr>
 										<th class="center">

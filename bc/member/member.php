@@ -64,7 +64,7 @@ foreach ($memberse as $key => $value) {
     <td>$pas</td>
     <td class='hidden-480'>$ema</td>
     <td>$nam</td>
-    <td class='hidden-480'>
+    <td>
       <span class='label label-sm label-warning'>$dat</span>
     </td>
 
@@ -90,7 +90,7 @@ foreach ($memberse as $key => $value) {
           <ul class='dropdown-menu dropdown-only-icon dropdown-yellow dropdown-menu-right dropdown-caret dropdown-close'>
 
             <li>
-              <a href='#' class='tooltip-success' data-rel='tooltip' title='Edit'>
+              <a href='#edit' class='tooltip-success' data-toggle='modal' data-rel='tooltip' title='Edit'>
                 <span class='green'>
                   <i class='ace-icon fa fa-pencil-square-o bigger-120' onclick='Edit(\"$accounts[$key]\",\"$passwords[$key]\",\"$emails[$key]\",\"$names[$key]\")'></i>
                 </span>

@@ -35,7 +35,7 @@
         <td>$posted</td>
         <td>$message</td>
         <td>$reply</td>
-        <td>$email</td>
+        <td  class='hidden-480'>$email</td>
         <td>$site</td>
         <td>$datetime</td>
 

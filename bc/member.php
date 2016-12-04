@@ -206,7 +206,7 @@
 						</div><!-- /.nav-search -->
 					</div><!--breadcrumbs-->
 
-					<div class="page-content">
+					<div class="container-fluid">
 						<div class="page-header">
 							<h1>
 								會員
@@ -240,7 +240,7 @@
 												<th>密碼</th>
 												<th class="hidden-480">E-mail</th>
 
-												<th class="hidden-480">姓名</th>
+												<th>姓名</th>
 
 												<th>
 													<i class="ace-icon fa fa-clock-o bigger-110 hidden-480"></i>
@@ -446,7 +446,7 @@
 <script src="assets/js/jquery.1.11.1.min.js"></script>
 <![endif]
 
-		<!--[if !IE]> --> -->
+		<!--[if !IE]> -->
 		<script type="text/javascript">
 			window.jQuery || document.write("<script src='assets/js/jquery.min.js'>"+"<"+"/script>");
 		</script>
@@ -640,7 +640,7 @@
 							$("input[name='DeAccounts[]']").each(function() {
 								DeAccounts.push($(this).val());
 							});
-							
+
 							Deletess(DeAccounts);
 							tableTools_obj.fnSelect(row);
 

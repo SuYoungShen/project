@@ -256,7 +256,7 @@ $(function(){
 													 <th>發表人</th>
 													 <th>留言</th>
 													 <th >回覆</th>
-													 <th>E-mail</th>
+													 <th class="hidden-480">E-mail</th>
 													 <th>網址</th>
 													 <th>
 														 <i class="ace-icon fa fa-clock-o bigger-110"></i>
