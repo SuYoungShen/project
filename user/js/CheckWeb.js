@@ -1,9 +1,11 @@
 $(document).ready(function() {
-  $("a#web").bind('click', function () {
+  $("a#web").click(function() {
     var value = $(this).val();
-    if (value='#') {
-      alert("景點介紹再補資料中,請稍候");
-    }
+    if (value!='') {
+      alert(value);
+    }else {
+      alert("空");
 
+    }
   });
 });

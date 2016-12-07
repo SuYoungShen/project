@@ -14,7 +14,13 @@
     // $WebSite = $value["WebSite"];//網站位址
     $Datetime = $value["Datetime"];//時間
     $Web = Url($db,$ViewPoint);//網站位址
-
+    if (is_null($Web)) {
+      echo "string";
+    }else {
+      echo $Web;
+    }
+    print_r($Web);
+    var_dump($Web);
     echo "
       <div class='accordion' id='accordion2'>
         <div class='accordion-group'>
@@ -53,25 +59,28 @@
 
     $PlaceSe = "SELECT `id`,`place`,`viewpoint`  FROM `places` WHERE `viewpoint`='".$ViewPoint."'";
     $PlaceSes=$db->query($PlaceSe);
+    $Displays = $PlaceSes->fetchAll();
 
-    while ($Displays = $PlaceSes->fetch()) {
-
-      $id = $Displays["id"];
-      $viewpoint = $Displays["viewpoint"];
-      $place_name = $Displays["place"];
+    foreach ($Displays as $key => $value) {
+      $id = $value["id"];
+      $viewpoint = $value["viewpoint"];
+      $place_name = $value["place"];
 
       $true = !empty($id) &&
       !empty($viewpoint) &&
       !empty($place_name);
 
       if ($true && $ViewPoint==$viewpoint) {
+
         $Web = "area.php?id=$id&viewpoint=$viewpoint&place_name=$place_name";
+        return $Web;
+
       }
     }
-    if (empty($Web)) {
-      $Web="#";
-    }
-    return $Web;
+
+
+
+
   }
 
   $db=null;
