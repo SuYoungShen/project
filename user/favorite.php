@@ -8,31 +8,32 @@
   foreach ($Dislpay as $key => $value) {
 
     $Account = $value["Account"];//帳號
-    $Place_Name = $value["place"];//地區名
+    $ViewPoint = $value["place"];//地區名
     $PicName = $value["PicName"];//照片名
     $PicPath = $value["PicPath"];//照片位置
-    $WebSite = $value["WebSite"];//網站位址
+    // $WebSite = $value["WebSite"];//網站位址
     $Datetime = $value["Datetime"];//時間
+    $Web = Url($db,$ViewPoint);//網站位址
 
     echo "
       <div class='accordion' id='accordion2'>
         <div class='accordion-group'>
           <div class='accordion-heading'>
             <a class='accordion-toggle' data-toggle='collapse' data-parent='#accordion2' href='#Favorite$key'>
-              $Place_Name
+              $ViewPoint
             </a>
 
         </div>
           <div id='Favorite$key' class='accordion-body collapse'>
             <div class='accordion-inner'>
               <img src='$PicPath$PicName'>
-              <a href='$WebSite'>$Place_Name</a>
+              <a href='$Web' id='web' value='$Web'>$ViewPoint</a>
               <a onclick='Delete(
                                   \"$Account\",
-                                  \"$Place_Name\",
+                                  \"$ViewPoint\",
                                   \"$PicName\",
                                   \"$PicPath\",
-                                  \"$WebSite\"
+                                  \"$Web\"
                                   )'>
               <i class='icon-remove pull-right'></i></a><!--刪除-->
             </div>
@@ -46,6 +47,31 @@
   function FavSe($account){
     $FavSe = "SELECT * FROM `favorite` WHERE `Account`='".$account."'";
     return $FavSe;
+  }
+
+  function Url($db,$ViewPoint){
+
+    $PlaceSe = "SELECT `id`,`place`,`viewpoint`  FROM `places` WHERE `viewpoint`='".$ViewPoint."'";
+    $PlaceSes=$db->query($PlaceSe);
+
+    while ($Displays = $PlaceSes->fetch()) {
+
+      $id = $Displays["id"];
+      $viewpoint = $Displays["viewpoint"];
+      $place_name = $Displays["place"];
+
+      $true = !empty($id) &&
+      !empty($viewpoint) &&
+      !empty($place_name);
+
+      if ($true && $ViewPoint==$viewpoint) {
+        $Web = "area.php?id=$id&viewpoint=$viewpoint&place_name=$place_name";
+      }
+    }
+    if (empty($Web)) {
+      $Web="#";
+    }
+    return $Web;
   }
 
   $db=null;
