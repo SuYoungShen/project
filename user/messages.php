@@ -17,7 +17,7 @@
     $AreaMessage = $value["message"];//訊息
     $AreaReply = $value["reply"];//回覆
     $WebSite = $value["WebSite"];//網頁
-    $AreaDate = $value["datetime"];//時間
+    $AreaDate = $value["datetimes"];//時間
     /* 景點 area */
     if (empty($AreaReply)) {
       $AreaReply = "(等待回覆)";

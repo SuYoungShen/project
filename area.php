@@ -139,18 +139,18 @@
               <div class="comments-list">
                 <div class="media box"> -->
                   <?php
-                    include("area/reply.php");
+                    // include("area/reply.php");
                    ?>
-                </div>
+                <!-- </div>
               </div>
-              <br/>
+              <br/> -->
 
-              <div class="comment-form">
+              <!-- <div class="comment-form">
                 <h4>請留言</h4>
 
                 <form name="comment-form" method="post" action="bc/message/area/insert.php">
                   <div class="row-fluid">
-                    <div class="span4">
+                    <div class="span4"> -->
                       <?php
                         include 'login/login_account_In.php';
                         $id = $_GET["id"];

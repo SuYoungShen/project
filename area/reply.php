@@ -13,7 +13,7 @@ foreach ($displays as $key => $value) {
   $message = $value["message"];
   $site = $value["site"];
   $reply = $value["reply"];//回覆
-  $datetime = $value["datetime"];
+  $datetime = $value["datetimes"];
   $replydatetime = $value["replydatetime"];
 
   if (empty($reply)) {
