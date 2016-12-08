@@ -21,7 +21,7 @@
   <script src="js/vendor/modernizr-2.6.2-respond-1.1.0.min.js"></script>
   <script type="text/javascript" src="js/jquery-1.11.0.min.js"></script>
   <script type="text/javascript" src="bc/assets/js/alert.js"></script>
-  <script type="text/javascript" src='user/js/CheckWeb.js'></script>
+  <script type="text/javascript" src="user/js/Check.js"></script>
 
   <!-- Le fav and touch icons -->
   <?php
