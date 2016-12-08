@@ -152,21 +152,21 @@
                   <div class="row-fluid">
                     <div class="span4"> -->
                       <?php
-                        include 'login/login_account_In.php';
-                        $id = $_GET["id"];
-                        $place_name = $_GET["place_name"];
-                        $viewpoint =$_GET["viewpoint"];
-                        $Site = $_SERVER['PHP_SELF']."?id=$id&viewpoint=$viewpoint&place_name=$place_name";
-                        $Pic = $_GET["picname"];
-                        $db = null;
+                        // include 'login/login_account_In.php';
+                        // $id = $_GET["id"];
+                        // $place_name = $_GET["place_name"];
+                        // $viewpoint =$_GET["viewpoint"];
+                        // $Site = $_SERVER['PHP_SELF']."?id=$id&viewpoint=$viewpoint&place_name=$place_name";
+                        // $Pic = $_GET["picname"];
+                        // $db = null;
                        ?>
-                       <input type='hidden' name='id' value="<?php echo $id ?>">
+                       <!-- <input type='hidden' name='id' value="<?php echo $id ?>">
                        <input type='hidden' name='place_name' value="<?php echo $place_name ?>">
                        <input type='hidden' name='viewpoint' value="<?php echo $viewpoint ?>">
                        <input type='hidden' name='pic' value="<?php echo $Pic ?>">
                        <input type="hidden" name="WebSite" value="<?php echo $Site?>">
                        <input type='text' name='posted'  class='input-block-level' value="<?php echo $login_names?>" placeholder='姓名(抓取會員名)' />
-                    </div>
+                    </div> -->
                     <div class="span4">
                       <input type="email" name="email"  class="input-block-level" placeholder="Email" value="<?php echo $email; ?>"/>
                     </div>

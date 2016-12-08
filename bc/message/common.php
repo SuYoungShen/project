@@ -38,7 +38,7 @@
   }
 
   function AreaIn(
-                    $place_name, $viewpoint, $posted, $message,
+                    $place_name, $viewpoint, $pic,$posted, $message,
                     $email, $site, $BackWeb, $datetime )
   {
 
@@ -53,7 +53,8 @@
                                     `datetimes`
                                   )VALUES (
                                   '".$place_name."',
-                                  '".$viewpoint."',                                  
+                                  '".$viewpoint."',
+                                  '".$Pic."',
                                   '".$posted."',
                                   '".$message."',
                                   '".$email."',

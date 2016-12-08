@@ -23,7 +23,8 @@
       $true=$db->query(
                         AreaIn(
                           $place_name,
-                          $viewpoint,                          
+                          $viewpoint,
+                          $Pic,                          
                           $posted,
                           $message,
                           $email,

@@ -10,6 +10,7 @@
   foreach ($display as $key => $value) {
     // places
     $picName = $value["name"];
+    $Pic = $picDir.$picName;
     $viewpoint = $value["viewpoint"];
     $datetime = $value["datetime"];
     // places
@@ -86,6 +87,13 @@
       <form name='comment-form' method='post' action='bc/message/area/insert.php'>
         <div class='row-fluid'>
           <div class='span4'>
+          <input type='hidden' name='id' value='$id'>
+          <input type='hidden' name='place_name' value='$place_name'>
+          <input type='hidden' name='viewpoint' value='$viewpoint'>
+          <input type='hidden' name='pic' value='$Pic'>
+          <input type='hidden' name='WebSite' value='$Site'>
+          <input type='text' name='posted'  class='input-block-level' value='$login_names' placeholder='姓名(抓取會員名)' />
+       </div>
       ";
 
   }
