@@ -34,53 +34,27 @@
     ";
     echo "<p>景點介紹:<br/>".$value["attractions"]."</p>";
     echo "<p>如何到達:<br/>".$value["arrival"]."</p>";
+    echo "
+    <p>&nbsp;</p>
+      <div id='comments' class='comments'>
 
-    // echo "
-    //
-    // <p>&nbsp;</p>
-    //   <div id='comments' class='comments'>
-    //     <h4>回覆</h4>
-    //     <div class='comments-list'>
-    //       <div class='media box'>
-    //         <div class='media-body'>
-    //           <strong>發表人:
-    //             <a href='#'>$posted</a>
-    //           </strong>
-    //           <br>
-    //           <p>$message</p>
-    //           <strong>參考網址:
-    //             <a href='$site'>$site</a>
-    //           <strong>
-    //           <br/>
-    //           <small>$datetime</small>
-    //           <br>
-    //           <br>
-    //           <strong>回覆:
-    //             <a href='#'>管理員</a>
-    //           </strong>
-    //           <br>
-    //           <p>$reply</p>
-    //           <small>$replydatetime</small>
-    //         </div>
-    //       <br/>
-    //     </div>
-    //   </div>
-    //   <br/>
-    //   ";
+        <h4>回覆</h4>
+        <div class='comments-list'>
+          <div class='media box'>
+      ";
+
   }
-  // include("area/reply.php");
+
 
   function Places(){
     $place = "SELECT * From
-                            `places`
+                            `places`,`area`
                       where
-                            places.place='".$_GET["place_name"]."'
+                            places.place='".$_GET["place_name"]."' AND
+                            
                             ";
     return $place;
   }
-  // function Places(){
-  //   $place = "SELECT * From `places` where `place`='".$_GET["place_name"]."'";
-  //   return $place;
-  // }
+
   $db=null;
  ?>

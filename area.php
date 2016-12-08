@@ -132,19 +132,18 @@
             <?php
               include ("area/places.php");
              ?>
-            <p>&nbsp;</p>
+            <!-- <p>&nbsp;</p>
             <div id="comments" class="comments">
 
               <h4>回覆</h4>
               <div class="comments-list">
-                <div class="media box">
+                <div class="media box"> -->
                   <?php
                     include("area/reply.php");
                    ?>
                 </div>
               </div>
               <br/>
-
 
               <div class="comment-form">
                 <h4>請留言</h4>

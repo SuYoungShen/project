@@ -29,7 +29,7 @@
           <div id='Favorite$key' class='accordion-body collapse'>
             <div class='accordion-inner'>
               <img src='$PicPath$PicName'>
-              <a href='$Webs' onclick='Test(\"$Web[$key]\")'>$ViewPoint[$key]</a>
+              <a href='$Webs' onclick='Urls(\"$Web[$key]\")'>$ViewPoint[$key]</a><!--檢查web得值-->
               <input type='hidden' id='web' value='$Webs'>
               <a onclick='Delete(
                                   \"$Account\",
@@ -47,22 +47,6 @@
 
   }
 
-  // for ($i=0; $i < count($Web); $i++) {
-  //   if (is_null($Web[$i])) {
-  //     echo "
-  //     <script>
-  //     $(document).ready(function() {
-  //       $('a#web').click(function(){
-  //         alert('ss');
-  //       });
-  //     });
-  //
-  //     </script>
-  //     ";
-  //   }else {
-  //
-  //   }
-  // }
   function FavSe($account){
     $FavSe = "SELECT * FROM `favorite` WHERE `Account`='".$account."'";
     return $FavSe;
@@ -75,35 +59,17 @@
     $Displays = $PlaceSes->fetchAll();
 
     foreach ($Displays as $key => $value) {
-
       $id = $ids[$key] = $value["id"];
       $viewpoint = $viewpoints[$key] = $value["viewpoint"];
       $place_name = $place_names[$key] = $value["place"];
-
-      // $true = isset($id)&&
-      //         !empty($id) &&
-      //         isset($viewpoint)&&
-      //         !empty($viewpoint) &&
-      //         isset($place_name)&&
-      //         !empty($place_name);
-
-      // if ($true && $ViewPoint==$viewpoint) {
-      //   $Web = "area.php?id=$id&viewpoint=$viewpoint&place_name=$place_name";
-      //   return $Web;
-      // }else {
-      //   $Web="2";
-      //   return $Web;
-      //
-      // }
-
-
     }
 
-    if (isset($id)) {
-      echo "string";
+    if (isset($viewpoints[0])) {
+      return $Web="area.php?id=$ids[0]&viewpoint=$viewpoints[0]&place_name=$place_names[0]";
     }else {
-      return $Web='2';
+      return $Web='#';
     }
+
   }
 
   $db=null;
