@@ -94,13 +94,13 @@
    <div class="container">
      <div class="row-fluid">
        <div class="span6">
-         <h1><?php echo $_GET["place_name"]; ?></h1>
+         <h1>ssss</h1>
        </div>
        <div class="span6">
          <ul class="breadcrumb pull-right">
            <li><a href="index.php">首頁</a> <span class="divider">/</span></li>
            <li><a href="view.php">景點首頁</a> <span class="divider">/</span></li>
-           <li class="active"><?php echo $_GET["place_name"]; ?></li>
+           <li class="active">ssss</li>
          </ul>
        </div>
      </div>
@@ -129,58 +129,66 @@
       <div class="span8">
         <div class="blog">
           <div class="blog-item well">
-            <table class="table table-bordered">
-              <?php
-                include 'bc/mysql/connect.php';
-                $Se = "SELECT
-                              id,
-                              viewpoint
-                            FROM
-                              places
-                            where
-                              id = '".$_GET['id']."' AND
-                              place='".$_GET['place_name']."'
-                      ";
-                $Ses = $db->query($Se);
-                $Display = $Ses->fetchAll();
-
-                foreach ($Display as $key => $value) {
-                  $id = $value["id"];
-                  $viewpoint = $value["viewpoint"];
-                  echo "
-                  <tr>
-                    <td><a href='areas.php?id=$id&viewpoint=$viewpoint'>$viewpoint</a></td>
-                  </tr>
-                  ";
-                }
-
-                $db=null;
-               ?>
-
-            </table>
             <?php
-            //  include ("area/places.php");
+              include ("area/places.php");
              ?>
-            <!-- <p>&nbsp;</p>
+            <p>&nbsp;</p>
             <div id="comments" class="comments">
 
               <h4>回覆</h4>
               <div class="comments-list">
                 <div class="media box">
                   <?php
-                    //include("area/reply.php");
+                    include("area/reply.php");
                    ?>
                  </div>
               </div>
               <br/>
 
                <div class="comment-form">
-                <h4>請留言</h4>                 -->
-              <!--</div><!--comment-form-->
-          <!--  </div><!--comments-->
-          </div><!--blog-item well-->
-        </div><!--blog-->
-      </div><!--span8-->
+                <h4>請留言</h4>
+
+                <form name="comment-form" method="post" action="bc/message/area/insert.php">
+                  <div class="row-fluid">
+                    <div class="span4">
+                      <?php
+                        include 'login/login_account_In.php';
+                        $id = $_GET["id"];
+                        $place_name = $_GET["place_name"];
+                        $viewpoint =$_GET["viewpoint"];
+                        $Site = $_SERVER['PHP_SELF']."?id=$id&viewpoint=$viewpoint&place_name=$place_name";
+                        $Pic = $_GET["picname"];
+                        $db = null;
+                       ?>
+                       <input type='hidden' name='id' value="<?php echo $id ?>">
+                       <input type='hidden' name='place_name' value="<?php echo $place_name ?>">
+                       <input type='hidden' name='viewpoint' value="<?php echo $viewpoint ?>">
+                       <input type='hidden' name='pic' value="<?php echo $Pic ?>">
+                       <input type="hidden" name="WebSite" value="<?php echo $Site?>">
+                       <input type='text' name='posted'  class='input-block-level' value="<?php echo $login_names?>" placeholder='姓名(抓取會員名)' />
+                    </div>
+                    <div class="span4">
+                      <input type="email" name="email"  class="input-block-level" placeholder="Email" value="<?php echo $email; ?>"/>
+                    </div>
+                    <div class="span4">
+                      <textarea type="url" name="site"  class="input-block-level" placeholder="網址" /></textarea>
+                    </div>
+                    <script type="text/javascript">
+                      document.cookie="datetime="+getNowTime();
+                    </script>
+                  </div>
+                  <textarea rows="10" name="message" id="message" class="input-block-level" placeholder="有什麼話要說..."></textarea>
+                  <input type="submit" value="送出" class="btn btn-large btn-primary" />
+                  <input type="reset" value="重置" class="btn btn-large btn-primary" />
+                </form>
+              </div>
+              <!-- End Comment Form -->
+            </div>
+          </div>
+          <!-- End Blog Item -->
+        </div>
+
+      </div>
       <div class="span4">
         <div class="center">
           <h3>TOP6</h3>
