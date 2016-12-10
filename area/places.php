@@ -24,9 +24,7 @@
     // $replydatetime = $value["replydatetime"];
     // area
     $id = $_GET['id'];
-    $place_name = $_GET['place_name'];
     $viewpoints = $_GET['viewpoint'];
-    $Site = $_SERVER['PHP_SELF']."?id=$id&viewpoint=$viewpoints&place_name=$place_name";
 
     if (isset($picName) && !empty($picName)) {
       $displays = $picDir.$picName;
@@ -44,17 +42,15 @@
     echo "<p>景點介紹:<br/>".$value["attractions"]."</p>";
     echo "<p>如何到達:<br/>".$value["arrival"]."</p>";
 
-
   }
 
 
   function Places(){
     $viewpoint = $_GET["viewpoint"];
     $place = "SELECT * From
-                            `places`,`area`
+                            `places`
                       where
-                            places.viewpoint='$viewpoint' AND
-                            area.viewpoint='$viewpoint'
+                            places.viewpoint='$viewpoint'
                             ";
     return $place;
   }

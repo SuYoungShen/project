@@ -45,6 +45,7 @@
       $AreaIn ="INSERT INTO `area`(
                                     `placename`,
                                     `viewpoint`,
+                                    `pic`,
                                     `posted`,
                                     `message`,
                                     `email`,

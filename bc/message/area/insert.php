@@ -24,7 +24,7 @@
                         AreaIn(
                           $place_name,
                           $viewpoint,
-                          $Pic,                          
+                          $Pic,
                           $posted,
                           $message,
                           $email,
