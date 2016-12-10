@@ -94,13 +94,13 @@
    <div class="container">
      <div class="row-fluid">
        <div class="span6">
-         <h1>ssss</h1>
+         <h1><?php echo $_GET["viewpoint"]; ?></h1>
        </div>
        <div class="span6">
          <ul class="breadcrumb pull-right">
            <li><a href="index.php">首頁</a> <span class="divider">/</span></li>
            <li><a href="view.php">景點首頁</a> <span class="divider">/</span></li>
-           <li class="active">ssss</li>
+           <li class="active"><?php echo $_GET["viewpoint"]; ?></li>
          </ul>
        </div>
      </div>

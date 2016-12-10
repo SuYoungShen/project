@@ -138,9 +138,9 @@
                             FROM
                               places
                             where
-                              id = '".$_GET['id']."' AND
-                              place='".$_GET['place_name']."'
+                              place = '".$_GET["place_name"]."'
                       ";
+
                 $Ses = $db->query($Se);
                 $Display = $Ses->fetchAll();
 

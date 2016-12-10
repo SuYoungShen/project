@@ -65,7 +65,7 @@
     }
 
     if (isset($viewpoints[0])) {
-      return $Web="area.php?id=$ids[0]&viewpoint=$viewpoints[0]&place_name=$place_names[0]";
+      return $Web="areas.php?id=$ids[0]&viewpoint=$viewpoints[0]";
     }else {
       return $Web='#';
     }
