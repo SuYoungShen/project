@@ -1,5 +1,4 @@
 <?php
-  $dbname="project";
   include ("bc/mysql/connect.php");
 
   $placeSe = $db->query(Placess());//查詢資料表
@@ -38,15 +37,14 @@
             $place_Name
           </a>
         </td>
-
-
       ";
-
     }
   }
 
 echo "</tr>";
 
   $db=null;
+
+
 
  ?>
