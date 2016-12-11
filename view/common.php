@@ -6,7 +6,7 @@
   }
 
   function PlaceSe(){
-    $placeSe = "SELECT * From `places`";
+    $placeSe = "SELECT * From `places` GROUP BY place";
     return $placeSe;
   }
 

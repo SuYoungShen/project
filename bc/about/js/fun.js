@@ -45,11 +45,3 @@ function Edits(id, placeName, path, pic_name) {
   // document.getElementById("Introduction").value = Introduction;
   document.getElementById("pics").innerHTML = "<img src='"+path+""+pic_name+"'  class='col-xs-8'>";
 }
-
-
-// });
-
-// function test(data){
-//   dataa=data;
-//     document.getElementById("form-field-8").value=dataa;
-// }

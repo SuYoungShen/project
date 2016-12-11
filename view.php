@@ -74,7 +74,7 @@
                     <?php
                     include ("area/place.php");
                     function Placess(){
-                      $place = "SELECT * From `places`";
+                      $place = "SELECT * FROM `places` GROUP BY place";
                       return $place;
                     }
                     ?>
@@ -123,14 +123,7 @@
 
       <div class="gap"></div>
 
-      <table class="table table-striped table-bordered table-hover">
-        <!-- <tr>
-          <td>
-            <a  href="#" >
-              高雄地區名
-            </a>
-          </td>
-        </tr> -->
+      <table class="table table-striped table-bordered table-hover">      
         <?php
           include ("view/place.php");
          ?>
