@@ -239,13 +239,21 @@
 											</a>
 										</div>
 									</div>
-
+									<?php
+										include 'mysql/connect.php';
+										$AboutSe
+										$db=null;
+									 ?>
 									<div class="widget-body">
 										<div class="widget-main">
 											<div>
 												<label for="form-field-8">簡介</label>
 												<form action="about/about.php" method="post">
-													<textarea class="form-control" name="About" id="form-field-8" placeholder="簡介(最多1000字)"></textarea>
+													<textarea class="form-control" name="About"
+														id="about" placeholder="簡介(最多1000字)"
+														value="
+
+														"></textarea>
 													<br>
 													<button class="btn btn-info" type="submit" name="AboutSubmit" >
 														<i class="ace-icon fa fa-check bigger-110"></i>

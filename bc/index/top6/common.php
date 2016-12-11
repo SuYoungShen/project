@@ -46,15 +46,15 @@
     $topDe= "DELETE FROM `top` WHERE ";
     return $topDe;
   }
-
-  function message($value,$basename){
-    echo "
-      <script>
-      var value = '$value';
-      var basename= '$basename';
-
-      alerts(value, basename);
-      </script>
-    ";
-  }
+  // 
+  // function message($value,$basename){
+  //   echo "
+  //     <script>
+  //     var value = '$value';
+  //     var basename= '$basename';
+  //
+  //     alerts(value, basename);
+  //     </script>
+  //   ";
+  // }
  ?>
