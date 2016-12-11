@@ -50,40 +50,21 @@ function display($display, $sliderdir){
     ";
   }
 
-
-  // echo "
-  //   <div class='sl-slide item$key' data-orientation='horizontal' data-slice1-rotation='-25' data-slice2-rotation='-25' data-slice1-scale='2' data-slice2-scale='2'>
-  //     <div class='sl-slide-inner'>
-  //       <div class='container' style='max-height:445px'>
-  //         <img class='pull-right' width='950' src='$displays' alt=''/>
-  //         <!-- <h3 class='gap'>Tincidunt condimentum eros</h3>
-  //         <a class='btn btn-large btn-transparent' href='#'>Learn More</a> -->
-  //       </div>
-  //     </div>
-  //   </div>
-  // ";
 }
-
-
-
-    // foreach ($rows as $key => $value) { //取得資料庫
-    //   echo $key.$value[3]."<br>";//顯示id && 時間
-    // }
-
-    if(isset($_POST["clear"])){
-      $clear = $_POST["clear"];
-      for ($i=0; $i < 6; $i++) {
-        $clear = $db->query("UPDATE slider SET
-                          name = ' ',
-                          datetime = ' '
-                        WHERE
-                          '".$i."'
-                        ");
-      }
-
-      $_SESSION["slidernum"] = 0;
-      $_SESSION["slidernums"] = 1;
-
+if(isset($_POST["clear"])){
+  $clear = $_POST["clear"];
+  for ($i=0; $i < 6; $i++) {
+    $clear = $db->query("UPDATE slider SET
+      name = ' ',
+      datetime = ' '
+      WHERE
+      '".$i."'
+      ");
     }
+
+    $_SESSION["slidernum"] = 0;
+    $_SESSION["slidernums"] = 1;
+
+  }
 
 ?>
