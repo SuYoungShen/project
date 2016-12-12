@@ -250,8 +250,8 @@
 													</form>
 												</div>
 											</div>
+										</div>
 									</div>
-								</div>
 
 								<div class="col-sm-8" >
 									<div class="widget-box">

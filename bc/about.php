@@ -381,10 +381,12 @@
 						<div class="col-sm-12">
 							<div class="table-header">
 								高雄地區
-								<a href="#place" class="btn btn-app btn-green btn-xs" role="button" class="green" data-toggle="modal">
+								<a href="#place" class="btn btn-app btn-green btn-xs" role="button" 
+									class="green" data-toggle="modal">
 									<i class="ace-icon glyphicon-plus bigger-150"></i>
 								</a>
-								<a href="#" name="Delete" class="btn btn-app btn-danger btn-xs" role="button" class="green" data-toggle="modal">
+								<a href="#" name="Delete" class="btn btn-app btn-danger btn-xs" 
+									role="button" class="green" data-toggle="modal">
 									<i class="ace-icon fa fa-trash-o bigger-150"></i>
 								</a>
 							</div>

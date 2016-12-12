@@ -284,34 +284,38 @@
 										<form class="form-horizontal" role="form" method="post" >
 
 											<div class="form-group">
-												<label class="col-sm-3 control-label no-padding-right" for="account" >  帳號	 </label>
+												<label class="col-sm-3 control-label no-padding-right" for="account" >帳號</label>
 
 												<div class="col-sm-9 ">
-													<input type="text" name="account"  placeholder="帳號" class="col-xs-10 col-sm-5" required /><span class="account reset"></span>
+													<input type="text" name="account"  placeholder="帳號" 
+													class="col-xs-10 col-sm-5" required /><span class="account reset"></span>
 												</div>
 											</div>
 
 											<div class="form-group">
-												<label class="col-sm-3 control-label no-padding-right" for="password"> 密碼 </label>
+												<label class="col-sm-3 control-label no-padding-right" for="password">密碼</label>
 
 												<div class="col-sm-9">
-													<input type="password" name="password"  placeholder="密碼" class="col-xs-10 col-sm-5" required/><span class="password reset"></span>
+													<input type="password" name="password"  placeholder="密碼" 
+													class="col-xs-10 col-sm-5" required/><span class="password reset"></span>
 												</div>
 											</div>
 
 											<div class="form-group">
-												<label class="col-sm-3 control-label no-padding-right" for="email" > E-mail </label>
+												<label class="col-sm-3 control-label no-padding-right" for="email" >E-mail</label>
 
 												<div class="col-sm-9">
-													<input type="email" name="email"  placeholder="E-mail" class="col-xs-10 col-sm-5" required /><span class="email reset"></span>
+													<input type="email" name="email"  placeholder="E-mail" 
+													class="col-xs-10 col-sm-5" required /><span class="email reset"></span>
 												</div>
 											</div>
 
 											<div class="form-group">
-												<label class="col-sm-3 control-label no-padding-right" for="name"> 姓名 </label>
+												<label class="col-sm-3 control-label no-padding-right" for="name" >姓名</label>
 
 												<div class="col-sm-9">
-													<input type="text" name="name"  placeholder="姓名" class="col-xs-10 col-sm-5" /><span class="name reset"></span>
+													<input type="text" name="name"  placeholder="姓名" 
+													class="col-xs-10 col-sm-5" required/><span class="name reset"></span>
 												</div>
 											</div>
 

@@ -230,8 +230,7 @@ $(function(){
 							 <div class="page-header">
 								 <h1>景點留言</h1>
 							 </div><!-- /.page-header -->
-
-							 <!--會員-->
+							 
 							 <div class="row">
 								 <div class="col-xs-12 col-sm-12">
 									 <div class="table-header">
@@ -276,7 +275,7 @@ $(function(){
 									 </div>
 								</div>
 							</div>
-							 <!--會員-->
+							 
 							 <hr>
 						 </div><!--container-fluid-->
 
