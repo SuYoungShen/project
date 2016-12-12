@@ -29,9 +29,9 @@
     date_default_timezone_set('Asia/Taipei');//設定時間為台北
     $datetimes = date("Y-m-d H:i:s");//時間
 
-    $true = In($db,$accounts ,$passowrds ,$emails ,$names ,$datetimes);
+    $trues = In($db,$accounts ,$passowrds ,$emails ,$names ,$datetimes);
 
-    if ($true==true) {
+    if ($trues==true) {
       echo "申請成功";
     }else {
       echo "申請失敗";

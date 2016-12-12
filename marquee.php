@@ -6,10 +6,9 @@
 		height: 233px;
 	}
 </style>
-<marquee scrollAmount="20" BEHAVIOR="scroll"  loop="0">
+<marquee scrollAmount="20" behavior="SCROLL"  loop="0">
 <?php
 
-	$dbname="top";
 	include("bc/mysql/connect.php");//top資料表
 	// include("bc/index/top6/common.php");
 
