@@ -226,7 +226,7 @@
 									</a>
 								</div><!-- div.table-responsive -->
 
-								<div>
+								<div class="table-responsive">
 									<table id="dynamic-table" class="table table-striped table-bordered table-hover">
 										<thead>
 											<tr>
@@ -237,7 +237,7 @@
 													</label>
 												</th>
 												<th>帳號</th>
-												<th>密碼</th>
+												<th >密碼</th>
 												<th class="hidden-480">E-mail</th>
 
 												<th>姓名</th>
@@ -287,7 +287,7 @@
 												<label class="col-sm-3 control-label no-padding-right" for="account" >帳號</label>
 
 												<div class="col-sm-9 ">
-													<input type="text" name="account"  placeholder="帳號" 
+													<input type="text" name="account"  placeholder="帳號"
 													class="col-xs-10 col-sm-5" required /><span class="account reset"></span>
 												</div>
 											</div>
@@ -296,7 +296,7 @@
 												<label class="col-sm-3 control-label no-padding-right" for="password">密碼</label>
 
 												<div class="col-sm-9">
-													<input type="password" name="password"  placeholder="密碼" 
+													<input type="password" name="password"  placeholder="密碼"
 													class="col-xs-10 col-sm-5" required/><span class="password reset"></span>
 												</div>
 											</div>
@@ -305,7 +305,7 @@
 												<label class="col-sm-3 control-label no-padding-right" for="email" >E-mail</label>
 
 												<div class="col-sm-9">
-													<input type="email" name="email"  placeholder="E-mail" 
+													<input type="email" name="email"  placeholder="E-mail"
 													class="col-xs-10 col-sm-5" required /><span class="email reset"></span>
 												</div>
 											</div>
@@ -314,7 +314,7 @@
 												<label class="col-sm-3 control-label no-padding-right" for="name" >姓名</label>
 
 												<div class="col-sm-9">
-													<input type="text" name="name"  placeholder="姓名" 
+													<input type="text" name="name"  placeholder="姓名"
 													class="col-xs-10 col-sm-5" required/><span class="name reset"></span>
 												</div>
 											</div>
@@ -418,24 +418,15 @@
 						</div>
 					</div>
 					<!--edit -->
-
-
 				</div><!-- /.main-content-inner -->
 			</div><!-- /.main-content -->
 		</div><!-- /.main-content -->
 
-			<div class="footer">
-				<div class="footer-inner">
-					<div class="footer-content">
-						<span class="bigger-120">
-							<span class="blue bolder">By:</span>
-						</span>
-
-						&nbsp; &nbsp;
-
-					</div>
-				</div>
-			</div>
+		<div class="footer">
+			<?php
+			include 'footer.php';
+			?>
+		</div>
 
 			<a href="#" id="btn-scroll-up" class="btn-scroll-up btn btn-sm btn-inverse">
 				<i class="ace-icon fa fa-angle-double-up icon-only bigger-110"></i>
