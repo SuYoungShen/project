@@ -12,10 +12,12 @@
     <meta name="description" content="">
     <meta name="viewport" content="width=device-width">
 
-    <!-- <link rel="stylesheet" href="css/bootstrap.min.css"> -->
     <link rel="stylesheet" href="css/bootstrap.min.css">
-    <!-- <link rel="stylesheet" href="css/bootstrap-responsive.min.css"> -->
     <link rel="stylesheet" href="css/font-awesome.min.css">
+    <!-- <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css"> -->
+
+    <link rel="stylesheet" href="css/bootstrap-responsive.min.css">
     <link rel="stylesheet" href="css/main.css">
     <link rel="stylesheet" href="css/sl-slide.css">
 
@@ -28,10 +30,8 @@
     <!-- ace styles -->
 
     <!-- 自行填入 -->
-
     <script type="text/javascript" src="js/jquery-1.11.0.min.js"></script>
     <script type="text/javascript" src="login/js/registered.js"></script>
-
     <!-- 自行填入 -->
 
     <!--[if lte IE 9]>
@@ -102,7 +102,7 @@
             <li><a href="forum.php">討論區</a></li>
 
             <?php
-            Member_Information();
+              Member_Information();
             ?>
 
           </ul>
@@ -117,27 +117,63 @@
     <div class="container">
       <div class="row">
         <div class="span12">
-          <div id="myCarousel" class="carousel slide">
+
+          <!-- <div id="myCarousel" class="carousel slide">
             <ol class="carousel-indicators">
               <?php
-              include 'index/slider/slider.php';
-              counts($display);
+                // include 'index/slider/slider.php';
+                // counts($display);
               ?>
             </ol>
 
             <div class="carousel-inner" align='center'>
               <?php
-              display($display, $sliderdir);
+                // display($display, $sliderdir);
               ?>
             </div>
 
             <a class="carousel-control left" href="#myCarousel" data-slide="prev">&lsaquo;</a>
             <a class="carousel-control right" href="#myCarousel" data-slide="next">&rsaquo;</a>
+          </div> -->
+
+          <div id="carousel-example-generic" class="carousel slide" data-ride="carousel">
+
+            <ol class="carousel-indicators">
+              <li data-target="#carousel-example-generic" data-slide-to="0" class="active"></li>
+              <li data-target="#carousel-example-generic" data-slide-to="1"></li>
+              <li data-target="#carousel-example-generic" data-slide-to="2"></li>
+            </ol>
+
+            <div class="carousel-inner" role="listbox" align='center'>
+              <div class="item active">
+                <img src="images/test/1.jpg" class="img-responsive" >
+              </div>
+              <div class="item">
+                <img src="images/test/2.jpg" class="img-responsive" >
+              </div>
+              <div class="item">
+                <img src="images/test/3.jpg" class="img-responsive" >
+              </div>
+            </div>
+
+            <a class="left carousel-control" href="#carousel-example-generic" role="button" data-slide="prev">
+              <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
+              <span class="sr-only"><</span>
+            </a>
+            <a class="right carousel-control" href="#carousel-example-generic" role="button" data-slide="next">
+              <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
+              <span class="sr-only">></span>
+            </a>
           </div>
+
+
         </div>
       </div>
     </div>
   </section>
+
+
+
   <!--Slider輪播-->
 
   <!--熱門排行-->
@@ -172,9 +208,20 @@
     include("login-form.php");
    ?>
   <!--  /Login form -->
+  <!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script> -->
+  <!-- Include all compiled plugins (below), or include individual files as needed -->
+  <!-- <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script> -->
+
+  <script type="text/javascript" src="js/jquery.js"></script>
+
+  <script src="bc/assets/js/bootstrap.min.js"></script>
+
+
+
+  <!-- <script type="text/javascript" src="bc/assets/js/jquery.min.js"></script>
+  <script src="bc/assets/js/bootstrap.min.js"></script> -->
 
   <script src="js/vendor/jquery-1.9.1.min.js"></script>
-  <script src="js/vendor/bootstrap.min.js"></script>
   <script src="js/main.js"></script>
   <!-- Required javascript files for Slider -->
   <script src="js/jquery.ba-cond.min.js"></script>

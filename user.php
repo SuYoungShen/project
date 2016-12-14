@@ -58,14 +58,14 @@
         <div id="myCarousel" class="carousel slide">
           <ol class="carousel-indicators">
             <?php
-            include 'index/slider/slider.php';
-            counts($display);
+              include 'index/slider/slider.php';
+              counts($display);
             ?>
           </ol>
 
           <div class="carousel-inner" align='center'>
             <?php
-            display($display, $sliderdir);
+              display($display, $sliderdir);
             ?>
           </div>
 
@@ -93,7 +93,7 @@
             <tr>
               <td>
                 <?php
-                include ("user/favorite.php");
+                  include ("user/favorite.php");
                 ?>
               </td>
             </tr>

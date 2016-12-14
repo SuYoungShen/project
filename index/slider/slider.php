@@ -55,11 +55,12 @@ if(isset($_POST["clear"])){
   $clear = $_POST["clear"];
   for ($i=0; $i < 6; $i++) {
     $clear = $db->query("UPDATE slider SET
-      name = ' ',
-      datetime = ' '
-      WHERE
-      '".$i."'
-      ");
+                                          name = ' ',
+                                          datetime = ' '
+                                          WHERE
+                                          '".$i."'
+                                          "
+                                        );
     }
 
     $_SESSION["slidernum"] = 0;
