@@ -55,7 +55,7 @@
   <div class="container">
     <div class="row">
       <div class="span12">
-        <div id="myCarousel" class="carousel slide">
+        <div id="myCarousel" class="carousel slide" data-ride="carousel" data-interval="3000">
           <ol class="carousel-indicators">
             <?php
               include 'index/slider/slider.php';
@@ -132,7 +132,9 @@
 <script src="bc/assets/js/bootbox.min.js"></script>
 <!-- 彈跳視窗 -->
 <!-- <script src="js/vendor/jquery-1.9.1.min.js"></script> -->
-<script src="js/vendor/bootstrap.min.js"></script>
+<script type="text/javascript" src="js/jquery.js"></script>
+<script src="bc/assets/js/bootstrap.min.js"></script>
+
 <script src="js/main.js"></script>
 <!-- Required javascript files for Slider -->
 <script src="js/jquery.ba-cond.min.js"></script>

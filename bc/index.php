@@ -263,7 +263,7 @@
 											<div class="widget-main">
 												<!--Slider輪播-->
 												<section id="blackbackground">
-													<div id="myCarousel" class="carousel slide">
+													<div id="myCarousel" class="carousel slide" data-ride="carousel" data-interval="3000">
 														<ol class="carousel-indicators">
 															<?php
 																include 'index/slider/slider.php';
@@ -505,6 +505,8 @@
 		<!--[if lte IE 8]>
 		  <script src="assets/js/excanvas.min.js"></script>
 		<![endif]-->
+		<script type="text/javascript" src="js/jquery.js"></script>
+		
 		<script src="assets/js/jquery-ui.custom.min.js"></script>
 		<script src="assets/js/jquery.ui.touch-punch.min.js"></script>
 		<script src="assets/js/chosen.jquery.min.js"></script>
