@@ -3,9 +3,9 @@
 -- http://www.phpmyadmin.net
 --
 -- 主機: localhost
--- 產生時間： 2016 年 12 月 11 日 20:00
+-- 產生時間： 2016 年 12 月 19 日 02:22
 -- 伺服器版本: 10.1.19-MariaDB
--- PHP 版本： 5.6.28
+-- PHP 版本： 7.0.13
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 SET time_zone = "+00:00";
