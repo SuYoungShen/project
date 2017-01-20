@@ -101,6 +101,7 @@
 
             <li><a href="forum.php">討論區</a></li>
             <?php
+              //login->check_login.php
               Member_Information();
             ?>
           </ul>

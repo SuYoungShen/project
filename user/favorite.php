@@ -11,7 +11,7 @@
     $Account = $value["Account"];//帳號
     $ViewPoint[$key] = $value["place"];//地區名
     $PicName = $value["PicName"];//照片名
-    $PicPath = $value["PicPath"];//照片位置    
+    $PicPath = $value["PicPath"];//照片位置
     $Datetime = $value["Datetime"];//時間
     $Webs = $Web[$key] = Url($db,$ViewPoint[$key]);//網站位址
 
@@ -44,7 +44,7 @@
     ";
 
   }
-
+  //以帳號查詢 Favorite table 有加入過的最愛
   function FavSe($account){
     $FavSe = "SELECT * FROM `favorite` WHERE `Account`='".$account."'";
     return $FavSe;
