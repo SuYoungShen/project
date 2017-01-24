@@ -7,7 +7,15 @@
     $null="";
     $delete = $_POST["id"];
 
-    $true = $db->query(topup($delete, $null,$null, $null, $null));
+    $true = $db->query(
+                        topup(
+                          $delete,
+                          $null,
+                          $null,
+                          $null,
+                          $null
+                        )
+                      );
 
       if ($true == true) {
         echo "刪除成功";
