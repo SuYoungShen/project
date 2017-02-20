@@ -17,7 +17,7 @@
     $email = $emails[$key] = $value["email"];//email
     $site = $sites[$key] = $value["site"];//網址
     $datetime = $datetimes[$key] =
-    (strtotime($value["datetime"]) > strtotime($value["replydatetime"]))?$value["datetime"]:$value["replydatetime"];//時間
+    (strtotime($value["datetimes"]) > strtotime($value["replydatetime"]))?$value["datetimes"]:$value["replydatetime"];//時間
 
     echo "
       <tr>
@@ -41,7 +41,6 @@
 
         <td>
           <div class='hidden-sm hidden-xs action-buttons'>
-
             <a class='green' href='#reply' data-toggle='modal'
               onclick='Edit(
                             \"$id\",

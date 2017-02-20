@@ -71,7 +71,8 @@
 			Login_Check();
 			Login_Out();
 		 ?>
-
+		 
+</body>
 	</head>
 
 	<body class="no-skin">
@@ -506,7 +507,7 @@
 		  <script src="assets/js/excanvas.min.js"></script>
 		<![endif]-->
 		<script type="text/javascript" src="js/jquery.js"></script>
-		
+
 		<script src="assets/js/jquery-ui.custom.min.js"></script>
 		<script src="assets/js/jquery.ui.touch-punch.min.js"></script>
 		<script src="assets/js/chosen.jquery.min.js"></script>
