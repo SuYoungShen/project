@@ -31,8 +31,10 @@
 
     $trues = In($db,$accounts ,$passowrds ,$emails ,$names ,$datetimes);
 
-    if ($trues==true) {
+    if ($trues=="true") {
       echo "申請成功";
+      // header("Location:https://tw.yahoo.com/");
+
     }else {
       echo "申請失敗";
     }
@@ -42,12 +44,14 @@
   }
 
   function In($db,$account ,$password ,$email ,$name ,$datetime){
+
     $memberin = memberInsert($account ,$password ,$email ,$name ,$datetime);//新增會員資料
     $true = $db->query($memberin);
+
     if ($true) {
-      $true=true;
+      $true="true";
     }else {
-      $true=false;
+      $true="false";
     }
     return $true;
   }

@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+
 <!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
 <!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
 <!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
@@ -18,6 +18,15 @@
 	  <link rel="stylesheet" type="text/css" href="css/picloop.css">
     <!-- Le fav and touch icons -->
     <script type="text/javascript" charset="utf-8" language="javascript" src="js/jquery.js"></script>
+    <script type="text/javascript" src="login/js/registereds.js"></script>
+    <script type="text/javascript">
+      $(document).ready(function() {
+        $("button[name='registered']").click(function(event) {
+          // document.location.href="https://tw.yahoo.com/";
+        });
+      });
+    </script>
+
 
     <?php
       session_start();
