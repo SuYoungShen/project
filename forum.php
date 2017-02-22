@@ -26,7 +26,7 @@
 
   <script src="js/vendor/modernizr-2.6.2-respond-1.1.0.min.js"></script>
   <script type="text/javascript" src="login/js/registered.js"></script>
-  
+
 
   <?php
     session_start();
@@ -75,7 +75,7 @@
                   <?php
                   include ("area/place.php");
                   function Placess(){
-                    $place = "SELECT * From `places`";
+                    $place = "SELECT * From `places` GROUP BY place";
                     return $place;
                   }
                   ?>

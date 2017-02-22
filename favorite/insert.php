@@ -26,8 +26,7 @@
                       );
     if ($trues) {
       echo "已加入最愛";
-      var_dump($trues);
-      
+            
     }else {
       echo "失敗";
     }

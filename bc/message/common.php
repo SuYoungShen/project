@@ -54,7 +54,7 @@
                                   )VALUES (
                                   '".$place_name."',
                                   '".$viewpoint."',
-                                  '".$Pic."',
+                                  '".$pic."',
                                   '".$posted."',
                                   '".$message."',
                                   '".$email."',

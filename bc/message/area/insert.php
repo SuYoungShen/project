@@ -4,6 +4,7 @@
   $dbname = "project";
   include ("../../mysql/connect.php");
   include ("../common.php");
+
   $id = $_POST["id"];
   $place_name = $_POST["place_name"];
   $viewpoint = $_POST["viewpoint"];
@@ -24,7 +25,7 @@
                         AreaIn(
                           $place_name,
                           $viewpoint,
-                          $Pic,                          
+                          $Pic,
                           $posted,
                           $message,
                           $email,
@@ -38,7 +39,8 @@
         message("留言成功",$BackWeb);
 
       }else {
-        message("留言失敗",$BackWeb);
+        // message("留言失敗",$BackWeb);
+        var_dump($true);
       }
   }else {
       message("賣來亂",$BackWeb);
