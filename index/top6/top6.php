@@ -36,11 +36,7 @@
         <div class='links'>
           <a data-toggle='modal' href='#modal-$key' >
           <i class='icon-eye-open'></i></a><a href=''><i class='icon-heart' onclick='Insert(
-                                                                                            \"$accounts\",
-                                                                                            \"$placeName\",
-                                                                                            \"$picName\",
-                                                                                            \"$picDir\",
-                                                                                            \"$WebSite\"
+                           \"$accounts\",                                      \"$placeName\",                                      \"$picName\",                                       \"$picDir\",                                         \"$WebSite\"
                                                                                             )'></i>
           </a>
 
