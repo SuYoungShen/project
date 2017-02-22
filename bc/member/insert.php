@@ -30,12 +30,22 @@
     $datetimes = date("Y-m-d H:i:s");//時間
 
     $true = In($db,$accounts ,$passowrds ,$emails ,$names ,$datetimes);
+<<<<<<< HEAD
 
 
     if ($true==true) {
+=======
+>>>>>>> cb8e3d08c1a88f0fc1eafde4eae37b9a75050b65
 
+<<<<<<< HEAD
+    if ($true==true) {
+=======
     if ($trues=="true") {
+<<<<<<< HEAD
 
+=======
+>>>>>>> 237fbacb053927595f6d0455934b93f011710755
+>>>>>>> cb8e3d08c1a88f0fc1eafde4eae37b9a75050b65
       echo "申請成功";
       // header("Location:https://tw.yahoo.com/");
 
