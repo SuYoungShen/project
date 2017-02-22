@@ -68,7 +68,7 @@
                   <?php
                     include ("area/place.php");
                     function Placess(){
-                      $place = "SELECT * From `places`";
+                      $place = "SELECT * FROM `places` GROUP BY place";
                       return $place;
                     }
                    ?>
@@ -134,7 +134,8 @@
                 include 'bc/mysql/connect.php';
                 $Se = "SELECT
                               id,
-                              viewpoint
+                              viewpoint,
+                              place
                             FROM
                               places
                             where
@@ -147,9 +148,10 @@
                 foreach ($Display as $key => $value) {
                   $id = $value["id"];
                   $viewpoint = $value["viewpoint"];
+                  $place_name = $value["place"];
                   echo "
                   <tr>
-                    <td><a href='areas.php?id=$id&viewpoint=$viewpoint'>$viewpoint</a></td>
+                    <td><a href='areas.php?id=$id&viewpoint=$viewpoint&place_name=$place_name'>$viewpoint</a></td>
                   </tr>
                   ";
                 }

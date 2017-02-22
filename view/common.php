@@ -6,7 +6,7 @@
   }
 
   function PlaceSe(){
-    $placeSe = "SELECT * From `places`";
+    $placeSe = "SELECT * FROM `places` GROUP BY place";
     return $placeSe;
   }
 
@@ -54,7 +54,7 @@
   }
 
   function ViewSe(){
-    $viewSe = "SELECT * From `view`";
+    $viewSe = "SELECT * From `view` ";
     return $viewSe;
   }
 
