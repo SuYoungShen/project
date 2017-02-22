@@ -71,8 +71,7 @@
 			Login_Check();
 			Login_Out();
 		 ?>
-		 
-</body>
+
 	</head>
 
 	<body class="no-skin">
@@ -514,11 +513,6 @@
 		<!--[if lte IE 8]>
 		  <script src="assets/js/excanvas.min.js"></script>
 		<![endif]-->
-<<<<<<< HEAD
-=======
-		<script type="text/javascript" src="js/jquery.js"></script>
-
->>>>>>> 237fbacb053927595f6d0455934b93f011710755
 		<script src="assets/js/jquery-ui.custom.min.js"></script>
 		<script src="assets/js/jquery.ui.touch-punch.min.js"></script>
 		<script src="assets/js/chosen.jquery.min.js"></script>

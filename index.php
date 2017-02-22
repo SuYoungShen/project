@@ -30,11 +30,7 @@
     <!-- 自行填入 -->
 
     <script type="text/javascript" src="js/jquery-1.11.0.min.js"></script>
-<<<<<<< HEAD
-    <script type="text/javascript" src="login/js/registereds.js"></script>
-=======
     <script type="text/javascript" src="login/js/registered.js"></script>
->>>>>>> cb8e3d08c1a88f0fc1eafde4eae37b9a75050b65
 
     <!-- 自行填入 -->
 

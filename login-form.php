@@ -108,7 +108,7 @@
                   <span class="bigger-110">重填</span>
                 </button>
 
-                <button type="button" name="registered" class="width-30 pull-right btn btn-sm btn-success">
+                <button type="submit" name="registered" class="width-30 pull-right btn btn-sm btn-success">
                   <span class="bigger-110">註冊</span>
 
                   <i class="ace-icon fa fa-arrow-right icon-on-right"></i>

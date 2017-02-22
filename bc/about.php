@@ -210,7 +210,7 @@
 							</li>
 						</ul><!-- /.breadcrumb -->
 						<!-- /.nav-search -->
-					<!--
+<!--
 						<div class="nav-search" id="nav-search">
 							<form class="form-search">
 								<span class="input-icon">
@@ -219,8 +219,7 @@
 								</span>
 							</form>
 						</div> -->
-						<!-- /.nav-search
-					-->
+						<!-- /.nav-search -->
 					</div>
 
 					<div class="container-fluid">
