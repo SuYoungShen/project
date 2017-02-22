@@ -2,7 +2,7 @@
   $dbname = "project";
   include("../mysql/connect.php");
   include ("common.php");
-
+   $BackPage = "../../index.php";
   // if (isset($_POST["password"]) && !empty($_POST["password"])) {
   //   $accounts = $_POST["account"];
   //   $passwords = $_POST["password"];
@@ -30,15 +30,14 @@
     $datetimes = date("Y-m-d H:i:s");//時間
 
     $true = In($db,$accounts ,$passowrds ,$emails ,$names ,$datetimes);
-
+    // var_dump($true);
     if ($true==true) {
-      echo "申請成功";
+      message("申請成功",$BackPage);
     }else {
-      echo "申請失敗";
+      message("申請失敗",$BackPage);
     }
-
   }else {
-    echo "空";
+    message("賣來亂",$BackPage);
   }
 
   function In($db,$account ,$password ,$email ,$name ,$datetime){
@@ -51,6 +50,21 @@
     }
     return $true;
   }
+
+  function message($value,$basename){
+    echo "
+      <script>
+        var value = '$value';
+        var basename = '$basename';
+        alerts(value,basename);
+        function alerts(value,basename) {
+          alert(value);
+          document.location.href=basename;
+        }
+      </script>
+    ";
+  }
+
 
   // function memberInsert($account ,$password ,$email ,$name ,$datetime)
   // {

@@ -62,7 +62,7 @@
           <div class="accordion-inner">
             <p> 輸入基本資料 (全部為必填)</p>
 
-            <form class="form-horizontal" role="form" method="post">
+            <form class="form-horizontal" role="form" method="post" action="bc/member/insert.php">
 
               <label class="block clearfix">
                 <span class="block input-icon">

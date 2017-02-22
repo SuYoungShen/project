@@ -4,35 +4,36 @@ $(document).ready(function() {
     $("input").css("border-color","");
   });
 
-  $("button[name='registered']").click(function() {//註冊按鈕
-
-    var trues = (account != "") &&
-                (password != "") &&
-                (email != "") &&
-                (name != "");
-
-    if (trues==true) {
-      $.ajax({
-        type:"POST",
-        url: "bc/member/insert.php",
-        data:{
-          'email':email,
-          'name':name,
-          'account':account,
-          'password':password
-        },
-        success:function(data){
-          alert(data);
-          // document.location.href="index.php";
-        },
-        error: function(data){
-          alert(data);
-        }
-      });
-    }else{
-      alert("失敗");
-    }//if
- });//註冊按鈕
+ //  $("button[name='registered']").click(function() {//註冊按鈕
+ //
+ //    // var trues = (account != "") &&
+ //    //             (password != "") &&
+ //    //             (email != "") &&
+ //    //             (name != "");
+ //    var trues=true;
+ //
+ //    if (trues==true) {
+ //      $.ajax({
+ //        type:"POST",
+ //        url: "bc/member/insert.php",
+ //        data:{
+ //          'email':email,
+ //          'name':name,
+ //          'account':account,
+ //          'password':password
+ //        },
+ //        success:function(data){
+ //          // alert(data);
+ //          document.location.href="https://tw.yahoo.com/";
+ //        },
+ //        error: function(data){
+ //          alert(data);
+ //        }
+ //      });
+ //    }else{
+ //      alert("失敗");
+ //    }//if
+ // });//註冊按鈕
 
 
      //防呆
