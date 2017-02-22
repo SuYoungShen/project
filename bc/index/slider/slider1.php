@@ -77,8 +77,6 @@ if (!isset($_SESSION["slidernum"]) && !isset($_SESSION["slidernums"])) {
           </script>
           ";
 
-          
-
         }else {
 
           move_uploaded_file($slider6_tmp,$sliderdir.$slider6_name);//把檔案移到指定dir
@@ -143,7 +141,6 @@ if (!isset($_SESSION["slidernum"]) && !isset($_SESSION["slidernums"])) {
       }//if($top6_error)
     }//foreach
   }//FILE["top6"]
-
 
   // echo "See=".$_SESSION["topnums"]."<br>";
   // echo "SESSION=".$_SESSION["topnum"]."<br>";

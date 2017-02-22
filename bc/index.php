@@ -251,8 +251,8 @@
 													</form>
 												</div>
 											</div>
-										</div>
 									</div>
+								</div>
 
 								<div class="col-sm-8" >
 									<div class="widget-box">
@@ -264,7 +264,7 @@
 											<div class="widget-main">
 												<!--Slider輪播-->
 												<section id="blackbackground">
-													<div id="myCarousel" class="carousel slide" data-ride="carousel" data-interval="3000">
+													<div id="myCarousel" class="carousel slide">
 														<ol class="carousel-indicators">
 															<?php
 																include 'index/slider/slider.php';
@@ -459,9 +459,17 @@
 
 
 			<div class="footer">
-				<?php
-					include 'footer.php';
-				 ?>
+				<div class="footer-inner">
+					<div class="footer-content">
+						<span class="bigger-120">
+							<span class="blue bolder">By:</span>
+
+						</span>
+
+						&nbsp; &nbsp;
+
+					</div>
+				</div>
 			</div>
 
 			<a href="#" id="btn-scroll-up" class="btn-scroll-up btn btn-sm btn-inverse">
@@ -506,8 +514,11 @@
 		<!--[if lte IE 8]>
 		  <script src="assets/js/excanvas.min.js"></script>
 		<![endif]-->
+<<<<<<< HEAD
+=======
 		<script type="text/javascript" src="js/jquery.js"></script>
 
+>>>>>>> 237fbacb053927595f6d0455934b93f011710755
 		<script src="assets/js/jquery-ui.custom.min.js"></script>
 		<script src="assets/js/jquery.ui.touch-punch.min.js"></script>
 		<script src="assets/js/chosen.jquery.min.js"></script>

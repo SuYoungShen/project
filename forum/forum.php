@@ -13,11 +13,94 @@
     $message = $messages[$key] = $value["message"];//留言
     $reply = $replys[$key] = $value["reply"];//回覆
     $datetime = $datetimes[$key] = $value["datetime"];//時間
+<<<<<<< HEAD
+    // echo "
+    //   <tr>
+    //     <td class='center'>
+    //       <label class='pos-rel'>
+    //         <input type='checkbox' class='ace' value='".$messages[$key]."'/>
+    //         <span class='lbl'></span>
+    //       </label>
+    //     </td>
+    //
+    //     <td>
+    //       <a href='#'>$theme</a>
+    //     </td>
+    //     <td>$posted</td>
+    //     <td class='hidden-480'>$email</td>
+    //     <td>$message</td>
+    //     <td>$reply</td>
+    //     <td>$frequency</td>
+    //     <td>$datetime</td>
+    //
+    //
+    //     <td>
+    //       <div class='hidden-sm hidden-xs action-buttons'>
+    //
+    //         <a class='green' href='#reply' data-toggle='modal'
+    //           onclick='Edit(
+    //                         \"$themes[$key]\",
+    //                         \"$posteds[$key]\",
+    //                         \"$emails[$key]\",
+    //                         \"$messages[$key]\",
+    //                         \"$replys[$key]\",
+    //                         \"$frequencys[$key]\",
+    //                         \"$datetimes[$key]\"
+    //                         )'>
+    //           <i class='ace-icon fa fa-pencil bigger-130'></i>
+    //         </a>
+    //
+    //         <a class='red' onclick='bootboxs(
+    //                             \"$posteds[$key]\",
+    //                             \"$messages[$key]\"
+    //                             )'>
+    //           <i class='ace-icon fa fa-trash-o bigger-130'></i>
+    //         </a>
+    //       </div>
+    //
+    //       <div class='hidden-md hidden-lg'>
+    //         <div class='inline pos-rel'>
+    //           <button class='btn btn-minier btn-yellow dropdown-toggle' data-toggle='dropdown' data-position='auto'>
+    //             <i class='ace-icon fa fa-caret-down icon-only bigger-120'></i>
+    //           </button>
+    //
+    //           <ul class='dropdown-menu dropdown-only-icon dropdown-yellow dropdown-menu-right dropdown-caret dropdown-close'>
+    //             <li>
+    //               <a href='#' class='tooltip-info' data-rel='tooltip' title='View'>
+    //                 <span class='blue'>
+    //                   <i class='ace-icon fa fa-search-plus bigger-120'></i>
+    //                 </span>
+    //               </a>
+    //             </li>
+    //
+    //             <li>
+    //               <a href='#' class='tooltip-success' data-rel='tooltip' title='Edit'>
+    //                 <span class='green'>
+    //                   <i class='ace-icon fa fa-pencil-square-o bigger-120'></i>
+    //                 </span>
+    //               </a>
+    //             </li>
+    //
+    //             <li>
+    //               <a href='#' class='tooltip-error' data-rel='tooltip' title='Delete'>
+    //                 <span class='red'>
+    //                   <i class='ace-icon fa fa-trash-o bigger-120'></i>
+    //                 </span>
+    //               </a>
+    //             </li>
+    //           </ul>
+    //         </div>
+    //       </div>
+    //     </td>
+    //   </tr>
+    // ";
+=======
 
     if (empty($reply)) {
       $reply = "等待管理員回覆中";
     }
 
+>>>>>>> 237fbacb053927595f6d0455934b93f011710755
     echo "
       <tr class='odd gradeX'>
         <td>$theme</td>

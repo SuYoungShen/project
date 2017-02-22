@@ -142,8 +142,7 @@
           </div>
 
           <div class="span12">
-            <textarea type="text" id="message" name="message" 
-					  placeholder="想說什麼" rows="10"class="span12" /></textarea>
+            <textarea type="text" id="message" name="message" placeholder="想說什麼" rows="10"class="span12" /></textarea>
           </div>
           <!-- <script type="text/javascript">
             document.cookie="datetime="+getNowTime();
@@ -152,7 +151,7 @@
             <input type="submit" class="btn btn-large btn-primary" value="送出">
           </div>
         </form>
-	  </div>
+    </div>
     </div>
     <br/>
 

@@ -73,7 +73,7 @@
                   <?php
                     include ("area/place.php");
                     function Placess(){
-                      $place = "SELECT * FROM `places` GROUP BY place";
+                      $place = "SELECT * From `places`";
                       return $place;
                     }
                    ?>

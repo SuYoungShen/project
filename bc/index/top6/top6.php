@@ -15,6 +15,7 @@ if (!isset($_SESSION["topnum"]) && !isset($_SESSION["topnums"])) {
   $_SESSION["topnums"] = 1;
 }
 
+
   if (isset($_POST["update"])) {
 
     $id = $_POST["id"];
@@ -31,7 +32,7 @@ if (!isset($_SESSION["topnum"]) && !isset($_SESSION["topnums"])) {
           date_default_timezone_set('Asia/Taipei');//設定時間為台北
           $datetime = date("Y-m-d H:i:s");//時間
 
-          $placeUp = topups($id, $place_Names, $datetime);//更新檔名
+          $placeUp = topups($id,$place_Names ,$datetime);//更新檔名
           $true = $db->query($placeUp);//執行更新指令
 
           if ($true) {
@@ -73,7 +74,7 @@ if (!isset($_SESSION["topnum"]) && !isset($_SESSION["topnums"])) {
             // $placeUp = PlaceUp($place_Name,$Introduction ,$pic_Name ,$picDir, $datetime);//更新檔名
             move_uploaded_file($pic_tmp,$top6dir.$pic_Name);//把檔案移到指定dir
 
-            $placeUp = topup($id, $place_Names, $pic_Name, $top6dir, $datetime);//更新檔名
+            $placeUp = topup($id,$place_Names ,$pic_Name ,$top6dir, $datetime);//更新檔名
             $true = $db->query($placeUp);//執行更新指令
             if ($true) {
               message("更新成功,但資料夾裡已有名稱".$picName."的檔案",$Basename);
@@ -83,8 +84,8 @@ if (!isset($_SESSION["topnum"]) && !isset($_SESSION["topnums"])) {
 
           }else{
 
-          move_uploaded_file($pic_tmp, $top6dir.$pic_Name);//把檔案移到指定dir
-          $placeUp = topup($id, $place_Names, $pic_Name, $top6dir, $datetime);//更新檔名
+          move_uploaded_file($pic_tmp,$top6dir.$pic_Name);//把檔案移到指定dir
+          $placeUp = topup($id,$place_Names ,$pic_Name ,$top6dir, $datetime);//更新檔名
           $true = $db->query($placeUp);//執行更新指令
           if ($true) {
             message("更新成功",$Basename);
@@ -95,6 +96,8 @@ if (!isset($_SESSION["topnum"]) && !isset($_SESSION["topnums"])) {
         }//$error == 0
       }//foreach
     }//$_FILES["picName"]
+
+
   }
 
 if (isset($_POST["insert"])) {

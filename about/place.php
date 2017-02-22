@@ -16,7 +16,7 @@
     $datetime=$value["datetime"];//時間
 
     if (empty($place_Name)) {
-      $place_Name = "暫無資料";
+      $place_Name="暫無資料";
     }
 
     if (($key%6) == 0) {
@@ -58,7 +58,8 @@
             <p>$Introduction</p>
           </div>
         </div>
-      ";    
+      ";
+    
     }
   }
 

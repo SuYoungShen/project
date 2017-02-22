@@ -29,9 +29,13 @@
     date_default_timezone_set('Asia/Taipei');//設定時間為台北
     $datetimes = date("Y-m-d H:i:s");//時間
 
-    $trues = In($db,$accounts ,$passowrds ,$emails ,$names ,$datetimes);
+    $true = In($db,$accounts ,$passowrds ,$emails ,$names ,$datetimes);
 
+<<<<<<< HEAD
+    if ($true==true) {
+=======
     if ($trues=="true") {
+>>>>>>> 237fbacb053927595f6d0455934b93f011710755
       echo "申請成功";
       // header("Location:https://tw.yahoo.com/");
 

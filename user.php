@@ -55,17 +55,17 @@
   <div class="container">
     <div class="row">
       <div class="span12">
-        <div id="myCarousel" class="carousel slide" data-ride="carousel" data-interval="3000">
+        <div id="myCarousel" class="carousel slide">
           <ol class="carousel-indicators">
             <?php
-              include 'index/slider/slider.php';
-              counts($display);
+            include 'index/slider/slider.php';
+            counts($display);
             ?>
           </ol>
 
           <div class="carousel-inner" align='center'>
             <?php
-              display($display, $sliderdir);
+            display($display, $sliderdir);
             ?>
           </div>
 
@@ -93,7 +93,7 @@
             <tr>
               <td>
                 <?php
-                  include ("user/favorite.php");
+                include ("user/favorite.php");
                 ?>
               </td>
             </tr>
@@ -132,9 +132,7 @@
 <script src="bc/assets/js/bootbox.min.js"></script>
 <!-- 彈跳視窗 -->
 <!-- <script src="js/vendor/jquery-1.9.1.min.js"></script> -->
-<script type="text/javascript" src="js/jquery.js"></script>
-<script src="bc/assets/js/bootstrap.min.js"></script>
-
+<script src="js/vendor/bootstrap.min.js"></script>
 <script src="js/main.js"></script>
 <!-- Required javascript files for Slider -->
 <script src="js/jquery.ba-cond.min.js"></script>

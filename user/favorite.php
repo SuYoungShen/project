@@ -12,9 +12,11 @@
     $ViewPoint[$key] = $value["place"];//地區名
     $PicName = $value["PicName"];//照片名
     $PicPath = $value["PicPath"];//照片位置
+    // $WebSite = $value["WebSite"];//網站位址
     $Datetime = $value["Datetime"];//時間
     $Webs = $Web[$key] = Url($db,$ViewPoint[$key]);//網站位址
 
+    // var_dump($Web[$key]);
     echo "
       <div class='accordion' id='accordion2'>
         <div class='accordion-group'>
@@ -44,7 +46,7 @@
     ";
 
   }
-  //以帳號查詢 Favorite table 有加入過的最愛
+
   function FavSe($account){
     $FavSe = "SELECT * FROM `favorite` WHERE `Account`='".$account."'";
     return $FavSe;

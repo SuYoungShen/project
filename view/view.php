@@ -119,8 +119,7 @@
       </div>
 
       <div id='modal-$id' class='modal hide fade'>
-        <a class='close-modal' href='javascript:;' data-dismiss='modal' aria-hidden='true'>
-		<i class='icon-remove'></i></a>
+        <a class='close-modal' href='javascript:;' data-dismiss='modal' aria-hidden='true'><i class='icon-remove'></i></a>
         <div class='modal-body'>
           <img alt=' ' src='$displays' >
           <h5>$viewpoint</h5>
