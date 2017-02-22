@@ -3,9 +3,15 @@
 -- https://www.phpmyadmin.net/
 --
 -- 主機: localhost
+<<<<<<< HEAD
 -- 產生時間： 2016-12-10 20:52:33
 -- 伺服器版本: 5.7.15-log
 -- PHP 版本： 5.6.26
+=======
+-- 產生時間： 2017 年 02 月 20 日 02:11
+-- 伺服器版本: 10.1.19-MariaDB
+-- PHP 版本： 7.0.13
+>>>>>>> 237fbacb053927595f6d0455934b93f011710755
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 SET time_zone = "+00:00";
@@ -67,8 +73,14 @@ CREATE TABLE `area` (
 --
 
 INSERT INTO `area` (`id`, `placename`, `viewpoint`, `pic`, `posted`, `message`, `reply`, `email`, `site`, `WebSite`, `datetimes`, `replydatetime`) VALUES
+<<<<<<< HEAD
 (2, '苓雅區', '85大樓', 'bc/view/place/images/1.jpg', '蘇湧盛', '這地方好漂亮~', '你喜歡就好', 'd7339803@gmail.com', '', '../../../../project/area.php?id=39&viewpoint=85大樓&place_name=苓雅區', '2016-12-05 02:01:16', '2016-12-05 04:56:58'),
 (3, '鳥松區', '澄清湖', 'bc/view/place/images/7.jpg', '蘇湧盛', 'sss', '', 'd7339803@gmail.com', '', '../../../../project/area.php?id=40&viewpoint=澄清湖&place_name=鳥松區', '2016-12-07 10:00:01', '0000-00-00 00:00:00');
+=======
+(2, '苓雅區', '85大樓', 'bc/view/place/images/1.jpg', '蘇湧盛', '這地方好漂亮~', '你喜歡就好', 'd7339803@gmail.com', '', '../../../../project/areas.php?id=39&viewpoint=85大樓&place_name=苓雅區', '2016-12-05 02:01:16', '2016-12-05 04:56:58'),
+(3, '鳥松區', '澄清湖', 'bc/view/place/images/7.jpg', '蘇湧盛', 'sss', '', 'd7339803@gmail.com', '', '../../../../project/areas.php?id=40&viewpoint=澄清湖&place_name=鳥松區', '2016-12-07 10:00:01', '0000-00-00 00:00:00'),
+(5, '苓雅區', '85大樓', '', 'ss', 's', '', '', '', '../../../../project/areas.php?id=39&place_name=苓雅區&viewpoint=85大樓', '2016-12-10 21:20:14', '0000-00-00 00:00:00');
+>>>>>>> 237fbacb053927595f6d0455934b93f011710755
 
 -- --------------------------------------------------------
 
@@ -295,7 +307,7 @@ INSERT INTO `view` (`id`, `viewpoint`, `picname`, `path`, `datetime`) VALUES
 (4, '真愛碼頭', '5.jpg', 'view/view/images/', '2016-11-25 14:26:36'),
 (5, '高雄圖書總館', '6.jpg', 'view/view/images/', '2016-11-25 14:26:45'),
 (6, '澄清湖', '7.jpg', 'view/view/images/', '2016-11-22 16:30:23'),
-(7, '彩虹', '27859814170_d4edc0685c_b.jpg', 'view/view/images/', '2016-12-05 01:59:13'),
+(7, '彩虹', '8.jpg', 'view/view/images/', '2016-12-05 01:59:13'),
 (8, '駁二', '09.jpg', 'view/view/images/', '2016-12-05 02:00:05');
 
 --

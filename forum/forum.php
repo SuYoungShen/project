@@ -13,6 +13,7 @@
     $message = $messages[$key] = $value["message"];//留言
     $reply = $replys[$key] = $value["reply"];//回覆
     $datetime = $datetimes[$key] = $value["datetime"];//時間
+
     // echo "
     //   <tr>
     //     <td class='center'>
@@ -93,6 +94,13 @@
     //     </td>
     //   </tr>
     // ";
+
+
+    if (empty($reply)) {
+      $reply = "等待管理員回覆中";
+    }
+
+
     echo "
       <tr class='odd gradeX'>
         <td>$theme</td>
