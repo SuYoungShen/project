@@ -5,14 +5,11 @@
     return $place;
   }
 
-  function PlaceSes(){
-    $placeSe = "SELECT place From `places` GROUP BY place";
-    return $placeSe;
-  }
   function PlaceSe(){
     $placeSe = "SELECT * From `places`";
     return $placeSe;
   }
+
   function PlaceUp($placeName,$viewpoint,$attractions,$arrival,$pic_name,$picPath,$datetime){
 
     $placeUp="UPDATE `places`

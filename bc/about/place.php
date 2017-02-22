@@ -6,6 +6,8 @@
   $display = $placeSe->fetchAll();
   $picDir = "about/place/images/";
 
+
+
     // if(isset($_POST["placeName"]) && isset($_POST["Introduction"])) {
   if (isset($_POST["update"])) {
     if (isset($_POST["placeName"]) && isset($_POST["Introduction"])) {

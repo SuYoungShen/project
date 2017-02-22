@@ -12,12 +12,10 @@
     <meta name="description" content="">
     <meta name="viewport" content="width=device-width">
 
+    <!-- <link rel="stylesheet" href="css/bootstrap.min.css"> -->
     <link rel="stylesheet" href="css/bootstrap.min.css">
+    <!-- <link rel="stylesheet" href="css/bootstrap-responsive.min.css"> -->
     <link rel="stylesheet" href="css/font-awesome.min.css">
-    <!-- <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css"> -->
-
-    <link rel="stylesheet" href="css/bootstrap-responsive.min.css">
     <link rel="stylesheet" href="css/main.css">
     <link rel="stylesheet" href="css/sl-slide.css">
 
@@ -30,8 +28,10 @@
     <!-- ace styles -->
 
     <!-- 自行填入 -->
+
     <script type="text/javascript" src="js/jquery-1.11.0.min.js"></script>
     <script type="text/javascript" src="login/js/registered.js"></script>
+
     <!-- 自行填入 -->
 
     <!--[if lte IE 9]>
@@ -90,7 +90,7 @@
                     <?php
                     include ("area/place.php");
                     function Placess(){
-                      $place = "SELECT * FROM `places` GROUP BY place";
+                      $place = "SELECT * From `places`";
                       return $place;
                     }
                     ?>
@@ -100,10 +100,11 @@
             </li>
 
             <li><a href="forum.php">討論區</a></li>
+
             <?php
-              //login->check_login.php
-              Member_Information();
+            Member_Information();
             ?>
+
           </ul>
         </div><!--/.nav-collapse -->
       </div>
@@ -116,19 +117,17 @@
     <div class="container">
       <div class="row">
         <div class="span12">
-
-          <div id="myCarousel" class="carousel slide " data-ride="carousel" data-interval="3000">
-            <!-- data-ride="carousel" 屬性用來標記頁面載入後開始的輪播動畫。 data-interval="3000"每毫秒做東做-->
+          <div id="myCarousel" class="carousel slide">
             <ol class="carousel-indicators">
               <?php
-                include 'index/slider/slider.php';
-                counts($display);
+              include 'index/slider/slider.php';
+              counts($display);
               ?>
             </ol>
 
             <div class="carousel-inner" align='center'>
               <?php
-                display($display, $sliderdir);
+              display($display, $sliderdir);
               ?>
             </div>
 
@@ -173,16 +172,18 @@
     include("login-form.php");
    ?>
   <!--  /Login form -->
-    <script src="bc/assets/js/bootstrap.min.js"></script>
-    <script type="text/javascript" src="js/jquery.js"></script>
-    <script src="js/vendor/jquery-1.9.1.min.js"></script>
-    <script src="js/jquery.ba-cond.min.js"></script>
-    <script src="js/jquery.slitslider.js"></script>
-    <script src="js/main.js"></script>
-    <!-- SL Slider -->
-    <script type="text/javascript" src="js/slider.js"></script>
-  <!-- /SL Slider -->
 
+  <script src="js/vendor/jquery-1.9.1.min.js"></script>
+  <script src="js/vendor/bootstrap.min.js"></script>
+  <script src="js/main.js"></script>
+  <!-- Required javascript files for Slider -->
+  <script src="js/jquery.ba-cond.min.js"></script>
+  <script src="js/jquery.slitslider.js"></script>
+  <!-- /Required javascript files for Slider -->
+
+  <!-- SL Slider -->
+  <script type="text/javascript" src="js/slider.js"></script>
+  <!-- /SL Slider -->
   </body>
 
   </html>

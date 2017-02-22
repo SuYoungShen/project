@@ -23,6 +23,7 @@
   <script type="text/javascript" charset="utf-8" language="javascript" src="js/jquery.dataTables.min.js"></script>
   <script type="text/javascript" charset="utf-8" language="javascript" src="js/DT_bootstrap.js"></script>
 
+
   <script src="js/vendor/modernizr-2.6.2-respond-1.1.0.min.js"></script>
 
   <?php
@@ -145,12 +146,22 @@
         </thead>
         <tbody>
 
-			<?php
+          <!-- <tr class="odd gradeX">
+            <td>Trident</td>
+            <td>Internet
+              Explorer 4.0</td>
+              <td>Win 95+</td>
+              <td class="center"> 4</td>
+              <td class="center">X</td>
+              <td class="center">X</td>
+            </tr>
+             -->
+            <?php
               include ("forum/forum.php");
              ?>
 
-        </tbody>
-       </table>
+          </tbody>
+        </table>
 
 
 

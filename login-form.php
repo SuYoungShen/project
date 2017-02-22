@@ -8,7 +8,7 @@
 <link rel="stylesheet" href="bc/assets/css/ace-rtl.min.css" />
 
 
-<div id="myModal"  class="modal hide fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+<div id="myModal"   class="modal hide fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
   <div class="modal-header">
     <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
     <h3 id="myModalLabel">會員</h3>
@@ -55,6 +55,7 @@
         <div class="accordion-heading">
           <a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion2" href="#collapseTwo">
             <h4>會員註冊</h4>
+
           </a>
         </div>
         <div id="collapseTwo" class="accordion-body collapse">
@@ -66,18 +67,21 @@
               <label class="block clearfix">
                 <span class="block input-icon">
                   <input type="email" name="email" class="form-control" placeholder="Email" />
+
                 </span>
               </label>
 
               <label class="block clearfix">
                 <span class="block input-icon">
                   <input type="text" name="name" class="form-control" placeholder="姓名" />
+
                 </span>
               </label>
 
               <label class="block clearfix">
                 <span class="block input-icon">
                   <input type="text" name="account" class="form-control" placeholder="帳號(最少4碼)" />
+
                 </span>
               </label>
 
@@ -85,11 +89,14 @@
                 <span class="block input-icon ">
                   <input type="password" name="password" class="form-control" placeholder="密碼(最少5碼)" />
                 </span>
+
+
               </label>
 
               <label class="block clearfix">
                 <span class="block input-icon ">
-                  <input type="password" name="apassword"  class="form-control" placeholder="再輸入一次密碼"/>
+                  <input type="password" name="apassword"  class="form-control" placeholder="再輸入一次密碼" />
+
                 </span>
               </label>
 
@@ -103,9 +110,11 @@
 
                 <button type="submit" name="registered" class="width-30 pull-right btn btn-sm btn-success">
                   <span class="bigger-110">註冊</span>
+
                   <i class="ace-icon fa fa-arrow-right icon-on-right"></i>
                 </button>
               </div>
+
             </form>
           </div>
         </div>

@@ -239,25 +239,13 @@
 											</a>
 										</div>
 									</div>
-									<?php
-										include 'mysql/connect.php';
-										$AboutSe = "SELECT about FROM about";
-										$Query = $db->query($AboutSe);
-										$Display = $Query->fetchAll();
-										foreach ($Display as $key => $value) {
-											$About = $value["about"];
-										}
-										$db=null;
-									 ?>
+
 									<div class="widget-body">
 										<div class="widget-main">
 											<div>
 												<label for="form-field-8">簡介</label>
 												<form action="about/about.php" method="post">
-
-													<textarea class="form-control" name="About"
-														id="about" placeholder="簡介(最多1000字)"
-														><?php echo $About;?></textarea>
+													<textarea class="form-control" name="About" id="form-field-8" placeholder="簡介(最多1000字)"></textarea>
 													<br>
 													<button class="btn btn-info" type="submit" name="AboutSubmit" >
 														<i class="ace-icon fa fa-check bigger-110"></i>
@@ -381,12 +369,10 @@
 						<div class="col-sm-12">
 							<div class="table-header">
 								高雄地區
-								<a href="#place" class="btn btn-app btn-green btn-xs" role="button"
-									class="green" data-toggle="modal">
+								<a href="#place" class="btn btn-app btn-green btn-xs" role="button" class="green" data-toggle="modal">
 									<i class="ace-icon glyphicon-plus bigger-150"></i>
 								</a>
-								<a href="#" name="Delete" class="btn btn-app btn-danger btn-xs"
-									role="button" class="green" data-toggle="modal">
+								<a href="#" name="Delete" class="btn btn-app btn-danger btn-xs" role="button" class="green" data-toggle="modal">
 									<i class="ace-icon fa fa-trash-o bigger-150"></i>
 								</a>
 							</div>
@@ -550,8 +536,8 @@
 											<div class="form-group">
 
 												<label class="col-sm-3 control-label no-padding-right"  for="form-field-1"> 地區名	 </label>
-												<div class="col-sm-9">
 
+												<div class="col-sm-9">
 													<input type="hidden" id="id" name="id"/>
 
 													<input type="text" id="placeName" name="placeName" placeholder="地點名" class="col-xs-10 col-sm-5" required="required"/>
@@ -666,9 +652,17 @@
 			</div><!-- /.main-content -->
 
 			<div class="footer">
-				<?php
-					include 'footer.php';
-				 ?>
+				<div class="footer-inner">
+					<div class="footer-content">
+						<span class="bigger-120">
+							<span class="blue bolder">By:</span>
+
+						</span>
+
+						&nbsp; &nbsp;
+
+					</div>
+				</div>
 			</div>
 
 			<a href="#" id="btn-scroll-up" class="btn-scroll-up btn btn-sm btn-inverse">

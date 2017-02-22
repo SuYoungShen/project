@@ -26,6 +26,8 @@
     date_default_timezone_set('Asia/Taipei');//設定時間為台北
     $datetime = date("Y-m-d H:i:s");//時間
 
+    // $trues=$db->query(ForumIn($theme, $posted, $email));
+
       $trues=$db->query(
                         ForumIn(
                                 $theme,

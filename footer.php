@@ -1,7 +1,7 @@
 <!-- Bottom-->
 <section id="bottom" class="main">
     <!--Container-->
-    <div class="container-fluid">
+    <div class="container">
       <div class="row-fluid">
         <!--Contact Form-->
         <div class="span5">
@@ -25,10 +25,10 @@
           <h4>網站資訊</h4>
           <div>
             <ul class="arrow">
-              <li><a href="index.php">首頁</a></li>
-              <li><a href="about.php">認識高雄</a></li>
-              <li><a href="view.php">景點</a></li>
-              <li><a href="fourm.php">討論區</a></li>
+              <li><a href="index.html">首頁</a></li>
+              <li><a href="about.html">認識高雄</a></li>
+              <li><a href="view.html">景點</a></li>
+              <li><a href="fourm.html">討論區</a></li>
 
             </ul>
           </div>
@@ -40,10 +40,10 @@
 </section>
 <!--/bottom -->
 <footer id="footer">
-  <div class="container-fluid">
+  <div class="container">
     <div class="row-fluid">
       <div class="span5 cp">
-        by:蘇湧盛、陳侑駿、黃俊至
+        by
       </div>
 
       <div class="span6">

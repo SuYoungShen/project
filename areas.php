@@ -62,13 +62,13 @@
             </a>
             <div class="dropdown-menu">
               <table class="table table-hover ">
-                <tr>
+                <tr >
                   <td><a href="view.php">首頁</a></td>
                   <!-- <td><a href="area.php">地區名</a></td> -->
                   <?php
                     include ("area/place.php");
                     function Placess(){
-                      $place = "SELECT * FROM `places` GROUP BY place";
+                      $place = "SELECT * From `places`";
                       return $place;
                     }
                    ?>
