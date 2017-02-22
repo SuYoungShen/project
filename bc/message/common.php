@@ -68,7 +68,7 @@
 
   function AreaSe()
   {
-    $AreaSe = "SELECT * From area ORDER BY datetime DESC";
+    $AreaSe = "SELECT * From area ORDER BY datetimes DESC";
 
     return $AreaSe;
   }

@@ -13,6 +13,21 @@
     $message = $messages[$key] = $value["message"];//留言
     $reply = $replys[$key] = $value["reply"];//回覆
     $datetime = $datetimes[$key] = $value["datetime"];//時間
+
+    if (empty($reply)) {
+      $reply = "(等待管理員回覆中)";
+    }
+
+    echo "
+      <tr class='odd gradeX'>
+        <td>$theme</td>
+        <td>$posted</td>
+        <td>$email</td>
+        <td class='center'>$message</td>
+        <td class='center'>$reply</td>
+        <td class='center'>$datetime</td>
+      </tr>
+    ";
     // echo "
     //   <tr>
     //     <td class='center'>
@@ -93,16 +108,6 @@
     //     </td>
     //   </tr>
     // ";
-    echo "
-      <tr class='odd gradeX'>
-        <td>$theme</td>
-        <td>$posted</td>
-        <td>$email</td>
-        <td class='center'>$message</td>
-        <td class='center'>$reply</td>
-        <td class='center'>$datetime</td>
-      </tr>
-    ";
   }
 
   function ForumSe()

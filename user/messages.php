@@ -3,6 +3,7 @@
   // echo $accounts;
   $AreaSe = $db->query(FavSes($accounts));
   $ForumSe = $db->query(FavSess($accounts));
+
   $AreaDislpay = $AreaSe->fetchAll();
   $ForumDislpay = $ForumSe->fetchAll();
   // var_dump($Dislpay);
@@ -100,7 +101,6 @@
     $ForDate = $value["datetime"];//時間
     /* 討論區 forum */
 
-    if (!empty($Place_Name)) {
 
       echo "
           <div class='accordion' id='accordion2'>
@@ -130,7 +130,7 @@
             </div>
           </div>
         ";
-    }
+    
 
     // if(!empty($Theme)){
     //   echo "
@@ -162,7 +162,7 @@
     //   </div>
     //   ";
     // }
-
+    //
 
 
   }

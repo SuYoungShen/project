@@ -46,7 +46,7 @@
                                           `viewpoint` = '".$ViewPoint."' AND
                                           `posted` = '".$Posted."' AND
                                           `message` = '".$AreaMessage."' AND
-                                          `datetime` = '".$AreaDate."'
+                                          `datetimes` = '".$AreaDate."'
                                           ";
     return $FavDe;
   }
