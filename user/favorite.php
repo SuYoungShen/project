@@ -4,7 +4,7 @@
   $FavSe = $db->query(FavSe($accounts));
   $Dislpay = $FavSe->fetchAll();
   // var_dump($Dislpay);
-  $WebSite="/project/index.php";
+  // $WebSite="/project/index.php";
 
   foreach ($Dislpay as $key => $value) {
 
@@ -12,7 +12,7 @@
     $ViewPoint[$key] = $value["place"];//地區名
     $PicName = $value["PicName"];//照片名
     $PicPath = $value["PicPath"];//照片位置
-    // $WebSite = $value["WebSite"];//網站位址
+    $WebSite = $value["WebSite"];//網站位址
     $Datetime = $value["Datetime"];//時間
     $Webs = $Web[$key] = Url($db,$ViewPoint[$key]);//網站位址
 
@@ -55,7 +55,7 @@
   function Url($db,$ViewPoint){
 
     $PlaceSe = "SELECT `id`,`place`,`viewpoint`  FROM `places` WHERE `viewpoint`='".$ViewPoint."'";
-    $PlaceSes=$db->query($PlaceSe);
+    $PlaceSes = $db->query($PlaceSe);
     $Displays = $PlaceSes->fetchAll();
 
     foreach ($Displays as $key => $value) {
@@ -65,7 +65,7 @@
     }
 
     if (isset($viewpoints[0])) {
-      return $Web="areas.php?id=$ids[0]&viewpoint=$viewpoints[0]";
+      return $Web="areas.php?id=$ids[0]&viewpoint=$viewpoints[0]&place_name=$place_names[0]";
     }else {
       return $Web='#';
     }

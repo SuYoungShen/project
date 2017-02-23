@@ -44,7 +44,7 @@
     $FavDe = "DELETE FROM `favorite` WHERE
                                           `Account` = '".$Account."' AND
                                           `place` = '".$Place_Name."' AND
-                                          `PicName` = '".$PicName."' AND                                          
+                                          `PicName` = '".$PicName."' AND 
                                           `PicPath` = '".$PicPath."' AND
                                           `WebSite` = '".$WebSite."'
                                           ";

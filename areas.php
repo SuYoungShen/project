@@ -157,7 +157,7 @@
                         $place_name = $_GET["place_name"];
                         $viewpoint =$_GET["viewpoint"];
                         $Site = $_SERVER['PHP_SELF']."?id=$id&viewpoint=$viewpoint&place_name=$place_name";
-                        $Pic = $_GET["place_name"];
+                        // $Pic = $_GET["pic"];
                         $db = null;
                        ?>
                        <input type='hidden' name='id' value="<?php echo $id ?>">
