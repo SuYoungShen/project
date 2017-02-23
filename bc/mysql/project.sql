@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 4.6.4
+-- version 4.6.5.2
 -- https://www.phpmyadmin.net/
 --
--- 主機: localhost
--- 產生時間： 2016-12-10 20:52:33
--- 伺服器版本: 5.7.15-log
--- PHP 版本： 5.6.26
+-- 主機: 127.0.0.1
+-- 產生時間： 2017-02-23 08:00:57
+-- 伺服器版本: 10.1.21-MariaDB
+-- PHP 版本： 7.1.1
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 SET time_zone = "+00:00";
@@ -67,8 +67,8 @@ CREATE TABLE `area` (
 --
 
 INSERT INTO `area` (`id`, `placename`, `viewpoint`, `pic`, `posted`, `message`, `reply`, `email`, `site`, `WebSite`, `datetimes`, `replydatetime`) VALUES
-(2, '苓雅區', '85大樓', 'bc/view/place/images/1.jpg', '蘇湧盛', '這地方好漂亮~', '你喜歡就好', 'd7339803@gmail.com', '', '../../../../project/area.php?id=39&viewpoint=85大樓&place_name=苓雅區', '2016-12-05 02:01:16', '2016-12-05 04:56:58'),
-(3, '鳥松區', '澄清湖', 'bc/view/place/images/7.jpg', '蘇湧盛', 'sss', '', 'd7339803@gmail.com', '', '../../../../project/area.php?id=40&viewpoint=澄清湖&place_name=鳥松區', '2016-12-07 10:00:01', '0000-00-00 00:00:00');
+(2, '苓雅區', '85大樓', 'bc/view/place/images/1.jpg', '蘇湧盛', '這地方好漂亮~', '你喜歡就好', 'd7339803@gmail.com', '', '../../../../project/areas.php?id=39&viewpoint=85大樓&place_name=苓雅區', '2016-12-05 02:01:16', '2016-12-05 04:56:58'),
+(3, '鳥松區', '澄清湖', 'bc/view/place/images/7.jpg', '蘇湧盛', 'sss', '', 'd7339803@gmail.com', '', '../../../../project/areas.php?id=40&viewpoint=澄清湖&place_name=鳥松區', '2016-12-07 10:00:01', '0000-00-00 00:00:00');
 
 -- --------------------------------------------------------
 
@@ -110,15 +110,6 @@ CREATE TABLE `favorite` (
   `WebSite` varchar(100) COLLATE utf8_unicode_ci NOT NULL,
   `Datetime` datetime NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
-
---
--- 資料表的匯出資料 `favorite`
---
-
-INSERT INTO `favorite` (`Account`, `place`, `PicName`, `PicPath`, `WebSite`, `Datetime`) VALUES
-('d7339803', '85大樓', '1.jpg', 'bc/index/top6/images/', '/project/index.php', '2016-12-08 09:33:52'),
-('d7339803', '蓮池潭', '2.jpg', 'bc/index/top6/images/', '/project/index.php', '2016-12-08 09:35:58'),
-('d7339803', '澄清湖', '7.jpg', 'bc/view/view/images/', '/project/view.php', '2016-12-08 10:46:19');
 
 -- --------------------------------------------------------
 
@@ -165,8 +156,8 @@ CREATE TABLE `member` (
 --
 
 INSERT INTO `member` (`id`, `account`, `password`, `email`, `name`, `level`, `datetime`, `jointime`) VALUES
-(0, 'admin', 'admin', '', '', 'admin', '0000-00-00 00:00:00', '0000-00-00 00:00:00'),
-(0, 'd7339803', 'D7339803', 'd7339803@gmail.com', '蘇湧盛', 'member', '2016-11-28 16:21:03', '0000-00-00 00:00:00');
+(1, 'admin', 'admin', '', '', 'admin', '0000-00-00 00:00:00', '0000-00-00 00:00:00'),
+(2, 'ssss', 'sssss', 'sss@gmail.com', 'ssss', 'member', '2017-02-22 15:24:49', '0000-00-00 00:00:00');
 
 -- --------------------------------------------------------
 
@@ -216,7 +207,8 @@ CREATE TABLE `places` (
 INSERT INTO `places` (`id`, `place`, `viewpoint`, `attractions`, `arrival`, `name`, `path`, `datetime`) VALUES
 (39, '苓雅區', '85大樓', '高雄85大樓位於高雄市苓雅區東側為自強路，南側為新光路，北側為三多路，西邊只隔半條街與成功路相毗鄰，與高雄港、高雄市小港機場、高雄市火車站和新光碼頭距離相近，又稱東帝士85國際廣場或東帝士建臺大樓，於西元1997年完工、由建築師李祖原設計，是南台灣最高的摩天大樓、全台灣第2高樓，目前是世界第13高的摩天大樓。', '★ 搭乘大眾運輸：1、捷運：(1)、搭乘捷運紅線至R8三多商圈站，出2號出口往新光路方向步行約8分鐘即可抵達。', '1.jpg', 'view/place/images/', '2016-12-07 13:56:28'),
 (40, '鳥松區', '澄清湖', '鳥松濕地公園位於澄清湖風景區門口東側，原本是自來水公司澄清湖淨水場的沉沙地，於1999年動工、2000年完工成為台灣第一座以人工濕地為主題的自然生態公園；鳥松濕地公園佔地約為3公頃，陸地和水路面積各占三分之一和三分之二，豐富的地形地貌孕育出許多種植物，包含約90種鳥類、250種以上的昆蟲和340種以上的植物，加上鄰近澄清湖因此是高雄是相當不錯的戶外教學和自然觀察的好場所，目前鳥松濕地公園社團法人高雄市野鳥學會所認養。', '自行開車：\n\n高雄交流道下，大順路轉右，左轉澄清路，即可抵達澄清湖。', '7.jpg', 'view/place/images/', '2016-12-07 13:56:11'),
-(45, '苓雅區', 's', 's', 's', '', '', '2016-12-10 04:22:57');
+(46, '苓雅區', 'ss', 'ss', 'ss', '', '', '2016-12-10 21:56:14'),
+(47, '鳥松區', 'test', 'tes', 'tes', '', '', '2016-12-11 00:07:22');
 
 -- --------------------------------------------------------
 
@@ -236,12 +228,12 @@ CREATE TABLE `slider` (
 --
 
 INSERT INTO `slider` (`id`, `name`, `path`, `datetime`) VALUES
-('0', '1.jpg', 'index/slider/images/', '2016-11-21 15:02:05'),
-('1', '2.jpg', 'index/slider/images/', '2016-11-21 15:02:05'),
-('2', '3.jpg', 'index/slider/images/', '2016-11-21 15:02:05'),
-('3', '4.jpg', 'index/slider/images/', '2016-11-21 15:02:05'),
-('4', '5.jpg', 'index/slider/images/', '2016-11-21 15:02:05'),
-('5', '6.jpg', 'index/slider/images/', '2016-11-21 15:01:36');
+('0', '1.jpg', 'index/slider/images/', '2016-12-11 17:48:41'),
+('1', '2.jpg', 'index/slider/images/', '2016-12-11 17:49:50'),
+('2', '3.jpg', 'index/slider/images/', '2016-12-11 17:49:50'),
+('3', '4.jpg', 'index/slider/images/', '2016-12-11 17:49:50'),
+('4', '5.jpg', 'index/slider/images/', '2016-12-11 17:49:50'),
+('5', '6.jpg', 'index/slider/images/', '2016-12-11 17:49:50');
 
 -- --------------------------------------------------------
 
@@ -262,12 +254,12 @@ CREATE TABLE `top` (
 --
 
 INSERT INTO `top` (`id`, `place`, `name`, `path`, `datetime`) VALUES
-('0', '85大樓', '1.jpg', 'index/top6/images/', '2016-12-05 04:49:17'),
-('1', '蓮池潭', '2.jpg', 'index/top6/images/', '2016-12-01 14:41:45'),
-('2', '美麗島站', '3.jpg', 'index/top6/images/', '2016-12-01 14:44:43'),
-('3', '愛河', '4.jpg', 'index/top6/images/', '2016-12-01 14:44:50'),
-('4', '真愛碼頭', '5.jpg', 'index/top6/images/', '2016-12-01 14:45:00'),
-('5', '圖書總館', '6.jpg', 'index/top6/images/', '2016-12-01 14:45:09');
+('0', '', '115431.jpg', 'index/top6/images/', '2017-02-23 09:12:35'),
+('1', '', '2.jpg', 'index/top6/images/', '2016-12-11 17:32:58'),
+('2', '', '3.jpg', 'index/top6/images/', '2016-12-11 17:32:58'),
+('3', '', '4.jpg', 'index/top6/images/', '2016-12-11 17:32:58'),
+('4', '', '5.jpg', 'index/top6/images/', '2016-12-11 17:32:58'),
+('5', '', '6.jpg', 'index/top6/images/', '2016-12-11 17:32:58');
 
 -- --------------------------------------------------------
 
@@ -295,8 +287,8 @@ INSERT INTO `view` (`id`, `viewpoint`, `picname`, `path`, `datetime`) VALUES
 (4, '真愛碼頭', '5.jpg', 'view/view/images/', '2016-11-25 14:26:36'),
 (5, '高雄圖書總館', '6.jpg', 'view/view/images/', '2016-11-25 14:26:45'),
 (6, '澄清湖', '7.jpg', 'view/view/images/', '2016-11-22 16:30:23'),
-(7, '彩虹', '27859814170_d4edc0685c_b.jpg', 'view/view/images/', '2016-12-05 01:59:13'),
-(8, '駁二', '09.jpg', 'view/view/images/', '2016-12-05 02:00:05');
+(7, '彩虹', '8.jpg', 'view/view/images/', '2016-12-05 01:59:13'),
+(8, '駁二', '9.jpg', 'view/view/images/', '2016-12-05 02:00:05');
 
 --
 -- 已匯出資料表的索引
@@ -318,6 +310,12 @@ ALTER TABLE `carousel`
 -- 資料表索引 `forum`
 --
 ALTER TABLE `forum`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- 資料表索引 `member`
+--
+ALTER TABLE `member`
   ADD PRIMARY KEY (`id`);
 
 --
@@ -352,12 +350,17 @@ ALTER TABLE `top`
 -- 使用資料表 AUTO_INCREMENT `area`
 --
 ALTER TABLE `area`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
 --
 -- 使用資料表 AUTO_INCREMENT `forum`
 --
 ALTER TABLE `forum`
-  MODIFY `id` int(100) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+  MODIFY `id` int(100) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
+--
+-- 使用資料表 AUTO_INCREMENT `member`
+--
+ALTER TABLE `member`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 --
 -- 使用資料表 AUTO_INCREMENT `place`
 --
@@ -367,7 +370,7 @@ ALTER TABLE `place`
 -- 使用資料表 AUTO_INCREMENT `places`
 --
 ALTER TABLE `places`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=46;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=48;
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
